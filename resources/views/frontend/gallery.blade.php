@@ -18,7 +18,8 @@
                             <div class="col-md-12">
                                 <div class="block">
                                     <span class="text-uppercase text-sm letter-spacing"></span>
-                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
+                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'Gallery' }}</h1>
+                                      <p class="text-center"> {!! $pageBanner->description??'' !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +80,7 @@
 @endsection
 
 @push('scripts')
-    {{-- jQuery (required for Fancybox and AJAX) --}}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    {{-- Bootstrap JS --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    {{-- Fancybox JS --}}
+
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
     <script>

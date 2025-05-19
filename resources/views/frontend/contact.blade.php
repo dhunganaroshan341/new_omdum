@@ -1,17 +1,17 @@
 @extends('frontend.layout.main')
 @section('content')
-    <section class="hero-small">
+  <section class="hero-small">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url({{ asset('assets/images/banner1.jpg') }}) ;">
+                <div class="carousel-item active" style="background-image: url({{ $pageBanner?asset('storage/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
                     <div class="hero-small-background-overlay"></div>
                     <div class="container  h-100">
                         <div class="row align-items-center d-flex h-100">
                             <div class="col-md-12">
-                                <div class="block text-center">
+                                <div class="block">
                                     <span class="text-uppercase text-sm letter-spacing"></span>
-                                    <h1 class="mb-3 mt-3 text-center">Contact us</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
+                                     <p>{{ $bannerDescription??'' }}</p>
                                 </div>
                             </div>
                         </div>

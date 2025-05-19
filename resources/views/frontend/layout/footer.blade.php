@@ -1,4 +1,4 @@
-<footer class="footer section gray-bg">
+<footer class="footer section bg-realm-blue">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 mr-auto col-sm-6">
@@ -14,7 +14,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="widget mb-5 mb-lg-0">
-                    <h4 class="text-capitalize mb-3">Services</h4>
+                    <h4 class="text-capitalize mb-3 text-white">Services</h4>
                     <div class="divider mb-4"></div>
 
                     <ul class="list-unstyled footer-menu lh-35">
@@ -27,7 +27,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="widget mb-5 mb-lg-0">
-                    <h4 class="text-capitalize mb-3">Quick Links</h4>
+                    <h4 class="text-capitalize mb-3 text-white">Quick Links</h4>
                     <div class="divider mb-4"></div>
 
                     <ul class="list-unstyled footer-menu lh-35">
@@ -41,7 +41,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="widget widget-contact mb-5 mb-lg-0">
-                    <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                    <h4 class="text-capitalize mb-3 text-white">Get in Touch</h4>
                     <div class="divider mb-4"></div>
 
                     <div class="footer-contact-block mb-4">
@@ -73,7 +73,7 @@
         <div class="footer-btm py-4 mt-5">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-12">
-                    <div class="copyright text-center">
+                    <div class="copyright text-center text-white">
                         Copyright © {{ date('Y') }} {{ $title }}
                     </div>
                 </div>

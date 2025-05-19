@@ -98,6 +98,37 @@
 .border-realm-text               { border-color: var(--realm-text) !important; }
 .border-realm-text-light         { border-color: var(--realm-text-light) !important; }
 
+/* Button Color Utility Classes */
+.btn-realm-yellow             { background-color: var(--realm-yellow); color: #000; }
+.btn-realm-yellow-light       { background-color: var(--realm-yellow-light); color: #000; }
+.btn-realm-yellow-lighter     { background-color: var(--realm-yellow-lighter); color: #000; }
+.btn-realm-yellow-background  { background-color: var(--realm-yellow-background); color: #000; }
+.btn-realm-yellow-dark        { background-color: var(--realm-yellow-dark); color: #fff; }
+.btn-realm-yellow-darker      { background-color: var(--realm-yellow-darker); color: #fff; }
+
+.btn-realm-blue               { background-color: var(--realm-blue); color: #fff; }
+.btn-realm-blue-light         { background-color: var(--realm-blue-light); color: #000; }
+.btn-realm-blue-dark          { background-color: var(--realm-blue-dark); color: #fff; }
+
+.btn-realm-gray               { background-color: var(--realm-gray); color: #000; }
+.btn-realm-gray-light         { background-color: var(--realm-gray-light); color: #000; }
+.btn-realm-gray-background    { background-color: var(--realm-gray-background); color: #000; }
+
+.btn-realm-success            { background-color: var(--realm-success); color: #fff; }
+.btn-realm-warning            { background-color: var(--realm-warning); color: #000; }
+.btn-realm-error              { background-color: var(--realm-error); color: #fff; }
+.btn-realm-info               { background-color: var(--realm-info); color: #fff; }
+
+/* Optional shared button styling */
+[class^="btn-realm-"], [class*=" btn-realm-"] {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
  .fancy-btn {
   position: relative;
   display: inline-block;

@@ -32,7 +32,7 @@
                                 @if(!empty($post->postImages) && isset($post->postImages[0]->image))
                                     <img src="{{ asset('storage/' . $post->postImages[0]->image) }}" class="card-img-top" alt="Post Image">
                                 @else
-                                    <img src="{{ asset('assets/images/default.jpg') }}" class="card-img-top" alt="Default Image">
+                                    <img src="{{ asset('assets/images/default-blog.jpg') }}" class="card-img-top" alt="Default Image">
                                 @endif
                                 <div class="card-body p-3">
                                     <h1 class="card-title mt-2">

@@ -11,7 +11,7 @@
                         <div class="col-md-12">
                             <div class="block">
                                 <span class="text-uppercase text-sm letter-spacing"></span>
-                                <h3 class="mb-3 mt-3 text-center"> Services &nbsp <i class="fa-solid fa-angle-right"></i> &nbsp {{ $serviceDetail->name ?? '' }}</h3>
+                                <h3 class="mb-3 mt-3 text-center text-white"> Services &nbsp <i class="fa-solid fa-angle-right"></i> &nbsp {{ $serviceDetail->name ?? '' }}</h3>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
         </div>
     </div>
 </section>
-
+@include('components.other-services-component',['otherServicetitle'=>'Other Services'])
 <section class="section-4 py-5 text-center">
     <div class="hero-background-overlay"></div>
     <div class="container">

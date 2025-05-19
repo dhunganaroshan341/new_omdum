@@ -1,33 +1,27 @@
 @extends('frontend.layout.main')
 @section('content')
-@php
-    $bannerImage = $pageBanner->image ?? 'images/banner1.jpg';
-    $bannerTitle = $pageBanner->title ?? 'Services';
-    $bannerDescription = $pageBanner->description ?? 'We are a passionate digital design agency that specializes in beautiful and easy-to-use digital design & web development services.';
-@endphp
+
 
 <section class="hero-small">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div
-                class="carousel-item active"
-                style="background-image: url('{{ asset('storage/' . $bannerImage) }}');"
-            >
-                <div class="hero-background-overlay"></div>
-                <div class="container h-100">
-                    <div class="row align-items-center d-flex h-100">
-                        <div class="col-md-12">
-                            <div class="block text-center">
-                                <h1 class="mb-3 mt-3 text-center">{{ $bannerTitle }}</h1>
-                                <p>{{ $bannerDescription }}</p>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url({{ $pageBanner?asset('storage/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
+                    <div class="hero-small-background-overlay"></div>
+                    <div class="container  h-100">
+                        <div class="row align-items-center d-flex h-100">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <span class="text-uppercase text-sm letter-spacing"></span>
+                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
+                                <p class="text-center"> {!! $pageBanner->description??'' !!}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

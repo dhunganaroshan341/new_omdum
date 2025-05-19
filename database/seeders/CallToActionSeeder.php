@@ -11,7 +11,7 @@ class CallToActionSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    protected $pages = ['home','about','contact','gallery'];
+    protected $pages = ['home','about','contact','gallery','services','blog'];
     public function run(): void
     {
         //

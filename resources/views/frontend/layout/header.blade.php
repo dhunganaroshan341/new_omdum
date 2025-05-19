@@ -3,19 +3,16 @@
 @endphp
 
 <header>
-    <div class="header-top-bar py-2 bg-realm-blue">
+    {{-- Top Bar --}}
+    <div class="header-top-bar py-2 bg-realm-blue text-white">
         <div class="container">
-            <div class="row align-items-center  ">
-                <div class="col-lg-6">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item me-3">
-                            <a href="mailto:{{ $email }}" class="text-realm-yellow text-decoration-none">
-                                <i class="bi bi-envelope-fill me-1"></i>{{ $email }}
-                            </a>
-                        </li>
-                    </ul>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 text-md-start text-center mb-2 mb-md-0">
+                    <a href="mailto:{{ $email }}" class="text-realm-yellow text-decoration-none me-3">
+                        <i class="bi bi-envelope-fill me-1"></i>{{ $email }}
+                    </a>
                 </div>
-                <div class="col-lg-6 text-lg-end">
+                <div class="col-md-6 text-md-end text-center">
                     <a href="tel:{{ $contact }}" class="text-realm-yellow text-decoration-none">
                         <i class="bi bi-telephone-fill me-1"></i><span class="fw-bold">{{ $contact }}</span>
                     </a>
@@ -24,19 +21,19 @@
         </div>
     </div>
 
+    {{-- Main Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ route('first.index') }}">
                 @if ($logo)
-                    <img src="{{ asset('storage/' . $logo) }}" alt="Logo" width="100" height="100" class="img-fluid">
+                    <img src="{{ asset('storage/' . $logo) }}" alt="Logo" class="img-fluid" style="max-height: 60px;">
                 @else
-                    <img src="{{ asset('defaultImage/defaultlogo.png') }}" alt="Default Logo" width="100" height="100" class="img-fluid">
+                    <img src="{{ asset('defaultImage/defaultlogo.png') }}" alt="Default Logo" class="img-fluid" style="max-height: 60px;">
                 @endif
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="icon-align-justify"></i></span>
-
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarmain">
@@ -52,6 +49,7 @@
                             Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a href="{{ route('service') }}" class="dropdown-item">All Services</a></li>
                             @foreach ($activeMenuServiceItems as $service)
                                 <li>
                                     <a class="dropdown-item {{ request()->is('service/detail/'.$service->id) ? 'active' : '' }}"
@@ -77,23 +75,40 @@
     </nav>
 </header>
 
+{{-- If you want breadcrumb, you can place it like this after the header --}}
+{{--
+<div class="container mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('first.index') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Current Page</li>
+        </ol>
+    </nav>
+</div>
+--}}
+
 @push('styles')
-
-    <style>
-        /* Optional: Show dropdown on hover for large screens */
-        @media (min-width: 992px) {
-            .navbar .dropdown:hover .dropdown-menu {
-                display: block;
-            }
-            .navbar-light .navbar-toggler-icon {
-  background-image: block;
-}
+<style>
+    @media (min-width: 992px) {
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
         }
+    }
 
-        .nav-link.active {
-            font-weight: bold;
-            color: #0d6efd !important;
-        }
-    </style>
+    .nav-link.active {
+        font-weight: bold;
+        color: #0d6efd !important;
+    }
+
+
+
+    .navbar-brand img {
+        max-height: 60px;
+        height: auto;
+    }
+
+    .header-top-bar a {
+        font-size: 14px;
+    }
+</style>
 @endpush
-

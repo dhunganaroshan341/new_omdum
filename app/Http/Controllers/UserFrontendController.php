@@ -67,6 +67,7 @@ class UserFrontendController extends Controller
     public function servicedetail($id)
     {
         $serviceDetail = Service::find($id);
+        $otherServices = Service::where('status', 1)->where('id', '!=', $id)->get();
         $posts = Post::with('category', 'postImages')
             ->latest()
             ->get();
@@ -77,7 +78,7 @@ class UserFrontendController extends Controller
         }
         $pageBanner = PageBanner::where('page','services')->first();
 
-        return view('frontend.service-detail', compact('serviceDetail', 'posts','content_title','pageBanner'));
+        return view('frontend.service-detail', compact('serviceDetail', 'posts','content_title','pageBanner','otherServices'));
     }
 
     public function blog()
