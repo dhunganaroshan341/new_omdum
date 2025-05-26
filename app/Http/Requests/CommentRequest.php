@@ -23,6 +23,8 @@ class CommentRequest extends FormRequest
     {
         return [
             'content' => 'required|string|max:1000',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
             'commentable_id' => 'required|integer',
             'commentable_type' => 'required|string',
         ];
@@ -32,7 +34,12 @@ class CommentRequest extends FormRequest
     {
         return [
             'content.required' => 'Please Enter the Comment',
-            'content.max' => 'Max lenght of comment is 1000'
+            'content.max' => 'Max lenght of comment is 1000',
+            'name.required' => 'Please Enter Your Name',
+            'name.max' => 'Max length of name is 255',
+            'email.required' => 'Please Enter Your Email',
+            'email.email' => 'Please Enter a valid Email Address',
+            'email.max' => 'Max length of email is 255'
         ];
     }
 }

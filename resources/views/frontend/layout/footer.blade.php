@@ -19,7 +19,7 @@
 
                     <ul class="list-unstyled footer-menu lh-35">
                         @foreach ($services as $service)
-                        <li><a href="{{ route('service-detail', $service->id) }}">{{ $service->name }}</a></li>
+                        <li><a class="footer-service-detail" href="{{ route('service-detail', $service->id) }}">{{ $service->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -82,3 +82,16 @@
         </div>
     </div>
 </footer>
+@push('styles')
+<style>
+    .footer-service-detail {
+        color: #fff;
+        text-decoration: none;
+    }
+    .footer-service-detail:hover {
+        color: #f0f0f0;
+        text-decoration: underline;
+    }
+</style>
+
+@endpush

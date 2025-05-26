@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\CallToAction;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\frontend;
 use App\Models\User;
@@ -42,18 +43,23 @@ class UserFrontendController extends Controller
 
     }
     public function aboutUs()
-    {
-        $users = User::where('role', 'Admin')->get();
-        $members =User:: paginate(6);
-        $pageBanner = PageBanner::where('page','about')->first();
-        $frontend = Setting::first();
-        $cta = CallToAction::where('page', 'about')->first();
-        $pageDescription = Setting::first()->work_description;
-        $pageDescriptionImage  = Setting::first()->about_image;
-        $content_title="About Us";
-// dd($members);
-        return view('frontend.about', compact('pageDescription','pageDescriptionImage','cta','users','members', 'frontend','content_title','pageBanner'));
-    }
+{
+
+    // Fetch rest of members excluding top members, paginated
+    $members = User::whereNotIn('id', [1, 2])->paginate(6);
+
+    $pageBanner = PageBanner::where('page','about')->first();
+    $frontend = Setting::first();
+    $cta = CallToAction::where('page', 'about')->first();
+    $pageDescription = Setting::first()->work_description;
+    $pageDescriptionImage  = Setting::first()->about_image;
+    $content_title="About Us";
+
+    return view('frontend.about', compact(
+        'pageDescription', 'pageDescriptionImage', 'cta',  'members', 'frontend', 'content_title', 'pageBanner'
+    ));
+}
+
 
     public function service()
     {
@@ -103,8 +109,20 @@ class UserFrontendController extends Controller
     }])->findOrFail($id);
 
     $post = Post::with(['createdBy', 'category', 'postImages', 'comments'])->find($id);
-    $comments = Comment::with('user')->where('commentable_id', $id)->get();
+  $comments = Comment::with('user')
+    ->where('commentable_id', $id)
+    ->orderBy('created_at', 'desc')
+    ->get();
+
     $detail = Post::with('category', 'postImages', 'comments', 'createdBy', 'updatedBy', 'category')->find($id);
+    $recentPosts = Post::with('postImages')
+        ->where('status', 'Active')
+        ->latest()
+        ->take(3)
+        ->get();
+       $categories = Category::where('status', 'Active')
+    ->withCount('post')
+    ->get();
 
     // ✅ Process title
 $processedDescription  = $detail->title;
@@ -112,15 +130,29 @@ $processedDescription  = $detail->title;
         $processedDescription .= ' → ' . Str::words(strip_tags($pageBanner->title), 5, '...');
     }
 
-    return view('frontend.post-template', compact(
+    return view('frontend.blog-detail-sean', compact(
         'detail',
         'images',
         'post',
+        'recentPosts',
+        'categories',
         'comments',
         'content_title',
         'pageBanner',
         'processedDescription'
     ));
+}
+public function searchBlogs(Request $request)
+{
+    $keyword = $request->get('keyword');
+
+    $posts = Post::where('title', 'LIKE', '%' . $keyword . '%')
+        ->select('id', 'title') // Only fetch what you need
+        ->latest()
+        ->take(10)
+        ->get();
+
+    return response()->json($posts);
 }
     public function contactUs()
     {

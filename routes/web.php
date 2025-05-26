@@ -45,7 +45,7 @@ Route::middleware('isLogin')->group(function () {
 
     Route::get('/register', [AuthController::class, 'index'])->name('register');
     Route::post('/register', [AuthController::class, 'storeRegister'])->name('register.store');
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/realm-admin/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login/store', [AuthController::class, 'storeLogin'])->name('login.store');
     Route::get('/auth/google/redirect', function () {
         return Socialite::driver("google")->redirect();
@@ -213,6 +213,7 @@ Route::get('/service', [UserFrontendController::class, 'service'])->name('servic
 Route::get('/service/detail/{id}', [UserFrontendController::class, 'servicedetail'])->name('service-detail');
 Route::get('/blog/detail/{id}', [UserFrontendController::class, 'blogdetail'])->name('blog-detail');
 Route::get('/blog', [UserFrontendController::class, 'blog'])->name('blog');
+Route::get('/search-posts', [UserFrontendController::class, 'searchBlogs'])->name('search.posts');
 
 // Route::get('/post', [UserFrontendController::class, 'post'])->name('post');
 // Route::get('/post/{id}', [UserFrontendController::class, 'singlePost'])->name('single.post');

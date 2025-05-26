@@ -13,7 +13,7 @@ class FrontGalleryController extends Controller
 {
     // Get albums that have an associated client, along with their media and client relationship
     $albumsWithClients = GalleryAlbum::has('client')->with(['galleryMedia', 'client'])->get();
-
+$content_title="Gallery";
     // Group albums by client
     $clientsWithAlbums = $albumsWithClients->groupBy(function ($album) {
         return $album->client->id; // Group by client ID
@@ -25,7 +25,7 @@ class FrontGalleryController extends Controller
     // Get all clients (if needed)
     $clients = Client::with('albums')->get();
     $pageBanner = PageBanner::where('page', 'gallery')->first();
-    return view('frontend.gallery', compact('clients', 'albumsWithNoClients', 'clientsWithAlbums','pageBanner'));
+    return view('frontend.gallery', compact('content_title','clients', 'albumsWithNoClients', 'clientsWithAlbums','pageBanner'));
 }
 
 

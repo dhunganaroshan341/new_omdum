@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('twitter_link')->nullable();
             $table->string('phonenumber')->nullable();
             $table->longText('notes')->nullable();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

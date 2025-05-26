@@ -1,13 +1,9 @@
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Gallery;
 use App\Models\GalleryAlbum;
 use App\Models\GalleryMedia;
-use App\Models\Image;
-use Illuminate\Support\Facades\Storage;
 
 class GallerySeeder extends Seeder
 {
@@ -16,29 +12,41 @@ class GallerySeeder extends Seeder
      */
     public function run(): void
     {
-        // Ensure the uploads/gallery directory exists
-        $galleryDirectory = 'uploads/gallery/';
-        if (!Storage::exists($galleryDirectory)) {
-            Storage::makeDirectory($galleryDirectory);
+        // 1. Albums for clients (client_id: 1 to 10)
+        for ($clientId = 1; $clientId <= 10; $clientId++) {
+            for ($albumNum = 1; $albumNum <= 10; $albumNum++) {
+                $album = GalleryAlbum::create([
+                    'title' => "Client{$clientId} Album {$albumNum}",
+                    'type' => 'image',
+                    'client_id' => $clientId,
+                ]);
+
+                $this->seedGalleryMedia($album->id);
+            }
         }
 
-        $galleries = ['cg', 'realm', 'hinwa', 'aitm', 'medhisa'];
+        // 2. Albums with no client
+        for ($albumNum = 1; $albumNum <= 10; $albumNum++) {
+            $album = GalleryAlbum::create([
+                'title' => "General Album {$albumNum}",
+                'type' => 'image',
+                // No client_id
+            ]);
 
-        foreach ($galleries as $galleryTitle) {
-            $gallery = GalleryAlbum::create(['title' => $galleryTitle,'type'=>'image']);
+            $this->seedGalleryMedia($album->id);
+        }
+    }
 
-            // Generate 5 random image paths
-            $images = [];
-            for ($i = 1; $i <= 5; $i++) {
-                $imagePath ="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d71.png";
-                $images[] = $imagePath;
-
-                // Save each image in the images table
-                GalleryMedia::create([
-                    'gallery_album_id' => $gallery->id,
-                    'media_path' => $imagePath,
-                ]);
-            }
+    /**
+     * Seed 10 media items for each album.
+     */
+    private function seedGalleryMedia($albumId): void
+    {
+        for ($i = 1; $i <= 10; $i++) {
+            GalleryMedia::create([
+                'gallery_album_id' => $albumId,
+                'media_path' => 'assets/images/default-gallery.jpg',
+            ]);
         }
     }
 }

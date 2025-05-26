@@ -11,7 +11,7 @@
                         <th scope="col">S.N</th>
                         <th scope="col">Image</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Address</th>
+                        {{-- <th scope="col">Address</th> --}}
                         <th scope="col">Designation</th>
                         <th scope="col">Description</th>
                         <th scope="col">Status</th>

@@ -8,7 +8,11 @@
                     <div class="card border-0">
                         @if(isset($post->postImages[0]) && !empty($post->postImages[0]->image))
                             <img src="{{ asset('storage/' . $post->postImages[0]->image) }}" class="card-img-top" alt="">
+
+                        @else
+                           <img src="{{ asset('assets/images/default-blog.jpg' ) }}" class="card-img-top" alt="">
                         @endif
+
                         <div class="card-body p-3">
                             <h1 class="card-title mt-2">
                                 <a href="#">{{ $post->title ?? 'Untitled' }}</a>

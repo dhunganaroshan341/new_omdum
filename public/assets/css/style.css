@@ -107,6 +107,7 @@
 .btn-realm-yellow-darker      { background-color: var(--realm-yellow-darker); color: #fff; }
 
 .btn-realm-blue               { background-color: var(--realm-blue); color: #fff; }
+
 .btn-realm-blue-light         { background-color: var(--realm-blue-light); color: #000; }
 .btn-realm-blue-dark          { background-color: var(--realm-blue-dark); color: #fff; }
 
@@ -509,9 +510,14 @@ a{
 
 
 .footer-menu a {
-    color: #6F8BA4;
+    color: #e4e0e0;
     line-height: 35px;
 }
+.footer-menu a:hover {
+    color: var(--realm-yellow);
+    line-height: 35px;
+}
+
 
 .footer-socials li a {
     width: 45px;

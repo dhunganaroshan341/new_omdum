@@ -12,19 +12,18 @@
                     <div class="container h-100" style="position: relative; z-index: 2;">
                         <div class="row align-items-center d-flex h-100">
                             <div class="col-md-7">
-                                <div class="block text-white">
+                                <div class="block text-white px-3 px-md-4 py-3">
                                     <div class="divider mb-3"></div>
-                                    <h1 class="mb-3 mt-3 bg-realm-blue">{{ $slide->title }}</h1>
-                                    <p class="mb-4 pr-5">{!! $slide->shortdesc !!}</p>
-                                    @if ($index==0)
+                                    <h1 class="mb-3 mt-3">{{ $slide->title }}</h1>
+                                    <p class="mb-4 text-left">{!! $slide->shortdesc !!}</p>
 
-
-                                        <div class="btn-container ">
-                                            <a href="#" target="_blank" class="btn btn-realm-blue">
-                                                Contact Now <i class="icofont-simple-right ml-2"></i>
+                                    @if ($index == 0)
+                                        <div class="btn-container">
+                                            <a href="{{ route('contact-us') }}" target="_blank" class="btn btn-dark">
+                                                Contact Us <i class="icofont-simple-right ml-2"></i>
                                             </a>
                                         </div>
-                                     @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -33,31 +32,30 @@
             @endforeach
         </div>
 
-        <!-- Controls (fixed and visible on both edges) -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon text-realm-yellow-light" aria-hidden="true" style="filter: invert(1); width: 40px; height: 40px;"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1); width: 40px; height: 40px;"></span>
+            {{-- <span class="visually-hidden">Previous</span> --}}
         </button>
 
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon text-realm-blue-dark" aria-hidden="true" style="filter: invert(1); width: 40px; height: 40px;"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1); width: 40px; height: 40px;"></span>
+            {{-- <span class="visually-hidden">Next</span> --}}
         </button>
     </div>
 </section>
+
 @push('styles')
 <style>
-/* Default desktop view */
 .hero .carousel-item {
     height: 100vh;
 }
 
-/* Mobile: Reduce banner height to 60vh or whatever looks better */
 @media (max-width: 768px) {
     .hero .carousel-item {
-        height: 60vh !important; /* You can also try 50vh or 70vh */
-    }
+        height: 60vh !important;
 
+    }
+.carousel-control-prev,.carousel-control-next{display:none;}
     .hero .container.h-100 {
         height: 100%;
         padding-top: 20px;
@@ -65,7 +63,7 @@
     }
 
     .hero h1 {
-        font-size: 1.5rem; /* Optional: reduce text size */
+        font-size: 1.5rem;
     }
 
     .hero p {

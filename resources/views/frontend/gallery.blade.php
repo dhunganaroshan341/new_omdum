@@ -1,8 +1,11 @@
 @extends('frontend.layout.main')
 
+
+
+
 @push('styles')
     {{-- Bootstrap CSS --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     {{-- Fancybox CSS --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 @endpush
@@ -18,8 +21,7 @@
                             <div class="col-md-12">
                                 <div class="block">
                                     <span class="text-uppercase text-sm letter-spacing"></span>
-                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'Gallery' }}</h1>
-                                      <p class="text-center"> {!! $pageBanner->description??'' !!}</p>
+                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +37,8 @@
             <h4  class="text-realm-blue mb-3">Albums</h4>
             <div class="list-group">
  <a class=" text-realm-yellow list-group-item list-group-item-action"
-                            href="{{ route('gallery') }}"> Realm Albums
+                            href="{{ route('gallery') }}">
+                            <img style="width:20px;height:20px justify-self:center align-item:center" src="{{ asset('assets/images/logo.png') }}" alt=""> Realm Albums
 
 
             </a>
@@ -80,6 +83,9 @@
 @endsection
 
 @push('scripts')
+    {{-- jQuery (required for Fancybox and AJAX) --}}
+
+    {{-- Bootstrap JS --}}
 
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
@@ -95,17 +101,35 @@
                     if (!response.success) return alert('No albums found for this client.');
                     const clientAlbums = response.message;
 
-                    let content = `
-                       <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1"> ${clientAlbums[0]?.client?.name || 'Unknown Client'} Albums</h2>
-                        <div class="row g-4">
-                    `;
+                   let content = `
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <h2 class="title-color mb-0">
+            ${clientAlbums[0]?.client?.name || 'Unknown Client'} Albums
+        </h2>
+         <button onclick="window.location.href='gallery'" class="btn btn-secondary">
+            ← Back
+        </button>
+    </div>
+
+    <div class="divider mb-3"></div>
+
+    <div class="row g-4">
+`;
+
+
 
                     clientAlbums.forEach(album => {
                         const galleryMedia = album.gallery_media || [];
                         content += `
                             <div class="col-sm-6 col-md-4">
                                 <div class="card h-100 shadow-sm" onclick="loadAlbumDetails(${album.id}, '${album.title}')">
+
+
+
+
+
+
                                     ${galleryMedia.length > 0 ? `
                                         <img src="/${galleryMedia[0].media_path}" class="card-img-top" />
                                     ` : `
@@ -138,10 +162,17 @@
                     if (!response.success) return alert('Album not found.');
                     const album = response.message;
                     let content = `
-                    <div class="divider mb-3"></div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
 
-                        <h2 class="title-color mb-4 h1">${album.title}</h2>
-                        <div class="row g-4">
+             <h2 class="title-color mb-4 h1">${album.title}</h2>
+         <button onclick="window.location.href='gallery'" class="btn btn-secondary">
+            ← Back
+        </button>
+    </div>
+
+    <div class="divider mb-3"></div>
+
+    <div class="row g-4">
                     `;
 
                     const galleryMedia = album.gallery_media || [];

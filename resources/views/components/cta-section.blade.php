@@ -1,7 +1,7 @@
 @php
     $backgroundImage = isset($cta) && $cta->image
         ? asset('storage/' . $cta->image)
-        : asset('defaultImage/default-bg.jpg');
+        : asset('assets/images/hero_cta.jpg');
 
     $ctaTitle = $cta->title ?? 'Do you need help?';
     $ctaDescription = $cta->description ?? 'We are here to assist you with your queries and problems. Reach out to us now!';

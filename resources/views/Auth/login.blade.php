@@ -21,7 +21,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('asset/images/logo.png') }}" />
 </head>
 @php
     logger(Route::currentRouteName());
@@ -34,10 +34,11 @@
                 <div class="row w-100 mx-0">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                            <div class="brand-logo">
-                                <img src="{{ asset('front/images/logo.png') }}" alt="logo">
+                            <div class="brand-logo text-center">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                                 <h4 >Realm Infotech Pvt. Ltd </h4>
                             </div>
-                            <h4>Hello! let's get started</h4>
+
                             <h6 class="fw-light">Sign in to continue.</h6>
                             <form class="pt-3" action="{{ route('login.store') }}" method="post">
                                 @if (session()->has('message'))

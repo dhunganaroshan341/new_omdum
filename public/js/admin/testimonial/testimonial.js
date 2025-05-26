@@ -23,9 +23,6 @@ $(document).ready(function () {
             data: "name",
             name: "name"
         }, {
-            data: "address",
-            name: "address"
-        }, {
             data: "designation",
             name: "designation",
         }, {
@@ -162,17 +159,17 @@ $(document).ready(function () {
                     .description);
                 if (response.message.image != null) {
                     $("#testimonialImage").html(
-                        `<img src="/storage/${response.message.image}" 
-                                  alt="User Image" 
-                                  width="100" 
-                                  height="100" 
+                        `<img src="/storage/${response.message.image}"
+                                  alt="User Image"
+                                  width="100"
+                                  height="100"
                                   onerror="this.onerror=404; this.src='/defaultimage/defaultimage.webp';">`
                     );
                 } else {
                     $("#testimonialImage").html(
-                        `<img src="/defaultimage/defaultimage.webp" 
-                                  alt="Default Image" 
-                                  width="100" 
+                        `<img src="/defaultimage/defaultimage.webp"
+                                  alt="Default Image"
+                                  width="100"
                                   height="100">`
                     );
                 }
