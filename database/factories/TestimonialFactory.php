@@ -19,7 +19,7 @@ class TestimonialFactory extends Factory
         return [
             'name'=>fake()->name(),
             // 'image'=>fake()->image(),
-            'image' => fake()->image('public/storage/images/testimonial/', 360, 360, 'animals', true, 'cats', true, 'jpg'),
+            'image' => fake()->image('public/images/testimonial/', 360, 360, 'animals', true, 'cats', true, 'jpg'),
             'address'=>fake()->address(),
             'designation'=>fake()->jobTitle(),
             'description'=>fake()->paragraph()
