@@ -72,7 +72,7 @@ Route::middleware('isLogin')->group(function () {
 Route::middleware('admin')->group(function () {
 
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
 
     Route::get('/admin/user', [UserController::class, 'index'])->name('admin.user');
     Route::post('/admin/user/reset-password/{id}', [UserController::class, 'passwordReset'])->name('admin.user.reset-password');
