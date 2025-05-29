@@ -3,8 +3,8 @@
     <div class="angle-right"></div>
     <div class="container">
         <div class="testimonial-head text-center">
-            <div class="divider mb-3 mx-auto"></div>
-            <h2 class="text-realm-yellow mb-4">Testimonials</h2>
+            <div class="divider mb-3 mx-auto "></div>
+            <h2 class="text-realm-blue mb-4">Testimonials</h2>
         </div>
 
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">

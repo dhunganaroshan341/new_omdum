@@ -110,5 +110,8 @@
     .header-top-bar a {
         font-size: 14px;
     }
+    #servicesDropdown:hover .dropdown-menu {
+        display: block;
+    }
 </style>
 @endpush

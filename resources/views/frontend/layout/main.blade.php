@@ -18,6 +18,39 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('mdn/css/mdb.min.css') }}" />
     {{-- @vite('resources/css/app.css') --}}
+    <style>
+         .btn-primary{
+        background-color: var(--realm-blue);
+        color:var(--realm-yellow);
+        /* border-color: #007bff; */
+    }
+    .btn-primary:hover {
+        background-color: var(--realm-blue-light);
+        color:var(--realm-yellow);
+        /* border-color: #0056b3; */
+    }
+    .dropdown-item .active {
+        color: var(--realm-blue);
+        background-color: var(--realm-yellow);
+    }
+    .dropdown-item.active, .dropdown-item:active{
+        color: var(--realm-yellow);
+        background-color: var(--realm-blue);
+        /* background: var(--realm-yellow); */
+    }
+
+    /* gallery */
+    .card-img-top:hover {
+        transform: scale(1.01);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    } .card:hover {
+        transform: scale(1.04);
+        transition: transform 0.4s ease;
+        cursor: pointer;
+    }
+
+    </style>
 @stack('styles')
 
 

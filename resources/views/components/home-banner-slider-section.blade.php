@@ -13,13 +13,13 @@
                         <div class="row align-items-center d-flex h-100">
                             <div class="col-md-7">
                                 <div class="block text-white px-3 px-md-4 py-3">
-                                    <div class="divider mb-3"></div>
+                                    <div class="divider-blue mb-3"></div>
                                     <h1 class="mb-3 mt-3">{{ $slide->title }}</h1>
                                     <p class="mb-4 text-left">{!! $slide->shortdesc !!}</p>
 
                                     @if ($index == 0)
                                         <div class="btn-container">
-                                            <a href="{{ route('contact-us') }}" target="_blank" class="btn btn-dark">
+                                            <a href="{{ route('contact-us') }}" target="_blank" class="btn btn-primary ">
                                                 Contact Us <i class="icofont-simple-right ml-2"></i>
                                             </a>
                                         </div>

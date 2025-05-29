@@ -22,7 +22,7 @@
                                     {!! Str::limit($post->description ?? '', 150, '...') !!}
                                 </p>
                             </div>
-                            <a href="#" class="btn btn-primary mt-4">Details <i class="fa-solid fa-angle-right"></i></a>
+                            <a href="#" class="btn btn-primary mt-4">Read More <i class="fa-solid fa-angle-right"></i></a>
                         </div>
                     </div>
                 @endforeach

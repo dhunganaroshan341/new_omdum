@@ -23,6 +23,7 @@
 
 <section class="section-2 py-5">
     <div class="container py-2">
+
         <div class="row">
             <div class="col-md-6 align-items-center d-flex">
                 <div class="about-block">
@@ -38,9 +39,11 @@
                 </div>
             </div>
         </div>
+         {{-- @include('components.service-popup-form') --}}
     </div>
 </section>
 @include('components.other-services-component',['otherServicetitle'=>'Other Services'])
+
   {{-- do you need help section --}}
 @include('components.cta-section')
 

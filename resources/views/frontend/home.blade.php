@@ -86,6 +86,13 @@
            </div>
         </div>
     </div>
+
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-primary">
+        <a href="{{ route('service') }}" class="text-white">View All Services</a>
+    </button>
+</div>
+
 </section>
 
 {{-- do you need help section --}}
