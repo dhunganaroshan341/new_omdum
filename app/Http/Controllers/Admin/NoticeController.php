@@ -53,7 +53,7 @@ class NoticeController extends Controller
                     </div>';
                 })
                 ->addColumn('image', function ($img) {
-                    $image = $img->image ? asset('storage/' . $img->image) : '';
+                    $image = $img->image ? asset('uploads/' . $img->image) : '';
                     return ' <img  src="' . $image . '"  class="img-fluid"  alt="image" />';
                 })
                 ->addColumn('description', function ($desc) {
@@ -81,22 +81,22 @@ class NoticeController extends Controller
         try {
             $notice = Notice::find($id);
             if ($notice) {
-                if (Notice::count() > 1) { 
+                if (Notice::count() > 1) {
                     Notice::query()->update(['status' => 'Inactive']);
                     $notice->status = $notice->status === 'Active' ? 'Inactive' : 'Active';
-                } else { 
+                } else {
                     $notice->status = $notice->status === 'Active' ? 'Inactive' : 'Active';
                 }
                 $notice->save();
-        
+
                 return response()->json(['success' => true, 'status' => 200, 'message' => 'Status changed successfully']);
             }
-        
+
             return response()->json(['success' => false, 'status' => 404, 'message' => 'Notice not found']);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
-        
+
     }
 
     /**

@@ -12,7 +12,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active"
-                style="background-image: url({{ $pageBanner->image ? asset('storage/' . $pageBanner->image) : asset('assets/images/banner1.jpg') }});">
+                style="background-image: url({{ $pageBanner->image ? asset('uploads/' . $pageBanner->image) : asset('assets/images/banner1.jpg') }});">
                 <div class="hero-small-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -54,7 +54,7 @@
 
                     @foreach ($detail->postImages as $postImage)
                         <div class="post-image">
-                            <div class="post-image-cover" style="background-image: url('{{ asset('storage/' . $postImage->image) }}')"></div>
+                            <div class="post-image-cover" style="background-image: url('{{ asset('uploads/' . $postImage->image) }}')"></div>
                         </div>
                     @endforeach
 

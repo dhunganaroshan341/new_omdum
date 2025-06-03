@@ -48,7 +48,7 @@ class HomeSliderController extends Controller
                     return view('Admin.Button.button', compact('data'))->render();
                 })
                 ->addColumn('image', function ($item) {
-                    $url = $item->image ? asset('storage/' . $item->image) : asset('defaultImage/defaultimage.webp');
+                    $url = $item->image ? asset('uploads/' . $item->image) : asset('defaultImage/defaultimage.webp');
                     $defaultImage = asset('defaultImage/defaultimage.webp');
                     return '<img src="' . $url . '" width="50" height="50" alt="Image" onerror="this.src=\'' . $defaultImage . '\'" />';
                 })

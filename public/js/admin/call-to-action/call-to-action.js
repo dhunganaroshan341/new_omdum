@@ -80,7 +80,7 @@ $(document).ready(function () {
                     .description);
                 if (response.message.image != null) {
                     $("#callToActionImage").html(
-                        `<img src="/storage/${response.message.image}"
+                        `<img src="/uploads/${response.message.image}"
                                   alt="User Image"
                                   width="100"
                                   height="100"

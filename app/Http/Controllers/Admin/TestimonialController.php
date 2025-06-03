@@ -44,7 +44,7 @@ class TestimonialController extends Controller
                     return view('Admin.Button.button', compact('data'));
                 })
                 ->addColumn('image', function ($item) {
-                    $dataimage = asset('storage/' . $item->image);
+                    $dataimage = asset('uploads/' . $item->image);
                     $defaultImage=asset('defaultImage/defaultimage.webp');
                     return ' <td class="py-1">
                     <img src="' . $dataimage . '" width="50" height="50" onerror="this.src=\''.$defaultImage.'\'"/>

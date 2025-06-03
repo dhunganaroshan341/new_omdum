@@ -156,7 +156,7 @@ $(document).ready(function () {
                     $("#id").val(response.message.id);
                 if (response.message.image != null) {
                     $("#testimonialImage").html(
-                        `<img src="/storage/${response.message.image}"
+                        `<img src="/uploads/${response.message.image}"
                                   alt="User Image"
                                   width="100"
                                   height="100"

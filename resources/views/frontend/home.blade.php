@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="image-red-background">
-                        <img src="{{ asset('storage/' . $frontend->image) }}" alt="" class="w-100">
+                        <img src="{{ asset('uploads/' . $frontend->image) }}" alt="" class="w-100">
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-6">
                 <div class="image-red-background">
-                    <img src="{{ !empty($welcome_image) ? asset('storage/'.$welcome_image->path) : asset('assets/images/about-us.jpg') }}" alt="About Realm Infotech" class="w-100">
+                    <img src="{{ !empty($welcome_image) ? asset('uploads/'.$welcome_image->path) : asset('assets/images/about-us.jpg') }}" alt="About Realm Infotech" class="w-100">
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card border-0">
                         @if (!empty($service->image))
-    <img src="{{ asset('storage/' . $service->image) }}" class="card-img-top" alt="">
+    <img src="{{ asset('uploads/' . $service->image) }}" class="card-img-top" alt="">
 @else
     <img src="{{ asset('assets/images/digital-marketing.jpg') }}" class="card-img-top" alt="">
 @endif
@@ -87,20 +87,18 @@
         </div>
     </div>
 
-  <div class="d-flex justify-content-center">
-    <button class="btn btn-primary">
-        <a href="{{ route('service') }}" class="text-white">View All Services</a>
+    <button class="btn btn-secondary">
+           <a href="{{ route('service') }}" class="text-white">View All Services</a>
     </button>
-</div>
-
 </section>
-
+ @include('components.client-bar')
 {{-- do you need help section --}}
 @include('components.cta-section')
 
 
     <section class="section-3 py-5">
         {{-- @include('frontend.testimonial') --}}
+
        @include('components.testimonial-section', ['testimonials' => $testimonials ?? []])
 
     </section>

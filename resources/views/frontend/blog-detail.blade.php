@@ -3,7 +3,7 @@
     <section class="hero-small">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('storage/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
+            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
                 <div class="hero-small-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -24,14 +24,14 @@
         <div class="container py-2">
             <div class="col-md-12">
                 {{-- <div class="image-red-background">
-                    <img src="{{ asset('storage/' . $detail->postImages[0]->image) }}" alt="" class="w-100">
+                    <img src="{{ asset('uploads/' . $detail->postImages[0]->image) }}" alt="" class="w-100">
                 </div> --}}
 
                 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach ($detail->postImages as $index=>$image)
                         <div class="carousel-item  {{ $index==1 ? 'active':'' }}">
-                            <img src="{{ asset('storage/' . $image->image) }}" class="d-block w-100" width="700" height="700" alt="...">
+                            <img src="{{ asset('uploads/' . $image->image) }}" class="d-block w-100" width="700" height="700" alt="...">
                         </div>
                         @endforeach
                     </div>

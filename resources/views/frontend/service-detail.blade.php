@@ -4,7 +4,7 @@
 <section class="hero-small">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('{{ asset('storage/' . ($pageBanner->image ?? 'images/banner1.jpg')) }}');">
+            <div class="carousel-item active" style="background-image: url('{{ asset('uploads/' . ($pageBanner->image ?? 'images/banner1.jpg')) }}');">
                 <div class="hero-small-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -34,12 +34,12 @@
             <div class="col-md-6">
                 <div class="image-realm-background-before">
                     @if(!empty($serviceDetail->image))
-                        <img src="{{ asset('storage/' . $serviceDetail->image) }}" alt="" class="w-100">
+                        <img src="{{ asset('uploads/' . $serviceDetail->image) }}" alt="" class="w-100">
                     @endif
                 </div>
             </div>
         </div>
-         {{-- @include('components.service-popup-form') --}}
+         @include('components.service-popup-form')
     </div>
 </section>
 @include('components.other-services-component',['otherServicetitle'=>'Other Services'])

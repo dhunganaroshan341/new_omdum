@@ -389,6 +389,13 @@ a{
 
 .section-3 .cards .card .card-title a{
     color: var(--realm-blue);
+}.section-3 .cards .card .card-title-blog{
+    font-size: 24px;
+ color:black;
+}
+
+.section-3 .cards .card .card-title-blog a{
+    color: black;
 }
 
 

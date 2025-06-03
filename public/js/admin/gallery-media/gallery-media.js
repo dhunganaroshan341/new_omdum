@@ -83,7 +83,7 @@ $(document).on("click", ".imageListPopup", function () {
             if (response.images && response.images.length > 0) {
 
                 response.images.forEach((image, index) => {
-                    let imagePath = '/storage/' + image.path.replace('//',
+                    let imagePath = '/uploads/' + image.path.replace('//',
                         '/');
                     $(".fetch-post-image-data").append(`
                      <div class="carousel-item ${index === 0 ? 'active' : ''} ">
@@ -366,7 +366,7 @@ $(document).on("click", ".commentinfoBtn", function () {
 
                 response.images.forEach((image) => {
 
-                    let imagePath = '/storage/' + image.image;
+                    let imagePath = '/uploads/' + image.image;
                     let content = image.content;
                     console.log(image);
 

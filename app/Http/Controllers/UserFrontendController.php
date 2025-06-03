@@ -30,6 +30,7 @@ class UserFrontendController extends Controller
         // dd($homeslides);
         $testimonials = Testimonial::where('status', 'Active')->get();
         $notice = Notice::where('status', 'Active')->first();
+        $clients = \App\Models\Client::with('albums')->get();;
         // dd($notice);
         $services = Service::where('status', 1)->get();
         $content_title="Home";
@@ -39,7 +40,7 @@ class UserFrontendController extends Controller
             ->take(6) // or ->limit(6)
             ->get();
 
-        return view('frontend.home', compact([ 'posts','cta','services','frontend', 'homeslides', 'testimonials', 'notice','content_title']));
+        return view('frontend.home', compact([ 'posts','cta','services','frontend', 'homeslides', 'testimonials', 'notice','content_title','clients']));
 
     }
     public function aboutUs()

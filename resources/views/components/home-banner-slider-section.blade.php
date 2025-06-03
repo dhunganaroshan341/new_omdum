@@ -5,7 +5,7 @@
         <div class="carousel-inner">
             @foreach ($homeslides as $index => $slide)
                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"
-                     style="background-image: url({{ asset('storage/' . $slide->image) }}); background-size: cover; background-position: center; height: 100vh; position: relative;">
+                     style="background-image: url({{ asset('uploads/' . $slide->image) }}); background-size: cover; background-position: center; height: 100vh; position: relative;">
 
                     <div class="hero-background-overlay" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgba(0,0,0,0.5); z-index: 1;"></div>
 

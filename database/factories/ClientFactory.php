@@ -23,7 +23,7 @@ class ClientFactory extends Factory
             'email'=>fake()->unique()->safeEmail(),
             'address'=>fake()->address(),
             'contact'=>fake()->phoneNumber(),
-            'image'=>fake()->imageUrl(),
+            // 'image'=>fake()->imageUrl(),
             'description'=>fake()->paragraph(),
             'created_at'=>now(),
             'updated_at'=>now(),

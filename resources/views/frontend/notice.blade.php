@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
             <div class="card" style="width: 100%;">
-                <img src="{{ asset('storage/' . $notice->image) }}" class="card-img-top" alt="...">
+                <img src="{{ asset('uploads/' . $notice->image) }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     {{-- <h5 class="card-title">{{ $notice->title }}</h5> --}}
                   <p class="card-text">{!! $notice->description !!}</p>

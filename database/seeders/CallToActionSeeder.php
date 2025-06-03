@@ -19,7 +19,7 @@ class CallToActionSeeder extends Seeder
             CallToAction::updateOrCreate(['page'=>$page,
             'title'=>'Do you need help?',
             'description'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi ipsum, odit velit exercitationem praesentium error id iusto dolorem expedita nostrum eius atque? Aliquam ab reprehenderit animi sapiente quasi, voluptate dolorum?',
-            'image'=>'unavailable.jpg',
+            'image'=>'hero_cta.jpg',
             'link'=>'contact-us'
             ]
         );

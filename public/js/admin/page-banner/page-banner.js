@@ -69,7 +69,7 @@ $(document).ready(function () {
                 $("#description").summernote("code", response.message.description);
 
                 let img = response.message.image
-                    ? `/storage/${response.message.image}`
+                    ? `/uploads/${response.message.image}`
                     : '/defaultimage/defaultimage.webp';
 
                 $("#bannerImage").html(`

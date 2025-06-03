@@ -122,7 +122,7 @@ $(document).ready(function () {
                     if (response.message.image != null) {
                         let image = response.message.image ?? '';
                         $("#noticeImage").html(`
-                             <img src="/storage/${image}" class="img-fluid" height="100" width="100" alt="" />
+                             <img src="/uploads/${image}" class="img-fluid" height="100" width="100" alt="" />
                             `);
                     }
                     $("#description").summernote("code", response.message.description);

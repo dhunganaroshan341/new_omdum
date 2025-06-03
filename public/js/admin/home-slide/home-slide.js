@@ -61,7 +61,7 @@ $(document).ready(function () {
                 }
             }
         ],
-        dom: '<"toolbar">lfrtip',       
+        dom: '<"toolbar">lfrtip',
 
     })
 
@@ -164,7 +164,7 @@ $(document).ready(function () {
                 $("#title_home").val(response.message.title);
                 if (response.message.image != null) {
                     $("#homeSlideImage").html(`
-                <img src="/storage/${response.message.image}" width="100" height="100">
+                <img src="/uploads/${response.message.image}" width="100" height="100">
                 `);
                 }
                 $("#homeSliderDescription").summernote('code', response.message

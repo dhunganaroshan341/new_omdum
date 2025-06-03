@@ -20,7 +20,7 @@
                 </div>
                 <div>
                     <a class="navbar-brand brand-logo" href="{{ url('/') }}">
-                        <img src="{{ $logo??asset('assets/images/logo.jpeg') }}" alt="logo" />
+                        <img src="{{ $logo ?? asset('assets/images/logo.jpeg') }}" alt="logo" />
                     </a>
                     <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}">
                         <img src="{{ asset('admin/images/logo.png') }}" alt="logo" />
@@ -48,15 +48,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.setting') }}">
                             <i class="mdi mdi-cog  menu-icon"></i>
-                            <span class="menu-title">Setting</span>
+                            <span class="menu-title">General Settings</span>
                         </a>
                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.call-to-action.index') }}">
-                            <i class="mdi mdi-cog  menu-icon"></i>
-                            <span class="menu-title">CTA</span>
-                        </a>
-                    </li>
+
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.frontend') }}">
                             <i class="mdi mdi-apps menu-icon"></i>
@@ -70,17 +65,45 @@
                         </a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.homeslide') }}">
-                            <i class="mdi mdi-application menu-icon"></i>
-                            <span class="menu-title">HomeSlide</span>
+                        <a class="nav-link" href="{{ route('admin.gallery-albums.index') }}">
+                            <i class="mdi mdi-view-gallery menu-icon"></i>
+                            <span class="menu-title"> Gallery</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.page-banner.index') }}">
-                            <i class="mdi mdi-application menu-icon"></i>
-                            <span class="menu-title">Page Banner</span>
+                        <a class="nav-link" href="{{ route('service.index') }}">
+                            <i class="mdi mdi-face-agent menu-icon"></i>
+                            <span class="menu-title">Services </span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#bannerMenu" role="button"
+                            aria-expanded="false" aria-controls="bannerMenu">
+                            <i class="mdi mdi-folder menu-icon"></i>
+                            <span class="menu-title"> Banners</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="bannerMenu">
+                            <ul class="nav flex-column sub-menu list-unstyled ">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.homeslide') }}">
+                                        <i class="mdi mdi-page-layout-header-footer menu-icon"></i> Home Slider
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.page-banner.index') }}">
+                                        <i class="mdi mdi-page-layout-header menu-icon"></i> Page Banner
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.call-to-action.index') }}">
+                                        <i class="mdi mdi-phone menu-icon"></i> CTA Banner
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.testimonial') }}">
                             <i class="mdi mdi-animation menu-icon"></i>
@@ -94,76 +117,56 @@
                             <span class="menu-title">Client </span>
                         </a>
                     </li>
+
+
+
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('service.index') }}">
-                            <i class="mdi mdi-face-agent menu-icon"></i>
-                            <span class="menu-title">Services </span>
-                        </a>
-                    </li>
-
-
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.contact') }}">
-                            <i class="mdi mdi-contacts menu-icon"></i>
-                            <span class="menu-title">Contact </span>
-                        </a>
-                    </li>
-                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('notice.index') }}">
                             <i class="mdi mdi-bullhorn menu-icon"></i>
                             <span class="menu-title">Notice </span>
                         </a>
                     </li>
-                  <!-- Blog Section with Collapse -->
-<li class="nav-item">
-    <a class="nav-link" data-bs-toggle="collapse" href="#blogSubmenu" role="button" aria-expanded="false" aria-controls="blogSubmenu">
-        <i class="mdi mdi-post-outline menu-icon"></i>
-        <span class="menu-title">Blogs</span>
-        <i class="mdi mdi-chevron-down float-end"></i>
-    </a>
-    <ul class="collapse ps-3" id="blogSubmenu">
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.category') }}">
-                <i class="mdi mdi-grid-large menu-icon"></i>
-                <span class="menu-title">Category</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin.post') }}">
-                <i class="mdi mdi-file-document-box menu-icon"></i>
-                <span class="menu-title">Post</span>
-            </a>
-        </li>
-    </ul>
-</li>
+                    <!-- Blog Section with Collapse -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#blogSubmenu" role="button"
+                            aria-expanded="false" aria-controls="blogSubmenu">
+                            <i class="mdi mdi-post-outline menu-icon"></i>
+                            <span class="menu-title">Blogs</span>
+                            <i class="mdi mdi-chevron-down float-end"></i>
+                        </a>
+                        <ul class="collapse ps-3" id="blogSubmenu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.category') }}">
+                                    <i class="mdi mdi-grid-large menu-icon"></i>
+                                    <span class="menu-title">Category</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.post') }}">
+                                    <i class="mdi mdi-newspaper menu-icon"></i>
+                                    <span class="menu-title">Post</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                     <!-- Album & Media with collapse toggle -->
-    <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#gallerySubmenu" role="button" aria-expanded="false" aria-controls="gallerySubmenu">
-            <i class="mdi mdi-view-gallery menu-icon"></i>
-            <span class="menu-title">Gallery</span>
-            <i class="mdi mdi-chevron-down float-end"></i>
-        </a>
-        <ul class="collapse ps-3" id="gallerySubmenu">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.gallery-albums.index') }}">
-                    <i class="mdi mdi-chevron-down float-end"></i> <span class="menu-title">Album</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.gallery-media.index') }}">
-                    <i class="mdi mdi-chevron-down float-end"></i>  <span class="menu-title">Media</span>
-                </a>
-            </li>
-        </ul>
-    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.contact') }}">
+                            <i class="mdi mdi-contacts menu-icon"></i>
+                            <span class="menu-title">Contact </span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.logout') }}">
                             <i class="mdi mdi-logout  menu-icon"></i>
                             <span class="menu-title">Logout</span>
                         </a>
                     </li>
+
 
 
                 </ul>

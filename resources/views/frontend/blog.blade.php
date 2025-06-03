@@ -5,7 +5,7 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
-            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('storage/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
+            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
                 <div class="hero-small-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -31,7 +31,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="card border-0 h-100">
                                 @if(!empty($post->postImages) && isset($post->postImages[0]->image))
-                                    <img src="{{ asset('storage/' . $post->postImages[0]->image) }}" class="card-img-top" alt="Post Image">
+                                    <img src="{{ asset('uploads/' . $post->postImages[0]->image) }}" class="card-img-top" alt="Post Image">
                                 @else
                                     <img src="{{ asset('assets/images/default-blog.jpg') }}" class="card-img-top" alt="Default Image">
                                 @endif

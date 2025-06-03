@@ -5,7 +5,7 @@
 <section class="hero-small">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('storage/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
+            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
                 <div class="hero-small-background-overlay"></div>
                 <div class="container h-100">
                     <div class="row align-items-center d-flex h-100">
@@ -40,7 +40,7 @@
 
     <div class="row align-items-center mt-2 mb-4">
         <div class="col-lg-4 text-center text-lg-start mb-3 m-lg-0">
-            <img src="{{ asset(optional($detail->createdBy)->image ? 'storage/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
+            <img src="{{ asset(optional($detail->createdBy)->image ? 'uploads/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
                  class="rounded shadow-1-strong me-2" height="35" alt="Author" />
             <span>Published <u>{{ $detail->created_at->format('d M Y') }}</u> by</span>
             <a href="#" class="text-dark">{{ optional($detail->createdBy)->full_name }}</a>
@@ -84,7 +84,7 @@
                     <div class="carousel-inner">
                         @foreach ($detail->postImages as $index => $image)
                         {{-- <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                            <img src="{{ asset('storage/' . $image->image) }}"
+                            <img src="{{ asset('uploads/' . $image->image) }}"
                                 class="img-fluid w-100 h-auto shadow-2-strong rounded mb-2"
                                 alt="Post Image">
                         </div> --}}
@@ -102,7 +102,7 @@
 
                 <div class="row align-items-center mt-2 mb-4">
                     <div class="col-lg-4 text-center text-lg-start mb-3 m-lg-0">
-                        <img src="{{ asset(optional($detail->createdBy)->image ? 'storage/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
+                        <img src="{{ asset(optional($detail->createdBy)->image ? 'uploads/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
                              class="rounded shadow-1-strong me-2" height="35" alt="Author" />
                         <span>Published <u>{{ $detail->created_at->format('d M Y') }}</u> by</span>
                         <a href="#" class="text-dark">{{ optional($detail->createdBy)->full_name }}</a>
@@ -115,14 +115,14 @@
                 <p>{!! $detail->description !!}</p>
 
                 @if (count($detail->postImages))
-                    <img src="{{ asset('storage/' . $detail->postImages[0]->image) }}" class="img-fluid w-100 h-auto shadow-1-strong rounded mb-4" alt="Post Image" />
+                    <img src="{{ asset('uploads/' . $detail->postImages[0]->image) }}" class="img-fluid w-100 h-auto shadow-1-strong rounded mb-4" alt="Post Image" />
                 @endif
             </section>
 
             <section class="border-bottom mb-4 pb-4">
                 <div class="row">
                     <div class="col-3">
-                        <img src="{{ asset(optional($detail->createdBy)->image ? 'storage/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
+                        <img src="{{ asset(optional($detail->createdBy)->image ? 'uploads/' . $detail->createdBy->image : 'defaultImage/defaultimage.webp') }}"
                              class="img-fluid rounded shadow-1-strong" height="100" width="100" alt="Author Image" />
                     </div>
                     <div class="col-9">
