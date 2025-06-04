@@ -13,6 +13,7 @@ class GalleryMedia extends Model
         'gallery_album_id',
         'media_path',
         'status',
+        'url'
     ];
 
     /**

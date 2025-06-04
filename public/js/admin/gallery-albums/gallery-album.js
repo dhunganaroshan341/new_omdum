@@ -1,4 +1,27 @@
 $(document).ready(function () {
+
+    function toggleMediaFields() {
+            var selectedType = $('#type').val();
+
+            if (selectedType === 'image') {
+                // Show image-related fields
+                $('#galleryMedia').closest('.col-md-12').show();
+                $('#thumbnailImage').parent().show();
+                $('#url-group').hide();
+            } else if (selectedType === 'video' || selectedType === 'url') {
+                // Show URL field, hide image-related
+                $('#url-group').show();
+                $('#galleryMedia').closest('.col-md-12').hide();
+                $('#thumbnailImage').parent().hide();
+            } else {
+                // Default state
+                $('#galleryMedia').closest('.col-md-12').hide();
+                $('#thumbnailImage').parent().hide();
+                $('#url-group').hide();
+            }
+        }
+
+
     function uploadThumbnail(albumId, formElement) {
         let formData = new FormData(formElement);
 
@@ -55,6 +78,14 @@ $(document).ready(function () {
         $("#thumbnailImage").hide();
         $(".submitBtn").show();
         $(".form").attr("id", 'addForm');
+
+         // Initialize on page load
+        toggleMediaFields();
+
+        // Re-evaluate on dropdown change
+        $('#type').on('change', function () {
+            toggleMediaFields();
+        });
         $("#addForm")[0].reset();
     });
 
@@ -106,6 +137,10 @@ $(document).ready(function () {
         $(".form").attr("id", "updateForm");
         $("#updateForm")[0].reset();
         $("#albumModalLabel").text("Edit Gallery Album");
+      $("#type").hide();
+               // Correctly hides the type <select>
+    $("#url-group").hide();    // Hides the whole URL input group (label + input)
+    $("#type-group").hide();    // Hides the whole URL input group (label + input)
 
         // loading show
                  $("#loading-paragraph").val('...loading..');
@@ -122,6 +157,7 @@ $(document).ready(function () {
                     $("#loading-paragraph").val('');
                     $("#title").val(album.title);
                     $("#type").val(album.type);
+
                     $("#client_id").val(album.client_id);
                     if (album.gallery_media && album.gallery_media.length > 0) {
                         $(".galleryMediaData").html(""); // clear first
@@ -133,10 +169,12 @@ $(document).ready(function () {
                                 <div class="col-4 mb-3">
                                     <div class="position-relative">
                                         <img src="/${imagePath}" alt="Image" class="img-thumbnail w-100" style="height: 150px; object-fit: cover;">
-                                        <button type="button" class="btn btn-sm text-danger position-absolute top-0 end-0 m-1 remove-image"
-                                            data-image-id="${image.id}" title="Remove Image" style="width: 30px; height: 30px; line-height: 1;">
-                                            &times;
-                                        </button>
+                                       <button type="button" class="btn btn-sm text-danger position-absolute top-0 end-0 m-1 remove-image"
+        data-image-id="${image.id}" title="Remove Image"
+        style="width: 30px; height: 30px; line-height: 1;">
+    <span style="font-size: 24px;">&times;</span>
+</button>
+
                                     </div>
                                 </div>
                             `);

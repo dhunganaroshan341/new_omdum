@@ -14,6 +14,7 @@ class GalleryAlbum extends Model
         'type',
         'client_id',
         'thumbnail',
+        'url',
         'status',
     ];
 

@@ -22,14 +22,13 @@
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                        <input type="text" name="title" id="title" class="form-control" placeholder="Enter title" required>
+                        <input type="text" name="title" id="title" class="form-control"
+                            placeholder="Enter title" required>
                     </div>
-                    {{-- <div class="mb-3 d-none ">
-                        <label for="thumbnail" class="form-label">Thumbnail <span class="text-danger"></span></label>
-                        <input type="file" name="thumbnail" id="thumbnail" class="form-control" placeholder="upload Thumbnail image" >
-                    </div> --}}
+
                     <div class="col-md-12 mb-4">
-                        <label for="" class="form-label">Gallery Images<span class="text-danger">*</span></label>
+                        <label for="" class="form-label">Gallery Images<span
+                                class="text-danger">*</span></label>
                         <input type="file" name="media_path[]" id="galleryMedia" class="form-control" multiple
                             placeholder="" aria-describedby="helpId" />
                         <span class="text-danger infoPostImageText"></span>
@@ -46,34 +45,36 @@
                         <img id="thumbnailImage" src="" alt="thumbnail">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
+                    <div class="mb-3" id="type-group">
+                        <label for="type" id="type_label" class="form-label">Type <span
+                                class="text-danger">*</span></label>
                         <select name="type" id="type" class="form-select" required>
                             <option value="">Select Type</option>
                             <option value="image">Image</option>
                             <option value="video">Video</option>
+                            <option value="url">url</option>
                             {{-- <option value="pdf">Pdf</option> --}}
                         </select>
                     </div>
+                    <div class="form-group" id="url-group" style="display: none;">
+                        <label for="url">Url</label>
+                        <input type="text" class="form-control" name="url" id="url"
+                            aria-describedby="helpId" placeholder="Enter URL">
+                        <small id="helpId" class="form-text text-muted">Help text</small>
+                    </div>
+
 
                     <div class="mb-3">
                         <label for="client_id" class="form-label">Client <span class="text-danger">*</span></label>
-                        <select name="client_id" id="client_id" class="form-select" >
+                        <select name="client_id" id="client_id" class="form-select">
                             <option value="">Select Client</option>
-                            @foreach($clients as $client)
+                            @foreach ($clients as $client)
                                 <option value="{{ $client->id }}">{{ $client->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
-                    {{-- <div class="mb-3">
-                        <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
-                        <select name="status" id="status" class="form-select" required>
-                            <option value="">Select Status</option>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                    </div> --}}
+
                 </div>
 
                 <div class="modal-footer">
@@ -122,34 +123,34 @@
 </div>
 
 @push('styles')
-<style>
-    .galleryMediaWrapper {
-        max-height: 400px;
-        overflow-y: auto;
-        padding: 10px;
-        border: 1px solid #ddd;
-        background-color: #fafafa;
-    }
+    <style>
+        .galleryMediaWrapper {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
 
-    .galleryMediaData {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
+        .galleryMediaData {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .galleryMediaData .gallery-item {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 0 4px rgba(0,0,0,0.1);
-    }
+        .galleryMediaData .gallery-item {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+        }
 
-    .galleryMediaData .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-</style>
+        .galleryMediaData .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
 @endpush

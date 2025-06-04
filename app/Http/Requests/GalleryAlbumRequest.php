@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -15,9 +14,10 @@ class GalleryAlbumRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'type' => 'required|in:image,video,pdf,doc,none',
+            'type' => 'required|in:image,video,pdf,doc,website,other_link,none',
+            'url' => 'nullable|string|max:2048',
             'client_id' => 'nullable|exists:clients,id',
-            // 'status' => 'nullable|in:Active,Inactive|default:Active',
+            'status' => 'nullable|in:Active,Inactive',
         ];
     }
 
@@ -29,12 +29,13 @@ class GalleryAlbumRequest extends FormRequest
             'title.max' => 'The album title cannot exceed 255 characters.',
 
             'type.required' => 'Please select a valid album type.',
-            'type.in' => 'The selected type must be one of: image, video, pdf, doc, or none.',
+            'type.in' => 'The selected type must be one of: image, video, pdf, doc, website, other_link, or none.',
+
+            'url.max' => 'The URL must not exceed 2048 characters.',
 
             'client_id.exists' => 'The selected client does not exist.',
 
-            // 'status.nullable' => 'The album status is required.',
-            // 'status.in' => 'The status must be either Active or Inactive.',
+            'status.in' => 'The status must be either Active or Inactive.',
         ];
     }
 }

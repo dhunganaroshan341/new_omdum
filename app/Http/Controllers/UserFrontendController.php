@@ -125,6 +125,30 @@ class UserFrontendController extends Controller
     ->withCount('post')
     ->get();
 
+    $recentIds = $recentPosts->pluck('id')->toArray();
+
+// Step 2: Try to get related posts from same category (exclude recent)
+$currentCategoryId = $currentPost->category_id ?? null;
+
+$relatedPosts = Post::with('postImages')
+    ->where('status', 'Active')
+    ->where('category_id', $currentCategoryId)
+    ->whereNotIn('id', $recentIds)
+    ->latest()
+    ->take(3)
+    ->get();
+
+// Step 3: If none found from same category, take 3 random excluding recent
+if ($relatedPosts->count() === 0) {
+    $relatedPosts = Post::with('postImages')
+        ->where('status', 'Active')
+        ->whereNotIn('id', $recentIds)
+        ->inRandomOrder()
+        ->take(3)
+        ->get();
+}
+
+
     // ✅ Process title
 $processedDescription  = $detail->title;
     if (!empty($pageBanner?->title)) {
@@ -135,7 +159,9 @@ $processedDescription  = $detail->title;
         'detail',
         'images',
         'post',
+
         'recentPosts',
+        'relatedPosts',
         'categories',
         'comments',
         'content_title',

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title  }} | {{   $content_title ?? 'Home' }}</title>
-    <link rel="icon" href="{{ asset('storage/'. $logo) }}" type="image/x-icon" sizes="16x16 32x32 64x64">
+    <title>{{ $title }} | {{ $content_title ?? 'Home' }}</title>
+    <link rel="icon" href="{{ asset('storage/' . $logo) }}" type="image/x-icon" sizes="16x16 32x32 64x64">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
@@ -19,51 +19,56 @@
     <link rel="stylesheet" href="{{ asset('mdn/css/mdb.min.css') }}" />
     {{-- @vite('resources/css/app.css') --}}
     <style>
-         .btn-primary{
-        background-color: var(--realm-blue);
-        color:var(--realm-yellow);
-        /* border-color: #007bff; */
-    }
-    .btn-primary:hover {
-        background-color: var(--realm-blue-light);
-        color:var(--realm-yellow);
-        /* border-color: #0056b3; */
-    }
-    .dropdown-item .active {
-        color: var(--realm-blue);
-        background-color: var(--realm-yellow);
-    }
-    .dropdown-item.active, .dropdown-item:active{
-        color: var(--realm-yellow);
-        background-color: var(--realm-blue);
-        /* background: var(--realm-yellow); */
-    }
+        .btn-primary {
+            background-color: var(--realm-blue);
+            color: var(--realm-yellow);
+            /* border-color: #007bff; */
+        }
 
-    /* gallery */
-    .card-img-top:hover {
-        transform: scale(1.01);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-    } .card:hover {
-        transform: scale(1.04);
-        transition: transform 0.4s ease;
-        cursor: pointer;
-    }
+        .btn-primary:hover {
+            background-color: var(--realm-blue-light);
+            color: var(--realm-yellow);
+            /* border-color: #0056b3; */
+        }
 
+        .dropdown-item .active {
+            color: var(--realm-blue);
+            background-color: var(--realm-yellow);
+        }
+
+        .dropdown-item.active,
+        .dropdown-item:active {
+            color: var(--realm-yellow);
+            background-color: var(--realm-blue);
+            /* background: var(--realm-yellow); */
+        }
+
+        /* gallery */
+        .card-img-top:hover {
+            transform: scale(1.01);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.04);
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
     </style>
-@stack('styles')
+    @stack('styles')
 
 
 </head>
 
 <body>
-   @include('frontend.layout.header')
-     {{-- Breadcrumb Section --}}
+    @include('frontend.layout.header')
+    {{-- Breadcrumb Section --}}
 
     <main>
-       @yield('content')
+        @yield('content')
     </main>
-   @include('frontend.layout.footer')
+    @include('frontend.layout.footer')
 </body>
 <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
