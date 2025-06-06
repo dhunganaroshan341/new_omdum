@@ -11,4 +11,10 @@ class Service extends Model
     protected $table = 'services';
     protected $fillable = ['image','name', 'short_desc','description', 'status'];
 
+    public function queries()
+{
+    return $this->hasMany(ServiceQuery::class);
+}
+
+
 }

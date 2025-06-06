@@ -55,7 +55,46 @@
             transition: transform 0.4s ease;
             cursor: pointer;
         }
+
+        /* navbar-mdn toggle not working so custom breadcrumb toggle */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd !important;
+        }
+
+        .navbar-brand img {
+            max-height: 60px;
+            height: auto;
+        }
+
+        .header-top-bar a {
+            font-size: 14px;
+        }
+
+        #servicesDropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* navbar */
+        #customToggle {
+            cursor: pointer;
+        }
+
+        .nav-link {
+            color: #000;
+        }
+
+        .nav-link:hover {
+            color: #0d6efd;
+        }
     </style>
+
     @stack('styles')
 
 
@@ -75,6 +114,41 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <script type="text/javascript" src="{{ asset('mdn/js/mdb.umd.min.js') }}"></script>
+<!-- Custom jQuery toggle -->
+<!-- Custom jQuery toggle for mobile menu -->
+<style>
+    .btn-primary {
+        background-color: var(--realm-blue);
+        color: var(--realm-yellow);
+        border-color: var(--realm-yellow-dark);
+        box-shadow: 3px 3px 5px var(--realm-blue);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--realm-blue-dark);
+        border: 1px solid var(--realm-yellow);
+        border-radius: 5px;
+        box-shadow: 20px 4px 4px var(--realm-blue-dark);
+        transition: all 0.3s ease-in-out;
+        color: white;
+    }
+
+    .btn-primary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+
+    .btn-primary:active {
+        background-color: var(--realm-blue-dark);
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $('#customToggle').on('click', function() {
+            $('#mobileMenu').slideToggle(300);
+        });
+    });
+</script>
 @stack('scripts')
 
 </html>

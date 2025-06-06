@@ -7,12 +7,13 @@
                 @foreach ($otherServices as $service)
                     <div class="col-md-4 mb-4">
                         <div class="card border-0" style="height: 480px;">
-                            <img
-                                src="{{ asset('uploads/' . $service->image) }}"
-                                class="card-img-top img-fluid"
-                                alt=""
-                                style="height: 200px; object-fit: cover;"
-                            >
+                            @if (!empty($service->image))
+                                <img src="{{ asset('uploads/' . $service->image) }}" class="card-img-top" alt="">
+                            @else
+                                <img src="{{ asset('assets/images/digital-marketing.jpg') }}" class="card-img-top"
+                                    alt="">
+                            @endif
+
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title mt-2">
                                     <a href="{{ route('service-detail', $service->id) }}">

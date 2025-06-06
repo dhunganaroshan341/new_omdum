@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('page');
             $table->string('section');
             $table->enum('status',['Active','Inactive'])->default('Active');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

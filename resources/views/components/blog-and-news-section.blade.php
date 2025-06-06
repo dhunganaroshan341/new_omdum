@@ -9,7 +9,7 @@
                     @foreach ($posts as $post)
                         <div class="card border-0 flex-shrink-0 blog-card">
                             @if (isset($post->postImages[0]) && !empty($post->postImages[0]->image))
-                                <img src="{{ asset('storage/' . $post->postImages[0]->image) }}"
+                                <img src="{{ asset('uploads/' . $post->postImages[0]->image) }}"
                                     class="card-img-top img-fluid" alt=""
                                     style="height: 200px; object-fit: cover;">
                             @else

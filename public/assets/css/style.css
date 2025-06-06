@@ -171,7 +171,7 @@ body{
     /* display: none; */
     font-family: 'Roboto', sans-serif;
     color: #6F8BA4;
-    background: var(--realm-yellow-background);
+
 }
 a{
     text-decoration: none;
@@ -404,9 +404,12 @@ a{
     text-transform: uppercase;
 }
 
-.btn-primary{
-    background-color: var(--realm-blue);
-    border-color: var(--realm-blue);
+
+.btn-primary {
+	background-color: var(--realm-blue);
+	color: var(--realm-yellow);
+	border-color: var(--realm-yellow-dark);
+	box-shadow: 3px 3px 5px var(--realm-blue);
 }
 
 .btn-primary:hover{

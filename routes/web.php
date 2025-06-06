@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CallToActionController;
+use App\Http\Controllers\Admin\ServiceQueryController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -139,6 +140,12 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/contact/get-data', [ContactController::class, 'getContact'])->name('admin.contact.get-data');
     Route::get('/admin/contact/detail/{id}', [ContactController::class, 'showDetail'])->name('admin.contact.detail');
     Route::get('/admin/contact/delete/{id}', [ContactController::class, 'destroy'])->name('admin.contact.delete');
+
+Route::get('/admin/service-query', [ServiceQueryController::class, 'index'])->name('admin.service-query');
+Route::get('/admin/service-query/get-data', [ServiceQueryController::class, 'getServiceQuery'])->name('admin.service-query.get-data');
+Route::get('/admin/service-query/detail/{id}', [ServiceQueryController::class, 'showDetail'])->name('admin.service-query.detail');
+Route::get('/admin/service-query/delete/{id}', [ServiceQueryController::class, 'destroy'])->name('admin.service-query.delete');
+
     Route::resource('/admin/notice', NoticeController::class);
     Route::get('/admin/notice/status/{id}', [NoticeController::class, 'toggleStatus']);
 
@@ -209,6 +216,7 @@ Route::get('/home',function(){
 Route::get('/', [UserFrontendController::class, 'home'])->name('first.index');
 Route::get('/contact-us', [UserFrontendController::class, 'contactUs'])->name('contact-us');
 Route::post('/contact-us', [UserFrontendController::class, 'storeContactUs'])->name('store.contact-us');
+Route::post('/service-query', [UserFrontendController::class, 'storeServiceQuery'])->name('store.service-query');
 Route::get('/about-us', [UserFrontendController::class, 'aboutUs'])->name('about-us');
 Route::get('/service', [UserFrontendController::class, 'service'])->name('service');
 Route::get('/service/detail/{id}', [UserFrontendController::class, 'servicedetail'])->name('service-detail');

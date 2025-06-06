@@ -19,7 +19,7 @@ class PageBannerSeeder extends Seeder
 
         ];
         foreach($pageBanners as $banner){
-            PageBanner::updateOrCreate(['page'=>$banner,'section'=>'banner','image'=>'default.jpg']);
+            PageBanner::updateOrCreate(['page'=>$banner,'section'=>'banner','image'=>null]);
         }
     }
 }

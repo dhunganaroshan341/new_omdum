@@ -26,13 +26,16 @@
         <div class="container">
             <a class="navbar-brand" href="{{ route('first.index') }}">
                 @if ($logo)
-                    <img src="{{ asset('storage/' . $logo) }}" alt="Logo" class="img-fluid" style="max-height: 60px;">
+                    <img src="{{ asset('storage/' . $logo) }}" alt="Logo" class="img-fluid"
+                        style="max-height: 80px;">
                 @else
-                    <img src="{{ asset('defaultImage/defaultlogo.png') }}" alt="Default Logo" class="img-fluid" style="max-height: 60px;">
+                    <img src="{{ asset('defaultImage/defaultlogo.png') }}" alt="Default Logo" class="img-fluid"
+                        style="max-height: 80px;">
                 @endif
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarmain"
+                aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -45,15 +48,16 @@
                         <a class="nav-link" href="{{ route('about-us') }}">About</a>
                     </li>
                     <li class="nav-item dropdown {{ request()->is('service*') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li><a href="{{ route('service') }}" class="dropdown-item">All Services</a></li>
                             @foreach ($activeMenuServiceItems as $service)
                                 <li>
-                                    <a class="dropdown-item {{ request()->is('service/detail/'.$service->id) ? 'active' : '' }}"
-                                       href="{{ route('service-detail', $service->id) }}">
+                                    <a class="dropdown-item {{ request()->is('service/detail/' . $service->id) ? 'active' : '' }}"
+                                        href="{{ route('service-detail', $service->id) }}">
                                         {{ $service->name }}
                                     </a>
                                 </li>
@@ -88,30 +92,31 @@
 --}}
 
 @push('styles')
-<style>
-    @media (min-width: 992px) {
-        .navbar .dropdown:hover .dropdown-menu {
+    <style>
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd !important;
+        }
+
+
+
+        .navbar-brand img {
+            max-height: 60px;
+            height: auto;
+        }
+
+        .header-top-bar a {
+            font-size: 14px;
+        }
+
+        #servicesDropdown:hover .dropdown-menu {
             display: block;
         }
-    }
-
-    .nav-link.active {
-        font-weight: bold;
-        color: #0d6efd !important;
-    }
-
-
-
-    .navbar-brand img {
-        max-height: 60px;
-        height: auto;
-    }
-
-    .header-top-bar a {
-        font-size: 14px;
-    }
-    #servicesDropdown:hover .dropdown-menu {
-        display: block;
-    }
-</style>
+    </style>
 @endpush
