@@ -112,14 +112,9 @@
                                     <a href="{{ route('about') }}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('booking') }}">Travel Booking</a>
+                                    <a href="{{ route('pages.gallery') }}">Gallery</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('flight-booking') }}">Flight Booking</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('car-booking') }}">Car Booking</a>
-                                </li>
+
                                 <li>
                                     <a href="{{ route('blog-list') }}">Blog</a>
                                 </li>

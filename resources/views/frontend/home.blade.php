@@ -644,7 +644,7 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                 </div>
-                                <h4 class="white mb-0">Manchester Tour</h4>
+                                <h4 class="white mb-0">Mount Kailash Tour</h4>
                             </div>
                             <div class="desti-overlay">
                                 <a href="booking.html" class="nir-btn">
@@ -665,7 +665,7 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                 </div>
-                                <h4 class="white mb-0">kathmandu Tour</h4>
+                                <h4 class="white mb-0">Thimpu-City Bhutan</h4>
                             </div>
                             <div class="desti-overlay">
                                 <a href="booking.html" class="nir-btn">
@@ -686,7 +686,7 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                 </div>
-                                <h4 class="white mb-0">Tokyo Tour</h4>
+                                <h4 class="white mb-0">India Tour Package</h4>
                             </div>
                             <div class="desti-overlay">
                                 <a href="booking.html" class="nir-btn">
@@ -707,7 +707,59 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                 </div>
-                                <h4 class="white mb-0">Norwich Tour</h4>
+                                <h4 class="white mb-0">Mount kailash Premium </h4>
+                            </div>
+                            <div class="desti-overlay">
+                                <a href="booking.html" class="nir-btn">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row d-flex align-items-center">
+
+                    <div class="col-lg p-0">
+                        <div class="desti-image bordernone">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                alt="destination">
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                                <h4 class="white mb-0">Tibet Tour</h4>
+                            </div>
+                            <div class="desti-overlay">
+                                <a href="booking.html" class="nir-btn">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg p-0">
+                        <div class="desti-image bordernone">
+                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                                <h4 class="white mb-0">Northern India Tour</h4>
                             </div>
                             <div class="desti-overlay">
                                 <a href="booking.html" class="nir-btn">
@@ -729,7 +781,29 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                 </div>
-                                <h4 class="white mb-0">Norwich Tour</h4>
+                                <h4 class="white mb-0">Tibet package </h4>
+                            </div>
+                            <div class="desti-overlay">
+                                <a href="booking.html" class="nir-btn">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg p-0">
+                        <div class="desti-image bordernone">
+                            <img src="{{ asset('template/yatri_world/main-file/images/everest.jpeg') }}"
+                                alt="destination">
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                                <h4 class="white mb-0">Everest Base Camp </h4>
                             </div>
                             <div class="desti-overlay">
                                 <a href="booking.html" class="nir-btn">
@@ -740,94 +814,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex align-items-center">
-                    <div class="col-lg p-0">
-                        <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
-                                alt="destination">
-                            <div class="rating mb-1">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h4 class="white mb-0">New York Tour</h4>
-                        </div>
-                        <div class="desti-overlay">
-                            <a href="booking.html" class="nir-btn">
-                                <span class="white">Book Now</span>
-                                <i class="fa fa-arrow-right white ps-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg p-0">
-                    <div class="desti-image bordernone">
-                        <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
-                        <div class="desti-content">
-                            <div class="rating mb-1">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h4 class="white mb-0">New York Tour</h4>
-                        </div>
-                        <div class="desti-overlay">
-                            <a href="booking.html" class="nir-btn">
-                                <span class="white">Book Now</span>
-                                <i class="fa fa-arrow-right white ps-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg p-0">
-                    <div class="desti-image bordernone">
-                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
-                            alt="destination">
-                        <div class="desti-content">
-                            <div class="rating mb-1">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h4 class="white mb-0">Armania Tour</h4>
-                        </div>
-                        <div class="desti-overlay">
-                            <a href="booking.html" class="nir-btn">
-                                <span class="white">Book Now</span>
-                                <i class="fa fa-arrow-right white ps-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg p-0">
-                    <div class="desti-image bordernone">
-                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
-                        <div class="desti-content">
-                            <div class="rating mb-1">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                            </div>
-                            <h4 class="white mb-0">Armania Tour</h4>
-                        </div>
-                        <div class="desti-overlay">
-                            <a href="booking.html" class="nir-btn">
-                                <span class="white">Book Now</span>
-                                <i class="fa fa-arrow-right white ps-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
+
+
+
             </div>
-        </div>
         </div>
     </section>
 
