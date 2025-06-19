@@ -98,7 +98,7 @@
 
 
 
-                    <div id="nepal" class="tab-pane fade in ">
+                    <div id="historical" class="tab-pane fade in active">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
