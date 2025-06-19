@@ -82,7 +82,7 @@
                             <a class="nav-link active" data-bs-toggle="tab" href="#tibet">Tibet</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#nepal">Nepal</a>
+                            <a class="nav-link" data-bs-toggle="tab" href="#nepal">Nepal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#bhtuan">bhutan</a>
