@@ -78,11 +78,9 @@
             <div class="trend-box">
                 <div class="price-navtab text-center mb-4">
                     <ul class="nav nav-tabs">
+
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="tab" href="#tibet">Tibet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#nepal">Nepal</a>
+                            <a class="nav-link active" data-bs-toggle="tab" href="#nepal">Nepal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="tab" href="#bhtuan">bhutan</a>
@@ -95,126 +93,7 @@
 
                 </div>
                 <div class="tab-content">
-                    <div id="tibet" class="tab-pane fade in active">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
-                                            alt="image">
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating-main d-flex align-items-center pb-1">
-                                                <div class="rating">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                </div>
-                                                <span class="ms-2">38 Reviews</span>
-                                            </div>
-                                            <h4><a href="destination-single.html">Nepal Special Tour</a></h4>
-                                            <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore
-                                                - perfect for exploring.</p>
-                                            <dxiv class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
-                                                        class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-lg-4 col-md-6 mb-4">
-                            <div class="trend-item">
-                                <div class="trend-image">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
-                                        alt="image">
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content">
-                                        <div class="rating-main d-flex align-items-center pb-1">
-                                            <div class="rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <span class="ms-2">38 Reviews</span>
-                                        </div>
-                                        <h4><a href="destination-single.html">Canada New Year Tour</a></h4>
-                                        <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
-                                    </div>
-                                    <div class="trend-last-main">
-                                        <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                            seashore - perfect for exploring.</p>
-                                        <div class="trend-last d-flex align-items-center justify-content-between">
-                                            <p class="mb-0 white d-flex align-items-center"><img
-                                                    src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Thu Astudillo</p>
-                                            <div class="trend-price">
-                                                <p class="price white mb-0"><a href="#"><i
-                                                            class="flaticon-like white"></i></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-lg-4 mb-4">
-                            <div class="trend-item">
-                                <div class="trend-image">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
-                                        alt="image">
-                                </div>
-                                <div class="trend-content-main">
-                                    <div class="trend-content">
-                                        <div class="rating-main d-flex align-items-center pb-1">
-                                            <div class="rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <span class="ms-2">25 Reviews</span>
-                                        </div>
-                                        <h4><a href="destination-single.html">America Christmas Tour</a></h4>
-                                        <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> America.</p>
-                                    </div>
-                                    <div class="trend-last-main">
-                                        <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                            seashore - perfect for exploring.</p>
-                                        <div class="trend-last d-flex align-items-center justify-content-between">
-                                            <p class="mb-0 white d-flex align-items-center"><img
-                                                    src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Thu Astudillo</p>
-                                            <div class="trend-price">
-                                                <p class="price white mb-0"><a href="#"><i
-                                                            class="flaticon-like white"></i></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
 
 
