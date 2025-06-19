@@ -29,8 +29,11 @@ $(document).ready(function () {
                 data: "title",
                 name: "title",
             }, {
-                data: "shortdesc",
-                name: "shortdesc"
+                data: "link_text",
+                name: "link_text",
+            }, {
+                data: "link_url",
+                name: "link_url",
             },
             {
                 data: "status",
@@ -162,6 +165,8 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 $("#title_home").val(response.message.title);
+                $("#link_text").val(response.message.link_text);
+                $("#link_url").val(response.message.link_url);
                 if (response.message.image != null) {
                     $("#homeSlideImage").html(`
                 <img src="/uploads/${response.message.image}" width="100" height="100">

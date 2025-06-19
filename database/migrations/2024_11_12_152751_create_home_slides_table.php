@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('title');
             $table->text('shortdesc')->nullable();
+            $table->string('link_text')->nullable();
+            $table->string('link_url')->nullable();
             $table->enum('status',['Active','Inactive'])->default('Active');
             $table->timestamps();
 

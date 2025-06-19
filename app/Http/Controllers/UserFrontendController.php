@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\CallToAction;
 use App\Models\Category;
+use App\Models\Destination;
+use App\SampleData\HomeSampleData;
 use Illuminate\Http\Request;
 use App\Models\frontend;
 use App\Models\User;
@@ -29,18 +31,19 @@ class UserFrontendController extends Controller
         $homeslides = HomeSlide::where('status', 'Active')->get();
         // dd($homeslides);
         $testimonials = Testimonial::where('status', 'Active')->get();
-        $notice = Notice::where('status', 'Active')->first();
+        $destinations = Destination::where('status', 'Active')->get();
+        $favDestinations =  (new HomeSampleData())->getSampleData('destinations');
         $clients = \App\Models\Client::with('albums')->get();;
         // dd($notice);
         $services = Service::where('status', 1)->get();
         $content_title="Home";
         $cta = CallToAction::where('page', 'home')->first();
- $posts = Post::with('category', 'postImages')
+        $posts = Post::with('category', 'postImages')
             ->latest()
             ->take(6) // or ->limit(6)
             ->get();
 
-        return view('frontend.home', compact([ 'posts','cta','services','frontend', 'homeslides', 'testimonials', 'notice','content_title','clients']));
+        return view('frontend.home', compact(['destinations', 'posts','cta','services','frontend', 'homeslides', 'testimonials','content_title','clients']));
 
     }
     public function aboutUs()
@@ -97,6 +100,19 @@ class UserFrontendController extends Controller
     $posts = Post::with('postImages')->where('status', 'Active')->paginate(6);
 
     return view('frontend.blog', compact('posts', 'content_title', 'pageBanner'));
+}
+  public function blogsByCategory($category_id)
+{
+
+    $content_title = "Blogs";
+    $pageBanner = PageBanner::where('page', 'blog')->first();
+    $category = Category::find($category_id);
+$category_title = $category ? $category->title : null;
+
+    // 6 posts per page (you can change the number)
+    $posts = Post::with('postImages')->where('status', 'Active')->where('category_id',$category_id)->paginate(6);
+
+    return view('frontend.blog', compact('posts', 'category_title','content_title', 'pageBanner'));
 }
 
 
@@ -198,6 +214,20 @@ public function searchBlogs(Request $request)
             Log::error($e->getMessage());
             return response()->json(['status'=>false,'message' => 'Something went wrong']);
         }
+    }
+
+    public function destinationGrid(){
+        return view('frontend.destination.destination-grid');
+    } public function destinationFull(){
+        return view('frontend.destination.destination-full');
+    }public function destinationSingle(){
+        return view('frontend.destination.destination-single');
+    }public function destinationList(){
+        return view('frontend.destination.destination-list');
+    }public function blogSingle(){
+        return view('frontend.blog.blog-single');
+    }public function blogGrid(){
+        return view('frontend.blog.blog-grid');
     }
 
 }

@@ -20,6 +20,8 @@ class HomeSlideFactory extends Factory
         'image' => 'test.jpg',
         'title' => fake()->word(),
         'shortdesc' => fake()->paragraph(),
+        'link_text' => fake()->word(),
+        'link_url' => fake()->word(),
     ];
 }
 

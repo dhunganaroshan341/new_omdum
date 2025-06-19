@@ -10,7 +10,8 @@
                 <div class="modal-body">
                     <p id="validationErrors" class="alert alert-danger d-none"></p>
                     <div class="row">
-                        <span class="mt-2 mb-4"><span class="text-danger">Note:</span> (<span class="text-danger">*</span>) symbol represent that the field is required</span>
+                        <span class="mt-2 mb-4"><span class="text-danger">Note:</span> (<span
+                                class="text-danger">*</span>) symbol represent that the field is required</span>
                         <div class="col-md-6">
                             @csrf
                             <label for="" class="form-label">Title<span class="text-danger">*</span></label>
@@ -27,6 +28,19 @@
                         <div class="col-md-12 mt-4 mb-2">
                             <label for="" class="form-label">Short Description</label>
                             <textarea class="form-control summernote" id="homeSliderDescription" name="shortdesc" rows="4"></textarea>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label for="link_text" class="form-label">Link Text<span class="text-danger"></span></label>
+                            <input type="text" name="link_text" id="link_text" class="form-control"
+                                placeholder="About Us" aria-describedby="helpId" />
+                        </div>
+                        <div class="col-md-6">
+
+                            <label for="link_url" class="form-label">Link Url<span class="text-danger"></span></label>
+                            <input type="text" name="link_url" id="link_url" class="form-control"
+                                placeholder="Eg.https://ommundumtreks.com/about-us/" aria-describedby="helpId" />
                         </div>
 
                     </div>

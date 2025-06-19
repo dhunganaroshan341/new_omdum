@@ -205,7 +205,9 @@
                         <h4 class="section-title"><span>Categories</span></h4>
                         <ul class="sidebar-list overflow-auto" style="max-height: 360px;">
                             @foreach ($categories as $category)
-                                <li><a href="#">{{ $category->title }} ({{ $category->post_count }})</a></li>
+                                <li><a href="{{ route('blogsByCategory', ['category_id' => $category->id]) }}">{{ $category->title }}
+                                        ({{ $category->post_count }})
+                                    </a></li>
                             @endforeach
                         </ul>
                     </div>

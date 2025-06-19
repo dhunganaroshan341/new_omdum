@@ -1,8 +1,4 @@
-@php
-    $activeMenuServiceItems = getActiveStatusServices();
-@endphp
-
-<header>
+<header class="sticky-top bg-white shadow-sm" style="z-index: 1030;">
     {{-- Top Bar --}}
     <div class="header-top-bar py-2 bg-realm-blue text-white">
         <div class="container">
@@ -22,7 +18,7 @@
     </div>
 
     {{-- Main Navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="{{ route('first.index') }}">
                 @if ($logo)
@@ -78,45 +74,3 @@
         </div>
     </nav>
 </header>
-
-{{-- If you want breadcrumb, you can place it like this after the header --}}
-{{--
-<div class="container mt-3">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('first.index') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Current Page</li>
-        </ol>
-    </nav>
-</div>
---}}
-
-@push('styles')
-    <style>
-        @media (min-width: 992px) {
-            .navbar .dropdown:hover .dropdown-menu {
-                display: block;
-            }
-        }
-
-        .nav-link.active {
-            font-weight: bold;
-            color: #0d6efd !important;
-        }
-
-
-
-        .navbar-brand img {
-            max-height: 60px;
-            height: auto;
-        }
-
-        .header-top-bar a {
-            font-size: 14px;
-        }
-
-        #servicesDropdown:hover .dropdown-menu {
-            display: block;
-        }
-    </style>
-@endpush
