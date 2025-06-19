@@ -8,7 +8,7 @@
                     <div class="swiper-slide">
                         <div class="slide-inner">
                             <div class="slide-image" public\
-                                style="background-image:url({{ asset('template/yatri_world/main-file/images/slider/42604.jpg') }})">
+                                style="background-image:url({{ asset('template/yatri_world/main-file/images/bhutan.jpg') }})">
                             </div>
                             <div class="swiper-content container">
                                 <h1 class="white mb-2">Travel – Explore the world with a backpack</h1>
@@ -25,7 +25,7 @@
                     <div class="swiper-slide">
                         <div class="slide-inner">
                             <div class="slide-image"
-                                style="background-image:url({{ asset('template/yatri_world/main-file/images/slider/78.jpg') }})">
+                                style="background-image:url({{ asset('template/yatri_world/main-file/images/india.jpg') }})">
                             </div>
                             <div class="swiper-content1 container">
                                 <h1 class="white mb-2">IT’S A BIG WORLD OUT THERE GO EXPLORE</h1>
@@ -42,7 +42,7 @@
                     <div class="swiper-slide">
                         <div class="slide-inner">
                             <div class="slide-image"
-                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/840.jpg') }}')">
+                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/india.jpg') }}')">
                             </div>
 
                             <div class="swiper-content2 container">
@@ -103,7 +103,7 @@
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -127,7 +127,7 @@
                                                 - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -142,7 +142,7 @@
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -166,7 +166,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -181,7 +181,7 @@
                             <div class=" col-lg-4 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -205,7 +205,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -227,7 +227,7 @@
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -251,7 +251,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -266,7 +266,7 @@
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -290,7 +290,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -305,7 +305,7 @@
                             <div class=" col-lg-4 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -329,7 +329,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -350,7 +350,7 @@
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -374,7 +374,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -389,7 +389,7 @@
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -413,7 +413,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -428,7 +428,7 @@
                             <div class=" col-lg-4 mb-4">
                                 <div class="trend-item">
                                     <div class="trend-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="trend-content-main">
@@ -452,7 +452,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Thu Astudillo</p>
                                                 <div class="trend-price">
@@ -515,11 +515,11 @@
                         <div class="about-image-main">
                             <div class="row">
                                 <div class="col-md-6 mt-4">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                         alt="">
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                         alt="">
                                 </div>
                             </div>
@@ -591,7 +591,7 @@
 
     <!-- Call to action starts -->
     <section class="call-to-action call-to-action1 pb-6 pt-10"
-        style="background-image:url({{ asset('template/yatri-world/main-file/images/bg/bg6.jpg') }})">
+        style="background-image:url({{ asset('template/yatri_world/main-file/images/everest.jpg') }})">
         <div class="call-main">
             <div class="container">
                 <div class="row d-flex align-items-center justify-content-between">
@@ -608,8 +608,7 @@
                     </div>
                     <div class="col-lg-6 mb-4">
                         <div class="video-button">
-                            <img src="{{ asset('template/yatri_world/main-file/images/trending/destination.jpg') }}"
-                                alt="">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="">
                             <div class="call-button text-center">
                                 <button type="button" class="play-btn js-video-button" data-video-id="152879427"
                                     data-channel="vimeo">
@@ -623,7 +622,7 @@
             </div>
         </div>
         <div class="dot-overlay"
-            style = "background:url({{ asset('public/template/yatri_world/main-file/images/trending/hiking-scene-cordillera-mountains-peru (2).jpg') }})">
+            style = "background:url({{ asset('template/yatri_world/main-file/images/bhutan.jpg') }})">
         </div>
     </section>
     <!-- call to action Ends -->
@@ -636,7 +635,7 @@
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
 
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -657,7 +656,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -678,7 +677,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -699,7 +698,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -720,7 +719,8 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -743,7 +743,8 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                alt="destination">
                             <div class="rating mb-1">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -763,7 +764,7 @@
                 </div>
                 <div class="col-lg p-0">
                     <div class="desti-image bordernone">
-                        <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                        <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
                         <div class="desti-content">
                             <div class="rating mb-1">
                                 <span class="fa fa-star checked"></span>
@@ -784,7 +785,8 @@
                 </div>
                 <div class="col-lg p-0">
                     <div class="desti-image bordernone">
-                        <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                            alt="destination">
                         <div class="desti-content">
                             <div class="rating mb-1">
                                 <span class="fa fa-star checked"></span>
@@ -805,7 +807,7 @@
                 </div>
                 <div class="col-lg p-0">
                     <div class="desti-image bordernone">
-                        <img src="{{ asset('images/everest.jpg') }}" alt="destination">
+                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
                         <div class="desti-content">
                             <div class="rating mb-1">
                                 <span class="fa fa-star checked"></span>
@@ -885,7 +887,7 @@
             <div class="team-slider">
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
+                        <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                             alt="image">
                     </div>
                     <div class="slider-content">
@@ -899,8 +901,7 @@
                 </div>
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
-                            alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
@@ -913,8 +914,7 @@
                 </div>
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
-                            alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> South Korea</h6>
@@ -927,8 +927,7 @@
                 </div>
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/new-deal/ulitmate-deal.jpg') }}"
-                            alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Germany</h6>
@@ -971,8 +970,7 @@
                                 Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
                         </div>
                         <div class="author-info mt-2">
-                            <a href="#"><img
-                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img1.jpg') }}"
+                            <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                     alt=""></a>
                             <div class="author-title">
                                 <h4 class="m-0 pink">Jared Erondu</h4>
@@ -990,8 +988,7 @@
                                 Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
                         </div>
                         <div class="author-info mt-2">
-                            <a href="#"><img
-                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img2.jpg') }}"
+                            <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                     alt=""></a>
                             <div class="author-title">
                                 <h4 class="m-0 pink">Cadic Vegeta</h4>
@@ -1009,8 +1006,7 @@
                                 Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
                         </div>
                         <div class="author-info mt-2">
-                            <a href="#"><img
-                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img3.jpg') }}"
+                            <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                     alt=""></a>
                             <div class="author-title">
                                 <h4 class="m-0 pink">Jonathan Beri</h4>
@@ -1038,8 +1034,7 @@
                     <div class="col-lg-5 mb-4">
                         <div class="news-item overflow-hidden">
                             <div class="news-image">
-                                <img src="{{ asset('template/yatri_world/main-file/images/blog/nepali-mountain.jpg') }}"
-                                    alt="image">
+                                <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="image">
                             </div>
                             <div class="news-list mt-2 border-b pb-2 mb-2">
                                 <ul>
@@ -1060,7 +1055,7 @@
                                     have personally in many of the programs mentioned on this site.</p>
 
                                 <div class="author-img">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                         alt="Demo Image">
                                     <span>By - Jack Well Fardez</span>
                                 </div>
@@ -1072,7 +1067,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/blog/nepali-mountain.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -1094,7 +1089,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/blog/nepali-mountain.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -1116,7 +1111,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/blog/nepali-mountain.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -1138,7 +1133,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/blog/nepali-mountain.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
