@@ -7,8 +7,8 @@ echo "🔄 Pulling latest changes from Git..."
 git pull origin main
 
 # Install/update dependencies
-echo "📦 Installing dependencies..."
-composer install --no-dev --optimize-autoloader
+# echo "📦 Installing dependencies..."
+# composer install --no-dev --optimize-autoloader
 
 # Clear and cache Laravel stuff
 echo "⚙️ Optimizing Laravel..."
