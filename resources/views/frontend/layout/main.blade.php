@@ -36,7 +36,7 @@
         }
 
         .trending .trend-item .trend-content-main {
-            position: inherit !important;
+            position: absolute !important;
         }
     </style>
 </head>

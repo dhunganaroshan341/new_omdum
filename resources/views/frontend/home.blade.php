@@ -30,7 +30,7 @@
                                 <h1 class="white mb-2">Closer to the heavens when Kailash calls.</h1>
                                 <p class="white mb-4">Answer the call of Kailash — a sacred journey through majestic
                                     landscapes, spiritual energy, and inner transformation.
-                                    <br> Discover peace beyond the peaks.
+
                                 </p>
                                 <a href="destination-list.html" class="per-btn">
                                     <span class="white">Contact Us</span>
@@ -47,9 +47,10 @@
                             </div>
 
                             <div class="swiper-content2 container">
-                                <h1 class="white mb-2">DISCOVER THE WORLD YOU HAVE NEVER SEEN</h1>
-                                <p class="white mb-4">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor
-                                    sit amet <br> contetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <h1 class="white mb-2">Discover Timeless Wonders of Indian Architecture</h1>
+                                <p class="white mb-4">Let iconic marvels and soulful moments shape <br> the chapters of your
+                                    next adventure.
+                                </p>
                                 <a href="destination-list.html" class="per-btn">
                                     <span class="white">Discover</span>
                                     <i class="fa fa-arrow-right white"></i>
