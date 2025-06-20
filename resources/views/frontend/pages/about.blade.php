@@ -26,17 +26,18 @@
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-6">
                         <div class="about-content">
-                            <h4 class="mb-1 blue font-weight-normal">About Yatriiworld</h4>
+                            <h4 class="mb-1 blue font-weight-normal">About Om Mundum Treks</h4>
                             <h2>Extraordinary Journeys Beyond the Ordinary</h2>
                             <p class="mb-3">
-                                At Om Mundum Treks, we believe travel is more than just a journey—it’s a life-changing
-                                experience. We offer unique adventures that take you off the beaten path, showcasing Nepal’s
-                                breathtaking mountains, rich culture, and hidden trails.
-                                At Om Mundum Treks, we believe travel is more than just a journey—it’s a life-changing
-                                experience. We offer unique adventures that take you off the beaten path, showcasing Nepal’s
-                                breathtaking mountains, rich culture, and hidden trails.
-
-                                Our trips are designed with purpose.
+                                At Om Mundum Treks, we believe travel is more than just a journey—it's a life-changing
+                                experience. We offer unique adventures that take you off the beaten path, showcasing Nepal's
+                                breathtaking mountains, rich Kirati culture, and pristine hidden trails. Specializing in the
+                                newly opened Mundum Trail, we provide authentic cultural immersion experiences in eastern
+                                Nepal's untouched wilderness. Our carefully crafted expeditions connect you with indigenous
+                                Rai communities, ancient traditions, and spectacular Himalayan landscapes that few travelers
+                                ever witness. Every trek is designed with purpose—to create meaningful connections between
+                                adventurers and Nepal's most preserved cultural heritage while supporting local communities
+                                and sustainable tourism practices.
 
 
 
