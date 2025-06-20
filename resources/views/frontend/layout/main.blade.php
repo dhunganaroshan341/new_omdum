@@ -34,6 +34,10 @@
         .slider-content a:hover {
             color: var(--omundum-green) !important;
         }
+
+        .trending .trend-item .trend-content-main {
+            position: inherit !important;
+        }
     </style>
 </head>
 
