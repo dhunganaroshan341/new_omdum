@@ -25,8 +25,8 @@
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">445 Mount Eden Road, Mt Eden</p>
-                                            <p class="m-0">Basundhara Chakrapath</p>
+                                            <p class="m-0">Thamel - 26,</p>
+                                            <p class="m-0"> Kathmandu, Nepal</p>
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -34,8 +34,8 @@
                                             <i class="fa fa-phone"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">977-444-666-888</p>
-                                            <p class="m-0">977-444-222-000</p>
+                                            <p class="m-0"> +977 9851402800</p>
+
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -43,8 +43,8 @@
                                             <i class="fa fa-envelope"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">info@Yatriiworld.com</p>
-                                            <p class="m-0">help@Yatriiworld.com</p>
+                                            <p class="m-0">info@ommundumtreks.com</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -65,8 +65,8 @@
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">123 Queen Street, Auckland</p>
-                                            <p class="m-0">New Zealand</p>
+                                            <p class="m-0"> Shop No: 25, Kota,</p>
+                                            <p class="m-0">Rajasthan, India</p>
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -74,8 +74,8 @@
                                             <i class="fa fa-phone"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">+64-333-777-999</p>
-                                            <p class="m-0">+64-111-222-333</p>
+                                            <p class="m-0"> +91 6350606267</p>
+
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -83,8 +83,7 @@
                                             <i class="fa fa-envelope"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">nz@Yatriiworld.com</p>
-                                            <p class="m-0">contact@Yatriiworld.com</p>
+                                            <p class="m-0"> dhruv@ommundumtreks.com</p>
                                         </div>
                                     </div>
                                 </div>
