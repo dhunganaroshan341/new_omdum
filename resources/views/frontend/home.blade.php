@@ -8,10 +8,10 @@
                     <div class="swiper-slide">
                         <div class="slide-inner">
                             <div class="slide-image" public\
-                                style="background-image:url({{ asset('template/yatri_world/main-file/images/bhutan.jpg') }})">
+                                style="background-image:url({{ asset('template/yatri_world/main-file/images/everest.jpg') }})">
                             </div>
                             <div class="swiper-content container">
-                                <h1 class="white mb-2">Travel – Explore the world with a backpack</h1>
+                                <h1 class="white mb-2">Your Gateway to Himalayan Adventure!</h1>
                                 <p class="white mb-4">Primis aptent vel turpis a a class suspendisse et augue orci a
                                     diam tristique consequat hendrerit ullamcorper top50torquent </p>
                                 <a href="destination-list.html" class="per-btn">
@@ -24,13 +24,14 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image"
-                                style="background-image:url({{ asset('template/yatri_world/main-file/images/india.jpg') }})">
+                            <div class="slide-image" style="background-image:url({{ asset('/images/tibet.jpg') }})">
                             </div>
                             <div class="swiper-content1 container">
-                                <h1 class="white mb-2">IT’S A BIG WORLD OUT THERE GO EXPLORE</h1>
-                                <p class="white mb-4">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor
-                                    sit amet <br> contetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                                <h1 class="white mb-2">Closer to the heavens, deeper into the self — Kailash calls.</h1>
+                                <p class="white mb-4">Answer the call of Kailash — a sacred journey through majestic
+                                    landscapes, spiritual energy, and inner transformation.
+                                    <br> Discover peace beyond the peaks.
+                                </p>
                                 <a href="destination-list.html" class="per-btn">
                                     <span class="white">Contact Us</span>
                                     <i class="fa fa-arrow-right white"></i>
