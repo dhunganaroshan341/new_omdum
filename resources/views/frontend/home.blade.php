@@ -97,8 +97,7 @@
 
 
 
-
-                    <div id="nepal" class="tab-pane fade in active">
+                    <div id="nepal" class="tab-pane fade in ">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
@@ -345,7 +344,7 @@
                     </div>
 
 
-                    <div id="tibet" class="tab-pane fade">
+                    <div id="tibet" class="tab-pane fade active">
                         <div class="row">
                             <div class=" col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
