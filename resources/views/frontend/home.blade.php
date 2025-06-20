@@ -621,9 +621,9 @@
                 </div>
             </div>
         </div>
-        <div class="dot-overlay"
+        {{-- <div class="dot-overlay"
             style = "background:url({{ asset('template/yatri_world/main-file/images/bhutan.jpg') }})">
-        </div>
+        </div> --}}
     </section>
     <!-- call to action Ends -->
 
