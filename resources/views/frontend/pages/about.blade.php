@@ -182,7 +182,7 @@
     </section>
     <!-- about-us ends -->
     <!-- our teams starts -->
-    <section class="our-team pb-4">
+    {{-- <section class="our-team pb-4">
         <div class="container">
             <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
                 <h2 class="m-0">Our <span>Team &amp; Guide</span></h2>
@@ -244,7 +244,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- our teams Ends -->
     <!-- Counter -->
     <section class="counter-main pb-6" style="background-image: url(images/bg/bg4.jpg)">
