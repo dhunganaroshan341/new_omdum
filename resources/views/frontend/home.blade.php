@@ -12,8 +12,8 @@
                             </div>
                             <div class="swiper-content container">
                                 <h1 class="white mb-2">Your Gateway to Himalayan Adventure!</h1>
-                                <p class="white mb-4">Primis aptent vel turpis a a class suspendisse et augue orci a
-                                    diam tristique consequat hendrerit ullamcorper top50torquent </p>
+                                <p class="white mb-4">Explore breathtaking landscapes, rich cultures, and unforgettable
+                                    journeys — all in one place </p>
                                 <a href="destination-list.html" class="per-btn">
                                     <span class="white">Read More</span>
                                     <i class="fa fa-arrow-right white"></i>
@@ -27,7 +27,7 @@
                             <div class="slide-image" style="background-image:url({{ asset('/images/tibet.jpg') }})">
                             </div>
                             <div class="swiper-content1 container">
-                                <h1 class="white mb-2">Closer to the heavens, — when Kailash calls.</h1>
+                                <h1 class="white mb-2">Closer to the heavens when Kailash calls.</h1>
                                 <p class="white mb-4">Answer the call of Kailash — a sacred journey through majestic
                                     landscapes, spiritual energy, and inner transformation.
                                     <br> Discover peace beyond the peaks.
@@ -135,13 +135,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -174,13 +176,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -213,13 +217,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -258,13 +264,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the seashore
                                                 - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,13 +305,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -336,13 +346,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -380,13 +392,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -419,13 +433,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -458,13 +474,15 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
-                                                <p class="mb-0 white d-flex align-items-center"><img
-                                                        src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src="http://127.0.0.1:8000/template/yatri_world/main-file/images/india.jpg"
                                                         class="d-author me-2" alt="">
-                                                    Thu Astudillo</p>
+                                                    Book Now
+
+                                                </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0"><a href="#"><i
-                                                                class="flaticon-like white"></i></a></p>
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
