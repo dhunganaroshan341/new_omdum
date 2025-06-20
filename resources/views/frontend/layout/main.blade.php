@@ -30,6 +30,10 @@
         .inline-icon {
             display: inline !important:
         }
+
+        .slider-content a:hover {
+            color: var(--omundum-green) !important;
+        }
     </style>
 </head>
 
@@ -120,6 +124,9 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('contact') }}">Contact</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contact') }}">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </div>

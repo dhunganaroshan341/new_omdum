@@ -25,7 +25,10 @@ footer {
   margin: 0;
   padding: 0;
 }
-
+:root{
+    --omundum-orange:#f06925;
+    --omundum-green:#61b488 ;
+}
 body {
   margin: 0;
   padding: 0;
