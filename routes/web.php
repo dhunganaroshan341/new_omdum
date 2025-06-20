@@ -358,3 +358,4 @@ Route::get('/pages/train-grid', [SamplePageController::class, 'train_gridBladePa
 Route::get('/pages/train-list', [SamplePageController::class, 'train_listBladePage'])->name('pages.train-list');
 
 Route::get('/pages/wishlist', [SamplePageController::class, 'wishlistBladePage'])->name('pages.wishlist');
+Route::get('/pages/services', [SamplePageController::class, 'servicesPage'])->name('pages.services');

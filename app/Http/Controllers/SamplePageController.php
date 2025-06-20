@@ -264,5 +264,7 @@ public function train_listBladePage() {
 
 public function wishlistBladePage() {
         return view('frontend.pages.wishlist');
+    }public function servicesPage() {
+        return view('frontend.pages.services');
     }
 }
