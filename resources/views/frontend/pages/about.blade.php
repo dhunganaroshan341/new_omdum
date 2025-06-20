@@ -87,7 +87,7 @@
                     <div class="row d-flex align-items-center justify-content-between">
                         <div class="col-lg-6">
                             <div class="about-content">
-                                <h2 class="">Our Mission & Commitment</h2>
+                                <h2 class="">Our Mission & Vision</h2>
                                 <p class="mb-2">At Om Mundum Treks, our mission is to provide exceptional trekking and
                                     adventure experiences while promoting sustainable tourism and preserving Nepal’s rich
                                     cultural and natural heritage</p>
