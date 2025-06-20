@@ -131,7 +131,7 @@
                             </ul>
                         </div>
                         <div
-                            class="footer-listing-main d-lg-flex align-items-start justify-content-between mt-4 text-center text-lg-start flex-wrap gap-4">
+                            class="footer-listing-main d-lg-flex align-items-start justify-content-start mt-4  text-center text-lg-start flex-wrap gap-4">
 
                             <!-- NEPAL OFFICE -->
                             <div class="footer-listing white">
