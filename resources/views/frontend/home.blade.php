@@ -27,7 +27,7 @@
                             <div class="slide-image" style="background-image:url({{ asset('/images/tibet.jpg') }})">
                             </div>
                             <div class="swiper-content1 container">
-                                <h1 class="white mb-2">Closer to the heavens, deeper into the self — Kailash calls.</h1>
+                                <h1 class="white mb-2">Closer to the heavens, — when Kailash calls.</h1>
                                 <p class="white mb-4">Answer the call of Kailash — a sacred journey through majestic
                                     landscapes, spiritual energy, and inner transformation.
                                     <br> Discover peace beyond the peaks.
