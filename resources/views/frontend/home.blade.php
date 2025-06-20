@@ -98,7 +98,7 @@
 
 
 
-                    <div id="historical" class="tab-pane fade in active">
+                    <div id="nepal" class="tab-pane fade in active">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="trend-item">
@@ -157,9 +157,9 @@
                                                 </div>
                                                 <span class="ms-2">38 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">Canada New Year Tour</a></h4>
+                                            <h4><a href="destination-single.html">Everest New Year Tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Solukhumbu</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -196,9 +196,9 @@
                                                 </div>
                                                 <span class="ms-2">25 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">America Christmas Tour</a></h4>
+                                            <h4><a href="destination-single.html">Nepal Holiday tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> America.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -281,9 +281,9 @@
                                                 </div>
                                                 <span class="ms-2">38 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">Canada Holidays Tour</a></h4>
+                                            <h4><a href="destination-single.html">Tibet Holidays Tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Tibet.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -320,9 +320,9 @@
                                                 </div>
                                                 <span class="ms-2">25 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">America Holidays Tour</a></h4>
+                                            <h4><a href="destination-single.html">India Holiday Tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> America.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> India.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -365,9 +365,9 @@
                                                 </div>
                                                 <span class="ms-2">38 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">Nepal Holidays Tour</a></h4>
+                                            <h4><a href="destination-single.html">Tibet Holidays Tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -404,9 +404,9 @@
                                                 </div>
                                                 <span class="ms-2">38 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">Canada Holidays Tour</a></h4>
+                                            <h4><a href="destination-single.html">Mount Kailash Tour</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -443,9 +443,9 @@
                                                 </div>
                                                 <span class="ms-2">25 Reviews</span>
                                             </div>
-                                            <h4><a href="destination-single.html">America Holidays Tour</a></h4>
+                                            <h4><a href="destination-single.html">Multi Nation Package</a></h4>
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> America.</p>
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Bhutan/China.</p>
                                         </div>
                                         <div class="trend-last-main">
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
@@ -486,12 +486,12 @@
     <!-- top destination ends -->
 
     <!-- about-us starts -->
-    <section class="about-us bg-grey pt-6 ">
+    <section class="about-us bg-grey mt-2 ">
         <div class="container">
             <div class="about-image-box mb-4">
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-6">
-                        <div class="about-content">
+                        <div class="about-content pt-4">
                             <h4 class="mb-1 font-weight-normal orange">About Om mundum Tours & Treks</h4>
                             <h2 class="">We're Truely Dedicated To Make Your Travel Experience</h2>
                             <p class="mb-2">Top Tour Operators and Travel Agency. We offering in total 793 tours and
