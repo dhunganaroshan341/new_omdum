@@ -9,19 +9,17 @@
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
         </div>
-        <div class="container">
+        <div class="container py-5">
             <div class="contact-info">
                 <div class="row gx-lg-5">
+                    <!-- Nepal Office -->
                     <div class="col-lg-6 col-md-6">
                         <div class="contact-info">
-                            <h3 class="">Start Your Adventure Today
-                            </h3>
-                            <p class="mb-4">Have questions about trekking in Nepal? Want to book your next mountain
-                                adventure? Our experienced team is ready to help you plan your journey to Nepal's pristine
-                                regions. Contact us for detailed information about routes, schedules, and what to expect on
-                                your trek through traditional villages and mountain trails.</p>
-                            <div class="d-flex col-auto ">
-                                <div class="col-lg-4 col-md-4">
+                            <h3 class="">Nepal Office</h3>
+                            <p class="mb-4">Start your journey in Nepal with our dedicated local team. We're here to help
+                                with planning, logistics, and everything in between.</p>
+                            <div class="d-flex col-auto">
+                                <div class="col-lg-10 col-md-10">
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
                                         <div class="info-icon">
                                             <i class="fa fa-map-marker"></i>
@@ -53,7 +51,51 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- International Office -->
                     <div class="col-lg-6 col-md-6">
+                        <div class="contact-info">
+                            <h3 class="">International Office</h3>
+                            <p class="mb-4">Connect with our global team for inquiries outside Nepal. We assist
+                                international trekkers with personalized support.</p>
+                            <div class="d-flex col-auto">
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">123 Queen Street, Auckland</p>
+                                            <p class="m-0">New Zealand</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">+64-333-777-999</p>
+                                            <p class="m-0">+64-111-222-333</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">nz@Yatriiworld.com</p>
+                                            <p class="m-0">contact@Yatriiworld.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="row mt-5">
+                    <div class="col-12">
                         <div class="contact-form" id="contact-form1">
                             <h3 class="">Keep in Touch</h3>
                             <p class="mb-4">Connect with fellow adventurers and stay updated on trekking experiences
@@ -79,7 +121,7 @@
                                         type="text" />
                                 </div>
                                 <div class="textarea mb-2">
-                                    <textarea name="comments" placeholder="Enter a message"></textarea>
+                                    <textarea class="form-control" name="comments" placeholder="Enter a message" rows="4"></textarea>
                                 </div>
                                 <div class="comment-btn text-right mt-1">
                                     <input class="nir-btn" id="submit" type="submit" value="Send Message" />
@@ -90,6 +132,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- contact Ends -->
-@endsection
+
+
+        <!-- contact Ends -->
+    @endsection
