@@ -5690,14 +5690,14 @@ section.pricing-tab .price-tabmain .price-list .price-box.price-recommended .pri
   margin-bottom: 0;
 }
 .contact-main .contact-info .info-item .info-icon i {
-  font-size: 32px;
-  color: #fff;
-  border-radius: 50%;
-  background: #162241;
-  height: 70px;
-  width: 70px;
-  text-align: center;
-  line-height: 2.2;
+	font-size: 15px;
+	color: #fff;
+	border-radius: 50%;
+	background: #162241;
+	height: 30px;
+	width: 30px;
+	text-align: center;
+	line-height: 2.2;
 }
 .contact-main .contact-map .map-main {
   border-radius: 15px;

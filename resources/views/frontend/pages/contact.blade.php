@@ -20,32 +20,34 @@
                                 adventure? Our experienced team is ready to help you plan your journey to Nepal's pristine
                                 regions. Contact us for detailed information about routes, schedules, and what to expect on
                                 your trek through traditional villages and mountain trails.</p>
-                            <div class="col-lg-3 col-md-3">
-                                <div class="info-item d-flex align-items-center bg-white mb-3">
-                                    <div class="info-icon">
-                                        <i class="fa fa-map-marker"></i>
+                            <div class="d-flex col-auto ">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">445 Mount Eden Road, Mt Eden</p>
+                                            <p class="m-0">Basundhara Chakrapath</p>
+                                        </div>
                                     </div>
-                                    <div class="info-content ps-4">
-                                        <p class="m-0">445 Mount Eden Road, Mt Eden</p>
-                                        <p class="m-0">Basundhara Chakrapath</p>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">977-444-666-888</p>
+                                            <p class="m-0">977-444-222-000</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="info-item d-flex align-items-center bg-white mb-3">
-                                    <div class="info-icon">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="info-content ps-4">
-                                        <p class="m-0">977-444-666-888</p>
-                                        <p class="m-0">977-444-222-000</p>
-                                    </div>
-                                </div>
-                                <div class="info-item d-flex align-items-center bg-white mb-3">
-                                    <div class="info-icon">
-                                        <i class="fa fa-envelope"></i>
-                                    </div>
-                                    <div class="info-content ps-4">
-                                        <p class="m-0">info@Yatriiworld.com</p>
-                                        <p class="m-0">help@Yatriiworld.com</p>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">info@Yatriiworld.com</p>
+                                            <p class="m-0">help@Yatriiworld.com</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
