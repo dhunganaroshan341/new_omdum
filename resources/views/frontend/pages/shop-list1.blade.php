@@ -9,7 +9,7 @@
 <h2 class="mb-0">Shop List 1</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Shop List 1</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2 f-active"><a href="shop-list1.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="shop-grid1.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2 f-active"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -46,12 +46,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop1.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop1.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Trekking Wood Sticks</a></h4>
+<h4 class="mb-1"><a class="" href="#">Trekking Wood Sticks</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -66,7 +66,7 @@
 <p class="mb-2">Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty.</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -77,12 +77,12 @@
 <div class="row flex-row-reverse w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop2.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop2.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Adventure X Bag</a></h4>
+<h4 class="mb-1"><a class="" href="#">Adventure X Bag</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -97,7 +97,7 @@
 <p class="mb-2">Twisted Toppings is a savory dish of Italian origin, consisting of a usually round, Savory dish of Italian origin, consisting of a usually round</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -108,12 +108,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop3.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop3.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Fashion Trek Shoes</a></h4>
+<h4 class="mb-1"><a class="" href="#">Fashion Trek Shoes</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -128,7 +128,7 @@
 <p class="mb-2">Rockin' Burgers is a savory dish of Italian origin, consisting of a usually round, Savory dish of Italian origin, consisting of a usually round</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -139,12 +139,12 @@
 <div class="row flex-row-reverse w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop6.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop6.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Gadget Tools</a></h4>
+<h4 class="mb-1"><a class="" href="#">Gadget Tools</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -159,7 +159,7 @@
 <p class="mb-2">Twisted Toppings is a savory dish of Italian origin, consisting of a usually round, Savory dish of Italian origin, consisting of a usually round</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -170,12 +170,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop7.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop7.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Perfect Trek Axe</a></h4>
+<h4 class="mb-1"><a class="" href="#">Perfect Trek Axe</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -190,7 +190,7 @@
 <p class="mb-2">Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -201,12 +201,12 @@
 <div class="row flex-row-reverse w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop9.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop9.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Trekking Tracks</a></h4>
+<h4 class="mb-1"><a class="" href="#">Trekking Tracks</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -221,7 +221,7 @@
 <p class="mb-2">Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -232,12 +232,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop8.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop8.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Trek Pumpa Cap</a></h4>
+<h4 class="mb-1"><a class="" href="#">Trek Pumpa Cap</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -252,7 +252,7 @@
 <p class="mb-2">This vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -263,12 +263,12 @@
 <div class="row flex-row-reverse w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop5.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop5.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Kingcamp Tents</a></h4>
+<h4 class="mb-1"><a class="" href="#">Kingcamp Tents</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -283,7 +283,7 @@
 <p class="mb-2">Margherita Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty.</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -294,12 +294,12 @@
 <div class="row">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="blog-single.html" style="background-image: url(images/shop/shop4.jpg);"></a>
+<a href="#" style="background-image: url(images/shop/shop4.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content">
-<h4 class="mb-1"><a class="" href="shop-detail.html">Nylong Trek Rope</a></h4>
+<h4 class="mb-1"><a class="" href="#">Nylong Trek Rope</a></h4>
 <div class="rating-comment d-md-flex align-items-center mb-1">
 <div class="rating me-2">
 <span class="fa fa-star checked"></span>
@@ -314,7 +314,7 @@
 <p class="mb-2">White Ricotta is a savory dish of Italian origin, consisting of a usually round, Savory dish of Italian origin, consisting of a usually round</p>
 <div class="listing-actions">
 <div class="add-to-links d-md-flex align-items-center">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded"></i> Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded"></i> Add To Cart</a>
 </div>
 </div>
 </div>
@@ -345,7 +345,7 @@
 <img alt="image" src="{{ asset('template/yatri_world/main-file/images/insta/ins-1.jpg') }}"/>
 </div>
 <div class="recent-content ps-2">
-<h5 class="mb-0 font-weight-normal"><a href="shop-detail.html">Nike brand shoes</a></h5>
+<h5 class="mb-0 font-weight-normal"><a href="#">Nike brand shoes</a></h5>
 <div class="post-detail">
 <div class="shop-price">
 <del><span>$42.00</span></del>
@@ -359,7 +359,7 @@
 <img alt="image" src="{{ asset('template/yatri_world/main-file/images/insta/ins-2.jpg') }}"/>
 </div>
 <div class="recent-content ps-2">
-<h5 class="mb-0 font-weight-normal"><a href="shop-detail.html">Raymond Gogs 2</a></h5>
+<h5 class="mb-0 font-weight-normal"><a href="#">Raymond Gogs 2</a></h5>
 <div class="post-detail">
 <div class="shop-price">
 <del><span>$22.00</span></del>
@@ -373,7 +373,7 @@
 <img alt="image" src="{{ asset('template/yatri_world/main-file/images/insta/ins-3.jpg') }}"/>
 </div>
 <div class="recent-content ps-2">
-<h5 class="mb-0 font-weight-normal"><a href="shop-detail.html">Summer Sign Caps</a></h5>
+<h5 class="mb-0 font-weight-normal"><a href="#">Summer Sign Caps</a></h5>
 <div class="post-detail">
 <div class="shop-price">
 <del><span>$50.00</span></del>
@@ -387,7 +387,7 @@
 <img alt="image" src="{{ asset('template/yatri_world/main-file/images/insta/ins-4.jpg') }}"/>
 </div>
 <div class="recent-content ps-2">
-<h5 class="mb-0 font-weight-normal"><a href="shop-detail.html">Baume &amp; Mercier</a></h5>
+<h5 class="mb-0 font-weight-normal"><a href="#">Baume &amp; Mercier</a></h5>
 <div class="post-detail">
 <div class="shop-price">
 <del><span>$20.00</span></del>

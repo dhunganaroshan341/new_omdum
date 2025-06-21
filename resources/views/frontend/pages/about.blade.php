@@ -10,7 +10,7 @@
                     <h2 class="mb-0">About Us</h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li aria-current="page" class="breadcrumb-item active">About Us</li>
                         </ul>
                     </nav>
@@ -27,8 +27,8 @@
                 <div class="row d-flex align-items-center justify-content-between">
                     <div class="col-lg-6">
                         <div class="about-content">
-                            <h4 class="mb-1 blue font-weight-normal">About Om Mundum Treks</h4>
-                            <h2>Extraordinary Journeys Beyond the Ordinary</h2>
+                            <h2 class="mb-1 blue font-weight-normal">About Om Mundum Treks</h2>
+                            <h3>Extraordinary Journeys Beyond the Ordinary</h3>
                             <p class="mb-3">
                                 At Om Mundum Treks, we believe travel is more than just a journey—it's a life-changing
                                 experience. We offer unique adventures that take you off the beaten path, showcasing Nepal's
@@ -47,23 +47,23 @@
                                 <ul class="d-flex justify-content-between">
                                     <li class="me-2">
                                         <img alt="about image"
-                                            src="{{ asset('template/yatri_world/main-file/images/destination/everest2-buddha.jpg') }}" />
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest2-buddha.jpg">
                                     </li>
                                     <li class="me-2">
                                         <img alt="about image"
-                                            src="{{ asset('template/yatri_world/main-file/images/destination/everest.jpg') }}" />
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest.jpg">
                                     </li>
                                     <li class="me-2">
                                         <img alt="about image"
-                                            src="{{ asset('template/yatri_world/main-file/images/destination/trek.jpg') }}" />
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
                                     </li>
                                     <li class="me-2">
                                         <img alt="about image"
-                                            src="{{ asset('template/yatri_world/main-file/images/destination/trek.jpg') }}" />
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
                                     </li>
                                     <li>
                                         <img alt="about image"
-                                            src="{{ asset('template/yatri_world/main-file/images/destination/trek.jpg') }}" />
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
                                     </li>
                                 </ul>
                             </div>
@@ -296,7 +296,7 @@
                         </p>
                     </div>
                     <div class="col-md-3">
-                        <a class="nir-btn" href="destination-list.html">Fine More Destination</a>
+                        <a class="nir-btn" href="#">Fine More Destination</a>
                     </div>
                 </div>
             </div>

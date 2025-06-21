@@ -12,7 +12,7 @@
 <div class="swiper-content container">
 <h1 class="white mb-2">Travel – Explore the world with a backpack</h1>
 <p class="white mb-4">Primis aptent vel turpis a a class suspendisse et augue orci a diam tristique consequat hendrerit ullamcorper  top50torquent </p>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Read More</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -26,7 +26,7 @@
 <div class="swiper-content1 container">
 <h1 class="white mb-2">IT’S A BIG WORLD OUT THERE GO EXPLORE</h1>
 <p class="white mb-4">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br/> contetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Contact Us</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -40,7 +40,7 @@
 <div class="swiper-content2 container">
 <h1 class="white mb-2">DISCOVER THE WORLD YOU HAVE NEVER SEEN</h1>
 <p class="white mb-4">Lorem consectetur adipiscing elit, sed do eiusmod tempor dolor sit amet <br/> contetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -388,7 +388,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-<h4><a href="destination-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -422,7 +422,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-<h4><a href="destination-single.html">Here We Bosphorus and Black Sea Train from Istanbul</a></h4>
+<h4><a href="#">Here We Bosphorus and Black Sea Train from Istanbul</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -456,7 +456,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
-<h4><a href="destination-single.html">NYC One World Observatory Skip-the-Line Ticket</a></h4>
+<h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -490,7 +490,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
-<h4><a href="destination-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -619,7 +619,7 @@
 <h3 class="white mb-0 text-uppercase">Find next place to visit</h3>
 <h2 class="white call-name">EXPLORE THE WORLD</h2>
 <p class="white mb-4">There are many variations of passages of. Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look.</p>
-<a class="nir-btn" href="destination-list.html">Go Explore <i class="fa fa-arrow-right"></i></a>
+<a class="nir-btn" href="#">Go Explore <i class="fa fa-arrow-right"></i></a>
 </div>
 </div>
 <div class="col-lg-6 mb-4">
@@ -658,7 +658,7 @@
 <h4 class="white mb-0">Manchester Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -679,7 +679,7 @@
 <h4 class="white mb-0">kathmandu Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -700,7 +700,7 @@
 <h4 class="white mb-0">Tokyo Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -721,7 +721,7 @@
 <h4 class="white mb-0">Norwich Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -742,7 +742,7 @@
 <h4 class="white mb-0">Norwich Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -765,7 +765,7 @@
 <h4 class="white mb-0">New York Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -786,7 +786,7 @@
 <h4 class="white mb-0">New York Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -807,7 +807,7 @@
 <h4 class="white mb-0">Armania Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -828,7 +828,7 @@
 <h4 class="white mb-0">Armania Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -884,7 +884,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Special Tour</a></h4>
+<h4><a href="#">Nepal Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -916,7 +916,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada New Year Tour</a></h4>
+<h4><a href="#">Canada New Year Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -948,7 +948,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Christmas Tour</a></h4>
+<h4><a href="#">America Christmas Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -984,7 +984,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Weekend Tour</a></h4>
+<h4><a href="#">Nepal Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -1016,7 +1016,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Weekend Tour</a></h4>
+<h4><a href="#">Canada Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -1048,7 +1048,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Weekend Tour</a></h4>
+<h4><a href="#">America Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -1084,7 +1084,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Holidays Tour</a></h4>
+<h4><a href="#">Nepal Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -1116,7 +1116,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Holidays Tour</a></h4>
+<h4><a href="#">Canada Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -1148,7 +1148,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Holidays Tour</a></h4>
+<h4><a href="#">America Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -1184,7 +1184,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Special Tour</a></h4>
+<h4><a href="#">Nepal Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -1216,7 +1216,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Special Tour</a></h4>
+<h4><a href="#">Canada Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -1248,7 +1248,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Special Tour</a></h4>
+<h4><a href="#">America Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -1313,7 +1313,7 @@
 <div class="cta-horizon bg-navy pt-4 pb-4">
 <div class="container d-md-flex align-items-center justify-content-between">
 <h4 class="mb-0 white">It’s Time For a New Adventure! Don’t Wait Any Longer. Contact us!</h4>
-<a class="nir-btn" href="contact.html">Fine More Destination</a>
+<a class="nir-btn" href="#">Fine More Destination</a>
 </div>
 </div>
 <!-- cta-horizon Ends -->
@@ -1460,7 +1460,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes. Farther so friends am to detract. Forbade concern do private be. Offending residence but men engrossed shy. <br/><br/>One of the programs is Save Our I have personally in many of the programs mentioned on this site.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
@@ -1484,7 +1484,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Mountains is always right destination.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Mountains is always right destination.</a></h4>
 </div>
 </div>
 </div>
@@ -1501,7 +1501,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="bordernone mb-0"><a href="blog-single.html">We have not all those who wander are lost.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">We have not all those who wander are lost.</a></h4>
 </div>
 </div>
 </div>
@@ -1518,7 +1518,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Here Our's Life is either a daring adventure.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Here Our's Life is either a daring adventure.</a></h4>
 </div>
 </div>
 </div>
@@ -1535,7 +1535,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Take only memories, leave only footprints.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Take only memories, leave only footprints.</a></h4>
 </div>
 </div>
 </div>

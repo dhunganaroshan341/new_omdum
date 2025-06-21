@@ -9,7 +9,7 @@
 <h2 class="mb-0">Flight List</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Flight List</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list f-active me-2"><a href="flight-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="flight-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -108,7 +108,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,345</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -184,7 +184,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$1,200</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -222,7 +222,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,345</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -298,7 +298,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$1,200</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -336,7 +336,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,345</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -412,7 +412,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$1,200</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -450,7 +450,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,345</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -526,7 +526,7 @@
 <div class="col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,050</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>

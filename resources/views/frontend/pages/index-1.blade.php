@@ -14,7 +14,7 @@
 <div class="swiper-content">
 <h4 class="white">Amazing Places</h4>
 <h1 class="white mb-4">Explore Your Life Travel Where You Want</h1>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -208,7 +208,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Special Tour</a></h4>
+<h4><a href="#">Nepal Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -240,7 +240,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada New Year Tour</a></h4>
+<h4><a href="#">Canada New Year Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -272,7 +272,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Christmas Tour</a></h4>
+<h4><a href="#">America Christmas Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -308,7 +308,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Weekend Tour</a></h4>
+<h4><a href="#">Nepal Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -340,7 +340,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Weekend Tour</a></h4>
+<h4><a href="#">Canada Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -372,7 +372,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Weekend Tour</a></h4>
+<h4><a href="#">America Weekend Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -408,7 +408,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Holidays Tour</a></h4>
+<h4><a href="#">Nepal Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -440,7 +440,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Holidays Tour</a></h4>
+<h4><a href="#">Canada Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -472,7 +472,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Holidays Tour</a></h4>
+<h4><a href="#">America Holidays Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -508,7 +508,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Nepal Special Tour</a></h4>
+<h4><a href="#">Nepal Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -540,7 +540,7 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Canada Special Tour</a></h4>
+<h4><a href="#">Canada Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Canada.</p>
 </div>
 <div class="trend-last-main">
@@ -572,7 +572,7 @@
 </div>
 <span class="ms-2">25 Reviews</span>
 </div>
-<h4><a href="destination-single.html">America Special Tour</a></h4>
+<h4><a href="#">America Special Tour</a></h4>
 <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> America.</p>
 </div>
 <div class="trend-last-main">
@@ -617,7 +617,7 @@
 <h4 class="white mb-0">New York Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -638,7 +638,7 @@
 <h4 class="white mb-0">New York Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -659,7 +659,7 @@
 <h4 class="white mb-0">Armania Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -680,7 +680,7 @@
 <h4 class="white mb-0">Manchester Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -701,7 +701,7 @@
 <h4 class="white mb-0">kathmandu Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -722,7 +722,7 @@
 <h4 class="white mb-0">Tokyo Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -743,7 +743,7 @@
 <h4 class="white mb-0">Norwich Tour</h4>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -775,7 +775,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-<h4><a href="destination-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -808,7 +808,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-<h4><a href="destination-single.html">Here We Bosphorus and Black Sea Cruise from Istanbul</a></h4>
+<h4><a href="#">Here We Bosphorus and Black Sea Cruise from Istanbul</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -841,7 +841,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
-<h4><a href="destination-single.html">NYC One World Observatory Skip-the-Line Ticket</a></h4>
+<h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -874,7 +874,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
-<h4><a href="destination-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -948,13 +948,13 @@
 </div>
 <span class="ms-2 white">38 Reviews</span>
 </div>
-<h3 class="mb-1"><a class="white" href="destination-single.html">Hills and Beach Tour</a></h3>
+<h3 class="mb-1"><a class="white" href="#">Hills and Beach Tour</a></h3>
 <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
 <p class="white mb-0 me-"><i class="fa fa-clock white me-1"></i> 5 days</p>
 <p class="white mb-0"><i class="fa fa-user-plus white me-1"></i> 51</p>
 </div>
 <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-<a class="nir-btn" href="tour-detail.html" tabindex="0">View More</a>
+<a class="nir-btn" href="#" tabindex="0">View More</a>
 </div>
 <div class="tour-tag">
 <span class="old-price white">$1449</span>
@@ -979,13 +979,13 @@
 </div>
 <span class="ms-2 white">18 Reviews</span>
 </div>
-<h3 class="mb-1"><a class="white" href="destination-single.html">Special Asia Tour</a></h3>
+<h3 class="mb-1"><a class="white" href="#">Special Asia Tour</a></h3>
 <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
 <p class="white mb-0 me-"><i class="fa fa-clock white me-1"></i> 5 days</p>
 <p class="white mb-0"><i class="fa fa-user-plus white me-1"></i> 51</p>
 </div>
 <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-<a class="nir-btn" href="tour-detail.html" tabindex="0">View More</a>
+<a class="nir-btn" href="#" tabindex="0">View More</a>
 </div>
 <div class="tour-tag">
 <span class="new-price white"> $800</span>
@@ -1009,13 +1009,13 @@
 </div>
 <span class="ms-2 white">21 Reviews</span>
 </div>
-<h3 class="mb-1"><a class="white" href="destination-single.html">Couple &amp; Holidays Tour</a></h3>
+<h3 class="mb-1"><a class="white" href="#">Couple &amp; Holidays Tour</a></h3>
 <div class="user-main d-flex align-items-center justify-content-between mb-2 pb-2 border-b">
 <p class="white mb-0 me-"><i class="fa fa-clock white me-1"></i> 5 days</p>
 <p class="white mb-0"><i class="fa fa-user-plus white me-1"></i> 51</p>
 </div>
 <p class="white mb-3">A wonderful little cottage right on the seashore - perfect for exploring with the little boat.</p>
-<a class="nir-btn" href="tour-detail.html" tabindex="0">View More</a>
+<a class="nir-btn" href="#" tabindex="0">View More</a>
 </div>
 <div class="tour-tag">
 <span class="old-price white">$549</span>
@@ -1102,7 +1102,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
@@ -1124,7 +1124,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"/>
@@ -1146,7 +1146,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
@@ -1168,14 +1168,14 @@
 <div class="call-banner-inner text-center bg-blue">
 <h4 class="white">25% OFF SALE</h4>
 <h2 class="white mb-4">Best Holiday Packages For<span class="text-uppercase d-block">Honeymoon</span></h2>
-<a class="nir-btn-black" href="flight-booking.html">Book Your Flight Now <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn-black" href="#">Book Your Flight Now <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-left p-5 text-center text-lg-start">
 <h4 class="white">24x7 Service Available</h4>
 <h2 class="white mb-4">Call Now And Book Your Flight For Your Next Destination</h2>
-<a class="nir-btn" href="flight-booking.html">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn" href="#">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 </div>

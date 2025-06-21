@@ -31,8 +31,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="blog-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="blog-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -49,12 +49,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -63,12 +63,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog2.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -77,12 +77,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -91,12 +91,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog4.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -105,12 +105,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog5.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -119,12 +119,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog6.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -133,12 +133,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog7.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -147,12 +147,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog8.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -161,12 +161,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog9.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -175,12 +175,12 @@
 <img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog10.jpg') }}"/>
 <div class="blog-content pb-0">
 <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-<h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile frameworks to provide a robust</a></h3>
+<h3 class="mb-2"><a class="" href="#">Leverage agile frameworks to provide a robust</a></h3>
 <p class="date-cats mb-0 border-t pt-2 pb-2">
 <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
 </p>
 <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper inceptos nisl consequat eros congue.</p>
-<a class="grey font-weight-light" href="blog-single.html">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
+<a class="grey font-weight-light" href="#">Read This <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -254,14 +254,14 @@
 <div class="tab-content">
 <div class="tab-pane fade show active" id="popular">
 <div class="sidebar-image mb-2 mt-2">
-<a href="blog-single..html"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}"/></a>
+<a href="#"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}"/></a>
 </div>
 <article class="post mb-2">
 <div class="s-content d-flex align-items-center justify-space-between">
 <div class="blog-no">01</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
+<h5 class="m-0"><a href="#">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
 </div>
 </div>
 </article>
@@ -270,7 +270,7 @@
 <div class="blog-no">02</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Zebras Hold New Record for Longest Migration</a></h5>
+<h5 class="m-0"><a href="#">Zebras Hold New Record for Longest Migration</a></h5>
 </div>
 </div>
 </article>
@@ -279,21 +279,21 @@
 <div class="blog-no">03</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">African Reserve Got Killed by Lions Instead</a></h5>
+<h5 class="m-0"><a href="#">African Reserve Got Killed by Lions Instead</a></h5>
 </div>
 </div>
 </article>
 </div>
 <div class="tab-pane fade" id="recent">
 <div class="sidebar-image mb-2 mt-2">
-<a href="blog-single.html"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}"/></a>
+<a href="#"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}"/></a>
 </div>
 <article class="post mb-2">
 <div class="s-content d-flex align-items-center justify-space-between">
 <div class="blog-no">01</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
+<h5 class="m-0"><a href="#">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
 </div>
 </div>
 </article>
@@ -302,7 +302,7 @@
 <div class="blog-no">02</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Zebras Hold New Record for Longest Migration</a></h5>
+<h5 class="m-0"><a href="#">Zebras Hold New Record for Longest Migration</a></h5>
 </div>
 </div>
 </article>
@@ -311,7 +311,7 @@
 <div class="blog-no">03</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">African Reserve Got Killed by Lions Instead</a></h5>
+<h5 class="m-0"><a href="#">African Reserve Got Killed by Lions Instead</a></h5>
 </div>
 </div>
 </article>

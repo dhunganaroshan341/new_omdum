@@ -9,7 +9,7 @@
 <h2 class="mb-0">Hotel List</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Hotel List</li>
 </ul>
 </nav>
@@ -29,8 +29,8 @@
 <div class="d-flex justify-content-between align-items-center mb-2 border-b pb-2">
 <h3 class="mb-0">London: 3292 hotels found</h3>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list f-active me-2"><a href="hotel-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="hotel-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 </div>
 </div>
 <div class="list-results-sort d-md-flex align-items-center">
@@ -72,7 +72,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list3.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list3.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -88,7 +88,7 @@
 </div>
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
-<h3 class="mb-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h3>
+<h3 class="mb-1"><a href="#">Empire Prestige Causeway Bay</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -116,7 +116,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list1.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list1.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -132,7 +132,7 @@
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="hotel-detail.html">Pininfarina Resort</a></h3>
+<h3 class="mb-2"><a href="#">Pininfarina Resort</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -158,7 +158,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list4.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list4.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -174,7 +174,7 @@
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
 <div class="trend-content">
-<h3 class="mb-2"><a href="hotel-detail.html">Bentley Super Hotel</a></h3>
+<h3 class="mb-2"><a href="#">Bentley Super Hotel</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -200,7 +200,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list2.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list2.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -216,7 +216,7 @@
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="hotel-detail.html">White Palace Hotel</a></h3>
+<h3 class="mb-2"><a href="#">White Palace Hotel</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -242,7 +242,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list6.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list6.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -258,7 +258,7 @@
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
 <div class="trend-content">
-<h3 class="mb-2"><a href="hotel-detail.html">Hyatt Regional Hotel</a></h3>
+<h3 class="mb-2"><a href="#">Hyatt Regional Hotel</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -284,7 +284,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list5.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list5.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -310,7 +310,7 @@
 </div>
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
-<h3 class="mb-2"><a href="hotel-detail.html">Park Avenue Baker Street</a></h3>
+<h3 class="mb-2"><a href="#">Park Avenue Baker Street</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>
@@ -336,7 +336,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="hotel-detail.html" style="background-image: url(images/rooms/list7.jpg);"></a>
+<a href="#" style="background-image: url(images/rooms/list7.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -352,7 +352,7 @@
 <a href="#"><i class="flaticon-like"></i></a>
 </div>
 <div class="trend-content">
-<h3 class="mb-2"><a href="hotel-detail.html">New Road Hotel</a></h3>
+<h3 class="mb-2"><a href="#">New Road Hotel</a></h3>
 <div class="mb-2">
 <i class="icon fa fa-map-marker-alt me-2"></i> Greater London, United Kingdom
                                                 <small class="px-1 font-size-15"> - </small>

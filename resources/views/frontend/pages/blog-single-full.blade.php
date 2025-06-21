@@ -9,7 +9,7 @@
 <h2 class="mb-0">Blog Single Full</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Blog Single Full</li>
 </ul>
 </nav>
@@ -37,7 +37,7 @@
 </div>
 <div class="col-md-10">
 <div class="blog-content mb-4 pt-0">
-<h3 class="blog-title"><a class="yellow" href="blog-single.html">Counts Is the Greatest Change the Platform Has Ever Made</a></h3>
+<h3 class="blog-title"><a class="yellow" href="#">Counts Is the Greatest Change the Platform Has Ever Made</a></h3>
 <div class="para-content mb-2">
 <span class="me-2"><a class="tag pink" href="#"><i class="fa fa-tag me-1"></i> Popular </a></span>
 <span class="me-2"><a class="pink" href="#"><i class="fa fa-user me-1"></i> Adam Joel</a></span>

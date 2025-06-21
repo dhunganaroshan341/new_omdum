@@ -9,7 +9,7 @@
 <h2 class="mb-0">Hotel Single</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Hotel Single</li>
 </ul>
 </nav>
@@ -157,7 +157,7 @@
 <p class="mb-1">From <span class="font-weight-bold ms-1"> £899.00</span>
 <span> / night</span>
 </p>
-<a class="nir-btn w-100" href="hotel-booking.html">Book Now</a>
+<a class="nir-btn w-100" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -186,7 +186,7 @@
 <p class="mb-1">From <span class="font-weight-bold ms-1"> £700.00</span>
 <span> / night</span>
 </p>
-<a class="nir-btn w-100" href="hotel-booking.html">Book Now</a>
+<a class="nir-btn w-100" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -215,7 +215,7 @@
 <p class="mb-1">From <span class="font-weight-bold ms-1"> £700.00</span>
 <span> / night</span>
 </p>
-<a class="nir-btn w-100" href="hotel-booking.html">Book Now</a>
+<a class="nir-btn w-100" href="#">Book Now</a>
 </div>
 </div>
 </div>

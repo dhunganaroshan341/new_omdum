@@ -9,7 +9,7 @@
 <h2 class="mb-0">Train Grid</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Train Grid</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="train-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="train-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -64,9 +64,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Tokyo Serviced Apartment, Japan </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Tokyo Serviced Apartment, Japan </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -92,9 +92,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Vex Torel Palace In London, England </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Vex Torel Palace In London, England </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -120,9 +120,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -148,9 +148,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -176,9 +176,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Vex Torel Palace In London, England </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Vex Torel Palace In London, England </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -204,9 +204,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -232,9 +232,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -260,9 +260,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Tokyo Serviced Apartment, Japan </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Tokyo Serviced Apartment, Japan </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>

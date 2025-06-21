@@ -12,7 +12,7 @@
 <div class="swiper-content1 container">
 <h4 class="white">Choose The Best Destination</h4>
 <h1 class="white mb-4">Make Your Trip Fun And Memorable Where You Want</h1>
-<a class="per-btn" href="booking.html">
+<a class="per-btn" href="#">
 <span class="white">Book A Room</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -26,7 +26,7 @@
 <div class="swiper-content1 container">
 <h4 class="white">Feel Free To Live</h4>
 <h1 class="white mb-4">Discover Your Beautiful <span>Hotel</span> With Us</h1>
-<a class="per-btn" href="hotel-booking.html">
+<a class="per-btn" href="#">
 <span class="white">Contact Us</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -158,7 +158,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -179,7 +179,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -200,7 +200,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -221,7 +221,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -242,7 +242,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -263,7 +263,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -284,7 +284,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -338,7 +338,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£350.00 </span>/ Night
                                             </p>
@@ -361,7 +361,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Park Avenue Baker Street</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Park Avenue Baker Street</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£450.00 </span>/ Night
                                             </p>
@@ -384,7 +384,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">New York Marriott Downtown</a></h4>
+<h4 class="bordernone pt-1"><a href="#">New York Marriott Downtown</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£620.00 </span>/ Night
                                             </p>
@@ -411,7 +411,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£350.00 </span>/ Night
                                             </p>
@@ -434,7 +434,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Park Avenue Baker Street</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Park Avenue Baker Street</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£450.00 </span>/ Night
                                             </p>
@@ -457,7 +457,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">New York Marriott Downtown</a></h4>
+<h4 class="bordernone pt-1"><a href="#">New York Marriott Downtown</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£620.00 </span>/ Night
                                             </p>
@@ -482,7 +482,7 @@
 <h3 class="white mb-0 text-uppercase">Find next place to visit</h3>
 <h2 class="white call-name">EXPLORE THE WORLD</h2>
 <p class="white mb-4">There are many variations of passages of. Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don’t look.</p>
-<a class="nir-btn" href="hotel-list.html">Go Explore <i class="fa fa-arrow-right"></i></a>
+<a class="nir-btn" href="#">Go Explore <i class="fa fa-arrow-right"></i></a>
 </div>
 </div>
 <div class="col-lg-6 mb-4">
@@ -580,7 +580,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The Best 17 places you cannot ignore in Paris</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The Best 17 places you cannot ignore in Paris</a></h4>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
 <span>By - Jack Well Fardez</span>
@@ -601,7 +601,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">Be Careful About This, When You Are In Snow</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">Be Careful About This, When You Are In Snow</a></h4>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"/>
 <span>By - Jack Well Fardez</span>
@@ -622,7 +622,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">Things You Must Need To See While You’re In Dubai</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">Things You Must Need To See While You’re In Dubai</a></h4>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
 <span>By - Jack Well Fardez</span>
@@ -639,7 +639,7 @@
 <div class="cta-horizon bg-blue pt-4 pb-4">
 <div class="container d-md-flex align-items-center justify-content-between">
 <h4 class="mb-0 white">Didn't find the service suite you! Need a custom service?</h4>
-<a class="nir-btn-black" href="contact.html">Let's talk</a>
+<a class="nir-btn-black" href="#">Let's talk</a>
 </div>
 </div>
 <!-- cta-horizon Ends -->

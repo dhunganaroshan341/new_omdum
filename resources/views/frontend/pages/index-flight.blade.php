@@ -8,7 +8,7 @@
 <div class="banner-content">
 <h1 class="white mb-2">Cheap And Trusted Travel Agency</h1>
 <p class="white mb-4">Enjoy Your Comfortable Trip With Yatriiworld Travel Agency</p>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span><i class="fa fa-arrow-right white"></i>
 </a>
 </div>
@@ -26,7 +26,7 @@
 <h4 class="mb-1 blue font-weight-normal">Instant Flight Booking</h4>
 <h2 class="">Where you would like to go</h2>
 <p class="mb-3">Top Tour Operators and Travel Agency. We offering in total 793 tours and holidays throughout the world. Combined we have received 1532 customer reviews and an average rating of 5 out of 5 stars. <br/><br/>Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-<a class="nir-btn" href="about.html">View More</a>
+<a class="nir-btn" href="#">View More</a>
 </div>
 </div>
 <div class="col-lg-6">
@@ -146,9 +146,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-single.html">Paris, France</a></h4>
+<h4 class="mb-1"><a href="#">Paris, France</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$400</span> <del>$500.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -158,7 +158,7 @@
 <h4 class="mb-0 pink">Hot Deals Of The Week </h4>
 <h2>Top <span>Explore Rate Deals</span></h2>
 <p class="mb-2">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes. <br/><br/>Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-<a class="nir-btn-black" href="destination-list.html">View All Deals</a>
+<a class="nir-btn-black" href="#">View All Deals</a>
 </div>
 </div>
 </div>
@@ -176,9 +176,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-single.html">Rome, Italy</a></h4>
+<h4 class="mb-1"><a href="#">Rome, Italy</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$1000</span> <del>$1100.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -196,9 +196,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-single.html">Toky, Japan</a></h4>
+<h4 class="mb-1"><a href="#">Toky, Japan</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$1100</span> <del>$1200.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -216,9 +216,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-single.html">kathmandu, Nepal</a></h4>
+<h4 class="mb-1"><a href="#">kathmandu, Nepal</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$800</span> <del>$900.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -236,9 +236,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-single.html">New Delhi, India</a></h4>
+<h4 class="mb-1"><a href="#">New Delhi, India</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$950</span> <del>$1000.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -256,9 +256,9 @@
 </div>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="mb-1"><a href="destination-list.html">Istambul, Turkey</a></h4>
+<h4 class="mb-1"><a href="#">Istambul, Turkey</a></h4>
 <p class="price mb-1">Per Person <span class="pink font-weight-bold">$1300</span> <del>$1400.00</del></p>
-<a href="destination-single.html"><ins>View Detail</ins></a>
+<a href="#"><ins>View Detail</ins></a>
 </div>
 </div>
 </div>
@@ -365,7 +365,7 @@
 <div class="col-lg-3 col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,345</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -403,7 +403,7 @@
 <div class="col-lg-3 col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,145</p>
-<a class="nir-btn" href="flight-booking.html">Book Now</a>
+<a class="nir-btn" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -441,7 +441,7 @@
 <div class="col-lg-3 col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$1,200</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -479,7 +479,7 @@
 <div class="col-lg-3 col-md-3">
 <div class="item-inner flight-btn text-center p-0 bordernone mb-0">
 <p class="navy">$2,050</p>
-<a class="nir-btn-black" href="flight-booking.html">Book Now</a>
+<a class="nir-btn-black" href="#">Book Now</a>
 </div>
 </div>
 </div>
@@ -522,7 +522,7 @@
 <h4 class="mb-1 blue font-weight-normal">About Yatriiworld</h4>
 <h2>Begin Your Comfortable Journey With Us</h2>
 <p class="mb-3">Top Tour Operators and Travel Agency. We offering in total 793 tours and holidays throughout the world. Combined we have received 1532 customer reviews and an average rating of 5 out of 5 stars. <br/><br/>Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-<a class="nir-btn-black" href="about.html">More About Us</a>
+<a class="nir-btn-black" href="#">More About Us</a>
 </div>
 </div>
 <div class="col-lg-6">
@@ -588,14 +588,14 @@
 <div class="call-banner-inner text-center bg-blue">
 <h4 class="white">25% OFF SALE</h4>
 <h2 class="white mb-4">Best Holiday Packages For<span class="text-uppercase d-block">Honeymoon</span></h2>
-<a class="nir-btn-black" href="flight-booking.html">Book Your Flight Now <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn-black" href="#">Book Your Flight Now <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-left p-5">
 <h4 class="white">24x7 Service Available</h4>
 <h2 class="white mb-4">Call Now And Book Your Flight For Your Next Destination</h2>
-<a class="nir-btn" href="flight-booking.html">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn" href="#">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 </div>
@@ -625,7 +625,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>
@@ -647,7 +647,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}"/>
@@ -669,7 +669,7 @@
 </ul>
 </div>
 <div class="news-content mt-2">
-<h4 class="pb-2 mb-2 border-b"><a href="blog-single.html">The real voyage does not consist in seeking new landscapes</a></h4>
+<h4 class="pb-2 mb-2 border-b"><a href="#">The real voyage does not consist in seeking new landscapes</a></h4>
 <p class="mb-3">Excited him now natural saw passage offices you minuter. At by asked being court hopes.</p>
 <div class="author-img">
 <img alt="Demo Image" src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}"/>

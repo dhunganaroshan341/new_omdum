@@ -15,7 +15,7 @@
 </form>
 </div>
 <div class="error-btn mt-4">
-<a class="nir-btn me-2" href="index.html">GO TO HOMEPAGE</a>
+<a class="nir-btn me-2" href="#">GO TO HOMEPAGE</a>
 </div>
 </div>
 </div>

@@ -9,7 +9,7 @@
 <h2 class="mb-0">Car Grid</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Car Grid</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="car-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="car-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -67,12 +67,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari 458 MM Speciale</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari 458 MM Speciale</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -101,12 +101,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Pininfarina Sergio</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Pininfarina Sergio</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -135,12 +135,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari F12 TRS</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari F12 TRS</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$120</strong></span>
 <span>Monthly: <strong>$3000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -169,12 +169,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Mercedes Benz 2019</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Mercedes Benz 2019</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -203,12 +203,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Bentley Contitental</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Bentley Contitental</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -237,12 +237,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari F12 TRS</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari F12 TRS</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$120</strong></span>
 <span>Monthly: <strong>$3000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -271,12 +271,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Mercedes Benz 2019</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Mercedes Benz 2019</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -305,12 +305,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Bentley Contitental</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Bentley Contitental</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>

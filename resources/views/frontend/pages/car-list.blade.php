@@ -9,7 +9,7 @@
 <h2 class="mb-0">Car List</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Car List</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list f-active me-2"><a href="car-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="car-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -46,13 +46,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/3.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/3.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2">
-<h3 class="mb-2"><a href="car-detail.html">Ferrari 458 MM Speciale</a></h3>
+<h3 class="mb-2"><a href="#">Ferrari 458 MM Speciale</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -71,7 +71,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -81,13 +81,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/1.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/1.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="car-detail.html">Pininfarina Sergio</a></h3>
+<h3 class="mb-2"><a href="#">Pininfarina Sergio</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -106,7 +106,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -116,13 +116,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/4.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/4.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="car-detail.html">Bentley Contitental</a></h3>
+<h3 class="mb-2"><a href="#">Bentley Contitental</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -141,7 +141,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -151,13 +151,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/2.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/2.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="car-detail.html">Mercedes Benz 2019</a></h3>
+<h3 class="mb-2"><a href="#">Mercedes Benz 2019</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -176,7 +176,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -186,13 +186,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/6.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/6.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="car-detail.html">Ferrari 458 MM</a></h3>
+<h3 class="mb-2"><a href="#">Ferrari 458 MM</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -211,7 +211,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -221,13 +221,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/5.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/5.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="car-detail.html">Ferrari F12 TRS</a></h3>
+<h3 class="mb-2"><a href="#">Ferrari F12 TRS</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -246,7 +246,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -256,13 +256,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="car-detail.html" style="background-image: url(images/cars/7.jpg);"></a>
+<a href="#" style="background-image: url(images/cars/7.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="car-detail.html">Sukuki Skoda 458 MM</a></h3>
+<h3 class="mb-2"><a href="#">Sukuki Skoda 458 MM</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -281,7 +281,7 @@
 <span class="me-3">Daily: <strong class="pink">$70</strong></span>
 <span>Monthly: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>

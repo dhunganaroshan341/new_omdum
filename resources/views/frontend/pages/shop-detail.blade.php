@@ -91,13 +91,13 @@
 <label class="screen-reader-text me-2 mb-0"><strong>Quantity:</strong></label>
 <input class="quantity-input" max="100" min="1" name="quantity" placeholder="No." type="number"/>
 </div>
-<div class="shop-btn ms-2 me-2"><a class="nir-btn" href="cart.html">Add To Cart</a></div>
+<div class="shop-btn ms-2 me-2"><a class="nir-btn" href="#">Add To Cart</a></div>
 <div class="product-stock">
 <p class="mb-0"><strong>Availability :</strong> <span class="pink">IN STOCK</span></p>
 </div>
 </form>
 <div class="wishcomp-btn">
-<a class="d-block pb-2 mb-2 border-b" href="wishlist.html"><i class="fa fa-heart"></i> Add to wishlist</a>
+<a class="d-block pb-2 mb-2 border-b" href="#"><i class="fa fa-heart"></i> Add to wishlist</a>
 <a class="d-block pb-2 mb-2 border-b" href="#"><i class="fa fa-exchange-alt"></i> Compare</a>
 </div>
 <div class="product_meta">

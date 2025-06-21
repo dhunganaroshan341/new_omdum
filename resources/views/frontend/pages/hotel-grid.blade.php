@@ -9,7 +9,7 @@
 <h2 class="mb-0">Hotel Grid</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Hotel Grid</li>
 </ul>
 </nav>
@@ -29,8 +29,8 @@
 <div class="d-flex justify-content-between align-items-center mb-2 border-b pb-2">
 <h3 class="mb-0">London: 3292 hotels found</h3>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="hotel-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="hotel-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 </div>
 </div>
 <div class="list-results-sort d-md-flex align-items-center">
@@ -83,7 +83,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£350.00 </span>/ Night
                                             </p>
@@ -106,7 +106,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Park Avenue Baker Street</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Park Avenue Baker Street</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£450.00 </span>/ Night
                                             </p>
@@ -129,7 +129,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">New York Marriott Downtown</a></h4>
+<h4 class="bordernone pt-1"><a href="#">New York Marriott Downtown</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£620.00 </span>/ Night
                                             </p>
@@ -152,7 +152,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£350.00 </span>/ Night
                                             </p>
@@ -175,7 +175,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Park Avenue Baker Street</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Park Avenue Baker Street</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£450.00 </span>/ Night
                                             </p>
@@ -198,7 +198,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">New York Marriott Downtown</a></h4>
+<h4 class="bordernone pt-1"><a href="#">New York Marriott Downtown</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£620.00 </span>/ Night
                                             </p>
@@ -221,7 +221,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£350.00 </span>/ Night
                                             </p>
@@ -244,7 +244,7 @@
 <span class="rating bg-navy px-2 white py-1">4.5/5</span>
 <span class="ms-2">38 Reviews</span>
 </div>
-<h4 class="bordernone pt-1"><a href="hotel-detail.html">Park Avenue Baker Street</a></h4>
+<h4 class="bordernone pt-1"><a href="#">Park Avenue Baker Street</a></h4>
 <p class="mb-2">
                                                 From: <span class="font-weight-bold pink">£450.00 </span>/ Night
                                             </p>

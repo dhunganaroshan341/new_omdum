@@ -12,7 +12,7 @@
 <div class="swiper-content container">
 <h4 class="white">Instant Car Booking</h4>
 <h1 class="white mb-4">Drive The Car You Ever Dream</h1>
-<a class="per-btn" href="car-booking.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -26,7 +26,7 @@
 <div class="swiper-content1 container">
 <h4 class="white">Feel Free To Travel</h4>
 <h1 class="white mb-4">Discover Your Beautiful <span>Travel</span> With Us</h1>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -40,7 +40,7 @@
 <div class="swiper-content2 container">
 <h4 class="white">Trip For Your Kids</h4>
 <h1 class="white mb-4"><span>Sensation Ice Trip</span> Is Coming For Kids</h1>
-<a class="per-btn" href="destination-list.html">
+<a class="per-btn" href="#">
 <span class="white">Discover</span>
 <i class="fa fa-arrow-right white"></i>
 </a>
@@ -299,12 +299,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari 458 MM Speciale</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari 458 MM Speciale</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -331,12 +331,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Pininfarina Sergio</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Pininfarina Sergio</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -363,12 +363,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari 458 MM Speciale</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari 458 MM Speciale</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -395,12 +395,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari F12 TRS</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari F12 TRS</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$120</strong></span>
 <span>Monthly: <strong>$3000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -420,7 +420,7 @@
 <h4 class="mb-0 pink">Hot Deals Of The Week </h4>
 <h2>Explore <span>Rate Cars</span></h2>
 <p class="mb-2">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes. Travel has helped us to understand the meaning of life and it has helped us become better people. </p>
-<a class="nir-btn-black" href="car-list.html">View All Vehicles <i class="fa fa-angle-right"></i></a>
+<a class="nir-btn-black" href="#">View All Vehicles <i class="fa fa-angle-right"></i></a>
 </div>
 </div>
 </div>
@@ -448,12 +448,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari 458 MM Speciale</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari 458 MM Speciale</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -482,12 +482,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Pininfarina Sergio</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Pininfarina Sergio</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -516,12 +516,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Ferrari F12 TRS</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Ferrari F12 TRS</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$120</strong></span>
 <span>Monthly: <strong>$3000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -550,12 +550,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Mercedes Benz 2019</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Mercedes Benz 2019</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$70</strong></span>
 <span>Monthly: <strong>$2000</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -584,12 +584,12 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="bordernone pb-0 mb-1"><a href="car-detail.html">Bentley Contitental</a></h4>
+<h4 class="bordernone pb-0 mb-1"><a href="#">Bentley Contitental</a></h4>
 <div class="trend-daily d-flex align-items-center mb-1 border-b pb-1">
 <span class="me-3">Daily: <strong>$100</strong></span>
 <span>Monthly: <strong>$2500</strong></span>
 </div>
-<a href="car-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -699,9 +699,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Mountains is Raising Say Express Had Chiefly Detract.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Mountains is Raising Say Express Had Chiefly Detract.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 mb-4">
@@ -717,9 +717,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">We have not all those who wander are lost.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">We have not all those who wander are lost.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 mb-4">
@@ -735,9 +735,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Here Our's Life is either a daring adventure.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Here Our's Life is either a daring adventure.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 </div>
@@ -753,14 +753,14 @@
 <div class="call-banner-inner text-center bg-blue">
 <h4 class="white">25% OFF SALE</h4>
 <h2 class="white mb-4">Best Holiday Packages For<span class="text-uppercase d-block">Honeymoon</span></h2>
-<a class="nir-btn-black" href="car-booking.html">Book Your Car Now <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn-black" href="#">Book Your Car Now <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-left p-5">
 <h4 class="white">24x7 Service Available</h4>
 <h2 class="white mb-4">Call Now And Book Your Ride For Your Next Destination</h2>
-<a class="nir-btn" href="car-booking.html">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn" href="#">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 </div>

@@ -425,7 +425,7 @@
 <h4 class="mb-1 blue font-weight-normal">About Yatriiworld</h4>
 <h2>Begin Your Comfortable Journey With Us</h2>
 <p class="mb-3">Top Tour Operators and Travel Agency. We offering in total 793 tours and holidays throughout the world. Combined we have received 1532 customer reviews and an average rating of 5 out of 5 stars. <br/><br/>Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
-<a class="nir-btn-black" href="about.html">More About Us</a>
+<a class="nir-btn-black" href="#">More About Us</a>
 </div>
 </div>
 <div class="col-lg-6">
@@ -472,9 +472,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Tokyo Serviced Apartment, Japan </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Tokyo Serviced Apartment, Japan </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -500,9 +500,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Vex Torel Palace In London, England </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Vex Torel Palace In London, England </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -528,9 +528,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -556,9 +556,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -584,9 +584,9 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4 class="pb-1 mb-1"><a href="train-detail.html">Forlic Around Frieburg, Germany </a></h4>
+<h4 class="pb-1 mb-1"><a href="#">Forlic Around Frieburg, Germany </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -820,9 +820,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Mountains is Raising Say Express Had Chiefly Detract.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Mountains is Raising Say Express Had Chiefly Detract.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 mb-4">
@@ -838,9 +838,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">We have not all those who wander are lost.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">We have not all those who wander are lost.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 <div class="col-lg-4 col-md-6 mb-4">
@@ -856,9 +856,9 @@
 </ul>
 </div>
 <div class="news-content mt-2 mb-1">
-<h4 class="bordernone mb-0"><a href="blog-single.html">Here Our's Life is either a daring adventure.</a></h4>
+<h4 class="bordernone mb-0"><a href="#">Here Our's Life is either a daring adventure.</a></h4>
 </div>
-<a href="blog-single.html"><u>Read More</u></a>
+<a href="#"><u>Read More</u></a>
 </div>
 </div>
 </div>
@@ -931,14 +931,14 @@
 <div class="call-banner-inner text-center bg-blue">
 <h4 class="white">25% OFF SALE</h4>
 <h2 class="white mb-4">Best Holiday Packages For<span class="text-uppercase d-block">Honeymoon</span></h2>
-<a class="nir-btn-black" href="train-booking.html">Book Your Train Now <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn-black" href="#">Book Your Train Now <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-left p-5">
 <h4 class="white">24x7 Service Available</h4>
 <h2 class="white mb-4">Call Now And Book Your Ride For Your Next Destination</h2>
-<a class="nir-btn" href="train-booking.html">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
+<a class="nir-btn" href="#">Call For Booking <i class="fa fa-arrow-right white ps-1"></i></a>
 </div>
 </div>
 </div>

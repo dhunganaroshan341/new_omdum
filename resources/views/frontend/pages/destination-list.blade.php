@@ -9,7 +9,7 @@
 <h2 class="mb-0">Destination List</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Destination List</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list f-active me-2"><a href="destination-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="destination-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -47,12 +47,12 @@
 <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination3.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination3.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Paris in Love</a></h4>
+<h4 class="mb-1"><a class="" href="#">Paris in Love</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -76,12 +76,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination4.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination4.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Empire Prestige Causeway Bay</a></h4>
+<h4 class="mb-1"><a class="" href="#">Empire Prestige Causeway Bay</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -106,12 +106,12 @@
 <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination5.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination5.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Egyptian Voyager</a></h4>
+<h4 class="mb-1"><a class="" href="#">Egyptian Voyager</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -136,12 +136,12 @@
 <div class="ribbon ribbon-top-left"><span>25% OFF</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination8.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination8.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Bali &amp; Indonesia Tour</a></h4>
+<h4 class="mb-1"><a class="" href="#">Bali &amp; Indonesia Tour</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -165,12 +165,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination7.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination7.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Madagascar Safari</a></h4>
+<h4 class="mb-1"><a class="" href="#">Madagascar Safari</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -195,12 +195,12 @@
 <div class="ribbon ribbon-top-left"><span>15% OFF</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination6.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination6.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Dazzling Dubai</a></h4>
+<h4 class="mb-1"><a class="" href="#">Dazzling Dubai</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -224,12 +224,12 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination10.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination10.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">The Spanish Riviera</a></h4>
+<h4 class="mb-1"><a class="" href="#">The Spanish Riviera</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -254,12 +254,12 @@
 <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination9.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination9.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Highlights of Vietnam</a></h4>
+<h4 class="mb-1"><a class="" href="#">Highlights of Vietnam</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -284,12 +284,12 @@
 <div class="ribbon ribbon-top-left"><span>Offer</span></div>
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="destination-single.html" style="background-image: url(images/destination/destination11.jpg);"></a>
+<a href="#" style="background-image: url(images/destination/destination11.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="blog-content p-0">
-<h4 class="mb-1"><a class="" href="destination-single.html">Aegean Adventure Cruise</a></h4>
+<h4 class="mb-1"><a class="" href="#">Aegean Adventure Cruise</a></h4>
 <div class="trend-tags">
 <a href="#"><i class="fa fa-heart"></i></a>
 </div>
@@ -610,7 +610,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-<h4><a href="blog-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -643,7 +643,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-<h4><a href="blog-single.html">Bosphorus and Black Sea Cruise from Istanbul</a></h4>
+<h4><a href="#">Bosphorus and Black Sea Cruise from Istanbul</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -676,7 +676,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
-<h4><a href="blog-single.html">NYC One World Observatory Skip-the-Line Ticket</a></h4>
+<h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>
@@ -709,7 +709,7 @@
 <div class="trend-content-main">
 <div class="trend-content">
 <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
-<h4><a href="blog-single.html">Stonehenge, Windsor Castle, and Bath from London</a></h4>
+<h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
 <div class="rating-main d-flex align-items-center">
 <div class="rating">
 <span class="fa fa-star checked"></span>

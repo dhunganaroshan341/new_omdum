@@ -9,7 +9,7 @@
 <h2 class="mb-0">Flight Grid</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Flight Grid</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="flight-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="flight-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -80,8 +80,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -124,8 +124,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -168,8 +168,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -212,8 +212,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -256,8 +256,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -300,8 +300,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -344,8 +344,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>
@@ -388,8 +388,8 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
-<a class="nir-btn" href="flight-booking.html">Choose</a>
+<a class="d-block" href="#">Flight Details</a>
+<a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
 </div>

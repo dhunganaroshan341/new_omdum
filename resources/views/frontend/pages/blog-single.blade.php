@@ -9,7 +9,7 @@
 <h2 class="mb-0">Blog Single</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Blog Single</li>
 </ul>
 </nav>
@@ -37,7 +37,7 @@
 </div>
 <div class="col-md-10">
 <div class="blog-content mb-4 pt-0">
-<h3 class="blog-title"><a class="yellow" href="blog-single.html">Counts Is the Greatest Change the Platform Has Ever Made</a></h3>
+<h3 class="blog-title"><a class="yellow" href="#">Counts Is the Greatest Change the Platform Has Ever Made</a></h3>
 <div class="para-content mb-2">
 <span class="me-2"><a class="tag pink" href="#"><i class="fa fa-tag me-1"></i> Popular </a></span>
 <span class="me-2"><a class="pink" href="#"><i class="fa fa-user me-1"></i> Adam Joel</a></span>
@@ -259,14 +259,14 @@
 <div class="tab-content">
 <div class="tab-pane fade show active" id="popular">
 <div class="sidebar-image mb-2 mt-2">
-<a href="blog-single..html"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}"/></a>
+<a href="#"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}"/></a>
 </div>
 <article class="post mb-2">
 <div class="s-content d-flex align-items-center justify-space-between">
 <div class="blog-no">01</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
+<h5 class="m-0"><a href="#">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
 </div>
 </div>
 </article>
@@ -275,7 +275,7 @@
 <div class="blog-no">02</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Zebras Hold New Record for Longest Migration</a></h5>
+<h5 class="m-0"><a href="#">Zebras Hold New Record for Longest Migration</a></h5>
 </div>
 </div>
 </article>
@@ -284,21 +284,21 @@
 <div class="blog-no">03</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">African Reserve Got Killed by Lions Instead</a></h5>
+<h5 class="m-0"><a href="#">African Reserve Got Killed by Lions Instead</a></h5>
 </div>
 </div>
 </article>
 </div>
 <div class="tab-pane fade" id="recent">
 <div class="sidebar-image mb-2 mt-2">
-<a href="blog-single.html"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}"/></a>
+<a href="#"><img alt="" src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}"/></a>
 </div>
 <article class="post mb-2">
 <div class="s-content d-flex align-items-center justify-space-between">
 <div class="blog-no">01</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
+<h5 class="m-0"><a href="#">Takes on Baboon, and It Doesn’t Go Well for It</a></h5>
 </div>
 </div>
 </article>
@@ -307,7 +307,7 @@
 <div class="blog-no">02</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">Zebras Hold New Record for Longest Migration</a></h5>
+<h5 class="m-0"><a href="#">Zebras Hold New Record for Longest Migration</a></h5>
 </div>
 </div>
 </article>
@@ -316,7 +316,7 @@
 <div class="blog-no">03</div>
 <div class="content-list ps-3">
 <div class="date">Jun 28, 2024</div>
-<h5 class="m-0"><a href="blog-single.html">African Reserve Got Killed by Lions Instead</a></h5>
+<h5 class="m-0"><a href="#">African Reserve Got Killed by Lions Instead</a></h5>
 </div>
 </div>
 </article>

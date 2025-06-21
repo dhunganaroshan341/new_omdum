@@ -35,9 +35,9 @@
             color: var(--omundum-green) !important;
         }
 
-        .trending .trend-item .trend-content-main {
+        /* .trending .trend-item .trend-content-main {
             position: absolute !important;
-        }
+        } */
     </style>
 </head>
 

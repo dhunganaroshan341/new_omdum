@@ -40,14 +40,14 @@
 <div class="dashboard-nav">
 <div class="dashboard-nav-inner">
 <ul>
-<li class="active"><a href="dashboard.html"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-<li><a href="dashboard-my-profile.html"><i class="sl sl-icon-user"></i> Profile</a></li>
-<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
-<li><a href="dashboard-reviews.html"><i class="sl sl-icon-star"></i> Reviews</a></li>
-<li><a href="dashboard-add-new.html"><i class="sl sl-icon-plus"></i> Add listing</a></li>
-<li><a href="dashboard-list.html"><i class="sl sl-icon-layers"></i> Listing</a></li>
-<li><a href="dashboard-history.html"><i class="fa fa-list-ul"></i>Booking History</a></li>
-<li><a href="login.html"><i class="sl sl-icon-power"></i> Logout</a></li>
+<li class="active"><a href="#"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+<li><a href="#"><i class="sl sl-icon-user"></i> Profile</a></li>
+<li><a href="#"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+<li><a href="#"><i class="sl sl-icon-star"></i> Reviews</a></li>
+<li><a href="#"><i class="sl sl-icon-plus"></i> Add listing</a></li>
+<li><a href="#"><i class="sl sl-icon-layers"></i> Listing</a></li>
+<li><a href="#"><i class="fa fa-list-ul"></i>Booking History</a></li>
+<li><a href="#"><i class="sl sl-icon-power"></i> Logout</a></li>
 </ul>
 </div>
 </div>

@@ -9,7 +9,7 @@
 <h2 class="mb-0">Shop Grid 1</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Shop Grid 1</li>
 </ul>
 </nav>
@@ -31,8 +31,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="shop-list1.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="shop-grid1.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -60,10 +60,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Trekking Wood Sticks</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Trekking Wood Sticks</a></h4>
 <p class="price pink mb-1 font-weight-bold">$350.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -85,10 +85,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Adventure X Bag</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Adventure X Bag</a></h4>
 <p class="price pink mb-1 font-weight-bold">$250.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -110,10 +110,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Fashion Trek Shoes</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Fashion Trek Shoes</a></h4>
 <p class="price pink mb-1 font-weight-bold">$420.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -135,10 +135,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Nylon Trek Rope</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Nylon Trek Rope</a></h4>
 <p class="price pink mb-1 font-weight-bold">$99.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -160,10 +160,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Kingcamp Tents</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Kingcamp Tents</a></h4>
 <p class="price pink mb-1 font-weight-bold"><del class="font-weight-normal grey">$220.00</del> $199.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -185,10 +185,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Perfect Black Axe</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Perfect Black Axe</a></h4>
 <p class="price pink mb-1 font-weight-bold">$199.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -210,10 +210,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Gadgets Tools</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Gadgets Tools</a></h4>
 <p class="price pink mb-1 font-weight-bold">$56.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>
@@ -235,10 +235,10 @@
 <span class="fa fa-star checked"></span>
 </div>
 </div>
-<h4 class="bordernone p-0 mb-1"><a href="shop-detail.html">Trek Pumpa Cap</a></h4>
+<h4 class="bordernone p-0 mb-1"><a href="#">Trek Pumpa Cap</a></h4>
 <p class="price pink mb-1 font-weight-bold">$50.00</p>
 <div class="cart-btn">
-<a class="nir-btn-black" href="cart.html"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
+<a class="nir-btn-black" href="#"><i class="icon-basket-loaded me-2"></i>Add To Cart</a>
 </div>
 </div>
 </div>

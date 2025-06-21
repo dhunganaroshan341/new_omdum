@@ -32,8 +32,8 @@
                                     landscapes, spiritual energy, and inner transformation.
 
                                 </p>
-                                <a href="destination-list.html" class="per-btn">
-                                    <span class="white">Contact Us</span>
+                                <a href="#" class="per-btn">
+                                    <span class="white">Book Now</span>
                                     <i class="fa fa-arrow-right white"></i>
                                 </a>
                             </div>
@@ -1064,11 +1064,11 @@
                             </div>
                             <div class="news-list mt-2 border-b pb-2 mb-2">
                                 <ul>
-                                    <li><a href="" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
+                                    <li><a href="#" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
                                             4th AUg 2020 </a></li>
-                                    <li><a href="" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
+                                    <li><a href="#" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
                                             3</a></li>
-                                    <li><a href="" class=""><i class="fa fa-tag pink pe-1"></i> Tour,
+                                    <li><a href="#" class=""><i class="fa fa-tag pink pe-1"></i> Tour,
                                             Tourism, Travel</a></li>
                                 </ul>
                             </div>
@@ -1098,11 +1098,11 @@
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
                                         <ul>
-                                            <li><a href="" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
                                                     4th AUg 2020 </a></li>
-                                            <li><a href="" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
                                                     3</a></li>
-                                            <li><a href="" class=""><i class="fa fa-tag pink pe-1"></i>
+                                            <li><a href="#" class=""><i class="fa fa-tag pink pe-1"></i>
                                                     Travel</a></li>
                                         </ul>
                                     </div>
@@ -1120,11 +1120,11 @@
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
                                         <ul>
-                                            <li><a href="" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
                                                     4th AUg 2020 </a></li>
-                                            <li><a href="" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
                                                     3</a></li>
-                                            <li><a href="" class=""><i class="fa fa-tag pink pe-1"></i>
+                                            <li><a href="#" class=""><i class="fa fa-tag pink pe-1"></i>
                                                     Tourism</a></li>
                                         </ul>
                                     </div>
@@ -1142,11 +1142,11 @@
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
                                         <ul>
-                                            <li><a href="" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
                                                     4th AUg 2020 </a></li>
-                                            <li><a href="" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
                                                     3</a></li>
-                                            <li><a href="" class=""><i class="fa fa-tag pink pe-1"></i>
+                                            <li><a href="#" class=""><i class="fa fa-tag pink pe-1"></i>
                                                     Tour</a></li>
                                         </ul>
                                     </div>
@@ -1164,11 +1164,11 @@
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
                                         <ul>
-                                            <li><a href="" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-calendar pink pe-1"></i>
                                                     4th AUg 2020 </a></li>
-                                            <li><a href="" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
+                                            <li><a href="#" class="pe-3"><i class="fa fa-comment pink pe-1"></i>
                                                     3</a></li>
-                                            <li><a href="" class=""><i class="fa fa-tag pink pe-1"></i>
+                                            <li><a href="#" class=""><i class="fa fa-tag pink pe-1"></i>
                                                     Travel</a></li>
                                         </ul>
                                     </div>

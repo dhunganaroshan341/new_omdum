@@ -41,7 +41,7 @@
 <div class="breadcrumb-content">
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb1">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item">Train Single One</li>
 </ul>
 </nav>
@@ -395,7 +395,7 @@
 </div>
 <h4 class="pb-1 mb-1"><a href="#">Tokyo Serviced Apartment, Japan </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>
@@ -421,7 +421,7 @@
 </div>
 <h4 class="pb-1 mb-1"><a href="#">Vex Torel Palace In London, England </a></h4>
 <p>Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy.</p>
-<a href="train-booking.html">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
+<a href="#">Book Now <i class="fa fa-long-arrow-alt-right"></i></a>
 </div>
 </div>
 </div>

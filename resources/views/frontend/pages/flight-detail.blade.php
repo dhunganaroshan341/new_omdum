@@ -41,7 +41,7 @@
 <div class="breadcrumb-content">
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb1">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item">Flights Single One</li>
 </ul>
 </nav>
@@ -409,7 +409,7 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
+<a class="d-block" href="#">Flight Details</a>
 <a class="nir-btn" href="#">Choose</a>
 </div>
 </div>
@@ -451,7 +451,7 @@
 </div>
 </div>
 <div class="flight-btn d-flex align-items-center justify-content-between border-t mt-2 pt-2">
-<a class="d-block" href="flight-detail.html">Flight Details</a>
+<a class="d-block" href="#">Flight Details</a>
 <a class="nir-btn" href="#">Choose</a>
 </div>
 </div>

@@ -9,7 +9,7 @@
 <h2 class="mb-0">My Cart</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">My Cart</li>
 </ul>
 </nav>
@@ -151,7 +151,7 @@
 <div class="checkout-place-order mt-2">
 <p class="">Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#">privacy policy</a>.
                                     </p>
-<a class="nir-btn mt-1" href="checkout.html">Proceed to Checkout</a>
+<a class="nir-btn mt-1" href="#">Proceed to Checkout</a>
 </div>
 </div>
 </div>

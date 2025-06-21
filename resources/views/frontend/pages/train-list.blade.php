@@ -9,7 +9,7 @@
 <h2 class="mb-0">Train List</h2>
 <nav aria-label="breadcrumb">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Home</a></li>
 <li aria-current="page" class="breadcrumb-item active">Train List</li>
 </ul>
 </nav>
@@ -30,8 +30,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list f-active me-2"><a href="train-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid"><a href="train-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -46,13 +46,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/3.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/3.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2">
-<h3 class="mb-2"><a href="train-detail.html">Tokyo Serviced Apartment, Japan</a></h3>
+<h3 class="mb-2"><a href="#">Tokyo Serviced Apartment, Japan</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -63,7 +63,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -73,13 +73,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/1.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/1.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="train-detail.html">Vex Torel Palace In London, England</a></h3>
+<h3 class="mb-2"><a href="#">Vex Torel Palace In London, England</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -90,7 +90,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -100,13 +100,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/4.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/4.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="train-detail.html">Forlic Around Frieburg, Germany</a></h3>
+<h3 class="mb-2"><a href="#">Forlic Around Frieburg, Germany</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -117,7 +117,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -127,13 +127,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/2.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/2.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="train-detail.html">Forlic Around Frieburg, Germany</a></h3>
+<h3 class="mb-2"><a href="#">Forlic Around Frieburg, Germany</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -144,7 +144,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -154,13 +154,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/6.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/6.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="train-detail.html">Tokyo Serviced Apartment, Japan</a></h3>
+<h3 class="mb-2"><a href="#">Tokyo Serviced Apartment, Japan</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -171,7 +171,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -181,13 +181,13 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/5.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/5.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content pt-2 pb-2 text-right">
-<h3 class="mb-2"><a href="train-detail.html">Vex Torel Palace In London, England</a></h3>
+<h3 class="mb-2"><a href="#">Vex Torel Palace In London, England</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -198,7 +198,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>
@@ -208,13 +208,13 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="train-detail.html" style="background-image: url(images/trains/7.jpg);"></a>
+<a href="#" style="background-image: url(images/trains/7.jpg);"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
 <div class="trend-content-main">
 <div class="trend-content">
-<h3 class="mb-2"><a href="train-detail.html">Forlic Around Frieburg, Germany</a></h3>
+<h3 class="mb-2"><a href="#">Forlic Around Frieburg, Germany</a></h3>
 <div class="rating border-b pb-1 mb-1">
 <p class="mb-0">2.5/5 Excellant | <span class="pink">48 reviews</span></p>
 </div>
@@ -225,7 +225,7 @@
 <span class="me-3">Deal Start At: <strong class="pink">$70</strong></span>
 <span>Average Price: <strong class="pink">$2000</strong></span>
 </div>
-<a class="grey" href="train-booking.html">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
+<a class="grey" href="#">Book Your Ride <i class="fa fa-angle-double-right"></i></a>
 </div>
 </div>
 </div>

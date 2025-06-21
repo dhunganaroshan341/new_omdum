@@ -32,8 +32,8 @@
 <p class="m-0">Showing 1-5 of 80 results</p>
 </div>
 <div class="click-menu d-flex align-items-center justify-content-between">
-<div class="change-list me-2"><a href="destination-list.html"><i class="fa fa-bars"></i></a></div>
-<div class="change-grid f-active"><a href="destination-grid.html"><i class="fa fa-th"></i></a></div>
+<div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+<div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a></div>
 <div class="sortby d-flex align-items-center justify-content-between ms-2">
 <select class="niceSelect">
 <option value="1">Sort By</option>
@@ -59,7 +59,7 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4><a href="destination-single.html">Nepal Special Tour</a></h4>
+<h4><a href="#">Nepal Special Tour</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
 </div>
 <div class="trend-last-main">
@@ -89,7 +89,7 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4><a href="destination-single.html">Paris in Love</a></h4>
+<h4><a href="#">Paris in Love</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 255 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> France.</p>
 </div>
 <div class="trend-last-main">
@@ -118,7 +118,7 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4><a href="destination-single.html">Egyptian Voyager</a></h4>
+<h4><a href="#">Egyptian Voyager</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Eygpt.</p>
 </div>
 <div class="trend-last-main">
@@ -150,7 +150,7 @@
 </div>
 <span class="ms-2">58 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Empire Prestige Causeway Bay</a></h4>
+<h4><a href="#">Empire Prestige Causeway Bay</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 255 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Thailand.</p>
 </div>
 <div class="trend-last-main">
@@ -179,7 +179,7 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 </div>
-<h4><a href="destination-single.html">Bali &amp; Indonesia Tour</a></h4>
+<h4><a href="#">Bali &amp; Indonesia Tour</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Indonesia.</p>
 </div>
 <div class="trend-last-main">
@@ -211,7 +211,7 @@
 </div>
 <span class="ms-2">58 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Madagascar Safari</a></h4>
+<h4><a href="#">Madagascar Safari</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 255 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Mexico.</p>
 </div>
 <div class="trend-last-main">
@@ -243,7 +243,7 @@
 </div>
 <span class="ms-2">65 Reviews</span>
 </div>
-<h4><a href="destination-single.html">Dazzling Dubai</a></h4>
+<h4><a href="#">Dazzling Dubai</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Dubai.</p>
 </div>
 <div class="trend-last-main">
@@ -275,7 +275,7 @@
 </div>
 <span class="ms-2">51 Reviews</span>
 </div>
-<h4><a href="destination-single.html">The Spanish Riviera</a></h4>
+<h4><a href="#">The Spanish Riviera</a></h4>
 <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 255 Visiting Places <i class="fa fa-map-marker me-1 ms-3"></i> Spain.</p>
 </div>
 <div class="trend-last-main">
@@ -606,7 +606,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -635,7 +635,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -664,7 +664,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -693,7 +693,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -722,7 +722,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -751,7 +751,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
@@ -780,7 +780,7 @@
 </div>
 </div>
 <div class="desti-overlay">
-<a class="nir-btn" href="booking.html">
+<a class="nir-btn" href="#">
 <span class="white">Book Now</span>
 <i class="fa fa-arrow-right white ps-1"></i>
 </a>
