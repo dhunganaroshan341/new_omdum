@@ -647,9 +647,8 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="dot-overlay"
-            style = "background:url({{ asset('template/yatri_world/main-file/images/bhutan.jpg') }})">
-        </div> --}}
+        <div class="dot-overlay" style = " background: #162241 url({{ asset('images/dot-overlay.png') }}) repeat;">
+        </div>
     </section>
     <!-- call to action Ends -->
 
@@ -851,7 +850,8 @@
 
 
     <!-- Counter -->
-    <section class="counter-main pb-6 pt-10" style="background-image: url(images/bg/bg4.jpg')}})"">
+    <section class="counter-main pb-6 pt-10"
+        style="background-image: url('{{ asset('/template/yatri_world/main-file/images/bg/bg4.jpg') }}')">
         <div class="container">
             <div class="counter text-center">
                 <div class="row">

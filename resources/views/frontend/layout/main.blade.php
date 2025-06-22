@@ -43,6 +43,11 @@
             max-width: 240px !important;
 
         }
+
+
+        .dot-overlay {
+            background: #162241 url({{ asset('images/dot-overlay.png') }}) repeat;
+        }
     </style>
 </head>
 
