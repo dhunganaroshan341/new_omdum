@@ -13,10 +13,12 @@
                 <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="responsive-menu">
                         <li><a href="{{ route('pages.about') }}">About Us</a></li>
-                        <li><a href="{{ route('pages.services') }}">Services</a></li>
+                        {{-- <li><a href="{{ route('pages.services') }}">Services</a></li> --}}
+                        <li><a href="#">Services</a></li>
 
                         {{-- Clean destination (no dropdown) --}}
-                        <li><a href="{{ route('destination.grid') }}">Destination</a></li>
+                        {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
+                        <li><a href="#">Destination</a></li>
 
                         {{-- Blogs Dropdown --}}
                         <li class="submenu dropdown">

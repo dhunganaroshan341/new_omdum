@@ -15,7 +15,7 @@
                                 <p class="white mb-4">Explore breathtaking landscapes, rich cultures, and unforgettable
                                     journeys — all in one place </p>
                                 <a href="destination-list.html" class="per-btn">
-                                    <span class="white">Read More</span>
+                                    <span class="white">Book Now</span>
                                     <i class="fa fa-arrow-right white"></i>
                                 </a>
                             </div>
@@ -24,7 +24,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image:url({{ asset('/images/tibet.jpg') }})">
+                            <div class="slide-image"
+                                style="background-image:url({{ asset('template/yatri_world/main-file/images/tibet.jpg') }})">
                             </div>
                             <div class="swiper-content1 container">
                                 <h1 class="white mb-2">Closer to the heavens when Kailash calls.</h1>
@@ -52,7 +53,7 @@
                                     next adventure.
                                 </p>
                                 <a href="destination-list.html" class="per-btn">
-                                    <span class="white">Discover</span>
+                                    <span class="white">Book Now</span>
                                     <i class="fa fa-arrow-right white"></i>
                                 </a>
                             </div>
@@ -903,7 +904,8 @@
                 {{-- kailash --}}
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/kailash-vertical.jpg') }}"
+                            alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
@@ -919,7 +921,8 @@
                 {{-- kailash --}}
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/kailash-vertical.jpg') }}"
+                            alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
@@ -935,7 +938,8 @@
                 {{-- kailash --}}
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/kailash-vertical.jpg') }}"
+                            alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
@@ -951,7 +955,8 @@
                 {{-- kailash --}}
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" alt="image">
+                        <img src="{{ asset('template/yatri_world/main-file/images/kailash-vertical.jpg') }}"
+                            alt="image">
                     </div>
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
@@ -1137,7 +1142,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"
+                                        <img src="{{ asset('template/yatri_world/main-file/images/kailash-vertical.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -1198,9 +1203,9 @@
                                     <i class="fa fa-envelope-open white"></i>
                                 </div>
                                 <div class="newsletter-content ms-4">
-                                    <h3 class="title white mb-1">Get Discount <span>30% Off !</span> </h3>
-                                    <p class="m-0 white">Etiam bibendum turpis ac ligula blandit, quis euismod leo
-                                        consectetur Vivamus maximus non.</p>
+                                    <h3 class="title white mb-1">SUBSCRIBE <span>Now!</span> </h3>
+                                    <p class="m-0 white">Get the latest trekking updates, travel tips, and exclusive offers
+                                        delivered straight to your inbox.</p>
                                 </div>
                             </div>
                         </div>
