@@ -851,7 +851,7 @@
 
     <!-- Counter -->
     <section class="counter-main pb-6 pt-10"
-        style="background-image: url('{{ asset('/template/yatri_world/main-file/images/bg/bg4.jpg') }}')}})">
+        style="background-image: url('{{ asset('/template/yatri_world/main-file/images/bg/bg4.jpg') }}')">
         <div class="container">
             <div class="counter text-center">
                 <div class="row">
