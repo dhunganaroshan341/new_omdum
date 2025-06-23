@@ -560,7 +560,8 @@ table thead tr th {
 }
 
 .dot-overlay {
-  /* background: #162241 url(../images/dot-overlay.png) repeat; */
+
+
   opacity: 0.6;
 }
 
@@ -5413,6 +5414,7 @@ section.pricing-tab .price-tabmain .price-list .price-box.price-recommended .pri
 .news .news-item .news-image img {
   transition: all ease-in-out 0.5s;
   min-height: 275px;
+  max-height: 280px;
   object-fit: cover;
   width: 100%;
 }
