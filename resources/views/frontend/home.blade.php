@@ -263,8 +263,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore
-                                                - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -304,8 +304,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Solukhumbu</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -910,7 +910,7 @@
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
                         <h4><a href="#">Visit Mount kailash!</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <p>With upto 30% Off, experience Mount kailash your way!</p>
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From <span>$250.00</span></p>
                         </div>
@@ -927,7 +927,7 @@
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
                         <h4><a href="#">Visit Mount kailash!</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <p>With upto 30% Off, experience Mount kailash your way!</p>
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From <span>$250.00</span></p>
                         </div>
@@ -944,7 +944,7 @@
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
                         <h4><a href="#">Visit Mount kailash!</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <p>With upto 30% Off, experience Mount kailash your way!</p>
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From <span>$250.00</span></p>
                         </div>
@@ -961,7 +961,7 @@
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink"><i class="fa fa-map-marker-alt"></i> Tibet,China</h6>
                         <h4><a href="#">Visit Mount kailash!</a></h4>
-                        <p>With upto 30% Off, experience Europe your way!</p>
+                        <p>With upto 30% Off, experience Mount kailash your way!</p>
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From <span>$250.00</span></p>
                         </div>
