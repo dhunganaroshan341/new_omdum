@@ -47,7 +47,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog1.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog1.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -65,7 +66,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog2.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog2.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -83,7 +85,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog3.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog3.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -101,7 +104,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog4.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog4.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -120,7 +124,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog5.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog5.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -139,7 +144,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog6.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog6.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -158,7 +164,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog7.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog7.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -177,7 +184,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog8.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog8.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -196,7 +204,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog9.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog9.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -215,7 +224,8 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="blog-full text-center p-3">
-                                <img alt="" src="{{ asset('images/blog/blog10.jpg') }}" />
+                                <img alt=""
+                                    src="{{ asset('template/yatri/world/main-file/images/blog/blog10.jpg') }}" />
                                 <div class="blog-content pb-0">
                                     <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
                                     <h3 class="mb-2"><a class="" href="blog-single.html">Leverage agile
@@ -255,7 +265,8 @@
                             <div class="author-news mb-4">
                                 <div class="author-news-content">
                                     <div class="author-thumb">
-                                        <img alt="author" src="{{ asset('images/team/img2.jpg') }}" />
+                                        <img alt="author"
+                                            src="{{ asset('template/yatri/world/main-file/images/team/img2.jpg') }}" />
                                     </div>
                                     <div class="author-content">
                                         <span>Author News</span>
@@ -305,7 +316,7 @@
                                         <div class="tab-pane fade show active" id="popular">
                                             <div class="sidebar-image mb-2 mt-2">
                                                 <a href="blog-single..html"><img alt=""
-                                                        src="{{ asset('images/blog/blog3.jpg') }}" /></a>
+                                                        src="{{ asset('template/yatri/world/main-file/images/blog/blog3.jpg') }}" /></a>
                                             </div>
                                             <article class="post mb-2">
                                                 <div class="s-content d-flex align-items-center justify-space-between">
@@ -341,7 +352,7 @@
                                         <div class="tab-pane fade" id="recent">
                                             <div class="sidebar-image mb-2 mt-2">
                                                 <a href="blog-single.html"><img alt=""
-                                                        src="{{ asset('images/blog/blog1.jpg') }}" /></a>
+                                                        src="{{ asset('template/yatri/world/main-file/images/blog/blog1.jpg') }}" /></a>
                                             </div>
                                             <article class="post mb-2">
                                                 <div class="s-content d-flex align-items-center justify-space-between">
