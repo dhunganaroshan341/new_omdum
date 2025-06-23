@@ -133,16 +133,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -170,16 +174,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -207,16 +215,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Bhutan/China.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -250,16 +262,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the seashore
+                                                - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -287,16 +303,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Solukhumbu</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -324,16 +344,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -366,16 +390,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 852 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -403,16 +431,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 615 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> Tibet.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -440,16 +472,20 @@
                                             <p class="mb-0"><i class="fa fa-eye me-1"></i> 926 Visiting Places <i
                                                     class="fa fa-map-marker me-1 ms-3"></i> India.</p>
                                         </div>
-                                        <div
-                                            class="trend-last d-flex align-items-center justify-content-center gap-3 flex-wrap">
-                                            <a class="white d-flex align-items-center gap-2 text-decoration-none"
-                                                href="#">
-                                                <img src = "{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
-                                                    class="d-author me-2" alt="">
-                                                Book Now
-                                            </a>
-                                            <div class="trend-price">
-                                                <a href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
+                                                seashore - perfect for exploring.</p>
+                                            <div class="trend-last d-flex align-items-center justify-content-between">
+                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt="">
+                                                    Book Now
+
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0"><a href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -815,7 +851,7 @@
 
     <!-- Counter -->
     <section class="counter-main pb-6 pt-10"
-        style="background-image: url('{{ asset('/template/yatri_world/main-file/images/bg/bg4.jpg') }}')">
+        style="background-image: url('{{ asset('/template/yatri_world/main-file/images/bg/bg4.jpg') }}')}})">
         <div class="container">
             <div class="counter text-center">
                 <div class="row">
