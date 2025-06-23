@@ -19,9 +19,10 @@
                         {{-- Clean destination (no dropdown) --}}
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
                         <li><a href="#">Destination</a></li>
+                        <li><a href="{{ route('blog.grid') }}">Blog</a></li>
 
                         {{-- Blogs Dropdown --}}
-                        <li class="submenu dropdown">
+                        {{-- <li class="submenu dropdown">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
                                 href="{{ route('blog.grid') }}" role="button">
                                 Blogs <i aria-hidden="true" class="icon-arrow-down"></i>
@@ -31,7 +32,7 @@
                                 <li><a href="{{ route('pages.blog-single') }}">Blog Single</a></li>
                                 <li><a href="{{ route('blog.single') }}">Blog Single Full</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <li><a href="{{ route('pages.contact') }}">Contact Us</a></li>
                     </ul>
