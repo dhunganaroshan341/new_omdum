@@ -138,7 +138,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -179,7 +179,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -220,7 +220,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -267,7 +267,7 @@
                                                 - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -308,7 +308,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -349,7 +349,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -395,7 +395,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -436,7 +436,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
@@ -477,7 +477,7 @@
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-between">
                                                 <a class="mb-0 white d-flex align-items-center"><img
-                                                        src=""{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
 
