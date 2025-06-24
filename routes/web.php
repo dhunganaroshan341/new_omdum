@@ -220,7 +220,7 @@ Route::get('/about', [UserFrontendController::class, 'about'])->name('about');
 Route::get('/booking', [UserFrontendController::class, 'booking'])->name('booking');
 Route::get('/flight-booking', [UserFrontendController::class, 'flightBooking'])->name('flight-booking');
 Route::get('/car-booking', [UserFrontendController::class, 'carBooking'])->name('car-booking');
-// Route::get('/blogs', [UserFrontendController::class, 'blogList'])->name('blog-list');
+Route::get('/blogs/list', [UserFrontendController::class, 'blogList'])->name('blog-list');
 Route::get('/contact', [UserFrontendController::class, 'contact'])->name('contact');
 Route::get('/cart', [UserFrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout', [UserFrontendController::class, 'checkout'])->name('checkout');

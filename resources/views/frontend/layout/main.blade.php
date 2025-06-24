@@ -26,6 +26,7 @@
 
 
     <link rel="stylesheet" href="{{ asset('template/yatri_world/main-file/fonts/line-icons.css') }}" type="text/css">
+    @stack('styles')
     <style>
         .inline-icon {
             display: inline !important:
@@ -47,6 +48,8 @@
 
         .dot-overlay {
             background: #162241 url({{ asset('images/dot-overlay.png') }}) repeat;
+            /* pointer-events: none; */
+            /* allow clicks through */
         }
     </style>
 </head>
@@ -311,6 +314,7 @@
     <script src="{{ asset('template/yatri_world/main-file/js/custom-swiper2.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-nav.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-date.js') }}"></script>
+    @stack('scripts')
 
 </body>
 

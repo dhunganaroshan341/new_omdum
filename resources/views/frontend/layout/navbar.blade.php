@@ -18,22 +18,24 @@
 
                         {{-- Clean destination (no dropdown) --}}
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
-                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Nepal</a></li>
+
                         <li><a href="{{ route('blog.grid') }}">Blog</a></li>
 
                         {{-- Blogs Dropdown --}}
-                        {{-- <li class="submenu dropdown">
+                        <li class="submenu dropdown">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
-                                href="{{ route('blog.grid') }}" role="button">
-                                Blogs <i aria-hidden="true" class="icon-arrow-down"></i>
+                                href="#" role="button">
+                                Tibet <i aria-hidden="true" class="icon-arrow-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('blog.grid') }}">Blog Grid</a></li>
-                                <li><a href="{{ route('pages.blog-single') }}">Blog Single</a></li>
-                                <li><a href="{{ route('blog.single') }}">Blog Single Full</a></li>
-                            </ul>
-                        </li> --}}
+                                <li><a href="#">Mount Kailash Basic </a></li>
+                                <li><a href="#">Mount Kailash Premium </a></li>
 
+                            </ul>
+                        </li>
+                        <li><a href="#">India</a></li>
+                        <li><a href="#">Bhutan</a></li>
                         <li><a href="{{ route('pages.contact') }}">Contact Us</a></li>
                     </ul>
 
