@@ -69,16 +69,76 @@
 @push('styles')
     <style>
         .youtube-banner {
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
             position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
 
+        /* Make the video container fixed, full screen */
+        .youtube-banner .video-container {
+            position: fixed !important;
+            /* override if needed */
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            padding-top: 0 !important;
+            /* remove padding-top ratio for fixed */
+            z-index: -1;
+        }
+
+        /* Ensure the iframe or video inside covers whole container */
+        .youtube-banner #ytVideo,
+        .youtube-banner #videoPlaceholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay fixed above video */
+        .youtube-banner .overlay {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        /* Text content positioned relative, vertically centered inside the banner */
+        .youtube-banner .swiper-content2 {
+            position: relative !important;
+            z-index: 1 !important;
+            top: 50vh;
+            transform: translateY(-50%);
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             .youtube-banner {
                 height: 25vh;
+            }
+
+            .youtube-banner .video-container {
+                position: fixed !important;
+                height: 25vh !important;
+            }
+
+            .youtube-banner .overlay {
+                height: 25vh !important;
+            }
+
+            .youtube-banner .swiper-content2 {
+                top: 12.5vh;
+                transform: translateY(-50%);
+                padding: 0 10px;
             }
 
             .swiper-content2 h1 {
@@ -88,8 +148,6 @@
             .swiper-content2 p {
                 font-size: 1rem;
             }
-
-
 
             .banner-title {
                 font-size: 1.2rem !important;
@@ -103,29 +161,15 @@
                 padding: 0;
             }
 
-
-
-            .book-now-button span {
-                font-size: 0.7rem;
-            }
-
-            .book-now-button span i {
-                font-size: 0.7rem;
-            }
-
-            /* book-now button/ per-btn  same*/
+            .book-now-button span,
+            .book-now-button span i,
             .per-btn {
-                position: relative;
-                margin: auto;
-                padding: 9px 11px;
-                transition: all 0.2s ease;
-                bottom: 20px;
+                font-size: 0.7rem !important;
+                padding: 9px 11px !important;
+                bottom: 20px !important;
+                margin: auto !important;
+                position: relative !important;
             }
-        }
-
-        .video-container {
-            padding-top: 56.25%;
-            /* 16:9 ratio */
         }
     </style>
 @endpush
