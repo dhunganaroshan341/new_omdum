@@ -12,8 +12,9 @@
     </div>
 
     <!-- 🔳 Overlay -->
-    <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.4); z-index: 3;">
+    <div class="overlay position-fixed top-0 start-0 w-100 vh-100" style="background: rgba(0,0,0,0.4); z-index: 0;">
     </div>
+
 
     <!-- 📝 Text Content -->
     <div class="swiper-content2 container position-absolute top-50 start-50 translate-middle text-center text-white"
