@@ -77,7 +77,7 @@
 
         /* Make the video container fixed, full screen */
         .youtube-banner .video-container {
-            position: fixed !important;
+            position: relative !important;
             /* override if needed */
             top: 0;
             left: 0;

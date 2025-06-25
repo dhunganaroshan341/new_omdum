@@ -18,7 +18,7 @@
 
                         {{-- Clean destination (no dropdown) --}}
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
-                        <li><a href="#">Nepal</a></li>
+                        <li><a href="#">Tibet</a></li>
 
 
 
@@ -26,11 +26,11 @@
                         <li class="submenu dropdown">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
                                 href="#" role="button">
-                                Tibet <i aria-hidden="true" class="icon-arrow-down"></i>
+                                Nepal <i aria-hidden="true" class="icon-arrow-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Mount Kailash Basic </a></li>
-                                <li><a href="#">Mount Kailash Premium </a></li>
+                                <li><a href="#">Tour Packages </a></li>
+                                <li><a href="#">Trekking Packages </a></li>
 
                             </ul>
                         </li>
