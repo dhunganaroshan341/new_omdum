@@ -20,7 +20,7 @@
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
                         <li><a href="#">Nepal</a></li>
 
-                        <li><a href="{{ route('blog.grid') }}">Blog</a></li>
+
 
                         {{-- Blogs Dropdown --}}
                         <li class="submenu dropdown">
@@ -36,6 +36,8 @@
                         </li>
                         <li><a href="#">India</a></li>
                         <li><a href="#">Bhutan</a></li>
+
+                        <li><a href="{{ route('blog.grid') }}">Blog</a></li>
                         <li><a href="{{ route('pages.contact') }}">Contact Us</a></li>
                     </ul>
 
