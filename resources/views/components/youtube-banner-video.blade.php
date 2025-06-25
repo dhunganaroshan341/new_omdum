@@ -39,13 +39,13 @@
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('ytVideo', {
-                videoId: '79bPSuxTZ9s',
+                videoId: '8efveLZ3E24',
                 playerVars: {
                     autoplay: 1,
                     mute: 1,
                     controls: 0,
                     loop: 1,
-                    playlist: '79bPSuxTZ9s',
+                    playlist: '8efveLZ3E24',
                     modestbranding: 1,
                     rel: 0,
                     showinfo: 0
