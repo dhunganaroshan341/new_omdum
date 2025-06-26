@@ -22,10 +22,12 @@
         <p class="white mb-4 banner-subtext">Explore breathtaking landscapes, rich cultures, and unforgettable journeys
             — all in one
             place</p>
-        <a href="#" class="per-btn book-now-button">
-            <span class="white">Book Now</span>
-            <i class="fa fa-arrow-right white"></i>
-        </a>
+        <div class="book-now-button-container">
+            <a href="#" class="per-btn book-now-button">
+                <span class="white">Book Now</span>
+                <i class="fa fa-arrow-right white"></i>
+            </a>
+        </div>
     </div>
 </section>
 @push('scripts')
@@ -130,7 +132,7 @@
             .youtube-banner .video-container {
                 /* position: fixed !important; */
                 height: 30vh !important;
-                object-fit: coverl;
+                object-fit: cover;
             }
 
             .youtube-banner .overlay {
@@ -163,15 +165,23 @@
                 padding: 0;
             }
 
-            .book-now-button span,
-            .book-now-button span i,
-            .per-btn {
-                font-size: 0.7rem !important;
-                padding: 9px 11px !important;
-                bottom: 20px !important;
-                margin: auto !important;
-                position: relative !important;
+            .book-now-button-container {
+                width: 140px;
+                height: 90px
             }
+
+            .book-now-button-container span {}
+
+            .per-btn span {
+                position: relative;
+                font-size: 8px;
+                font-weight: 900;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+
+
         }
     </style>
 @endpush
