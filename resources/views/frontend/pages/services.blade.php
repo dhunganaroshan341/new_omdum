@@ -20,386 +20,611 @@
     </section>
     <!-- BreadCrumb Ends -->
     <!-- blog starts -->
-    <section class="blog">
+    <section class="blog destination-b pb-6">
         <div class="container">
             <div class="row gx-lg-5">
                 <div class="col-lg-8 mb-4">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="list-results d-flex align-items-center justify-content-between">
-                                <div class="list-results-sort">
-                                    <p class="m-0">Showing 1-5 of 80 results</p>
+                    <div class="trend-box">
+                        <div class="list-results d-flex align-items-center justify-content-between">
+                            <div class="list-results-sort">
+                                <p class="m-0">Showing 1-5 of 80 results</p>
+                            </div>
+                            <div class="click-menu d-flex align-items-center justify-content-between">
+                                <div class="change-list f-active me-2"><a href="destination-list.html"><i
+                                            class="fa fa-bars"></i></a></div>
+                                <div class="change-grid"><a href="destination-grid.html"><i class="fa fa-th"></i></a></div>
+                                <div class="sortby d-flex align-items-center justify-content-between ms-2">
+                                    <select class="niceSelect">
+                                        <option value="1">Sort By</option>
+                                        <option value="2">Average rating</option>
+                                        <option value="3">Price: low to high</option>
+                                        <option value="4">Price: high to low</option>
+                                    </select>
                                 </div>
-                                <div class="click-menu d-flex align-items-center justify-content-between">
-                                    <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a>
+                            </div>
+                        </div>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination3.jpg);"></a>
                                     </div>
-                                    <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Paris in
+                                                Love</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> France.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                                        </div>
                                     </div>
-                                    <div class="sortby d-flex align-items-center justify-content-between ms-2">
-                                        <select class="niceSelect">
-                                            <option value="1">Sort By</option>
-                                            <option value="2">Average rating</option>
-                                            <option value="3">Price: low to high</option>
-                                            <option value="4">Price: high to low</option>
-                                        </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination4.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Empire Prestige
+                                                Causeway Bay</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Thailand.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile frameworks
-                                            to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination5.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Egyptian
+                                                Voyager</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 106 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Egypt.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$210.00</span>/ 4 days 5 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog2.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile frameworks
-                                            to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>25% OFF</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination8.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Bali &amp;
+                                                Indonesia Tour</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 232 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Indonesia.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile frameworks
-                                            to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination7.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Madagascar
+                                                Safari</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 266 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Mexico.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog4.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>15% OFF</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination6.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Dazzling
+                                                Dubai</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 352 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Dubai.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$245.00</span>/ 4 days 5 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog5.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination10.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">The Spanish
+                                                Riviera</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Spain.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$220.00</span>/ 4 days 5 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog6.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination9.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Highlights of
+                                                Vietnam</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 164 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Vietnam.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$190.00</span>/ 4 days 5 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog7.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                        <div class="blog-full d-flex justify-content-around mb-4">
+                            <div class="row w-100">
+                                <div class="ribbon ribbon-top-left"><span>Offer</span></div>
+                                <div class="col-lg-5 col-md-4 blog-height">
+                                    <div class="blog-image">
+                                        <a href="destination-single.html"
+                                            style="background-image: url(images/destination/destination11.jpg);"></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-8">
+                                    <div class="blog-content p-0">
+                                        <h4 class="mb-1"><a class="" href="destination-single.html">Aegean
+                                                Adventure Cruise</a></h4>
+                                        <div class="trend-tags">
+                                            <a href="#"><i class="fa fa-heart"></i></a>
+                                        </div>
+                                        <div class="rating pb-1">
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                        </div>
+                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
+                                                class="fa fa-map-marker me-1 ms-3"></i> Australia.</p>
+                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                            Impression up admiration partiality is...</p>
+                                        <div class="deal-price">
+                                            <p class="price mb-0">From <span>$280.00</span>/ 7 days 6 nights</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog8.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog9.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <div class="blog-full text-center p-3">
-                                <img alt=""
-                                    src="{{ asset('template/yatri_world/main-file/images/blog/blog10.jpg') }}" />
-                                <div class="blog-content pb-0">
-                                    <span class="h-date pink mb-1 font-weight-light d-block"> Dec 8, 2024</span>
-                                    <h3 class="mb-2"><a class="" href="#">Leverage agile
-                                            frameworks to provide a robust</a></h3>
-                                    <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                        <a class="me-2" href="#"><i class="fa fa-file"></i> Categories</a> <a
-                                            class="" href="#"><i class="fa fa-user"></i> By Lorem Ipsum</a>
-                                    </p>
-                                    <p class="mb-2 border-t pt-2">Susp endisse ullam corper a adipiscing class ullam corper
-                                        inceptos nisl consequat eros congue.</p>
-                                    <a class="grey font-weight-light" href="#">Read This <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="pagination-main text-center">
-                                <ul class="pagination">
-                                    <li><a href="#"><i aria-hidden="true" class="fa fa-angle-double-left"></i></a>
-                                    </li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="text-center">
+                            <a class="nir-btn" href="#">Load More <i class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- sidebar starts -->
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-4">
                     <div class="sidebar-sticky">
+                        <div class="sidebar-item mb-4">
+                            <form class="form-content">
+                                <h4 class="title white">Find The Places</h4>
+                                <div class="row gy-4">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white">Your Destination</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-placeholder"></i>
+                                                <select class="niceSelect">
+                                                    <option value="1">Where are you going?</option>
+                                                    <option value="2">Argentina</option>
+                                                    <option value="3">Belgium</option>
+                                                    <option value="4">Canada</option>
+                                                    <option value="5">Denmark</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="white">Check In</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-calendar"></i>
+                                                <input id="date-range0" placeholder="yyyy-mmm-dd" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="white">Check Out</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-calendar"></i>
+                                                <input id="date-range1" placeholder="yyyy-mm-dd" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="white">Adult</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-add-user"></i>
+                                                <select class="niceSelect">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="white">Children</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-add-user"></i>
+                                                <select class="niceSelect">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-0">
+                                            <a class="nir-btn w-100" href="#"><i class="fa fa-search"></i> Check
+                                                Availability</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                         <div class="list-sidebar">
-                            <div class="author-news mb-4">
-                                <div class="author-news-content">
-                                    <div class="author-thumb">
-                                        <img alt="author"
-                                            src="{{ asset('template/yatri_world/main-file/images/team/img2.jpg') }}" />
-                                    </div>
-                                    <div class="author-content">
-                                        <span>Author News</span>
-                                        <h4 class="title mb-0"><a class="white" href="#">Relson Dulux</a></h4>
-                                        <p class="m-0">Director / Suplex World</p>
-                                        <div class="header-social">
-                                            <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            </ul>
-                                        </div>
+                            <div class="sidebar-item">
+                                <h4>Services</h4>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>24/7 Reception</label>
                                     </div>
                                 </div>
-                                <div class="dot-overlay"></div>
-                            </div>
-                            <div class="sidebar-item mb-4">
-                                <h4 class="">All Categories</h4>
-                                <ul class="sidebar-category">
-                                    <li><a href="#">All</a></li>
-                                    <li><a href="#">Featured</a></li>
-                                    <li><a href="#">Sliders</a></li>
-                                    <li class="active"><a href="#">Manage Listings</a></li>
-                                    <li><a href="#">Address and Map</a></li>
-                                    <li><a href="#">Reservation Requests</a></li>
-                                    <li><a href="#">Your Reservation</a></li>
-                                    <li><a href="#">Search Results</a></li>
-                                </ul>
-                            </div>
-                            <div class="sidebar-item mb-4">
-                                <div class="sidebar-tabs">
-                                    <div class="sidebar-navtab text-center">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#popular">
-                                                    <i class="fa fa-check-circle"></i> Most Popular
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#recent">
-                                                    <i class="fa fa-check-circle"></i> Recent Post
-                                                </a>
-                                            </li>
-                                        </ul>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Parking</label>
                                     </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="popular">
-                                            <div class="sidebar-image mb-2 mt-2">
-                                                <a href="#"><img alt=""
-                                                        src="{{ asset('template/yatri_world/main-file/images/blog/blog3.jpg') }}" /></a>
-                                            </div>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">01</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">Takes on Baboon, and
-                                                                It Doesn’t Go Well for It</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">02</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">Zebras Hold New
-                                                                Record for Longest Migration</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">03</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">African Reserve Got
-                                                                Killed by Lions Instead</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="tab-pane fade" id="recent">
-                                            <div class="sidebar-image mb-2 mt-2">
-                                                <a href="#"><img alt=""
-                                                        src="{{ asset('template/yatri_world/main-file/images/blog/blog1.jpg') }}" /></a>
-                                            </div>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">01</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">Takes on Baboon, and
-                                                                It Doesn’t Go Well for It</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">02</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">Zebras Hold New
-                                                                Record for Longest Migration</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">03</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="#">African Reserve Got
-                                                                Killed by Lions Instead</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Bar</label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Restaurant</label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Satellite Television</label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Lift/ELevator</label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state p-warning-o">
+                                        <label>Luggage Storage </label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-item mb-4">
-                                <h4 class="">Tags</h4>
-                                <ul class="sidebar-tags">
-                                    <li><a href="#">Tour</a></li>
-                                    <li><a href="#">Rental</a></li>
-                                    <li><a href="#">City</a></li>
-                                    <li><a href="#">Yatch</a></li>
-                                    <li><a href="#">Activity</a></li>
-                                    <li><a href="#">Museum</a></li>
-                                    <li><a href="#">Beauty</a></li>
-                                    <li><a href="#">Classic</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Designs</a></li>
-                                    <li><a href="#">Featured</a></li>
-                                    <li><a href="#">Free Style</a></li>
-                                    <li><a href="#">Programs</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                </ul>
+                            <div class="sidebar-item">
+                                <div class="map-box">
+                                    <i class="fa fa-map-marker"></i>
+                                    <a href="#">Show on Map</a>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h4>Star Rating</h4>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            <span class="star-rating">
+                                                <span class="fa fa-star checked"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h4>Price Range($)</h4>
+                                <div class="range-slider">
+                                    <div aria-disabled="false"
+                                        class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                        data-max="2000" data-max-name="max_price" data-min="0"
+                                        data-min-name="min_price" data-unit="$">
+                                        <span class="min-value">0 $</span>
+                                        <span class="max-value">2000 $</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all full"
+                                            style="left: 0%; width: 100%;"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="sidebar-item">
+                                <h4>City</h4>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Amsterdam<span class="number">749</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input checked="" type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Rotterdam<span class="number">630</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Copenghan<span class="number">58</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            New Delhi<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            New York<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Kathmandu<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Brisbane<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Tokyo<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -408,4 +633,7 @@
         </div>
     </section>
     <!-- blog Ends -->
+    <!-- Testiomonial starts -->
+    @include('components.testimonial-section')
+    <!-- Testimonial Ends -->
 @endsection
