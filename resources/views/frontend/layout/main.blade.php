@@ -56,6 +56,17 @@
             /* pointer-events: none; */
             /* allow clicks through */
         }
+
+        /* destination-slingle slick slider image fix */
+        .slider-store img {
+            height: 500px !important;
+            object-fit: cover !important;
+        }
+
+        .slider-thumb img {
+            height: 90px !important;
+            object-fit: cover !important;
+        }
     </style>
 </head>
 
