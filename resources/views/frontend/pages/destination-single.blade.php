@@ -566,150 +566,168 @@
                 <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better
                     people. Each time we travel, we see the world with new eyes.</p>
             </div>
+            <div class="trend-box">
+                <div class="team-slider">
 
-            <div class="trend-box d-flex flex-wrap justify-content-center gap-4">
+                    <!-- Tibet -->
+                    <div class="trend-item mx-3">
+                        <div class="trend-image">
+                            <img alt="image" src="{{ asset('images/trending/tibet.jpg') }}" />
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
+                            </div>
+                        </div>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Tibet</h6>
+                                <h4><a href="#">Lhasa & Everest Base Camp Adventure</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ms-2">28 Reviews</span>
+                                </div>
+                            </div>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">Experience Tibetan culture and stunning Himalayan views.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 7 days &amp; 6
+                                        nights</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$799.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Tibet -->
-                <div class="trend-item mx-3">
-                    <div class="trend-image position-relative">
-                        <img src="images/tibet.jpg" alt="Tibet Tour" />
-                        <div class="trend-tags"><a href="#"><i class="flaticon-like"></i></a></div>
-                    </div>
-                    <div class="trend-content-main">
-                        <div class="trend-content">
-                            <h6><i class="fa fa-map-marker-alt"></i> Tibet</h6>
-                            <h4><a href="#">Mystical Journey to Lhasa & Everest Base Camp</a></h4>
-                            <div class="rating-main d-flex align-items-center">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span>
-                                </div>
-                                <span class="ms-2">28 Reviews</span>
+                    <!-- Bhutan -->
+                    <div class="trend-item mx-3">
+                        <div class="trend-image">
+                            <img alt="image" src="{{ asset('images/trending/bhutan.jpg') }}" />
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
                             </div>
                         </div>
-                        <div class="trend-last-main">
-                            <p class="mb-0 trend-para">Explore ancient monasteries and the breathtaking Himalayas of Tibet.
-                            </p>
-                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 7 Days &amp; 6 Nights</p>
-                                <div class="trend-price">
-                                    <p class="price white mb-0">From <span>$799.00</span></p>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Bhutan</h6>
+                                <h4><a href="#">Paro & Tiger’s Nest Experience</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ms-2">35 Reviews</span>
                                 </div>
                             </div>
-                            <div class="text-end mt-3">
-                                <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">Discover Bhutan’s serene landscapes and sacred sites.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 5 days &amp; 4
+                                        nights</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$620.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Bhutan -->
-                <div class="trend-item mx-3">
-                    <div class="trend-image position-relative">
-                        <img src="images/bhutan.jpg" alt="Bhutan Tour" />
-                        <div class="trend-tags"><a href="#"><i class="flaticon-like"></i></a></div>
-                    </div>
-                    <div class="trend-content-main">
-                        <div class="trend-content">
-                            <h6><i class="fa fa-map-marker-alt"></i> Bhutan</h6>
-                            <h4><a href="#">Discover the Hidden Kingdom of Bhutan</a></h4>
-                            <div class="rating-main d-flex align-items-center">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span>
-                                </div>
-                                <span class="ms-2">35 Reviews</span>
+                    <!-- India -->
+                    <div class="trend-item mx-3">
+                        <div class="trend-image">
+                            <img alt="image" src="{{ asset('images/trending/india.jpg') }}" />
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
                             </div>
                         </div>
-                        <div class="trend-last-main">
-                            <p class="mb-0 trend-para">Walk the Tiger’s Nest and experience Bhutan’s peaceful vibes.</p>
-                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 5 Days &amp; 4 Nights</p>
-                                <div class="trend-price">
-                                    <p class="price white mb-0">From <span>$620.00</span></p>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> India</h6>
+                                <h4><a href="#">Golden Triangle: Delhi, Agra & Jaipur</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ms-2">50 Reviews</span>
                                 </div>
                             </div>
-                            <div class="text-end mt-3">
-                                <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">Explore India’s rich history and vibrant culture.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 6 days &amp; 5
+                                        nights</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$450.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- India -->
-                <div class="trend-item mx-3">
-                    <div class="trend-image position-relative">
-                        <img src="images/india.jpg" alt="India Tour" />
-                        <div class="trend-tags"><a href="#"><i class="flaticon-like"></i></a></div>
-                    </div>
-                    <div class="trend-content-main">
-                        <div class="trend-content">
-                            <h6><i class="fa fa-map-marker-alt"></i> India</h6>
-                            <h4><a href="#">Golden Triangle: Delhi, Agra & Jaipur</a></h4>
-                            <div class="rating-main d-flex align-items-center">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span>
-                                </div>
-                                <span class="ms-2">50 Reviews</span>
+                    <!-- Nepal -->
+                    <div class="trend-item mx-3">
+                        <div class="trend-image">
+                            <img alt="image" src="{{ asset('images/trending/nepal.jpg') }}" />
+                            <div class="trend-tags">
+                                <a href="#"><i class="flaticon-like"></i></a>
                             </div>
                         </div>
-                        <div class="trend-last-main">
-                            <p class="mb-0 trend-para">Visit the Taj Mahal, explore palaces, and taste vibrant Indian
-                                culture.</p>
-                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 6 Days &amp; 5 Nights</p>
-                                <div class="trend-price">
-                                    <p class="price white mb-0">From <span>$450.00</span></p>
+                        <div class="trend-content-main">
+                            <div class="trend-content">
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Nepal</h6>
+                                <h4><a href="#">Kathmandu, Pokhara & Himalayan Sunrise</a></h4>
+                                <div class="rating-main d-flex align-items-center">
+                                    <div class="rating">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <span class="ms-2">42 Reviews</span>
                                 </div>
                             </div>
-                            <div class="text-end mt-3">
-                                <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">A scenic journey from temples to lakes and mountains.</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 4 days &amp; 3
+                                        nights</p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">From <span>$399.00</span></p>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Nepal -->
-                <div class="trend-item mx-3">
-                    <div class="trend-image position-relative">
-                        <img src="images/nepal.jpg" alt="Nepal Tour" />
-                        <div class="trend-tags"><a href="#"><i class="flaticon-like"></i></a></div>
-                    </div>
-                    <div class="trend-content-main">
-                        <div class="trend-content">
-                            <h6><i class="fa fa-map-marker-alt"></i> Nepal</h6>
-                            <h4><a href="#">Kathmandu to Pokhara Adventure</a></h4>
-                            <div class="rating-main d-flex align-items-center">
-                                <div class="rating">
-                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span
-                                        class="fa fa-star checked"></span>
-                                </div>
-                                <span class="ms-2">42 Reviews</span>
-                            </div>
-                        </div>
-                        <div class="trend-last-main">
-                            <p class="mb-0 trend-para">From temples to lakes, discover Nepal’s charm in this scenic
-                                journey.</p>
-                            <div class="trend-last d-flex align-items-center justify-content-between">
-                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 4 Days &amp; 3 Nights</p>
-                                <div class="trend-price">
-                                    <p class="price white mb-0">From <span>$399.00</span></p>
-                                </div>
-                            </div>
-                            <div class="text-end mt-3">
-                                <a href="#" class="btn btn-sm btn-primary">Book Now &rarr;</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                </div> <!-- /.team-slider -->
+            </div> <!-- /.trend-box -->
         </div>
     </section>
-        <!-- Trending Ends -->
+    <!-- Trending Ends -->
 @endsection
