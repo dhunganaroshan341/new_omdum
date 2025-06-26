@@ -2,7 +2,8 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');">
+    <section class="breadcrumb-main"
+        style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -43,304 +44,313 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/india.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Paris in
-                                                Love</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> France.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                        <div class="d-flex flex-row justify-content-around ">
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/india.jpg') }}');"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Empire Prestige
-                                                Causeway Bay</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Thailand.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Paris in
+                                                    Love</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> France.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Egyptian
-                                                Voyager</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 106 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Egypt.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$210.00</span>/ 4 days 5 nights</p>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>25% OFF</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Bali &amp;
-                                                Indonesia Tour</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 232 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Indonesia.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Empire Prestige
+                                                    Causeway Bay</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Thailand.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Madagascar
-                                                Safari</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 266 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Mexico.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>15% OFF</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Dazzling
-                                                Dubai</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 352 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Dubai.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$245.00</span>/ 4 days 5 nights</p>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Egyptian
+                                                    Voyager</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 106 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Egypt.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$210.00</span>/ 4 days 5 nights</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">The Spanish
-                                                Riviera</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Spain.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$220.00</span>/ 4 days 5 nights</p>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>25% OFF</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Highlights of
-                                                Vietnam</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                        </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 164 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Vietnam.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$190.00</span>/ 4 days 5 nights</p>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Bali &amp;
+                                                    Indonesia Tour</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 232 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Indonesia.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$250.00</span>/ 7 days 6 nights</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="blog-full d-flex justify-content-around mb-4">
-                            <div class="row w-100">
-                                <div class="ribbon ribbon-top-left"><span>Offer</span></div>
-                                <div class="col-lg-5 col-md-4 blog-height">
-                                    <div class="blog-image">
-                                        <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Madagascar
+                                                    Safari</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 266 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Mexico.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$180.00</span>/ 4 days 5 nights</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 col-md-8">
-                                    <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="#">Aegean
-                                                Adventure Cruise</a></h4>
-                                        <div class="trend-tags">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
+                            </div>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>15% OFF</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
                                         </div>
-                                        <div class="rating pb-1">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
+                                    </div>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Dazzling
+                                                    Dubai</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 352 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Dubai.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$245.00</span>/ 4 days 5 nights</p>
+                                            </div>
                                         </div>
-                                        <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
-                                                class="fa fa-map-marker me-1 ms-3"></i> Australia.</p>
-                                        <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income sister.
-                                            Impression up admiration partiality is...</p>
-                                        <div class="deal-price">
-                                            <p class="price mb-0">From <span>$280.00</span>/ 7 days 6 nights</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">The Spanish
+                                                    Riviera</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 126 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Spain.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$220.00</span>/ 4 days 5 nights</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Highlights of
+                                                    Vietnam</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 164 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Vietnam.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$190.00</span>/ 4 days 5 nights</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-full d-flex justify-content-around mb-4">
+                                <div class="row w-100">
+                                    <div class="ribbon ribbon-top-left"><span>Offer</span></div>
+                                    <div class="col-lg-5 col-md-4 blog-height">
+                                        <div class="blog-image">
+                                            <a href="#"
+                                                style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-8">
+                                        <div class="blog-content p-0">
+                                            <h4 class="mb-1"><a class="" href="#">Aegean
+                                                    Adventure Cruise</a></h4>
+                                            <div class="trend-tags">
+                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                            </div>
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <p class="mb-2 pink"><i class="fa fa-eye me-1"></i> 252 Amazing Places <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Australia.</p>
+                                            <p class="mb-2 border-t pt-2">Letter wooded direct two men indeed income
+                                                sister.
+                                                Impression up admiration partiality is...</p>
+                                            <div class="deal-price">
+                                                <p class="price mb-0">From <span>$280.00</span>/ 7 days 6 nights</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
