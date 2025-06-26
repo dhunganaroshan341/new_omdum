@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- BreadCrumb Starts -->
-<section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+<section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
 <div class="breadcrumb-outer pt-10 pb-4">
 <div class="container">
 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -20,7 +20,7 @@
 </section>
 <!-- BreadCrumb Ends -->
 <!-- testomonial start -->
-<section class="testimonial pb-5 border-t" style="background-image: url(images/testimonial.png)">
+<section class="testimonial pb-5 border-t" style="background-image: url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}')">
 <div class="container">
 <div class="section-title text-center pb-2 w-50 mx-auto">
 <h2 class="m-0">What <span>People Say About Us</span></h2>
@@ -119,7 +119,7 @@
 </section>
 <!-- testimonial ends -->
 <!-- testomonial start -->
-<section class="testimonial pb-10" style="background-image: url(images/bg/bg2.jpg);">
+<section class="testimonial pb-10" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg2.jpg') }}');">
 <div class="container">
 <div class="section-title-w text-center mb-5 pb-2 w-50 mx-auto">
 <h2 class="m-0 white">What <span>People Say About Us</span></h2>

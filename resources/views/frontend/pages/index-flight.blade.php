@@ -4,7 +4,7 @@
 <!-- banner starts -->
 <section class="banner overflow-hidden">
 <div class="banner-main">
-<div class="banner-image" style="background-image:url(images/flights/2.jpg)"></div>
+<div class="banner-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/flights/2.jpg') }}')"></div>
 <div class="banner-content">
 <h1 class="white mb-2">Cheap And Trusted Travel Agency</h1>
 <p class="white mb-4">Enjoy Your Comfortable Trip With Yatriiworld Travel Agency</p>
@@ -539,7 +539,7 @@
 </section>
 <!-- about-us ends -->
 <!-- testomonial start -->
-<section class="testimonial pb-6 border-t pt-9" style="background-image: url(images/testimonial.png)">
+<section class="testimonial pb-6 border-t pt-9" style="background-image: url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}')">
 <div class="container">
 <div class="section-title text-center pb-2 w-50 mx-auto">
 <h2 class="m-0">What <span>People Say About Us</span></h2>
@@ -582,7 +582,7 @@
 <!-- testimonial ends -->
 <!-- Discount action starts -->
 <section class="discount-action p-0">
-<div class="call-banner" style="background-image: url(images/bg/bg7.jpg);">
+<div class="call-banner" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg7.jpg') }}');">
 <div class="row d-flex align-items-center">
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-center bg-blue">

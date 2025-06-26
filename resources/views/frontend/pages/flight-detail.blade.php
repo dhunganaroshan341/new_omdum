@@ -8,22 +8,22 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/flights/flight1.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/flights/flight1.jpg') }}')"></div>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/flights/flight2.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/flights/flight2.jpg') }}')"></div>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/flights/flight3.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/flights/flight3.jpg') }}')"></div>
 </div>
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/flights/flight4.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/flights/flight4.jpg') }}')"></div>
 </div>
 </div>
 </div>

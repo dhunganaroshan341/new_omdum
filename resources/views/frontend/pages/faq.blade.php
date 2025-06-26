@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- BreadCrumb Starts -->
-<section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+<section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
 <div class="breadcrumb-outer pt-10 pb-4">
 <div class="container">
 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -138,7 +138,7 @@
 </section>
 <!-- About detail Ends -->
 <!-- Call To Action Starts -->
-<section class="call-to-action3 pb-10" style="background-image: url(images/bg/bg2.jpg);">
+<section class="call-to-action3 pb-10" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg2.jpg') }}');">
 <div class="container">
 <div class="section-title section-title-w text-center w-75 mx-auto mb-5 pb-2">
 <h2 class="mb-2 white">Do You Have Any <span>Questions?</span></h2>

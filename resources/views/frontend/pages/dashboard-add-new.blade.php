@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- BreadCrumb Starts -->
-<div class="breadcrumb-main pt-9 pb-7" style="background-image: url(images/bg/bg8.jpg);">
+<div class="breadcrumb-main pt-9 pb-7" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
 <div class="dot-overlay"></div>
 </div>
 <!-- BreadCrumb Ends -->

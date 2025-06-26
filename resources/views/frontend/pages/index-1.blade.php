@@ -1162,7 +1162,7 @@
 <!-- News Ends -->
 <!-- Discount action starts -->
 <section class="discount-action p-0">
-<div class="call-banner" style="background-image: url(images/bg/bg7.jpg);">
+<div class="call-banner" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg7.jpg') }}');">
 <div class="row d-flex align-items-center">
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-center bg-blue">

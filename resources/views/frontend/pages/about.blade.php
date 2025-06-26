@@ -194,7 +194,7 @@
     </section> --}}
     <!-- our teams Ends -->
     <!-- Counter -->
-    <section class="counter-main pb-6" style="background-image: url(images/bg/bg4.jpg)">
+    <section class="counter-main pb-6" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg4.jpg') }}')">
         <div class="container">
             <div class="counter text-center">
                 <div class="row">

@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- BreadCrumb Starts -->
-<section class="breadcrumb-main pt-0" style="background-image: url(images/bg/bg8.jpg);">
+<section class="breadcrumb-main pt-0" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
 <div class="breadcrumb-outer pt-10 pb-4">
 <div class="container">
 <div class="breadcrumb-content d-md-flex align-items-center pt-10">

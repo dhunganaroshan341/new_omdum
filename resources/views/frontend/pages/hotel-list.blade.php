@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- BreadCrumb Starts -->
-<section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+<section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
 <div class="breadcrumb-outer pt-10 pb-4">
 <div class="container">
 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -72,7 +72,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list3.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list3.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -116,7 +116,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list1.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list1.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -158,7 +158,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list4.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list4.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -200,7 +200,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list2.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list2.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -242,7 +242,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list6.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list6.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -284,7 +284,7 @@
 <div class="row w-100 flex-row-reverse">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list5.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list5.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">
@@ -336,7 +336,7 @@
 <div class="row w-100">
 <div class="col-lg-5 col-md-4 blog-height">
 <div class="blog-image">
-<a href="#" style="background-image: url(images/rooms/list7.jpg);"></a>
+<a href="#" style="background-image: url('{{ asset('template/yatri_world/main-file/images/rooms/list7.jpg') }}');"></a>
 </div>
 </div>
 <div class="col-lg-7 col-md-8">

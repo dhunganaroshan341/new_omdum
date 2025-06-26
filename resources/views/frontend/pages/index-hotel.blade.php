@@ -8,7 +8,7 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/11.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/11.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Choose The Best Destination</h4>
 <h1 class="white mb-4">Make Your Trip Fun And Memorable Where You Want</h1>
@@ -22,7 +22,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/12.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/12.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Feel Free To Live</h4>
 <h1 class="white mb-4">Discover Your Beautiful <span>Hotel</span> With Us</h1>
@@ -36,7 +36,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/13.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/13.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Hotel For Your Kids</h4>
 <h1 class="white mb-4"><span>Sensation Ice Hotel</span> Is Coming For Kids</h1>
@@ -473,7 +473,7 @@
 </div>
 </section>
 <!-- Fav destination Ends -->
-<section class="call-to-action call-to-action1 pb-6 pt-10" style="background-image:url(images/slider/11.jpg)">
+<section class="call-to-action call-to-action1 pb-6 pt-10" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/11.jpg') }}')">
 <div class="call-main">
 <div class="container">
 <div class="row d-flex align-items-center justify-content-between">
@@ -502,7 +502,7 @@
 <div class="dot-overlay"></div>
 </section>
 <!-- testomonial start -->
-<section class="testimonial pb-6 pt-9" style="background-image: url(images/testimonial.png)">
+<section class="testimonial pb-6 pt-9" style="background-image: url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}')">
 <div class="container">
 <div class="section-title text-center pb-2 w-50 mx-auto">
 <h4 class="font-weight-normal mb-0">Our Testimonials</h4>

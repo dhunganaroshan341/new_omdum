@@ -8,7 +8,7 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/4.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/4.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Choose The Best Destination</h4>
 <h1 class="white mb-4">Make Your Trip Fun And Memorable Where You Want</h1>
@@ -22,7 +22,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/5.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/5.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Feel Free To Travel</h4>
 <h1 class="white mb-4">Discover Your Beautiful <span>Travel</span> With Us</h1>
@@ -36,7 +36,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/slider/9.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/slider/9.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h4 class="white">Trip For Your Kids</h4>
 <h1 class="white mb-4"><span>Sensation Ice Trip</span> Is Coming For Kids</h1>
@@ -158,7 +158,7 @@
 </section>
 <!-- why us ends -->
 <!-- about-us starts -->
-<section class="about-us pb-0" style="background-image: url(images/bg/bg5.jpg);">
+<section class="about-us pb-0" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg5.jpg') }}');">
 <div class="container">
 <div class="about-image-box">
 <div class="row">
@@ -971,7 +971,7 @@
 </section>
 <!-- Trending Ends -->
 <!-- testomonial start -->
-<section class="testimonial pb-6 border-t pt-9" style="background-image: url(images/testimonial.png)">
+<section class="testimonial pb-6 border-t pt-9" style="background-image: url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}')">
 <div class="container">
 <div class="section-title text-center pb-2 w-50 mx-auto">
 <h2 class="m-0">What <span>People Say About Us</span></h2>

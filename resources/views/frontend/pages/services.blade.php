@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+    <section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -30,9 +30,9 @@
                                 <p class="m-0">Showing 1-5 of 80 results</p>
                             </div>
                             <div class="click-menu d-flex align-items-center justify-content-between">
-                                <div class="change-list f-active me-2"><a href="destination-list.html"><i
-                                            class="fa fa-bars"></i></a></div>
-                                <div class="change-grid"><a href="destination-grid.html"><i class="fa fa-th"></i></a></div>
+                                <div class="change-list f-active me-2"><a href="#"><i class="fa fa-bars"></i></a>
+                                </div>
+                                <div class="change-grid"><a href="#"><i class="fa fa-th"></i></a></div>
                                 <div class="sortby d-flex align-items-center justify-content-between ms-2">
                                     <select class="niceSelect">
                                         <option value="1">Sort By</option>
@@ -48,13 +48,13 @@
                                 <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination3.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination3.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Paris in
+                                        <h4 class="mb-1"><a class="" href="#">Paris in
                                                 Love</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -81,13 +81,13 @@
                             <div class="row w-100">
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination4.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination4.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Empire Prestige
+                                        <h4 class="mb-1"><a class="" href="#">Empire Prestige
                                                 Causeway Bay</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -115,13 +115,13 @@
                                 <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination5.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination5.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Egyptian
+                                        <h4 class="mb-1"><a class="" href="#">Egyptian
                                                 Voyager</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -149,13 +149,13 @@
                                 <div class="ribbon ribbon-top-left"><span>25% OFF</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination8.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination8.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Bali &amp;
+                                        <h4 class="mb-1"><a class="" href="#">Bali &amp;
                                                 Indonesia Tour</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -182,13 +182,13 @@
                             <div class="row w-100">
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination7.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination7.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Madagascar
+                                        <h4 class="mb-1"><a class="" href="#">Madagascar
                                                 Safari</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -216,13 +216,13 @@
                                 <div class="ribbon ribbon-top-left"><span>15% OFF</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination6.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination6.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Dazzling
+                                        <h4 class="mb-1"><a class="" href="#">Dazzling
                                                 Dubai</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -249,13 +249,13 @@
                             <div class="row w-100">
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination10.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination10.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">The Spanish
+                                        <h4 class="mb-1"><a class="" href="#">The Spanish
                                                 Riviera</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -283,13 +283,13 @@
                                 <div class="ribbon ribbon-top-left"><span>20% OFF</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination9.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination9.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Highlights of
+                                        <h4 class="mb-1"><a class="" href="#">Highlights of
                                                 Vietnam</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>
@@ -317,13 +317,13 @@
                                 <div class="ribbon ribbon-top-left"><span>Offer</span></div>
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
-                                        <a href="destination-single.html"
-                                            style="background-image: url(images/destination/destination11.jpg);"></a>
+                                        <a href="#"
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination11.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
                                     <div class="blog-content p-0">
-                                        <h4 class="mb-1"><a class="" href="destination-single.html">Aegean
+                                        <h4 class="mb-1"><a class="" href="#">Aegean
                                                 Adventure Cruise</a></h4>
                                         <div class="trend-tags">
                                             <a href="#"><i class="fa fa-heart"></i></a>

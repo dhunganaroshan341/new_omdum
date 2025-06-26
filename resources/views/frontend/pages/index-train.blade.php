@@ -8,7 +8,7 @@
 <div class="swiper-wrapper">
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/trains/1.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/1.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h1 class="white mb-0">Drive The Car You Ever Dream</h1>
 </div>
@@ -17,7 +17,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/trains/4.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/4.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h1 class="white mb-0"><span>Sensation Ice Trip</span> Is Coming For Kids</h1>
 </div>
@@ -26,7 +26,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/trains/2.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/2.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h1 class="white mb-0">Discover Your Beautiful <span>Travel</span> With Us</h1>
 </div>
@@ -35,7 +35,7 @@
 </div>
 <div class="swiper-slide">
 <div class="slide-inner">
-<div class="slide-image" style="background-image:url(images/trains/3.jpg)"></div>
+<div class="slide-image" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/3.jpg') }}')"></div>
 <div class="swiper-content1 container">
 <h1 class="white mb-0"><span>Sensation Ice Trip</span> Is Coming For Kids</h1>
 </div>
@@ -597,7 +597,7 @@
 </section>
 <!-- Trending Ends -->
 <!-- top destination starts -->
-<section class="comingsoon overflow-hidden h-auto" style="min-height: auto; background:#fbfbfb url(images/testimonial.png);">
+<section class="comingsoon overflow-hidden h-auto" style="min-height: auto; background:#fbfbfb url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}');">
 <div class="container">
 <div class="comingsoon-content text-center">
 <div class="coming-title mb-3">
@@ -617,7 +617,7 @@
 </section>
 <!-- top destination ends -->
 <!-- Call to action starts -->
-<section class="call-to-action1" style="background-image: url(images/trains/1.jpg)">
+<section class="call-to-action1" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/1.jpg') }}')">
 <div class="call-main1">
 <div class="container">
 <div class="action-content text-center w-75 mx-auto">
@@ -742,7 +742,7 @@
 </section>
 <!-- featured counter ends -->
 <!-- testomonial start -->
-<section class="testimonial pb-5" style="background-image: url(images/testimonial.png)">
+<section class="testimonial pb-5" style="background-image: url('{{ asset('template/yatri_world/main-file/images/testimonial.png') }}')">
 <div class="container">
 <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
 <h2 class="m-0">What <span>People Say About Us</span></h2>
@@ -925,7 +925,7 @@
 <!-- partners ends -->
 <!-- Discount action starts -->
 <section class="discount-action p-0">
-<div class="call-banner" style="background-image: url(images/trains/4.jpg);">
+<div class="call-banner" style="background-image: url('{{ asset('template/yatri_world/main-file/images/trains/4.jpg') }}');">
 <div class="row d-flex align-items-center">
 <div class="col-lg-6 p-0">
 <div class="call-banner-inner text-center bg-blue">
