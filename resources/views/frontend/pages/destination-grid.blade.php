@@ -79,7 +79,7 @@
                                                     Book Now
                                                 </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>Rs.1,050.00</span> <a
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
                                                             href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
                                                     </p>
                                                 </div>
@@ -120,7 +120,7 @@
                                                     Book Now
                                                 </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>Rs.1,050.00</span> <a
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
                                                             href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
                                                     </p>
                                                 </div>
@@ -161,7 +161,7 @@
                                                     Book Now
                                                 </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>Rs.1,050.00</span> <a
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
                                                             href="#"><i
                                                                 class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
@@ -329,14 +329,14 @@
                                 </div>
                             </div>
                             <div class="sidebar-item">
-                                <h4>Price Range(Rs.)</h4>
+                                <h4>Price Range($)</h4>
                                 <div class="range-slider">
                                     <div aria-disabled="false"
                                         class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
                                         data-max="2000" data-max-name="max_price" data-min="0"
-                                        data-min-name="min_price" data-unit="Rs.">
-                                        <span class="min-value">0 Rs.</span>
-                                        <span class="max-value">2000 Rs.</span>
+                                        data-min-name="min_price" data-unit="$">
+                                        <span class="min-value">0 $</span>
+                                        <span class="max-value">2000 $</span>
                                         <div class="ui-slider-range ui-widget-header ui-corner-all full"
                                             style="left: 0%; width: 100%;"></div>
                                     </div>
@@ -420,7 +420,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -450,7 +450,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +480,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -510,7 +510,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -540,7 +540,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -570,7 +570,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -601,7 +601,7 @@
                                         <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
                                             &amp; 2 night</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>Rs.350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$350.00</span></p>
                                         </div>
                                     </div>
                                 </div>
