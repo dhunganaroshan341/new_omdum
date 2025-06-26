@@ -3,7 +3,7 @@
 @section('content')
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main"
-        style="background-image: url('{{ asset('template/yatri_world/main-file/images/india.jpg') }}');">
+        style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -49,6 +49,40 @@
                                 <div class="slider-store">
                                     <div>
                                         <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                    </div>
+                                </div>
+                                <div class="slider-thumbs">
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
+                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                                    </div>
+                                    <div>
+                                        <img alt="1"
                                             src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div>
@@ -57,45 +91,11 @@
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                </div>
-                                <div class="slider-thumbs">
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
                                             src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
                                             src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                             <div class="comment-box">
                                 <div class="comment-image">
                                     <img alt="image"
-                                        src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                        src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="mb-1">Helena</h5>
@@ -380,7 +380,7 @@
                             <div class="comment-box">
                                 <div class="comment-image">
                                     <img alt="image"
-                                        src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
+                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="mb-1">Bibek</h5>
@@ -578,7 +578,7 @@
                     <div class="trend-item mx-3">
                         <div class="trend-image">
                             <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -616,7 +616,7 @@
                     <!-- Bhutan -->
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -654,7 +654,7 @@
                     <!-- India -->
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
