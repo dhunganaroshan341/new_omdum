@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
+    <section class="breadcrumb-main" style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -49,7 +49,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination3.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/india.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -82,7 +82,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination4.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -116,7 +116,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination5.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -150,7 +150,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination8.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -183,7 +183,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination7.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -217,7 +217,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination6.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -250,7 +250,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination10.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -284,7 +284,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination9.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
@@ -318,7 +318,7 @@
                                 <div class="col-lg-5 col-md-4 blog-height">
                                     <div class="blog-image">
                                         <a href="#"
-                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/destination/destination11.jpg') }}');"></a>
+                                            style="background-image: url('{{ asset('template/yatri_world/main-file/images/everest.jpg') }}');"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-8">
