@@ -450,15 +450,32 @@
                                 <form class="form-content">
                                     <h4 class="title white text-center">MAKE A BOOKING</h4>
                                     <div class="row gy-4">
+                                        <!-- 📅 Date Picker -->
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <span class="white">Your choosen date is</span>
-                                                <h3 class="choosen-date white mb-0"><i class="fa fa-calendar"></i> 10 - 15
-                                                    March, 2020 <small class="d-block font-weight-normal">(5 days) <a
-                                                            class="d-block pink float-right"
-                                                            href="#">Change</a></small></h3>
+                                                <label class="white d-block mb-2">Select Date Range</label>
+                                                <input type="date" class="form-control mb-2" id="start-date">
+                                                <input type="date" class="form-control" id="end-date">
                                             </div>
                                         </div>
+
+                                        <!-- 🗓️ Selected Date Summary -->
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <span class="white">Your chosen date is</span>
+                                                <h3 class="choosen-date white mb-0" id="chosen-dates-display">
+                                                    <i class="fa fa-calendar"></i> <span id="chosen-date-text">Please
+                                                        select a date</span>
+                                                    <small class="d-block font-weight-normal">
+                                                        (<span id="total-days">0</span> days)
+                                                        <a class="d-block pink float-right" href="#"
+                                                            onclick="clearDates()">Change</a>
+                                                    </small>
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- 👥 No. of People -->
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label class="white">No. Of People</label>
@@ -474,6 +491,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- 💰 Pricing Summary -->
                                         <div class="col-lg-12">
                                             <div class="form-group bg-white p-3">
                                                 <ul>
@@ -493,6 +512,8 @@
                                                 </ul>
                                             </div>
                                         </div>
+
+                                        <!-- 🛒 Instant Book -->
                                         <div class="col-lg-12">
                                             <div class="form-group mb-0">
                                                 <a class="nir-btn w-100" href="#">Instant Book</a>
@@ -500,6 +521,7 @@
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                             <div class="sidebar-item">
                                 <div class="map-box">
@@ -594,8 +616,7 @@
                     <!-- Bhutan -->
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -633,8 +654,7 @@
                     <!-- India -->
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -672,8 +692,7 @@
                     <!-- Nepal -->
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
