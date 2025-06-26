@@ -453,9 +453,9 @@
                                         <!-- 📅 Date Picker -->
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label class="white d-block mb-2">Select Date Range</label>
-                                                <input type="date" class="form-control mb-2" id="start-date">
-                                                <input type="date" class="form-control" id="end-date">
+                                                <label class="white d-block mb-2">Select Date </label>
+                                                <input type="date" class="form-control mb-2" id="date">
+
                                             </div>
                                         </div>
 
