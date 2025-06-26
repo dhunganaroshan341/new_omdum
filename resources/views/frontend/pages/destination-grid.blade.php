@@ -311,62 +311,15 @@
 <i class="flaticon-placeholder"></i>
 <select class="niceSelect">
 <option value="1">Where are you going?</option>
-<option value="2">Argentina</option>
-<option value="3">Belgium</option>
-<option value="4">Canada</option>
-<option value="5">Denmark</option>
+<option value="2">Tibet</option>
+<option value="3">Bhutan</option>
+<option value="4">India</option>
+<option value="5">Nepal</option>
 </select>
 </div>
 </div>
 </div>
-<div class="col-lg-6">
-<div class="form-group">
-<label class="white">Check In</label>
-<div class="input-box">
-<i class="flaticon-calendar"></i>
-<input id="date-range0" placeholder="yyyy-mmm-dd" type="text"/>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-group">
-<label class="white">Check Out</label>
-<div class="input-box">
-<i class="flaticon-calendar"></i>
-<input id="date-range1" placeholder="yyyy-mm-dd" type="text"/>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-group">
-<label class="white">Adult</label>
-<div class="input-box">
-<i class="flaticon-add-user"></i>
-<select class="niceSelect">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="form-group">
-<label class="white">Children</label>
-<div class="input-box">
-<i class="flaticon-add-user"></i>
-<select class="niceSelect">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-</div>
-</div>
-</div>
+
 <div class="col-lg-12">
 <div class="form-group mb-0">
 <a class="nir-btn w-100" href="#"><i class="fa fa-search"></i> Check Availability</a>
