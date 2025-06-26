@@ -561,6 +561,223 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 p-1">
+                        <div class="desti-image">
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
+                            <div class="desti-content">
+                                <div class="rating mb-1">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
+                                </div>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
+                                <div class="trend-last-main">
+                                    <div class="trend-last">
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desti-overlay">
+                                <a class="nir-btn" href="#">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
