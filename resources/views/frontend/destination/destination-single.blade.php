@@ -1,15 +1,16 @@
 @extends('frontend.layout.main')
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+    <section class="breadcrumb-main"
+        style="background-image: url({{ $pageBanner->image ? asset('uploads/' . $pageBanner->image) : asset('assets/images/banner1.jpg') }}) ;">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
-                    <h2 class="mb-0">Single One</h2>
+                    <h2 class="mb-0">Nepal Special Tour</h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li aria-current="page" class="breadcrumb-item active">Destination Single One</li>
+                            <li aria-current="page" class="breadcrumb-item active">Destination</li>
                         </ul>
                     </nav>
                 </div>
@@ -26,10 +27,10 @@
                     <div class="single-content">
                         <div class="single-full-title border-b mb-2 pb-2">
                             <div class="single-title">
-                                <h3 class="mb-1">Adriatic Adventure–Zagreb to Athens</h3>
+                                <h3 class="mb-1">Nepal Special Tour Package</h3>
                                 <div class="rating-main d-sm-flex align-items-center">
-                                    <p class="mb-0 me-2"><i class="flaticon-location-pin"></i> Greater London, United
-                                        Kingdom</p>
+                                    <p class="mb-0 me-2"><i class="flaticon-location-pin"></i> Kathmandu – Pokhara – Chitwan
+                                        – Nagarkot</p>
                                     <div class="rating me-2">
                                         <span class="fa fa-star checked"></span>
                                         <span class="fa fa-star checked"></span>
@@ -46,53 +47,53 @@
                                 <div class="slider-store">
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/1.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/2.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/3.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/7.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/8.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/2.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                                     </div>
                                 </div>
                                 <div class="slider-thumbs">
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/1.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/2.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/3.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/7.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/8.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                                     </div>
                                     <div>
                                         <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/slider/2.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -117,14 +118,12 @@
                         </div>
                         <div class="description mb-2">
                             <h4>Description</h4>
-                            <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
-                                graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
-                                century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for
-                                use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-                                used in laying out print, graphic or web designs.</p>
-                            <p class="mb-0">The passage is attributed to an unknown typesetter in the 15th century who is
-                                thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type
-                                specimen book.</p>
+                            <p>Experience the diverse beauty and culture of Nepal with our specially curated "Nepal Special
+                                Tour Package." From majestic mountains to serene lakes, ancient temples to vibrant wildlife,
+                                this tour gives you a perfect blend of nature, adventure, and cultural heritage.</p>
+                            <p class="mb-0">From majestic mountains to serene lakes, ancient temples to
+                                vibrant wildlife, this tour gives you a perfect blend of nature, adventure, and cultural
+                                heritage.</p>
                         </div>
                         <div class="description mb-2">
                             <div class="row">
@@ -246,7 +245,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="single-review mb-4">
+                        {{-- <div class="single-review mb-4">
                             <h4>Average Reviews</h4>
                             <div class="row d-flex align-items-center">
                                 <div class="col-md-4">
@@ -306,14 +305,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- blog comment list -->
-                        <div class="single-comments single-box mb-4">
+                        {{-- <div class="single-comments single-box mb-4">
                             <h5 class="border-b pb-2 mb-2">Showing 16 verified guest comments</h5>
                             <div class="comment-box">
                                 <div class="comment-image">
                                     <img alt="image"
-                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/1.jpg') }}" />
+                                        src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="mb-1">Helena</h5>
@@ -347,7 +346,7 @@
                             <div class="comment-box">
                                 <div class="comment-image">
                                     <img alt="image"
-                                        src="{{ asset('template/yatri_world/main-file/images/reviewer/2.jpg') }}" />
+                                        src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                 </div>
                                 <div class="comment-content">
                                     <h5 class="mb-1">Helena</h5>
@@ -379,9 +378,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- blog review -->
-                        <div class="single-add-review">
+                        {{-- <div class="single-add-review">
                             <h4>Write a Review</h4>
                             <form>
                                 <div class="row gy-4">
@@ -407,7 +406,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -417,6 +416,43 @@
                                 <form class="form-content">
                                     <h4 class="title white text-center">MAKE A BOOKING</h4>
                                     <div class="row gy-4">
+
+                                        <!-- Name Input -->
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="white">Full Name</label>
+                                                <div class="input-box">
+                                                    <i class="fa fa-user"></i>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter your full name" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Email Input -->
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="white">Email Address</label>
+                                                <div class="input-box">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <input type="email" class="form-control"
+                                                        placeholder="Enter your email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phone Number Input -->
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label class="white">Phone Number</label>
+                                                <div class="input-box">
+                                                    <i class="fa fa-phone"></i>
+                                                    <input type="tel" class="form-control"
+                                                        placeholder="Enter your phone number" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <span class="white">Your choosen date is</span>
@@ -468,40 +504,49 @@
                                     </div>
                                 </form>
                             </div>
+                            <!-- Sidebar Location and Map Info -->
                             <div class="sidebar-item">
                                 <div class="map-box">
                                     <i class="fa fa-map-marker"></i>
-                                    <a href="#">Show on Map</a>
+                                    <a href="https://goo.gl/maps/NepalTrail">Show on Map</a>
                                 </div>
+
+                                <!-- Location Rating -->
                                 <div class="location-rating mb-2 mt-2">
                                     <div class="row d-flex align-items-center">
                                         <div class="col-md-2">
-                                            <span class="location-box">4.5</span>
+                                            <span class="location-box">4.7</span>
                                         </div>
                                         <div class="col-md-10">
                                             <p class="mb-0">Exceptional</p>
-                                            <span>Location rating score</span>
+                                            <span>Traveler review score</span>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Location Highlights -->
                                 <div class="location-features">
                                     <ul>
-                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Better than 99% of
-                                            properties in London</li>
-                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Exceptional Location
-                                            - Inside city center</li>
-                                        <li><i class="fa fa-map-marker pink me-2"></i> Popular Neighbourhood</li>
+                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Hidden gem in
+                                            Eastern Nepal</li>
+                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Authentic Kirati
+                                            cultural region</li>
+                                        <li><i class="fa fa-map-marker pink me-2"></i> Sacred sites & pristine landscapes
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
+
+                            <!-- Sidebar Contact Info -->
                             <div class="sidebar-item">
                                 <div class="sidebar-contact text-center bg-navy">
                                     <i class="fa fa-phone-alt white"></i>
                                     <h3 class="white"><span>Book</span> by phone</h3>
-                                    <a class="phone white" href="tel://004542344599">+45 423 445 99</a>
-                                    <small class="white d-block mt-2">Monday to Friday 9.00am - 7.30pm</small>
+                                    <a class="phone white" href="tel:+9779801234567">+977 9801234567</a>
+                                    <small class="white d-block mt-2">Monday to Friday 9.00am - 6.00pm</small>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -522,7 +567,7 @@
                     <div class="trend-item mx-3">
                         <div class="trend-image">
                             <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/trending/trending1.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -558,7 +603,7 @@
                     <div class="trend-item mx-3">
                         <div class="trend-image">
                             <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/trending/trending2.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -594,7 +639,7 @@
                     <div class="trend-item mx-3">
                         <div class="trend-image">
                             <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/trending/trending3.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -630,7 +675,7 @@
                     <div class="trend-item mx-3">
                         <div class="trend-image">
                             <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/trending/trending4.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -669,3 +714,10 @@
     </section>
     <!-- Trending Ends -->
 @endsection
+@push('styles')
+    <style>
+        .location-box {
+            padding: 15px 0px !important;
+        }
+    </style>
+@endpush
