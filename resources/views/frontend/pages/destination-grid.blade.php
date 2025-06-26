@@ -311,7 +311,7 @@
                     <div class="sidebar-sticky">
                         <div class="sidebar-item mb-4">
                             <form class="form-content">
-                                <h4 class="title white">Find The Places</h4>
+                                <h4 class="title white">Find Tour & Travel Packages</h4>
                                 <div class="row gy-4">
                                     <div class="col-lg-12">
                                         <div class="form-group">
