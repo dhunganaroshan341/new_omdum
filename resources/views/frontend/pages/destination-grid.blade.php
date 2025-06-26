@@ -2,7 +2,8 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main" style="background-image: url(images/bg/bg8.jpg);">
+    <section class="breadcrumb-main"
+        style="background-image: url({{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }});">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -529,7 +530,8 @@
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -559,7 +561,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -589,7 +592,8 @@
                     </div>
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                            <img alt="desti"
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -709,8 +713,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
