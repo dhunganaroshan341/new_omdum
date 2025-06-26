@@ -339,6 +339,50 @@
                             </form>
                         </div>
                         <div class="list-sidebar">
+
+                            <div class="sidebar-item">
+                                <h4>City</h4>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            kathmandu<span class="number">123</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input checked="" type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Bhaktapur<span class="number">630</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Chitwan<span class="number">58</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Namchey Bazar<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="pretty p-default p-thick p-pulse">
+                                    <input type="checkbox" />
+                                    <div class="state">
+                                        <label>
+                                            Solukhumbu<span class="number">29</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="sidebar-item">
                                 <h4>Services</h4>
                                 <div class="pretty p-default p-thick p-pulse mar-bottom-15">
@@ -468,49 +512,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <div class="sidebar-item">
-                                <h4>City</h4>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            kathmandu<span class="number">123</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input checked="" type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Bhaktapur<span class="number">630</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Chitwan<span class="number">58</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Namchey Bazar<span class="number">29</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Solukhumbu<span class="number">29</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
