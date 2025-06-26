@@ -3,7 +3,7 @@
 @section('content')
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main"
-        style="background-image: url({{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }});">
+        style="background-image: url({{ asset('template/yatri_world/main-file/images/tibet.jpg') }});">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -53,7 +53,7 @@
                                 <div class="trend-item">
                                     <div class="trend-image">
                                         <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                     </div>
                                     <div class="trend-content-main">
                                         <div class="trend-content">
@@ -75,48 +75,7 @@
                                                 class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
                                                 <a href="#"
                                                     class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                                    <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                                         class="d-author me-2" alt=""
                                                         style="width: 28px; height: 28px; border-radius: 50%;">
                                                     Book Now
@@ -164,6 +123,47 @@
                                                 </a>
                                                 <div class="trend-price">
                                                     <p class="price white mb-0">From <span>$1,050.00</span> <a
+                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="trend-item">
+                                    <div class="trend-image">
+                                        <img alt="image"
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
+                                    </div>
+                                    <div class="trend-content-main">
+                                        <div class="trend-content">
+                                            <div class="rating pb-1">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                            </div>
+                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
+                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
+                                        </div>
+                                        <div class="trend-last-main">
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
+                                            <div
+                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                <a href="#"
+                                                    class="white d-flex align-items-center text-decoration-none">
+                                                    <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt=""
+                                                        style="width: 28px; height: 28px; border-radius: 50%;">
+                                                    Book Now
+                                                </a>
+                                                <div class="trend-price">
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
                                                             href="#"><i
                                                                 class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
@@ -176,7 +176,7 @@
                                 <div class="trend-item">
                                     <div class="trend-image">
                                         <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div class="trend-content-main">
                                         <div class="trend-content">
@@ -217,7 +217,7 @@
                                 <div class="trend-item">
                                     <div class="trend-image">
                                         <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                                     </div>
                                     <div class="trend-content-main">
                                         <div class="trend-content">
@@ -239,7 +239,7 @@
                                                 class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
                                                 <a href="#"
                                                     class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                                         class="d-author me-2" alt=""
                                                         style="width: 28px; height: 28px; border-radius: 50%;">
                                                     Book Now
@@ -280,7 +280,7 @@
                                                 class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
                                                 <a href="#"
                                                     class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                                    <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                                         class="d-author me-2" alt=""
                                                         style="width: 28px; height: 28px; border-radius: 50%;">
                                                     Book Now
@@ -564,7 +564,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -594,7 +594,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -655,7 +655,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -685,7 +685,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 p-1">
                         <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
