@@ -48,7 +48,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending8.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -78,7 +78,7 @@
 <div class="trend-item">
 <div class="trend-image">
 <div class="ribbon ribbon-top-left"><span>10% OFF</span></div>
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending11.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -107,7 +107,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending2.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -136,7 +136,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending5.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -168,7 +168,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending4.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -197,7 +197,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending3.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -229,7 +229,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending7.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -261,7 +261,7 @@
 <div class="col-md-6 mb-4">
 <div class="trend-item">
 <div class="trend-image">
-<img alt="image" src="{{ asset('template/yatri_world/main-file/images/trending/trending6.jpg') }}"/>
+<img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 </div>
 <div class="trend-content-main">
 <div class="trend-content">
@@ -586,7 +586,7 @@
 <div class="row d-flex align-items-center">
 <div class="col-lg-4 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination3.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -615,7 +615,7 @@
 </div>
 <div class="col-lg-4 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination4.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -644,7 +644,7 @@
 </div>
 <div class="col-lg-4 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination10.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -673,7 +673,7 @@
 </div>
 <div class="col-lg-3 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination5.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -702,7 +702,7 @@
 </div>
 <div class="col-lg-3 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination7.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -731,7 +731,7 @@
 </div>
 <div class="col-lg-3 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination8.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
@@ -760,7 +760,7 @@
 </div>
 <div class="col-lg-3 col-md-6 p-1">
 <div class="desti-image">
-<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/destination/destination9.jpg') }}"/>
+<img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"/>
 <div class="desti-content">
 <div class="rating mb-1">
 <span class="fa fa-star checked"></span>
