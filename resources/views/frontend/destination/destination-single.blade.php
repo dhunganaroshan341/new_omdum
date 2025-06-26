@@ -1,8 +1,8 @@
 @extends('frontend.layout.main')
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main"
-        style="background-image: url({{ $pageBanner->image ? asset('uploads/' . $pageBanner->image) : asset('assets/images/banner1.jpg') }}) ;">
+    <section class="breadcrumb-main" style="background-image: url('{{ asset('assets/images/banner1.jpg') }}');">
+
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -638,8 +638,7 @@
                     </div>
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
@@ -674,8 +673,7 @@
                     </div>
                     <div class="trend-item mx-3">
                         <div class="trend-image">
-                            <img alt="image"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
                             <div class="trend-tags">
                                 <a href="#"><i class="flaticon-like"></i></a>
                             </div>
