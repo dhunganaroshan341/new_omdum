@@ -522,31 +522,33 @@
     <section class="top-destination overflow-hidden">
         <div class="container">
             <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0 white">Related <span>Tour Packages</span></h2>
-                <p class="mb-0 white">Travel has helped us to understand the meaning of life and it has helped us become
-                    better people. Each time we travel, we see the world with new eyes.</p>
+                <h2 class="m-0 white">Other <span>Tour Packages</span></h2>
+                <p class="mb-0 white">Discover more unforgettable journeys beyond the Mundum Trail — from sacred Himalayan
+                    pilgrimages to cultural adventures across Nepal and Tibet. Each trip offers a deeper connection to
+                    nature, heritage, and humanity.</p>
             </div>
+
             <div class="desti-inner">
                 <div class="row d-flex align-items-center">
                     <div class="col-lg-4 col-md-6 p-1">
                         <div class="desti-image">
                             <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
+                                src="{{ asset('template/yatri_world/main-file/images/mundum_vertical.jpg') }}" />
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star-half-o checked"></span>
                                 </div>
-                                <h4 class="white mb-1">New York Tour</h4>
+                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
                                 <div class="trend-last-main">
                                     <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
+                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
+                                            &amp; 11 Nights</p>
                                         <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
+                                            <p class="price pink mb-0">From <span>$870.00</span></p>
                                         </div>
                                     </div>
                                 </div>
@@ -559,188 +561,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Armania Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">London Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Manchester Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">kathmandu Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Tokyo Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Norwich Tour</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 3 days
-                                            &amp; 2 night</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$350.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
