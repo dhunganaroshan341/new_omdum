@@ -14,7 +14,7 @@
                     <ul class="nav navbar-nav" id="responsive-menu">
                         <li><a href="{{ route('pages.about') }}">About Us</a></li>
                         {{-- <li><a href="{{ route('pages.services') }}">Services</a></li> --}}
-                        <li><a href="#">Services</a></li>
+                        <li><a href="{{ route('pages.services') }}">Services</a></li>
 
                         {{-- Clean destination (no dropdown) --}}
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
