@@ -29,7 +29,7 @@
                                 Nepal <i aria-hidden="true" class="icon-arrow-down"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Tour Packages </a></li>
+                                <li><a href="{{ route('pages.destination-grid') }}">Tour Packages </a></li>
                                 <li><a href="#">Trekking Packages </a></li>
 
                             </ul>
