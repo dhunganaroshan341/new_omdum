@@ -717,5 +717,15 @@
         .location-box {
             padding: 15px 0px !important;
         }
+
+        .slick-slide img {
+            display: block;
+            width: 100%;
+            max-height: 500px;
+        }
+
+        .slider-thumbs img {
+            height: 90px;
+        }
     </style>
 @endpush
