@@ -127,6 +127,7 @@
         @media (max-width: 768px) {
             .youtube-banner {
                 height: 30vh;
+                z-index: 4;
             }
 
             .youtube-banner .video-container {

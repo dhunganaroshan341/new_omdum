@@ -72,7 +72,7 @@
                                             <p class="mb-0 trend-para">A wonderful little cottage right on the
                                                 seashore - perfect for exploring.</p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
-                                                <a class="mb-0 white d-flex align-items-center"><img
+                                                <a class="book-now-a mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
                                                         class="d-author me-2" alt="">
                                                     Book Now
@@ -1071,3 +1071,10 @@
     </section>
     <!-- Newsletter Ends -->
 @endsection
+@push('styles')
+    <style>
+        .book-now-a:hover {
+            color: var(--omundum-green);
+        }
+    </style>
+@endpush
