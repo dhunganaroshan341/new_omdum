@@ -28,8 +28,13 @@
     <link rel="stylesheet" href="{{ asset('template/yatri_world/main-file/fonts/line-icons.css') }}" type="text/css">
     @stack('styles')
     <style>
+        .dot-overlay {
+            background: #162241 url('{{ asset('template/yatri_world/main-file/images/dot-overlay.png') }}') !important;
+            /* pointer-events: none; */
+        }
+
         .inline-icon {
-            display: inline !important:
+            display: inline !important;
         }
 
         .slider-content a:hover {
