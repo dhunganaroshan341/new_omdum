@@ -130,7 +130,7 @@
                                 <div class="col-md-6 mb-2 pe-2">
                                     <div class="desc-box">
                                         <h5 class="mb-1">Departure &amp; Return Location</h5>
-                                        <p class="mb-0">John F.K. International Airport(Google Map)</p>
+                                        <p class="mb-0">Tribhuwan International Airport</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-2 ps-2">
@@ -177,65 +177,139 @@
                         </div>
                         <div class="description mb-4">
                             <h4>What to Expect</h4>
-                            <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
-                                graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
-                                century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for
-                                use in a type specimen book.Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-                                used in laying out print, graphic or web designs.</p>
-                            <p class="mb-0">The passage is attributed to an unknown typesetter in the 15th century who is
-                                thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type
-                                specimen book.</p>
+                            <p>Embark on a culturally rich and visually stunning journey through the untouched trails of
+                                Eastern Nepal. The Mundum Trek offers you a deep dive into the lives of the Kirati Rai
+                                people, surrounded by peaceful mountain landscapes, sacred sites, and off-the-beaten-path
+                                adventures.</p>
+
+                            <p>Expect daily hikes of 5–7 hours across scenic ridges, serene forests, and traditional
+                                villages, with cozy lodge stays and authentic local cuisine. Along the way, you'll witness
+                                panoramic Himalayan views, sunrise and sunset points, and the warm hospitality of indigenous
+                                communities.</p>
+
+                            <p class="mb-0">Whether you're a nature lover, culture seeker, or photography enthusiast,
+                                this trek blends natural beauty, spiritual insight, and genuine cultural immersion — far
+                                away from the crowded trails of mainstream Nepal.</p>
                         </div>
+
                         <div class="accrodion-grp faq-accrodion mb-4" data-grp-name="faq-accrodion">
+
+                            <!-- Day 1 -->
                             <div class="accrodion active">
                                 <div class="accrodion-title">
-                                    <h5 class="mb-0"><span>Day 1</span> - Barcelona - Zaragoza - Madrid</h5>
+                                    <h5 class="mb-0"><span>Day 1</span> – Arrival in Kathmandu</h5>
                                 </div>
                                 <div class="accrodion-content" style="display: block;">
                                     <div class="inner">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, inventore cumque
-                                            veniam, praesentium velit incidunt rem quas a, quos eos ipsum, reprehenderit
-                                            voluptatem.</p>
-                                    </div><!-- /.inner -->
+                                        <p>Meet our representative at Tribhuvan International Airport and transfer to your
+                                            hotel. In the evening, you'll receive a short briefing about the Mundum Trek
+                                            followed by free time to explore the vibrant Thamel area. Overnight in
+                                            Kathmandu.</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Day 2 -->
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h5 class="mb-0"><span>Day 2</span> - Zurich - Biel/Bienne - Neuchatel - Geneva</h5>
+                                    <h5 class="mb-0"><span>Day 2</span> – Drive to Diktel (1,650m)</h5>
                                 </div>
-                                <div class="accrodion-content" style="display: none;">
+                                <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, inventore cumque
-                                            veniam, praesentium velit incidunt rem quas a, quos eos ipsum, reprehenderit
-                                            voluptatem.</p>
-                                    </div><!-- /.inner -->
+                                        <p>Early morning long drive (approx. 12 hours) through scenic hillsides to reach
+                                            Diktel, the starting point of the trek. Overnight at a local lodge in Diktel, a
+                                            small hill town in the Khotang district.</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Day 3 -->
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h5 class="mb-0"><span>Day 3</span> - Enchanting Engelberg</h5>
+                                    <h5 class="mb-0"><span>Day 3</span> – Trek to Chakhewa</h5>
                                 </div>
-                                <div class="accrodion-content" style="display: none;">
+                                <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, inventore cumque
-                                            veniam, praesentium velit incidunt rem quas a, quos eos ipsum, reprehenderit
-                                            voluptatem.</p>
-                                    </div><!-- /.inner -->
+                                        <p>Begin trekking through traditional Rai villages. This day includes cultural
+                                            interaction and stunning views of the Himalayan foothills. Camp overnight at
+                                            Chakhewa, a culturally rich village.</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Day 4 -->
                             <div class="accrodion">
                                 <div class="accrodion-title">
-                                    <h5 class="mb-0"><span>Day 4</span> - Barcelona - Zaragoza - Madrid</h5>
+                                    <h5 class="mb-0"><span>Day 4</span> – Trek to Dhotre Deurali via Tempke Ridge</h5>
                                 </div>
-                                <div class="accrodion-content" style="display: none;">
+                                <div class="accrodion-content">
                                     <div class="inner">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, inventore cumque
-                                            veniam, praesentium velit incidunt rem quas a, quos eos ipsum, reprehenderit
-                                            voluptatem.</p>
-                                    </div><!-- /.inner -->
+                                        <p>Enjoy scenic ridge walks offering panoramic views. Visit Tempke Ridge, one of the
+                                            spiritual high points of the trail. Camp near Dhotre Deurali surrounded by
+                                            nature.</p>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Day 5 -->
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h5 class="mb-0"><span>Day 5</span> – Trek to Maiyung</h5>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Today’s trek continues through pine forests and rhododendron groves. Experience
+                                            more cultural stops and rest at Maiyung for the night with great sunset views.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 6 -->
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h5 class="mb-0"><span>Day 6</span> – Trek to Salpa Bhanjyang</h5>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Ascend toward Salpa Bhanjyang (3,348m), a mountain pass with spiritual
+                                            significance. Breathtaking Himalayan views make this a memorable part of the
+                                            journey. Overnight at camp or local shelter.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 7 -->
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h5 class="mb-0"><span>Day 7</span> – Climb to Silichung Peak (4,153m) and Return
+                                    </h5>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Early morning hike to Silichung Peak, the highest point of the trek. Enjoy
+                                            360-degree views of Everest, Makalu, and Kanchenjunga ranges. Begin descent
+                                            after summit. Camp lower on the trail.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 8 -->
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h5 class="mb-0"><span>Day 8</span> – Trek Ends & Drive Back to Kathmandu</h5>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>Final leg of the trek as you return to the road and drive back to Kathmandu.
+                                            Reflect on your incredible journey through the Mundum Trail. Overnight in
+                                            Kathmandu or connect to your departure the next day.</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                         <div class="single-map mb-4">
                             <h4>Map</h4>
                             <div class="map">
@@ -721,7 +795,7 @@
         .slick-slide img {
             display: block;
             width: 100%;
-            max-height: 500px;
+            height: 500px;
         }
 
         .slider-thumbs img {
