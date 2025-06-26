@@ -1,4 +1,4 @@
-<section class="youtube-banner position-relative overflow-hidden">
+<section class=" yt-banner-section youtube-banner position-relative overflow-hidden">
     <div class="video-container position-relative">
         <!-- 🖼️ Placeholder Image -->
         <div id="videoPlaceholder"
@@ -12,13 +12,12 @@
     </div>
 
     <!-- 🔳 Overlay -->
-    <div class="overlay position-fixed top-0 start-0 w-100 vh-100" style="background: rgba(0,0,0,0.4); z-index: 0;">
-    </div>
+    {{-- <div class="overlay position-fixed top-0 start-0 w-100 vh-100" style="background: rgba(0,0,0,0.4); z-index: 0;">
+    </div> --}}
 
 
     <!-- 📝 Text Content -->
-    <div class="swiper-content2 container position-absolute top-50 start-50 translate-middle text-center text-white"
-        style="z-index: 4;">
+    <div class=" container position-absolute top-50 start-50 translate-middle text-center text-white" style="z-index:40;">
         <h1 class="white mb-2 fs-2 fs-md-1 banner-title">Your Gateway to Himalayan Adventure!</h1>
         <p class="white mb-4 banner-subtext">Explore breathtaking landscapes, rich cultures, and unforgettable journeys
             — all in one
@@ -73,6 +72,7 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            padding: 0;
         }
 
         /* Make the video container fixed, full screen */
@@ -95,13 +95,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             object-fit: cover;
         }
 
         /* Overlay fixed above video */
         .youtube-banner .overlay {
-            position: fixed !important;
+
             top: 0;
             left: 0;
             width: 100vw !important;
@@ -124,12 +124,13 @@
         /* Mobile adjustments */
         @media (max-width: 768px) {
             .youtube-banner {
-                height: 25vh;
+                height: 30vh;
             }
 
             .youtube-banner .video-container {
-                position: fixed !important;
-                height: 25vh !important;
+                /* position: fixed !important; */
+                height: 30vh !important;
+                object-fit: coverl;
             }
 
             .youtube-banner .overlay {

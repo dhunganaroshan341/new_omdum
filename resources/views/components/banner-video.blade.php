@@ -1,4 +1,4 @@
-<section class="banner overflow-hidden position-relative">
+<section class=" banner overflow-hidden position-relative">
     <video id="heroVideo" autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover;">
         <source src="https://yourdomain.com/path-to-video/yourvideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
