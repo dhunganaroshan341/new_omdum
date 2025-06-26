@@ -63,7 +63,7 @@
             object-fit: cover !important;
         }
 
-        .slider-thumb img {
+        .slider-thumbs img {
             height: 90px !important;
             object-fit: cover !important;
         }
