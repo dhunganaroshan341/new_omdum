@@ -51,7 +51,7 @@
                                 <div class="trend-item">
                                     <div class="trend-image">
                                         <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div class="trend-content-main">
                                         <div class="trend-content">
@@ -60,21 +60,28 @@
                                                 <span class="fa fa-star checked"></span>
                                                 <span class="fa fa-star checked"></span>
                                                 <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star-half-o checked"></span>
+                                                <span class="fa fa-star checked"></span>
                                             </div>
-                                            <h4><a href="#">12-Day Mundum Cultural Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> 5+ Cultural Villages <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Eastern Nepal</p>
+                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
+                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">Explore Kirati culture, sacred peaks & untouched
-                                                trails in a 12-day authentic Himalayan experience.</p>
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
                                             <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy">
-                                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 12 days &amp; 11 nights
-                                                </p>
+                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                <a href="#"
+                                                    class="white d-flex align-items-center text-decoration-none">
+                                                    <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt=""
+                                                        style="width: 28px; height: 28px; border-radius: 50%;">
+                                                    Book Now
+                                                </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$870.00</span></p>
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
+                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,14 +108,21 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">Extended version of Mundum Trek with sacred lake,
-                                                extra acclimatization, and deep cultural stays.</p>
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
                                             <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy">
-                                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 15 days &amp; 14 nights
-                                                </p>
+                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                <a href="#"
+                                                    class="white d-flex align-items-center text-decoration-none">
+                                                    <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt=""
+                                                        style="width: 28px; height: 28px; border-radius: 50%;">
+                                                    Book Now
+                                                </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span></p>
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
+                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,7 +133,7 @@
                                 <div class="trend-item">
                                     <div class="trend-image">
                                         <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
                                     </div>
                                     <div class="trend-content-main">
                                         <div class="trend-content">
@@ -127,28 +141,36 @@
                                                 <span class="fa fa-star checked"></span>
                                                 <span class="fa fa-star checked"></span>
                                                 <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star-half-o checked"></span>
-                                                <span class="fa fa-star-o"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
                                             </div>
-                                            <h4><a href="#">Custom Mundum Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Tailored Itinerary <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Khotang to Silichung</p>
+                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
+                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
+                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">Flexible trek tailored to your time, fitness, and
-                                                interests — ideal for solo or group explorers.</p>
+                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
+                                                for soul-searching and adventure.</p>
                                             <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy">
-                                                <p class="mb-0 white"><i class="fa fa-clock-o"></i> 7–15 days (flexible)
-                                                </p>
+                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                <a href="#"
+                                                    class="white d-flex align-items-center text-decoration-none">
+                                                    <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                                                        class="d-author me-2" alt=""
+                                                        style="width: 28px; height: 28px; border-radius: 50%;">
+                                                    Book Now
+                                                </a>
                                                 <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$720.00</span></p>
+                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
+                                                            href="#"><i
+                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
 
 
                             <div class="col-lg-12">
