@@ -69,8 +69,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="book-now-a mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -110,8 +110,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> China.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -151,8 +151,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Bhutan/China.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -280,8 +280,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -326,8 +326,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Nepal.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -367,8 +367,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> Tibet.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"
@@ -408,8 +408,8 @@
                                                     class="fa fa-map-marker me-1 ms-3"></i> India.</p>
                                         </div>
                                         <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A wonderful little cottage right on the
-                                                seashore - perfect for exploring.</p>
+                                            <p class="mb-0 trend-para">Discover breathtaking landscapes, rich cultures, and
+                                                unforgettable adventures with Ommundum Treks. </p>
                                             <div class="trend-last d-flex align-items-center justify-content-center">
                                                 <a class="mb-0 white d-flex align-items-center"><img
                                                         src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}"

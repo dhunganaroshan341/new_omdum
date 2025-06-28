@@ -168,6 +168,8 @@ public function forgot_passwordBladePage() {
 
 public function galleryBladePage() {
         return view('frontend.pages.gallery');
+    }public function galleryGridpage() {
+        return view('frontend.pages.gallery-grid');
     }
 
 public function gallery1BladePage() {
@@ -265,6 +267,7 @@ public function train_listBladePage() {
 public function wishlistBladePage() {
         return view('frontend.pages.wishlist');
     }public function servicesPage() {
-        return view('frontend.pages.services');
+        return view('frontend.pages.services-left-right-desc');
     }
+
 }

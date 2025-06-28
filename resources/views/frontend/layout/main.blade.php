@@ -67,6 +67,23 @@
             height: 90px !important;
             object-fit: cover !important;
         }
+
+        .blog-full img {
+            height: 200px !important;
+            object-fit: cover !important;
+            min-width: 300px !important;
+        }
+
+
+        .book-now-a :hover {
+            color: #fff !important;
+            background: #f06925 !important;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .price-white i :hover {
+            color: black;
+        }
     </style>
 </head>
 

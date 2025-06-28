@@ -225,9 +225,11 @@ public function searchBlogs(Request $request)
     }public function destinationList(){
         return view('frontend.destination.destination-list');
     }public function blogSingle(){
-        return view('frontend.blog.blog-single');
+        return view('frontend.pages.blog-single');
     }public function blogGrid(){
-        return view('frontend.blog.blog-grid');
+        return view('frontend.pages.blog-grid');
+    }public function blogFull(){
+        return view('frontend.pages.blog-full');
     }
 
 }

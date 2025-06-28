@@ -225,6 +225,7 @@ Route::get('/contact', [UserFrontendController::class, 'contact'])->name('contac
 Route::get('/cart', [UserFrontendController::class, 'cart'])->name('cart');
 Route::get('/checkout', [UserFrontendController::class, 'checkout'])->name('checkout');
 Route::get('/blog', [UserFrontendController::class, 'blogGrid'])->name('blog.grid');
+Route::get('/blog/full', [UserFrontendController::class, 'blogFull'])->name('blog.full');
 Route::get('/blog/single', [UserFrontendController::class, 'blogSingle'])->name('blog.single');
 Route::get('/destination/grid', [UserFrontendController::class, 'destinationGrid'])->name('destination.grid');
 Route::get('/destination/full', [UserFrontendController::class, 'destinationFull'])->name('destination.full');
@@ -309,7 +310,8 @@ Route::get('/pages/flight-list', [SamplePageController::class, 'flight_listBlade
 
 Route::get('/pages/forgot-password', [SamplePageController::class, 'forgot_passwordBladePage'])->name('pages.forgot-password');
 
-Route::get('/pages/gallery', [SamplePageController::class, 'galleryBladePage'])->name('pages.gallery');
+Route::get('/pages/gallery/1', [SamplePageController::class, 'galleryBladePage'])->name('pages.gallery');
+Route::get('/pages/gallery/', [SamplePageController::class, 'galleryGridPage'])->name('pages.gallery.grid');
 
 Route::get('/pages/gallery1', [SamplePageController::class, 'gallery1BladePage'])->name('pages.gallery1');
 
