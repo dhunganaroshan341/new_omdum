@@ -1,5 +1,40 @@
 $(document).ready(function () {
 
+
+    $('#formModal').on('shown.bs.modal', function () {
+    $('.summernote').each(function () {
+        if (!$(this).next().hasClass('note-editor')) {
+            $(this).summernote({ height: 250 });
+        }
+    });
+});
+function populateTourPackageForm(tour_package) {
+    // Show the modal
+    $("#formModal").modal("show");
+
+    // Fill input fields
+    $("input[name='title']").val(tour_package.title);
+    $("input[name='slug']").val(tour_package.slug);
+    $("select[name='country_id']").val(tour_package.country_id);
+    $("select[name='status']").val(tour_package.status);
+    $("input[name='duration']").val(tour_package.duration);
+    $("select[name='difficulty']").val(tour_package.difficulty);
+    $("input[name='max_elevation']").val(tour_package.max_elevation);
+    $("input[name='best_season']").val(tour_package.best_season);
+    $("input[name='start_point']").val(tour_package.start_point);
+    $("input[name='end_point']").val(tour_package.end_point);
+    $("textarea[name='short_description']").val(tour_package.short_description);
+
+    // For summernote fields
+    $("textarea[name='long_description']").summernote('code', tour_package.long_description ?? '');
+    $("textarea[name='itinerary']").summernote('code', tour_package.itinerary ?? '');
+
+    // UI toggling
+    $(".submitBtn").hide();
+    $(".updateBtn").show().data("id", tour_package.id); // Store the ID for update
+}
+
+
     function toggleMediaFields() {
             var selectedType = $('#type').val();
 
@@ -21,13 +56,19 @@ $(document).ready(function () {
             }
         }
 
+         function clearModal() {
+        $("#testimonialImage").html("");
+        $("#validationErrors").addClass("d-none").html("");
+        $("#testimonialDescription").summernote("code", "");
+    }
 
-    function uploadThumbnail(albumId, formElement) {
+
+    function uploadThumbnail(tour_package_id, formElement) {
         let formData = new FormData(formElement);
 
         $.ajax({
             type: "POST",
-            url: `/admin/gallery-albums/${albumId}/upload`,
+            url: `/admin/tour-packages/${tour_package_id}/upload`,
             data: formData,
             processData: false,
             contentType: false,
@@ -56,23 +97,27 @@ $(document).ready(function () {
     var table = $("#data-album-show").DataTable({
         processing: true,
         serverSide: true,
-        ajax: "/admin/gallery-albums/data",
-
-        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        ajax: {
+        url: "/admin/tour-packages/",
+        type: "GET"
+    },
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         order: [2, 'asc'],
-        columns: [
-            { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "title", name: "title" },
-             { data: "gallery", name: "gallery" },
-            { data: "type", name: "type" },
-            { data: "client", name: "client" },
-            { data: "status", name: "status" },
-            { data: "action", name: "action", orderable: false, searchable: false }
-        ]
+    columns: [
+        { data: 'DT_RowIndex', orderable: false, searchable: false },
+
+        { data: 'title', name: 'title' },
+        // { data: 'country', name: 'country.name' },
+        { data: 'duration', name: 'duration' },
+        // { data: 'difficulty', name: 'difficulty' },
+        // { data: 'short_description', name: 'short_description' },
+        { data: 'status', name: 'status', orderable: false, searchable: false },
+        { data: 'action', name: 'action', orderable: false, searchable: false }
+    ]
     });
 
-    // Add Gallery Album
-    $(document).on("click", ".addGalleryAlbumBtn", function () {
+    // Add Tour Package
+    $(document).on("click", ".addTourPackageBtn", function () {
         $("#formModal").modal("show");
         $(".updateBtn").hide();
         $("#thumbnailImage").hide();
@@ -91,11 +136,19 @@ $(document).ready(function () {
 
     $(document).off('submit',"#addForm").on("submit", "#addForm", function (e) {
         e.preventDefault();
+
+   // Sync summernote fields
+    $(this).find('.summernote').each(function () {
+        let content = $(this).summernote('code');
+        $(this).val(content);
+    });
+
+
         $(".submitBtn").prop("disabled", true);
         let formData = new FormData(this);
         $.ajax({
             type: "POST",
-            url: "/admin/gallery-albums",
+            url: "/admin/tour-packages/store",
             data: formData,
             processData: false,
             contentType: false,
@@ -125,8 +178,8 @@ $(document).ready(function () {
         });
     });
 
-    // Edit Gallery Album
-    $(document).on("click", ".editAlbumButton", function () {
+    // Edit Tour Package
+    $(document).on("click", ".editUserButton", function () {
         let id = $(this).data("id");
 
         // Open the modal and reset the form
@@ -136,8 +189,8 @@ $(document).ready(function () {
         $(".updateBtn").show();
         $(".form").attr("id", "updateForm");
         $("#updateForm")[0].reset();
-        $("#albumModalLabel").text("Edit Gallery Album");
-      $("#type").hide();
+        $("#albumModalLabel").text("Edit Tour Package");
+        $("#type").hide();
                // Correctly hides the type <select>
     $("#url-group").hide();    // Hides the whole URL input group (label + input)
     $("#type-group").hide();    // Hides the whole URL input group (label + input)
@@ -149,45 +202,32 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: `/admin/gallery-albums/${id}/detail`,
+            url: `/admin/tour-packages/show/${id}`,
 
             success: function (response) {
                 if (response.success) {
-                    let album = response.message; // 👈 use message instead of album
-                    $("#loading-paragraph").val('');
-                    $("#title").val(album.title);
-                    $("#type").val(album.type);
+                    let tour_package = response.message; // 👈 use message instead of tour_package
+                //    tour package  populating
+                    populateTourPackageForm(tour_package);
 
-                    $("#client_id").val(album.client_id);
-                    if (album.gallery_media && album.gallery_media.length > 0) {
-                        $(".galleryMediaData").html(""); // clear first
 
-                        album.gallery_media.forEach((image) => {
-                            let imagePath = image.media_path; // Full URL already
+                    // Initialize summernote editors
+                    $("textarea[name='long_description']").summernote({
+                        height: 250,
+                        code: tour_package.long_description || ''
+                    });
+                    $("textarea[name='itinerary']").summernote({
+                        height: 250,
+                        code: tour_package.itinerary || ''
+                    });
 
-                            $(".galleryMediaData").append(`
-                                <div class="col-4 mb-3">
-                                    <div class="position-relative">
-                                        <img src="/${imagePath}" alt="Image" class="img-thumbnail w-100" style="height: 150px; object-fit: cover;">
-                                       <button type="button" class="btn btn-sm text-danger position-absolute top-0 end-0 m-1 remove-image"
-        data-image-id="${image.id}" title="Remove Image"
-        style="width: 30px; height: 30px; line-height: 1;">
-    <span style="font-size: 24px;">&times;</span>
-</button>
-
-                                    </div>
-                                </div>
-                            `);
-                        });
-                    }
-
-                    $("#status").val(album.status);
-                    $("#thumbnailImage").attr("src", album.thumbnail ? `${album.thumbnail}` : '/images/default.png');
+                    // Toggle media fields based on type
+                    toggleMediaFields();
                 } else {
                     Swal.fire({
                         icon: "error",
                         title: "Error",
-                        text: "Failed to load album data.",
+                        text: "Failed to load tour_package data.",
                     });
                 }
             },
@@ -196,7 +236,7 @@ $(document).ready(function () {
                 Swal.fire({
                     icon: "error",
                     title: "Error",
-                    text: "Failed to load album data. Please try again.",
+                    text: "Failed to load tour_package data. Please try again.",
                 });
             }
         });
@@ -204,21 +244,32 @@ $(document).ready(function () {
 
         $(document).off("submit").on("submit", "#updateForm", function (event) {
             event.preventDefault();
+
+
+
+                // Sync summernote fields
+    $(this).find('.summernote').each(function () {
+        let content = $(this).summernote('code');
+        $(this).val(content);
+    });
+
+
+
             $(".updateBtn").prop("disabled", true);
             let formData = new FormData(this);
 
             $.ajax({
                 type: "POST",
-                url: `/admin/gallery-albums/${id}`,
+                url: `/admin/tour-packages/update/${id}`,
                 data: formData,
                 processData: false,
                 contentType: false,
-                headers: { 'X-HTTP-Method-Override': 'PUT' },
+                // headers: { 'X-HTTP-Method-Override': 'PUT' },
                 success: function () {
                     Swal.fire({
                         icon: "success",
                         title: "Updated",
-                        text: "Album updated successfully",
+                        text: "tour_package updated successfully",
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -257,7 +308,7 @@ $(document).on("change", ".statusIdData", function () {
     }).then(result => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "/admin/gallery-albums/" + id + "/status",
+                url: "/admin/tour-packages/" + id + "/status",
                 type: "PUT", // Corrected: type instead of "method" and "put"
                 data: {
                     status: checkbox.prop("checked") ? 1 : 0, // pass status value
@@ -280,7 +331,7 @@ $(document).on("change", ".statusIdData", function () {
 });
 
 
-    // Delete Album
+    // Delete tour_package
     $(document).on("click", ".deleteData", function () {
         let id = $(this).data("id");
 
@@ -297,12 +348,12 @@ $(document).on("change", ".statusIdData", function () {
                 $.ajax({
                     type: "DELETE",
                     headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                    url: `/admin/gallery-albums/${id}`,
+                    url: `/admin/tour-packages/${id}`,
                     success: function (response) {
                         Swal.fire({
                             icon: "success",
                             title: "Deleted",
-                            text: "Album deleted successfully",
+                            text: "tour_package deleted successfully",
                             showConfirmButton: false,
                             timer: 1500
                         });
@@ -312,7 +363,7 @@ $(document).on("change", ".statusIdData", function () {
                         Swal.fire({
                             icon: "error",
                             title: "Error",
-                            text: "Failed to delete album",
+                            text: "Failed to delete tour_package",
                         });
                     }
                 });
@@ -330,7 +381,7 @@ $(document).on("change", ".statusIdData", function () {
 
     $.ajax({
         type: "get", // fixed typo
-        url: "/admin/gallery-albums/" + id + "/detail",
+        url: "/admin/tour-packages/" + id + "/detail",
         success: function (response) {
             $(".fetch-post-image-data").html("");
 
@@ -356,7 +407,7 @@ $(document).on("click", ".remove-image", function () {
 
     $.ajax({
         type: "get",
-        url: "/admin/gallery-albums/image/delete",
+        url: "/admin/tour-packages/image/delete",
         data: {
             // _token: $('meta[name="csrf-token"]').attr('content'),
             image_id: imageId

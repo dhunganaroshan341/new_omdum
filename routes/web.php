@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\CallToActionController;
+use App\Http\Controllers\Admin\ItineraryController;
 use App\Http\Controllers\Admin\ServiceQueryController;
+use App\Http\Controllers\Admin\TourPackageImageController;
+use App\Http\Controllers\Admin\TourPackageVideoController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +28,7 @@ use App\Http\Controllers\Admin\FrontendController as AdminFrontendController;
 use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\GalleryMediaController;
 use App\Http\Controllers\Admin\PageBannerController;
+use App\Http\Controllers\Admin\TourPackageController;
 use App\Http\Controllers\FrontGalleryController;
 use App\Http\Controllers\SamplePageController;
 
@@ -178,6 +182,38 @@ Route::get('/get-call-to-action-data', [CallToActionController::class, 'all'])->
 // page Banner
     Route::resource('page-banner', PageBannerController::class);
     Route::put('/page-banner/{id}/status', [PageBannerController::class, 'statusToggle'])->name('page-banner.status');
+
+
+    Route::prefix('tour-packages')->name('tour-packages.')->group(function () {
+    Route::get('/', [TourPackageController::class, 'index'])->name('index');
+    Route::get('/show/{id}', [TourPackageController::class, 'show'])->name('show');
+    Route::post('/store', [TourPackageController::class, 'store'])->name('store');
+    Route::get('/edit/{id}', [TourPackageController::class, 'edit'])->name('edit');
+    Route::post('/update/{id}', [TourPackageController::class, 'update'])->name('update');
+    Route::delete('/delete/{id}', [TourPackageController::class, 'destroy'])->name('destroy');
+    Route::post('/status/{id}', [TourPackageController::class, 'statusToggle'])->name('status');
+});
+
+Route::prefix('tour-package-images')->name('tour-package-images.')->group(function () {
+    Route::get('/{tour_package_id}', [TourPackageImageController::class, 'index'])->name('index');
+    Route::post('/store', [TourPackageImageController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [TourPackageImageController::class, 'destroy'])->name('destroy');
+});
+Route::prefix('tour-package-videos')->name('tour-package-videos.')->group(function () {
+    Route::get('/{tour_package_id}', [TourPackageVideoController::class, 'index'])->name('index');
+    Route::post('/store', [TourPackageVideoController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [TourPackageVideoController::class, 'destroy'])->name('destroy');
+});
+
+
+Route::prefix('itineraries')->name('itineraries.')->group(function () {
+    Route::get('/{tour_package_id}', [ItineraryController::class, 'index'])->name('index');
+    Route::post('/store', [ItineraryController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [ItineraryController::class, 'destroy'])->name('destroy');
+});
+
+
+
 
 });
 Route::prefix('/admin/gallery-media')->name('admin.gallery-media.')->group(function () {
