@@ -40,7 +40,7 @@
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('ytVideo', {
-                videoId: '8efveLZ3E24',
+                videoId: '8efveLZ3E24&t=24s',
                 playerVars: {
                     autoplay: 1,
                     mute: 1,

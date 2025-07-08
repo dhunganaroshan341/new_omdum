@@ -10,6 +10,7 @@ class TourPackageVideo extends Model
         'tour_package_id',
         'title',
         'iframe_embed_code',
+        'iframe',
     ];
 
     public function tourPackage()

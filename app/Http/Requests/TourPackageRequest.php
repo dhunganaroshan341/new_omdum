@@ -18,6 +18,7 @@ class TourPackageRequest extends FormRequest
 
     return [
         'country_id' => 'required|exists:countries,id',
+        'service_id' => '|exists:countries,id',
         'title' => 'required|string|max:255',
         'slug' => [
             'required',

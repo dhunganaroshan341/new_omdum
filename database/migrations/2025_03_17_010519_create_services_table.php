@@ -14,6 +14,7 @@ class CreateServicesTable extends Migration
             $table->string('short_desc', 255)->nullable(); // 'short_desc' column (nullable)
             $table->text('description')->nullable(); // 'description' column (nullable, TEXT type)
             $table->integer('status')->default(1); // 'status' column (default to 1)
+            $table->integer('price')->default(100); // 'status' column (default to 1)
             $table->timestamps(); // 'created_at' and 'updated_at' columns
             $table->string('image', 100)->nullable(); // 'image' column (nullable, maximum length 100)
         });

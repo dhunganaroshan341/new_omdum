@@ -428,13 +428,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-item">
-                                <div class="map-box">
-                                    <i class="fa fa-map-marker"></i>
-                                    <a href="#">Show on Map</a>
-                                </div>
-                            </div>
-                            <div class="sidebar-item">
+
+                            <div class="sidebar-item star-rating-parent">
                                 <h4>Star Rating</h4>
                                 <div class="pretty p-default p-thick p-pulse">
                                     <input type="checkbox" />
@@ -782,3 +777,14 @@
     </section>
     <!-- top destination ends -->
 @endsection
+@push('styles')
+    <style>
+        .star-rating-parent {
+            display: none;
+        }
+
+        .rating {
+            display: none;
+        }
+    </style>
+@endpush

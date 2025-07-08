@@ -106,13 +106,13 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#bannerMenu" role="button"
+                        <a class="nav-link" data-bs-toggle="collapse" href="#packageMenu" role="button"
                             aria-expanded="false" aria-controls="bannerMenu">
                             <i class="mdi mdi-folder menu-icon"></i>
                             <span class="menu-title"> Tours</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="bannerMenu">
+                        <div class="collapse" id="packageMenu">
                             <ul class="nav flex-column sub-menu list-unstyled ">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.tour-packages.index') }}">

@@ -5,19 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Itinerary extends Model
+class TourPackageService extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'tour_package_id',
-        'day_number',
+        'service_id',
         'title',
-        'status',
-        'order',
         'description',
+        'status',
+        'price',
     ];
+
+    // 🔁 Relationship with TourPackage
     public function tourPackage()
     {
         return $this->belongsTo(TourPackage::class);
+    }
+
+    // 🔁 Relationship with Service
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
     }
 }

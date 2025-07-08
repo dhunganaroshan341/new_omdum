@@ -51,6 +51,33 @@
                         class="fa fa-arrow-right white ps-1"></i></a>
             </div>
         </div>
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6" data-aos="fade-left">
+                <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" class="img-fluid rounded shadow"
+                    alt="Local Transportation">
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <h3 class="mb-3 service-title">Local Transportation</h3>
+                <p>Enjoy comfortable, air-conditioned vehicles with private transfers and reliable intercity travel options.
+                    Our experienced drivers ensure safe and timely transportation throughout your trip.</p>
+                <a href="#" class="btn btn-view-packages mt-3">Learn More <i
+                        class="fa fa-arrow-right white ps-1"></i></a>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6" data-aos="fade-left">
+                <img src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" class="img-fluid rounded shadow"
+                    alt="Emergency Support & Travel Insurance">
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <h3 class="mb-3 service-title">Emergency Support & Travel Insurance</h3>
+                <p>Benefit from 24/7 emergency contact support, travel insurance assistance, and rapid response for medical
+                    emergencies or lost documents, giving you peace of mind during your journey.</p>
+                <a href="#" class="btn btn-view-packages mt-3">Learn More <i
+                        class="fa fa-arrow-right white ps-1"></i></a>
+            </div>
+        </div>
+
     </section>
     @include('components.why-us-section')
     @include('components.testimonial-section')

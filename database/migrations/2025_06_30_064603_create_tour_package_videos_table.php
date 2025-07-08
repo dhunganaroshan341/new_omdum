@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tour_package_videos', function (Blueprint $table) {
            $table->id();
-$table->foreignId('tour_package_id')->constrained()->onDelete('cascade');
-$table->string('title')->nullable();
-$table->text('iframe_embed_code'); // or just video URL
-
+    $table->foreignId('tour_package_id')->constrained()->onDelete('cascade');
+    $table->string('title')->nullable();
+    $table->text('iframe_embed_code')->nullable(); // or just video URL
+    $table->text('iframe')->nullable(); // or just video URL
             $table->timestamps();
         });
     }

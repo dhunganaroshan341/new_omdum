@@ -5,8 +5,10 @@
     <section class="contact-main pt-0 contact1 bg-grey">
         <div class="map mb-10">
             <div style="width: 100%">
-                <iframe height="500"
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0448856124403!2d85.32194127455185!3d27.72043262491585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1910905f9f65%3A0xdc85747e51575050!2sNeel%20Sarswoti%20Marg%2C%20Kathmandu%2044600!5e1!3m2!1sen!2snp!4v1751872691730!5m2!1sen!2snp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         <div class="container py-5">

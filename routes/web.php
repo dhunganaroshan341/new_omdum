@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\GalleryMediaController;
 use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\Admin\TourPackageController;
+use App\Http\Controllers\FrontEndRoutesController;
 use App\Http\Controllers\FrontGalleryController;
 use App\Http\Controllers\SamplePageController;
 
@@ -192,6 +193,12 @@ Route::get('/get-call-to-action-data', [CallToActionController::class, 'all'])->
     Route::post('/update/{id}', [TourPackageController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [TourPackageController::class, 'destroy'])->name('destroy');
     Route::post('/status/{id}', [TourPackageController::class, 'statusToggle'])->name('status');
+   Route::prefix('upload')->group(function () {
+    Route::post('/images', [TourPackageController::class, 'uploadImages'])->name('uploadImages');
+    Route::post('/youtube', [TourPackageController::class, 'uploadYoutube'])->name('uploadYoutube');
+});
+
+
 });
 
 Route::prefix('tour-package-images')->name('tour-package-images.')->group(function () {
@@ -207,8 +214,12 @@ Route::prefix('tour-package-videos')->name('tour-package-videos.')->group(functi
 
 
 Route::prefix('itineraries')->name('itineraries.')->group(function () {
-    Route::get('/{tour_package_id}', [ItineraryController::class, 'index'])->name('index');
+    Route::get('/{id}', [ItineraryController::class, 'index'])->name('index');
+    Route::get('/show/{id}', [ItineraryController::class, 'show'])->name('show');
+    Route::get('/latest-order/{id}', [ItineraryController::class, 'getLatestOrder'])->name('getLatestOrder');
     Route::post('/store', [ItineraryController::class, 'store'])->name('store');
+    Route::post('/update/{id}', [ItineraryController::class, 'update'])->name('update');
+    Route::post('/status/{id}', [ItineraryController::class, 'statusToggle'])->name('statusToggle');
     Route::delete('/delete/{id}', [ItineraryController::class, 'destroy'])->name('destroy');
 });
 
@@ -397,3 +408,5 @@ Route::get('/pages/train-list', [SamplePageController::class, 'train_listBladePa
 
 Route::get('/pages/wishlist', [SamplePageController::class, 'wishlistBladePage'])->name('pages.wishlist');
 Route::get('/pages/services', [SamplePageController::class, 'servicesPage'])->name('pages.services');
+// actual frontend routes
+Route::get('/tour-package/{slug}', [FrontEndRoutesController::class, 'showTourPackageBySlug'])->name('pages.destination-single');

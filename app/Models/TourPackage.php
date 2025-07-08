@@ -10,7 +10,11 @@ class TourPackage extends Model
     use HasFactory;
      protected $fillable = [
         'country_id',
+        'service_id',
+        'images',
         'title',
+        'drop',
+        'pickup',
         'slug',
         'short_description',
         'long_description',
@@ -45,6 +49,12 @@ public function faqs() {
 
 public function testimonials() {
     return $this->hasMany(Testimonial::class);
+}
+public function services() {
+    return $this->hasMany(TourPackageService::class);
+}
+public function packageType(){
+    return $this->belongsTo(PackageType::class, 'package_type_id');
 }
 
 }

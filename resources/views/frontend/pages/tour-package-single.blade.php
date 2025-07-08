@@ -7,7 +7,7 @@
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
-                    <h2 class="mb-0">Mundum Cultural Trek</h2>
+                    <h2 class="mb-0">{{ $package->title ?? 'Mundum Cultural Trek' }}</h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
@@ -29,92 +29,82 @@
                     <div class="single-content">
                         <div class="single-full-title border-b mb-2 pb-2">
                             <div class="single-title">
-                                <h3 class="mb-1">12-Day Mundum Trek – Cultural &amp; Scenic Adventure</h3>
+                                <h3 class="mb-1">
+                                    {{ $package->title ?? '12-Day Mundum Trek – Cultural &amp; Scenic Adventure' }}</h3>
                                 <div class="rating-main d-sm-flex align-items-center">
-                                    <p class="mb-0 me-3"><i class="flaticon-location-pin"></i> Eastern Nepal, Mundum Trail
+                                    <p class="mb-0 me-3"><i class="flaticon-location-pin"></i>
+                                        {{ $packge->country->name ?? 'Eastern Nepal, Mundum Trail' }}
                                     </p>
-                                    <div class="rating me-3">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star-half-o checked"></span>
-                                    </div>
-                                    <span>(245 Reviews)</span>
+
                                 </div>
                             </div>
                         </div>
+                        @php
+                            // Use this array dynamically from DB
+                            $images = json_decode($package->images ?? '[]', true); // assuming it's stored as JSON
+$fallbackImage = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
+                        @endphp
+
                         <div class="description-images mb-4">
                             <div class="thumbnail-images">
                                 <div class="slider-store">
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
+                                    @if (!empty($images) && is_array($images))
+                                        @foreach ($images as $image)
+                                            <div>
+                                                <img alt="Image" src="{{ asset($image) }}"
+                                                    onerror="this.src='{{ $fallbackImage }}';" />
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        {{-- Fallback if no images --}}
+                                        <div>
+                                            <img alt="Fallback" src="{{ $fallbackImage }}" />
+                                        </div>
+                                    @endif
                                 </div>
+
                                 <div class="slider-thumbs">
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div>
-                                        <img alt="1"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                                    </div>
+                                    @if (!empty($images) && is_array($images))
+                                        @foreach ($images as $image)
+                                            <div>
+                                                <img alt="Thumb" src="{{ asset($image) }}"
+                                                    onerror="this.src='{{ $fallbackImage }}';" />
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div>
+                                            <img alt="Fallback Thumb" src="{{ $fallbackImage }}" />
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
+
                         <div class="tour-includes mb-4">
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><i aria-hidden="true" class="fa fa-clock-o pink me-1"></i> 12-15 Days</td>
-                                        <td><i aria-hidden="true" class="fa fa-group pink me-1"></i> Max Group Size: 12</td>
-                                        <td><i aria-hidden="true" class="fa fa-calendar pink me-1"></i> Year-Round Trekking
+                                        <td><i aria-hidden="true" class="fa fa-clock-o pink me-1"></i>
+                                            Total Days: {{ $totalDays ?? '12' }}
+                                        </td>
+                                        <td><i aria-hidden="true" class="fa fa-group pink me-1"></i> Max Group Size:
+                                            {{ $package->max_people ?? '12' }}</td>
+                                        <td><i aria-hidden="true" class="fa fa-calendar pink me-1"></i>
+                                            {{ $package->best_season ?? 'Year-Round Trekking' }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><i aria-hidden="true" class="fa fa-user pink me-1"></i> Min Age: 12+</td>
-                                        <td><i aria-hidden="true" class="fa fa-map-signs pink me-1"></i> Pickup: Kathmandu
-                                            Airport</td>
-                                        <td><i aria-hidden="true" class="fa fa-file-alt pink me-1"></i> Languages: English,
-                                            Nepali, Kirati</td>
+                                        <td><i aria-hidden="true" class="fa fa-user pink me-1"></i> Min Age:
+                                            {{ $package->min_age ?? '12' }}+</td>
+                                        <td><i aria-hidden="true" class="fa fa-map-signs pink me-1"></i> Pickup:
+                                            {{ $package->pickup ??
+                                                'Kathmandu
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Airport' }}
+                                        </td>
+                                        <td><i aria-hidden="true" class="fa fa-file-alt pink me-1"></i>
+                                            Languages:{{ $package->languages ?? 'English,Nepali,Kirati' }}
+
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -122,22 +112,21 @@
                         <div class="description mb-2">
                             <h4>Description</h4>
                             <p>
-                                The 12-Day Mundum Trek offers a unique journey through the pristine mountains of eastern
-                                Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
-                                Explore remote villages, sacred religious sites, and experience authentic local traditions
-                                while trekking through unspoiled terrain.
+                                {{ $package->description ??
+                                    'The 12-Day Mundum Trek offers a unique journey through the pristine mountains of eastern
+                                                                                                                                                                                                                                                                                                                                                                                                                                Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
+                                                                                                                                                                                                                                                                                                                                                                                                                                Explore remote villages, sacred religious sites, and experience authentic local traditions
+                                                                                                                                                                                                                                                                                                                                                                                                                                while trekking through unspoiled terrain.' }}
                             </p>
-                            <p class="mb-0">
-                                This trek balances cultural immersion with scenic adventure, including ridge walks,
-                                panoramic mountain views, and camping in peaceful, less-traveled locations.
-                            </p>
+
                         </div>
                         <div class="description mb-2">
                             <div class="row">
                                 <div class="col-md-6 mb-2 pe-2">
                                     <div class="desc-box">
                                         <h5 class="mb-1">Departure &amp; Return Location</h5>
-                                        <p class="mb-0">Kathmandu Tribhuvan International Airport (Google Map)</p>
+                                        <p class="mb-0">{{ $package->drop ?? 'Kathmandu Tribhuvan International Airport' }}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-2 ps-2">
@@ -571,3 +560,14 @@
     </section>
     <!-- Trending Ends -->
 @endsection
+@push('styles')
+    <style>
+        .sidebar-sticky {
+            max-height: 80vh;
+            /* 80% of viewport height */
+            overflow-y: auto;
+            padding-right: 10px;
+            /* to prevent scrollbar overlapping content */
+        }
+    </style>
+@endpush

@@ -7,6 +7,7 @@ use App\Http\Requests\TourPackageRequest;
 use App\Models\Country;
 use App\Models\TourPackage;
 use App\Models\TourPackageImage;
+use App\Models\TourPackageVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -52,6 +53,36 @@ class TourPackageController extends Controller
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
+            // In controller's addColumn:
+->addColumn('itinerary', function($item) {
+    return '<a href="javascript:void(0);" class="addItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
+                <i class="fas fa-plus"></i>
+            </a>
+
+
+            <a title = " view Itineraries" href="javascript:void(0);" class="viewItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
+                <i class="fas fa-eye"></i>
+            </a>
+
+
+            ';
+})->addColumn('images', function($item) {
+    $imageCount = $item->gallery_media_count ?? 0;
+
+    $viewGallery = '<a type="button" data-id="' . $item->id . '" class="imageListPopup">
+                        <span class="badge badge-primary">' . $imageCount . '</span>
+                    </a>';
+
+    $editUploads = '<a title="Edit Uploads" href="javascript:void(0);" class="editUploads btn btn-sm btn-primary" data-id="' . $item->id . '">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>';
+
+    return $viewGallery . ' ' . $editUploads;
+})
+ // ⬅️ Important to render HTML properly
+
+
+
             ->addColumn('status', function ($item) {
                 $checked = $item->status === 'active' ? 'checked' : '';
                 return '<div class="form-check form-switch">
@@ -65,7 +96,7 @@ class TourPackageController extends Controller
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
-            ->rawColumns(['status', 'action'])
+            ->rawColumns(['images','itinerary','status', 'action'])
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,
@@ -197,7 +228,7 @@ class TourPackageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destory($id)
+    public function destroy($id)
     {
         try {
             $data = TourPackage::find($id);
@@ -210,5 +241,72 @@ class TourPackageController extends Controller
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
+    }
+
+
+
+   public function uploadImages(Request $request)
+{
+    $request->validate([
+        'tour_package_id' => 'required|exists:tour_packages,id',
+        'images.*' => 'nullable|image|max:5120',
+        'keep_ids' => 'nullable|array', // IDs of images to keep (optional)
+        'keep_ids.*' => 'integer|exists:tour_package_images,id',
+    ]);
+
+    $tourPackageId = $request->tour_package_id;
+    $keepIds = $request->keep_ids ?? [];
+
+    // 🔥 Delete old images not in keep_ids
+    $imagesToDelete = TourPackageImage::where('tour_package_id', $tourPackageId)
+        ->whereNotIn('id', $keepIds)
+        ->get();
+
+    foreach ($imagesToDelete as $oldImage) {
+        Storage::disk('public')->delete($oldImage->image_path);
+        $oldImage->delete();
+    }
+
+    // 📦 Upload new images
+    $uploadedImages = [];
+
+    if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $path = $image->store('tour-packages', 'public');
+
+            $tourPackageImage = new TourPackageImage();
+            $tourPackageImage->tour_package_id = $tourPackageId;
+            $tourPackageImage->image_path = $path;
+            $tourPackageImage->save();
+
+            $uploadedImages[] = $tourPackageImage;
+        }
+    }
+
+    return response()->json([
+        'message' => 'Images updated successfully',
+        'data' => $uploadedImages,
+    ]);
+}
+
+    public function uploadYoutube(Request $request)
+    {
+        $request->validate([
+            'iframe' => 'required|string',
+        ]);
+
+        // Optionally, sanitize/validate iframe content here.
+        $iframe = $request->input('iframe');
+
+        // Save iframe or extract src URL and save as per your model
+        $tourPackageVideo = new TourPackageVideo();
+        $tourPackageVideo->iframe = $iframe; // Assuming this column exists
+        // Assign other fields like tour_package_id if needed
+        $tourPackageVideo->save();
+
+        return response()->json([
+            'message' => 'YouTube video saved successfully',
+            'data' => $tourPackageVideo,
+        ]);
     }
 }

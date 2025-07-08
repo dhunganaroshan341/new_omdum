@@ -107,10 +107,12 @@ function populateTourPackageForm(tour_package) {
         { data: 'DT_RowIndex', orderable: false, searchable: false },
 
         { data: 'title', name: 'title' },
+        { data: 'images', name: 'images' },
         // { data: 'country', name: 'country.name' },
         { data: 'duration', name: 'duration' },
         // { data: 'difficulty', name: 'difficulty' },
         // { data: 'short_description', name: 'short_description' },
+        { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
         { data: 'status', name: 'status', orderable: false, searchable: false },
         { data: 'action', name: 'action', orderable: false, searchable: false }
     ]
@@ -156,7 +158,7 @@ function populateTourPackageForm(tour_package) {
                 Swal.fire({
                     icon: "success",
                     title: "Success",
-                    text: "Album added successfully",
+                    text: " added successfully",
                     showConfirmButton: false,
                     timer: 1000
                 });
@@ -311,7 +313,7 @@ $(document).on("change", ".statusIdData", function () {
                 url: "/admin/tour-packages/" + id + "/status",
                 type: "PUT", // Corrected: type instead of "method" and "put"
                 data: {
-                    status: checkbox.prop("checked") ? 1 : 0, // pass status value
+                    status: checkbox.prop("checked") ? "Active" : "InActive", // pass status value
                     _token: $('meta[name="csrf-token"]').attr("content") // ensure CSRF token is sent
                 },
                 success: function () {
@@ -348,7 +350,7 @@ $(document).on("change", ".statusIdData", function () {
                 $.ajax({
                     type: "DELETE",
                     headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                    url: `/admin/tour-packages/${id}`,
+                    url: `/admin/tour-packages/delete/${id}`,
                     success: function (response) {
                         Swal.fire({
                             icon: "success",
