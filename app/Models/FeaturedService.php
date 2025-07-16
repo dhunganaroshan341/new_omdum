@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeaturedService extends Model
+class FeaturedService extends BaseModel
 {
     use HasFactory;
     protected $table = 'featured_services';

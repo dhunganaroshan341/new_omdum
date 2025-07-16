@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Notice extends BaseModel
+class TourPackageType extends BaseModel
 {
     use HasFactory;
-    protected $fillable=['title','description','image','status'];
+    protected $fillable = [
+        'name',
+        'slug',
+        'description',
+    ];
 }

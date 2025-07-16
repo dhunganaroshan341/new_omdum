@@ -17,23 +17,30 @@ return new class extends Migration
             $table->foreignId('country_id')->constrained('countries')->onDelete('cascade');
             $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
 
+
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
             $table->longText('what_to_expect')->nullable();
             $table->longText('itinerary')->nullable();
-
+            $table->boolean('top_deal')->default(0);
+            $table->boolean('favourite_destination')->default(0);
             $table->string('duration')->nullable(); // e.g., "12 Days"
             $table->enum('difficulty', ['easy', 'moderate', 'hard'])->nullable();
+            $table->enum('type', ['trekking', 'tour', 'other'])->default('tour')->nullable();
             $table->integer('max_elevation')->nullable();
+            $table->integer('max_group_size')->nullable();
             $table->string('best_season')->nullable();
             $table->string('pickup')->default('Tribhuvan International Airport (KTM)');
             $table->string('drop')->default('Tribhuvan International Airport (KTM)');
             $table->string('end_point')->nullable();
             $table->string('start_point')->nullable();
+            $table->string('price')->nullable();
+
 
             $table->json('price_includes')->nullable();
+            $table->string('languages')->nullable();
             $table->json('images')->nullable();
             $table->json('price_excludes')->nullable();
 

@@ -20,7 +20,8 @@
         <div class="dot-overlay"></div>
     </section>
     <!-- BreadCrumb Ends -->
-    <!-- blog starts -->
+
+    <!-- Blog Starts -->
     <section class="blog trending destination-b pb-6">
         <div class="container">
             <div class="row gx-lg-5">
@@ -39,7 +40,6 @@
                                         <div class="sortby d-flex align-items-center justify-content-between ms-2">
                                             <select class="niceSelect">
                                                 <option value="1">Sort By</option>
-                                                <option value="2">Average rating</option>
                                                 <option value="3">Price: low to high</option>
                                                 <option value="4">Price: high to low</option>
                                             </select>
@@ -48,255 +48,62 @@
                                 </div>
                             </div>
 
-                            {{-- start of nepal section  --}}
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i class="fa fa-arrow-right white ps-1"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i
-                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i
-                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i
-                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <div class="rating pb-1">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </div>
-                                            <h4><a href="#">15-Day Mundum Explorer Trek</a></h4>
-                                            <p class="mb-0 pink"><i class="fa fa-eye me-1"></i> Includes Salpa Pokhari <i
-                                                    class="fa fa-map-marker me-1 ms-3"></i> Mundum Region</p>
-                                        </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">A sacred escape nestled in the Himalayas – perfect
-                                                for soul-searching and adventure.</p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="#"
-                                                    class="white d-flex align-items-center text-decoration-none">
-                                                    <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
-                                                        class="d-author me-2" alt=""
-                                                        style="width: 28px; height: 28px; border-radius: 50%;">
-                                                    Book Now
-                                                </a>
-                                                <div class="trend-price">
-                                                    <p class="price white mb-0">From <span>$1,050.00</span> <a
-                                                            href="#"><i
-                                                                class="fa fa-arrow-right white ps-1"></i></a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- end of nepal  section  --}}
+                            @foreach ($tourPackages as $package)
+                                <!-- Start of Nepal Section -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="trend-item">
+                                        <div class="trend-image">
+                                            <img alt="image"
+                                                src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
+                                                    ? asset('tour_images/' . $package->images[0])
+                                                    : asset('template/yatri_world/main-file/images/india.jpg') }}" />
 
+                                        </div>
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h4><a
+                                                        href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
+                                                </h4>
+                                                <p class="mb-0 pink">
+                                                    <i class="fa fa-eye me-1"></i> Includes
+                                                    {{ $package->destination ?? 'Salpa Pokhari Mundum Region' }}
+                                                    <i class="fa fa-map-marker me-1 ms-3"></i>
+                                                </p>
+                                            </div>
+                                            <div class="trend-last-main">
+                                                <p class="mb-0 trend-para">
+                                                    {{ $package->short_desc ?? 'A sacred escape nestled in the Himalayas – perfect for soul-searching and adventure.' }}
+                                                </p>
+                                                <div
+                                                    class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                    <a
+                                                        href="{{ route('packages.showBySlug', ['slug' => $package->slug]) }}">
+
+                                                        class="white d-flex align-items-center text-decoration-none">
+                                                        <img src="{{ !empty($package->images) && isset($package->images[0])
+                                                            ? asset('tour_images/' . $package->images[0])
+                                                            : asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
+                                                            class="d-author me-2" alt=""
+                                                            style="width: 28px; height: 28px; border-radius: 50%;">
+
+                                                        View Package
+                                                    </a>
+                                                    <div class="trend-price">
+                                                        <p class="price white mb-0">From
+                                                            <span>${{ $package->price ?? '1,050.00' }}</span>
+                                                            <a
+                                                                href="{{ route('packages.showBySlug', ['slug' => $package->slug]) }}">
+                                                                <i class="fa fa-arrow-right white ps-1"></i>
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!-- End of Nepal Section -->
 
                             <div class="col-lg-12">
                                 <div class="text-center">
@@ -307,6 +114,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Sidebar -->
                 <div class="col-lg-4 mb-4">
                     <div class="sidebar-sticky">
                         <div class="sidebar-item mb-4">
@@ -328,7 +137,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0">
                                             <a class="nir-btn w-100" href="#"><i class="fa fa-search"></i> Check
@@ -338,165 +146,36 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="list-sidebar">
 
+                        <div class="list-sidebar">
                             <div class="sidebar-item">
-                                <h4>City</h4>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            kathmandu<span class="number">123</span>
-                                        </label>
+                                <h4>Type</h4>
+                                @foreach ($tourPackageTypes as $type)
+                                    <div class="pretty p-default p-thick p-pulse">
+                                        <input type="checkbox" />
+                                        <div class="state">
+                                            <label>{{ $type->title ?? 'Tour' }}<span class="number"></span></label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input checked="" type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Bhaktapur<span class="number">630</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Chitwan<span class="number">58</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Namchey Bazar<span class="number">29</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            Solukhumbu<span class="number">29</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
+
                             <div class="sidebar-item">
                                 <h4>Services</h4>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>24/7 Reception</label>
+                                @foreach ($services as $service)
+                                    <div class="pretty p-default p-thick p-pulse mar-bottom-15">
+                                        <input type="checkbox" />
+                                        <div class="state p-warning-o">
+                                            <label>{{ $service->title ?? 'Tour' }}</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Parking</label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Bar</label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Restaurant</label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Satellite Television</label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse mar-bottom-15">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Lift/ELevator</label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state p-warning-o">
-                                        <label>Luggage Storage </label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
-                            <div class="sidebar-item star-rating-parent">
-                                <h4>Star Rating</h4>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            <span class="star-rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            <span class="star-rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            <span class="star-rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            <span class="star-rating">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="pretty p-default p-thick p-pulse">
-                                    <input type="checkbox" />
-                                    <div class="state">
-                                        <label>
-                                            <span class="star-rating">
-                                                <span class="fa fa-star checked"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="sidebar-item">
                                 <h4>Price Range($)</h4>
                                 <div class="range-slider">
-                                    <div aria-disabled="false"
-                                        class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                    <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
                                         data-max="2000" data-max-name="max_price" data-min="0"
                                         data-min-name="min_price" data-unit="$">
                                         <span class="min-value">0 $</span>
@@ -507,274 +186,68 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
+                <!-- Sidebar Ends -->
             </div>
         </div>
     </section>
+
+
     <!-- blog Ends -->
     <!-- top destination starts -->
     <section class="top-destination overflow-hidden">
         <div class="container">
             <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
                 <h2 class="m-0 white">Other <span>Tour Packages</span></h2>
-                <p class="mb-0 white">Discover more unforgettable journeys beyond the Mundum Trail — from sacred Himalayan
+                <p class="mb-0 white">
+                    Discover more unforgettable journeys beyond the Mundum Trail — from sacred Himalayan
                     pilgrimages to cultural adventures across Nepal and Tibet. Each trip offers a deeper connection to
-                    nature, heritage, and humanity.</p>
+                    nature, heritage, and humanity.
+                </p>
             </div>
 
             <div class="desti-inner">
                 <div class="row d-flex align-items-center">
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach ($tourPackages as $package)
+                        <div class="col-lg-4 col-md-6 p-1">
+                            <div class="desti-image">
+                                <img alt="image"
+                                    src="{{ !empty($package->images) && isset($package->images[0])
+                                        ? asset('tour_images/' . $package->images[0])
+                                        : asset('template/yatri_world/main-file/images/india.jpg') }}" />
 
-                    <div class="col-lg-3 col-md-6 p-1">
-                        <div class="desti-image">
-                            <img alt="desti"
-                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}" />
-                            <div class="desti-content">
-                                <div class="rating mb-1">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-half-o checked"></span>
-                                </div>
-                                <h4 class="white mb-1">Mundum Cultural Trek</h4>
-                                <div class="trend-last-main">
-                                    <div class="trend-last">
-                                        <p class="mb-1 white"><i aria-hidden="true" class="fa fa-clock-o"></i> 12 Days
-                                            &amp; 11 Nights</p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From <span>$870.00</span></p>
+                                <div class="desti-content">
+                                    <h4 class="white mb-1">{{ $package->title ?? 'Mundum Cultural Trek' }}</h4>
+                                    <div class="trend-last-main">
+                                        <div class="trend-last">
+                                            <p class="mb-1 white">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                {{ $package->duration ?? '12 Days' }}
+                                            </p>
+                                            <div class="trend-price">
+                                                <p class="price pink mb-0">From
+                                                    <span>{{ $package->price ?? '$870.00' }}</span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="desti-overlay">
-                                <a class="nir-btn" href="#">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
+                                <div class="desti-overlay">
+                                    <a class="nir-btn" href="{{ route('packages.bookNow', ['id' => $package->id]) }}">
+                                        <span class="white">Book Now</span>
+                                        <i class="fa fa-arrow-right white ps-1"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+
     <!-- top destination ends -->
 @endsection
 @push('styles')

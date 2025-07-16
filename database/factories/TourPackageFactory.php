@@ -14,8 +14,9 @@ class TourPackageFactory extends Factory
 
         return [
             // 🟢 Pick from existing IDs
-            'country_id' => $this->faker->numberBetween(1, 2),
+            'country_id' => $this->faker->numberBetween(1, 4),
             'service_id' => $this->faker->optional()->numberBetween(1, 2),
+            'type' => $this->faker->randomElement(['trekking', 'tour', ]),
 
             'title' => $title,
             'slug' => Str::slug($title) . '-' . $this->faker->unique()->numberBetween(1000, 9999),

@@ -17,7 +17,7 @@ class FrontEndRoutesController extends Controller
        $totalDays = $package->itineraries
     ->filter(fn($item) => is_numeric($item->day_number))
     ->sum(fn($item) => (int) $item->day_number);
-
-        return view('frontend.pages.tour-package-single', compact('package','totalDays'));
+$otherPackages = TourPackage::where('country_id', $package->country_id)->get();
+        return view('frontend.pages.tour-package-single', compact('package','totalDays','otherPackages'));
     }
 }

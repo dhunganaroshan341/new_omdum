@@ -4,6 +4,7 @@ use App\Models\CallToAction;
 use App\Models\FeaturedService;
 use App\Models\Setting;
 use App\Models\Blog;
+use App\Models\Country;
 use App\Models\Cta;
 use App\Models\GalleryAlbum;
 use App\Models\Notice;
@@ -12,6 +13,22 @@ use App\Models\Service;
 
 function getSettings(){
     return Setting::first();
+}
+function getNavbarCountries() {
+    // Fetch countries with packages already loaded
+    $rawCountries = Country::with(['packages'])->get();
+
+    // Group packages by 'type' (enum column) inside each country
+    $countries = $rawCountries->map(function ($country) {
+        $grouped = $country->packages
+            ->groupBy(fn($package) => $package->type ?? 'unknown'); // 'trekking', 'tour', 'other'
+
+        $country->setAttribute('groupedPackages', $grouped);
+
+        return $country;
+    });
+
+    return $countries;
 }
 
 function getServices(){

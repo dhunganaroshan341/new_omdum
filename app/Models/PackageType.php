@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PackageType extends Model
+class PackageType extends BaseModel
 {
     use HasFactory;
     protected $table = 'package_types';

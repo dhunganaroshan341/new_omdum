@@ -274,7 +274,7 @@ Route::get('/checkout', [UserFrontendController::class, 'checkout'])->name('chec
 Route::get('/blog', [UserFrontendController::class, 'blogGrid'])->name('blog.grid');
 Route::get('/blog/full', [UserFrontendController::class, 'blogFull'])->name('blog.full');
 Route::get('/blog/single', [UserFrontendController::class, 'blogSingle'])->name('blog.single');
-Route::get('/destination/grid', [UserFrontendController::class, 'destinationGrid'])->name('destination.grid');
+// Route::get('/destination/grid', [UserFrontendController::class, 'destinationGrid'])->name('destination.grid');
 Route::get('/destination/full', [UserFrontendController::class, 'destinationFull'])->name('destination.full');
 Route::get('/destination/list', [UserFrontendController::class, 'destinationList'])->name('destination.list');
 Route::get('/destination/single', [UserFrontendController::class, 'destinationSingle'])->name('destination.single');
@@ -331,7 +331,7 @@ Route::get('/pages/dashboard', [SamplePageController::class, 'dashboardBladePage
 
 Route::get('/pages/destination-full', [SamplePageController::class, 'destination_fullBladePage'])->name('pages.destination-full');
 
-Route::get('/pages/destination-grid', [SamplePageController::class, 'destination_gridBladePage'])->name('pages.destination-grid');
+// Route::get('/pages/destination-grid', [SamplePageController::class, 'destination_gridBladePage'])->name('pages.destination-grid');
 
 Route::get('/pages/destination-left', [SamplePageController::class, 'destination_leftBladePage'])->name('pages.destination-left');
 
@@ -407,6 +407,19 @@ Route::get('/pages/train-grid', [SamplePageController::class, 'train_gridBladePa
 Route::get('/pages/train-list', [SamplePageController::class, 'train_listBladePage'])->name('pages.train-list');
 
 Route::get('/pages/wishlist', [SamplePageController::class, 'wishlistBladePage'])->name('pages.wishlist');
-Route::get('/pages/services', [SamplePageController::class, 'servicesPage'])->name('pages.services');
+Route::get('/services', [SamplePageController::class, 'servicesPage'])->name('pages.services');
 // actual frontend routes
-Route::get('/tour-package/{slug}', [FrontEndRoutesController::class, 'showTourPackageBySlug'])->name('pages.destination-single');
+// View package by slug
+Route::get('/package/{slug}', [FrontEndRoutesController::class, 'showTourPackageBySlug'])->name('packages.showBySlug');
+
+// Book a package
+Route::get('/booking/{id}', [TourPackageController::class, 'bookNow'])->name('packages.bookNow');
+
+// View all packages
+Route::get('/packages', [SamplePageController::class, 'destination_gridBladePage'])->name('packages.index');
+
+// View packages by country
+Route::get('/packages/country/{country}', [TourPackageController::class, 'packageByCountry'])->name('packages.country');
+
+// View packages by type
+Route::get('/packages/type/{type}', [TourPackageController::class, 'packageByType'])->name('packages.type');

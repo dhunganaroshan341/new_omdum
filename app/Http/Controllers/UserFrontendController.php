@@ -12,6 +12,7 @@ use App\Models\frontend;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Contact;
+use App\Models\Country;
 use App\Models\Post;
 use App\Models\HomeSlide;
 use App\Models\Notice;
@@ -25,27 +26,36 @@ use Illuminate\Support\Str;
 class UserFrontendController extends Controller
 {
 
-    public function home()
-    {
-        $frontend = Setting::first();
-        $homeslides = HomeSlide::where('status', 'Active')->get();
-        // dd($homeslides);
-        $testimonials = Testimonial::where('status', 'Active')->get();
-        $destinations = Destination::where('status', 'Active')->get();
-        $favDestinations =  (new HomeSampleData())->getSampleData('destinations');
-        $clients = \App\Models\Client::with('albums')->get();;
-        // dd($notice);
-        $services = Service::where('status', 1)->get();
-        $content_title="Home";
-        $cta = CallToAction::where('page', 'home')->first();
-        $posts = Post::with('category', 'postImages')
-            ->latest()
-            ->take(6) // or ->limit(6)
-            ->get();
+   public function home()
+{
+    $frontend = Setting::first();
+    $homeslides = HomeSlide::where('status', 'Active')->get();
+    $testimonials = Testimonial::where('status', 'Active')->get();
+    $destinations = Destination::where('status', 'Active')->get();
+    $favDestinations = (new HomeSampleData())->getSampleData('destinations');
+    $clients = \App\Models\Client::with('albums')->get();
+    $services = Service::where('status', 1)->get();
+    $content_title = "Home";
+    $cta = CallToAction::where('page', 'home')->first();
+    $posts = Post::with('category', 'postImages')->latest()->take(6)->get();
 
-        return view('frontend.home', compact(['destinations', 'posts','cta','services','frontend', 'homeslides', 'testimonials','content_title','clients']));
 
-    }
+
+
+    return view('frontend.home', compact([
+
+        'destinations',
+        'posts',
+        'cta',
+        'services',
+        'frontend',
+        'homeslides',
+        'testimonials',
+        'content_title',
+        'clients'
+    ]));
+}
+
     public function aboutUs()
 {
 

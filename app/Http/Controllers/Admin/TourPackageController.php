@@ -309,4 +309,46 @@ class TourPackageController extends Controller
             'data' => $tourPackageVideo,
         ]);
     }
+
+    public function bookNow($id)
+    {
+        try {
+            $tourPackage = TourPackage::findOrFail($id);
+            return view('frontend.pages.booking', compact('tourPackage'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
+
+    public function packageBycountry($country)
+    {
+        try {
+            $tourPackages = TourPackage::whereHas('country', function ($query) use ($country) {
+                $query->where('title', $country);
+            })->get();
+
+            if ($tourPackages->isEmpty()) {
+                return redirect()->back()->withErrors(['error' => 'No packages found for this country']);
+            }
+
+            return view('frontend.pages.destination-grid', compact('tourPackages'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }public function packageByType($type)
+    {
+        try {
+            $tourPackages = TourPackage::whereHas('country', function ($query) use ($type) {
+                $query->where('name', $type);
+            })->get();
+
+            if ($tourPackages->isEmpty()) {
+                return redirect()->back()->withErrors(['error' => 'No packages found for this country']);
+            }
+
+            return view('frontend.pages.destination-grid', compact('tourPackages'));
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
 }

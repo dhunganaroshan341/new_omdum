@@ -39,6 +39,7 @@ class TourPackageRequest extends FormRequest
         'start_point' => 'nullable|string|max:255',
         'end_point' => 'nullable|string|max:255',
         'status' => 'required|in:active,inactive',
+        'type' => 'nullable|in:trekking,tour,other',
     ];
 }
 

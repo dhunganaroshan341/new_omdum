@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TourPackageImage extends Model
+class TourPackageImage extends BaseModel
 {
     protected $fillable = [
         'tour_package_id',

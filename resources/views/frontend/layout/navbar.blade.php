@@ -1,3 +1,6 @@
+@php
+    $navbarCountries = getNavbarCountries();
+@endphp
 <div class="header_menu" id="header_menu">
     <nav class="navbar navbar-default">
         <div class="container">
@@ -18,24 +21,32 @@
 
                         {{-- Clean destination (no dropdown) --}}
                         {{-- <li><a href="{{ route('destination.grid') }}">Destination</a></li> --}}
-                        <li><a href="#">Tibet</a></li>
+                        {{-- Loop through countries as top-level menu --}}
+                        @foreach ($navbarCountries as $country)
+                            <li class="submenu dropdown">
+                                <a href="#">{{ $country->name }} <i class="icon-arrow-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    @foreach ($country->groupedPackages as $typeTitle => $packages)
+                                        <li class="submenu dropdown">
+                                            <a href="#">{{ $typeTitle }} <i class="icon-arrow-right"></i></a>
+                                            <ul class="dropdown-menu">
+                                                @foreach ($packages as $package)
+                                                    <li>
+                                                        <a
+                                                            href="{{ route('packages.showBySlug', ['slug' => $package->slug]) }}">
+                                                            {{ $package->title }}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
 
 
 
-                        {{-- Blogs Dropdown --}}
-                        <li class="submenu dropdown">
-                            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
-                                href="#" role="button">
-                                Nepal <i aria-hidden="true" class="icon-arrow-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ route('pages.destination-grid') }}">Tour Packages </a></li>
-                                <li><a href="#">Trekking Packages </a></li>
-
-                            </ul>
-                        </li>
-                        <li><a href="#">India</a></li>
-                        <li><a href="#">Bhutan</a></li>
 
                         <li><a href="{{ route('blog.grid') }}">Blog</a></li>
                         <li><a href="{{ route('pages.contact') }}">Contact Us</a></li>

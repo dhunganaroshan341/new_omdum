@@ -484,147 +484,175 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="sidebar-sticky">
-                        <div class="list-sidebar">
-                            <div class="sidebar-item">
-                                <form class="form-content">
-                                    <h4 class="title white text-center">MAKE A BOOKING</h4>
-                                    <div class="row gy-4">
+                    <div class="sidebar-sticky position-sticky top-0">
+                        <div class="scrollable-form overflow-auto " style="max-height: 90vh;">
+                            <form class="form-content">
+                                <h4 class="title white text-center">MAKE A BOOKING</h4>
+                                <div class="row gy-4">
 
-                                        <!-- Name Input -->
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white">Full Name</label>
-                                                <div class="input-box">
-                                                    <i class="fa fa-user"></i>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Enter your full name" required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Email Input -->
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white">Email Address</label>
-                                                <div class="input-box">
-                                                    <i class="fa fa-envelope"></i>
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Enter your email" required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Phone Number Input -->
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white">Phone Number</label>
-                                                <div class="input-box">
-                                                    <i class="fa fa-phone"></i>
-                                                    <input type="tel" class="form-control"
-                                                        placeholder="Enter your phone number" required>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <span class="white">Your choosen date is</span>
-                                                <h3 class="choosen-date white mb-0"><i class="fa fa-calendar"></i> 10 - 15
-                                                    March, 2020 <small class="d-block font-weight-normal">(5 days) <a
-                                                            class="d-block pink float-right"
-                                                            href="#">Change</a></small></h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white">No. Of People</label>
-                                                <div class="input-box">
-                                                    <i class="flaticon-add-user"></i>
-                                                    <select class="niceSelect">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group bg-white p-3">
-                                                <ul>
-                                                    <li class="d-block pb-1">$150.00 x 2 guests<span
-                                                            class="float-right pink">$300.00</span></li>
-                                                    <li class="d-block pb-1">Booking fee + tax<span
-                                                            class="float-right pink">$10.00</span></li>
-                                                    <li class="d-block pb-1">Book now &amp; Save<span
-                                                            class="float-right pink">-$15</span></li>
-                                                    <li class="d-block pb-1">Other fees<span
-                                                            class="float-right pink">Free</span></li>
-                                                    <li class="d-block border-t">
-                                                        <div class="pt-1">
-                                                            <span>Total</span><span class="float-right pink">$350.00</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group mb-0">
-                                                <a class="nir-btn w-100" href="#">Instant Book</a>
+                                    <!-- Name Input -->
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white">Full Name</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-user"></i>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter your full name" required>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                            <!-- Sidebar Location and Map Info -->
-                            <div class="sidebar-item">
-                                <div class="map-box">
-                                    <i class="fa fa-map-marker"></i>
-                                    <a href="https://goo.gl/maps/NepalTrail">Show on Map</a>
-                                </div>
 
-                                <!-- Location Rating -->
-                                <div class="location-rating mb-2 mt-2">
-                                    <div class="row d-flex align-items-center">
-                                        <div class="col-md-2">
-                                            <span class="location-box">4.7</span>
+                                    <!-- Email Input -->
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white">Email Address</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-envelope"></i>
+                                                <input type="email" class="form-control" placeholder="Enter your email"
+                                                    required>
+                                            </div>
                                         </div>
-                                        <div class="col-md-10">
-                                            <p class="mb-0">Exceptional</p>
-                                            <span>Traveler review score</span>
+                                    </div>
+
+                                    <!-- Phone Number Input -->
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white">Phone Number</label>
+                                            <div class="input-box">
+                                                <i class="fa fa-phone"></i>
+                                                <input type="tel" class="form-control"
+                                                    placeholder="Enter your phone number" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 📅 Date Picker -->
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white d-block mb-2">Select Date </label>
+                                            <input type="date" class="form-control mb-2" id="date">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <span class="white">Your choosen date is</span>
+                                            <h3 class="choosen-date white mb-0"><i class="fa fa-calendar"></i> 10 - 15
+                                                March, 2020 <small class="d-block font-weight-normal">(5 days) <a
+                                                        class="d-block pink float-right" href="#">Change</a></small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white"> Adults</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-add-user"></i>
+                                                <select class="niceSelect">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label class="white">Children</label>
+                                            <div class="input-box">
+                                                <i class="flaticon-add-user"></i>
+                                                <select class="niceSelect">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group bg-white p-3">
+                                            <ul>
+                                                <li class="d-block pb-1">$150.00 x 2 guests<span
+                                                        class="float-right pink">$300.00</span></li>
+                                                <li class="d-block pb-1">Booking fee + tax<span
+                                                        class="float-right pink">$10.00</span></li>
+                                                <li class="d-block pb-1">Book now &amp; Save<span
+                                                        class="float-right pink">-$15</span></li>
+                                                <li class="d-block pb-1">Other fees<span
+                                                        class="float-right pink">Free</span></li>
+                                                <li class="d-block border-t">
+                                                    <div class="pt-1">
+                                                        <span>Total</span><span class="float-right pink">$350.00</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group mb-0">
+                                            <a class="nir-btn w-100" href="#">Instant Book</a>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
+                        </div>
 
-                                <!-- Location Highlights -->
-                                <div class="location-features">
-                                    <ul>
-                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Hidden gem in
-                                            Eastern Nepal</li>
-                                        <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Authentic Kirati
-                                            cultural region</li>
-                                        <li><i class="fa fa-map-marker pink me-2"></i> Sacred sites & pristine landscapes
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Sidebar Contact Info -->
-                            <div class="sidebar-item">
-                                <div class="sidebar-contact text-center bg-navy">
-                                    <i class="fa fa-phone-alt white"></i>
-                                    <h3 class="white"><span>Book</span> by phone</h3>
-                                    <a class="phone white" href="tel:+9779801234567">+977 9801234567</a>
-                                    <small class="white d-block mt-2">Monday to Friday 9.00am - 6.00pm</small>
-                                </div>
-                            </div>
-
+                        <!-- Optional: Keep these outside scroll area -->
+                        <div class="sidebar-item mt-4">
+                            <!-- map, rating, contact info -->
                         </div>
                     </div>
                 </div>
+                <!-- Sidebar Location and Map Info -->
+                <div class="sidebar-item">
+                    <div class="map-box">
+                        <i class="fa fa-map-marker"></i>
+                        <a href="https://goo.gl/maps/NepalTrail">Show on Map</a>
+                    </div>
+
+                    <!-- Location Rating -->
+                    <div class="location-rating mb-2 mt-2">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-2">
+                                <span class="location-box">4.7</span>
+                            </div>
+                            <div class="col-md-10">
+                                <p class="mb-0">Exceptional</p>
+                                <span>Traveler review score</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Highlights -->
+                    <div class="location-features">
+                        <ul>
+                            <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Hidden gem in
+                                Eastern Nepal</li>
+                            <li class="mb-2"><i class="fa fa-map-marker pink me-2"></i> Authentic Kirati
+                                cultural region</li>
+                            <li><i class="fa fa-map-marker pink me-2"></i> Sacred sites & pristine landscapes
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sidebar Contact Info -->
+                <div class="sidebar-item">
+                    <div class="sidebar-contact text-center bg-navy">
+                        <i class="fa fa-phone-alt white"></i>
+                        <h3 class="white"><span>Book</span> by phone</h3>
+                        <a class="phone white" href="tel:+9779801234567">+977 9801234567</a>
+                        <small class="white d-block mt-2">Monday to Friday 9.00am - 6.00pm</small>
+                    </div>
+                </div>
+
             </div>
+        </div>
+        </div>
+        </div>
         </div>
     </section>
     <!-- blog Ends -->

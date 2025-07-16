@@ -5,27 +5,37 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TourPackage extends Model
+class TourPackage extends BaseModel
 {
     use HasFactory;
+    protected $casts = [
+    'images' => 'array',
+];
+
      protected $fillable = [
         'country_id',
         'service_id',
+        'type',
         'images',
         'title',
         'drop',
         'pickup',
+        'price',
+        'price_includes',
+        'price_excludes ',
         'slug',
         'short_description',
         'long_description',
         'itinerary',
         'duration',
+        'languages',
         'difficulty',
         'max_elevation',
         'best_season',
         'start_point',
         'end_point',
         'status',
+        'max_group_size',
     ];
     public function country() {
     return $this->belongsTo(Country::class);

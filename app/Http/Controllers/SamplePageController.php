@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-
+use NerdSnipe\LaravelCountries\Facades\LaravelCountries;
 
 class SamplePageController extends Controller
 {
@@ -115,7 +115,11 @@ public function destination_fullBladePage() {
     }
 
 public function destination_gridBladePage() {
-        return view('frontend.pages.destination-grid');
+    $countries = LaravelCountries::getCountries();
+    $tourPackages = \App\Models\TourPackage::all(); // Assuming you have a TourPackage model
+    $services = \App\Models\Service::all(); // Assuming you have a Service model
+    $tourPackageTypes = \App\Models\TourPackageType::all(); // Assuming you have a TourPackageType model
+        return view('frontend.pages.destination-grid',compact('countries','tourPackages','services','tourPackageTypes'));
     }
 
 public function destination_leftBladePage() {

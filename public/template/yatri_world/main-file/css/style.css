@@ -3875,7 +3875,7 @@ span.location-box {
   position: absolute;
   top: 0;
   left: 0;
-  height: 73%;
+  height: 100%;
   width: 100%;
 }
 .top-destination .desti-image {
