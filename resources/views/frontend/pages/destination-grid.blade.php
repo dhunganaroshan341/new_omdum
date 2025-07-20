@@ -76,8 +76,7 @@
                                                 </p>
                                                 <div
                                                     class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                    <a
-                                                        href="{{ route('packages.showBySlug', ['slug' => $package->slug]) }}">
+                                                    <a href="{{ route('packages.show', ['slug' => $package->slug]) }}">
 
                                                         class="white d-flex align-items-center text-decoration-none">
                                                         <img src="{{ !empty($package->images) && isset($package->images[0])
@@ -92,7 +91,7 @@
                                                         <p class="price white mb-0">From
                                                             <span>${{ $package->price ?? '1,050.00' }}</span>
                                                             <a
-                                                                href="{{ route('packages.showBySlug', ['slug' => $package->slug]) }}">
+                                                                href="{{ route('packages.show', ['slug' => $package->slug]) }}">
                                                                 <i class="fa fa-arrow-right white ps-1"></i>
                                                             </a>
                                                         </p>
