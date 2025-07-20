@@ -36,6 +36,7 @@ class TourPackage extends BaseModel
         'end_point',
         'status',
         'max_group_size',
+        'is_featured',
     ];
     public function country() {
     return $this->belongsTo(Country::class);

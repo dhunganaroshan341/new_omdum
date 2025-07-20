@@ -771,10 +771,11 @@ iframe {
   .breadcrumb-main .breadcrumb-outer .breadcrumb-content {
     text-align: center;
   }
-  .breadcrumb-main .breadcrumb-outer .breadcrumb-content h2 {
-    display: block;
-    font-size: 40px;
-  }
+ .breadcrumb-main .breadcrumb-outer .breadcrumb-content h2 {
+	display: block;
+	font-size: 20px;
+	line-height: normal;
+}
 }
 /*Buttons*/
 button {
@@ -2056,6 +2057,7 @@ header #navbar {
   padding: 0px;
   border-radius: 0px;
   -webkit-box-shadow: none;
+  max-width:100px;
   box-shadow: none;
 }
 .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu:before {
@@ -2084,7 +2086,7 @@ header #navbar {
   line-height: 2.7;
   color: #777;
   font-size: 15px;
-  padding: 0px 20px;
+  padding: 0px 10px;
   font-weight: 400;
   letter-spacing: 0.3px;
   -webkit-transition: all 150ms linear;
@@ -2329,7 +2331,7 @@ header #navbar {
     position: absolute;
     top: 40px;
     left: 0px;
-    min-width: 220px;
+    max-width: 100px;
     background: #fff;
     box-shadow: 0 0 15px rgba(204, 204, 204, 0.3411764706);
     text-align: left;

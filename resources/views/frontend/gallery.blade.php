@@ -1,210 +1,177 @@
 @extends('frontend.layout.main')
 
-
-
-
-@push('styles')
-    {{-- Bootstrap CSS --}}
-
-    {{-- Fancybox CSS --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-@endpush
-
 @section('content')
-    <section class="hero-small">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url({{ $pageBanner?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
-                    <div class="hero-small-background-overlay"></div>
-                    <div class="container  h-100">
-                        <div class="row align-items-center d-flex h-100">
-                            <div class="col-md-12">
-                                <div class="block">
-                                    <span class="text-uppercase text-sm letter-spacing"></span>
-                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main"
+        style="background-image: url('{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}');">
+        <div class="breadcrumb-outer pt-10 pb-4">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Omundum Trek Album</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Gallery</li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
+        <div class="dot-overlay"></div>
     </section>
-<div class="container-fluid py-4">
-    <div class="row">
-        <!-- Sidebar -->
-        <aside class="col-md-3 d-none d-md-block border-end pe-3" style="height: calc(100vh - 4rem); overflow-y: auto;">
-            <h4  class="text-realm-blue mb-3">Albums</h4>
-            <div class="list-group">
- <a class=" text-realm-yellow list-group-item list-group-item-action"
-                            href="{{ route('gallery') }}">
-                            <img style="width:20px;height:20px justify-self:center align-item:center" src="{{ asset('assets/images/logo.png') }}" alt=""> Realm Albums
-
-
-            </a>
-            <hr>
-                @foreach ($clientsWithAlbums as $clientId => $clientAlbums)
-
-                    <button class="list-group-item list-group-item-action"
-                            onclick="showClientAlbums({{ $clientId }})">
-                        <i class="fas fa-user me-2"></i>
-                        {{ optional($clientAlbums->first()->client)->name ?? 'Unknown Client' }}
-                    </button>
-                @endforeach
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="col-md-9" id="mainContent">
-            <div class="divider mb-3"></div>
-        <h2 class="title-color mb-4 h1"> Realm Albums</h2>
-            <div class="row g-4">
-                @foreach ($albumsWithNoClients as $album)
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card h-100 shadow-sm" onclick="loadAlbumDetails({{ $album->id }}, '{{ $album->title }}')">
-                            @if ($album->galleryMedia->first())
-                                <img src="/{{ $album->galleryMedia->first()->media_path }}" class="card-img-top" alt="...">
-                            @else
-                                <div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 160px;">
-                                    No Image
-                                </div>
-                            @endif
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $album->title }}</h5>
-
-                            </div>
+    <!-- BreadCrumb Ends -->
+    <!-- Gallery starts -->
+    <div class="gallery pt-10 pb-6">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending1.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                @endforeach
+                </div>
+                <div class="col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending2.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/everest.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending3.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending4.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending5.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending6.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending7.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item mb-4">
+                        <div class="gallery-image">
+                            <img alt="image" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" />
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="gallery-content">
+                            <ul>
+                                <li><a data-lightbox="gallery" data-title="Title" href="images/trending/trending8.jpg"><i
+                                            class="fa fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <div class="pagination-main text-center">
+                        <ul class="pagination">
+                            <li><a href="#"><i aria-hidden="true" class="fa fa-angle-double-left"></i></a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#"><i aria-hidden="true" class="fa fa-angle-double-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
-        </main>
+        </div>
     </div>
-</div>
+    <!-- Gallery Ends -->
 @endsection
-
-@push('scripts')
-    {{-- jQuery (required for Fancybox and AJAX) --}}
-
-    {{-- Bootstrap JS --}}
-
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-
-    <script>
-        function showClientAlbums(id) {
-            const mainContent = $('#mainContent');
-            mainContent.empty();
-
-            $.ajax({
-                url: `/gallery-album/client/${id}`,
-                method: "GET",
-                success: function (response) {
-                    if (!response.success) return alert('No albums found for this client.');
-                    const clientAlbums = response.message;
-
-                   let content = `
-    <div class="d-flex justify-content-between align-items-center mb-3">
-
-        <h2 class="title-color mb-0">
-            ${clientAlbums[0]?.client?.name || 'Unknown Client'} Albums
-        </h2>
-         <button onclick="window.location.href='gallery'" class="btn btn-secondary">
-            ← Back
-        </button>
-    </div>
-
-    <div class="divider mb-3"></div>
-
-    <div class="row g-4">
-`;
-
-
-
-                    clientAlbums.forEach(album => {
-                        const galleryMedia = album.gallery_media || [];
-                        content += `
-                            <div class="col-sm-6 col-md-4">
-                                <div class="card h-100 shadow-sm" onclick="loadAlbumDetails(${album.id}, '${album.title}')">
-
-
-
-
-
-
-                                    ${galleryMedia.length > 0 ? `
-                                        <img src="/${galleryMedia[0].media_path}" class="card-img-top" />
-                                    ` : `
-                                        <div class="card-img-top bg-light text-muted d-flex align-items-center justify-content-center" style="height: 180px;">
-                                            No Media Available
-                                        </div>
-                                    `}
-                                    <div class="card-body">
-                                        <h5 class="card-title">${album.title}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    });
-
-                    content += '</div>';
-                    mainContent.html(content);
-                },
-                error: function () {
-                    alert('Failed to load client albums.');
-                }
-            });
+@push('styles')
+    <style>
+        .gallery-image img {
+            height: 300px !important;
+            object-fit: cover !important;
         }
-
-        function loadAlbumDetails(albumId, albumTitle) {
-            $.ajax({
-                url: `/gallery-album/${albumId}`,
-                method: "GET",
-                success: function (response) {
-                    if (!response.success) return alert('Album not found.');
-                    const album = response.message;
-                    let content = `
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-
-             <h2 class="title-color mb-4 h1">${album.title}</h2>
-         <button onclick="window.location.href='gallery'" class="btn btn-secondary">
-            ← Back
-        </button>
-    </div>
-
-    <div class="divider mb-3"></div>
-
-    <div class="row g-4">
-                    `;
-
-                    const galleryMedia = album.gallery_media || [];
-                    if (galleryMedia.length > 0) {
-                        galleryMedia.forEach(media => {
-                            content += `
-                                <div class="col-sm-6 col-md-4">
-                                    <a href="/${media.media_path}" data-fancybox="${album.title}">
-                                        <img src="/${media.media_path}" class="img-fluid rounded" />
-                                    </a>
-                                </div>
-                            `;
-                        });
-                    } else {
-                        content += `
-                            <div class="col-12 text-muted text-center">No Media Available</div>
-                        `;
-                    }
-
-                    content += '</div>';
-                    $('#mainContent').html(content);
-
-                    Fancybox.bind("[data-fancybox]", {
-                        Carousel: {
-                            infinite: true
-                        }
-                    });
-                },
-                error: function () {
-                    alert('Failed to load album images.');
-                }
-            });
-        }
-    </script>
+    </style>
 @endpush

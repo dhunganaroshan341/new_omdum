@@ -1,253 +1,383 @@
 @extends('frontend.layout.main')
+
 @section('content')
+    <!-- BreadCrumb Starts -->
+    <section class="breadcrumb-main"
+        style="background-image: url({{ asset('/template/yatri_world/main-file/images/tibet.jpg') }});">
+        <div class="breadcrumb-outer pt-10 pb-4">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">About Us</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">About Us</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section>
+    <!-- BreadCrumb Ends -->
+    <!-- form starts -->
+    <section class="about-us">
+        <div class="container">
+            <div class="about-image-box">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <h2 class="mb-1 blue font-weight-normal">About Om Mundum Treks</h2>
+                            <h3>Extraordinary Journeys Beyond the Ordinary</h3>
+                            <p class="mb-3">
+                                At Om Mundum Treks, we believe travel is more than just a journey—it's a life-changing
+                                experience. We offer unique adventures that take you off the beaten path, showcasing Nepal's
+                                breathtaking mountains, rich Kirati culture, and pristine hidden trails. Specializing in the
+                                newly opened Mundum Trail, we provide authentic cultural immersion experiences in eastern
+                                Nepal's untouched wilderness. Our carefully crafted expeditions connect you with indigenous
+                                Rai communities, ancient traditions, and spectacular Himalayan landscapes that few travelers
+                                ever witness. Every trek is designed with purpose—to create meaningful connections between
+                                adventurers and Nepal's most preserved cultural heritage while supporting local communities
+                                and sustainable tourism practices.
 
-    <section class="hero-small">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
 
-            <div class="carousel-item active" style="background-image: url({{ $pageBanner->image?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
-                <div class="hero-small-background-overlay"></div>
-                <div class="container h-100">
-                    <div class="row align-items-center d-flex h-100">
-                        <div class="col-md-12">
-                            <div class="block text-center">
-                                <h1 class="mb-3 mt-3 text-center">{{ $pageBanner->title??'About Us' }}</h1>
-                                <p>{{ $pageBanner->description??"Lorem ipsum dolor sit amet consectetur adipisicing elit." }}</p>
+
+                            </p>
+                            <div class="about-imagelist">
+                                <ul class="d-flex justify-content-between">
+                                    <li class="me-2">
+                                        <img alt="about image"
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest2-buddha.jpg">
+                                    </li>
+                                    <li class="me-2">
+                                        <img alt="about image"
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest.jpg">
+                                    </li>
+                                    <li class="me-2">
+                                        <img alt="about image"
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
+                                    </li>
+                                    <li class="me-2">
+                                        <img alt="about image"
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
+                                    </li>
+                                    <li>
+                                        <img alt="about image"
+                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-image">
+                            <img alt="about image"
+                                src="{{ asset('template/yatri_world/main-file/images/destination/lumbini.jpg') }}" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- form ends -->
+    <!-- about-us starts -->
+    <section class="about-us1 bg-grey pb-6">
+        <div class="container">
+            <div class="about-us1-inner pt-5 pb-8">
+                <div class="about-image-box">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <h2 class="">Our Mission & Vision</h2>
+                                <p class="mb-2">At Om Mundum Treks, our mission is to provide exceptional trekking and
+                                    adventure experiences while promoting sustainable tourism and preserving Nepal’s rich
+                                    cultural and natural heritage</p>
+                                <br>
 
+                                <div class="about-featured mb-0">
+                                    <ul>
+                                        <li>Authentic Experiences</li>
+                                        <li>Safety & Excellence</li>
+                                        <li>Sustainable Tourism</li>
+                                        <li>Customer Satisfaction</li>
+                                    </ul>
+                                </div>
 
-@if(!empty($pageDescription))
-<section class="section-2 py-5">
-    <div class="container py-2">
-        <div class="row">
-            <div class="col-md-6 align-items-center d-flex">
-                <div class="about-block">
-                    <h1 class="title-color mb-3">About Realm-Infotech</h1>
-                    <p>{!! $pageDescription !!}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-image-main">
+                                <div class="row">
+                                    <div class="col-md-6 mt-4 mb-4">
+                                        <img alt=""
+                                            src="{{ asset('template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img alt=""
+                                            src="{{ asset('template/yatri_world/main-file/images/destination/mountain-portrait.jpg') }}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- why us starts -->
+                @include('components.why-us-section')
+                <!-- why us ends -->
+            </div>
+        </div>
+    </section>
+    <!-- about-us ends -->
+    <!-- our teams starts -->
+    {{-- <section class="our-team pb-4">
+        <div class="container">
+            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                <h2 class="m-0">Our <span>Team &amp; Guide</span></h2>
+                <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better
+                    people. Each time we travel, we see the world with new eyes.</p>
+            </div>
+            <div class="team-main">
+                <div class="shop-slider">
+                    <div class="team-list mx-3">
+                        <div class="team-image">
+                            <img alt="team"
+                                src="{{ asset('template/yatri_world/main-file/images/team/img1.jpg') }}" />
+                        </div>
+                        <div class="team-content1 text-center">
+                            <h4 class="mb-0 pink">Salmon Thuir</h4>
+                            <p class="mb-0">Cheif Officer</p>
+                        </div>
+                    </div>
+                    <div class="team-list mx-3">
+                        <div class="team-image">
+                            <img alt="team"
+                                src="{{ asset('template/yatri_world/main-file/images/team/img2.jpg') }}" />
+                        </div>
+                        <div class="team-content1 text-center">
+                            <h4 class="mb-0 pink">Horke Pels</h4>
+                            <p class="mb-0">Head Chef</p>
+                        </div>
+                    </div>
+                    <div class="team-list mx-3">
+                        <div class="team-image">
+                            <img alt="team"
+                                src="{{ asset('template/yatri_world/main-file/images/team/img4.jpg') }}" />
+                        </div>
+                        <div class="team-content1 text-center">
+                            <h4 class="mb-0 pink">Solden kalos</h4>
+                            <p class="mb-0">Supervisor</p>
+                        </div>
+                    </div>
+                    <div class="team-list mx-3">
+                        <div class="team-image">
+                            <img alt="team"
+                                src="{{ asset('template/yatri_world/main-file/images/team/img3.jpg') }}" />
+                        </div>
+                        <div class="team-content1 text-center">
+                            <h4 class="mb-0 pink">Nelson Bam</h4>
+                            <p class="mb-0">Quality Assurance</p>
+                        </div>
+                    </div>
+                    <div class="team-list mx-3">
+                        <div class="team-image">
+                            <img alt="team"
+                                src="{{ asset('template/yatri_world/main-file/images/team/img5.jpg') }}" />
+                        </div>
+                        <div class="team-content1 text-center">
+                            <h4 class="mb-0 pink">Cacics Coold</h4>
+                            <p class="mb-0">Asst. Chef</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="image-red-background">
-                    <img src="{{ asset('uploads/' . $pageDescriptionImage) }}" alt="" class="w-100">
+        </div>
+    </section> --}}
+    <!-- our teams Ends -->
+    <!-- Counter -->
+    <section class="counter-main pb-6"
+        style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg4.jpg') }}')">
+        <div class="container">
+            <div class="counter text-center">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-users white bg-navy mb-1"></i>
+                            <h3 class="value mb-0 navy">100</h3>
+                            <h4 class="m-0">Happy Customers</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-plane mb-1 white bg-navy"></i>
+                            <h3 class="value mb-0 navy">50</h3>
+                            <h4 class="m-0">Amazing Tours </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-chart-bar white bg-navy mb-1"></i>
+                            <h3 class="value mb-0 navy">3472</h3>
+                            <h4 class="m-0">In Business</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="counter-item bg-lgrey">
+                            <i class="fa fa-support white bg-navy mb-1"></i>
+                            <h3 class="value mb-0 navy">523</h3>
+                            <h4 class="m-0">Support Cases </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <!-- End Counter -->
+    <!-- content-line start -->
+    <div class="content-line bg-navy pb-6 pt-6">
+        <div class="container">
+            <div class="content-line-inner">
+                <div class="row d-md-flex align-items-center justify-content-between">
+                    <div class="col-md-9">
+                        <p class="mb-0 white h4">
+                            It’s Time For a New Adventure! Don’t Wait Any Longer. Contact us!
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="nir-btn" href="#">Fine More Destination</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-@endif
-
-
-
-  {{-- do you need help section --}}
-@include('components.cta-section')
-
-
-   <x-team-section :members="$members"  title="Our Team" />
-
-
-
+    <!-- content-line ends -->
+    <!-- testomonial start -->
+    <section class="testimonial pb-6">
+        <div class="container">
+            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                <h2 class="m-0">What <span>People Say About Us</span></h2>
+                <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better
+                    people. Each time we travel, we see the world with new eyes.</p>
+            </div>
+            <div class="review-slider">
+                <div class="item">
+                    <div class="testimonial-item1 text-center">
+                        <div class="details">
+                            <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
+                                Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
+                                Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
+                        </div>
+                        <div class="author-info mt-2">
+                            <a href="#"><img alt=""
+                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img1.jpg') }}" /></a>
+                            <div class="author-title">
+                                <h4 class="m-0 pink">Jared Erondu</h4>
+                                <span>Supervisor</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-quote-left mb-2"></i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-item1 text-center">
+                        <div class="details">
+                            <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
+                                Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
+                                Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
+                        </div>
+                        <div class="author-info mt-2">
+                            <a href="#"><img alt=""
+                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img2.jpg') }}" /></a>
+                            <div class="author-title">
+                                <h4 class="m-0 pink">Cadic Vegeta</h4>
+                                <span>Sr. Chef</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-quote-left mb-2"></i>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="testimonial-item1 text-center">
+                        <div class="details">
+                            <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
+                                Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
+                                Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
+                        </div>
+                        <div class="author-info mt-2">
+                            <a href="#"><img alt=""
+                                    src="{{ asset('template/yatri_world/main-file/images/testimonial/img3.jpg') }}" /></a>
+                            <div class="author-title">
+                                <h4 class="m-0 pink">Jonathan Beri</h4>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                        <i class="fa fa-quote-left mb-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial ends -->
+    <!-- client start -->
+    <div class="partners bg-grey pt-4 pb-4">
+        <div class="container-fluid">
+            <div class="attract-slider">
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-01.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-02.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-03.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-04.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-02.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-03.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-04.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-01.png') }}" />
+                    </a>
+                </div>
+                <div class="client-logo item">
+                    <a href="#">
+                        <img alt="partner"
+                            src="{{ asset('template/yatri_world/main-file/images/clients/logo-02.png') }}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- client ends -->
 @endsection
-@push('styles')
-    <style>
-        /* TITRE */
-        h1 {
-            margin-top: 0;
-            font-size: 3rem;
-            display: inline-block;
-        }
-
-        h1 div {
-            position: relative;
-            float: left;
-        }
-
-        h1 div:first-child {
-            color: #3498db;
-            margin-right: 1rem;
-        }
-
-        /* PROFIL */
-        .blog .carousel-indicators {
-            left: 0;
-            top: auto;
-            bottom: -40px;
-
-        }
-
-        /* The colour of the indicators */
-        .blog .carousel-indicators li {
-            background: #a3a3a3;
-            border-radius: 50%;
-            width: 8px;
-            height: 8px;
-            margin-bottom: 10px;
-
-        }
-
-        .blog .carousel-indicators .active {
-            background: #707070;
-            margin-bottom: 10px;
-        }
-
-        .our-team-section {
-            position: relative;
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-
-        .our-team-section:before {
-            position: absolute;
-            top: -0;
-            left: 0;
-            content: " ";
-            background: url(img/service-section-bottom.png);
-            background-size: 100% 100px;
-            width: 100%;
-            height: 100px;
-            float: left;
-            z-index: 99;
-        }
-
-        .our-team {
-            padding: 0 0 40px;
-            background: #f9f9f9;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-            border-bottom: 5px solid #00325a;
-        }
-
-        .our-team:hover {
-            border-bottom: 5px solid #2f2f2f;
-        }
-
-        .our-team .pic {
-            display: inline-block;
-            width: 130px;
-            height: 130px;
-            margin-bottom: 50px;
-            z-index: 1;
-            position: relative;
-        }
-
-        .our-team .pic:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #00325a;
-            position: absolute;
-            bottom: 135%;
-            right: 0;
-            left: 0;
-            opacity: 1;
-            transform: scale(3);
-            transition: all 0.3s linear 0s;
-        }
-
-        .our-team:hover .pic:before {
-            height: 100%;
-            background: #2f2f2f;
-        }
-
-        .our-team .pic:after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #ffffff00;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            transition: all 0.3s linear 0s;
-        }
-
-        .our-team:hover .pic:after {
-            background: #7ab92d;
-        }
-
-        .our-team .pic img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            transform: scale(1);
-            transition: all 0.9s ease 0s;
-            box-shadow: 0 0 0 14px #f7f5ec;
-            transform: scale(0.7);
-            position: relative;
-            z-index: 2;
-        }
-
-        .our-team:hover .pic img {
-            box-shadow: 0 0 0 14px #f7f5ec;
-            transform: scale(0.7);
-        }
-
-        .our-team .team-content {
-            margin-bottom: 30px;
-        }
-
-        .our-team .title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #4e5052;
-            letter-spacing: 1px;
-            text-transform: capitalize;
-            margin-bottom: 5px;
-        }
-
-        .our-team .post {
-            display: block;
-            font-size: 15px;
-            color: #4e5052;
-            text-transform: capitalize;
-        }
-
-        .our-team .social {
-            width: 100%;
-            padding-top: 10px;
-            margin: 0;
-            background: #2f2f2f;
-            position: absolute;
-            bottom: -100px;
-            left: 0;
-            transition: all 0.5s ease 0s;
-        }
-
-        .our-team:hover .social {
-            bottom: 0;
-        }
-
-        .our-team .social li {
-            display: inline-block;
-        }
-
-        .our-team .social li a {
-            display: block;
-            padding-top: 6px;
-            font-size: 15px;
-            color: #fff;
-            transition: all 0.3s ease 0s;
-        }
-
-        .our-team .social li a:hover {
-            color: #2f2f2f;
-            background: #f7f5ec;
-        }
-
-        @media only screen and (max-width: 990px) {
-            .our-team {
-                margin-bottom: 10px;
-            }
-        }
-    </style>
-
-@endpush

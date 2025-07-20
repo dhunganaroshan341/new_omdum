@@ -328,8 +328,8 @@
                                     </div>
                                 </div>
                                 <div class="cart-buttons d-flex align-items-center justify-content-between">
-                                    <a href="{{ route('cart') }}" class="nir-btn">View Cart</a>
-                                    <a href="{{ route('checkout') }}" class="nir-btn-black">Checkout</a>
+                                    <a href="#" class="nir-btn">View Cart</a>
+                                    <a href="#" class="nir-btn-black">Checkout</a>
                                 </div>
                             </div>
                         </div>

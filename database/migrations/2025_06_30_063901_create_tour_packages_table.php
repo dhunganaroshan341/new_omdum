@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,23 +13,22 @@ return new class extends Migration
     {
         Schema::create('tour_packages', function (Blueprint $table) {
             $table->id();
-
-            // ✅ FIXED: 'countries' instead of 'countires'
             $table->foreignId('country_id')->constrained('countries')->onDelete('cascade');
             $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
-
-
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
+            $table->json('price_includes')->nullable();
+            $table->json('price_excludes')->nullable();
             $table->longText('what_to_expect')->nullable();
             $table->longText('itinerary')->nullable();
             $table->boolean('top_deal')->default(0);
             $table->boolean('favourite_destination')->default(0);
-            $table->string('duration')->nullable(); // e.g., "12 Days"
+            $table->string('duration')->nullable();
+            $table->string('type')->nullable();
             $table->enum('difficulty', ['easy', 'moderate', 'hard'])->nullable();
-            $table->enum('type', ['trekking', 'tour', 'other'])->default('tour')->nullable();
+            $table->enum('package_type', ['trekking', 'tour', 'other'])->default('tour');
             $table->integer('max_elevation')->nullable();
             $table->integer('max_group_size')->nullable();
             $table->string('best_season')->nullable();
@@ -36,15 +36,10 @@ return new class extends Migration
             $table->string('drop')->default('Tribhuvan International Airport (KTM)');
             $table->string('end_point')->nullable();
             $table->string('start_point')->nullable();
-            $table->string('price')->nullable();
-
-
-            $table->json('price_includes')->nullable();
-            $table->string('languages')->nullable();
-            $table->json('images')->nullable();
-            $table->json('price_excludes')->nullable();
-
+            $table->decimal('price', 10, 2)->nullable();
             $table->enum('status', ['Active', 'Inactive'])->default('Active');
+            $table->json('more_details')->nullable();
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }
