@@ -1,160 +1,163 @@
 @extends('frontend.layout.main')
+<!-- BreadCrumb Starts -->
+
+<!-- BreadCrumb Ends -->
 @section('content')
-  <section class="hero-small">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url({{ $pageBanner?asset('uploads/'.$pageBanner->image):asset('assets/images/banner1.jpg') }}) ;">
-                    <div class="hero-small-background-overlay"></div>
-                    <div class="container  h-100">
-                        <div class="row align-items-center d-flex h-100">
-                            <div class="col-md-12">
-                                <div class="block">
-                                    <span class="text-uppercase text-sm letter-spacing"></span>
-                                    <h1 class="mb-3 mt-3 text-center">{{ $pageBanner?$pageBanner->title:'About Us' }}</h1>
-                                     <p>{{ $bannerDescription??'' }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pt-5 pb-0">
-        <div class="container contact-box">
-            <div class="row">
-                <div class="col-lg-8 col-xl-6 text-center mx-auto">
-                    <h1 class="mb-4 text-black">We're here to help!</h1>
-                </div>
-            </div>
-
-            <!-- Contact info box -->
-            <div class="row g-4 g-md-5 mt-0 mt-lg-3">
-                <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
-                    <div class="card card-body shadow py-5 text-center h-100 border-0">
-                        <!-- Title -->
-                        <h5 class=" mb-3">Visit Our Office</h5>
-                        <ul class="list-inline mb-0">
-                            <!-- Address -->
-                            <li class="list-item mb-3">
-                                <a href="#"> <i
-                                        class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>{{ $address }}</a>
-                            </li>
+    {{-- <section class="breadcrumb-main"
+        style="background-image: url({{ asset('/template/yatri_world/main-file/images/tibet.jpg') }});">
+        <div class="breadcrumb-outer pt-10 pb-4">
+            <div class="container">
+                <div class="breadcrumb-content d-md-flex align-items-center pt-10">
+                    <h2 class="mb-0">Contact Us</h2>
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li aria-current="page" class="breadcrumb-item active">Contact Us</li>
                         </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="dot-overlay"></div>
+    </section> --}}
+    <!-- contact starts -->
+    <section class="contact-main pt-0 contact1 bg-grey">
+        <div class="map mb-10">
+            <div style="width: 100%">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0448856124403!2d85.32194127455185!3d27.72043262491585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1910905f9f65%3A0xdc85747e51575050!2sNeel%20Sarswoti%20Marg%2C%20Kathmandu%2044600!5e1!3m2!1sen!2snp!4v1751872691730!5m2!1sen!2snp"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="contact-info">
+                <div class="row gx-lg-5">
+                    <!-- Nepal Office -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="contact-info">
+                            <h3 class="">Nepal Office</h3>
+                            <p class="mb-4">Start your journey in Nepal with our dedicated local team. We're here to help
+                                with planning, logistics, and everything in between.</p>
+                            <div class="d-flex col-auto">
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">Thamel - 26,</p>
+                                            <p class="m-0"> Kathmandu, Nepal</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0"> +977 9851402800</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0">info@ommundumtreks.com</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Office -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="contact-info">
+                            <h3 class="">International Office</h3>
+                            <p class="mb-4">Connect with our global team for inquiries outside Nepal. We assist
+                                international trekkers with personalized support.</p>
+                            <div class="d-flex col-auto">
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-map-marker"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0"> Shop No: 25, Kota,</p>
+                                            <p class="m-0">Rajasthan, India</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0"> +91 6350606267</p>
+
+                                        </div>
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0"> dhruv@ommundumtreks.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
-                    <div class="card card-body shadow py-5 text-center h-100 border-0">
-                        <!-- Title -->
-                        <h5 class="mb-3">Call us</h5>
-                        <ul class="list-inline mb-0">
-                            <!-- Phone number -->
-                            <li class="list-item mb-3 h6 fw-light">
-                                <a href="tel:+977-{{ $contact }}"> <i
-                                        class="fas fa-fw fa-phone-alt me-2"></i>{{ $contact }} </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Box item -->
-                <div class="col-lg-4 mt-lg-0">
-                    <div class="card card-body shadow py-5 text-center h-100 border-0">
-                        <!-- Title -->
-                        <h5 class="mb-3">Email Us</h5>
-                        <ul class="list-inline mb-0">
-
-                            <!-- Email id -->
-                            <li class="list-item mb-0 h6 fw-light">
-                                <a href="mailto:{{ $email }}"> <i
-                                        class="far fa-fw fa-envelope me-2"></i>{{ $email }} </a>
-                            </li>
-                        </ul>
+                <!-- Contact Form Section -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="contact-form" id="contact-form1">
+                            <h3 class="">Keep in Touch</h3>
+                            <p class="mb-4">Connect with fellow adventurers and stay updated on trekking experiences
+                                across Nepal. We share insider tips, seasonal recommendations, and authentic stories from
+                                the trail. Get notified about group departures, local festivals, and exclusive offers for
+                                repeat travelers.</p>
+                            <div id="contactform-error-msg"></div>
+                            <form action="#" id="contactform" method="post" name="contactform">
+                                <div class="form-group mb-2">
+                                    <input class="form-control" id="fname" name="first_name" placeholder="First Name"
+                                        type="text" />
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" id="lname" name="last_name" placeholder="Last Name"
+                                        type="text" />
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" id="email" name="email" placeholder="Email"
+                                        type="email" />
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" id="phnumber" name="phone" placeholder="Phone"
+                                        type="text" />
+                                </div>
+                                <div class="textarea mb-2">
+                                    <textarea class="form-control" name="comments" placeholder="Enter a message" rows="4"></textarea>
+                                </div>
+                                <div class="comment-btn text-right mt-1">
+                                    <input class="nir-btn" id="submit" type="submit" value="Send Message" />
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
+    <!-- contact Ends -->
+@endsection
 
-    <section>
-        <div class="container my-5">
-            <div class="row g-4 g-lg-0 align-items-center">
-
-                <!-- Contact form START -->
-                <div class="col-md-12">
-                    <!-- Title -->
-                    <h2 class="mt-4 mt-md-0">Let's talk</h2>
-                    <p>Reaching our Office & Find Our Location</p>
-
-                    <form id="storeContact">
-                        <!-- Name -->
-                        <div class="row">
-                            <div class="col-md-4">
-                                @csrf
-                                <div class="mb-4 bg-light-input">
-                                    <label for="yourName" class="form-label">Your name *</label>
-                                    <input type="text" class="form-control form-control-lg" name="name" id="name"
-                                        placeholder="" value="{{ old('name') }}">
-                                    <span class="text-danger error-message" id="name-validation"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-4 bg-light-input">
-                                    <label for="emailInput" class="form-label">Email address *</label>
-                                    <input type="email" class="form-control form-control-lg" name="email" id="email"
-                                        placeholder="" value="{{ old('email') }}">
-                                    <span class="text-danger error-message" id="email-validation"></span>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-4 bg-light-input">
-                                    <label for="emailInput" class="form-label">Subject *</label>
-                                    <input type="text" class="form-control form-control-lg" name="subject" id="subject"
-                                        placeholder="" value="{{ old('subject') }}">
-                                    <span class="text-danger error-message" id="subject-validation"></span>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Message -->
-                        <div class="mb-4 bg-light-input">
-                            <label for="textareaBox" class="form-label">Message *</label>
-                            <textarea class="form-control" name="message" id="message" value="{{ old('message') }}" rows="4"></textarea>
-                            <span class="text-danger error-message" id="message-validation"></span>
-
-                        </div>
-                        <!-- Button -->
-                        <div class="d-grid">
-                            <button class="btn btn-lg btn-primary mb-0" id="sendMessage" type="submit">Send
-                                Message</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Contact form END -->
-            </div>
-        </div>
-    </section>
-
-    <section class="pt-0 mb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4425.791097184029!2d85.31862677628256!3d27.677986976199414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19799ecafa79%3A0xbd693a1616123b1f!2sRealm%20Infotech%20Pvt.%20Ltd.!5e1!3m2!1sen!2snp!4v1743856965231!5m2!1sen!2snp"
-                        width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
+@push('scripts')
     <script>
         $(document).ready(function() {
             $("#storeContact").submit(function(event) {
@@ -165,7 +168,7 @@
                 let formdata = new FormData(this);
                 $.ajax({
                     type: "post",
-                    url: "{{ route('store.contact-us') }}",
+                    url: "{{ route('contact.store') }}",
                     data: formdata,
                     contentType: false,
                     processData: false,
@@ -194,4 +197,4 @@
             })
         })
     </script>
-@endsection
+@endpush

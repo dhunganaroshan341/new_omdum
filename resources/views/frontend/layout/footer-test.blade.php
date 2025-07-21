@@ -72,4 +72,5 @@
             <p class="m-0">&copy; {{ date('Y') }} Om Mundum Treks & Travels. All rights reserved.</p>
         </div>
     </div>
+    <div class="dot-overlay"></div>
 </footer>

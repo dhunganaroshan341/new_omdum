@@ -1779,7 +1779,7 @@ header #navbar {
 	-moz-transition: color 0.5s ease;
 	margin-right: 0;
 	flex: 1;
-	max-width: 200px;
+	max-width: 120px;
 }
 .navbar-default a.navbar-brand span {
   color: #fc883a;

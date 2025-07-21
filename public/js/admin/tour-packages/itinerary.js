@@ -154,9 +154,25 @@ $(document).on('click', '.viewItineraryBtn', function () {
         contentType: false,
         processData: false,
         success: function (response) {
-            console.log("Itinerary item added successfully:", response);
+            if (response.success == true) {
+          Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Testimonial Created Successfully",
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                     table.draw();
             $('#itineraryForm')[0].reset();
             $("#itineraryModal").modal("hide");
+}
+            else {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "warning",
+                        text: "Something went wrong!",
+                    });
+                }
         }
     })
    });

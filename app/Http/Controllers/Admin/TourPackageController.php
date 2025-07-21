@@ -8,6 +8,7 @@ use App\Models\Country;
 use App\Models\TourPackage;
 use App\Models\TourPackageImage;
 use App\Models\TourPackageVideo;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +19,13 @@ class TourPackageController extends Controller
     /**
      * Display a listing of the resource.
      */
+     protected $latestOrder = 1;
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->latestOrder = TourPackage::max('order') ?? 0; // Get the maximum order value
+        $this->latestOrder++; // Increment it for the next user
+    }
     public function index(Request $request)
 {
     $countries = Country::all();
@@ -84,7 +92,7 @@ class TourPackageController extends Controller
 
 
             ->addColumn('status', function ($item) {
-                $checked = $item->status === 'active' ? 'checked' : '';
+                $checked = $item->status === 'Active' ? 'checked' : '';
                 return '<div class="form-check form-switch">
                     <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
                 </div>';
@@ -123,6 +131,16 @@ class TourPackageController extends Controller
         'countries' => $countries,
     ]);
 }
+    public function latestOrder()
+    {
+        try {
+
+            return response()->json(data: ['success' => true, 'message' => $this->latestOrder]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
+
 
    public function statusToggle($id)
     {

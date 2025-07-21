@@ -8,6 +8,14 @@ $(document).ready(function () {
         }
     });
 });
+function generateSlug(text) {
+    return text
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/[\s\W-]+/g, '-') // Replace spaces & non-word characters with hyphens
+        .replace(/^-+|-+$/g, '');  // Remove leading/trailing hyphens
+}
 function populateTourPackageForm(tour_package) {
     // Show the modal
     $("#formModal").modal("show");
@@ -23,6 +31,7 @@ function populateTourPackageForm(tour_package) {
     $("input[name='best_season']").val(tour_package.best_season);
     $("input[name='start_point']").val(tour_package.start_point);
     $("input[name='end_point']").val(tour_package.end_point);
+    $("input[name='status']").val(tour_package.status);
     $("textarea[name='short_description']").val(tour_package.short_description);
 
     // For summernote fields
@@ -65,6 +74,12 @@ function populateTourPackageForm(tour_package) {
 
     function uploadThumbnail(tour_package_id, formElement) {
         let formData = new FormData(formElement);
+        // Get title and generate slug
+    let title = $('#title').val();
+    let slug = generateSlug(title);
+
+    // Append slug to FormData
+    formData.append('slug', slug);
 
         $.ajax({
             type: "POST",
@@ -259,7 +274,12 @@ function populateTourPackageForm(tour_package) {
 
             $(".updateBtn").prop("disabled", true);
             let formData = new FormData(this);
+// Get title and generate slug
+    let title = $('#title').val();
+    let slug = generateSlug(title);
 
+    // Append slug to FormData
+    formData.append('slug', slug);
             $.ajax({
                 type: "POST",
                 url: `/admin/tour-packages/update/${id}`,
@@ -295,7 +315,7 @@ function populateTourPackageForm(tour_package) {
     });
 
    // Toggle Status
-$(document).on("change", ".statusIdData", function () {
+$(document).on("change", ".statusToggle", function () {
     let id = $(this).data("id");
     let checkbox = $(this);
     checkbox.prop("disabled", true);
@@ -310,7 +330,7 @@ $(document).on("change", ".statusIdData", function () {
     }).then(result => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "/admin/tour-packages/" + id + "/status",
+                url: "/admin/tour-packages/status/"+id,
                 type: "PUT", // Corrected: type instead of "method" and "put"
                 data: {
                     status: checkbox.prop("checked") ? "Active" : "InActive", // pass status value

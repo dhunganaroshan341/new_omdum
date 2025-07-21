@@ -47,7 +47,7 @@
                         @endforeach
 
                         <!-- Blog and Contact -->
-                        <li><a href="{{ route('blog') }}">Blog</a></li>
+                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
                         <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>
 

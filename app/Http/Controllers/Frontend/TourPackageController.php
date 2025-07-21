@@ -18,7 +18,7 @@ class TourPackageController extends Controller
         $tourPackages = TourPackage::where('status', 'Active')->get();
         $services = Service::all();
         $tourPackageTypes = TourPackageType::all();
-        return view('frontend.pages.destination-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes'));
+        return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes'));
     }
 
     public function show($slug)

@@ -20,7 +20,7 @@
                                 : asset('template/yatri_world/main-file/images/india.jpg');
                         $country = $service->country->name ?? 'Unknown';
                         $price = $service->price;
-                        $slugUrl = route('packages.showBySlug', ['slug' => $service->slug]);
+                        $slugUrl = route('packages.show', ['slug' => $service->slug]);
                     @endphp
 
                     <div class="trend-item mx-3">

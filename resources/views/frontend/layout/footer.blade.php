@@ -1,5 +1,6 @@
     <!-- footer starts -->
-    <footer class="pt-10" style="background-image:url(images/bg/bg3.jpg);">
+    <footer class="pt-10"
+        style="background-image:url({{ asset('template/yatri_world/main-file/images/bg/bg3.jpg') }}); background-size: cover;">
         <div class="footer-upper pb-5">
             <div class="container">
                 <div class="row">
@@ -33,11 +34,11 @@
                                     <a href="{{ route('about') }}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('pages.gallery') }}">Gallery</a>
+                                    <a href="{{ route('gallery') }}">Gallery</a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('blog-list') }}">Blog</a>
+                                    <a href="{{ route('blog.index') }}">Blog</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('contact') }}">Contact</a>

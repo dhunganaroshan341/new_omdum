@@ -86,6 +86,28 @@
         .price-white i :hover {
             color: black;
         }
+
+        /* blog page starts overriting boostrap  */
+        .active>.page-link,
+        .page-link.active {
+            z-index: 3;
+            color: white;
+            background-color: var(--omundum-green);
+            border-color: var(--bs-pagination-active-border-color);
+        }
+
+        .blog-content>a:hover {
+            color: var(--omundum-green) !important;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .blog-content a:hover,
+        a:focus {
+            text-decoration: none;
+            color: var(--omundum-green);
+            transition: all ease-in-out 0.5s;
+            outline: none;
+        }
     </style>
 </head>
 
@@ -133,7 +155,7 @@
 
     @yield('content')
 
-    @include('frontend.layout.footer-test')
+    @include('frontend.layout.footer')
 
     <!-- Back to top start -->
     <div id="back-to-top">

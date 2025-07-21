@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.setting') }}">
+                        <a class="nav-link" href="{{ route('admin.setting.index') }}">
                             <i class="mdi mdi-cog  menu-icon"></i>
                             <span class="menu-title">General Settings</span>
                         </a>
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('service.index') }}">
+                        <a class="nav-link" href="{{ route('admin.service.index') }}">
                             <i class="mdi mdi-face-agent menu-icon"></i>
                             <span class="menu-title">Services </span>
                         </a>
@@ -133,7 +133,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('client.index') }}">
+                        <a class="nav-link" href="{{ route('admin.client.index') }}">
                             <i class="mdi mdi-account-group-outline menu-icon"></i>
                             <span class="menu-title">Client </span>
                         </a>
@@ -144,7 +144,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('notice.index') }}">
+                        <a class="nav-link" href="{{ route('admin.notice.index') }}">
                             <i class="mdi mdi-bullhorn menu-icon"></i>
                             <span class="menu-title">Notice </span>
                         </a>
@@ -176,7 +176,7 @@
                     <!-- Album & Media with collapse toggle -->
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.contact') }}">
+                        <a class="nav-link" href="{{ route('admin.contact.index') }}">
                             <i class="mdi mdi-contacts menu-icon"></i>
                             <span class="menu-title">Contact </span>
                         </a>

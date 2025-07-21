@@ -18,7 +18,7 @@
                 </div>
 
                 <!-- Dropzone for Images -->
-                <form action="{{ route('admin.tour-packages.uploadImages') }}" class="dropzone" id="imageDropzone"
+                <form action="{{ route('admin.tour-package-images.store') }}" class="dropzone" id="imageDropzone"
                     enctype="multipart/form-data" style="min-height: 200px; border: 2px dashed #0d6efd; padding: 20px;">
                 </form>
 
@@ -91,7 +91,7 @@
                         return;
                     }
                     $.ajax({
-                        url: "{{ route('admin.tour-packages.uploadYoutube') }}",
+                        url: "{{ route('admin.tour-package-videos.store') }}",
                         method: "POST",
                         data: {
                             iframe: iframeCode,

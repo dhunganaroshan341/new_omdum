@@ -101,16 +101,34 @@ class UserFrontendController extends Controller
         return view('frontend.service-detail', compact('serviceDetail', 'posts','content_title','pageBanner','otherServices'));
     }
 
-    public function blog()
+   public function blog()
 {
     $content_title = "Blogs";
+
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
-    // 6 posts per page (you can change the number)
-    $posts = Post::with('postImages')->where('status', 'Active')->paginate(6);
+   $posts = Post::with(['category', 'postImages'])
+             ->where('status', 'Active')
+             ->latest()
+             ->paginate(6);
+// dd($posts);
 
-    return view('frontend.blog', compact('posts', 'content_title', 'pageBanner'));
+
+    $categories = Category::withCount('post')->get();
+
+    $recentPosts = Post::with('category') // in case view needs category
+                    ->latest()
+                    ->take(3)
+                    ->get();
+
+    $popularPosts = Post::with('category')
+                    ->orderBy('views', 'desc')
+                    ->take(3)
+                    ->get();
+
+    return view('frontend.blog', compact('posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
 }
+
   public function blogsByCategory($category_id)
 {
 
@@ -126,66 +144,83 @@ $category_title = $category ? $category->title : null;
 }
 
 
-    public function blogDetail($id)
+public function blogDetail($slug)
 {
     $content_title = "Blog Detail";
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
-    $images = Post::with(['postImages' => function ($query) use ($id) {
-        $query->where('post_id', $id);
-    }])->findOrFail($id);
+    // Fetch post by slug
+    $post = Post::with(['createdBy', 'category', 'postImages', 'comments'])
+        ->where('slug', $slug)
+        ->firstOrFail();
 
-    $post = Post::with(['createdBy', 'category', 'postImages', 'comments'])->find($id);
-  $comments = Comment::with('user')
-    ->where('commentable_id', $id)
-    ->orderBy('created_at', 'desc')
-    ->get();
+    $postId = $post->id;
 
-    $detail = Post::with('category', 'postImages', 'comments', 'createdBy', 'updatedBy', 'category')->find($id);
+    // ✅ Count views only once per session
+    $sessionKey = 'post_' . $postId . '_viewed';
+    if (!session()->has($sessionKey)) {
+        $post->increment('views');
+        session()->put($sessionKey, true);
+    }
+
+    // Fetch images related to the post
+    $images = Post::with(['postImages' => function ($query) use ($postId) {
+        $query->where('post_id', $postId);
+    }])->findOrFail($postId);
+
+    // Fetch comments
+    $comments = Comment::with('user')
+        ->where('commentable_id', $postId)
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    // Full detail with all necessary relationships
+    $detail = Post::with('category', 'postImages', 'comments', 'createdBy', 'updatedBy')
+        ->findOrFail($postId);
+
+    // Recent posts
     $recentPosts = Post::with('postImages')
         ->where('status', 'Active')
         ->latest()
         ->take(3)
         ->get();
-       $categories = Category::where('status', 'Active')
-    ->withCount('post')
-    ->get();
 
+    // Categories with post count
+    $categories = Category::where('status', 'Active')
+        ->withCount('post')
+        ->get();
+
+    // Fetch related posts
     $recentIds = $recentPosts->pluck('id')->toArray();
+    $currentCategoryId = $post->category_id ?? null;
 
-// Step 2: Try to get related posts from same category (exclude recent)
-$currentCategoryId = $currentPost->category_id ?? null;
-
-$relatedPosts = Post::with('postImages')
-    ->where('status', 'Active')
-    ->where('category_id', $currentCategoryId)
-    ->whereNotIn('id', $recentIds)
-    ->latest()
-    ->take(3)
-    ->get();
-
-// Step 3: If none found from same category, take 3 random excluding recent
-if ($relatedPosts->count() === 0) {
     $relatedPosts = Post::with('postImages')
         ->where('status', 'Active')
+        ->where('category_id', $currentCategoryId)
         ->whereNotIn('id', $recentIds)
-        ->inRandomOrder()
+        ->latest()
         ->take(3)
         ->get();
-}
 
+    if ($relatedPosts->count() === 0) {
+        $relatedPosts = Post::with('postImages')
+            ->where('status', 'Active')
+            ->whereNotIn('id', $recentIds)
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+    }
 
-    // ✅ Process title
-$processedDescription  = $detail->title;
+    // Process title
+    $processedDescription = $detail->title;
     if (!empty($pageBanner?->title)) {
         $processedDescription .= ' → ' . Str::words(strip_tags($pageBanner->title), 5, '...');
     }
 
-    return view('frontend.blog-detail-sean', compact(
+    return view('frontend.blog-detail', compact(
         'detail',
         'images',
         'post',
-
         'recentPosts',
         'relatedPosts',
         'categories',
@@ -195,18 +230,42 @@ $processedDescription  = $detail->title;
         'processedDescription'
     ));
 }
+
+
 public function searchBlogs(Request $request)
 {
-    $keyword = $request->get('keyword');
+    $query = Post::query();
 
-    $posts = Post::where('title', 'LIKE', '%' . $keyword . '%')
-        ->select('id', 'title') // Only fetch what you need
+    // Search by keyword in title or description
+    if ($request->filled('keyword')) {
+        $keyword = $request->keyword;
+        $query->where(function ($q) use ($keyword) {
+            $q->where('title', 'LIKE', '%' . $keyword . '%')
+              ->orWhere('description', 'LIKE', '%' . $keyword . '%');
+        });
+    }
+
+    // Filter by category
+    if ($request->filled('category_id')) {
+        $query->where('category_id', $request->category_id);
+    }
+
+    // Filter by tag (assuming you have a relation or a tag_id)
+    if ($request->filled('tag_id')) {
+        $query->whereHas('tags', function ($q) use ($request) {
+            $q->where('id', $request->tag_id);
+        });
+    }
+
+    // Limit & get results
+    $posts = $query->select('id', 'title', 'slug')
         ->latest()
         ->take(10)
         ->get();
 
-    return response()->json($posts);
+    return response()->view($posts);
 }
+
     public function contactUs()
     {
         $content_title="Home";
@@ -234,12 +293,13 @@ public function searchBlogs(Request $request)
         return view('frontend.destination.destination-single');
     }public function destinationList(){
         return view('frontend.destination.destination-list');
-    }public function blogSingle(){
-        return view('frontend.pages.blog-single');
-    }public function blogGrid(){
-        return view('frontend.pages.blog-grid');
-    }public function blogFull(){
-        return view('frontend.pages.blog-full');
     }
+    // public function blogSingle(){
+    //     return view('frontend.pages.blog-single');
+    // }public function blogGrid(){
+    //     return view('frontend.pages.blog-grid');
+    // }public function blogFull(){
+    //     return view('frontend.pages.blog-full');
+    // }
 
 }
