@@ -42,7 +42,7 @@ Route::middleware('isLogin')->group(function () {
     Route::get('/register', [AuthController::class, 'index'])->name('register');
     Route::post('/register', [AuthController::class, 'storeRegister'])->name('register.store');
 
-    Route::get('/realm-admin/login', [AuthController::class, 'login'])->name('login');
+    Route::get('/admin/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login/store', [AuthController::class, 'storeLogin'])->name('login.store');
 
     Route::get('/auth/google/redirect', function () {
@@ -213,15 +213,15 @@ Route::prefix('itineraries')->name('itineraries.')->group(function () {
 
 // Tour Package Images
 Route::prefix('tour-package-images')->name('tour-package-images.')->group(function () {
-    Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'index'])->name('index');
-    Route::post('/store', [AdminTourPackageController::class, 'store'])->name('store');
-    Route::delete('/delete/{id}', [AdminTourPackageController::class, 'destroy'])->name('destroy');
+   Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'showImages'])->name('index');
+    Route::post('/store', [AdminTourPackageController::class, 'uploadImages'])->name('store');
+    Route::delete('/delete/{id}', [AdminTourPackageController::class, 'deleteImages'])->name('destroy');
 });
 
 // Tour Package Videos
 Route::prefix('tour-package-videos')->name('tour-package-videos.')->group(function () {
-    Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'index'])->name('index');
-    Route::post('/store', [AdminTourPackageController::class, 'store'])->name('store');
+    // Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'showImages'])->name('index');
+    Route::post('/store/{tour_package_id}', [AdminTourPackageController::class, 'uploadYoutube'])->name('store');
     Route::delete('/delete/{id}', [AdminTourPackageController::class, 'destroy'])->name('destroy');
 });
 

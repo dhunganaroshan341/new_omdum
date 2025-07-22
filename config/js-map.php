@@ -3,6 +3,11 @@
 return [
 
     'admin' => [
+        'dropzone'=>[
+            'script'=>["https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"],
+            'style'=>[" https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css"],
+
+        ],
         'summernote' => [
 
             'script' => [
@@ -45,16 +50,16 @@ return [
             'script'=>[
                 // {{-- Datatable Button --}}
                 'https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js',
-                
+
                 // <!-- HTML5 Export (for CSV, Excel, PDF) -->
                 'https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js',
-                
+
                 // <!-- Print Button -->
                 'https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js',
-                
+
                 // <!-- JSZip (for Excel) -->
                 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
-                
+
                 // <!-- pdfmake (for PDF) -->
                 'https://cdn.jsdelivr.net/npm/pdfmake@0.2.7/build/pdfmake.min.js',
                 'https://cdn.jsdelivr.net/npm/pdfmake@0.2.7/build/vfs_fonts.js',

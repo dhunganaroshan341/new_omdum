@@ -29,6 +29,7 @@ class TourPackageController extends Controller
     public function index(Request $request)
 {
     $countries = Country::all();
+
     if ($request->ajax()) {
         $search = $request->input('search.value');
         $columns = $request->input('columns');
@@ -38,7 +39,7 @@ class TourPackageController extends Controller
         $orderBy = $order['dir'];
         $start = $request->input('start');
 
-        $query = TourPackage::with('country'); // eager load country
+        $query = TourPackage::with('country')->withCount('images'); // ✅ eager load + image count
         $total = $query->count();
 
         $filtered = $query->when($search, function ($q) use ($search) {
@@ -61,50 +62,47 @@ class TourPackageController extends Controller
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
-            // In controller's addColumn:
-->addColumn('itinerary', function($item) {
-    return '<a href="javascript:void(0);" class="addItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
-                <i class="fas fa-plus"></i>
-            </a>
 
+            ->addColumn('itinerary', function ($item) {
+                return '<a href="javascript:void(0);" class="addItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <a title="View Itineraries" href="javascript:void(0);" class="viewItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
+                            <i class="fas fa-eye"></i>
+                        </a>';
+            })
 
-            <a title = " view Itineraries" href="javascript:void(0);" class="viewItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
-                <i class="fas fa-eye"></i>
-            </a>
+            ->addColumn('images', function ($item) {
+                $imageCount = $item->images_count ?? 0;
 
+                $viewGallery = '<a type="button" data-id="' . $item->id . '" class="imageListPopup">
+                                    <span class="badge badge-primary">' . $imageCount . '</span>
+                                </a>';
 
-            ';
-})->addColumn('images', function($item) {
-    $imageCount = $item->gallery_media_count ?? 0;
+                $editUploads = '<a title="Edit Uploads" href="javascript:void(0);" class="editUploads btn btn-sm btn-primary" data-id="' . $item->id . '">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>';
 
-    $viewGallery = '<a type="button" data-id="' . $item->id . '" class="imageListPopup">
-                        <span class="badge badge-primary">' . $imageCount . '</span>
-                    </a>';
-
-    $editUploads = '<a title="Edit Uploads" href="javascript:void(0);" class="editUploads btn btn-sm btn-primary" data-id="' . $item->id . '">
-                        <i class="fas fa-pencil-alt"></i>
-                    </a>';
-
-    return $viewGallery . ' ' . $editUploads;
-})
- // ⬅️ Important to render HTML properly
-
-
+                return $viewGallery . ' ' . $editUploads;
+            })
 
             ->addColumn('status', function ($item) {
                 $checked = $item->status === 'Active' ? 'checked' : '';
                 return '<div class="form-check form-switch">
-                    <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
-                </div>';
+                            <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
+                        </div>';
             })
+
             ->addColumn('action', function ($item) {
                 return view('Admin.Button.button', ['data' => $item]);
- // assuming you use reusable buttons
             })
+
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
-            ->rawColumns(['images','itinerary','status', 'action'])
+
+            ->rawColumns(['images', 'itinerary', 'status', 'action'])
+
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,
@@ -116,12 +114,14 @@ class TourPackageController extends Controller
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
+        config('js-map.admin.dropzone.script'),
         config('js-map.admin.buttons.script')
     );
 
     $extraCs = array_merge(
         config('js-map.admin.datatable.style'),
         config('js-map.admin.summernote.style'),
+        config('js-map.admin.dropzone.style'),
         config('js-map.admin.buttons.style')
     );
 
@@ -131,6 +131,7 @@ class TourPackageController extends Controller
         'countries' => $countries,
     ]);
 }
+
     public function latestOrder()
     {
         try {
@@ -204,7 +205,7 @@ class TourPackageController extends Controller
      public function show(string $id)
     {
         try {
-            $data = TourPackage::find($id);
+             $data = TourPackage::with('images')->findOrFail($id);
             return response()->json(['success' => true, 'message' => $data]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
@@ -266,26 +267,13 @@ class TourPackageController extends Controller
    public function uploadImages(Request $request)
 {
     $request->validate([
-        'tour_package_id' => 'required|exists:tour_packages,id',
-        'images.*' => 'nullable|image|max:5120',
-        'keep_ids' => 'nullable|array', // IDs of images to keep (optional)
-        'keep_ids.*' => 'integer|exists:tour_package_images,id',
-    ]);
+    'tour_package_id' => 'required|exists:tour_packages,id',
+    'images' => 'required|array',
+    'images.*' => 'image|max:5120', // each image max 5MB
+]);
+
 
     $tourPackageId = $request->tour_package_id;
-    $keepIds = $request->keep_ids ?? [];
-
-    // 🔥 Delete old images not in keep_ids
-    $imagesToDelete = TourPackageImage::where('tour_package_id', $tourPackageId)
-        ->whereNotIn('id', $keepIds)
-        ->get();
-
-    foreach ($imagesToDelete as $oldImage) {
-        Storage::disk('public')->delete($oldImage->image_path);
-        $oldImage->delete();
-    }
-
-    // 📦 Upload new images
     $uploadedImages = [];
 
     if ($request->hasFile('images')) {
@@ -302,10 +290,12 @@ class TourPackageController extends Controller
     }
 
     return response()->json([
-        'message' => 'Images updated successfully',
+        'message' => 'Images uploaded successfully',
         'data' => $uploadedImages,
     ]);
 }
+
+
 
     public function uploadYoutube(Request $request)
     {
@@ -369,4 +359,33 @@ class TourPackageController extends Controller
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
+    public function deleteImages(string $id)
+{
+    // Find the image record
+    $image = TourPackageImage::find($id);
+
+    if (!$image) {
+        return response()->json(['error' => 'Image not found'], 404);
+    }
+
+    // Assuming the image path is stored in a column, e.g., 'filepath' or 'image_path'
+    $filePath = $image->image_path; // replace 'filepath' with your actual column name
+
+    // Delete the file from storage (e.g., 'public' disk)
+    if (Storage::disk('public')->exists($filePath)) {
+        Storage::disk('public')->delete($filePath);
+    }
+
+    // Delete the database record
+    $image->delete();
+
+    return response()->json(['success' => 'Image deleted successfully']);
+}
+public function showImages($tour_package_id)
+{
+    $images = TourPackageImage::where('tour_package_id', $tour_package_id)->get();
+
+    return response()->json($images);
+}
+
 }

@@ -395,32 +395,36 @@ $(document).on("change", ".statusToggle", function () {
 
 
  // Show Multiple Image Modal
- $(document).on("click", ".imageListPopup", function () {
+// Show Multiple Image Modal
+  $(document).on("click", ".imageListPopup", function () {
     $("#imageModal").modal("show");
     $("#postImageTitle").text("Image List");
-
     let id = $(this).data('id');
-
     $.ajax({
-        type: "get", // fixed typo
-        url: "/admin/tour-packages/" + id + "/detail",
+        type: "GET",  // Fix typo here
+        url: "/admin/tour-packages/show/" + id,
         success: function (response) {
             $(".fetch-post-image-data").html("");
 
-            // Access gallery_media from the response
-            if (response.message.gallery_media && response.message.gallery_media.length > 0) {
-                response.message.gallery_media.forEach((media, index) => {
-                    let imagePath = media.media_path; // it's already a full URL
+            // Access images inside response.message
+            if (response.success && response.message.images && response.message.images.length > 0) {
+                response.message.images.forEach((image, index) => {
                     $(".fetch-post-image-data").append(`
                         <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                            <img src="/${imagePath}" class="d-block w-100" alt="...">
+                            <img src="${image.image_url}" class="d-block w-100" alt="...">
                         </div>
                     `);
                 });
+            } else {
+                $(".fetch-post-image-data").html("<p>No images found.</p>");
             }
+        },
+        error: function () {
+            $(".fetch-post-image-data").html("<p>Failed to load images.</p>");
         }
     });
 });
+
 
 // delete media from Gallery edit button modal
 $(document).on("click", ".remove-image", function () {

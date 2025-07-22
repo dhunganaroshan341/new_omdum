@@ -19,11 +19,22 @@
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('asset/images/logo.png') }}" />
 
+
+
+
     {{-- Sweet Alert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- Sweet Alert --}}
     <!-- Then app.js -->
     @vite(['resources/js/app.js'])
+    <script>
+        window.appBaseUrl = "{{ env('APP_URL') }}";
+        window.routes = {
+            packagesImageUpload: "{{ route('admin.tour-package-images.store') }}",
+            packagesVideoUpload: "{{ route('admin.tour-package-videos.store') }}"
+        };
+    </script>
+
 
     @isset($extraCs)
         @foreach ($extraCs as $css)

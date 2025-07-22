@@ -88,26 +88,26 @@ $(document).on('click', '.viewItineraryBtn', function () {
 });
 
 // Add itinerary item via AJAX
-   $(document).off("submit","#updateItineraryForm").on("submit","#updateItineraryForm",function(e){
-    e.preventDefault();
-           $(".btn").prop("disabled", true);
-    let formdata=new FormData(this);
-    var id = $(this).attr("data-id");
-    $.ajax({
-        url: '/admin/itineraries/update/'+id,
-        type: 'post',
-        data: formdata,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            console.log("Itinerary item added successfully:", response);
-           $('#updateItineraryForm')[0].reset();
-                  $(".btn").prop("disabled", false);
-            $(".itineraryForm").attr("id", "ItineraryForm");
-            $("#itineraryModal").modal("hide");
-        }
-    })
-   });
+//    $(document).off("submit","#updateItineraryForm").on("submit","#updateItineraryForm",function(e){
+//     e.preventDefault();
+//            $(".btn").prop("disabled", true);
+//     let formdata=new FormData(this);
+//     var id = $(this).attr("data-id");
+//     $.ajax({
+//         url: '/admin/itineraries/update/'+id,
+//         type: 'post',
+//         data: formdata,
+//         contentType: false,
+//         processData: false,
+//         success: function (response) {
+//             console.log("Itinerary item added successfully:", response);
+//            $('#updateItineraryForm')[0].reset();
+//                   $(".btn").prop("disabled", false);
+//             $(".itineraryForm").attr("id", "ItineraryForm");
+//             $("#itineraryModal").modal("hide");
+//         }
+//     })
+//    });
 
     // Open itinerary modal
 
@@ -142,40 +142,74 @@ $(document).on('click', '.viewItineraryBtn', function () {
 
 
 
-
- $(document).off("submit","#itineraryForm").on("submit","#itineraryForm",function(e){
+$(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", function (e) {
     e.preventDefault();
-    let formdata=new FormData(this);
-    formdata.append('tour_package_id', $('#tour_package_id').val());
+
+    let form = $(this);
+    let formData = new FormData(this);
+    let isUpdate = form.attr("id") === "updateItineraryForm";
+    let url = '';
+    let method = '';
+
+    if (isUpdate) {
+        const id = form.attr("data-id");
+        url = `/admin/itineraries/update/${id}`;
+        method = 'POST'; // Assuming you're using POST for update too
+    } else {
+        url = '/admin/itineraries/store';
+        method = 'POST';
+    }
+
+    $(".btn").prop("disabled", true);
+
     $.ajax({
-        url: '/admin/itineraries/store',
-        type: 'POST',
-        data: formdata,
+        url: url,
+        type: method,
+        data: formData,
         contentType: false,
         processData: false,
         success: function (response) {
-            if (response.success == true) {
-          Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: "Testimonial Created Successfully",
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
-                     table.draw();
-            $('#itineraryForm')[0].reset();
-            $("#itineraryModal").modal("hide");
-}
-            else {
-                    Swal.fire({
-                        icon: "warning",
-                        title: "warning",
-                        text: "Something went wrong!",
-                    });
-                }
+            $(".btn").prop("disabled", false);
+            if (response.success) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success",
+                    text: response.message || "Itinerary saved successfully.",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+
+                // Reset the form and close modal
+                form[0].reset();
+                $("#itineraryModal").modal("hide");
+
+                // Optional: Reset to create mode
+                form.attr("id", "itineraryForm");
+                $('#submitItineraryBtn').show();
+                $('#updateItineraryBtn').hide();
+
+                // Redraw table
+                $('#itinerary-data-album-show').DataTable().ajax.reload();
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: response.message || "Something went wrong!",
+                });
+            }
+        },
+        error: function (err) {
+            $(".btn").prop("disabled", false);
+            console.error("Submission failed:", err);
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Submission failed!",
+            });
         }
-    })
-   });
+    });
+});
+
 
 
 
