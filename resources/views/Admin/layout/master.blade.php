@@ -108,21 +108,21 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#packageMenu" role="button"
                             aria-expanded="false" aria-controls="bannerMenu">
-                            <i class="mdi mdi-folder menu-icon"></i>
-                            <span class="menu-title"> Tours</span>
+                            <i class="mdi mdi-map-marker-path menu-icon"></i> <!-- New icon -->
+                            <span class="menu-title"> Packages</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="packageMenu">
                             <ul class="nav flex-column sub-menu list-unstyled ">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.tour-packages.index') }}">
-                                        <i class="mdi mdi-page-layout-header-footer menu-icon"></i> Packages
+                                        <i class="mdi mdi-clipboard-text menu-icon"></i> Manage
                                     </a>
                                 </li>
-
                             </ul>
                         </div>
                     </li>
+
 
 
                     <li class="nav-item">
