@@ -1,5 +1,5 @@
 <!-- Price Includes Table Modal -->
-<div class="modal fade" id="priceIncludesTableModal" tabindex="-1" aria-labelledby="priceIncludesTableModalLabel"
+<div class="modal fade" id="priceIncludeTableModal" tabindex="-1" aria-labelledby="priceIncludesTableModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content shadow">
@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped align-middle text-center"
-                        id="price-includes-data-show">
+                        id="price-include-data-show">
 
                         <thead class="table-light">
                             <tr>

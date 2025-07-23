@@ -30,9 +30,7 @@
     @include('Admin.pages.TourPackage.tourBatchModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.tourBatchTable') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.itineraryModal') <!-- ✅ Modal here -->
-
-    @include('Admin.pages.TourPackage.tourPackageModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.priceIncludesModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.priceIncludesTableModal') <!-- ✅ Modal here -->
-    include
+    @include('Admin.pages.TourPackage.tourPackageModal') <!-- ✅ Modal here -->
 @endsection
