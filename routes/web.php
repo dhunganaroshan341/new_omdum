@@ -1,8 +1,10 @@
 <?php
 
+use  App\Http\Controllers\Admin\BannerSliderVideoController;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CallToActionController;
 use App\Http\Controllers\Admin\ItineraryController;
+use App\Http\Controllers\Admin\PriceIncludesController;
 use App\Http\Controllers\Admin\ServiceQueryController;
 use App\Http\Controllers\Admin\TourPackageController as AdminTourPackageController;
 use App\Http\Controllers\Admin\PostController;
@@ -87,6 +89,12 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::post('/home-slide/update/{id}', [HomeSliderController::class, 'update'])->name('homeslide.update');
     Route::get('/home-slide/delete/{id}', [HomeSliderController::class, 'destroy'])->name('homeslide.destroy');
     Route::get('/home-slide/status/{id}', [HomeSliderController::class, 'statusToggle'])->name('homeslide.status');
+
+
+ Route::get('/banner-video', [BannerSliderVideoController::class, 'index'])->name('banner.video.index');
+    Route::post('/banner-video/upload', [BannerSliderVideoController::class, 'upload'])->name('banner.video.upload');
+    Route::post('/banner-video/save', [BannerSliderVideoController::class, 'save'])->name('banner.video.save');
+
 
     // Frontend
     Route::get('/front-end', [AdminFrontendController::class, 'index'])->name('frontend');
@@ -200,6 +208,11 @@ Route::prefix('tour-packages')->name('tour-packages.')->group(function () {
     Route::put('/status/{id}', [AdminTourPackageController::class, 'statusToggle'])->name('status');
      Route::get('/latest-order', [AdminTourPackageController::class, 'latestOrder'])->name('latest-order');
 });
+    Route::get('tour-batches/{tour_package_id}', [\App\Http\Controllers\Admin\TourBatchController::class, 'index']);
+    Route::post('tour-batches', [\App\Http\Controllers\Admin\TourBatchController::class, 'store']);
+    Route::get('tour-batch/{id}', [\App\Http\Controllers\Admin\TourBatchController::class, 'show']);
+    Route::put('tour-batch/{id}', [\App\Http\Controllers\Admin\TourBatchController::class, 'update']);
+    Route::delete('tour-batch/{id}', [\App\Http\Controllers\Admin\TourBatchController::class, 'destroy']);
 
 // Itineraries
 Route::prefix('itineraries')->name('itineraries.')->group(function () {
@@ -210,6 +223,11 @@ Route::prefix('itineraries')->name('itineraries.')->group(function () {
     Route::delete('/delete/{id}', [ItineraryController::class, 'destroy'])->name('destroy');
     Route::get('/latest-order/{id}', [ItineraryController::class, 'getLatestOrder'])->name('latestOrder');
 });
+ Route::get('price-includes/{tourPackageId}', [PriceIncludesController::class, 'index']);
+    Route::post('price-includes', [PriceIncludesController::class, 'store']);
+    Route::get('price-includes/show/{id}', [PriceIncludesController::class, 'show']);
+    Route::put('price-includes/{id}', [PriceIncludesController::class, 'update']);
+    Route::delete('price-includes/{id}', [PriceIncludesController::class, 'destroy']);
 
 // Tour Package Images
 Route::prefix('tour-package-images')->name('tour-package-images.')->group(function () {
@@ -221,7 +239,7 @@ Route::prefix('tour-package-images')->name('tour-package-images.')->group(functi
 // Tour Package Videos
 Route::prefix('tour-package-videos')->name('tour-package-videos.')->group(function () {
     // Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'showImages'])->name('index');
-    Route::post('/store/{tour_package_id}', [AdminTourPackageController::class, 'uploadYoutube'])->name('store');
+    Route::post('/store', [AdminTourPackageController::class, 'uploadYoutube'])->name('store');
     Route::delete('/delete/{id}', [AdminTourPackageController::class, 'destroy'])->name('destroy');
 });
 

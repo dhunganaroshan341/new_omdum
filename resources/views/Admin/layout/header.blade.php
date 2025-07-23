@@ -34,7 +34,23 @@
             packagesVideoUpload: "{{ route('admin.tour-package-videos.store') }}"
         };
     </script>
+    <style>
+        /* Remove underline from icon links inside the datatable */
+        table.dataTable a.addItineraryBtn,
+        table.dataTable a.viewItineraryBtn,
+        table.dataTable a.addTourBatchBtn,
+        table.dataTable a.viewTourBatchBtn,
+        table.dataTable a.imageListPopup,
+        table.dataTable a.editUploads {
+            text-decoration: none !important;
+            cursor: pointer;
+        }
 
+        /* Optional: On hover, keep color but no underline */
+        table.dataTable a:hover {
+            text-decoration: none !important;
+        }
+    </style>
 
     @isset($extraCs)
         @foreach ($extraCs as $css)

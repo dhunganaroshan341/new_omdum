@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Setting;
 use App\Models\frontend;
+use App\Models\Itinerary;
 use App\Models\Service;
 use App\Models\WorkingDay;
 use Illuminate\Pagination\Paginator;
@@ -11,6 +12,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use App\Observers\ItineraryObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Itinerary::observe(ItineraryObserver::class);
         $this->composeFrontendViews([
             'frontend.layout.main',
             'frontend.layout.footer',

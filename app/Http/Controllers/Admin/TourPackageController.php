@@ -39,7 +39,7 @@ class TourPackageController extends Controller
         $orderBy = $order['dir'];
         $start = $request->input('start');
 
-        $query = TourPackage::with('country')->withCount('images'); // ✅ eager load + image count
+        $query = TourPackage::with('country')->withCount('images');
         $total = $query->count();
 
         $filtered = $query->when($search, function ($q) use ($search) {
@@ -64,26 +64,44 @@ class TourPackageController extends Controller
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
 
             ->addColumn('itinerary', function ($item) {
-                return '<a href="javascript:void(0);" class="addItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
-                            <i class="fas fa-plus"></i>
-                        </a>
-                        <a title="View Itineraries" href="javascript:void(0);" class="viewItineraryBtn btn btn-sm btn-primary" data-id="' . $item->id . '">
-                            <i class="fas fa-eye"></i>
-                        </a>';
+                return '
+                    <a href="javascript:void(0);" class="addItineraryBtn me-2" data-id="' . $item->id . '" title="Add Itinerary">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="viewItineraryBtn" data-id="' . $item->id . '" title="View Itinerary">
+                        <i class="fas fa-eye text-primary"></i>
+                    </a>';
             })
+
+            ->addColumn('batches', function ($item) {
+                return '
+                    <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="viewTourBatchBtn" data-id="' . $item->id . '" title="View Batches">
+                        <i class="fas fa-eye text-info"></i>
+                    </a>';
+            }) ->addColumn('package_includes', function ($item) {
+    return '
+        <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
+            <i class="fas fa-plus text-success"></i>
+        </a>
+        <a href="javascript:void(0);" class="viewPriceIncludeBtn" data-id="' . $item->id . '" title="View Price Includes">
+            <i class="fas fa-eye text-info"></i>
+        </a>
+    ';
+})
 
             ->addColumn('images', function ($item) {
                 $imageCount = $item->images_count ?? 0;
 
-                $viewGallery = '<a type="button" data-id="' . $item->id . '" class="imageListPopup">
-                                    <span class="badge badge-primary">' . $imageCount . '</span>
-                                </a>';
-
-                $editUploads = '<a title="Edit Uploads" href="javascript:void(0);" class="editUploads btn btn-sm btn-primary" data-id="' . $item->id . '">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </a>';
-
-                return $viewGallery . ' ' . $editUploads;
+                return '
+                    <a href="javascript:void(0);" class="imageListPopup" data-id="' . $item->id . '" title="View Images">
+            <span class="badge bg-info">' . $imageCount . ' <i class="fas fa-images ms-1"></i></span>
+        </a>
+                    <a href="javascript:void(0);" class="editUploads" data-id="' . $item->id . '" title="Edit Uploads">
+                        <i class="fas fa-pencil-alt text-warning"></i>
+                    </a>';
             })
 
             ->addColumn('status', function ($item) {
@@ -94,14 +112,14 @@ class TourPackageController extends Controller
             })
 
             ->addColumn('action', function ($item) {
-                return view('Admin.Button.button', ['data' => $item]);
+                return view('Admin.Button.button', ['data' => $item])->render();
             })
 
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
 
-            ->rawColumns(['images', 'itinerary', 'status', 'action'])
+            ->rawColumns(['batches', 'package_includes','images', 'itinerary', 'status', 'action'])
 
             ->with([
                 'recordsTotal' => $total,
@@ -131,6 +149,7 @@ class TourPackageController extends Controller
         'countries' => $countries,
     ]);
 }
+
 
     public function latestOrder()
     {

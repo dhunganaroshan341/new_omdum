@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class TourPackage extends BaseModel
 {
@@ -35,7 +36,8 @@ class TourPackage extends BaseModel
         'start_point',
         'end_point',
         'status',
-        'max_group_size',
+        'max_people',
+        'available_seat',
         'is_featured',
     ];
     public function country() {
@@ -66,6 +68,11 @@ public function services() {
 }
 public function packageType(){
     return $this->belongsTo(PackageType::class, 'package_type_id');
+}
+public function getDurationAttribute($value)
+{
+    $number = (int) $value; // cast string to integer
+    return $number . ' ' . Str::plural('day', $number);
 }
 
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('tour_package_id')->constrained('tour_packages')->onDelete('cascade');
             $table->string('title')->nullable();
+            $table->string('price')->nullable();
             $table->boolean('is_included')->default(1);
             $table->text('description')->nullable();
             $table->timestamps();

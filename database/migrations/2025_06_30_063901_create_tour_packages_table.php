@@ -30,7 +30,8 @@ return new class extends Migration
             $table->enum('difficulty', ['easy', 'moderate', 'hard'])->nullable();
             $table->enum('package_type', ['trekking', 'tour', 'other'])->default('tour');
             $table->integer('max_elevation')->nullable();
-            $table->integer('max_group_size')->nullable();
+            $table->integer('max_people')->nullable();
+            $table->integer('available_seats')->nullable();
             $table->string('best_season')->nullable();
             $table->string('pickup')->default('Tribhuvan International Airport (KTM)');
             $table->string('drop')->default('Tribhuvan International Airport (KTM)');

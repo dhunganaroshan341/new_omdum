@@ -10,26 +10,16 @@ $(document).ready(function () {
 
 
     let itineraryItems = [];
+
     let currentDay = 1;
-
-$(document).on('click', '.viewItineraryBtn', function () {
-        const id = $(this).data('id');
-        // console.log("Tour Package ID:", modalEl);
-
-        $("#itineraryTableModalUnique").modal("show");
-        // const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
-        // fetchItineraries(modalEl);
-        $("#itinerary-data-album-show").DataTable().destroy(); // Destroy existing DataTable if any
-
-        getItineraryTable(id);
-
-    });
-    $(document).on('click', '.addItineraryBtn', function () {
+$(document).on('click', '.addItineraryBtn', function () {
         $('.itineraryForm').attr('id', 'ItineraryForm');
         const id = $(this).data('id');
         // console.log("Tour Package ID:", modalEl);
-    $('#tour_package_id').val(id);
+
         $("#itineraryModal").modal("show");
+        $('#tour_package_id').val(id);
+        $('#day_number').val(1);
 
        $.ajax({
         url: `/admin/itineraries/latest-order/${id}`,
@@ -44,11 +34,24 @@ $(document).on('click', '.viewItineraryBtn', function () {
             console.error("Error fetching itinerary:", err);
             alert("Failed to fetch itinerary for editing.");
         }
+    });});
+$(document).on('click', '.viewItineraryBtn', function () {
+        const id = $(this).data('id');
+        // console.log("Tour Package ID:", modalEl);
+
+        $("#itineraryTableModalUnique").modal("show");
+        // const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+        // fetchItineraries(modalEl);
+        $("#itinerary-data-album-show").DataTable().destroy(); // Destroy existing DataTable if any
+
+        getItineraryTable(id);
+
     });
 
 
 
-    });
+
+
 
    $(document).on('click', '.editItineraryBtn', function () {
     const itineraryId = $(this).data('id');
@@ -76,6 +79,7 @@ $(document).on('click', '.viewItineraryBtn', function () {
             $('#tour_package_id').val(response.tour_package_id);
             $('#order').val(response.order);
 
+         response.tour_package_id;
         },
         error: function (err) {
             console.error("Error fetching itinerary:", err);
@@ -87,29 +91,6 @@ $(document).on('click', '.viewItineraryBtn', function () {
 
 });
 
-// Add itinerary item via AJAX
-//    $(document).off("submit","#updateItineraryForm").on("submit","#updateItineraryForm",function(e){
-//     e.preventDefault();
-//            $(".btn").prop("disabled", true);
-//     let formdata=new FormData(this);
-//     var id = $(this).attr("data-id");
-//     $.ajax({
-//         url: '/admin/itineraries/update/'+id,
-//         type: 'post',
-//         data: formdata,
-//         contentType: false,
-//         processData: false,
-//         success: function (response) {
-//             console.log("Itinerary item added successfully:", response);
-//            $('#updateItineraryForm')[0].reset();
-//                   $(".btn").prop("disabled", false);
-//             $(".itineraryForm").attr("id", "ItineraryForm");
-//             $("#itineraryModal").modal("hide");
-//         }
-//     })
-//    });
-
-    // Open itinerary modal
 
 
 
@@ -131,12 +112,6 @@ $(document).on('click', '.viewItineraryBtn', function () {
     });
     }
 
-    // Fetch itinerary items
-
-
-    // Calculate next currentDay
-
-    // Render the itinerary list to UI
 
 
 
@@ -147,15 +122,21 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
     let form = $(this);
     let formData = new FormData(this);
+
     let isUpdate = form.attr("id") === "updateItineraryForm";
     let url = '';
     let method = '';
 
     if (isUpdate) {
+        $('#updateItineraryBtn').show();
+        $('#submitItineraryBtn').hide();
         const id = form.attr("data-id");
+          formData.append('tour_package_id', $('#tour_package_id').val());
         url = `/admin/itineraries/update/${id}`;
         method = 'POST'; // Assuming you're using POST for update too
     } else {
+        // ✅ Force append tour_package_id to ensure it's sent
+    formData.append('tour_package_id', $('#tour_package_id').val());
         url = '/admin/itineraries/store';
         method = 'POST';
     }

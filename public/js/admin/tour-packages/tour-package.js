@@ -26,12 +26,14 @@ function populateTourPackageForm(tour_package) {
     $("select[name='country_id']").val(tour_package.country_id);
     $("select[name='status']").val(tour_package.status);
     $("input[name='duration']").val(tour_package.duration);
+    $("input[name='max_people']").val(tour_package.max_people);
+    $("input[name='available_seats']").val(tour_package.available_seats);
     $("select[name='difficulty']").val(tour_package.difficulty);
     $("input[name='max_elevation']").val(tour_package.max_elevation);
     $("input[name='best_season']").val(tour_package.best_season);
     $("input[name='start_point']").val(tour_package.start_point);
     $("input[name='end_point']").val(tour_package.end_point);
-    $("input[name='status']").val(tour_package.status);
+
     $("textarea[name='short_description']").val(tour_package.short_description);
 
     // For summernote fields
@@ -118,19 +120,18 @@ function populateTourPackageForm(tour_package) {
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         order: [2, 'asc'],
-    columns: [
-        { data: 'DT_RowIndex', orderable: false, searchable: false },
+   columns: [
+    { data: 'DT_RowIndex', orderable: false, searchable: false },  // S.N
+    { data: 'action', name: 'action', orderable: false, searchable: false },       // Action (2nd)
+    { data: 'title', name: 'title' },                             // Title
+    { data: 'images', name: 'images' },                           // Images
+    { data: 'duration', name: 'duration' },                       // Duration
+    { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false }, // Itinerary
+    { data: 'batches', name: 'batches', orderable: false, searchable: false },     // Batches
+    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false },     // package includes
+    { data: 'status', name: 'status', orderable: false, searchable: false }        // Status
+]
 
-        { data: 'title', name: 'title' },
-        { data: 'images', name: 'images' },
-        // { data: 'country', name: 'country.name' },
-        { data: 'duration', name: 'duration' },
-        // { data: 'difficulty', name: 'difficulty' },
-        // { data: 'short_description', name: 'short_description' },
-        { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
-        { data: 'status', name: 'status', orderable: false, searchable: false },
-        { data: 'action', name: 'action', orderable: false, searchable: false }
-    ]
     });
 
     // Add Tour Package

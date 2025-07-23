@@ -38,9 +38,10 @@ public function index($id, Request $request)
                     </div>
                 ';
             })
-            ->addColumn('day_number', function ($item) {
-                return 'Day ' . $item->day_number;
-            })
+           ->addColumn('day_number', function ($item) {
+    return $item->day_number . ' ' . ($item->day_number > 1 ? 'days' : 'day');
+})
+
             ->rawColumns(['action'])
             ->make(true);
     }
@@ -59,6 +60,7 @@ public function index($id, Request $request)
      */
     public function store(ItineraryRequest $request)
     {
+        // dd($request->all());
         // Validate the request using the ItineraryRequest
         $validated = $request->validated();
 
@@ -95,7 +97,7 @@ public function index($id, Request $request)
     $itinerary = Itinerary::findOrFail($id);
     $itinerary->update($validated);
 
-    return response()->json(['message' => 'Itinerary updated successfully']);
+    return response()->json([ 'success'=>true,'message' => 'Itinerary updated successfully']);
 }
 
     /**
