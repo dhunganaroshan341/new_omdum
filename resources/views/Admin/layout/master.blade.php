@@ -79,30 +79,40 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#bannerMenu" role="button"
                             aria-expanded="false" aria-controls="bannerMenu">
-                            <i class="mdi mdi-folder menu-icon"></i>
+                            <i class="mdi mdi-image-multiple menu-icon"></i> <!-- Changed from mdi-folder -->
                             <span class="menu-title"> Banners</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="bannerMenu">
-                            <ul class="nav flex-column sub-menu list-unstyled ">
+                            <ul class="nav flex-column sub-menu list-unstyled">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.homeslide') }}">
-                                        <i class="mdi mdi-page-layout-header-footer menu-icon"></i> Home Slider
+                                        <i class="mdi mdi-view-carousel menu-icon"></i> <!-- For Home Slider -->
+                                        Home Slider
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.banner.video.index') }}">
+                                        <i class="mdi mdi-video menu-icon"></i> <!-- For Video Banner -->
+                                        Video Banner
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.page-banner.index') }}">
-                                        <i class="mdi mdi-page-layout-header menu-icon"></i> Page Banner
+                                        <i class="mdi mdi-image-outline menu-icon"></i> <!-- For Page Banner -->
+                                        Page Banner
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.call-to-action.index') }}">
-                                        <i class="mdi mdi-phone menu-icon"></i> CTA Banner
+                                        <i class="mdi mdi-bullhorn menu-icon"></i> <!-- For CTA Banner -->
+                                        CTA Banner
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+
 
 
                     <li class="nav-item">

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7c0395c66ca8e398adf792a8ebe3b35",
+    "content-hash": "3a6d1aa7d400b7db69e80c2305d4a489",
     "packages": [
         {
             "name": "brick/math",
@@ -134,6 +134,81 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "centrex/laravel-countries",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/centrex/laravel-countries.git",
+                "reference": "cb52ee74147a687e7835adc3c6310f5939cd50d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/centrex/laravel-countries/zipball/cb52ee74147a687e7835adc3c6310f5939cd50d0",
+                "reference": "cb52ee74147a687e7835adc3c6310f5939cd50d0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0",
+                "illuminate/support": "^10.0|^11.0",
+                "php": "^8.1|^8.2"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.8",
+                "orchestra/testbench": "^8.8",
+                "pestphp/pest": "^2.20",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "rector/rector": "^1.1",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "LaravelCountries": "Centrex\\LaravelCountries\\Facades\\LaravelCountries"
+                    },
+                    "providers": [
+                        "Centrex\\LaravelCountries\\LaravelCountriesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Centrex\\LaravelCountries\\": "src/",
+                    "Centrex\\LaravelCountries\\Database\\Seeders\\": "database/seeders/",
+                    "Centrex\\LaravelCountries\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "centrex",
+                    "email": "raisul@centrexbd.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Countries database for laravel",
+            "homepage": "https://github.com/centrex/laravel-countries",
+            "keywords": [
+                "Laravel-Countries",
+                "centrex",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/centrex/laravel-countries/issues",
+                "source": "https://github.com/centrex/laravel-countries/tree/v1.1.4"
+            },
+            "time": "2024-07-02T11:26:31+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -6156,6 +6231,50 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "wisdom-diala/countrypkg-laravel",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wisdom-diala/countrypkg-laravel.git",
+                "reference": "0951a6ffc33e171b0257b9c640a3dfe676f55c95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wisdom-diala/countrypkg-laravel/zipball/0951a6ffc33e171b0257b9c640a3dfe676f55c95",
+                "reference": "0951a6ffc33e171b0257b9c640a3dfe676f55c95",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "WisdomDiala\\Countrypkg\\CountrypkgServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WisdomDiala\\Countrypkg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wisdom Diala",
+                    "email": "dialawisdom@gmail.com"
+                }
+            ],
+            "description": "package to fetch all countries and states around the world and store in the database",
+            "support": {
+                "issues": "https://github.com/wisdom-diala/countrypkg-laravel/issues",
+                "source": "https://github.com/wisdom-diala/countrypkg-laravel/tree/1.0.7"
+            },
+            "time": "2023-03-20T13:37:17+00:00"
         },
         {
             "name": "yajra/laravel-datatables-buttons",

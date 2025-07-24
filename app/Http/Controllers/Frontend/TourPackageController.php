@@ -2,33 +2,44 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\CountryHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Service;
 use App\Models\TourPackage;
 use App\Models\TourPackageType;
+use WisdomDiala\Countrypkg\Models\Country;
+
 use Illuminate\Http\Request;
-use NerdSnipe\LaravelCountries\Facades\LaravelCountries;
+
 
 class TourPackageController extends Controller
 {
+    protected $countries;
+     public function __construct()
+    {
+     $this->countries = CountryHelper::getCountries();
+    }
+
     public function index()
     {
-        $countries = LaravelCountries::getCountries();
+        $countries = $this->countries; // associative array code => country name
         $tourPackages = TourPackage::where('status', 'Active')->get();
         $services = Service::all();
         $tourPackageTypes = TourPackageType::all();
         return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes'));
     }
 
+
     public function show($slug)
     {
+      $countries = $this->countries; // associative array code => country name
         $package = TourPackage::where('slug', $slug)->where('status', 'Active')->firstOrFail();
         $totalDays = $package->itineraries
             ->filter(fn ($item) => is_numeric($item->day_number))
             ->sum(fn ($item) => (int) $item->day_number);
         $otherPackages = TourPackage::where('country_id', $package->country_id)->where('id', '!=', $package->id)->get();
-        return view('frontend.packages-single', compact('package', 'totalDays', 'otherPackages'));
+        return view('frontend.packages-single', compact('countries','package', 'totalDays', 'otherPackages'));
     }
 
     public function booking(Request $request)

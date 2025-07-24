@@ -242,6 +242,11 @@ Route::prefix('tour-package-videos')->name('tour-package-videos.')->group(functi
     Route::post('/store', [AdminTourPackageController::class, 'uploadYoutube'])->name('store');
     Route::delete('/delete/{id}', [AdminTourPackageController::class, 'destroy'])->name('destroy');
 });
+Route::prefix('bookings')->name('bookings.')->group(function () {
+    // Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'showImages'])->name('index');
+    Route::post('/store', [BookingController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [BookingController::class, 'destroy'])->name('destroy');
+});
 
 
 // Contact messages
@@ -290,7 +295,7 @@ Route::prefix('blog')->name('blog.')->group(function () {
 Route::prefix('packages')->name('packages.')->group(function () {
     Route::get('/', [TourPackageController::class, 'index'])->name('index');
     Route::get('/{slug}', [TourPackageController::class, 'show'])->name('show');
-    Route::post('/book', [TourPackageController::class, 'booking'])->name('book');
+    Route::post('/book', [BookingController::class, 'store'])->name('book');
 });
 
 // Gallery
@@ -299,3 +304,8 @@ Route::get('/gallery', [FrontGalleryController::class, 'index'])->name('gallery'
 // route roshan demo
 Route::view('/roshan','frontend.demo');
 Route::view('/roshan2','frontend.youtube-plyr');
+use NerdSnipe\LaravelCountries\Facades\LaravelCountries;
+
+// Route::get('/test-countries', function () {
+//     return LaravelCountries::getCountries();
+// });

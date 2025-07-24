@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tour_packages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('country_id')->constrained('countries')->onDelete('cascade');
+            $table->foreignId('country_id')->constrained('our_countries')->onDelete('cascade');
             $table->foreignId('service_id')->nullable()->constrained('services')->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();

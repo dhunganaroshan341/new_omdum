@@ -105,7 +105,7 @@ $fallbackImage = asset('template/yatri_world/main-file/images/tibet_vertical.jpg
                                         <td><i aria-hidden="true" class="fa fa-map-signs pink me-1"></i> Pickup:
                                             {{ $package->pickup ??
                                                 'Kathmandu
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Airport' }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Airport' }}
                                         </td>
                                         @if (isset($package->languages) && $package->languages)
                                             <td><i aria-hidden="true" class="fa fa-file-alt pink me-1"></i>
@@ -122,9 +122,9 @@ $fallbackImage = asset('template/yatri_world/main-file/images/tibet_vertical.jpg
                             <p>
                                 {{ $package->description ??
                                     'The 12-Day Mundum Trek offers a unique journey through the pristine mountains of eastern
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Explore remote villages, sacred religious sites, and experience authentic local traditions
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                while trekking through unspoiled terrain.' }}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Explore remote villages, sacred religious sites, and experience authentic local traditions
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                while trekking through unspoiled terrain.' }}
                             </p>
 
                         </div>
@@ -306,64 +306,7 @@ $fallbackImage = asset('template/yatri_world/main-file/images/tibet_vertical.jpg
                     <div class="sidebar-sticky">
                         <div class="list-sidebar">
                             <div class="sidebar-item">
-                                <form id="booking-form" class="form-content" method="POST"
-                                    action="{{ route('packages.book') }}">
-                                    @csrf
-                                    <input type="hidden" name="tour_package_id" value="{{ $package->id }}">
-                                    <h4 class="title white text-center">MAKE A BOOKING</h4>
-                                    <div class="row gy-4">
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white d-block mb-2">Full Name</label>
-                                                <input type="text" name="name" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white d-block mb-2">Email Address</label>
-                                                <input type="email" name="email" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white d-block mb-2">Phone Number</label>
-                                                <input type="text" name="phone" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white d-block mb-2">Select Date</label>
-                                                <input type="date" name="booking_date" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white">No. Of People</label>
-                                                <div class="input-box">
-                                                    <i class="flaticon-add-user"></i>
-                                                    <select class="niceSelect" name="number_of_people">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <label class="white d-block mb-2">Message (Optional)</label>
-                                                <textarea name="message" class="form-control" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group mb-0">
-                                                <button type="submit" class="nir-btn w-100">Book Now</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                                @include('components.booking-form-sidebar')
                                 <div id="booking-response" class="mt-3"></div>
                             </div>
                         </div>
@@ -381,10 +324,10 @@ $fallbackImage = asset('template/yatri_world/main-file/images/tibet_vertical.jpg
 @push('styles')
     <style>
         .sidebar-sticky {
-            max-height: 80vh;
+            /* max-height: 100vh; */
             /* 80% of viewport height */
-            overflow-y: auto;
-            padding-right: 10px;
+            /* overflow-y: auto;
+                padding-right: 10px; */
             /* to prevent scrollbar overlapping content */
         }
     </style>

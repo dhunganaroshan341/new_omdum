@@ -12,11 +12,14 @@
                             <tr>
                                 <th>S.N</th>
                                 <th>Package</th>
+                                <th>Batch</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Booking Date</th>
+                                <th>custom</th>
                                 <th>No. of People</th>
+                                <th>price</th>
                                 <th>Status</th>
                                 <th>Submitted At</th>
                             </tr>

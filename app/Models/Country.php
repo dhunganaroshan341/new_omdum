@@ -13,6 +13,8 @@ class Country extends BaseModel
         'slug',
         'description',
     ];
+    protected $table = 'our_countries';
+    protected $id = 'id';
     public function packages() {
     return $this->hasMany(TourPackage::class);
 }

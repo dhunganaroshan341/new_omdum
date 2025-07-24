@@ -65,6 +65,10 @@ public function testimonials() {
 }
 public function services() {
     return $this->hasMany(TourPackageService::class);
+}public function batches() {
+    return $this->hasMany(TourBatch::class);
+}public function bookings() {
+    return $this->hasMany(PackageBooking::class);
 }
 public function packageType(){
     return $this->belongsTo(PackageType::class, 'package_type_id');
