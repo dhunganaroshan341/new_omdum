@@ -33,6 +33,8 @@ class TourPackage extends BaseModel
         'difficulty',
         'max_elevation',
         'best_season',
+        'top_deal',
+        'favourite_destination',
         'start_point',
         'end_point',
         'status',
