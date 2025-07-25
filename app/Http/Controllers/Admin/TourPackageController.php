@@ -266,7 +266,7 @@ public function index(Request $request)
      */
    public function update(TourPackageRequest $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
         DB::beginTransaction();
         try {
             $album = TourPackage::findOrFail($id);
