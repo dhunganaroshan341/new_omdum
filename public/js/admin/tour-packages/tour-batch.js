@@ -183,4 +183,17 @@ $(document).ready(function () {
             }
         });
     });
+     $(document).on('change', '.topDealSwitch', function () {
+        const id = $(this).data('id');
+        const newStatus = $(this).is(':checked') ? 'active' : 'closed';
+
+        $.ajax({
+            url: `/admin/tour-batch/${id}`,
+            method: 'PUT',
+            data: { status: newStatus },
+            success: function () {
+                $('#tour-batch-data-show').DataTable().ajax.reload();
+            }
+        });
+    });
 });

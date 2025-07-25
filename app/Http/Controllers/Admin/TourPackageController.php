@@ -255,7 +255,7 @@ public function index(Request $request)
                 }
             }
             DB::commit();
-            return response()->json(['success' => true]);
+            return response()->json(['success' => true,'message'=>$request]);
         } catch (\Exception $e) {
             DB::rollBack();
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
