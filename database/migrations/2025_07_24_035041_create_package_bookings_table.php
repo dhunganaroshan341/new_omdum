@@ -16,6 +16,7 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->string('email')->nullable();
+            $table->string('name')->nullable();
             $table->string('phone')->nullable();
             $table->string('country')->nullable();
             $table->longText('message')->nullable();

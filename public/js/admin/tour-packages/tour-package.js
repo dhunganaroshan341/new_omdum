@@ -23,7 +23,7 @@ function populateTourPackageForm(tour_package) {
     // Fill input fields
     $("input[name='title']").val(tour_package.title);
     $("input[name='slug']").val(tour_package.slug);
-    $("select[name='country_id']").val(tour_package.country_id);
+    $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);
     $("input[name='duration']").val(tour_package.duration);
     $("input[name='max_people']").val(tour_package.max_people);
@@ -121,16 +121,18 @@ function populateTourPackageForm(tour_package) {
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         order: [2, 'asc'],
    columns: [
-    { data: 'DT_RowIndex', orderable: false, searchable: false },  // S.N
-    { data: 'action', name: 'action', orderable: false, searchable: false },       // Action (2nd)
-    { data: 'title', name: 'title' },                             // Title
-    { data: 'images', name: 'images' },                           // Images
-    { data: 'duration', name: 'duration' },                       // Duration
-    { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false }, // Itinerary
-    { data: 'batches', name: 'batches', orderable: false, searchable: false },     // Batches
-    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false },     // package includes
-    { data: 'status', name: 'status', orderable: false, searchable: false }        // Status
+    { data: 'DT_RowIndex', orderable: false, searchable: false },
+    { data: 'action', name: 'action', orderable: false, searchable: false },
+    { data: 'title', name: 'title' },
+    { data: 'country', name: 'country_name' }, // Important
+    { data: 'images', name: 'images' },
+    { data: 'duration', name: 'duration' },
+    { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
+    { data: 'batches', name: 'batches', orderable: false, searchable: false },
+    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false },
+    { data: 'status', name: 'status', orderable: false, searchable: false }
 ]
+
 
     });
 

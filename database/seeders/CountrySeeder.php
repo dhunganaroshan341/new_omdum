@@ -3,6 +3,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Country;
+use App\Models\OurCountry;
 
 class CountrySeeder extends Seeder
 {
@@ -32,7 +33,7 @@ class CountrySeeder extends Seeder
         ];
 
         foreach ($countries as $country) {
-            Country::updateOrCreate(['slug' => $country['slug']], $country);
+            OurCountry::updateOrCreate(['slug' => $country['slug']], $country);
         }
     }
 }

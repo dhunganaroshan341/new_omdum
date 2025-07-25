@@ -20,6 +20,7 @@ return new class extends Migration
 
             $table->longText('description')->nullable();
             $table->string('link')->nullable();
+            $table->string('iframe')->nullable();
 
             $table->timestamps();
         });

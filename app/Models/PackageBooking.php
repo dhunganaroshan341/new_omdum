@@ -7,17 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageBooking extends Model
 {
-    protected $fillable = [
-        'user_id',
-        'tour_package_id',
-        'tour_batch_id',
-        'custom_date',
-        'booking_type',
-        'email',
-        'phone',
-        'message',
-        'status'
-    ];
+   protected $fillable = [
+    'user_id',
+    'email',
+    'name',
+    'phone',
+    'country',
+    'message',
+    'children',
+    'adult',
+    'total_people',
+    'price',
+    'tour_package_id',
+    'tour_batch_id',
+    'custom_date',
+    'booking_type',
+    'status',
+];
+
 
     public function user()
     {

@@ -4,7 +4,7 @@ use App\Models\CallToAction;
 use App\Models\FeaturedService;
 use App\Models\Setting;
 use App\Models\Blog;
-use App\Models\Country;
+use App\Models\OurCountry;
 use App\Models\Cta;
 use App\Models\GalleryAlbum;
 use App\Models\Notice;
@@ -16,7 +16,7 @@ function getSettings(){
 }
 function getNavbarCountries() {
     // Fetch countries with packages already loaded
-    $rawCountries = Country::with(['packages'])->get();
+    $rawCountries = OurCountry::with(['packages'])->get();
 
     // Group packages by 'type' (enum column) inside each country
     $countries = $rawCountries->map(function ($country) {

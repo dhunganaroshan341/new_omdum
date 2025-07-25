@@ -61,13 +61,24 @@
         <div class="col-lg-12" id="batch-date-section">
             <div class="form-group">
                 <label class="white d-block mb-2">Select Batch</label>
-                <select name="tour_batch_id" class="nice-select">
-                    @foreach ($package->batches as $batch)
-                        <option value="{{ $batch->id }}">{{ $batch->start_date->format('Y-m-d') }}</option>
-                    @endforeach
-                </select>
+
+                @if ($package->batches->count() > 0)
+                    <select name="tour_batch_id" class="nice-select">
+                        <option value="">-- Select a Batch --</option>
+                        @foreach ($package->batches as $batch)
+                            <option value="{{ $batch->id }}">
+                                {{ $batch->start_date->format('Y-m-d') }}
+                            </option>
+                        @endforeach
+                    </select>
+                @else
+                    <div class="text-light bg-secondary p-2 rounded">
+                        No batch available for this package. You can select the custom date .
+                    </div>
+                @endif
             </div>
         </div>
+
 
         <!-- Custom Date Selection -->
         <div class="col-lg-12" id="custom-date-section" style="display:none;">

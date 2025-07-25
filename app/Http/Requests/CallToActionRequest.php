@@ -24,6 +24,7 @@ class CallToActionRequest extends FormRequest
             'description' => 'required|string|max:1000',
             // 'image' => 'required|string',
             'title' => 'required|string',
+            'iframe' => 'nullable|string',
             // 'page' => 'required|string',
             'link'=>'nullable|string',
         ];

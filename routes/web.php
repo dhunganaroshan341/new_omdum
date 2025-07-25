@@ -246,6 +246,10 @@ Route::prefix('bookings')->name('bookings.')->group(function () {
     // Route::get('/{tour_package_id}', [AdminTourPackageController::class, 'showImages'])->name('index');
     Route::post('/store', [BookingController::class, 'store'])->name('store');
     Route::delete('/delete/{id}', [BookingController::class, 'destroy'])->name('destroy');
+    // Bookings
+
+    Route::get('/', [BookingController::class, 'index'])->name('index');
+
 });
 
 
@@ -264,10 +268,7 @@ Route::prefix('setting')->name('setting.')->group(function () {
     Route::post('/', [SettingController::class, 'store'])->name('store');
 });
 
-// Bookings
-Route::prefix('bookings')->name('bookings.')->group(function () {
-    Route::get('/', [BookingController::class, 'index'])->name('index');
-});
+
 
 // Logout route for normal users
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

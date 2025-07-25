@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('our_countries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+              $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('our_countries');
     }
 };

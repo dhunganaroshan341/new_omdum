@@ -14,10 +14,12 @@ $(document).ready(function () {
     let currentDay = 1;
 $(document).on('click', '.addItineraryBtn', function () {
         $('.itineraryForm').attr('id', 'ItineraryForm');
+
         const id = $(this).data('id');
         // console.log("Tour Package ID:", modalEl);
 
         $("#itineraryModal").modal("show");
+        $('#updateItineraryBtn').attr('hidden',true);
         $('#tour_package_id').val(id);
         $('#day_number').val(1);
 
@@ -62,7 +64,7 @@ $(document).on('click', '.viewItineraryBtn', function () {
 
     // Hide submit button and show update
     $('#submitItineraryBtn').attr('hidden', true);
-    $('#updateItineraryBtn').removeAttr('hidden');
+    $('#updateItineraryBtn').attr('hidden',false);
 
     // Set the ID on update button for reference
 
@@ -180,14 +182,27 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
             }
         },
         error: function (err) {
-            $(".btn").prop("disabled", false);
-            console.error("Submission failed:", err);
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "Submission failed!",
-            });
-        }
+    $(".btn").prop("disabled", false);
+    console.error("Submission failed:", err);
+
+    let message = "Something went wrong.";
+
+    if (err.status === 422 && err.responseJSON?.errors) {
+        // Extract first error message from Laravel validation
+        const errors = err.responseJSON.errors;
+        message = Object.values(errors).flat().join('\n');
+    } else if (err.responseJSON?.message) {
+        // Use general error message if available
+        message = err.responseJSON.message;
+    }
+
+    Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: message,
+    });
+}
+
     });
 });
 

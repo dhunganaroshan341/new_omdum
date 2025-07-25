@@ -13,92 +13,93 @@ $(document).ready(function () {
         const packageId = $(this).data('id');
 
         $('#priceIncludeModal').modal('show');
-        $('.priceIncludeForm')[0].reset();
-        $('#tour_package_id_price_include').val(packageId);
+        $('#priceIncludeForm')[0].reset();
+        $('#tour_package_id').val(packageId);
+        $('#price_include_id').val('');
 
         $('#submitPriceIncludeBtn').show();
         $('#updatePriceIncludeBtn').hide();
 
-        $('.priceIncludeForm').attr('id', 'createPriceIncludeForm').removeAttr('data-id');
+        $('#priceIncludeForm').attr('data-mode', 'create');
     });
 
     // ========================
     // Show Edit Modal
     // ========================
     $(document).on('click', '.editPriceIncludeBtn', function () {
-        const priceIncludeId = $(this).data('id');
+        const id = $(this).data('id');
 
-        $.get(`/admin/price-includes/show/${priceIncludeId}`, function (response) {
+        $.get(`/admin/price-includes/show/${id}`, function (response) {
             if (response.success) {
                 const data = response.data;
 
-                $('#priceIncludeTableModal').modal('hide');
-                $('.priceIncludeForm')[0].reset();
-
+                $('#priceIncludeForm')[0].reset();
                 $('#title').val(data.title);
                 $('#price').val(data.price);
                 $('#description').val(data.description);
-                $('#is_included').prop('checked', data.is_included); // assuming a checkbox for included/excluded
-                $('#tour_package_id_price_include').val(data.tour_package_id);
+                $(`input[name="is_included"][value="${data.is_included}"]`).prop('checked', true);
+                $('#tour_package_id').val(data.tour_package_id);
+                $('#price_include_id').val(data.id);
 
                 $('#priceIncludeModal').modal('show');
                 $('#submitPriceIncludeBtn').hide();
                 $('#updatePriceIncludeBtn').show();
 
-                $('.priceIncludeForm')
-                    .attr('id', 'updatePriceIncludeForm')
-                    .attr('data-id', data.id);
+                $('#priceIncludeForm').attr('data-mode', 'update');
             }
         });
     });
 
     // ========================
-    // Load Price Includes Table (via DataTables)
+    // Load Price Includes Table
     // ========================
     $(document).on('click', '.viewPriceIncludeBtn', function () {
-        const packageId = $(this).data('id');
-        loadPriceIncludeTable(packageId);
+        const tourPackageId = $(this).data('id');
+        loadPriceIncludeTable(tourPackageId);
     });
 
     function loadPriceIncludeTable(tourPackageId) {
         $('#priceIncludeTableModal').modal('show');
-
         $('#price-include-data-show').DataTable({
             processing: true,
             serverSide: true,
             destroy: true,
-            ajax: {
-                url: `/admin/price-includes/${tourPackageId}`,
-                type: 'GET'
-            },
+            ajax: `/admin/price-includes/${tourPackageId}`,
             columns: [
                 { data: 'DT_RowIndex', orderable: false, searchable: false },
                 { data: 'title' },
                 { data: 'price' },
                 { data: 'description' },
-                { data: 'is_included', render: function(data) {
-                    return data ? '<span class="badge bg-success">Included</span>' : '<span class="badge bg-danger">Excluded</span>';
-                }},
+                {
+                    data: 'is_included',
+                    render: function (data) {
+                        return data
+                            ? '<span class="badge bg-success">Included</span>'
+                            : '<span class="badge bg-danger">Excluded</span>';
+                    }
+                },
                 { data: 'action', orderable: false, searchable: false }
             ]
         });
     }
 
     // ========================
-    // Handle Form Submission (Create/Update)
+    // Handle Create/Update Submission
     // ========================
-    $(document).off('submit', '.priceIncludeForm').on('submit', '.priceIncludeForm', function (e) {
+    $('#priceIncludeForm').on('submit', function (e) {
         e.preventDefault();
 
         const form = $(this);
         const formData = new FormData(this);
-        const isUpdate = form.attr('id') === 'updatePriceIncludeForm';
-        const url = isUpdate
-            ? `/admin/price-includes/${form.attr('data-id')}`
-            : `/admin/price-includes`;
+        const mode = form.attr('data-mode');
+        const id = $('#price_include_id').val();
 
-        if (isUpdate) {
-            formData.append('_method', 'PUT');
+        let url = '/admin/price-includes';
+        let method = 'POST';
+
+        if (mode === 'update' && id) {
+            url = `/admin/price-includes/${id}`;
+            formData.append('_method', 'PUT'); // Laravel method spoofing
         }
 
         $(".btn").prop("disabled", true);
@@ -148,7 +149,7 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: `/admin/price-include/${id}`,
+                    url: `/admin/price-includes/${id}`,
                     type: 'DELETE',
                     success: function (response) {
                         if (response.success) {
@@ -166,16 +167,16 @@ $(document).ready(function () {
     });
 
     // ========================
-    // Toggle Status (Optional)
+    // Optional: Toggle Status
     // ========================
     $(document).on('change', '.togglePriceIncludeStatus', function () {
         const id = $(this).data('id');
-        const newStatus = $(this).is(':checked') ? 1 : 0;
+        const is_included = $(this).is(':checked') ? 1 : 0;
 
         $.ajax({
-            url: `/admin/price-include/${id}`,
-            method: 'PUT',
-            data: { is_included: newStatus },
+            url: `/admin/price-includes/${id}/toggle`,
+            type: 'PUT',
+            data: { is_included },
             success: function () {
                 $('#price-include-data-show').DataTable().ajax.reload();
             }

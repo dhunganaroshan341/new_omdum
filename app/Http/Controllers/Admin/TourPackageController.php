@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TourPackageRequest;
-use App\Models\Country;
+use App\Models\OurCountry;
 use App\Models\TourPackage;
 use App\Models\TourPackageImage;
 use App\Models\TourPackageVideo;
@@ -26,9 +26,9 @@ class TourPackageController extends Controller
         $this->latestOrder = TourPackage::max('order') ?? 0; // Get the maximum order value
         $this->latestOrder++; // Increment it for the next user
     }
-    public function index(Request $request)
+public function index(Request $request)
 {
-    $countries = Country::all();
+    $countries = OurCountry::all();
 
     if ($request->ajax()) {
         $search = $request->input('search.value');
@@ -38,41 +38,47 @@ class TourPackageController extends Controller
         $orderColumnIndex = $order['column'];
         $orderBy = $order['dir'];
         $start = $request->input('start');
+        $orderColumn = $columns[$orderColumnIndex]['data'];
 
-        $query = TourPackage::with('country')->withCount('images');
+        $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
+            ->select('tour_packages.*', 'our_countries.name as country_name')
+            ->with('country')
+            ->withCount('images');
+
         $total = $query->count();
 
         $filtered = $query->when($search, function ($q) use ($search) {
-            $q->where('title', 'LIKE', "%$search%")
-                ->orWhere('slug', 'LIKE', "%$search%")
-                ->orWhere('duration', 'LIKE', "%$search%")
-                ->orWhere('difficulty', 'LIKE', "%$search%")
-                ->orWhereHas('country', function ($q2) use ($search) {
-                    $q2->where('name', 'LIKE', "%$search%");
-                });
+            $q->where('tour_packages.title', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+                ->orWhere('our_countries.name', 'LIKE', "%$search%");
         });
 
         $filteredCount = $filtered->count();
 
         $data = $filtered
-            ->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
+            ->when($orderColumn === 'country', function ($q) use ($orderBy) {
+                $q->orderBy('country_name', $orderBy);
+            }, function ($q) use ($orderColumn, $orderBy) {
+                $q->orderBy($orderColumn, $orderBy);
+            })
             ->offset($start)
-            ->limit($pageSize);
+            ->limit($pageSize)
+            ->get();
 
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
-
             ->addColumn('itinerary', function ($item) {
                 return '
-                    <a href="javascript:void(0);" class="addItineraryBtn me-2" data-id="' . $item->id . '" title="Add Itinerary">
+                    <a href="javascript:void(0);" class="addItineraryBtn  me-2" data-id="' . $item->id . '" title="Add Itinerary">
                         <i class="fas fa-plus text-success"></i>
                     </a>
                     <a href="javascript:void(0);" class="viewItineraryBtn" data-id="' . $item->id . '" title="View Itinerary">
                         <i class="fas fa-eye text-primary"></i>
                     </a>';
             })
-
             ->addColumn('batches', function ($item) {
                 return '
                     <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
@@ -81,46 +87,39 @@ class TourPackageController extends Controller
                     <a href="javascript:void(0);" class="viewTourBatchBtn" data-id="' . $item->id . '" title="View Batches">
                         <i class="fas fa-eye text-info"></i>
                     </a>';
-            }) ->addColumn('package_includes', function ($item) {
-    return '
-        <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
-            <i class="fas fa-plus text-success"></i>
-        </a>
-        <a href="javascript:void(0);" class="viewPriceIncludeBtn" data-id="' . $item->id . '" title="View Price Includes">
-            <i class="fas fa-eye text-info"></i>
-        </a>
-    ';
-})
-
+            })
+            ->addColumn('package_includes', function ($item) {
+                return '
+                    <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="viewPriceIncludeBtn" data-id="' . $item->id . '" title="View Price Includes">
+                        <i class="fas fa-eye text-info"></i>
+                    </a>';
+            })
             ->addColumn('images', function ($item) {
                 $imageCount = $item->images_count ?? 0;
-
                 return '
                     <a href="javascript:void(0);" class="imageListPopup" data-id="' . $item->id . '" title="View Images">
-            <span class="badge bg-info">' . $imageCount . ' <i class="fas fa-images ms-1"></i></span>
-        </a>
+                        <span class="badge bg-info">' . $imageCount . ' <i class="fas fa-images ms-1"></i></span>
+                    </a>
                     <a href="javascript:void(0);" class="editUploads" data-id="' . $item->id . '" title="Edit Uploads">
                         <i class="fas fa-pencil-alt text-warning"></i>
                     </a>';
             })
-
             ->addColumn('status', function ($item) {
                 $checked = $item->status === 'Active' ? 'checked' : '';
                 return '<div class="form-check form-switch">
                             <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
                         </div>';
             })
-
             ->addColumn('action', function ($item) {
                 return view('Admin.Button.button', ['data' => $item])->render();
             })
-
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
-
-            ->rawColumns(['batches', 'package_includes','images', 'itinerary', 'status', 'action'])
-
+            ->rawColumns(['country','batches', 'package_includes','images', 'itinerary', 'status', 'action'])
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,
@@ -128,7 +127,6 @@ class TourPackageController extends Controller
             ->make(true);
     }
 
-    // Load page normally if not AJAX
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
@@ -149,6 +147,7 @@ class TourPackageController extends Controller
         'countries' => $countries,
     ]);
 }
+
 
 
     public function latestOrder()
@@ -199,7 +198,7 @@ class TourPackageController extends Controller
         'best_season',
         'start_point',
         'end_point',
-        'country_id',
+        'our_country_id',
         'status',]);
             if ($request->hasFile('image')) {
                 $path = '/images/TourPackage/';

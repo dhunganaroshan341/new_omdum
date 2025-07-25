@@ -13,6 +13,7 @@
                         <th scope="col">S.N</th>
                         <th scope="col">Action</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Country</th>
                         <th scope="col">Images</th>
                         <th scope="col">Duration</th>
                         <th scope="col">Itinerary</th>

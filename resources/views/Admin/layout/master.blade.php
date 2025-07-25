@@ -40,6 +40,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.bookings.index') }}">
+                            <i class="mdi mdi-account-multiple-check menu-icon"></i>
+                            <span class="menu-title">Bookings</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.user') }}">
                             <i class="mdi mdi-account menu-icon"></i>
                             <span class="menu-title">Users</span>
@@ -127,6 +134,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admin.tour-packages.index') }}">
                                         <i class="mdi mdi-clipboard-text menu-icon"></i> Manage
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.bookings.index') }}">
+                                        <i class="mdi mdi-account-multiple-check menu-icon"></i>
+                                        Bookings
                                     </a>
                                 </li>
                             </ul>

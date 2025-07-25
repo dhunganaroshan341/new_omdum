@@ -16,7 +16,9 @@ $(document).ready(function () {
             { data: "image", name: "image", orderable: false, searchable: false },
             { data: "page", name: "page" },
             { data: "title", name: "title" },
+            { data: "iframe", name: "iframe" },
             { data: "description", name: "description" },
+            // { data: "link", name: "link" },
             { data: "status", name: "status", orderable: false, searchable: false },
             { data: "link", name: "link" },
             { data: "action", name: "action", orderable: false, searchable: false }
@@ -74,6 +76,7 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 $("#title").val(response.message.title);
+                $("#title").val(response.message.iframe);
                 $("#formModalLabel").val(response.message.page+' CTA');
 
                 $("#description").summernote('code', response.message

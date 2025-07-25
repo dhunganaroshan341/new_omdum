@@ -17,7 +17,7 @@ class TourPackageRequest extends FormRequest
     $tourPackageId = $this->route('id');
 
     return [
-        'country_id' => 'required|exists:countries,id',
+        'our_country_id' => 'required|exists:our_countries,id',
         'service_id' => '|exists:countries,id',
         'title' => 'required|string|max:255',
         'slug' => [

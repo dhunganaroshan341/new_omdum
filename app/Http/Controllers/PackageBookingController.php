@@ -3,25 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Models\PackageBooking;
+use App\Models\TourPackage;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class PackageBookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
+   public function index($tourPackageId, Request $request)
+{
+    if ($request->ajax()) {
+        $query = PackageBooking::where('tour_package_id', $tourPackageId)->latest();
+
+        return DataTables::of($query)
+            ->addIndexColumn()
+            ->addColumn('action', function ($item) {
+                return '
+                    <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-warning editTourBatchBtn" data-id="' . $item->id . '">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger deleteTourBatchBtn" data-id="' . $item->id . '">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                ';
+            });
+
     }
+
+    // Optional full page load for fallback or debugging
+    $tourPackage = TourPackage::findOrFail($tourPackageId);
+    return view('Admin.pages.TourBatch.index', compact('tourPackage'));
+}
 
     /**
      * Store a newly created resource in storage.

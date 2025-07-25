@@ -41,7 +41,7 @@ class TourPackage extends BaseModel
         'is_featured',
     ];
     public function country() {
-    return $this->belongsTo(Country::class);
+    return $this->belongsTo(OurCountry::class);
 }
 
 public function itineraries() {

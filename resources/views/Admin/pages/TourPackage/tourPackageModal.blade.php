@@ -32,7 +32,7 @@
 
                         <div class="col-md-6">
                             <label>Country <span class="text-danger">*</span></label>
-                            <select name="country_id" class="form-select" required>
+                            <select name="our_country_id" class="form-select" required>
                                 <option value="">-- Select Country --</option>
                                 @foreach ($countries as $country)
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>

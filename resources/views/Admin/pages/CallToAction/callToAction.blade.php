@@ -12,6 +12,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">Page</th>
                         <th scope="col">title</th>
+                        <th scope="col">iframe</th>
                         <th scope="col">description</th>
                         <th scope="col">Status</th>
                         <th scope="col">link</th>
@@ -22,5 +23,4 @@
         </div>
 
     </div>
-
 @endsection
