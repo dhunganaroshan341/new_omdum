@@ -26,7 +26,7 @@
             </table>
         </div>
     </div>
-    @include('Admin.pages.TourPackage.tourPackageUploadModal') <!-- ✅ Modal here -->
+    @include('Admin.pages.TourPackage.theTourPackageUploadModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.itineraryTableModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.tourBatchModal') <!-- ✅ Modal here -->
     @include('Admin.pages.TourPackage.tourBatchTable') <!-- ✅ Modal here -->
