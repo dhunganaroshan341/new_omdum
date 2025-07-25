@@ -12,6 +12,7 @@
                         <thead>
                             <tr>
                                 <th>S.N</th>
+                                <th>Action</th>
                                 <th>Package</th>
                                 <th>Name</th>
                                 <th>Email</th>
