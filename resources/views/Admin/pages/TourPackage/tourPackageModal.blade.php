@@ -16,7 +16,6 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body px-4 py-3" style="max-height: calc(100vh - 200px); overflow-y: auto;">
-
                     <div class="row g-4">
 
                         <div class="col-md-6">
@@ -52,151 +51,96 @@
                             <label>Duration</label>
                             <input type="text" name="duration" class="form-control" placeholder="e.g., 12 Days">
                         </div>
+
                         <div class="col-md-6">
-                            <div class="col-md-6">
-                                <label for="max_people">Max People</label>
-                                <input type="number" name="max_people" id="max_people" class="form-control"
-                                    placeholder="e.g., 30">
-                            </div>
+                            <label for="max_people">Max People</label>
+                            <input type="number" name="max_people" id="max_people" class="form-control"
+                                placeholder="e.g., 30">
+                        </div>
 
-                            <div class="col-md-6">
-                                <label for="available_seat">Available Seat</label>
-                                <input type="number" name="available_seat" id="available_seat" class="form-control"
-                                    placeholder="e.g., 15">
-                            </div>
+                        <div class="col-md-6">
+                            <label for="available_seat">Available Seat</label>
+                            <input type="number" name="available_seat" id="available_seat" class="form-control"
+                                placeholder="e.g., 15">
+                        </div>
 
+                        <div class="col-md-6">
+                            <label>Difficulty</label>
+                            <select name="difficulty" class="form-select">
+                                <option value="">-- Select --</option>
+                                <option value="easy">Easy</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
 
-                            <div class="col-md-6">
-                                <label>Difficulty</label>
-                                <select name="difficulty" class="form-select">
-                                    <option value="">-- Select --</option>
-                                    <option value="easy">Easy</option>
-                                    <option value="moderate">Moderate</option>
-                                    <option value="hard">Hard</option>
-                                </select>
-                            </div>
+                        <div class="col-md-6">
+                            <label>Max Elevation (m)</label>
+                            <input type="number" name="max_elevation" class="form-control">
+                        </div>
 
-                            <div class="col-md-6">
-                                <label>Max Elevation (m)</label>
-                                <input type="number" name="max_elevation" class="form-control">
-                            </div>
+                        <div class="col-md-6">
+                            <label>Best Season</label>
+                            <input type="text" name="best_season" class="form-control" placeholder="e.g., March-May">
+                        </div>
 
-                            <div class="col-md-6">
-                                <label>Best Season</label>
-                                <input type="text" name="best_season" class="form-control"
-                                    placeholder="e.g., March-May">
-                            </div>
+                        <div class="col-md-6">
+                            <label>Start Point</label>
+                            <input type="text" name="start_point" class="form-control">
+                        </div>
 
-                            <div class="col-md-6">
-                                <label>Start Point</label>
-                                <input type="text" name="start_point" class="form-control">
-                            </div>
+                        <div class="col-md-6">
+                            <label>End Point</label>
+                            <input type="text" name="end_point" class="form-control">
+                        </div>
 
-                            <div class="col-md-6">
-                                <label>End Point</label>
-                                <input type="text" name="end_point" class="form-control">
-                            </div>
+                        <div class="col-12">
+                            <label class="form-label">Tour Package Tags</label>
+                            <div class="d-flex flex-wrap gap-4 align-items-center py-2">
+                                <!-- Top Deal Toggle -->
+                                <div class="form-check form-switch">
+                                    <input type="hidden" name="top_deal" value="0">
+                                    <input class="form-check-input" type="checkbox" id="topDealSwitch" name="top_deal"
+                                        value="1">
+                                    <label class="form-check-label ms-2" for="topDealSwitch">Top Deal</label>
+                                </div>
 
-
-                            <div class="col-12">
-                                <label class="form-label">Tour Package Tags</label>
-                                <div class="d-flex flex-wrap gap-4 justify-content-center align-items-center py-2">
-                                    <!-- Top Deal Toggle -->
-                                    <div class="form-check form-switch">
-                                        <input type="hidden" name="top_deal" value="0">
-                                        <input class="form-check-input" type="checkbox" id="topDealSwitch"
-                                            name="top_deal" value="1">
-                                        <label class="form-check-label ms-2" for="topDealSwitch">Top Deal</label>
-                                    </div>
-
-                                    <!-- Favourite Destination Toggle -->
-                                    <div class="form-check form-switch ml-4">
-                                        <input type="hidden" name="favourite_destination" value="0">
-                                        <input class="form-check-input" type="checkbox"
-                                            id="favouriteDestinationSwitch" name="favourite_destination"
-                                            value="1">
-                                        <label class="form-check-label ms-2"
-                                            for="favouriteDestinationSwitch">Favourite
-                                            Destination</label>
-                                    </div>
+                                <!-- Favourite Destination Toggle -->
+                                <div class="form-check form-switch">
+                                    <input type="hidden" name="favourite_destination" value="0">
+                                    <input class="form-check-input" type="checkbox" id="favouriteDestinationSwitch"
+                                        name="favourite_destination" value="1">
+                                    <label class="form-check-label ms-2" for="favouriteDestinationSwitch">
+                                        Favourite Destination
+                                    </label>
                                 </div>
                             </div>
-
-
-
-                            <div class="col-12">
-                                <label>Short Description</label>
-                                <textarea name="short_description" rows="3" class="form-control"></textarea>
-                            </div>
-
-                            <div class="col-12">
-                                <label for="testimonialDescription" class="form-label">Description <span
-                                        class="text-danger">*</span></label>
-                                <textarea class="form-control summernote" id="testimonialDescription" name="long_description" rows="5"
-                                    style="min-height: 250px;"></textarea>
-                            </div>
-
-
-
-
                         </div>
-                    </div>
 
-                    <!-- Modal Footer -->
-                    <div class="modal-footer px-4 py-3">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success submitBtn" data-action="">Submit</button>
-                        <button type="submit" class="btn btn-success updateBtn" data-action="edit">Update
-                            Package</button>
-                    </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="imageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="formId" class="form">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center" id="postImageTitle">Image List</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner fetch-post-image-data">
-
+                        <div class="col-12">
+                            <label>Short Description</label>
+                            <textarea name="short_description" rows="3" class="form-control"></textarea>
                         </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+
+                        <div class="col-12">
+                            <label for="testimonialDescription" class="form-label">Description <span
+                                    class="text-danger">*</span></label>
+                            <textarea class="form-control summernote" id="testimonialDescription" name="long_description" rows="5"
+                                style="min-height: 250px;"></textarea>
+                        </div>
+
                     </div>
                 </div>
-                <div class="modal-footer">
+
+                <!-- Modal Footer -->
+                <div class="modal-footer px-4 py-3">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success submitBtn" data-action="">Submit</button>
+                    <button type="submit" class="btn btn-success updateBtn" data-action="edit">Update
+                        Package</button>
                 </div>
+
             </form>
         </div>
     </div>
 </div>
-{{-- @push('styles')
-    <style>
-        .form-check .form-check-label {
-            min-height: 18px;
-            display: block;
-            margin-left: 1.75rem;
-            font-size: 0.812rem;
-            line-height: 1.5;
-            padding-right: 30px !important;
-        }
-    </style>
-@endpush --}}
