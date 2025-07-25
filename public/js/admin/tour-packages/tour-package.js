@@ -33,6 +33,9 @@ function populateTourPackageForm(tour_package) {
     $("input[name='best_season']").val(tour_package.best_season);
     $("input[name='start_point']").val(tour_package.start_point);
     $("input[name='end_point']").val(tour_package.end_point);
+    $("input[name='top_deal']").prop('checked', tour_package.top_deal == 1);
+$("input[name='fav_destination']").prop('checked', tour_package.fav_destination == 1);
+
 
     $("textarea[name='short_description']").val(tour_package.short_description);
 
