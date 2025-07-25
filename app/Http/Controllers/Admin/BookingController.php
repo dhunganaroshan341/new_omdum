@@ -15,7 +15,7 @@ class BookingController extends Controller
     public function index()
     {
         $bookings = PackageBooking::with('tourPackage','tourBatch')->latest()->get();
-        return view('admin.bookings.index', compact('bookings'));
+        return view('Admin.bookings.index', compact('bookings'));
     }
    public function store(StorePackageBookingRequest $request)
 {
