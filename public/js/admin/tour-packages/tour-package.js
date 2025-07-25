@@ -357,6 +357,42 @@ $(document).on("change", ".statusToggle", function () {
         }
     });
 });
+$(document).on("change", ".toggleTopDeals", function () {
+    let id = $(this).data("id");
+    let checkbox = $(this);
+    checkbox.prop("disabled", true);
+
+    Swal.fire({
+        icon: "warning",
+        title: "Are you sure?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, change it!"
+    }).then(result => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "/admin/tour-packages/status/"+id,
+                type: "PUT", // Corrected: type instead of "method" and "put"
+                data: {
+                    status: checkbox.prop("checked") ? "Active" : "InActive", // pass status value
+                    _token: $('meta[name="csrf-token"]').attr("content") // ensure CSRF token is sent
+                },
+                success: function () {
+                    table.draw();
+                    checkbox.prop("disabled", false);
+                },
+                error: function () {
+                    checkbox.prop("disabled", false);
+                    checkbox.prop("checked", !checkbox.prop("checked")); // revert change on error
+                }
+            });
+        } else {
+            checkbox.prop("disabled", false);
+            checkbox.prop("checked", !checkbox.prop("checked"));
+        }
+    });
+});
 
 
     // Delete tour_package

@@ -177,6 +177,37 @@ public function index(Request $request)
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
     }
+    public function topDeal($id)
+    {
+        try {
+            $data = TourPackage::find($id);
+
+            if ($data->top_deal === 1) {
+                $data->top_deal = 0;
+            } else {
+                $data->top_deal = 1;
+            }
+            $data->save();
+            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }  public function favDestination($id)
+    {
+        try {
+            $data = TourPackage::find($id);
+
+            if ($data->favourite_destination === 1) {
+                $data->favourite_destination = 0;
+            } else {
+                $data->favourite_destination = 1;
+            }
+            $data->save();
+            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
 
 
 
@@ -235,6 +266,7 @@ public function index(Request $request)
      */
    public function update(TourPackageRequest $request, $id)
     {
+        dd($request->all());
         DB::beginTransaction();
         try {
             $album = TourPackage::findOrFail($id);

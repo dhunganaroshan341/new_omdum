@@ -29,6 +29,10 @@
                             @forelse ($bookings as $booking)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
+                                    <td>
+
+                                        {{-- <a href="" id="viewDetail"></a> --}}
+                                    </td>
 
                                     {{-- Package title --}}
                                     <td>{{ $booking->tourPackage->title ?? 'N/A' }}</td>
