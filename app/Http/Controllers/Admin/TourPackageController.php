@@ -238,8 +238,12 @@ public function index(Request $request)
         DB::beginTransaction();
         try {
             $album = TourPackage::findOrFail($id);
+           $validated = $request->validated();
 
-            $album->update($request->validated());
+$validated['top_deal'] = $request->has('top_deal') ? 1 : 0;
+$validated['favourite_destination'] = $request->has('favourite_destination') ? 1 : 0;
+
+            $album->update($validated);
             $gallery = $album;
             if ($request->hasFile('image_path')) {
                 foreach ($request->media_path as $key => $value) {
