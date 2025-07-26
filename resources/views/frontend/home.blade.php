@@ -9,6 +9,7 @@
     <!-- Fav destination Starts -->
 
     <x-fav-destination />
+    <h4 class="text-danger">this is it</h4>
     <!-- Fav destination Ends -->
 
 
