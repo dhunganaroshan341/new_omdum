@@ -19,4 +19,9 @@ class OurCountry extends BaseModel
     public function packages() {
     return $this->hasMany(TourPackage::class);
 }
+public function tourPackages()
+{
+    return $this->hasMany(TourPackage::class);
+}
+
 }
