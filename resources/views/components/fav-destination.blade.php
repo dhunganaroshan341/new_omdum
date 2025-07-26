@@ -5,6 +5,7 @@
         </div>
 
         <div class="trend-box">
+            @dd($favouriteDestinationsByCountry)
             {{-- Nav Tabs --}}
             <div class="price-navtab text-center mb-4">
                 <ul class="nav nav-tabs">
