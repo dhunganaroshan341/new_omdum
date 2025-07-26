@@ -14,7 +14,7 @@ class FavDestination extends Component
     public function __construct()
     {
         // Load all countries, eager load only favourite packages
-        $countries = OurCountry::with(['tourPackages' => function ($query) {
+        $countries = OurCountry::with(['packages' => function ($query) {
             $query->where('favourite_destination', 1);
         }])->get();
 
