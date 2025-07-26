@@ -3,7 +3,6 @@
 
 namespace App\View\Components;
 
-use App\Models\Package;
 use App\Models\TourPackage;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -19,6 +18,7 @@ class FavDestination extends Component
         $packages = TourPackage::with('country')
             ->where('favourite_destination', 1)
             ->get();
+            dd($packages);
 
         // Group by country name or object
         $this->favouriteDestinationsByCountry = $packages
