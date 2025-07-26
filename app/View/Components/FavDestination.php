@@ -18,7 +18,7 @@ class FavDestination extends Component
         $packages = TourPackage::with('country')
             ->where('favourite_destination', 1)
             ->get();
-            dd($packages);
+            // dd($packages);
 
         // Group by country name or object
         $this->favouriteDestinationsByCountry = $packages
