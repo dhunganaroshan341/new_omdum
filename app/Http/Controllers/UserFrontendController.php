@@ -32,7 +32,9 @@ class UserFrontendController extends Controller
     $homeslides = HomeSlide::where('status', 'Active')->get();
     $testimonials = Testimonial::where('status', 'Active')->get();
     $destinations = Destination::where('status', 'Active')->get();
-    $favDestinations = (new HomeSampleData())->getSampleData('destinations');
+    $topDestinations = Destination::where('status', 'Active')->where('top_destination',1)->get();
+    $favDestinations = Destination::where('status', 'Active')->where('favourite_destination',1)->get();
+
     $clients = \App\Models\Client::with('albums')->get();
     $services = Service::where('status', 1)->get();
     $content_title = "Home";
