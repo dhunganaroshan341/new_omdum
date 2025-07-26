@@ -14,7 +14,7 @@ class TourPackage extends BaseModel
 ];
 
      protected $fillable = [
-        'country_id',
+        'our_country_id',
         'service_id',
         'type',
         'images',

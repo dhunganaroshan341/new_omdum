@@ -5,15 +5,15 @@
         </div>
 
         <div class="trend-box">
-            @dd($favouriteDestinationsByCountry)
-            {{-- Nav Tabslklk --}}
+
+            {{-- Nav Tabs --}}
             <div class="price-navtab text-center mb-4">
                 <ul class="nav nav-tabs">
-                    @foreach ($favouriteDestinationsByCountry as $country => $packages)
+                    @foreach ($favouriteDestinationsByCountry as $country)
                         <li class="nav-item">
                             <a class="nav-link {{ $loop->first ? 'active' : '' }}" data-bs-toggle="tab"
-                                href="#{{ Str::slug($country) }}">
-                                {{ $country }}
+                                href="#{{ Str::slug($country->name) }}">
+                                {{ $country->name }}
                             </a>
                         </li>
                     @endforeach
@@ -22,10 +22,11 @@
 
             {{-- Tab Contents --}}
             <div class="tab-content">
-                @foreach ($favouriteDestinationsByCountry as $country => $packages)
-                    <div id="{{ Str::slug($country) }}" class="tab-pane fade {{ $loop->first ? 'show active' : '' }}">
+                @foreach ($favouriteDestinationsByCountry as $country)
+                    <div id="{{ Str::slug($country->name) }}"
+                        class="tab-pane fade {{ $loop->first ? 'show active' : '' }}">
                         <div class="row">
-                            @foreach ($packages as $package)
+                            @foreach ($country->tourPackages as $package)
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="trend-item">
                                         <div class="trend-image">
@@ -43,7 +44,7 @@
                                                     <i class="fa fa-eye me-1"></i>
                                                     {{ $package->visiting_places ?? '0' }} Visiting Places
                                                     <i class="fa fa-map-marker me-1 ms-3"></i>
-                                                    {{ $country }}
+                                                    {{ $country->name }}
                                                 </p>
                                             </div>
                                             <div class="trend-last-main">
