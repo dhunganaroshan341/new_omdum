@@ -6,6 +6,7 @@ use App\Http\Requests\ContactRequest;
 use App\Models\CallToAction;
 use App\Models\Category;
 use App\Models\Destination;
+use App\Models\TourPackage;
 use App\SampleData\HomeSampleData;
 use Illuminate\Http\Request;
 use App\Models\frontend;
@@ -31,9 +32,9 @@ class UserFrontendController extends Controller
     $frontend = Setting::first();
     $homeslides = HomeSlide::where('status', 'Active')->get();
     $testimonials = Testimonial::where('status', 'Active')->get();
-    $destinations = Destination::where('status', 'Active')->get();
-    $topDestinations = Destination::where('status', 'Active')->where('top_deal',1)->get();
-    $favDestinations = Destination::where('status', 'Active')->where('favourite_destination',1)->get();
+    $destinations = TourPackage::where('status', 'Active')->get();
+    $topDestinations = TourPackage::where('status', 'Active')->where('top_deal',1)->get();
+    $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
 
     $clients = \App\Models\Client::with('albums')->get();
     $services = Service::where('status', 1)->get();
