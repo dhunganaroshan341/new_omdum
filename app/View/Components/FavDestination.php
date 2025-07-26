@@ -19,7 +19,7 @@ class FavDestination extends Component
         }])->get();
 
         // Filter countries to only those having favourite packages
-        $this->favouriteDestinationsByCountry = $countries->filter(fn($country) => $country->tourPackages->isNotEmpty());
+        $this->favouriteDestinationsByCountry = $countries->filter(fn($country) => $country->packages->isNotEmpty());
     }
 
     public function render(): View|Closure|string
