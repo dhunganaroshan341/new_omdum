@@ -1,28 +1,34 @@
 <?php
+<?php
+
 namespace App\View\Components;
 
-use App\Models\OurCountry;
+use App\Models\Package;
+use App\Models\TourPackage;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class FavDestination extends Component
 {
-    public $destinationsByCountry;
+    public $favouriteDestinationsByCountry;
 
     public function __construct()
     {
-        $this->destinationsByCountry = OurCountry::with(['packages' => function ($query) {
-            $query->where('favourite_destination', 1);
-        }])->get()->filter(function ($country) {
-            return $country->tourPackages->isNotEmpty();
-        });
+        // Eager load 'country' relationship
+        $packages = TourPackage::with('country')
+            ->where('favourite_destination', 1)
+            ->get();
+
+        // Group by country name or object
+        $this->favouriteDestinationsByCountry = $packages
+            ->groupBy(function ($package) {
+                return $package->country?->name ?? 'Unknown';
+            });
     }
 
     public function render(): View|Closure|string
     {
-        return view('components.fav-destination', [
-            'destinationsByCountry' => $this->destinationsByCountry
-        ]);
+        return view('components.fav-destination');
     }
 }
