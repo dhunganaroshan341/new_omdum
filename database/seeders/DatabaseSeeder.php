@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
             ServiceQuerySeeder::class,
             CountrySeeder::class,
             TourPackageSeeder::class,
+            AchievementSeeder::class,
         ]);
     }
 }
