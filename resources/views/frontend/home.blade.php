@@ -1,7 +1,7 @@
 @extends('frontend.layout.main')
 @section('content')
     <!-- banner starts -->
-    @include('components.youtube-banner-video')
+    @include('components.youtube-banner-simple')
     <!-- banner ends -->
 
 

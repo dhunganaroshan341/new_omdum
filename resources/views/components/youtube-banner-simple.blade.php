@@ -12,19 +12,10 @@
 
     <!-- Responsive YouTube Iframe wrapper -->
     <div class="position-absolute top-0 start-0 w-100 h-100 overflow-hidden" style="z-index: 1;">
-        <iframe id="videoIframe"
-            src="https://www.youtube.com/embed/8efveLZ3E24?autoplay=1&mute=1&loop=1&playlist=8efveLZ3E24&controls=0&modestbranding=1&rel=0"
-            title="YouTube video player" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen
-            loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-            style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 177.77vh;  /* 100vh * (16/9) to maintain 16:9 ratio */
-        height: 100vh;
-        transform: translate(-50%, -50%);
-        border: none;
-      "></iframe>
+        <iframe width="100%" height="70vh" src="https://www.youtube.com/embed/-451q_49OnY?si=t-35xNp0s4lXS1ko"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </section>
 

@@ -80,5 +80,8 @@ public function getDurationAttribute($value)
     $number = (int) $value; // cast string to integer
     return $number . ' ' . Str::plural('day', $number);
 }
+// public function getFirstImageAttribute(){
+// }    TourPackage->
+
 
 }
