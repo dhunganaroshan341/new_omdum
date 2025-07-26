@@ -18,7 +18,7 @@
                             <i class="fa fa-map-marker-alt"></i>
                             {{ $deal->country->name ?? 'Unknown Location' }}
                         </h6>
-                        <h4><a href="{{ route('tour-packages.show', $deal->slug) }}">{{ $deal->title }}</a></h4>
+                        <h4><a href="{{ route('packages.show', $deal->slug) }}">{{ $deal->title }}</a></h4>
                         <p>{{ Str::limit($deal->short_description, 60) }}</p>
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From
