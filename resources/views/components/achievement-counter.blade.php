@@ -3,6 +3,7 @@
     <div class="container">
         <div class="counter text-center">
             <div class="row">
+                @dd($achievements)
                 @foreach ($achievements as $achievement)
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="counter-item bg-lgrey">
