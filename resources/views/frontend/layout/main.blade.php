@@ -31,7 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('styles')
     <style>
-        .body {
+        body {
             background: #f1f1f1 !important;
         }
 
