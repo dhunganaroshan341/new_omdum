@@ -17,6 +17,7 @@ $(document).ready(function () {
         $('#tour_package_id').val(packageId);
         $('#price_include_id').val('');
 
+
         $('#submitPriceIncludeBtn').show();
         $('#updatePriceIncludeBtn').hide();
 

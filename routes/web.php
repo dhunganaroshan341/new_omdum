@@ -225,7 +225,7 @@ Route::prefix('itineraries')->name('itineraries.')->group(function () {
     Route::delete('/delete/{id}', [ItineraryController::class, 'destroy'])->name('destroy');
     Route::get('/latest-order/{id}', [ItineraryController::class, 'getLatestOrder'])->name('latestOrder');
 });
- Route::get('price-includes/{tourPackageId}', [PriceIncludesController::class, 'index']);
+    Route::get('price-includes/{tourPackageId}', [PriceIncludesController::class, 'index']);
     Route::post('price-includes', [PriceIncludesController::class, 'store']);
     Route::get('price-includes/show/{id}', [PriceIncludesController::class, 'show']);
     Route::put('price-includes/{id}', [PriceIncludesController::class, 'update']);

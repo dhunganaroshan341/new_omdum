@@ -34,6 +34,7 @@
                     </div>
 
                     <input type="hidden" id="editingIndex">
+                    <input type="hidden" id="tour_pacage_id" name="tour_package_id">
                 </div>
 
                 <div class="modal-footer px-4 pb-3">
