@@ -19,7 +19,9 @@ $(document).on('click', '.addItineraryBtn', function () {
         // console.log("Tour Package ID:", modalEl);
 
         $("#itineraryModal").modal("show");
-        $('#updateItineraryBtn').attr('hidden',true);
+        // Hide submit button and show update
+
+$('#updateItineraryBtn').hide();
         $('#tour_package_id').val(id);
         $('#day_number').val(1);
 
