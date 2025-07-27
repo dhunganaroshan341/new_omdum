@@ -4,6 +4,7 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content shadow-lg">
             <form id="priceIncludeForm">
+                <input type="hidden" name="tour_package_id" id="tour_package_id">
                 @csrf
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="priceItemModalLabel">
@@ -34,7 +35,7 @@
                     </div>
 
                     <input type="hidden" id="editingIndex">
-                    <input type="hidden" name="tour_package_id" id="tour_package_id">
+
                 </div>
 
                 <div class="modal-footer px-4 pb-3">
