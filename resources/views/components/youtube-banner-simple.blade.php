@@ -1,10 +1,10 @@
-<div style="position: relative; width: 1920px; height: 680px;">
-    <iframe id="videoIframe" width="1920px" height="680px"
+<div style="position: relative; width: 100%; max-width: 1920px; aspect-ratio: 16 / 9; overflow: hidden;">
+    <iframe id="videoIframe"
         src="https://www.youtube.com/embed/-451q_49OnY?autoplay=1&mute=1&loop=1&playlist=-451q_49OnY&controls=0&modestbranding=1&rel=0&disablekb=1&fs=0"
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-        style="position: relative; z-index: 1; pointer-events: none;">
+        style="position: absolute; top: 50%; left: 50%; width: 177.77%; height: 100%; transform: translate(-50%, -50%); pointer-events: none;">
     </iframe>
 
     <div id="videoPlaceholder"
@@ -19,6 +19,21 @@
         /* Make iframe unclickable */
         #videoIframe {
             pointer-events: none;
+        }
+
+        /* Responsive container */
+        div[style*="position: relative"] {
+            max-width: 100vw;
+            /* full viewport width */
+            height: auto;
+        }
+
+        /* Optional: Make sure body and html don't add unwanted margin or overflow */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
     </style>
 @endpush
