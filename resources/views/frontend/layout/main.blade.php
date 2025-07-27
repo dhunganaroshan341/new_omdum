@@ -31,6 +31,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('styles')
     <style>
+        .body {
+            background: #f1f1f1;
+        }
+
         .dot-overlay {
             background: #162241 url('{{ asset('template/yatri_world/main-file/images/dot-overlay.png') }}') !important;
             /* pointer-events: none; */
