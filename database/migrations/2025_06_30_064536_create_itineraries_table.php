@@ -16,9 +16,12 @@ return new class extends Migration
             $table->unsignedInteger('day_number')->nullable();
             $table->enum('status', ['Active', 'Inactive'])->default('Active');
             $table->string('title')->nullable();
-            $table->unsignedInteger('order')->default(0)->unique();
+            $table->unsignedInteger('order')->default(0);
             $table->text('description');
             $table->timestamps();
+
+            // Add composite unique index for tour_package_id + order
+            $table->unique(['tour_package_id', 'order'], 'itineraries_package_order_unique');
         });
     }
 
