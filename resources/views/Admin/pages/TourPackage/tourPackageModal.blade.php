@@ -138,8 +138,12 @@
 
 
                         <div class="col-12">
+                            <label>Accomodation</label>
+                            <textarea name="accomodation" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="col-12">
                             <label>Short Description</label>
-                            <textarea name="short_description" rows="3" class="form-control"></textarea>
+                            <textarea name="short_description" rows="5" class="form-control"></textarea>
                         </div>
 
                         <div class="col-12">

@@ -22,6 +22,7 @@ class TourPackage extends BaseModel
         'images',
         'title',
         'drop',
+        'accomodation',
         'pickup',
         'price',
         'price_includes',
