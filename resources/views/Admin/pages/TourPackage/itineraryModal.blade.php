@@ -26,7 +26,7 @@
 
                         <!-- Day Number -->
                         <div class="col-md-6">
-                            <label for="day_number" class="form-label">Day Number</label>
+                            <label for="day_number" class="form-label"> Number of Days</label>
                             <input type="number" class="form-control" id="day_number" name="day_number" min="1"
                                 max="365" placeholder="e.g. 1">
                         </div>
