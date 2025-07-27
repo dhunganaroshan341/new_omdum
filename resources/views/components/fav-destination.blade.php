@@ -30,7 +30,7 @@
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="trend-item">
                                         <div class="trend-image">
-                                            <img src="{{ asset($package->images[0] ?? 'template/yatri_world/main-file/images/default.jpg') }}"
+                                            <img src="{{ asset($package->images[0] ?? 'template/yatri_world/main-file/images/everest.jpg') }}"
                                                 alt="{{ $package->title }}">
                                         </div>
                                         <div class="trend-content-main">

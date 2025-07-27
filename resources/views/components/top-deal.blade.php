@@ -9,7 +9,7 @@
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
                         {{-- Show first image or fallback --}}
-                        <img src="{{ isset($deal->images[0]) ? asset($deal->images[0]) : asset('template/yatri_world/main-file/images/default.jpg') }}"
+                        <img src="{{ isset($deal->images[0]) ? asset($deal->images[0]) : asset('template/yatri_world/main-file/images/india.jpg') }}"
                             alt="{{ $deal->title }}">
                     </div>
                     <div class="slider-content">
