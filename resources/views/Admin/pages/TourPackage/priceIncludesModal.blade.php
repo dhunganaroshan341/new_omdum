@@ -4,8 +4,10 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content shadow-lg">
             <form id="priceIncludeForm">
-                <input type="hidden" name="tour_package_id" id="tour_package_id">
+
                 @csrf
+                <input type="hidden" name="tour_package_id" id="tour_package_id">
+                <input type="hidden" name="price_include_id" id="price_include_id">
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="priceItemModalLabel">
                         <i class="fas fa-money-bill me-2"></i> Add / Edit Price Item
