@@ -3,7 +3,7 @@
     aria-labelledby="priceItemModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content shadow-lg">
-            <form id="priceItemForm" method="post">
+            <form id="priceIncludeForm">
                 @csrf
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="priceItemModalLabel">
