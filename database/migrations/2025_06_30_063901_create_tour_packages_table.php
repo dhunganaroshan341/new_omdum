@@ -27,6 +27,7 @@ return new class extends Migration
             $table->boolean('favourite_destination')->default(0);
             $table->string('location')->nullable();
             $table->string('duration')->nullable();
+            $table->string('accomodation')->nullable();
             $table->string('type')->nullable();
             $table->enum('difficulty', ['easy', 'moderate', 'hard'])->nullable();
             $table->enum('package_type', ['trekking', 'tour', 'other'])->default('tour');
