@@ -48,6 +48,8 @@ class TourPackage extends BaseModel
 
 public function itineraries() {
     return $this->hasMany(Itinerary::class);
+}public function priceIncludes() {
+    return $this->hasMany(PriceInclude::class);
 }
 
 public function images() {

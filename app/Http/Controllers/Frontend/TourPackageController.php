@@ -34,7 +34,7 @@ class TourPackageController extends Controller
     public function show($slug)
     {
       $countries = $this->countries; // associative array code => country name
-        $package = TourPackage::where('slug', $slug)->where('status', 'Active')->firstOrFail();
+        $package = TourPackage::with('priceIncludes','images','itineraries')->where('slug', $slug)->where('status', 'Active')->firstOrFail();
         $totalDays = $package->itineraries
             ->filter(fn ($item) => is_numeric($item->day_number))
             ->sum(fn ($item) => (int) $item->day_number);
