@@ -8,7 +8,7 @@ use App\Models\Booking;
 use App\Models\Service;
 use App\Models\TourPackage;
 use App\Models\TourPackageType;
-use WisdomDiala\Countrypkg\Models\Country;
+use WisdomDiala\Countrypkg\Models\OurCountry;
 
 use Illuminate\Http\Request;
 
