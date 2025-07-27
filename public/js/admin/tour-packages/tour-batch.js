@@ -111,6 +111,9 @@ $(document).ready(function () {
             data: formData,
             contentType: false,
             processData: false,
+            headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // ✅ Force it in request
+    },
             success: function (response) {
                 $(".btn").prop("disabled", false);
 
