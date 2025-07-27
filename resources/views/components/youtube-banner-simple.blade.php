@@ -4,7 +4,17 @@
         title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-        style="position: absolute; top: 50%; left: 50%; width: 177.77%; height: 100%; transform: translate(-50%, -50%); pointer-events: none;">
+        style="element {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 177.77%;
+	height: 125%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	/* object-fit: cover; */
+	/* height: 100vh; */
+}">
     </iframe>
 
     <div id="videoPlaceholder"
