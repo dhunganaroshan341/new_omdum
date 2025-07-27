@@ -38,7 +38,7 @@ class TourPackageController extends Controller
         $totalDays = $package->itineraries
             ->filter(fn ($item) => is_numeric($item->day_number))
             ->sum(fn ($item) => (int) $item->day_number);
-        $otherPackages = TourPackage::where('country_id', $package->country_id)->where('id', '!=', $package->id)->get();
+        $otherPackages = TourPackage::where('our_country_id', $package->our_country_id)->where('id', '!=', $package->id)->get();
         return view('frontend.packages-single', compact('countries','package', 'totalDays', 'otherPackages'));
     }
 
