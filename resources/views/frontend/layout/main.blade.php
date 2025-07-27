@@ -32,7 +32,7 @@
     @stack('styles')
     <style>
         .body {
-            background: #f1f1f1;
+            background: #f1f1f1 !important;
         }
 
         .dot-overlay {
