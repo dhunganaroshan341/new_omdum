@@ -127,6 +127,8 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
     let form = $(this);
     let formData = new FormData(this);
+    // ✅ Add token manually — just to be 100% sure Laravel gets it
+formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
 
     let isUpdate = form.attr("id") === "updateItineraryForm";
     let url = '';
@@ -154,9 +156,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
         data: formData,
         contentType: false,
         processData: false,
-          headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // ✅ Force it in request
-    },
+
         success: function (response) {
             $(".btn").prop("disabled", false);
             if (response.success) {
