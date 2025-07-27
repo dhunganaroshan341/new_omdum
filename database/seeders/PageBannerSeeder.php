@@ -15,7 +15,7 @@ class PageBannerSeeder extends Seeder
     {
         //
         $pageBanners = [
-            'home','gallery','blog','contact','about','services'
+            'all','home','gallery','blog','contact','about','services'
 
         ];
         foreach($pageBanners as $banner){
