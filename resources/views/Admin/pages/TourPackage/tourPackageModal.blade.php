@@ -23,10 +23,15 @@
                             <input type="text" name="title" class="form-control" required>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
                             <label>Slug</label>
                             <input type="text" name="slug" class="form-control"
                                 placeholder="Auto-generated if blank">
+                        </div>
+                        <div class="col-md-3">
+                            <label>Location</label>
+                            <input id = "location" type="text" name="location" class="form-control"
+                                placeholder="location">
                         </div>
 
                         <div class="col-md-6">

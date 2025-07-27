@@ -31,6 +31,7 @@ class TourPackageRequest extends FormRequest
             'short_description' => 'nullable|string',
             'long_description' => 'nullable|string',
             'itinerary' => 'nullable|string',
+            'location' => 'nullable|string',
             'duration' => 'nullable|string|max:100',
             'difficulty' => 'nullable|in:easy,moderate,hard',
             'max_elevation' => 'nullable|integer|min:0',

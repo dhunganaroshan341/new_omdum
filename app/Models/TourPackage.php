@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class TourPackage extends BaseModel
 {
@@ -17,6 +18,7 @@ class TourPackage extends BaseModel
         'our_country_id',
         'service_id',
         'type',
+        'location',
         'images',
         'title',
         'drop',
@@ -42,7 +44,23 @@ class TourPackage extends BaseModel
         'available_seat',
         'is_featured',
     ];
- public static function generateSlug($title, $id = null)
+
+
+
+public function location(): Attribute
+{
+    return Attribute::make(
+        set: function ($value) {
+            // If location is empty and there is a related country
+            if (empty($value) && $this->ourCountry) {
+                return $this->ourCountry->name; // Assumes a relation exists
+            }
+            return $value;
+        }
+    );
+}
+
+    public static function generateSlug($title, $id = null)
 {
     $slug = Str::slug($title);
     $originalSlug = $slug;
