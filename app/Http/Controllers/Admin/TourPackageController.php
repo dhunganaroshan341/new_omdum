@@ -214,37 +214,37 @@ public function index(Request $request)
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TourPackageRequest $request)
-    {
-        DB::beginTransaction();
-        try {
-            $data = $request->only([
-                'title',
-        'slug',
-        'short_description',
-        'long_description',
-        'duration',
-        'difficulty',
-        'max_elevation',
-        'best_season',
-        'start_point',
-        'end_point',
-        'our_country_id',
-        'status',]);
-            if ($request->hasFile('image')) {
-                $path = '/images/TourPackage/';
-                $imagename = time() . '.' . $request->image->extension();
-                $path = $request->image->storeAs($path, $imagename, 'public');
-                $data['image'] = $path;
-            }
-            TourPackage::create($data);
-            DB::commit();
-            return response()->json(['success' => true]);
-        } catch (\Exception $e) {
-            DB::rollBack();
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+public function store(TourPackageRequest $request)
+{
+    DB::beginTransaction();
+    try {
+        $data = $request->only([
+            'title', 'short_description', 'long_description',
+            'duration', 'difficulty', 'max_elevation', 'best_season',
+            'start_point', 'end_point', 'our_country_id', 'status'
+        ]);
+
+        // Dynamically generate slug from title
+        $data['slug'] = TourPackage::generateSlug($request->title);
+
+        if ($request->hasFile('image')) {
+            $path = '/images/TourPackage/';
+            $imagename = time() . '.' . $request->image->extension();
+            $path = $request->image->storeAs($path, $imagename, 'public');
+            $data['image'] = $path;
         }
+
+        TourPackage::create($data);
+
+        DB::commit();
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
+}
+
+
 
     /**
      * Display the specified resource.
@@ -264,39 +264,45 @@ public function index(Request $request)
     /**
      * Update the specified resource in storage.
      */
-   public function update(TourPackageRequest $request, $id)
-    {
-        // dd($request->all());
-        DB::beginTransaction();
-        try {
-            $album = TourPackage::findOrFail($id);
-           $validated = $request->validated();
+public function update(TourPackageRequest $request, $id)
+{
+    DB::beginTransaction();
+    try {
+        $album = TourPackage::findOrFail($id);
+        $validated = $request->validated();
 
-$validated['top_deal'] = $request->has('top_deal') ? 1 : 0;
-$validated['favourite_destination'] = $request->has('favourite_destination') ? 1 : 0;
+        $validated['top_deal'] = $request->has('top_deal') ? 1 : 0;
+        $validated['favourite_destination'] = $request->has('favourite_destination') ? 1 : 0;
 
-            $album->update($validated);
-            $gallery = $album;
-            if ($request->hasFile('image_path')) {
-                foreach ($request->media_path as $key => $value) {
-                    $file = $request->file('image_path')[$key];
-                    $filename = time() . '_' . $key . '.' . $file->getClientOriginalExtension();
-                    $file->move(public_path('images/tour-packages'), $filename);
-                    $image = 'images/tour-packages/' . $filename;
-                    TourPackageImage::create([
-                        'tour_package_id' => $gallery->id,
-                        'image_path' => $image,
-                        // 'status' => 'Active',
-                    ]);
-                }
-            }
-            DB::commit();
-            return response()->json(['success' => true,'message'=>$request->validated()]);
-        } catch (\Exception $e) {
-            DB::rollBack();
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        // Regenerate slug only if title has changed
+        if ($request->has('title') && $request->title !== $album->title) {
+            $validated['slug'] = TourPackage::generateSlug($request->title, $id);
         }
+
+        $album->update($validated);
+
+        if ($request->hasFile('image_path')) {
+            foreach ($request->media_path as $key => $value) {
+                $file = $request->file('image_path')[$key];
+                $filename = time() . '_' . $key . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('images/tour-packages'), $filename);
+                $image = 'images/tour-packages/' . $filename;
+
+                TourPackageImage::create([
+                    'tour_package_id' => $album->id,
+                    'image_path' => $image,
+                ]);
+            }
+        }
+
+        DB::commit();
+        return response()->json(['success' => true, 'message' => $request->validated()]);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
+}
+
 
     /**
      * Remove the specified resource from storage.

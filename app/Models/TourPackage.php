@@ -42,6 +42,18 @@ class TourPackage extends BaseModel
         'available_seat',
         'is_featured',
     ];
+ public static function generateSlug($title, $id = null)
+{
+    $slug = Str::slug($title);
+    $originalSlug = $slug;
+    $count = 1;
+
+    while (self::where('slug', $slug)->when($id, fn($query) => $query->where('id', '!=', $id))->exists()) {
+        $slug = $originalSlug . '-' . $count++;
+    }
+
+    return $slug;
+}
     public function country() {
     return $this->belongsTo(OurCountry::class);
 }
