@@ -20,4 +20,15 @@ class Itinerary extends BaseModel
     {
         return $this->belongsTo(TourPackage::class);
     }
+   public function getItineraryDurationAttribute()
+{
+    $day = $this->day_number;
+
+    if (!$day) {
+        return null;
+    }
+
+    return $day . ' ' . ($day == 1 ? 'day' : 'days');
+}
+
 }
