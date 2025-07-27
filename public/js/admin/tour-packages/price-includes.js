@@ -11,6 +11,8 @@ $(document).ready(function () {
     // ========================
     $(document).on('click', '.addPriceIncludeBtn', function () {
         const packageId = $(this).data('id');
+        console.log("Package ID clicked:", packageId);
+
 
         $('#priceIncludeModal').modal('show');
         $('#priceIncludeForm')[0].reset();
