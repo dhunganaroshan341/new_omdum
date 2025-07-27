@@ -15,10 +15,15 @@ class Page extends Model
         'meta_title',
         'meta_description',
         'meta_keywords',
-        'image_1',
-        'image_2',
-        'gallery_images',
+        'image1',
+        'image2',
+        'video1',
+        'video2',
+        'gallery_images', // Note: if you're working with JSON, you'll handle it as an array
     ];
+
+    // Optional: cast JSON fields properly
+
 
     protected $casts = [
         'gallery_images' => 'array',
