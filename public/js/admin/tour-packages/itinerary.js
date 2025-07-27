@@ -63,8 +63,9 @@ $(document).on('click', '.viewItineraryBtn', function () {
     $('#itineraryModal').modal('show');
 
     // Hide submit button and show update
-    $('#submitItineraryBtn').attr('hidden', true);
-    $('#updateItineraryBtn').attr('hidden',false);
+    $('#submitItineraryBtn').hide();
+$('#updateItineraryBtn').show();
+
 
     // Set the ID on update button for reference
 
