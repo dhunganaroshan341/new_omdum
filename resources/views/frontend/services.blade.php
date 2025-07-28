@@ -23,7 +23,7 @@
     <!-- Services Section -->
     @include('components.service-left-right')
     @include('components.why-us-section')
-    @include('components.testimonial-section')
+    <x-testimonial-section />
 @endsection
 
 @push('styles')
