@@ -54,7 +54,7 @@
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ $post->postImages->first()?->first_image_url ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
+                                        <img src="{{ $post->first()?->first_image_url ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">

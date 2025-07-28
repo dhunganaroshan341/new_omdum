@@ -36,8 +36,9 @@ class Post extends BaseModel
     public function updatedBy(){
         return $this->belongsTo(User::class,'updated_by','id');
     }
-    public function getFirstImageUrlAttribute()
+public function getFirstImageUrlAttribute()
 {
-    return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/tibet.jpg');
+    return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
 }
+
 }
