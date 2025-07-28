@@ -15,7 +15,7 @@ class BlogAndNewsSection extends Component
    public function __construct()
 {
     $this->posts = Post::with(['postImages', 'category'])
-        ->whereHas('postImages') // Only posts with at least one image
+        // ->whereHas('postImages') // Only posts with at least one image
         ->latest()
         ->take(5)
         ->get();
