@@ -233,8 +233,8 @@ public function blogDetail($slug)
     }
 
     return view('frontend.blog-detail', compact(
-        'detail',
-        'images',
+        // 'detail',
+        // 'images',
         'post',
         'recentPosts',
         'relatedPosts',
