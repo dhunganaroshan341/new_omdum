@@ -38,6 +38,6 @@ class Post extends BaseModel
     }
     public function getFirstImageUrlAttribute()
 {
-    return $this->postImages->first()?->post ?? asset('template/yatri_world/main-file/images/india.jpg');
+    return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
 }
 }
