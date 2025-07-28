@@ -82,15 +82,18 @@
                         <!-- author detail -->
 
                         <!-- blog next prev -->
-                        <div class="blog-next mb-4">
-                            <a class="float-left float-start"
-                                href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}">
-                                <div class="prev ps-4">
-                                    <i class="fa fa-arrow-left white"></i>
-                                    <p class="m-0 white">Previous Post</p>
-                                    <p class="m-0 white">{{ $previousPost->title }}</p>
-                                </div>
-                            </a>
+                        @if (isset($previousPOst) && $previousPost != null)
+                            <div class="blog-next mb-4">
+                                <a class="float-left float-start"
+                                    href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}">
+                                    <div class="prev ps-4">
+                                        <i class="fa fa-arrow-left white"></i>
+                                        <p class="m-0 white">Previous Post</p>
+                                        <p class="m-0 white">{{ $previousPost->title }}</p>
+                                    </div>
+                                </a>
+                        @endif
+                        @if (isset($nextPost) && $nextPost != null)
                             <a class="float-end bg-grey" href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}">
                                 <div class="next pe-4 text-end">
                                     <i class="fa fa-arrow-right"></i>
@@ -98,146 +101,147 @@
                                     <p class="m-0">{{ $nextPost->title }}</p>
                                 </div>
                             </a>
-                        </div>
-                        <!-- blog comment list -->
-
-                        <!-- blog review -->
-
+                        @endif
                     </div>
+                    <!-- blog comment list -->
+
+                    <!-- blog review -->
+
                 </div>
-                <!-- sidebar starts -->
-                <div class="col-lg-4">
-                    <div class="sidebar-sticky">
-                        <div class="list-sidebar">
+            </div>
+            <!-- sidebar starts -->
+            <div class="col-lg-4">
+                <div class="sidebar-sticky">
+                    <div class="list-sidebar">
 
-                            <div class="sidebar-item mb-4">
-                                <h4 class="">All Categories</h4>
-                                <ul class="sidebar-category">
-                                    @foreach ($categories as $category)
-                                        <li><a
-                                                href="{{ route('blog.category', ['title' => $category->title]) }}">{{ $category->title }}</a>
-                                        </li>
-                                    @endforeach
+                        <div class="sidebar-item mb-4">
+                            <h4 class="">All Categories</h4>
+                            <ul class="sidebar-category">
+                                @foreach ($categories as $category)
+                                    <li><a
+                                            href="{{ route('blog.category', ['title' => $category->title]) }}">{{ $category->title }}</a>
+                                    </li>
+                                @endforeach
 
-                                </ul>
-                            </div>
-                            <div class="sidebar-item mb-4">
-                                <div class="sidebar-tabs">
-                                    <div class="sidebar-navtab text-center">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            {{-- <li class="nav-item" role="presentation">
+                            </ul>
+                        </div>
+                        <div class="sidebar-item mb-4">
+                            <div class="sidebar-tabs">
+                                <div class="sidebar-navtab text-center">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        {{-- <li class="nav-item" role="presentation">
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#popular"
                                                     aria-selected="true" role="tab">
                                                     <i class="fa fa-check-circle"></i> Most Popular
                                                 </a>
                                             </li> --}}
-                                            <li class="nav-item" role="presentation">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#recent"
-                                                    aria-selected="false" role="tab" tabindex="-1">
-                                                    <i class="fa fa-check-circle"></i> Recent Post
-                                                </a>
-                                            </li>
-                                        </ul>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#recent" aria-selected="false"
+                                                role="tab" tabindex="-1">
+                                                <i class="fa fa-check-circle"></i> Recent Post
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="popular" role="tabpanel">
+                                        <div class="sidebar-image mb-2 mt-2">
+                                            <a href="blog-single..html"><img alt=""
+                                                    src="{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}"></a>
+                                        </div>
+                                        <article class="post mb-2">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">01</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and
+                                                            It Doesn’t Go Well for It</a></h5>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post mb-2">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">02</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">Zebras Hold New
+                                                            Record for Longest Migration</a></h5>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <article class="post">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">03</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">African Reserve Got
+                                                            Killed by Lions Instead</a></h5>
+                                                </div>
+                                            </div>
+                                        </article>
                                     </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade active show" id="popular" role="tabpanel">
-                                            <div class="sidebar-image mb-2 mt-2">
-                                                <a href="blog-single..html"><img alt=""
-                                                        src="{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}"></a>
-                                            </div>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">01</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and
-                                                                It Doesn’t Go Well for It</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">02</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">Zebras Hold New
-                                                                Record for Longest Migration</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            <article class="post">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">03</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">African Reserve Got
-                                                                Killed by Lions Instead</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
+                                    <div class="tab-pane fade" id="recent" role="tabpanel">
+                                        <div class="sidebar-image mb-2 mt-2">
+                                            <a href="blog-single.html"><img alt=""
+                                                    src="https://bivekp23.sg-host.com/images/blog/blog1.jpg"></a>
                                         </div>
-                                        <div class="tab-pane fade" id="recent" role="tabpanel">
-                                            <div class="sidebar-image mb-2 mt-2">
-                                                <a href="blog-single.html"><img alt=""
-                                                        src="https://bivekp23.sg-host.com/images/blog/blog1.jpg"></a>
+                                        <article class="post mb-2">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">01</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and
+                                                            It Doesn’t Go Well for It</a></h5>
+                                                </div>
                                             </div>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">01</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">Takes on Baboon, and
-                                                                It Doesn’t Go Well for It</a></h5>
-                                                    </div>
+                                        </article>
+                                        <article class="post mb-2">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">02</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">Zebras Hold New
+                                                            Record for Longest Migration</a></h5>
                                                 </div>
-                                            </article>
-                                            <article class="post mb-2">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">02</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">Zebras Hold New
-                                                                Record for Longest Migration</a></h5>
-                                                    </div>
+                                            </div>
+                                        </article>
+                                        <article class="post">
+                                            <div class="s-content d-flex align-items-center justify-space-between">
+                                                <div class="blog-no">03</div>
+                                                <div class="content-list ps-3">
+                                                    <div class="date">Jun 28, 2024</div>
+                                                    <h5 class="m-0"><a href="blog-single.html">African Reserve Got
+                                                            Killed by Lions Instead</a></h5>
                                                 </div>
-                                            </article>
-                                            <article class="post">
-                                                <div class="s-content d-flex align-items-center justify-space-between">
-                                                    <div class="blog-no">03</div>
-                                                    <div class="content-list ps-3">
-                                                        <div class="date">Jun 28, 2024</div>
-                                                        <h5 class="m-0"><a href="blog-single.html">African Reserve Got
-                                                                Killed by Lions Instead</a></h5>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
+                                            </div>
+                                        </article>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-item mb-4">
-                                <h4 class="">Tags</h4>
-                                <ul class="sidebar-tags">
-                                    <li><a href="#">Tour</a></li>
-                                    <li><a href="#">Rental</a></li>
-                                    <li><a href="#">City</a></li>
-                                    <li><a href="#">Yatch</a></li>
-                                    <li><a href="#">Activity</a></li>
-                                    <li><a href="#">Museum</a></li>
-                                    <li><a href="#">Beauty</a></li>
-                                    <li><a href="#">Classic</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Designs</a></li>
-                                    <li><a href="#">Featured</a></li>
-                                    <li><a href="#">Free Style</a></li>
-                                    <li><a href="#">Programs</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                </ul>
-                            </div>
+                        </div>
+                        <div class="sidebar-item mb-4">
+                            <h4 class="">Tags</h4>
+                            <ul class="sidebar-tags">
+                                <li><a href="#">Tour</a></li>
+                                <li><a href="#">Rental</a></li>
+                                <li><a href="#">City</a></li>
+                                <li><a href="#">Yatch</a></li>
+                                <li><a href="#">Activity</a></li>
+                                <li><a href="#">Museum</a></li>
+                                <li><a href="#">Beauty</a></li>
+                                <li><a href="#">Classic</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">Designs</a></li>
+                                <li><a href="#">Featured</a></li>
+                                <li><a href="#">Free Style</a></li>
+                                <li><a href="#">Programs</a></li>
+                                <li><a href="#">Travel</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- blog Ends -->
