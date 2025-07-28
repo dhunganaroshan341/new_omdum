@@ -3,7 +3,7 @@
 @section('content')
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main"
-        style="background-image: url('{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}');">
+        style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
@@ -28,7 +28,8 @@
                 <div class="col-lg-8">
                     <div class="blog-single">
                         <div class="blog-imagelist mb-3">
-                            <img alt="image" src="https://bivekp23.sg-host.com/images/bg/bg3.jpg">
+                            <img alt="image"
+                                src="{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}">
                         </div>
                         <div class="row">
                             <div class="col-md-2">
