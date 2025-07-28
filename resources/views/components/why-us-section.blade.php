@@ -12,7 +12,7 @@
                          <i class="flaticon-call orange"></i>
                      </div>
                      <div class="why-us-content">
-                         <h4><a href="#">Advice & Support</a></h4>
+                         <h4><a href="#">Guides</a></h4>
                          <p class="mb-0">Travel worry free knowing that we're here if you need us, 24
                              hours a day</p>
                      </div>
@@ -24,7 +24,7 @@
                          <i class="flaticon-global orange"></i>
                      </div>
                      <div class="why-us-content">
-                         <h4><a href="#">Air Ticketing</a></h4>
+                         <h4><a href="#">Flight Tickets</a></h4>
                          <p class="mb-0">Travel worry free knowing that we're here if you need us, 24
                              hours a day</p>
                      </div>
@@ -49,7 +49,7 @@
                          <i class="flaticon-location-pin orange"></i>
                      </div>
                      <div class="why-us-content">
-                         <h4><a href="#">Tour Packages</a></h4>
+                         <h4><a href="#">Trekkings</a></h4>
                          <p class="mb-0">Travel worry free knowing that we're here if you need us, 24
                              hours a day</p>
                      </div>
