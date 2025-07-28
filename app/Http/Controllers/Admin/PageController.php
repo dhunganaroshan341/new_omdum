@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PageRequest;
 use App\Models\Page;
+use App\Traits\HandlesMediaUploads;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -15,7 +16,7 @@ class PageController extends Controller
     /**
      * Display a listing of the resource.
      */
-
+  use HandlesMediaUploads;
 
 public function index(Request $request)
 {
@@ -104,79 +105,98 @@ public function index(Request $request)
      * Store a newly created resource in storage.
      */
     public function store(PageRequest $request)
-{
-    $data = $request->validated();
+    {
+        $data = $request->validated();
 
-    // Store single images
-    if ($request->hasFile('image_1')) {
-        $data['image_1'] = $request->file('image_1')->store('uploads/pages', 'public');
-    }
+        // Handle uploads of image_1, image_2, video_1, video_2
+        $mediaData = $this->handleMediaUploads($request, [], 'uploads/pages');
+        $data = array_merge($data, $mediaData);
 
-    if ($request->hasFile('image_2')) {
-        $data['image_2'] = $request->file('image_2')->store('uploads/pages', 'public');
-    }
+        // Handle gallery images separately (multiple uploads)
+        if ($request->hasFile('gallery_images')) {
+            $galleryPaths = [];
+            $galleryFolder = public_path('uploads/pages/gallery');
+            if (!file_exists($galleryFolder)) {
+                mkdir($galleryFolder, 0755, true);
+            }
 
-    // Store gallery images as JSON array of paths
-    if ($request->hasFile('gallery_images')) {
-        $galleryPaths = [];
-        foreach ($request->file('gallery_images') as $image) {
-            $galleryPaths[] = $image->store('uploads/pages/gallery', 'public');
+            foreach ($request->file('gallery_images') as $image) {
+                $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->move($galleryFolder, $filename);
+                $galleryPaths[] = 'uploads/pages/gallery/' . $filename;
+            }
+            $data['gallery_images'] = json_encode($galleryPaths);
         }
-        $data['gallery_images'] = json_encode($galleryPaths);
+
+        // Auto-generate slug if not provided
+        if (empty($data['slug'])) {
+            $data['slug'] = Str::slug($data['title']);
+        }
+
+        $page = Page::create($data);
+
+        return redirect()->route('pages.index')->with('success', 'Page created successfully!');
     }
 
-    // Auto-generate slug if not provided
-    if (empty($data['slug'])) {
-        $data['slug'] = Str::slug($data['title']);
+
+    public function show(string $id)
+    {
+        $page = Page::findOrFail($id);
+
+        return response()->json([
+            'success' => true,
+            'data' => $page
+        ]);
     }
 
-    // Store page
-    Page::create($data);
 
-    return redirect()->route('pages.index')->with('success', 'Page created successfully!');
-}
-
-    /**
-     * Display the specified resource.
-     */
- public function show(string $id)
-{
-    $page = Page::findOrFail($id);
-
-    return response()->json([
-        'success' => true,
-        'data' => $page
-    ]);
-}
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
-{
-    $page = Page::findOrFail($id);
+    {
+        $page = Page::findOrFail($id);
 
-    // Validate request (you can use PageRequest if you already created it)
-    $validated = $request->validate([
-        'title' => 'required|string|max:255',
-        'slug' => 'required|string|max:255|unique:pages,slug,' . $page->id,
-        'content' => 'nullable|string',
-        'meta_title' => 'nullable|string|max:255',
-        'meta_description' => 'nullable|string',
-        'meta_keywords' => 'nullable|string',
-        'image_1' => 'nullable|string',
-        'image_2' => 'nullable|string',
-        'gallery_images' => 'nullable|array',
-    ]);
+        // Validate
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:pages,slug,' . $page->id,
+            'content' => 'nullable|string',
+            'meta_title' => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string',
+            'meta_keywords' => 'nullable|string',
+            'image_1' => 'nullable|file|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'image_2' => 'nullable|file|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'video_1' => 'nullable|file|mimetypes:video/mp4,video/avi,video/mpeg|max:10240',
+            'video_2' => 'nullable|file|mimetypes:video/mp4,video/avi,video/mpeg|max:10240',
+            'gallery_images' => 'nullable|array',
+            'gallery_images.*' => 'nullable|file|image|mimes:jpeg,png,jpg,webp|max:2048',
+        ]);
 
-    $page->update($validated);
+        // Handle uploads and deletions
+        $mediaData = $this->handleMediaUploads($request, $page->toArray(), 'uploads/pages');
+        $validated = array_merge($validated, $mediaData);
 
-    return response()->json([
-        'success' => true,
-        'message' => 'Page updated successfully.',
-        'data' => $page,
-    ]);
-}
+        // Handle gallery images: append new uploaded images to existing gallery
+        $galleryPaths = json_decode($page->gallery_images, true) ?? [];
+        if ($request->hasFile('gallery_images')) {
+            $galleryFolder = public_path('uploads/pages/gallery');
+            if (!file_exists($galleryFolder)) {
+                mkdir($galleryFolder, 0755, true);
+            }
+            foreach ($request->file('gallery_images') as $image) {
+                $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->move($galleryFolder, $filename);
+                $galleryPaths[] = 'uploads/pages/gallery/' . $filename;
+            }
+        }
+        $validated['gallery_images'] = json_encode($galleryPaths);
+
+        $page->update($validated);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Page updated successfully.',
+            'data' => $page,
+        ]);
+    }
     /**
      * Remove the specified resource from storage.
      */
@@ -194,7 +214,8 @@ public function index(Request $request)
    public function uploadImage(Request $request)
 {
     $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
     ]);
 
     if ($request->hasFile('image')) {

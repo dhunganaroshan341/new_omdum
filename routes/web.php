@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\FrontendController as AdminFrontendController;
 use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\GalleryMediaController;
 use App\Http\Controllers\Admin\PageBannerController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\TourPackageController;
 use App\Http\Controllers\FrontGalleryController;
@@ -73,7 +74,8 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard.index');
-
+// pages management
+Route::apiResource('pages',PageController::class);
     // Users
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::get('/user/latest-order', [UserController::class, 'latestOrder'])->name('user.latest-order');

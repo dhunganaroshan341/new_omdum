@@ -1,258 +1,157 @@
 $(document).ready(function () {
-    // Initialize Summernote editor
-    $(".summernote").summernote({
-        height: 300
-    });
+    $(".summernote").summernote({ height: 300 });
 
-    // Initialize DataTable
-    var table = $("#data-page-show").DataTable({
+    const table = $("#show-page-data").DataTable({
         processing: true,
         serverSide: true,
-        ajax: {
-            url: "/admin/pages/get-data",
-            type: "GET",
-            cache: false
-        },
-        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
-        order: [[2, 'asc']], // Adjust column index for ordering if needed
+        ajax: "/admin/pages",
+        order: [1, 'asc'],
         columns: [
             { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "image", name: "image", orderable: false, searchable: false },
             { data: "title", name: "title" },
-            { data: "seo_title", name: "seo_title" },
-            { data: "description", name: "description" },
+            { data: "slug", name: "slug" },
             { data: "status", name: "status", orderable: false, searchable: false },
             { data: "action", name: "action", orderable: false, searchable: false }
-        ]
+        ],
+        dom: 'Blfrtip',
+        buttons: [
+            {
+                extend: 'print',
+                exportOptions: { columns: [0, 1, 2, 3] },
+            },
+            {
+                extend: 'excel',
+                title: '',
+                exportOptions: { columns: [0, 1, 2, 3] }
+            }
+        ],
+        dom: '<"toolbar">lfrtip',
     });
 
-    // Clear modal inputs and errors
+    $("div.toolbar").html(`
+        <span id="btnPrint" class="btn btn-primary mdi mdi-printer mdi-icon"></span>
+        <span id="btnExport" class="btn btn-success mdi mdi-file-export mdi-icon"></span>
+    `);
+
+    $('#btnPrint').on('click', () => table.button(0).trigger());
+    $('#btnExport').on('click', () => table.button(1).trigger());
+
+    // Clear modal
     function clearModal() {
-        $("#validationErrors").addClass('d-none').html("");
+        $("#pageForm")[0].reset();
         $(".summernote").summernote("code", "");
-        $(".pageImageData").html("");
-        $("#formModal form")[0].reset();
+        $("#validationErrors").addClass("d-none").html("");
+        $("#page_id").val("");
+        $(".submitBtn").show();
+        $(".updateBtn").addClass("d-none");
     }
 
-    // Show images modal (for multiple images)
-    $(document).on("click", ".imageListPopup", function () {
-        $("#imageModal").modal("show");
-        $("#pageImageTitle").text("Image List");
-        let id = $(this).data('id');
+    // Show create modal
+    $("#addNewPageBtn").on("click", function () {
+        clearModal();
+        $("#formModal").modal("show");
+    });
+
+    // Edit page
+    $(document).on("click", ".editPageBtn", function () {
+        clearModal();
+        let id = $(this).data("id");
 
         $.ajax({
+            url: `/admin/pages/${id}`,
             type: "GET",
-            url: "/admin/pages/detail/" + id,
-            success: function (response) {
-                $(".fetch-page-image-data").html("");
-                if (response.images && response.images.length > 0) {
-                    response.images.forEach((image, index) => {
-                        let imagePath = '/uploads/' + image.path.replace('//', '/');
-                        $(".fetch-page-image-data").append(`
-                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                <img src="${imagePath}" class="d-block w-100" alt="Page Image">
-                            </div>
-                        `);
-                    });
-                } else {
-                    $(".fetch-page-image-data").html('<p class="text-center">No images available.</p>');
-                }
+            success: function (res) {
+                const data = res.data;
+
+                $("#page_id").val(data.id);
+                $("#title").val(data.title);
+                $("#slug").val(data.slug);
+                $("#content").summernote("code", data.content);
+
+                $("#meta_title").val(data.meta_title);
+                $("#meta_description").val(data.meta_description);
+                $("#meta_keywords").val(data.meta_keywords);
+
+                $("#title1").val(data.title1);
+                $("#title2").val(data.title2);
+                $("#short_desc1").val(data.short_desc1);
+                $("#short_desc2").val(data.short_desc2);
+                $("#desc1").summernote("code", data.desc1);
+                $("#desc2").summernote("code", data.desc2);
+
+                $(".submitBtn").hide();
+                $(".updateBtn").removeClass("d-none");
+
+                $("#formModal").modal("show");
+            },
+            error: function () {
+                Swal.fire({ icon: "error", title: "Error", text: "Failed to load page data." });
             }
         });
     });
 
-    // Add Page button clicked
-    $(document).on("click", ".addPageBtn", function () {
-        clearModal();
-        $("#formModal").modal("show");
-        $(".submitBtn").show();
-        $(".updateBtn").hide();
-        $(".form").attr("id", "addForm");
-    });
+    // Submit Create or Update
+    $(document).on("submit", "#pageForm", function (e) {
+        e.preventDefault();
 
-    // Add Page form submit
-    $(document).off("submit", "#addForm").on("submit", "#addForm", function (event) {
-        event.preventDefault();
-        $(".submitBtn").prop("disabled", true);
+        let id = $("#page_id").val();
+        let method = id ? "POST" : "POST";
+        let url = id ? `/admin/pages/${id}` : "/admin/pages";
+        let formData = new FormData(this);
 
-        let formdata = new FormData(this);
+        if (id) formData.append("_method", "PUT");
 
         $.ajax({
-            type: "POST",
-            url: "/admin/pages/store",
-            data: formdata,
+            url: url,
+            type: method,
+            data: formData,
             processData: false,
             contentType: false,
-            success: function (response) {
-                if (response.success) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Success",
-                        text: "Page Added Successfully",
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
-                    table.draw();
+            success: function (res) {
+                if (res.success) {
+                    Swal.fire({ icon: "success", title: "Success", text: res.message, timer: 1200, showConfirmButton: false });
                     $("#formModal").modal("hide");
+                    table.draw();
                 } else {
-                    Swal.fire({
-                        icon: "warning",
-                        title: "Something went wrong!",
-                        text: "Please try again!",
-                    });
+                    Swal.fire({ icon: "warning", title: "Warning", text: res.message || "Please try again" });
                 }
             },
             error: function (xhr) {
-                if (xhr.status === 422) {
-                    let errors = xhr.responseJSON.errors;
-                    let errorMessages = '<ul>';
-                    $.each(errors, function (key, value) {
-                        errorMessages += '<li>' + value[0] + '</li>';
-                    });
-                    errorMessages += '</ul>';
-                    $('#validationErrors').removeClass('d-none').html(errorMessages);
+                const errors = xhr.responseJSON.errors;
+                let errorHtml = "<ul>";
+                for (let key in errors) {
+                    errorHtml += `<li>${errors[key][0]}</li>`;
                 }
-            },
-            complete: function () {
-                $(".submitBtn").prop("disabled", false);
+                errorHtml += "</ul>";
+                $("#validationErrors").removeClass("d-none").html(errorHtml);
             }
         });
     });
 
-    // Edit Page button clicked
-    $(document).on("click", ".editPageButton", function () {
-        clearModal();
-        let id = $(this).data("id");
-        $("#formModal").modal("show");
-        $(".submitBtn").hide();
-        $(".updateBtn").show();
-        $(".form").attr("id", "updateForm");
-
-        $.ajax({
-            type: "GET",
-            url: "/admin/pages/detail/" + id,
-            success: function (response) {
-                $("#page_title").val(response.message.title);
-                $("#seo_title").val(response.message.seo_title);
-                $("#seo_description").val(response.message.seo_description);
-                $(".summernote").summernote("code", response.message.description);
-
-                if (response.images && response.images.length > 0) {
-                    $(".pageImageData").html("");
-                    response.images.forEach((image) => {
-                        let imagePath = '/uploads/' + image.path.replace('//', '/');
-                        $(".pageImageData").append(`
-                            <li class="image-item">
-                                <img src="${imagePath}" alt="Image" class="img-thumbnail" width="100">
-                                <button type="button" class="btn btn-danger btn-sm remove-image" data-image-id="${image.id}">
-                                    Remove
-                                </button>
-                            </li>
-                        `);
-                    });
-                }
-            }
-        });
-
-        // Update Page form submit
-        $(document).off("submit", "#updateForm").on("submit", "#updateForm", function (event) {
-            event.preventDefault();
-            $(".updateBtn").prop("disabled", true);
-
-            let formdata = new FormData(this);
-
-            $.ajax({
-                type: "POST",
-                url: "/admin/pages/edit/" + id,
-                data: formdata,
-                processData: false,
-                contentType: false,
-                success: function (response) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Updated",
-                        text: "Page Updated Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    $("#formModal").modal("hide");
-                    table.draw();
-                },
-                error: function (xhr) {
-                    if (xhr.status === 422) {
-                        let errors = xhr.responseJSON.errors;
-                        let errorMessages = '<ul>';
-                        $.each(errors, function (key, value) {
-                            errorMessages += '<li>' + value[0] + '</li>';
-                        });
-                        errorMessages += '</ul>';
-                        $('#validationErrors').removeClass('d-none').html(errorMessages);
-                    }
-                },
-                complete: function () {
-                    $(".updateBtn").prop("disabled", false);
-                }
-            });
-        });
-    });
-
-    // Remove image button click
-    $(document).on("click", ".remove-image", function () {
-        let imageId = $(this).data("image-id");
-        let btn = $(this);
-
-        $.ajax({
-            type: "DELETE",
-            url: "/admin/pages/image/delete",
-            data: { image_id: imageId },
-            success: function (response) {
-                if (response.success) {
-                    btn.closest(".image-item").remove();
-                    table.draw();
-                } else {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Failed to delete image",
-                    });
-                }
-            },
-            error: function () {
-                Swal.fire({
-                    icon: "error",
-                    title: "Failed to delete image",
-                });
-            }
-        });
-    });
-
-    // Status toggle
-    $(document).on("change", ".statusIdData", function () {
-        let id = $(this).data("id");
-        let checkbox = $(this);
+    // Toggle Status
+    $(document).on("change", ".toggleStatus", function () {
+        const id = $(this).data("id");
+        const checkbox = $(this);
         checkbox.prop("disabled", true);
 
         Swal.fire({
-            icon: "warning",
-            title: "Are you sure?",
+            icon: "question",
+            title: "Change status?",
             showCancelButton: true,
+            confirmButtonText: "Yes, change it!",
             cancelButtonColor: "#d33",
             confirmButtonColor: "#3085d6",
-            confirmButtonText: "Yes, change it!"
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    type: "POST",
-                    url: "/admin/pages/status/" + id,
+                    url: `/admin/pages/${id}/status`,
+                    type: "PUT",
+                    data: { _token: $('meta[name="csrf-token"]').attr("content") },
                     success: function () {
-                        checkbox.prop("disabled", false);
                         table.draw();
                     },
-                    error: function () {
+                    complete: function () {
                         checkbox.prop("disabled", false);
-                        Swal.fire({
-                            icon: "error",
-                            title: "Status update failed"
-                        });
                     }
                 });
             } else {
@@ -262,46 +161,31 @@ $(document).ready(function () {
         });
     });
 
-    // Delete page
-    $(document).on("click", ".deleteData", function () {
-        let id = $(this).data("id");
+    // Delete Page
+    $(document).on("click", ".deletePageBtn", function () {
+        const id = $(this).data("id");
 
         Swal.fire({
             icon: "warning",
             title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            text: "This action cannot be undone!",
             showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
             cancelButtonColor: "#d33",
-            confirmButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonColor: "#3085d6"
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
+                    url: `/admin/pages/${id}`,
                     type: "DELETE",
-                    url: "/admin/pages/delete/" + id,
-                    success: function (response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Deleted!",
-                                text: "Page deleted successfully",
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
+                    data: { _token: $('meta[name="csrf-token"]').attr("content") },
+                    success: function (res) {
+                        if (res.success) {
+                            Swal.fire({ icon: "success", title: "Deleted", timer: 1000, showConfirmButton: false });
                             table.draw();
                         } else {
-                            Swal.fire({
-                                icon: "warning",
-                                title: "Unable to delete",
-                                text: response.message
-                            });
+                            Swal.fire({ icon: "error", title: "Failed", text: res.message || "Something went wrong." });
                         }
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Something went wrong!"
-                        });
                     }
                 });
             }
