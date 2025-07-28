@@ -67,7 +67,7 @@
                                     </div>
 
                                     {{-- Package --}}
-                                    <div class="col-12 col-md-6" id="batch-date-section">
+                                    <div class="col-12 col-md-6" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
@@ -180,10 +180,10 @@
             $('input[name="booking_type"]').on('change', function() {
                 const type = $(this).val();
                 if (type === 'batch') {
-                    $('#batch-date-section').show();
+                    $('#batch-select').show();
                     $('#custom-date-section').hide();
                 } else {
-                    $('#batch-date-section').hide();
+                    $('#batch-select').hide();
                     $('#custom-date-section').show();
                 }
             });
@@ -211,7 +211,7 @@
                             form.trigger('reset');
                             resetBatchSelect();
                             $('#custom-date-section').hide();
-                            $('#batch-date-section').show();
+                            $('#batch-select').show();
                             $('#no-batch-message').hide();
                         } else {
                             Swal.fire({
