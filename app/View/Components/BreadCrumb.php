@@ -21,8 +21,8 @@ class BreadCrumb extends Component
 
     $banner = PageBanner::where('page', 'all')->first();
 
-    $this->pageBanner = $banner && $banner->image
-        ? $banner->image
+    $this->pageBanner = $banner && $banner->image_url
+        ? $banner->image_url
         : 'template/yatri_world/main-file/images/tibet_vertical.jpg';
 }
 
