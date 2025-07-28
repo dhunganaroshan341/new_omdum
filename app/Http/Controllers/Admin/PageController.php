@@ -257,4 +257,20 @@ public function index(Request $request)
         'message' => 'Image not found.',
     ], 404);
 }
+
+ public function statusToggle($id)
+    {
+        try {
+            $data = Page::find($id);
+            if ($data->status == 'Active') {
+                $data->status = 'Inactive';
+            } else {
+                $data->status = 'Active';
+            }
+            $data->save();
+            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
 }
