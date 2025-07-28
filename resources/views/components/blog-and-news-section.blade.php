@@ -37,7 +37,7 @@
                                     <li>
                                         <a href="#" class="">
                                             <i class="fa fa-tag pink pe-1"></i>
-                                            {{ $firstPost->category?->name ?? 'Travel' }}
+                                            {{ $firstPost->category?->title ?? 'Travel' }}
                                         </a>
                                     </li>
                                 </ul>
@@ -91,7 +91,7 @@
                                             <li>
                                                 <a href="#" class="">
                                                     <i class="fa fa-tag pink pe-1"></i>
-                                                    {{ $post->category?->name ?? 'Travel' }}
+                                                    {{ $post->category?->title ?? 'Travel' }}
                                                 </a>
                                             </li>
                                         </ul>

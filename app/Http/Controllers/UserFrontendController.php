@@ -167,6 +167,18 @@ public function blogDetail($slug)
         $post->increment('views');
         session()->put($sessionKey, true);
     }
+    // Previous post (older)
+$previousPost = Post::where('status', 'Active')
+    ->where('id', '<', $postId)
+    ->orderBy('id', 'desc')
+    ->first();
+
+// Next post (newer)
+$nextPost = Post::where('status', 'Active')
+    ->where('id', '>', $postId)
+    ->orderBy('id', 'asc')
+    ->first();
+
 
     // Fetch images related to the post
     $images = Post::with(['postImages' => function ($query) use ($postId) {
@@ -223,17 +235,20 @@ public function blogDetail($slug)
     }
 
     return view('frontend.blog-detail', compact(
-        'detail',
-        'images',
-        'post',
-        'recentPosts',
-        'relatedPosts',
-        'categories',
-        'comments',
-        'content_title',
-        'pageBanner',
-        'processedDescription'
-    ));
+    'detail',
+    'images',
+    'post',
+    'recentPosts',
+    'relatedPosts',
+    'categories',
+    'comments',
+    'content_title',
+    'pageBanner',
+    'processedDescription',
+    'previousPost',
+    'nextPost'  // add these here
+));
+
 }
 
 
