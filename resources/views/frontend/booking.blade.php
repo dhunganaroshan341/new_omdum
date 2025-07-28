@@ -15,25 +15,23 @@
 
                                 <h4 class="title white text-center mb-4">MAKE A BOOKING</h4>
                                 <div class="row gy-4">
-                                    {{-- Full Name --}}
+                                    {{-- Row 1: Full Name, Email, Phone --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Full Name *</label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
 
-                                    {{-- Email --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Email Address *</label>
                                         <input type="email" name="email" class="form-control" required>
                                     </div>
 
-                                    {{-- Phone --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Phone Number *</label>
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
 
-                                    {{-- Country --}}
+                                    {{-- Row 2: Country, No. of People, Booking Type (full width for booking type) --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
@@ -46,8 +44,6 @@
                                         </select>
                                     </div>
 
-
-                                    {{-- No. of People --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">No. Of People</label>
                                         <div class="input-box">
@@ -60,7 +56,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- Booking Type --}}
+                                    {{-- Booking Type full width on next row --}}
                                     <div class="col-12">
                                         <label class="white d-block mb-2">Select Booking Type</label>
                                         <label class="me-3">
@@ -71,8 +67,8 @@
                                         </label>
                                     </div>
 
-                                    {{-- Package + Batch + Custom Date in same row --}}
-                                    <div class="col-12 col-md-4" id="package-section">
+                                    {{-- Row 3: Package, Batch, Custom Date, Logo --}}
+                                    <div class="col-12 col-md-3" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
@@ -84,37 +80,41 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-4" id="batch-section">
+                                    <div class="col-12 col-md-3" id="batch-section">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-4" id="custom-date-section" style="display:none;">
+                                    <div class="col-12 col-md-3" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
 
-                                    {{-- Batch Messages --}}
+                                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+                                        <img src="{{ asset('/front/images/logo.png') }}" alt="Omunum Logo" class="img-fluid"
+                                            style="max-height: 120px;">
+                                    </div>
+
+                                    {{-- Batch messages full width --}}
                                     <div class="col-12">
                                         <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
                                             style="display:none;">
                                             Only package Inquiry is going to be sent. However you can select the custom date
-                                            as
-                                            well.
+                                            as well.
                                         </div>
                                         <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2"
                                             style="display:none;"></div>
                                     </div>
 
-                                    {{-- Message --}}
+                                    {{-- Message full width --}}
                                     <div class="col-12">
                                         <label class="white d-block mb-2">Message (Optional)</label>
                                         <textarea name="message" class="form-control" rows="3"></textarea>
                                     </div>
 
-                                    {{-- Submit Button Centered --}}
+                                    {{-- Submit button centered --}}
                                     <div class="col-12 col-md-6 mx-auto">
                                         <button type="submit" class="nir-btn w-100">Book Now</button>
                                     </div>
@@ -127,6 +127,7 @@
         </div>
     </div>
 @endsection
+
 
 
 @push('scripts')
