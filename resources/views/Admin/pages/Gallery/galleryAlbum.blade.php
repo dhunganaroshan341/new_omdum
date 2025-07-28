@@ -6,6 +6,7 @@
             Gallery</button>
 
         {{-- Modal --}}
+
         @include('Admin.pages.Gallery.albumModal')
 
         <div class="table-responsive">

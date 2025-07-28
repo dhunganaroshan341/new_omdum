@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
             TourPackageSeeder::class,
             AchievementSeeder::class,
+            pageSeeder::class,
         ]);
     }
 }
