@@ -22,17 +22,7 @@
                                             <select name="tour_package_id" id="package-select" class="nice-select" required>
                                                 <option value="" disabled selected>Select a package</option>
                                                 @foreach ($packages as $package)
-                                                    <option value="{{ $package->id }}"
-                                                        data-batches='@json(
-                                                            $package->batches->map(fn($batch) => [
-                                                                    'id' => $batch->id,
-                                                                    'start_date' => $batch->start_date->format('Y-m-d'),
-                                                                    'end_date' => optional($batch->end_date)->format('Y-m-d'),
-                                                                    'available_seats' => $batch->available_seats,
-                                                                    'max_people' => $batch->max_people,
-                                                                    'price' => $batch->price,
-                                                                ]))'>
-                                                        {{ $package->name }}
+                                                    {{ $package->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
