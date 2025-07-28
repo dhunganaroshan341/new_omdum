@@ -11,8 +11,7 @@ class Post extends BaseModel
     use HasFactory;
 
        // If your column is named 'image_path' (default), no need to set this
-    protected $uploadPathColumn = 'image';
-    protected $appends = ['image_url'];
+
     protected $fillable=['title','category_id','description','created_by','updated_by','status','views'];
 
     public function category(){
