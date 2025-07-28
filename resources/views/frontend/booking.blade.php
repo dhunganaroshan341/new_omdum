@@ -42,6 +42,7 @@
                                             @endforeach
                                         </select>
                                     </div>
+
                                     {{-- No. of People --}}
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">No. Of People</label>
@@ -66,7 +67,7 @@
                                         </label>
                                     </div>
 
-                                    {{-- Package --}}
+                                    {{-- Package (always visible) --}}
                                     <div class="col-12 col-md-6" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
@@ -79,8 +80,8 @@
                                         </select>
                                     </div>
 
-                                    {{-- Batch --}}
-                                    <div class="col-12 col-md-6">
+                                    {{-- Batch (toggle visibility) --}}
+                                    <div class="col-12 col-md-6" id="batch-section">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
@@ -98,13 +99,11 @@
                                             style="display:none;"></div>
                                     </div>
 
-                                    {{-- Custom Date --}}
+                                    {{-- Custom Date (toggle visibility) --}}
                                     <div class="col-12 col-md-4" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
-
-
 
                                     {{-- Message --}}
                                     <div class="col-12">
@@ -126,7 +125,6 @@
     </div>
 @endsection
 
-
 @push('scripts')
     <script>
         $(document).ready(function() {
@@ -136,6 +134,7 @@
                 $('#batch-select').html(`<option disabled selected>${message}</option>`);
                 $('#batch-select').prop('disabled', true);
                 $('#batch-info').hide();
+                $('#no-batch-message').hide();
             }
 
             $('#package-select').on('change', function() {
@@ -180,13 +179,30 @@
             $('input[name="booking_type"]').on('change', function() {
                 const type = $(this).val();
                 if (type === 'batch') {
-                    $('#batch-select').show();
+                    $('#batch-section').show();
+                    $('#batch-select').prop('disabled', false).show();
                     $('#custom-date-section').hide();
+                    // Clear custom date value
+                    $('input[name="custom_date"]').val('');
                 } else {
-                    $('#batch-select').hide();
+                    $('#batch-section').hide();
+                    $('#batch-select').prop('disabled', true).hide();
+                    $('#batch-info').hide();
+                    $('#no-batch-message').hide();
                     $('#custom-date-section').show();
                 }
             });
+
+            // Initialize visibility based on default checked booking_type
+            if ($('input[name="booking_type"]:checked').val() === 'batch') {
+                $('#batch-section').show();
+                $('#batch-select').prop('disabled', false).show();
+                $('#custom-date-section').hide();
+            } else {
+                $('#batch-section').hide();
+                $('#batch-select').prop('disabled', true).hide();
+                $('#custom-date-section').show();
+            }
 
             // AJAX Submit
             $('#booking-form').on('submit', function(e) {
@@ -211,7 +227,7 @@
                             form.trigger('reset');
                             resetBatchSelect();
                             $('#custom-date-section').hide();
-                            $('#batch-select').show();
+                            $('#batch-section').show();
                             $('#no-batch-message').hide();
                         } else {
                             Swal.fire({
