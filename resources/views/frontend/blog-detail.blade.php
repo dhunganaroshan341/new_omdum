@@ -67,24 +67,41 @@
 
                         <!-- Blog Prev/Next Navigation -->
                         <div class="blog-next mb-4 d-flex justify-content-between">
+
+                            {{-- Previous Post --}}
                             @if (isset($previousPost))
                                 <a href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}"
-                                    class="prev ps-4 text-start">
+                                    class="prev ps-4 text-start text-decoration-none">
                                     <i class="fa fa-arrow-left white"></i>
                                     <p class="m-0 white">Previous Post</p>
                                     <p class="m-0 white">{{ $previousPost->title }}</p>
                                 </a>
+                            @else
+                                <div class="prev ps-4 text-start" style="opacity: 0.5; cursor: not-allowed;">
+                                    <i class="fa fa-arrow-left white"></i>
+                                    <p class="m-0 white">Previous Post</p>
+                                    <p class="m-0 white">No more posts</p>
+                                </div>
                             @endif
 
+                            {{-- Next Post --}}
                             @if (isset($nextPost))
                                 <a href="{{ route('blog.detail', ['slug' => $nextPost->slug]) }}"
-                                    class="next pe-4 text-end">
-                                    <i class="fa fa-arrow-right"></i>
+                                    class="next pe-4 text-end text-decoration-none">
+                                    <i class="fa fa-arrow-right white"></i>
                                     <p class="m-0">Next Post</p>
                                     <p class="m-0">{{ $nextPost->title }}</p>
                                 </a>
+                            @else
+                                <div class="next pe-4 text-end" style="opacity: 0.5; cursor: not-allowed;">
+                                    <i class="fa fa-arrow-right white"></i>
+                                    <p class="m-0">Next Post</p>
+                                    <p class="m-0">No more posts</p>
+                                </div>
                             @endif
+
                         </div>
+
                     </div>
                 </div>
 
