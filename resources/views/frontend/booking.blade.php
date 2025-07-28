@@ -5,115 +5,107 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="sidebar-sticky">
-                    <div class="list-sidebar">
-                        <div class="sidebar-item">
-                            <form id="booking-form" class="form-content" method="POST" action="{{ route('packages.book') }}">
-                                @csrf
+            <div class="col-lg-10 col-xl-8">
+                <div class="card bg-dark text-light shadow rounded-4 p-4">
+                    <form id="booking-form" method="POST" action="{{ route('packages.book') }}">
+                        @csrf
 
-                                <h4 class="title white text-center">MAKE A BOOKING</h4>
-                                <div class="row gy-4">
-                                    {{-- Personal Info --}}
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Full Name</label>
-                                        <input type="text" name="name" class="form-control" required>
-                                    </div>
+                        <h4 class="text-center mb-4">MAKE A BOOKING</h4>
 
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Email Address</label>
-                                        <input type="email" name="email" class="form-control" required>
-                                    </div>
+                        <div class="row g-4">
+                            {{-- Full Name & Email --}}
+                            <div class="col-md-6">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="name" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" name="email" class="form-control form-control-lg" required>
+                            </div>
 
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Phone Number</label>
-                                        <input type="text" name="phone" class="form-control" required>
-                                    </div>
+                            {{-- Phone & Country --}}
+                            <div class="col-md-6">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" name="phone" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Country</label>
+                                <select name="country" class="form-select form-select-lg" required>
+                                    <option value="" disabled selected>Select your country</option>
+                                    @foreach ($countries as $code => $name)
+                                        <option value="{{ $code }}">{{ $name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
-                                    {{-- Country --}}
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Country</label>
-                                        <select name="country" class="nice-select" required>
-                                            <option value="" disabled selected>Select your country</option>
-                                            @foreach ($countries as $code => $name)
-                                                <option value="{{ $code }}">{{ $name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    {{-- Booking Type --}}
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Select Booking Type</label>
-                                        <label class="me-3">
-                                            <input type="radio" name="booking_type" value="batch" checked> Batch Date
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="booking_type" value="custom"> Custom Date
-                                        </label>
-                                    </div>
-
-                                    {{-- Package --}}
-                                    <div class="col-lg-12" id="batch-date-section">
-                                        <label class="white d-block mb-2">Select Package</label>
-                                        <select name="tour_package_id" id="package-select" class="nice-select" required>
-                                            <option value="" disabled selected>-- Select a Package --</option>
-                                            @foreach ($packages as $package)
-                                                <option value="{{ $package->id }}">{{ $package->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-
-                                    {{-- Batch --}}
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Select Batch</label>
-                                        <select name="batch_id" id="batch-select" class="nice-select" disabled required>
-                                            <option value="">-- Select a Package First --</option>
-                                        </select>
-                                    </div>
-
-                                    {{-- No Batches Message --}}
-                                    <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
-                                        style="display:none;">
-                                        No batch available for this package. You can select the custom date.
-                                    </div>
-
-                                    {{-- Batch Info --}}
-                                    <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2" style="display:none;">
-                                    </div>
-
-                                    {{-- Custom Date --}}
-                                    <div class="col-lg-12" id="custom-date-section" style="display:none;">
-                                        <label class="white d-block mb-2">Select Custom Date</label>
-                                        <input type="date" name="custom_date" class="form-control">
-                                    </div>
-
-                                    {{-- Number of People --}}
-                                    <div class="col-lg-12">
-                                        <label class="white">No. Of People</label>
-                                        <div class="input-box">
-                                            <i class="flaticon-add-user"></i>
-                                            <select class="niceSelect" name="number_of_people">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                @endfor
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    {{-- Message --}}
-                                    <div class="col-lg-12">
-                                        <label class="white d-block mb-2">Message (Optional)</label>
-                                        <textarea name="message" class="form-control" rows="3"></textarea>
-                                    </div>
-
-                                    {{-- Submit --}}
-                                    <div class="col-lg-12">
-                                        <button type="submit" class="nir-btn w-100">Book Now</button>
-                                    </div>
+                            {{-- Booking Type --}}
+                            <div class="col-12">
+                                <label class="form-label">Booking Type</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="booking_type" value="batch"
+                                        checked>
+                                    <label class="form-check-label">Batch Date</label>
                                 </div>
-                            </form>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="booking_type" value="custom">
+                                    <label class="form-check-label">Custom Date</label>
+                                </div>
+                            </div>
+
+                            {{-- Package & Batch --}}
+                            <div class="col-md-6" id="batch-date-section">
+                                <label class="form-label">Select Package</label>
+                                <select name="tour_package_id" id="package-select" class="form-select form-select-lg"
+                                    required>
+                                    <option value="" disabled selected>-- Select a Package --</option>
+                                    @foreach ($packages as $package)
+                                        <option value="{{ $package->id }}">{{ $package->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Select Batch</label>
+                                <select name="batch_id" id="batch-select" class="form-select form-select-lg" disabled
+                                    required>
+                                    <option value="">-- Select a Package First --</option>
+                                </select>
+                            </div>
+
+                            {{-- Batch info / fallback --}}
+                            <div class="col-12">
+                                <div id="no-batch-message" class="alert alert-warning" style="display:none;">
+                                    No batch available for this package. You can select the custom date.
+                                </div>
+                                <div id="batch-info" class="alert alert-info" style="display:none;"></div>
+                            </div>
+
+                            {{-- Custom Date --}}
+                            <div class="col-md-6" id="custom-date-section" style="display:none;">
+                                <label class="form-label">Select Custom Date</label>
+                                <input type="date" name="custom_date" class="form-control form-control-lg">
+                            </div>
+
+                            {{-- People Count & Message --}}
+                            <div class="col-md-6">
+                                <label class="form-label">No. Of People</label>
+                                <select name="number_of_people" class="form-select form-select-lg">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Message (Optional)</label>
+                                <textarea name="message" class="form-control form-control-lg" rows="3"></textarea>
+                            </div>
+
+                            {{-- Submit --}}
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Book Now</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
