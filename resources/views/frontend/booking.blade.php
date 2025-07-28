@@ -56,7 +56,7 @@
                                     </div>
 
                                     {{-- Row 3: Booking Type + Package + Batch + Custom Date --}}
-                                    <div class="col-12 col-md-3 d-flex align-items-end">
+                                    <div class="col-12 col-md-4 d-flex align-items-end">
                                         <div class="w-100">
                                             <label class="white d-block mb-2">Booking Type</label>
                                             <div class="d-flex gap-2">
@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-3" id="package-section">
+                                    <div class="col-12 col-md-4" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
@@ -86,7 +86,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-3" id="batch-section">
+                                    <div class="col-12 col-md-4" id="batch-section">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
