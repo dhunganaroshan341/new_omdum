@@ -15,7 +15,7 @@
                                 <h4 class="title white text-center">MAKE A BOOKING</h4>
                                 <div class="row gy-4">
 
-                                    <!-- Package Selection -->
+                                    {{-- Package Selection --}}
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label class="white d-block mb-2">Select Package</label>
@@ -27,7 +27,7 @@
                                                             $package->batches->map(fn($batch) => [
                                                                     'id' => $batch->id,
                                                                     'start_date' => $batch->start_date->format('Y-m-d'),
-                                                                    'end_date' => $batch->end_date?->format('Y-m-d'),
+                                                                    'end_date' => optional($batch->end_date)->format('Y-m-d'),
                                                                     'available_seats' => $batch->available_seats,
                                                                     'max_people' => $batch->max_people,
                                                                     'price' => $batch->price,
@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- Name, Email, Phone -->
+                                    {{-- Personal Info --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Full Name</label>
                                         <input type="text" name="name" class="form-control" required>
@@ -55,7 +55,7 @@
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
 
-                                    <!-- Country -->
+                                    {{-- Country from config --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
@@ -66,15 +66,18 @@
                                         </select>
                                     </div>
 
-                                    <!-- Booking Type -->
+                                    {{-- Booking Type --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Select Booking Type</label>
-                                        <label class="me-3"><input type="radio" name="booking_type" value="batch"
-                                                checked> Batch Date</label>
-                                        <label><input type="radio" name="booking_type" value="custom"> Custom Date</label>
+                                        <label class="me-3">
+                                            <input type="radio" name="booking_type" value="batch" checked> Batch Date
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="booking_type" value="custom"> Custom Date
+                                        </label>
                                     </div>
 
-                                    <!-- Batch Date -->
+                                    {{-- Batch Dates --}}
                                     <div class="col-lg-12" id="batch-date-section">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="tour_batch_id" id="batch-select" class="nice-select" disabled>
@@ -88,13 +91,13 @@
                                             style="display:none;"></div>
                                     </div>
 
-                                    <!-- Custom Date -->
+                                    {{-- Custom Date --}}
                                     <div class="col-lg-12" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
 
-                                    <!-- People -->
+                                    {{-- Number of People --}}
                                     <div class="col-lg-12">
                                         <label class="white">No. Of People</label>
                                         <div class="input-box">
@@ -107,13 +110,13 @@
                                         </div>
                                     </div>
 
-                                    <!-- Optional Message -->
+                                    {{-- Optional Message --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Message (Optional)</label>
                                         <textarea name="message" class="form-control" rows="3"></textarea>
                                     </div>
 
-                                    <!-- Submit -->
+                                    {{-- Submit --}}
                                     <div class="col-lg-12">
                                         <button type="submit" class="nir-btn w-100">Book Now</button>
                                     </div>
@@ -145,8 +148,8 @@
                     $('#no-batch-message').hide();
 
                     batches.forEach(batch => {
-                        const label = `${batch.start_date}` + (batch.end_date ?
-                                ` to ${batch.end_date}` : '') +
+                        const label = `${batch.start_date}` +
+                            (batch.end_date ? ` to ${batch.end_date}` : '') +
                             ` — Seats: ${batch.available_seats}/${batch.max_people}, Price: $${batch.price}`;
                         $batchSelect.append(new Option(label, batch.id));
                     });
@@ -163,10 +166,10 @@
 
                 if (batch) {
                     $('#batch-info').html(`
-                    <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
-                    <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
-                    <strong>Price:</strong> $${batch.price}
-                `).show();
+                        <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
+                        <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
+                        <strong>Price:</strong> $${batch.price}
+                    `).show();
                 } else {
                     $('#batch-info').hide();
                 }
@@ -185,7 +188,6 @@
             // AJAX form submission
             $('#booking-form').on('submit', function(e) {
                 e.preventDefault();
-
                 const form = $(this);
                 const formData = form.serialize();
 
