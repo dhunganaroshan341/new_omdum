@@ -142,7 +142,7 @@
                                         <div class="tab-pane fade active show" id="popular" role="tabpanel">
                                             <div class="sidebar-image mb-2 mt-2">
                                                 <a href="blog-single..html"><img alt=""
-                                                        src="https://bivekp23.sg-host.com/images/blog/blog3.jpg"></a>
+                                                        src="{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}"></a>
                                             </div>
                                             <article class="post mb-2">
                                                 <div class="s-content d-flex align-items-center justify-space-between">
