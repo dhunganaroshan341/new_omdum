@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\TourPackageController;
 use App\Http\Controllers\FrontGalleryController;
+use App\Http\Controllers\PackageBookingController;
 use App\Http\Controllers\UserFrontendController;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -300,6 +301,7 @@ Route::prefix('packages')->name('packages.')->group(function () {
     Route::get('/{slug}', [TourPackageController::class, 'show'])->name('show');
     Route::post('/book', [BookingController::class, 'store'])->name('book');
 });
+Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->name('frontend.booking-singe');
 
 // Gallery
 Route::get('/gallery', [FrontGalleryController::class, 'index'])->name('gallery');

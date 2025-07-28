@@ -83,4 +83,13 @@ class PackageBookingController extends Controller
     {
         //
     }
+public function bookingSinglePage()
+{
+    $packages = TourPackage::with(['batches' => function ($query) {
+        $query->where('available_seats', '>', 0); // Only batches with available seats
+    }])->where('status', 'Active')->get();
+
+    $countries = config('countries'); // Assuming you’re loading a config array
+    return view('frontend.booking', compact('packages', 'countries'));
+}
 }
