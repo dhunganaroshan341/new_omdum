@@ -14,22 +14,26 @@
 
                                 <h4 class="title white text-center">MAKE A BOOKING</h4>
                                 <div class="row gy-4">
-                                    {{-- Full Name & Email --}}
-                                    <div class="col-md-6">
+                                    {{-- Full Name --}}
+                                    <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Full Name</label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
-                                    <div class="col-md-6">
+
+                                    {{-- Email --}}
+                                    <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Email Address</label>
                                         <input type="email" name="email" class="form-control" required>
                                     </div>
 
-                                    {{-- Phone & Country --}}
-                                    <div class="col-md-6">
+                                    {{-- Phone --}}
+                                    <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Phone Number</label>
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
-                                    <div class="col-md-6">
+
+                                    {{-- Country --}}
+                                    <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
                                             <option value="" disabled selected>Select your country</option>
@@ -50,8 +54,8 @@
                                         </label>
                                     </div>
 
-                                    {{-- Package & Batch --}}
-                                    <div class="col-md-6" id="batch-date-section">
+                                    {{-- Package --}}
+                                    <div class="col-12 col-md-6" id="batch-date-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
@@ -60,14 +64,16 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+
+                                    {{-- Batch --}}
+                                    <div class="col-12 col-md-6">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
                                         </select>
                                     </div>
 
-                                    {{-- Batch Info + No Batch --}}
+                                    {{-- Batch Messages --}}
                                     <div class="col-12">
                                         <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
                                             style="display:none;">
@@ -79,13 +85,13 @@
                                     </div>
 
                                     {{-- Custom Date --}}
-                                    <div class="col-md-6" id="custom-date-section" style="display:none;">
+                                    <div class="col-12 col-md-4" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
 
-                                    {{-- Number of People --}}
-                                    <div class="col-md-6">
+                                    {{-- No. of People --}}
+                                    <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">No. Of People</label>
                                         <div class="input-box">
                                             <i class="flaticon-add-user"></i>
@@ -103,8 +109,8 @@
                                         <textarea name="message" class="form-control" rows="3"></textarea>
                                     </div>
 
-                                    {{-- Submit --}}
-                                    <div class="col-12">
+                                    {{-- Submit Button Centered --}}
+                                    <div class="col-12 col-md-6 mx-auto">
                                         <button type="submit" class="nir-btn w-100">Book Now</button>
                                     </div>
                                 </div>
@@ -116,6 +122,7 @@
         </div>
     </div>
 @endsection
+
 
 @push('scripts')
     <script>
