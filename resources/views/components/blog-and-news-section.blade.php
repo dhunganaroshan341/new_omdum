@@ -36,7 +36,8 @@
                             </div>
                             <div class="news-content mt-2">
                                 <h4 class="pb-2 mb-2 border-b">
-                                    <a href="{{ route('posts.show', $firstPost->slug) }}">{{ $firstPost->title }}</a>
+                                    <a
+                                        href="{{ route('blog.detail', ['slut' => $firstPost->slug]) }}">{{ $firstPost->title }}</a>
                                 </h4>
                                 <p class="mb-3">
                                     {{ \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 300) }}
