@@ -123,7 +123,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.pages.index') }}">
-                            <i class="mdi mdi-file-document menu-icon"></i> Pages
+                            <i class="mdi mdi-file-document menu-icon"></i>
 
                             <span class="menu-title">Manage Pages</span>
                         </a>
