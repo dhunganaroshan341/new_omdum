@@ -147,8 +147,14 @@
                         </div>
 
                         <div class="col-12">
+                            <label for="whatToExpect" class="form-label">what To Expect <span
+                                    class="text-danger"></span></label>
+                            <textarea class="form-control summernote" id="what_to_expect" name="what_to_expect" rows="5"
+                                style="min-height: 250px;"></textarea>
+                        </div>
+                        <div class="col-12">
                             <label for="testimonialDescription" class="form-label">Description <span
-                                    class="text-danger">*</span></label>
+                                    class="text-danger"></span></label>
                             <textarea class="form-control summernote" id="testimonialDescription" name="long_description" rows="5"
                                 style="min-height: 250px;"></textarea>
                         </div>

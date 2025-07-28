@@ -30,6 +30,7 @@ class TourPackage extends BaseModel
         'slug',
         'short_description',
         'long_description',
+        'what_to_expect',
         'itinerary',
         'duration',
         'languages',

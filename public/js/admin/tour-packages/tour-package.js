@@ -39,10 +39,11 @@ function populateTourPackageForm(tour_package) {
     $("#favourite_destination").prop('checked', tour_package.favourite_destination == 1);
 
 
-    $("textarea[name='short_description']").val(tour_package.short_description);
+    $("textarea[name='short_description']").val(tour_package.accomodation);
 
     // For summernote fields
     $("textarea[name='long_description']").summernote('code', tour_package.long_description ?? '');
+    $("textarea[name='what_to_expect']").summernote('code', tour_package.what_to_expect ?? '');
     $("textarea[name='itinerary']").summernote('code', tour_package.itinerary ?? '');
 
     // UI toggling
@@ -238,6 +239,9 @@ function populateTourPackageForm(tour_package) {
 
                     // Initialize summernote editors
                     $("textarea[name='long_description']").summernote({
+                        height: 250,
+                        code: tour_package.long_description || ''
+                    }); $("textarea[name='what_to_expect']").summernote({
                         height: 250,
                         code: tour_package.long_description || ''
                     });
