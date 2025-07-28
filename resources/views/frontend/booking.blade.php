@@ -17,19 +17,19 @@
                                 <div class="row gy-4">
                                     {{-- Full Name --}}
                                     <div class="col-12 col-md-4">
-                                        <label class="white d-block mb-2">Full Name</label>
+                                        <label class="white d-block mb-2">Full Name *</label>
                                         <input type="text" name="name" class="form-control" required>
                                     </div>
 
                                     {{-- Email --}}
                                     <div class="col-12 col-md-4">
-                                        <label class="white d-block mb-2">Email Address</label>
+                                        <label class="white d-block mb-2">Email Address *</label>
                                         <input type="email" name="email" class="form-control" required>
                                     </div>
 
                                     {{-- Phone --}}
                                     <div class="col-12 col-md-4">
-                                        <label class="white d-block mb-2">Phone Number</label>
+                                        <label class="white d-block mb-2">Phone Number *</label>
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
 
@@ -38,11 +38,14 @@
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
                                             <option value="" disabled selected>Select your country</option>
-                                            @foreach ($countries as $code => $name)
-                                                <option value="{{ $code }}">{{ $name }}</option>
+                                            @foreach ($countries as $code => $data)
+                                                <option value="{{ $code }}|{{ $data['phone_code'] }}">
+                                                    {{ $data['name'] }} ({{ $data['phone_code'] }})
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
+
 
                                     {{-- No. of People --}}
                                     <div class="col-12 col-md-4">

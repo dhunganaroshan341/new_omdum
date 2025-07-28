@@ -22,6 +22,7 @@ class StorePackageBookingRequest extends FormRequest
     return [
         'user_id'         => 'nullable|exists:users,id',
         'email'           => 'nullable|email|max:255',
+        'name'           => 'nullable|string|max:255',
         'message'         => 'nullable|string',
         'phone'           => 'nullable|string|max:20',
         'country'         => 'nullable|string|max:100',

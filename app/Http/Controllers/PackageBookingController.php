@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ConuntryHelperEnhanced;
 use App\Helpers\CountryHelper;
 use App\Models\PackageBooking;
 use App\Models\TourPackage;
@@ -90,7 +91,7 @@ public function bookingSinglePage()
         $query->where('available_seats', '>', 0); // Only batches with available seats
     }])->where('status', 'Active')->get();
 
-    $countries = CountryHelper::getCountries(); // Assuming you’re loading a config array
+    $countries = ConuntryHelperEnhanced::getCountries(); // Assuming you’re loading a config array
     return view('frontend.booking', compact('packages', 'countries'));
 }
 }
