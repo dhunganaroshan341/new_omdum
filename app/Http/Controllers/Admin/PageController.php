@@ -94,7 +94,7 @@ public function index(Request $request)
         config('js-map.admin.buttons.style')
     );
 
-    return view('Admin.pages.Page.index', [
+    return view('Admin.pages.Pages.pages', [
         'extraJs' => $extraJs,
         'extraCs' => $extraCs
     ]);
