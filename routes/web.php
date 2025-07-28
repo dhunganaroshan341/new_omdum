@@ -293,6 +293,7 @@ Route::post('/contact', [UserFrontendController::class, 'storeContactUs'])->name
 // Blog routes
 Route::prefix('blog')->name('blog.')->group(function () {
     Route::get('/', [UserFrontendController::class, 'blog'])->name('index');
+    Route::get('/category/{title}', [UserFrontendController::class, 'blogsByCategory'])->name('category');
     Route::post('/comment', [PostController::class, 'postComment'])->name('comment.store');
 
     Route::get('/search', [UserFrontendController::class, 'searchBlogs'])->name('search');

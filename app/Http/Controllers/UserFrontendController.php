@@ -134,16 +134,16 @@ class UserFrontendController extends Controller
     return view('frontend.blog', compact('posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
 }
 
-  public function blogsByCategory($category_id)
+  public function blogsByCategory($title)
 {
 
     $content_title = "Blogs";
     $pageBanner = PageBanner::where('page', 'blog')->first();
-    $category = Category::find($category_id);
-$category_title = $category ? $category->title : null;
+    $category = Category::where('title',$title);
+    $category_title = $category ? $category->title : null;
 
     // 6 posts per page (you can change the number)
-    $posts = Post::with('postImages')->where('status', 'Active')->where('category_id',$category_id)->paginate(6);
+    $posts = Post::with('postImages')->where('status', 'Active')->where('category_id',$category->id)->paginate(6);
 
     return view('frontend.blog', compact('posts', 'category_title','content_title', 'pageBanner'));
 }

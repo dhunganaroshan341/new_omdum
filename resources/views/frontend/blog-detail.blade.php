@@ -39,8 +39,8 @@
                             </div>
                             <div class="col-md-10">
                                 <div class="blog-content mb-4 pt-0">
-                                    <h3 class="blog-title"><a class="yellow" href="blog-single.html">Counts Is the Greatest
-                                            Change the Platform Has Ever Made</a></h3>
+                                    <h3 class="blog-title"><a class="yellow" href="blog-single.html">{{ $post->title }}</a>
+                                    </h3>
                                     <div class="para-content mb-2">
                                         <span class="me-2"><a class="tag pink" href="#"><i
                                                     class="fa fa-tag me-1"></i> Popular </a></span>
@@ -48,23 +48,14 @@
                                                     class="fa fa-user me-1"></i> Adam Joel</a></span>
                                         <span><a class="pink" href="#"><i class="fa fa-comment"></i> 20</a></span>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipis Vi ales elit vitae lo bortis faucibus.
-                                        Lorem ipsum dolor sit amet, conse dolor sit amet, consectetu ctetur adipis Viales.
-                                        Lorem ipsum dolor sit amet, cons sit amet, consectetur adi ectetur adipis Vi.</p>
-                                    <p class="mb-0">It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
-                                        using 'Content here, content here', making it look like readable English. Many
-                                        desktop publishing packages and web page editors now use Lorem Ipsum as their
-                                        default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                                        in their infancy.</p>
+                                    {!! $post->description !!}
                                 </div>
                                 <!-- blog blockquote -->
 
 
 
                                 <!-- blog share -->
-                                <div
+                                {{-- <div
                                     class="blog-share d-flex justify-content-between align-items-center mb-4 bg-lgrey border">
                                     <div class="blog-share-tag">
                                         <ul class="inline">
@@ -84,25 +75,26 @@
                                             <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- author detail -->
 
                         <!-- blog next prev -->
                         <div class="blog-next mb-4">
-                            <a class="float-left float-start" href="#">
+                            <a class="float-left float-start"
+                                href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}">
                                 <div class="prev ps-4">
                                     <i class="fa fa-arrow-left white"></i>
                                     <p class="m-0 white">Previous Post</p>
-                                    <p class="m-0 white">The bedding was hardly able</p>
+                                    <p class="m-0 white">{{ $previousPost->title }}</p>
                                 </div>
                             </a>
-                            <a class="float-end bg-grey" href="#">
+                            <a class="float-end bg-grey" href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}">
                                 <div class="next pe-4 text-end">
                                     <i class="fa fa-arrow-right"></i>
-                                    <p class="m-0">Previous Post</p>
-                                    <p class="m-0">The bedding was hardly able</p>
+                                    <p class="m-0">Next Post</p>
+                                    <p class="m-0">{{ $nextPost->title }}</p>
                                 </div>
                             </a>
                         </div>
@@ -120,26 +112,24 @@
                             <div class="sidebar-item mb-4">
                                 <h4 class="">All Categories</h4>
                                 <ul class="sidebar-category">
-                                    <li><a href="#">All</a></li>
-                                    <li><a href="#">Featured</a></li>
-                                    <li><a href="#">Sliders</a></li>
-                                    <li class="active"><a href="#">Manage Listings</a></li>
-                                    <li><a href="#">Address and Map</a></li>
-                                    <li><a href="#">Reservation Requests</a></li>
-                                    <li><a href="#">Your Reservation</a></li>
-                                    <li><a href="#">Search Results</a></li>
+                                    @foreach ($categories as $category)
+                                        <li><a
+                                                href="{{ route('blogsByCategory', ['title' => $category->title]) }}">{{ $category->title }}</a>
+                                        </li>
+                                    @endforeach
+
                                 </ul>
                             </div>
                             <div class="sidebar-item mb-4">
                                 <div class="sidebar-tabs">
                                     <div class="sidebar-navtab text-center">
                                         <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item" role="presentation">
+                                            {{-- <li class="nav-item" role="presentation">
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#popular"
                                                     aria-selected="true" role="tab">
                                                     <i class="fa fa-check-circle"></i> Most Popular
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                             <li class="nav-item" role="presentation">
                                                 <a class="nav-link" data-bs-toggle="tab" href="#recent"
                                                     aria-selected="false" role="tab" tabindex="-1">
