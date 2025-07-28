@@ -122,8 +122,9 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.testimonial') }}">
-                            <i class="mdi mdi-animation menu-icon"></i>
+                        <a class="nav-link" href="{{ route('admin.pages.index') }}">
+                            <i class="mdi mdi-file-document menu-icon"></i> Pages
+
                             <span class="menu-title">Manage Pages</span>
                         </a>
                     </li>
