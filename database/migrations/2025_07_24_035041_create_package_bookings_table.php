@@ -25,10 +25,10 @@ return new class extends Migration
             $table->unsignedSmallInteger('total_people')->default(1);
             $table->decimal('price', 10, 2)->nullable();
 
-            $table->foreignId('tour_package_id')->constrained()->onDelete('cascade');
+          $table->foreignId('tour_package_id')->nullable()->constrained()->onDelete('cascade');
 
-            // Either this is filled
-            $table->foreignId('tour_batch_id')->nullable()->constrained()->onDelete('set null');
+// Either this is filled
+$table->foreignId('tour_batch_id')->nullable()->constrained()->onDelete('set null');
 
             // Or this is filled
             $table->date('custom_date')->nullable();
