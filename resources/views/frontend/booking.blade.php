@@ -5,7 +5,6 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
-            {{-- Full width container --}}
             <div class="col-12">
                 <div class="sidebar-sticky">
                     <div class="list-sidebar">
@@ -31,7 +30,7 @@
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
 
-                                    {{-- Row 2: Country, No. of People, Booking Type (full width for booking type) --}}
+                                    {{-- Row 2: Country, No. of People --}}
                                     <div class="col-12 col-md-6">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
@@ -56,7 +55,25 @@
                                         </div>
                                     </div>
 
-                                    {{-- Row 3: Package, Batch, Custom Date, Logo --}}
+                                    {{-- Row 3: Booking Type + Package + Batch + Custom Date --}}
+                                    <div class="col-12 col-md-3 d-flex align-items-end">
+                                        <div class="w-100">
+                                            <label class="white d-block mb-2">Booking Type</label>
+                                            <div class="d-flex gap-2">
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input me-1" name="booking_type"
+                                                        value="batch" checked>
+                                                    Batch
+                                                </label>
+                                                <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input me-1" name="booking_type"
+                                                        value="custom">
+                                                    Custom
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-12 col-md-3" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
@@ -80,13 +97,6 @@
                                         <label class="white d-block mb-2">Select Custom Date</label>
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
-
-                                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                                        <img src="{{ asset('imageassetlogo.png') }}" alt="Omunum Logo" class="img-fluid"
-                                            style="max-height: 120px;">
-                                    </div>
-                                    >
-
 
                                     {{-- Batch messages full width --}}
                                     <div class="col-12">
@@ -118,6 +128,7 @@
         </div>
     </div>
 @endsection
+
 
 
 
