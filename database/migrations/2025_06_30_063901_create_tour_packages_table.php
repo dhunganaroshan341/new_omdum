@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
+            $table->longText('what_to_expect')->nullable();
             $table->json('price_includes')->nullable();
             $table->json('price_excludes')->nullable();
             $table->longText('what_to_expect')->nullable();
