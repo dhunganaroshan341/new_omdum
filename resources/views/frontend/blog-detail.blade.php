@@ -187,3 +187,10 @@
     </section>
     <!-- blog Ends -->
 @endsection
+@push('styles')
+    <style>
+        .blog-next {
+            background: #162241
+        }
+    </style>
+@endpush
