@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use App\Traits\HasUploadUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends BaseModel
 {
     use HasFactory;
+
+       // If your column is named 'image_path' (default), no need to set this
+    protected $uploadPathColumn = 'image';
+    protected $appends = ['image_url'];
     protected $fillable=['title','category_id','description','created_by','updated_by','status','views'];
 
     public function category(){
@@ -32,4 +37,8 @@ class Post extends BaseModel
     public function updatedBy(){
         return $this->belongsTo(User::class,'updated_by','id');
     }
+    public function getFirstImageUrlAttribute()
+{
+    return $this->postImages->first()?->post ?? asset('template/yatri_world/main-file/images/default.jpg');
+}
 }
