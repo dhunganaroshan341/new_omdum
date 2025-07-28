@@ -14,21 +14,6 @@
 
                                 <h4 class="title white text-center">MAKE A BOOKING</h4>
                                 <div class="row gy-4">
-
-                                    {{-- Package Selection --}}
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="white d-block mb-2">Select Package</label>
-                                            <select name="tour_package_id" id="package-select" class="nice-select" required>
-                                                <option value="" disabled selected>Select a package</option>
-                                                @foreach ($packages as $package)
-                                                    {{ $package->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
                                     {{-- Personal Info --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Full Name</label>
@@ -45,7 +30,7 @@
                                         <input type="text" name="phone" class="form-control" required>
                                     </div>
 
-                                    {{-- Country from config --}}
+                                    {{-- Country --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
@@ -67,18 +52,33 @@
                                         </label>
                                     </div>
 
-                                    {{-- Batch Dates --}}
+                                    {{-- Package --}}
                                     <div class="col-lg-12" id="batch-date-section">
+                                        <label class="white d-block mb-2">Select Package</label>
+                                        <select name="tour_package_id" id="package-select" class="nice-select" required>
+                                            <option value="" disabled selected>-- Select a Package --</option>
+                                            @foreach ($packages as $package)
+                                                <option value="{{ $package->id }}">{{ $package->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    {{-- Batch --}}
+                                    <div class="col-lg-12">
                                         <label class="white d-block mb-2">Select Batch</label>
-                                        <select name="tour_batch_id" id="batch-select" class="nice-select" disabled>
+                                        <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
                                         </select>
-                                        <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
-                                            style="display:none;">
-                                            No batch available for this package. You can select the custom date.
-                                        </div>
-                                        <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2"
-                                            style="display:none;"></div>
+                                    </div>
+
+                                    {{-- No Batches Message --}}
+                                    <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
+                                        style="display:none;">
+                                        No batch available for this package. You can select the custom date.
+                                    </div>
+
+                                    {{-- Batch Info --}}
+                                    <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2" style="display:none;">
                                     </div>
 
                                     {{-- Custom Date --}}
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- Optional Message --}}
+                                    {{-- Message --}}
                                     <div class="col-lg-12">
                                         <label class="white d-block mb-2">Message (Optional)</label>
                                         <textarea name="message" class="form-control" rows="3"></textarea>
@@ -110,7 +110,6 @@
                                     <div class="col-lg-12">
                                         <button type="submit" class="nir-btn w-100">Book Now</button>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
@@ -126,28 +125,34 @@
         $(document).ready(function() {
             let batches = [];
 
+            function resetBatchSelect(message = '-- Select a Batch --') {
+                $('#batch-select').html(`<option disabled selected>${message}</option>`);
+                $('#batch-select').prop('disabled', true);
+                $('#batch-info').hide();
+            }
+
             $('#package-select').on('change', function() {
-                const selected = $(this).find(':selected');
-                batches = selected.data('batches') || [];
+                const packageId = $(this).val();
 
-                const $batchSelect = $('#batch-select');
-                $batchSelect.empty().append('<option value="">-- Select a Batch --</option>');
+                resetBatchSelect('Loading batches...');
 
-                if (batches.length > 0) {
-                    $batchSelect.prop('disabled', false);
-                    $('#no-batch-message').hide();
+                $.get(`/packages/get-batches/${packageId}`, function(response) {
+                    batches = response;
 
-                    batches.forEach(batch => {
-                        const label = `${batch.start_date}` +
-                            (batch.end_date ? ` to ${batch.end_date}` : '') +
-                            ` — Seats: ${batch.available_seats}/${batch.max_people}, Price: $${batch.price}`;
-                        $batchSelect.append(new Option(label, batch.id));
-                    });
-                } else {
-                    $batchSelect.prop('disabled', true);
-                    $('#no-batch-message').show();
-                    $('#batch-info').hide();
-                }
+                    if (batches.length > 0) {
+                        let options = '<option disabled selected>-- Select a Batch --</option>';
+                        batches.forEach(batch => {
+                            options += `<option value="${batch.id}">
+                            ${batch.start_date} to ${batch.end_date ?? 'N/A'}
+                        </option>`;
+                        });
+                        $('#batch-select').html(options).prop('disabled', false);
+                        $('#no-batch-message').hide();
+                    } else {
+                        resetBatchSelect('No batches available');
+                        $('#no-batch-message').show();
+                    }
+                });
             });
 
             $('#batch-select').on('change', function() {
@@ -156,17 +161,18 @@
 
                 if (batch) {
                     $('#batch-info').html(`
-                        <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
-                        <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
-                        <strong>Price:</strong> $${batch.price}
-                    `).show();
+                    <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
+                    <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
+                    <strong>Price:</strong> $${batch.price}
+                `).show();
                 } else {
                     $('#batch-info').hide();
                 }
             });
 
             $('input[name="booking_type"]').on('change', function() {
-                if ($(this).val() === 'batch') {
+                const type = $(this).val();
+                if (type === 'batch') {
                     $('#batch-date-section').show();
                     $('#custom-date-section').hide();
                 } else {
@@ -175,7 +181,7 @@
                 }
             });
 
-            // AJAX form submission
+            // AJAX Submit
             $('#booking-form').on('submit', function(e) {
                 e.preventDefault();
                 const form = $(this);
@@ -196,11 +202,10 @@
                             });
 
                             form.trigger('reset');
-                            $('#batch-select').empty().prop('disabled', true);
-                            $('#batch-info').hide();
-                            $('#no-batch-message').hide();
+                            resetBatchSelect();
                             $('#custom-date-section').hide();
                             $('#batch-date-section').show();
+                            $('#no-batch-message').hide();
                         } else {
                             Swal.fire({
                                 icon: 'error',
@@ -212,7 +217,7 @@
                     },
                     error: function(xhr) {
                         let message = 'Something went wrong!';
-                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                        if (xhr.responseJSON?.message) {
                             message = xhr.responseJSON.message;
                         }
                         Swal.fire({

@@ -6,6 +6,7 @@ use App\Helpers\CountryHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Service;
+use App\Models\TourBatch;
 use App\Models\TourPackage;
 use App\Models\TourPackageType;
 use WisdomDiala\Countrypkg\Models\OurCountry;
@@ -58,4 +59,11 @@ class TourPackageController extends Controller
 
         return response()->json(['message' => 'Booking submitted successfully!']);
     }
+    public function getBatches($packageId)
+{
+    $batches = TourBatch::where('tour_package_id', $packageId)->get(['id', 'start_date', 'end_date']);
+
+    return response()->json($batches);
+}
+
 }

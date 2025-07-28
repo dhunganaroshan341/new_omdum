@@ -300,8 +300,10 @@ Route::prefix('packages')->name('packages.')->group(function () {
     Route::get('/', [TourPackageController::class, 'index'])->name('index');
     Route::get('/{slug}', [TourPackageController::class, 'show'])->name('show');
     Route::post('/book', [BookingController::class, 'store'])->name('book');
+    Route::get('/get-batches/{packageId}', [TourPackageController::class, 'getBatches']);
 });
 Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->name('frontend.booking-singe');
+
 
 // Gallery
 Route::get('/gallery', [FrontGalleryController::class, 'index'])->name('gallery');
