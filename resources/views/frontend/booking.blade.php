@@ -100,7 +100,8 @@
                                     <div class="col-12">
                                         <div id="no-batch-message" class="text-light bg-secondary p-2 rounded mt-2"
                                             style="display:none;">
-                                            Only package Inquiry is going to be sent. However can select the custom date as
+                                            Only package Inquiry is going to be sent. However you can select the custom date
+                                            as
                                             well.
                                         </div>
                                         <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2"
