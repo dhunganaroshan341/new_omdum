@@ -5,14 +5,15 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-xl-8">
+            {{-- Full width container --}}
+            <div class="col-12">
                 <div class="sidebar-sticky">
                     <div class="list-sidebar">
                         <div class="sidebar-item">
                             <form id="booking-form" class="form-content" method="POST" action="{{ route('packages.book') }}">
                                 @csrf
 
-                                <h4 class="title white text-center">MAKE A BOOKING</h4>
+                                <h4 class="title white text-center mb-4">MAKE A BOOKING</h4>
                                 <div class="row gy-4">
                                     {{-- Full Name --}}
                                     <div class="col-12 col-md-4">
@@ -67,8 +68,8 @@
                                         </label>
                                     </div>
 
-                                    {{-- Package (always visible) --}}
-                                    <div class="col-12 col-md-6" id="package-section">
+                                    {{-- Package + Batch + Custom Date in same row --}}
+                                    <div class="col-12 col-md-4" id="package-section">
                                         <label class="white d-block mb-2">Select Package</label>
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
@@ -80,12 +81,16 @@
                                         </select>
                                     </div>
 
-                                    {{-- Batch (toggle visibility) --}}
-                                    <div class="col-12 col-md-6" id="batch-section">
+                                    <div class="col-12 col-md-4" id="batch-section">
                                         <label class="white d-block mb-2">Select Batch</label>
                                         <select name="batch_id" id="batch-select" class="nice-select" disabled required>
                                             <option value="">-- Select a Package First --</option>
                                         </select>
+                                    </div>
+
+                                    <div class="col-12 col-md-4" id="custom-date-section" style="display:none;">
+                                        <label class="white d-block mb-2">Select Custom Date</label>
+                                        <input type="date" name="custom_date" class="form-control">
                                     </div>
 
                                     {{-- Batch Messages --}}
@@ -97,12 +102,6 @@
                                         </div>
                                         <div id="batch-info" class="text-light bg-dark p-2 rounded mt-2"
                                             style="display:none;"></div>
-                                    </div>
-
-                                    {{-- Custom Date (toggle visibility) --}}
-                                    <div class="col-12 col-md-4" id="custom-date-section" style="display:none;">
-                                        <label class="white d-block mb-2">Select Custom Date</label>
-                                        <input type="date" name="custom_date" class="form-control">
                                     </div>
 
                                     {{-- Message --}}
@@ -124,6 +123,7 @@
         </div>
     </div>
 @endsection
+
 
 @push('scripts')
     <script>
