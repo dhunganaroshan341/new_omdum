@@ -3,7 +3,7 @@
 @section('content')
     <!-- BreadCrumb Starts -->
     <section class="breadcrumb-main"
-        style="background-image: url('{{ asset('template/yatri_world/main-file/images/bg/bg8.jpg') }}');">
+        style="background-image: url('{{ asset($post->first_image_url ?? '/template/yatri-world/main-file/images/india.jpg') }}');">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
