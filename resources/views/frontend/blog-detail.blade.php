@@ -28,7 +28,7 @@
                 <div class="col-lg-8">
                     <div class="blog-single">
                         <div class="blog-imagelist mb-3">
-                            <img alt="image" src="{{ asset('images/bg/bg3.jpg') }}" />
+                            <img alt="image" src="https://bivekp23.sg-host.com/images/bg/bg3.jpg">
                         </div>
                         <div class="row">
                             <div class="col-md-2">
@@ -60,26 +60,9 @@
                                         in their infancy.</p>
                                 </div>
                                 <!-- blog blockquote -->
-                                <div class="blog-quote mb-4">
-                                    <p class="white">“To take a trivial example, which ever undertakes laborious physical
-                                        work exercise, except obtain some advantage blinded” </p>
-                                    <span class="white">By Michael Delwell</span>
-                                    <i class="fas fa-quote-left"></i>
-                                </div>
-                                <div class="blog-imagelist mb-4">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <img alt="image" src="{{ asset('images/blog/blog1.jpg') }}" />
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img alt="image" src="{{ asset('images/blog/blog2.jpg') }}" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="mb-4">as opposed to using 'Content here, content here', making it look like
-                                    readable English. Many desktop publishing packages and web page editors now use Lorem
-                                    Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
-                                    sites still in their infancy.</p>
+
+
+
                                 <!-- blog share -->
                                 <div
                                     class="blog-share d-flex justify-content-between align-items-center mb-4 bg-lgrey border">
@@ -105,23 +88,7 @@
                             </div>
                         </div>
                         <!-- author detail -->
-                        <div class="blog-author mb-4 bg-grey border">
-                            <div class="blog-author-item">
-                                <div class="row d-flex justify-content-between align-items-center">
-                                    <div class="col-md-3">
-                                        <div class="blog-thumb text-center position-relative">
-                                            <img alt="img" src="{{ asset('images/reviewer/1.jpg') }}" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h3 class="title pink"><a href="#">About Author <span>Graphic
-                                                    Designer</span></a></h3>
-                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                                            sceler neque in euismod. Nam vitae urnasodales neque in faucibus.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- blog next prev -->
                         <div class="blog-next mb-4">
                             <a class="float-left float-start" href="#">
@@ -140,118 +107,16 @@
                             </a>
                         </div>
                         <!-- blog comment list -->
-                        <div class="single-comments single-box mb-4">
-                            <h4 class="mb-4">Showing 16 verified guest comments</h4>
-                            <div class="comment-box">
-                                <div class="comment-image mt-2">
-                                    <img alt="image" src="{{ asset('images/reviewer/1.jpg') }}" />
-                                </div>
-                                <div class="comment-content">
-                                    <h4 class="mb-1 Soldman Kell">Soldman Kell</h4>
-                                    <p class="comment-date">April 25, 2019 at 10:46 am</p>
-                                    <div class="comment-rate">
-                                        <div class="rating mar-right-15">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <span class="comment-title">"The worst hotel ever"</span>
-                                    </div>
-                                    <p class="comment">Take in the iconic skyline and visit the neighbourhood hangouts that
-                                        you've only ever seen on TV. Take in the iconic skyline and visit the neighbourhood.
-                                    </p>
-                                    <div class="comment-like">
-                                        <div class="like-title float-left">
-                                            <a class="nir-btn me-2" href="#">Reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="comment-box">
-                                <div class="comment-image mt-2">
-                                    <img alt="image" src="{{ asset('images/reviewer/2.jpg') }}" />
-                                </div>
-                                <div class="comment-content">
-                                    <h4 class="mb-1">Burson Lesson</h4>
-                                    <p class="comment-date">April 25, 2019 at 10:46 am</p>
-                                    <div class="comment-rate">
-                                        <div class="rating mar-right-15">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                        </div>
-                                        <span class="comment-title">"Was too noisy and not suitable for business
-                                            meetings"</span>
-                                    </div>
-                                    <p class="comment">Take in the iconic skyline and visit the neighbourhood hangouts that
-                                        you've only ever seen on TV. Take in the iconic skyline and visit the neighbourhood.
-                                    </p>
-                                    <div class="comment-like">
-                                        <div class="like-title float-left">
-                                            <a class="nir-btn" href="#">Reply</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- blog review -->
-                        <div class="single-add-review">
-                            <h4 class="">Write a Review</h4>
-                            <form>
-                                <div class="row gy-4">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input placeholder="Name" type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input placeholder="Email" type="email" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea>Comment</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-btn">
-                                            <a class="nir-btn" href="#">Submit Review</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
                 <!-- sidebar starts -->
                 <div class="col-lg-4">
                     <div class="sidebar-sticky">
                         <div class="list-sidebar">
-                            <div class="author-news mb-4">
-                                <div class="author-news-content">
-                                    <div class="author-thumb">
-                                        <img alt="author" src="{{ asset('images/team/img2.jpg') }}" />
-                                    </div>
-                                    <div class="author-content text-center text-lg-start">
-                                        <span>Author News</span>
-                                        <h4 class="title mb-0"><a class="white" href="#">Relson Dulux</a></h4>
-                                        <p class="m-0">Director / Suplex World</p>
-                                        <div class="header-social">
-                                            <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dot-overlay"></div>
-                            </div>
+
                             <div class="sidebar-item mb-4">
                                 <h4 class="">All Categories</h4>
                                 <ul class="sidebar-category">
@@ -268,24 +133,26 @@
                             <div class="sidebar-item mb-4">
                                 <div class="sidebar-tabs">
                                     <div class="sidebar-navtab text-center">
-                                        <ul class="nav nav-tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" data-bs-toggle="tab" href="#popular">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#popular"
+                                                    aria-selected="true" role="tab">
                                                     <i class="fa fa-check-circle"></i> Most Popular
                                                 </a>
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-bs-toggle="tab" href="#recent">
+                                            <li class="nav-item" role="presentation">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#recent"
+                                                    aria-selected="false" role="tab" tabindex="-1">
                                                     <i class="fa fa-check-circle"></i> Recent Post
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="popular">
+                                        <div class="tab-pane fade active show" id="popular" role="tabpanel">
                                             <div class="sidebar-image mb-2 mt-2">
                                                 <a href="blog-single..html"><img alt=""
-                                                        src="{{ asset('images/blog/blog3.jpg') }}" /></a>
+                                                        src="https://bivekp23.sg-host.com/images/blog/blog3.jpg"></a>
                                             </div>
                                             <article class="post mb-2">
                                                 <div class="s-content d-flex align-items-center justify-space-between">
@@ -318,10 +185,10 @@
                                                 </div>
                                             </article>
                                         </div>
-                                        <div class="tab-pane fade" id="recent">
+                                        <div class="tab-pane fade" id="recent" role="tabpanel">
                                             <div class="sidebar-image mb-2 mt-2">
                                                 <a href="blog-single.html"><img alt=""
-                                                        src="{{ asset('images/blog/blog1.jpg') }}" /></a>
+                                                        src="https://bivekp23.sg-host.com/images/blog/blog1.jpg"></a>
                                             </div>
                                             <article class="post mb-2">
                                                 <div class="s-content d-flex align-items-center justify-space-between">
