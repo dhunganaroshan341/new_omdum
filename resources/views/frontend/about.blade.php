@@ -43,30 +43,7 @@
 
 
                             </p>
-                            <div class="about-imagelist">
-                                <ul class="d-flex justify-content-between">
-                                    <li class="me-2">
-                                        <img alt="about image"
-                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest2-buddha.jpg">
-                                    </li>
-                                    <li class="me-2">
-                                        <img alt="about image"
-                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/everest.jpg">
-                                    </li>
-                                    <li class="me-2">
-                                        <img alt="about image"
-                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
-                                    </li>
-                                    <li class="me-2">
-                                        <img alt="about image"
-                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
-                                    </li>
-                                    <li>
-                                        <img alt="about image"
-                                            src="http://bivekp23.sg-host.com/template/yatri_world/main-file/images/destination/trek.jpg">
-                                    </li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                     <div class="col-lg-6">
