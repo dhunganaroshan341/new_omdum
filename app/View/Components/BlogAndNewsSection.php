@@ -12,15 +12,15 @@ class BlogAndNewsSection extends Component
 {
     public $posts;
 
-    public function __construct()
-    {
-        // Fetch latest 5 posts with at least one image
-        $this->posts = Post::with('postImages')  // assumes you have a relationship
-            ->latest()
-            ->take(5)
-            ->get()
-            ->filter(fn($post) => $post->postImages->isNotEmpty());
-    }
+   public function __construct()
+{
+    $this->posts = Post::with(['postImages', 'category'])
+        ->whereHas('postImages') // Only posts with at least one image
+        ->latest()
+        ->take(5)
+        ->get();
+}
+
 
     public function render(): View|Closure|string
     {
