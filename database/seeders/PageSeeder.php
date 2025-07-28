@@ -16,7 +16,7 @@ class pageSeeder extends Seeder
     {
         //
         $pages = [
-            'home','gallery','blog','contact','about','services','packages','why_us','mission_vision','mission','vision'
+            'home_section_1','home_section_2','gallery','blog','contact','about','services','packages','why_us','mission_vision','mission','vision','testimonial','counter'
 
         ];
         foreach($pages as $page){

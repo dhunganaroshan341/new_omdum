@@ -288,7 +288,7 @@
 
 
     <!-- testomonial start -->
-    @include('components.testimonial-section')
+    <x-testimonial-section />
     <!-- testimonial ends -->
 
     <!-- News Starts -->

@@ -1,65 +1,34 @@
-  <section class="testimonial pb-6 pt-9">
-      <div class="container">
-          <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-              <h2 class="m-0">What <span>People Say About Us</span></h2>
-              <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become
-                  better people. Each time we travel, we see the world with new eyes.</p>
-          </div>
-          <div class="review-slider">
-              <div class="item">
-                  <div class="testimonial-item1 text-center">
-                      <div class="details">
-                          <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
-                              Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
-                              Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
-                      </div>
-                      <div class="author-info mt-2">
-                          <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
-                                  alt=""></a>
-                          <div class="author-title">
-                              <h4 class="m-0 pink">Jared Erondu</h4>
-                              <span>Supervisor</span>
-                          </div>
-                      </div>
-                      <i class="fa fa-quote-left mb-2"></i>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="testimonial-item1 text-center">
-                      <div class="details">
-                          <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
-                              Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
-                              Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
-                      </div>
-                      <div class="author-info mt-2">
-                          <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                  alt=""></a>
-                          <div class="author-title">
-                              <h4 class="m-0 pink">Cadic Vegeta</h4>
-                              <span>Sr. Chef</span>
-                          </div>
-                      </div>
-                      <i class="fa fa-quote-left mb-2"></i>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="testimonial-item1 text-center">
-                      <div class="details">
-                          <p class="m-0">Lorem Ipsum is simply dummy text of the printing andypesetting industry.
-                              Lorem ipsum a simple Lorem Ipsum has been the industry's standard dummy hic et quidem.
-                              Dignissimos maxime velit unde inventore quasi vero dolorem.</p>
-                      </div>
-                      <div class="author-info mt-2">
-                          <a href="#"><img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                  alt=""></a>
-                          <div class="author-title">
-                              <h4 class="m-0 pink">Jonathan Beri</h4>
-                              <span>Manager</span>
-                          </div>
-                      </div>
-                      <i class="fa fa-quote-left mb-2"></i>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+ <section class="testimonial pb-6">
+     <div class="container">
+         <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+             <h2 class="m-0">What <span>People Say About Us</span></h2>
+             <p class="mb-0">
+                 Travel has helped us to understand the meaning of life and it has helped us become better
+                 people. Each time we travel, we see the world with new eyes.
+             </p>
+         </div>
+
+         <div class="review-slider owl-carousel">
+             @foreach ($testimonials as $testimonial)
+                 <div class="item">
+                     <div class="testimonial-item1 text-center">
+                         <div class="details">
+                             <p class="m-0">{{ $testimonial->message }}</p>
+                         </div>
+                         <div class="author-info mt-2">
+                             <a href="#">
+                                 <img alt="client"
+                                     src="{{ $testimonial->image_url ?? asset('template/yatri_world/main-file/images/testimonial/img1.jpg') }}" />
+                             </a>
+                             <div class="author-title">
+                                 <h4 class="m-0 pink">{{ $testimonial->name }}</h4>
+                                 <span>{{ $testimonial->position }}</span>
+                             </div>
+                         </div>
+                         <i class="fa fa-quote-left mb-2"></i>
+                     </div>
+                 </div>
+             @endforeach
+         </div>
+     </div>
+ </section>
