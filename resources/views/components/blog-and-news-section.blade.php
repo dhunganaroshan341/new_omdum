@@ -9,7 +9,7 @@
         </div>
         <div class="news-outer">
             <div class="row">
-                {{-- First Post on Left --}}
+                {{-- First Post Large --}}
                 @if ($posts->first())
                     @php $firstPost = $posts->first(); @endphp
                     <div class="col-lg-5 mb-4">
@@ -47,7 +47,7 @@
                     </div>
                 @endif
 
-                {{-- Remaining Posts on Right --}}
+                {{-- Smaller Posts Right --}}
                 <div class="col-lg-7 mb-4">
                     <div class="row">
                         @foreach ($posts->slice(1) as $post)
@@ -76,7 +76,7 @@
                                     <div class="news-content mt-2">
                                         <h4 class="bordernone mb-0">
                                             <a
-                                                href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">{{ $post->title }}</a>
+                                                href="{{ route('blog.detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -84,7 +84,6 @@
                         @endforeach
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
