@@ -19,6 +19,6 @@ class ClientCarousel extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.clie    nt-carousel');
+        return view('components.client-carousel');
     }
 }
