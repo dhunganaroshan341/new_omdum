@@ -42,6 +42,18 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    {{-- No. of People --}}
+                                    <div class="col-12 col-md-4">
+                                        <label class="white d-block mb-2">No. Of People</label>
+                                        <div class="input-box">
+                                            <i class="flaticon-add-user"></i>
+                                            <select class="niceSelect" name="number_of_people">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <option value="{{ $i }}">{{ $i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
 
                                     {{-- Booking Type --}}
                                     <div class="col-12">
@@ -60,7 +72,9 @@
                                         <select name="tour_package_id" id="package-select" class="nice-select" required>
                                             <option value="" disabled selected>-- Select a Package --</option>
                                             @foreach ($packages as $package)
-                                                <option value="{{ $package->id }}">{{ $package->name }}</option>
+                                                <option value="{{ $package->id }}">
+                                                    {{ implode(' ', array_slice(explode(' ', $package->title), 0, 4)) }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -90,18 +104,7 @@
                                         <input type="date" name="custom_date" class="form-control">
                                     </div>
 
-                                    {{-- No. of People --}}
-                                    <div class="col-12 col-md-4">
-                                        <label class="white d-block mb-2">No. Of People</label>
-                                        <div class="input-box">
-                                            <i class="flaticon-add-user"></i>
-                                            <select class="niceSelect" name="number_of_people">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                @endfor
-                                            </select>
-                                        </div>
-                                    </div>
+
 
                                     {{-- Message --}}
                                     <div class="col-12">
