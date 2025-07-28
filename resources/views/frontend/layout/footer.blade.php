@@ -95,7 +95,9 @@
             <div class="container">
                 <div class="copyright-inner">
                     <div class="copyright-text text-center">
-                        <p class="m-0 white">copyright@ommundumtreks2025</p>
+                        <p class="m-0 white">copyright@ommundumtreks2025 | developed by <a
+                                style="text-decoration: none;color:white" href="https://realminfotek.com/">Realminfotech
+                                Pvt Ltd.</a> </p>
                     </div>
                 </div>
             </div>
