@@ -9,13 +9,15 @@
         </div>
         <div class="news-outer">
             <div class="row">
-                {{-- First Post Large --}}
-                @if ($posts->first())
-                    @php $firstPost = $posts->first(); @endphp
+                {{-- First Post Large Left --}}
+                @if ($posts->isNotEmpty())
+                    @php
+                        $firstPost = $posts->first();
+                    @endphp
                     <div class="col-lg-5 mb-4">
                         <div class="news-item overflow-hidden">
                             <div class="news-image">
-                                <img src="{{ $firstPost->postImages->first()?->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                <img src="{{ $firstPost->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
                                     alt="image">
                             </div>
                             <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -28,6 +30,12 @@
                                     </li>
                                     <li>
                                         <a href="#" class="pe-3">
+                                            <i class="fa fa-comment pink pe-1"></i> {{-- You can add comments count if available --}}
+                                            {{ $firstPost->comments->count() ?? 0 }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="">
                                             <i class="fa fa-tag pink pe-1"></i>
                                             {{ $firstPost->category?->name ?? 'Travel' }}
                                         </a>
@@ -42,19 +50,28 @@
                                 <p class="mb-3">
                                     {!! \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 300) !!}
                                 </p>
+
+                                {{-- Author info, if needed --}}
+                                @if ($firstPost->createdBy)
+                                    <div class="author-img">
+                                        <img src="{{ $firstPost->createdBy->profile_photo_url ?? asset('template/yatri_world/main-file/images/default-user.png') }}"
+                                            alt="Author Image">
+                                        <span>By - {{ $firstPost->createdBy->name }}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
                 @endif
 
-                {{-- Smaller Posts Right --}}
+                {{-- Next Four Posts Smaller Right --}}
                 <div class="col-lg-7 mb-4">
                     <div class="row">
-                        @foreach ($posts->slice(1) as $post)
+                        @foreach ($posts->skip(1)->take(4) as $post)
                             <div class="col-md-6 mb-4">
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
-                                        <img src="{{ $post->first()?->first_image_url ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
+                                        <img src="{{ $post->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
                                             alt="image">
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -67,6 +84,12 @@
                                             </li>
                                             <li>
                                                 <a href="#" class="pe-3">
+                                                    <i class="fa fa-comment pink pe-1"></i> {{-- Add comment count if needed --}}
+                                                    {{ $post->comments->count() ?? 0 }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="">
                                                     <i class="fa fa-tag pink pe-1"></i>
                                                     {{ $post->category?->name ?? 'Travel' }}
                                                 </a>
@@ -84,6 +107,7 @@
                         @endforeach
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
