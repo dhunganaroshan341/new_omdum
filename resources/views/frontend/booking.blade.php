@@ -32,7 +32,7 @@
                                     </div>
 
                                     {{-- Row 2: Country, No. of People, Booking Type (full width for booking type) --}}
-                                    <div class="col-12 col-md-4">
+                                    <div class="col-12 col-md-6">
                                         <label class="white d-block mb-2">Country</label>
                                         <select name="country" class="nice-select" required>
                                             <option value="" disabled selected>Select your country</option>
@@ -44,7 +44,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-12 col-md-4">
+                                    <div class="col-12 col-md-6">
                                         <label class="white d-block mb-2">No. Of People</label>
                                         <div class="input-box">
                                             <i class="flaticon-add-user"></i>
@@ -93,7 +93,7 @@
                                     </div>
 
                                     <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
-                                        <img src="{{ asset('/front/images/logo.png') }}" alt="Omunum Logo" class="img-fluid"
+                                        <img src="{{ asset('imageassetlogo.png') }}" alt="Omunum Logo" class="img-fluid"
                                             style="max-height: 120px;">
                                     </div>
 
