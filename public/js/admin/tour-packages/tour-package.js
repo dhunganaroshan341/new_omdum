@@ -26,7 +26,7 @@ function populateTourPackageForm(tour_package) {
     $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);
     $("input[name='duration']").val(tour_package.duration);
-    $("input[name='accomodation']").val(tour_package.accomodation);
+    $("textarea[name='accomodation']").val(tour_package.accomodation);
     $("input[name='max_people']").val(tour_package.max_people);
     $("input[name='location']").val(tour_package.location);
     $("input[name='available_seats']").val(tour_package.available_seats);
