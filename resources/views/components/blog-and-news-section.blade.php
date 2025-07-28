@@ -37,10 +37,10 @@
                             <div class="news-content mt-2">
                                 <h4 class="pb-2 mb-2 border-b">
                                     <a
-                                        href="{{ route('blog.detail', ['slut' => $firstPost->slug]) }}">{{ $firstPost->title }}</a>
+                                        href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">{{ $firstPost->title }}</a>
                                 </h4>
                                 <p class="mb-3">
-                                    {{ \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 300) }}
+                                    {!! \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 300) !!}
                                 </p>
                             </div>
                         </div>
@@ -75,7 +75,8 @@
                                     </div>
                                     <div class="news-content mt-2">
                                         <h4 class="bordernone mb-0">
-                                            <a href="{{ route('posts.show', $post->slug) }}">{{ $post->title }}</a>
+                                            <a
+                                                href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">{{ $post->title }}</a>
                                         </h4>
                                     </div>
                                 </div>
