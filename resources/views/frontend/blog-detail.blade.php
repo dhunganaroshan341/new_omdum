@@ -11,7 +11,7 @@
                         <h2 class="title text-white">Blog Details</h2>
                         <ol class="breadcrumb text-left text-black mt-10">
                             <li><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{ route('blogs.index') }}">Blog</a></li>
+                            <li><a href="{{ route('blog.index') }}">Blog</a></li>
                             <li class="active text-white">Blog Detail</li>
                         </ol>
                     </div>
