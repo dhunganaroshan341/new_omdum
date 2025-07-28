@@ -67,39 +67,47 @@
 
                         <!-- Blog Prev/Next Navigation -->
                         <div class="blog-next mb-4 d-flex justify-content-between">
-
-                            {{-- Previous Post --}}
-                            @if (isset($previousPost))
+                            @if ($previousPost)
                                 <a href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}"
-                                    class="prev ps-4 text-start text-decoration-none">
-                                    <i class="fa fa-arrow-left white"></i>
-                                    <p class="m-0 white">Previous Post</p>
-                                    <p class="m-0 white">{{ $previousPost->title }}</p>
+                                    class="float-start text-start">
+                                    <div class="prev ps-4">
+                                        <i class="fa fa-arrow-left white"></i>
+                                        <p class="m-0 white">Previous Post</p>
+                                        <p class="m-0 white">
+                                            {{ \Illuminate\Support\Str::words($previousPost->title, 3, '...') }}
+                                        </p>
+                                    </div>
                                 </a>
                             @else
-                                <div class="prev ps-4 text-start" style="opacity: 0.5; cursor: not-allowed;">
-                                    <i class="fa fa-arrow-left white"></i>
-                                    <p class="m-0 white">Previous Post</p>
-                                    <p class="m-0 white">No more posts</p>
+                                <div class="float-start text-start opacity-50 pointer-none ps-4">
+                                    <div class="prev">
+                                        <i class="fa fa-arrow-left white"></i>
+                                        <p class="m-0 white">Previous Post</p>
+                                        <p class="m-0 white">No Previous</p>
+                                    </div>
                                 </div>
                             @endif
 
-                            {{-- Next Post --}}
-                            @if (isset($nextPost))
+                            @if ($nextPost)
                                 <a href="{{ route('blog.detail', ['slug' => $nextPost->slug]) }}"
-                                    class="next pe-4 text-end text-decoration-none">
-                                    <i class="fa fa-arrow-right white"></i>
-                                    <p class="m-0">Next Post</p>
-                                    <p class="m-0">{{ $nextPost->title }}</p>
+                                    class="float-end text-end">
+                                    <div class="next pe-4">
+                                        <i class="fa fa-arrow-right white"></i>
+                                        <p class="m-0">Next Post</p>
+                                        <p class="m-0">
+                                            {{ \Illuminate\Support\Str::words($nextPost->title, 3, '...') }}
+                                        </p>
+                                    </div>
                                 </a>
                             @else
-                                <div class="next pe-4 text-end" style="opacity: 0.5; cursor: not-allowed;">
-                                    <i class="fa fa-arrow-right white"></i>
-                                    <p class="m-0">Next Post</p>
-                                    <p class="m-0">No more posts</p>
+                                <div class="float-end text-end opacity-50 pointer-none pe-4">
+                                    <div class="next">
+                                        <i class="fa fa-arrow-right white"></i>
+                                        <p class="m-0">Next Post</p>
+                                        <p class="m-0">No Next</p>
+                                    </div>
                                 </div>
                             @endif
-
                         </div>
 
                     </div>
