@@ -53,7 +53,7 @@ $(document).ready(function () {
     });
 
     // Edit page
-    $(document).on("click", ".editPageBtn", function () {
+    $(document).on("click", ".editUserButton", function () {
         clearModal();
         let id = $(this).data("id");
 
