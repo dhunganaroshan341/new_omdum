@@ -13,7 +13,7 @@ class ClientSeeder extends Seeder
      */
     public function run(): void
     {
-        $clients = Client::factory()->count(100)->make(); // generate but don't insert yet
+        $clients = Client::factory()->count(10)->make(); // generate but don't insert yet
 
         foreach ($clients as $client) {
             Client::updateOrCreate(
