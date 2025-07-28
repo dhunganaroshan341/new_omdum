@@ -56,24 +56,36 @@
                                         </div>
                                     </div>
 
-                                    {{-- Booking Type full width on next row --}}
-                                    <div class="col-12 col-md-4 d-flex align-items-center">
-                                        <div>
-                                            <label class="white d-block mb-2">Select Booking Type</label>
-                                            <div class="d-flex gap-3">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input me-1" name="booking_type"
-                                                        value="batch" checked>
-                                                    Batch Date
-                                                </label>
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input me-1" name="booking_type"
-                                                        value="custom">
-                                                    Custom Date
-                                                </label>
-                                            </div>
-                                        </div>
+                                    {{-- Row 3: Package, Batch, Custom Date, Logo --}}
+                                    <div class="col-12 col-md-3" id="package-section">
+                                        <label class="white d-block mb-2">Select Package</label>
+                                        <select name="tour_package_id" id="package-select" class="nice-select" required>
+                                            <option value="" disabled selected>-- Select a Package --</option>
+                                            @foreach ($packages as $package)
+                                                <option value="{{ $package->id }}">
+                                                    {{ implode(' ', array_slice(explode(' ', $package->title), 0, 4)) }}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
+
+                                    <div class="col-12 col-md-3" id="batch-section">
+                                        <label class="white d-block mb-2">Select Batch</label>
+                                        <select name="batch_id" id="batch-select" class="nice-select" disabled required>
+                                            <option value="">-- Select a Package First --</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 col-md-3" id="custom-date-section" style="display:none;">
+                                        <label class="white d-block mb-2">Select Custom Date</label>
+                                        <input type="date" name="custom_date" class="form-control">
+                                    </div>
+
+                                    <div class="col-12 col-md-3 d-flex align-items-center justify-content-center">
+                                        <img src="{{ asset('imageassetlogo.png') }}" alt="Omunum Logo" class="img-fluid"
+                                            style="max-height: 120px;">
+                                    </div>
+                                    >
 
 
                                     {{-- Batch messages full width --}}
