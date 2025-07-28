@@ -114,7 +114,7 @@
                                 <ul class="sidebar-category">
                                     @foreach ($categories as $category)
                                         <li><a
-                                                href="{{ route('blogsByCategory', ['title' => $category->title]) }}">{{ $category->title }}</a>
+                                                href="{{ route('blog.category', ['title' => $category->title]) }}">{{ $category->title }}</a>
                                         </li>
                                     @endforeach
 
