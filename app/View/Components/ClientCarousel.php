@@ -14,7 +14,7 @@ class ClientCarousel extends Component
     public function __construct()
     {
         // Fetch all clients from the database
-        $this->clients = Client::where('statuc','Active')->get();
+        $this->clients = Client::where('status','Active')->get();
     }
 
     public function render(): View|Closure|string
