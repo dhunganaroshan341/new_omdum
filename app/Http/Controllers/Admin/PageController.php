@@ -93,7 +93,7 @@ public function index(Request $request)
         config('js-map.admin.summernote.style'),
         config('js-map.admin.buttons.style')
     );
-.blade.php
+
     return view('Admin.pages.pages.pages', [
         'extraJs' => $extraJs,
         'extraCs' => $extraCs
