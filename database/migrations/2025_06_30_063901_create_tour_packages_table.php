@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('short_description')->nullable();
             $table->longText('long_description')->nullable();
             $table->json('price_includes')->nullable();
+            $table->json('price_excludes')->nullable();
             $table->longText('what_to_expect')->nullable();
             $table->longText('itinerary')->nullable();
             $table->boolean('top_deal')->default(0);
