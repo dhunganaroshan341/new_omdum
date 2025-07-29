@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             ClientSeeder::class,
             PageBannerSeeder::class,
-            GallerySeeder::class,
+            // GallerySeeder::class,
             CallToActionSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
