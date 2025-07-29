@@ -79,3 +79,10 @@
         @endforeach
     </section>
 @endif
+@push('styles')
+    <style>
+        span {
+            background: none !important;
+        }
+    </style>
+@endpush
