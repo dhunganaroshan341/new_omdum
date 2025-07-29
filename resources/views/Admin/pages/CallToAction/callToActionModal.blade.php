@@ -48,6 +48,12 @@
                             <input type="file" name="image" id="image" class="form-control" />
                             <div id="callToActionImage" class="mt-2"> </div>
                         </div>
+                        <div class="col-md-6">
+                            <label for="iframe" class="form-label">Iframe Url<span
+                                    class="text-danger">*</span></label>
+                            <input type="text" name="iframe" id="iframe" class="form-control"
+                                placeholder="youtube iframe" />
+                        </div>
 
 
                         <div class="col-md-12 mt-4 mb-2">
@@ -58,11 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="iframe" class="form-label">Iframe Url<span class="text-danger">*</span></label>
-                    <input type="text" name="iframe" id="iframe" class="form-control"
-                        placeholder="youtube iframe" />
-                </div>
+
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
