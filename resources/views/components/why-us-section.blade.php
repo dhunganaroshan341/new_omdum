@@ -71,5 +71,9 @@
          .why-us-content {
              cursor: default !important;
          }
+
+         . .why-us-item {
+             cursor: default !important;
+         }
      </style>
  @endpush
