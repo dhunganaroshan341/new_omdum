@@ -22,6 +22,12 @@
                             <input type="text" name="title" id="title" class="form-control"
                                 placeholder="Enter CTA Title" />
                         </div>
+                        <!-- Sub Heading -->
+                        <div class="col-md-6">
+                            <label for="sub_heading" class="form-label">Sub Heading</label>
+                            <input type="text" name="sub_heading" id="sub_heading" class="form-control"
+                                placeholder="Enter sub heading">
+                        </div>
 
                         <div class="col-md-6">
                             <label for="button_text" class="form-label">Button Text<span
@@ -30,18 +36,19 @@
                                 placeholder="e.g. Learn More" />
                         </div>
 
-                        <div class="col-md-6 mt-3">
+                        <div class="col-md-4 mt-3">
                             <label for="button_url" class="form-label">Button URL<span
                                     class="text-danger"></span></label>
                             <input type="url" name="button_url" id="button_url" class="form-control"
                                 placeholder="https://example.com" />
                         </div>
 
-                        <div class="col-md-6 mt-3">
+                        <div class="col-md-4 mt-3">
                             <label for="image" class="form-label">Image<span class="text-danger">*</span></label>
                             <input type="file" name="image" id="image" class="form-control" />
                             <div id="callToActionImage" class="mt-2"> </div>
                         </div>
+
 
                         <div class="col-md-12 mt-4 mb-2">
                             <label for="description" class="form-label">Description<span

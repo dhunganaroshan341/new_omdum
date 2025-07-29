@@ -10,7 +10,7 @@ class CallToAction extends BaseModel
     use HasFactory;
     protected $table = 'call_to_actions';
     protected $primaryKey = "id";
-    protected $fillable = ['title','page','description', 'image','link','iframe'];
+    protected $fillable = ['title','page','sub_heading','description', 'image','link','iframe'];
 
 
 }

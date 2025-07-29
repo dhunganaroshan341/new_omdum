@@ -76,6 +76,7 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 $("#title").val(response.message.title);
+                $("#sub_heading").val(response.message.sub_heading);
                 $("#title").val(response.message.iframe);
                 $("#formModalLabel").val(response.message.page+' CTA');
 
