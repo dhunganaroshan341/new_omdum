@@ -67,5 +67,9 @@
              text-decoration: none;
              color: inherit;
          }
+
+         .why-us-content {
+             cursor: default !important;
+         }
      </style>
  @endpush
