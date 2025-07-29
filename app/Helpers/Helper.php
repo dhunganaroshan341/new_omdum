@@ -22,7 +22,7 @@ function getNavbarCountries() {
     // Group packages by 'type' (enum column) inside each country
     $countries = $rawCountries->map(function ($country) {
         $grouped = $country->packages
-            ->groupBy(fn($package) => $package->type ?? 'unknown'); // 'trekking', 'tour', 'other'
+            ->groupBy(fn($package) => $package->package_type ?? 'Tour'); // 'trekking', 'tour', 'other'
 
         $country->setAttribute('groupedPackages', $grouped);
 

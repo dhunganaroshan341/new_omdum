@@ -29,6 +29,7 @@ class TourPackage extends BaseModel
         'price_excludes ',
         'slug',
         'short_description',
+        'package_type',
         'long_description',
         'what_to_expect',
         'itinerary',
