@@ -85,12 +85,14 @@ public function index(Request $request)
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
+        config('js-map.admin.dropzone.script'),
         config('js-map.admin.buttons.script')
     );
 
     $extraCs = array_merge(
         config('js-map.admin.datatable.style'),
         config('js-map.admin.summernote.style'),
+        config('js-map.admin.dropzone.style'),
         config('js-map.admin.buttons.style')
     );
 
