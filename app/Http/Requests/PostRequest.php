@@ -20,29 +20,41 @@ class PostRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'post_title' => 'required|min:3',
-            // 'post_images' => $this->route('id') ? 'nullable|mimes:png,jpeg,jpg,webp'  : 'required|mimes:png,jpeg,jpg,webp',
-            'post_images' => $this->route('id') ? 'array'  : 'required|array',
-            'post_images.*' => 'mimes:png,jpeg,jpg,webp',
-            'post_description' => 'required',
-            'post_category_id' => 'required|in:' . implode(',', $this->getOptions()),
-        ];
-    }
+   public function rules(): array
+{
+    return [
+        'post_title' => 'required|min:3',
+        'post_images' => $this->route('id') ? 'array' : 'required|array',
+        'post_images.*' => 'mimes:png,jpeg,jpg,webp',
+        'post_description' => 'required',
 
-    public function messages(){
-        return[
-            'post_title.required'=>'Please Enter the Title',
-            'post_title.min'=>'Title should be at least 3 character',
-            'post_images.required'=>'Please Insert the Image',
-            'post_images.*.mimes'=>'Image should be of : png,jpeg,jpg,webp',
-            'post_description.required'=>'Please Enter the description',
-            'post_category_id.required'=>'Please Select the Category',
-            'post_category_id.in'=>'Please Select from the given options only'
-        ];
-    }
+        // ✅ Expecting multiple category IDs as an array
+        'post_category_id' => 'required|array',
+        'post_category_id.*' => 'required|integer|in:' . implode(',', $this->getCategoryOptions()),
+
+        // ✅ Expecting multiple tag IDs as an array
+        'tag_ids' => 'nullable|array',
+        'tag_ids.*' => 'integer|exists:tags,id',
+    ];
+}
+
+
+ public function messages()
+{
+    return [
+        'post_title.required' => 'Please Enter the Title',
+        'post_title.min' => 'Title should be at least 3 characters',
+        'post_images.required' => 'Please Insert the Image',
+        'post_images.*.mimes' => 'Image should be of type: png, jpeg, jpg, webp',
+        'post_description.required' => 'Please Enter the description',
+
+        'post_category_id.required' => 'Please select at least one category',
+        'post_category_id.*.in' => 'Selected category is invalid',
+
+        'tag_ids.*.exists' => 'Selected tag is invalid',
+    ];
+}
+
 
     private function getOptions()
     {

@@ -23,6 +23,7 @@ class PageBannerRequest extends FormRequest
     {
         $rules = [
             'title' => 'nullable|string|max:255',
+            'sub_heading' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:1000',
             // Add other rules if needed
         ];

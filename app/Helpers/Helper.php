@@ -4,6 +4,7 @@ use App\Models\CallToAction;
 use App\Models\FeaturedService;
 use App\Models\Setting;
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\OurCountry;
 use App\Models\Cta;
 use App\Models\GalleryAlbum;
@@ -68,4 +69,10 @@ function getActiveStatusServices(){
 
 
 }
+
+ function getCategoryOptions()
+{
+    return Category::pluck('id')->toArray();
+}
+
 ?>

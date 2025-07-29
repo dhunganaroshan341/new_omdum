@@ -62,6 +62,7 @@ $(document).ready(function () {
             url: "/admin/page-banner/" + id,
             success: function (response) {
                 $("#title").val(response.message.title);
+                $("#sub_heading").val(response.message.sub_heading);
                 $("#page").text(response.message.page);         // FIXED
                 $("#section").text(response.message.section);   // FIXED
                 $("#image").val(''); // keep file input empty for security

@@ -16,6 +16,7 @@ class PageBanner extends BaseModel
 
     protected $fillable = [
         'title',
+        'sub_heading',
         'description',
         'page',
         'section',

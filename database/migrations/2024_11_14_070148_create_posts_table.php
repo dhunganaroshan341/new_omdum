@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique()->nullable();
             $table->longText('description');
-            $table->unsignedBigInteger('category_id');
+            $table->json('tags')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->enum('status',['Active','Inactive'])->default('Active');

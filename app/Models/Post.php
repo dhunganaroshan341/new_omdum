@@ -14,9 +14,10 @@ class Post extends BaseModel
 
     protected $fillable=['title','category_id','description','created_by','updated_by','status','views'];
 
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id','id');
-    }
+    public function categories()
+{
+    return $this->belongsToMany(Category::class);
+}
 
 
 
@@ -27,6 +28,10 @@ class Post extends BaseModel
     public function comments(){
         return $this->morphMany(Comment::class,'commentable');
     }
+public function tags()
+{
+    return $this->belongsToMany(Tag::class);
+}
 
 
     public function createdBy(){
@@ -36,6 +41,7 @@ class Post extends BaseModel
     public function updatedBy(){
         return $this->belongsTo(User::class,'updated_by','id');
     }
+
 public function getFirstImageUrlAttribute()
 {
     return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');

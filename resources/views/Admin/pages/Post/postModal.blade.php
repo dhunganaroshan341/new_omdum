@@ -41,6 +41,18 @@
                                     class="text-danger">*</span></label>
                             <textarea class="form-control summernote" name="post_description" id="post_description" rows="3"></textarea>
                         </div>
+                        <div class="form-group col-md-4">
+                            <label for="categories">select Categories</label>
+                            <select class="form-control" name="category_id" id="category_id">
+                                @foreach ($package->categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="categories">select tags</label>
+                            <input type="text" name="tags" placeholder="separate by comma ,">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('page_banners', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->string('sub_heading')->nullable();
             $table->string('description')->nullable();
             $table->string('page');
             $table->string('section');
