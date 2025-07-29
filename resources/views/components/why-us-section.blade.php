@@ -59,3 +59,13 @@
      </div>
  </div>
  <!-- why us ends -->
+ @push('styles')
+     <style>
+         .why-us-content a {
+             pointer-events: none;
+             cursor: default;
+             text-decoration: none;
+             color: inherit;
+         }
+     </style>
+ @endpush
