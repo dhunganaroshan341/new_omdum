@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
             TestimonialSeeder::class,
             ServiceQuerySeeder::class,
             CountrySeeder::class,
-            TourPackageSeeder::class,
+            // TourPackageSeeder::class,
             AchievementSeeder::class,
             PageSeeder::class,
             TagSeeder::class,
