@@ -18,10 +18,10 @@ class AchievementCounter extends Component
         // Optional fallback logic if not enough achievements
         if ($achievements->isEmpty()) {
             $achievements = collect([
-                (object)[ 'value' => 100, 'title' => 'Happy Customers', 'icon_class' => 'fa-smile' ],
-                (object)[ 'value' => 50, 'title' => 'Amazing Tours', 'icon_class' => 'fa-plane' ],
-                (object)[ 'value' => 3472, 'title' => 'In Business', 'icon_class' => 'fa-briefcase' ],
-                (object)[ 'value' => 523, 'title' => 'Support Case', 'icon_class' => 'fa-headset' ],
+                (object)[ 'count' => 100, 'title' => 'Happy Customers', 'icon_class' => 'fa-smile' ],
+                (object)[ 'count' => 50, 'title' => 'Amazing Tours', 'icon_class' => 'fa-plane' ],
+                (object)[ 'count' => 3472, 'title' => 'In Business', 'icon_class' => 'fa-briefcase' ],
+                (object)[ 'count' => 523, 'title' => 'Support Case', 'icon_class' => 'fa-headset' ],
             ]);
         }
 
