@@ -41,7 +41,7 @@ class UserFrontendController extends Controller
     $services = Service::where('status', 1)->get();
     $content_title = "Home";
     $cta = CallToAction::where('page', 'home')->first();
-    $posts = Post::with('category', 'postImages')->latest()->take(6)->get();
+    $posts = Post::with('categories', 'postImages')->latest()->take(6)->get();
 
 
 

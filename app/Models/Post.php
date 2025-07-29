@@ -18,6 +18,10 @@ class Post extends BaseModel
 {
     return $this->belongsToMany(Category::class);
 }
+public function tags()
+{
+    return $this->belongsToMany(Tag::class);
+}
 
 
 
@@ -28,10 +32,7 @@ class Post extends BaseModel
     public function comments(){
         return $this->morphMany(Comment::class,'commentable');
     }
-public function tags()
-{
-    return $this->belongsToMany(Tag::class);
-}
+
 
 
     public function createdBy(){

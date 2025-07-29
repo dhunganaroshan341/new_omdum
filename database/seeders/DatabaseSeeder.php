@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             TourPackageSeeder::class,
             AchievementSeeder::class,
             pageSeeder::class,
+            TagSeeder::class,
         ]);
     }
 }
