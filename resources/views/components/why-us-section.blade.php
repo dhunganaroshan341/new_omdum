@@ -68,10 +68,10 @@
          .why-us .why-us-item,
          .why-us .why-us-content,
          .why-us * {
-             pointer-events: none !important;
+             /* pointer-events: none !important; */
              cursor: default !important;
-             text-decoration: none !important;
-             color: inherit !important;
+             /* text-decoration: none !important;
+                 color: inherit !important; */
          }
      </style>
  @endpush
