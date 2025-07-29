@@ -61,19 +61,17 @@
  <!-- why us ends -->
  @push('styles')
      <style>
-         .why-us-content a {
+         /* Disable pointer events and hand cursor on all clickable elements inside why-us */
+         .why-us a,
+         .why-us [class*="flaticon"],
+         .why-us h4,
+         .why-us .why-us-item,
+         .why-us .why-us-content,
+         .why-us * {
              pointer-events: none !important;
              cursor: default !important;
-             text-decoration: none;
-             color: inherit;
-         }
-
-         .why-us-content {
-             cursor: default !important;
-         }
-
-         . .why-us-item {
-             cursor: default !important;
+             text-decoration: none !important;
+             color: inherit !important;
          }
      </style>
  @endpush
