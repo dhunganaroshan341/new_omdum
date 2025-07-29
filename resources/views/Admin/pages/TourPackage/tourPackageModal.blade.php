@@ -43,6 +43,15 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="col-md-6">
+                            <label>Package Type <span class="text-danger">*</span></label>
+                            <select name="package_type" class="form-select" required>
+                                <option value="">-- Select Package Type--</option>
+                                <option value="tour">-- Tour--</option>
+                                <option value="trekking">-- Trekking --</option>
+
+                            </select>
+                        </div>
 
                         <div class="col-md-6">
                             <label>Status</label>

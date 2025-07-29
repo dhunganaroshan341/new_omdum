@@ -41,7 +41,7 @@ class TourPackageRequest extends FormRequest
             'start_point' => 'nullable|string|max:255',
             'end_point' => 'nullable|string|max:255',
             'status' => 'nullable|in:Active,Inactive',
-            'type' => 'nullable|in:trekking,tour,other',
+            'package_type' => 'nullable|in:trekking,tour,other',
             'max_people' => 'nullable|integer|min:1',
             'available_seats' => 'nullable|integer|min:0|lte:max_people',
 
