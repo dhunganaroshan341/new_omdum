@@ -62,8 +62,8 @@
  @push('styles')
      <style>
          .why-us-content a {
-             pointer-events: none;
-             cursor: default;
+             pointer-events: none !important;
+             cursor: default !important;
              text-decoration: none;
              color: inherit;
          }
