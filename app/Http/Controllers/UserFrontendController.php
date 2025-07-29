@@ -112,7 +112,7 @@ class UserFrontendController extends Controller
 
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
-   $posts = Post::with(['category', 'postImages'])
+   $posts = Post::with(['categories', 'postImages'])
              ->where('status', 'Active')
              ->latest()
              ->paginate(6);
