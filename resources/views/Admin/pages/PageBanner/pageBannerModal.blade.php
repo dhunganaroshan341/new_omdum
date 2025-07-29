@@ -4,12 +4,13 @@
         <div class="modal-content shadow-lg rounded-4">
             <form id="formId" class="form" enctype="multipart/form-data">
                 @csrf
+
                 <div class="modal-header border-0 pb-0">
                     <h5 class="modal-title" id="formModalLabel">Update Page Banner</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <div class="modal-body">
+                <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
                     <p id="validationErrors" class="alert alert-danger d-none"></p>
 
                     <div class="alert alert-info small">
@@ -57,7 +58,6 @@
                     </div>
                 </div>
 
-                <!-- Modal Footer -->
                 <div class="modal-footer border-top-0 mt-3">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success updateBtn" data-action="edit">Update Page

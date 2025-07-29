@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('page')->default('home');
             $table->string('title');
+            $table->string('sub_heading');
             $table->string('image')->nullable();
              $table->enum('status',['Active','Inactive'])->default('Active');
 
