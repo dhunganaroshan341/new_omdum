@@ -1,19 +1,23 @@
 <?php
-
 namespace App\View\Components;
 
+use App\Models\CallToAction;
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\CallToActionHome;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class CallToActionHomeSection extends Component
 {
+    public $callToAction;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        // Fetch the record where title is 'home'
+        $this->callToAction = CallToAction::where('title', 'home')->first();
     }
 
     /**

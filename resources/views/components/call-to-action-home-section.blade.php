@@ -6,18 +6,23 @@
                <div class="row d-flex align-items-center justify-content-between">
                    <div class="col-lg-6 mb-4">
                        <div class="action-content">
-                           <h3 class="white mb-0 text-uppercase">Find next place to visit</h3>
-                           <h2 class="white call-name">EXPLORE THE WORLD</h2>
-                           <p class="white mb-4">There are many variations of passages of. Lorem Ipsum available, but
-                               the majority have suffered alteration in some form, by injected humour, or randomised
-                               words which don’t look.</p>
-                           <a href="destination-list.html" class="nir-btn">Go Explore <i
+                           <h3 class="white mb-0 text-uppercase">
+                               {{ $callToAction->sub_heading ?? 'Find next place to visit' }}</h3>
+                           <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
+                           <p class="white mb-4">{!! $callToAction->description ??
+                               'There are many variations of passages of. Lorem Ipsum available, but
+                                                                                                                                           the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                           words which don’t look.' !!}</p>
+                           <a href="{{ $callToAction->button_url ?? '#' }}"
+                               class="nir-btn">{{ $callToAction->button_text ?? 'Go Explore' }} <i
                                    class="fa fa-arrow-right"></i></a>
                        </div>
                    </div>
                    <div class="col-lg-6 mb-4">
                        <div class="video-button">
-                           <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="">
+                           <img src="{{ $callToAction->image_url ?? asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                               alt="">
+
                            <div class="call-button text-center">
                                <button type="button" class="play-btn js-video-button" data-video-id="Qhgvf1xF3T4"
                                    data-channel="youtube">
