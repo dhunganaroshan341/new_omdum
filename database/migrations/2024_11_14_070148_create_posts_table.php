@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->enum('status',['Active','Inactive'])->default('Active');
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onUpdate('cascade');
             $table->foreign('updated_by')->references('id')->on('users')->onUpdate('cascade');
             $table->timestamps();
