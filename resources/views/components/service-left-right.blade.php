@@ -10,10 +10,10 @@
             <div class="row align-items-center mb-5 {{ $rowClass }}">
                 <div class="col-md-6" data-aos="{{ $aos }}">
                     <img src="{{ $service->image ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
-                        class="img-fluid rounded shadow" alt="{{ $service->title ?? 'Service Image' }}">
+                        class="img-fluid rounded shadow" alt="{{ $service->name ?? 'Service Image' }}">
                 </div>
                 <div class="col-md-6" data-aos="{{ $aos }}">
-                    <h3 class="mb-3 service-title">{{ $service->title ?? 'Service Title' }}</h3>
+                    <h3 class="mb-3 service-title">{{ $service->name ?? 'Service Title' }}</h3>
                     <p>{!! $service->description ?? 'Default description for our amazing service goes here.' !!}</p>
 
                     @if ($loop->first)
