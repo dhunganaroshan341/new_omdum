@@ -3,13 +3,13 @@ let myDropzone;
 
 document.addEventListener('DOMContentLoaded', function() {
     myDropzone = new Dropzone("#videoDropzone", {
-        url: window.routes.bannerVideoUpload, // we’ll pass route from blade
+        url: window.BannerVideoConfig.uploadUrl,
         maxFiles: 1,
         acceptedFiles: 'video/*',
         addRemoveLinks: true,
         dictDefaultMessage: 'Drop your video here or click to upload',
         headers: {
-            'X-CSRF-TOKEN': window.csrfToken
+            'X-CSRF-TOKEN': window.BannerVideoConfig.csrfToken
         },
         success: function(file, response) {
             document.getElementById('uploaded_video').value = response.path;
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Set the initial visibility based on initial selected type
-    toggleInputs(window.initialVideoType);
+    // Initial toggle
+    toggleInputs(window.BannerVideoConfig.initialVideoType);
 
-    // Add listener for radio change
+    // Event listener for radio change
     document.querySelectorAll('input[name="videoType"]').forEach(radio => {
         radio.addEventListener('change', function() {
             toggleInputs(this.value);

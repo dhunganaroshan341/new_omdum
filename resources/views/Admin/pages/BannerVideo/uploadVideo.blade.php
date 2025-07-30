@@ -28,54 +28,9 @@
 
         <div id="uploadContainer" class="mb-3">
             <label>Upload Video</label>
-            <div id="videoDropzone" class="dropzone"></div>
+            <div id="videoDropzone" class="videoDropzone"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">Save Video</button>
     </form>
 @endsection
-
-@push('scripts')
-    <script>
-        Dropzone.autoDiscover = false;
-        let myDropzone;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            myDropzone = new Dropzone("#videoDropzone", {
-                url: "{{ route('admin.banner.video.upload') }}",
-                maxFiles: 1,
-                acceptedFiles: 'video/*',
-                addRemoveLinks: true,
-                dictDefaultMessage: 'Drop your video here or click to upload',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                success: function(file, response) {
-                    document.getElementById('uploaded_video').value = response.path;
-                },
-                removedfile: function(file) {
-                    document.getElementById('uploaded_video').value = '';
-                    file.previewElement.remove();
-                }
-            });
-
-            // Set the initial visibility
-            toggleInputs('{{ old('video_type', $video->type ?? 'iframe') }}');
-        });
-
-        function toggleInputs(type) {
-            $('#video_type').val(type);
-            $('#embedContainer').toggle(type === 'iframe');
-            $('#uploadContainer').toggle(type === 'upload');
-
-            if (type === 'iframe' && myDropzone) {
-                myDropzone.removeAllFiles(true);
-                $('#uploaded_video').val('');
-            }
-        }
-
-        $('input[name="videoType"]').on('change', function() {
-            toggleInputs(this.value);
-        });
-    </script>
-@endpush
