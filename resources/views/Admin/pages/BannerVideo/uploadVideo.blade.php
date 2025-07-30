@@ -27,7 +27,8 @@
 
             <!-- Dropzone Upload Input -->
             <div id="uploadContainer" class="mb-3" style="display:none;">
-                <div class="dropzone" id="videoDropzone"></div>
+                <div id="videoDropzone" class="dropzone-custom"></div> <!-- avoid class="dropzone" -->
+
             </div>
 
             <button type="submit" class="btn btn-primary">Save Video</button>
@@ -37,24 +38,26 @@
 
 @push('scripts')
     <script>
-        Dropzone.autoDiscover = false;
+        Dropzone.autoDiscover = false; // ⚠️ this must be at the very top
 
-        let myDropzone = new Dropzone("#videoDropzone", {
-            url: "{{ route('admin.banner.video.upload') }}",
-            maxFiles: 1,
-            acceptedFiles: 'video/*',
-            addRemoveLinks: true,
-            dictDefaultMessage: 'Drop your video here or click to upload',
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            success: function(file, response) {
-                document.getElementById('uploaded_video').value = response.path;
-            },
-            removedfile: function(file) {
-                document.getElementById('uploaded_video').value = '';
-                file.previewElement.remove();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            const myDropzone = new Dropzone("#videoDropzone", {
+                url: "{{ route('admin.banner.video.upload') }}",
+                maxFiles: 1,
+                acceptedFiles: 'video/*',
+                addRemoveLinks: true,
+                dictDefaultMessage: 'Drop your video here or click to upload',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                success: function(file, response) {
+                    document.getElementById('uploaded_video').value = response.path;
+                },
+                removedfile: function(file) {
+                    document.getElementById('uploaded_video').value = '';
+                    file.previewElement.remove();
+                }
+            });
         });
 
         document.querySelectorAll('input[name="videoType"]').forEach(radio => {
