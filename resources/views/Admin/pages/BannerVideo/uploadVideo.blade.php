@@ -28,7 +28,7 @@
 
         <div id="uploadContainer" class="mb-3" style="display:none;">
             <label>Upload Video</label>
-            <div id="videoDropzone" class="dropzone"></div>
+            <div id="videoDropzone" class="videoDropzone"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">Save Video</button>
