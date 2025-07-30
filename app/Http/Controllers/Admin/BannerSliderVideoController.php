@@ -47,7 +47,7 @@ class BannerSliderVideoController extends Controller
 
         $file = $request->file('video');
         $fileName = uniqid() . '_' . $file->getClientOriginalName();
-        $uploadPath = public_path('upload/banner_videos');
+        $uploadPath = public_path('uploads/banner_videos');
 
         if (!File::exists($uploadPath)) {
             File::makeDirectory($uploadPath, 0775, true);
