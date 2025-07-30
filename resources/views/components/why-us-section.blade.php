@@ -71,7 +71,7 @@
              /* pointer-events: none !important; */
              cursor: default !important;
              /* text-decoration: none !important;
-                 color: inherit !important; */
+                     color: inherit !important; */
          }
      </style>
  @endpush

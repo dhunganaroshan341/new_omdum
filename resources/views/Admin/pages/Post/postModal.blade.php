@@ -44,15 +44,18 @@
                         <div class="form-group col-md-4">
                             <label for="categories">select Categories</label>
                             <select class="form-control" name="category_id" id="category_id">
-                                @foreach ($package->categories as $category)
+                                @foreach ($tourPackage->categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <div class="selectedCategories" id="selectedCategories"></div>
                         <div class="form-group col-md-4">
                             <label for="categories">select tags</label>
                             <input type="text" name="tags" placeholder="separate by comma ,">
                         </div>
+                        <div class="selectedTags" id="selectedTags"></div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
