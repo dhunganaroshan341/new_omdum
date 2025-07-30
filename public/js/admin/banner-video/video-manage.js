@@ -1,43 +1,63 @@
 Dropzone.autoDiscover = false;
-let myDropzone;
 
-document.addEventListener('DOMContentLoaded', function() {
-    myDropzone = new Dropzone("#videoDropzone", {
-        url: window.BannerVideoConfig.uploadUrl,
+$(document).ready(function() {
+    const app = $('#bannerVideoApp');
+    const uploadUrl = app.data('upload-url');
+    const initialVideoType = app.data('initial-video-type');
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    const embedContainer = $('#embedContainer');
+    const uploadContainer = $('#uploadContainer');
+    const videoTypeInput = $('#video_type');
+    const uploadedVideoInput = $('#uploaded_video');
+    const embedTextarea = embedContainer.find('textarea');
+
+    let myDropzone = new Dropzone("#videoDropzone", {
+        url: uploadUrl,
         maxFiles: 1,
         acceptedFiles: 'video/*',
         addRemoveLinks: true,
         dictDefaultMessage: 'Drop your video here or click to upload',
-        headers: {
-            'X-CSRF-TOKEN': window.BannerVideoConfig.csrfToken
-        },
         success: function(file, response) {
-            document.getElementById('uploaded_video').value = response.path;
+            uploadedVideoInput.val(response.path);
         },
         removedfile: function(file) {
-            document.getElementById('uploaded_video').value = '';
+            uploadedVideoInput.val('');
             file.previewElement.remove();
         }
     });
 
-    // Initial toggle
-    toggleInputs(window.BannerVideoConfig.initialVideoType);
+    function toggleInputs(type) {
+        videoTypeInput.val(type);
 
-    // Event listener for radio change
-    document.querySelectorAll('input[name="videoType"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-            toggleInputs(this.value);
-        });
+        if(type === 'iframe') {
+            embedContainer.show();
+            uploadContainer.hide();
+
+            if(myDropzone) myDropzone.removeAllFiles(true);
+            uploadedVideoInput.val(embedTextarea.val());
+        } else {
+            embedContainer.hide();
+            uploadContainer.show();
+            uploadedVideoInput.val('');
+        }
+    }
+
+    // Sync hidden input on textarea change
+    embedTextarea.on('input', function() {
+        uploadedVideoInput.val($(this).val());
+    });
+
+    // Initial toggle state
+    toggleInputs(initialVideoType);
+
+    // Radio change event
+    $('input[name="videoType"]').on('change', function() {
+        toggleInputs($(this).val());
     });
 });
-
-function toggleInputs(type) {
-    document.getElementById('video_type').value = type;
-    document.getElementById('embedContainer').style.display = (type === 'iframe') ? 'block' : 'none';
-    document.getElementById('uploadContainer').style.display = (type === 'upload') ? 'block' : 'none';
-
-    if (type === 'iframe' && myDropzone) {
-        myDropzone.removeAllFiles(true);
-        document.getElementById('uploaded_video').value = '';
-    }
-}

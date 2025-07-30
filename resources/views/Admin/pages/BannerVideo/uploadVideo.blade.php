@@ -23,14 +23,18 @@
 
         <div id="embedContainer" class="mb-3">
             <label>Iframe Code</label>
-            <textarea class="form-control" rows="4" oninput="document.getElementById('uploaded_video').value = this.value">{{ old('url', ($video->type ?? '') === 'iframe' ? $video->url : '') }}</textarea>
+            <textarea class="form-control" rows="4">{{ old('url', ($video->type ?? '') === 'iframe' ? $video->url : '') }}</textarea>
         </div>
 
-        <div id="uploadContainer" class="mb-3">
+        <div id="uploadContainer" class="mb-3" style="display:none;">
             <label>Upload Video</label>
-            <div id="videoDropzone" class="videoDropzone"></div>
+            <div id="videoDropzone" class="dropzone"></div>
         </div>
 
         <button type="submit" class="btn btn-primary">Save Video</button>
     </form>
+
+    <div id="bannerVideoApp" data-upload-url="{{ route('admin.banner.video.upload') }}"
+        data-initial-video-type="{{ old('video_type', $video->type ?? 'iframe') }}">
+    </div>
 @endsection
