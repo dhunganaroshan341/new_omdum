@@ -46,7 +46,8 @@ $(document).ready(function () {
     }
     function loadPreview(data) {
     // Base URL where files are stored
-    const basePath = '/uploads/pages/'; // Adjust as per your setup
+    // const basePath = '/uploads/pages/'; // Adjust as per your setup
+    const basePath = ''; // Adjust as per your setup
 
     // Clear existing previews
     $('#preview_image1, #preview_image2, #preview_video1, #preview_video2').html('');
