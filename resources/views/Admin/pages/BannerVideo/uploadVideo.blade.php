@@ -1,40 +1,31 @@
 @extends('Admin.layout.master')
 
 @section('content')
-    <h4>Banner Video Management</h4>
+    <h4>Upload Banner Video</h4>
 
     @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <form action="{{ route('admin.banner.video.store') }}" method="POST">
+    <form action="{{ route('admin.banner.video.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
-        <input type="hidden" name="video_type" id="video_type" value="{{ old('video_type', $video->type ?? 'iframe') }}">
-        <input type="hidden" name="url" id="uploaded_video" value="{{ old('url', $video->url ?? '') }}">
-
         <div class="mb-3">
-            <label>Video Type:</label><br>
-            <input type="radio" name="videoType" value="iframe"
-                {{ old('video_type', $video->type ?? '') === 'iframe' ? 'checked' : '' }}> Iframe Embed
-            <input type="radio" name="videoType" value="upload"
-                {{ old('video_type', $video->type ?? '') === 'upload' ? 'checked' : '' }} class="ms-3"> Upload Video
+            <label for="video" class="form-label">Select Video (mp4, ogg, webm)</label>
+            <input type="file" name="video" id="video" accept="video/mp4,video/ogg,video/webm" class="form-control"
+                required>
         </div>
 
-        <div id="embedContainer" class="mb-3">
-            <label>Iframe Code</label>
-            <textarea class="form-control" rows="4">{{ old('url', ($video->type ?? '') === 'iframe' ? $video->url : '') }}</textarea>
-        </div>
+        @if ($video && $video->type === 'upload')
+            <div class="mb-3">
+                <label>Current Video:</label>
+                <video controls style="width: 100%; max-height: 400px; object-fit: cover;">
+                    <source src="{{ asset($video->url) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        @endif
 
-        <div id="uploadContainer" class="mb-3" style="display:none;">
-            <label>Upload Video</label>
-            <div id="videoDropzone" class="videoDropzone"></div>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Save Video</button>
+        <button type="submit" class="btn btn-primary">Upload & Save</button>
     </form>
-
-    <div id="bannerVideoApp" data-upload-url="{{ route('admin.banner.video.upload') }}"
-        data-initial-video-type="{{ old('video_type', $video->type ?? 'iframe') }}">
-    </div>
 @endsection

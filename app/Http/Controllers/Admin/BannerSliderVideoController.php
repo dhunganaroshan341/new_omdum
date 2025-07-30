@@ -28,40 +28,24 @@ class BannerSliderVideoController extends Controller
         return view('Admin.pages.BannerVideo.uploadVideo', compact('video','extraJs','extraCs'));
     }
 
-   public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
-            'video_type' => 'required|in:iframe,upload',
-            'url' => 'required|string',
+            'video' => 'required|file|mimetypes:video/mp4,video/ogg,video/webm|max:102400',
         ]);
 
-        $existing = BannersliderVideo::latest()->first();
+        $existing = BannerSliderVideo::latest()->first();
 
         if ($existing) {
-            if ($existing->type === 'upload') {
-                $oldPath = public_path($existing->url);
-                if (File::exists($oldPath)) {
-                    File::delete($oldPath);
-                }
+            // Delete old uploaded video file if exists
+            $oldPath = public_path($existing->url);
+            if (File::exists($oldPath)) {
+                File::delete($oldPath);
             }
             $existing->delete();
         }
 
-        BannersliderVideo::create([
-            'type' => $request->video_type,
-            'url'  => $request->url,
-        ]);
-
-        return redirect()->back()->with('success', 'Video saved successfully.');
-    }
-
-    public function upload(Request $request)
-    {
-        $request->validate([
-            'file' => 'required|file|mimetypes:video/mp4,video/ogg,video/webm|max:102400',
-        ]);
-
-        $file = $request->file('file');
+        $file = $request->file('video');
         $fileName = uniqid() . '_' . $file->getClientOriginalName();
         $uploadPath = public_path('upload/banner_videos');
 
@@ -72,7 +56,12 @@ class BannerSliderVideoController extends Controller
         $file->move($uploadPath, $fileName);
         $relativePath = 'upload/banner_videos/' . $fileName;
 
-        return response()->json(['path' => $relativePath]);
+        BannerSliderVideo::create([
+            'type' => 'upload',
+            'url' => $relativePath,
+        ]);
+
+        return redirect()->back()->with('success', 'Video uploaded and saved successfully.');
     }
 }
 
