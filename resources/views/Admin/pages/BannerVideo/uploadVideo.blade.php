@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('Admin.layout.master')
 
 @section('content')
     <h4>Banner Video Management</h4>
