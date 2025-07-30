@@ -44,47 +44,51 @@ $(document).ready(function () {
         $(".submitBtn").show();
         $(".updateBtn").addClass("d-none");
     }
-    function loadPreview(data) {
-    // Base URL where files are stored
-    // const basePath = '/uploads/pages/'; // Adjust as per your setup
-    const basePath = ''; // Adjust as per your setup
+function loadPreview(data) {
+    const baseUrl = window.location.origin; // Automatically gets https://bivekp23.sg-host.com or http://localhost
 
     // Clear existing previews
     $('#preview_image1, #preview_image2, #preview_video1, #preview_video2').html('');
 
     // Image 1
     if (data.image1) {
-    $('#preview_image1').html(`<img src="/${data.image1}" class="img-thumbnail" width="150">`);
-} else {
-    $('#preview_image1').html(`<span class="text-danger">No image found.</span>`);
-}
-
+        $('#preview_image1').html(`<img src="${baseUrl}/${data.image1}" class="img-thumbnail" width="150">`);
+    } else {
+        $('#preview_image1').html(`<span class="text-danger">No image found for Image 1.</span>`);
+    }
 
     // Image 2
     if (data.image2) {
-        $('#preview_image2').html(`<img src="${basePath + data.image2}" class="img-thumbnail" width="150">`);
+        $('#preview_image2').html(`<img src="${baseUrl}/${data.image2}" class="img-thumbnail" width="150">`);
+    } else {
+        $('#preview_image2').html(`<span class="text-danger">No image found for Image 2.</span>`);
     }
 
     // Video 1
     if (data.video1) {
         $('#preview_video1').html(`
             <video width="150" controls>
-                <source src="${basePath + data.video1}" type="video/mp4">
+                <source src="${baseUrl}/${data.video1}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         `);
+    } else {
+        $('#preview_video1').html(`<span class="text-danger">No video found for Video 1.</span>`);
     }
 
     // Video 2
     if (data.video2) {
         $('#preview_video2').html(`
             <video width="150" controls>
-                <source src="${basePath + data.video2}" type="video/mp4">
+                <source src="${baseUrl}/${data.video2}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         `);
+    } else {
+        $('#preview_video2').html(`<span class="text-danger">No video found for Video 2.</span>`);
     }
 }
+
 
 
     // Show create modal
