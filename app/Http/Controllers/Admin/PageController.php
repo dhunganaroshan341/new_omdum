@@ -136,9 +136,13 @@ public function index(Request $request)
         $data['slug'] = Str::slug($data['title']);
     }
 
-    Page::create($data);
+    $page = Page::create($data);
 
-    return redirect()->route('pages.index')->with('success', 'Page created successfully!');
+    return response()->json([
+        'success' => true,
+        'message' => 'Page created successfully!',
+        'data' => $page
+    ], 201);  // 201 Created
 }
 
 public function update(Request $request, $id)
@@ -148,7 +152,6 @@ public function update(Request $request, $id)
     $data = $request->except(['_token', '_method']);
 
     $mediaFields = ['image1', 'image2', 'video1', 'video2'];
-    // Pass existing file paths to delete old files
     $existingData = $page->toArray();
     $mediaData = $this->handleSingleMediaUploads($request, $mediaFields, $existingData);
     $data = array_merge($data, $mediaData);
@@ -164,7 +167,11 @@ public function update(Request $request, $id)
 
     $page->update($data);
 
-    return redirect()->back()->with('success', 'Page updated successfully!');
+    return response()->json([
+        'success' => true,
+        'message' => 'Page updated successfully!',
+        'data' => $page
+    ], 200);  // 200 OK
 }
 
     /**
