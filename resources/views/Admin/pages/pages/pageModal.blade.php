@@ -81,30 +81,38 @@
                         </div>
 
                         {{-- Images --}}
+                        {{-- Image 1 --}}
                         <div class="col-md-6">
                             <label for="image1" class="form-label">Image 1</label>
                             <input class="form-control" type="file" id="image1" name="image1"
                                 accept="image/*">
+                            <div class="mt-2" id="preview_image1"></div> {{-- ⬅️ Image preview will go here --}}
                         </div>
 
+                        {{-- Image 2 --}}
                         <div class="col-md-6">
                             <label for="image2" class="form-label">Image 2</label>
                             <input class="form-control" type="file" id="image2" name="image2"
                                 accept="image/*">
+                            <div class="mt-2" id="preview_image2"></div>
                         </div>
 
-                        {{-- Videos --}}
+                        {{-- Video 1 --}}
                         <div class="col-md-6">
                             <label for="video1" class="form-label">Video 1</label>
                             <input class="form-control" type="file" id="video1" name="video1"
                                 accept="video/*">
+                            <div class="mt-2" id="preview_video1"></div>
                         </div>
 
+                        {{-- Video 2 --}}
                         <div class="col-md-6">
                             <label for="video2" class="form-label">Video 2</label>
                             <input class="form-control" type="file" id="video2" name="video2"
                                 accept="video/*">
+                            <div class="mt-2" id="preview_video2"></div>
                         </div>
+
 
                         {{-- Gallery --}}
                         <div class="col-12">
