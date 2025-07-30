@@ -5,8 +5,7 @@
     <div class="container-fluid">
         <button class="btn btn-primary mb-4 mt-4">Pages</button>
 
-        {{-- Modal for Add/Edit Page --}}
-        @include('Admin.pages.pages.pageModal')
+
 
         <div class="table-responsive">
             <table class="table table-striped" id="show-page-data">
@@ -23,5 +22,9 @@
 
             </table>
         </div>
+
+
+        {{-- Modal for Add/Edit Page --}}
+        @include('Admin.pages.pages.pageModal')
     </div>
 @endsection
