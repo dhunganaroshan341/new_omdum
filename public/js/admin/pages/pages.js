@@ -54,8 +54,11 @@ $(document).ready(function () {
 
     // Image 1
     if (data.image1) {
-        $('#preview_image1').html(`<img src="${basePath + data.image1}" class="img-thumbnail" width="150">`);
-    }
+    $('#preview_image1').html(`<img src="/${data.image1}" class="img-thumbnail" width="150">`);
+} else {
+    $('#preview_image1').html(`<span class="text-danger">No image found.</span>`);
+}
+
 
     // Image 2
     if (data.image2) {
