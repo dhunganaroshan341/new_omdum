@@ -50,6 +50,11 @@
         table.dataTable a:hover {
             text-decoration: none !important;
         }
+
+        .modalScrollable {
+            height: 200px !important;
+            overflow: scroll !important;
+        }
     </style>
 
     @isset($extraCs)
