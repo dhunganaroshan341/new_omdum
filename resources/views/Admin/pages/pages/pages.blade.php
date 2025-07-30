@@ -22,6 +22,6 @@
 
             </table>
         </div>
-        @include('admin.pages.pages.pageModal');
+        @include('Admin.pages.pages.pageModal');
     </div>
 @endsection
