@@ -1,32 +1,31 @@
 $(document).ready(function () {
     $(".summernote").summernote({ height: 300 });
 
-    const table = $("#show-page-data").DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "/admin/pages",
-        order: [1, 'asc'],
-        columns: [
-            { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "title", name: "title" },
-            { data: "slug", name: "slug" },
-            { data: "status", name: "status", orderable: false, searchable: false },
-            { data: "action", name: "action", orderable: false, searchable: false }
-        ],
-        dom: 'Blfrtip',
-        buttons: [
-            {
-                extend: 'print',
-                exportOptions: { columns: [0, 1, 2, 3] },
-            },
-            {
-                extend: 'excel',
-                title: '',
-                exportOptions: { columns: [0, 1, 2, 3] }
-            }
-        ],
-        dom: '<"toolbar">lfrtip',
-    });
+ const table = $("#show-page-data").DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "/admin/pages",
+    order: [1, 'asc'],
+    columns: [
+        { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
+        { data: "title", name: "title" },
+        { data: "slug", name: "slug" },
+        { data: "status", name: "status", orderable: false, searchable: false },
+        { data: "action", name: "action", orderable: false, searchable: false }
+    ],
+    buttons: [
+        {
+            extend: 'print',
+            exportOptions: { columns: [0, 1, 2, 3] },
+        },
+        {
+            extend: 'excel',
+            exportOptions: { columns: [0, 1, 2, 3] }
+        }
+    ],
+    dom: '<"toolbar">Blfrtip',
+});
+
 
     $("div.toolbar").html(`
         <span id="btnPrint" class="btn btn-primary mdi mdi-printer mdi-icon"></span>

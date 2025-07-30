@@ -13,11 +13,13 @@
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>
-                        <th scope="col">Image</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
+
 
             </table>
         </div>
