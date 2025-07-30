@@ -120,56 +120,53 @@ public function index(Request $request)
 
 
    public function store(PageRequest $request)
-    {
-        $data = $request->validated();
+{
+    $data = $request->validated();
 
-        // Upload single media
-        $mediaFields = ['image1', 'image2', 'video1', 'video2'];
-        $mediaData = $this->handleSingleMediaUploads($request, $mediaFields);
-        $data = array_merge($data, $mediaData);
+    $mediaFields = ['image1', 'image2', 'video1', 'video2'];
+    $mediaData = $this->handleSingleMediaUploads($request, $mediaFields);
+    $data = array_merge($data, $mediaData);
 
-        // Upload multiple gallery images
-        $galleryPaths = $this->handleGalleryUploads($request);
-        if (!empty($galleryPaths)) {
-            $data['gallery_images'] = json_encode($galleryPaths);
-        }
-
-        // Auto-slug
-        if (empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']);
-        }
-
-        Page::create($data);
-
-        return redirect()->route('pages.index')->with('success', 'Page created successfully!');
+    $galleryPaths = $this->handleGalleryUploads($request);
+    if (!empty($galleryPaths)) {
+        $data['gallery_images'] = json_encode($galleryPaths);
     }
 
-    public function update(Request $request, $id)
-    {
-        $page = Page::findOrFail($id);
-
-        $data = $request->except(['_token', '_method']);
-
-        // Upload updated media
-        $mediaFields = ['image1', 'image2', 'video1', 'video2'];
-        $mediaData = $this->handleSingleMediaUploads($request, $mediaFields);
-        $data = array_merge($data, $mediaData);
-
-        // Handle updated gallery images
-        $galleryPaths = $this->handleGalleryUploads($request);
-        if (!empty($galleryPaths)) {
-            $data['gallery_images'] = json_encode($galleryPaths);
-        }
-
-        // Auto-slug if not set
-        if (empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']);
-        }
-
-        $page->update($data);
-
-        return redirect()->back()->with('success', 'Page updated successfully!');
+    if (empty($data['slug'])) {
+        $data['slug'] = Str::slug($data['title']);
     }
+
+    Page::create($data);
+
+    return redirect()->route('pages.index')->with('success', 'Page created successfully!');
+}
+
+public function update(Request $request, $id)
+{
+    $page = Page::findOrFail($id);
+
+    $data = $request->except(['_token', '_method']);
+
+    $mediaFields = ['image1', 'image2', 'video1', 'video2'];
+    // Pass existing file paths to delete old files
+    $existingData = $page->toArray();
+    $mediaData = $this->handleSingleMediaUploads($request, $mediaFields, $existingData);
+    $data = array_merge($data, $mediaData);
+
+    $galleryPaths = $this->handleGalleryUploads($request);
+    if (!empty($galleryPaths)) {
+        $data['gallery_images'] = json_encode($galleryPaths);
+    }
+
+    if (empty($data['slug'])) {
+        $data['slug'] = Str::slug($data['title']);
+    }
+
+    $page->update($data);
+
+    return redirect()->back()->with('success', 'Page updated successfully!');
+}
+
     /**
      * Remove the specified resource from storage.
      */
