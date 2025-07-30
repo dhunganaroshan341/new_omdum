@@ -1,41 +1,43 @@
 Dropzone.autoDiscover = false;
-
 let myDropzone;
 
-$(document).ready(function () {
-    // Init Dropzone
+document.addEventListener('DOMContentLoaded', function() {
     myDropzone = new Dropzone("#videoDropzone", {
-        url: "/admin/banner-video/file-upload", // Make sure this route exists!
+        url: window.routes.bannerVideoUpload, // we’ll pass route from blade
         maxFiles: 1,
         acceptedFiles: 'video/*',
         addRemoveLinks: true,
+        dictDefaultMessage: 'Drop your video here or click to upload',
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // ensure csrf token is in <head>
+            'X-CSRF-TOKEN': window.csrfToken
         },
-        success: function (file, response) {
-            $('#uploaded_video').val(response.path);
+        success: function(file, response) {
+            document.getElementById('uploaded_video').value = response.path;
         },
-        removedfile: function (file) {
-            $('#uploaded_video').val('');
+        removedfile: function(file) {
+            document.getElementById('uploaded_video').value = '';
             file.previewElement.remove();
         }
     });
 
-    // Toggle inputs
-    $('input[name="videoType"]').on('change', function () {
-        const type = $(this).val();
-        $('#video_type').val(type);
+    // Set the initial visibility based on initial selected type
+    toggleInputs(window.initialVideoType);
 
-        if (type === 'embed') {
-            $('#embedContainer').show();
-            $('#uploadContainer').hide();
-            if (myDropzone) {
-                myDropzone.removeAllFiles(true);
-                $('#uploaded_video').val('');
-            }
-        } else {
-            $('#embedContainer').hide();
-            $('#uploadContainer').show();
-        }
+    // Add listener for radio change
+    document.querySelectorAll('input[name="videoType"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            toggleInputs(this.value);
+        });
     });
 });
+
+function toggleInputs(type) {
+    document.getElementById('video_type').value = type;
+    document.getElementById('embedContainer').style.display = (type === 'iframe') ? 'block' : 'none';
+    document.getElementById('uploadContainer').style.display = (type === 'upload') ? 'block' : 'none';
+
+    if (type === 'iframe' && myDropzone) {
+        myDropzone.removeAllFiles(true);
+        document.getElementById('uploaded_video').value = '';
+    }
+}

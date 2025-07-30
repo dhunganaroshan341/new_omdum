@@ -95,9 +95,10 @@ Route::apiResource('pages',PageController::class);
     Route::get('/home-slide/status/{id}', [HomeSliderController::class, 'statusToggle'])->name('homeslide.status');
 
 
- Route::get('/banner-video', [BannerSliderVideoController::class, 'index'])->name('banner.video.index');
-    Route::post('/banner-video/upload', [BannerSliderVideoController::class, 'upload'])->name('banner.video.upload');
-    Route::post('/banner-video/save', [BannerSliderVideoController::class, 'save'])->name('banner.video.save');
+
+    Route::get('/banner/video', [BannerSliderVideoController::class, 'index'])->name('banner.video.index');
+    Route::post('/banner/video/store', [BannerSliderVideoController::class, 'store'])->name('banner.video.store');
+    Route::post('/banner/video/upload', [BannerSliderVideoController::class, 'upload'])->name('banner.video.upload');
 
 
     // Frontend
