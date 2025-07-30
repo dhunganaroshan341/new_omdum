@@ -4,18 +4,7 @@
     <div class="container">
         <h3>Banner Slider Video</h3>
 
-        <div class="mb-3">
-            <label>
-                <input type="radio" name="videoType" value="embed" checked>
-                Paste Embed Iframe
-            </label>
-            <label class="ms-3">
-                <input type="radio" name="videoType" value="upload">
-                Upload Video
-            </label>
-        </div>
-
-        <form method="POST" action="{{ route('admin.banner.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ url('admin/banner-video/upload') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- Video Type Selection -->
@@ -37,11 +26,9 @@
                 </div>
             </div>
 
-            <!-- Hidden field to know which video type is selected -->
             <input type="hidden" name="video_type" id="video_type" value="embed">
 
             <button type="submit" class="btn btn-primary mt-3">Save</button>
         </form>
-
     </div>
 @endsection
