@@ -6,40 +6,31 @@
 
         <div class="mb-3">
             <label>
-                <input type="radio" name="videoType" value="embed"
-                    {{ optional($bannerVideo)->type !== 'upload' ? 'checked' : '' }}>
-                Embed Video Link
+                <input type="radio" name="videoType" value="embed" checked>
+                Paste Embed Iframe
             </label>
-            <label>
-                <input type="radio" name="videoType" value="upload"
-                    {{ optional($bannerVideo)->type === 'upload' ? 'checked' : '' }}>
+            <label class="ms-3">
+                <input type="radio" name="videoType" value="upload">
                 Upload Video
             </label>
         </div>
 
-        <form id="bannerVideoForm" method="POST" action="{{ route('admin.banner.video.save') }}"
-            enctype="multipart/form-data">
+        <form id="bannerVideoForm" method="POST" action="{{ route('admin.banner.video.save') }}">
             @csrf
+            <input type="hidden" name="video_type" id="video_type" value="embed">
+            <input type="hidden" name="uploaded_video" id="uploaded_video">
 
-            {{-- Embed Input --}}
-            <div id="embedContainer"
-                style="margin-top: 15px; {{ optional($bannerVideo)->type === 'upload' ? 'display:none;' : '' }}">
-                <input type="url" name="embed_link" id="embedLink" placeholder="Paste embed video URL"
-                    class="form-control"
-                    value="{{ optional($bannerVideo)->type === 'embed' ? optional($bannerVideo)->url : '' }}">
+            <!-- Iframe Embed Input -->
+            <div id="embedContainer" class="mb-3">
+                <textarea name="embed_link" class="form-control" rows="4" placeholder='<iframe src="..."></iframe>'></textarea>
             </div>
 
-            {{-- Upload Input --}}
-            <div id="uploadContainer"
-                style="margin-top: 15px; {{ optional($bannerVideo)->type !== 'upload' ? 'display:none;' : '' }}">
+            <!-- Dropzone Upload Input -->
+            <div id="uploadContainer" class="mb-3" style="display:none;">
                 <div class="dropzone" id="videoDropzone"></div>
-                <input type="hidden" name="uploaded_video" id="uploaded_video"
-                    value="{{ optional($bannerVideo)->type === 'upload' ? optional($bannerVideo)->url : '' }}">
             </div>
 
-            <input type="hidden" name="video_type" id="video_type" value="{{ optional($bannerVideo)->type ?? 'embed' }}">
-
-            <button type="submit" class="btn btn-primary mt-3">Save Video</button>
+            <button type="submit" class="btn btn-primary">Save Video</button>
         </form>
     </div>
 @endsection
@@ -48,68 +39,38 @@
     <script>
         Dropzone.autoDiscover = false;
 
-        let myDropzone;
-
-        function toggleVideoInput(selectedType) {
-            const embed = document.getElementById('embedContainer');
-            const upload = document.getElementById('uploadContainer');
-            const typeInput = document.getElementById('video_type');
-
-            embed.style.display = (selectedType === 'embed') ? 'block' : 'none';
-            upload.style.display = (selectedType === 'upload') ? 'block' : 'none';
-            typeInput.value = selectedType;
-
-            if (selectedType === 'upload' && !myDropzone) {
-                myDropzone = new Dropzone("#videoDropzone", {
-                    url: "{{ route('admin.banner.video.upload') }}",
-                    maxFiles: 1,
-                    acceptedFiles: 'video/*',
-                    addRemoveLinks: true,
-                    dictDefaultMessage: 'Drop your video here or click to upload',
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    init: function() {
-                        this.on("maxfilesexceeded", function(file) {
-                            this.removeAllFiles();
-                            this.addFile(file);
-                        });
-
-                        this.on("success", function(file, response) {
-                            document.getElementById('uploaded_video').value = response.path;
-                        });
-
-                        this.on("removedfile", function() {
-                            document.getElementById('uploaded_video').value = '';
-                        });
-
-                        // Show existing file
-                        @if (optional($bannerVideo)->type === 'upload' && optional($bannerVideo)->url)
-                            let mockFile = {
-                                name: "{{ basename($bannerVideo->url) }}",
-                                size: 12345678
-                            };
-                            this.emit("addedfile", mockFile);
-                            this.emit("complete", mockFile);
-                            mockFile.previewElement.classList.add('dz-success', 'dz-complete');
-                        @endif
-                    }
-                });
+        let myDropzone = new Dropzone("#videoDropzone", {
+            url: "{{ route('admin.banner.video.upload') }}",
+            maxFiles: 1,
+            acceptedFiles: 'video/*',
+            addRemoveLinks: true,
+            dictDefaultMessage: 'Drop your video here or click to upload',
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function(file, response) {
+                document.getElementById('uploaded_video').value = response.path;
+            },
+            removedfile: function(file) {
+                document.getElementById('uploaded_video').value = '';
+                file.previewElement.remove();
             }
+        });
 
-            if (selectedType === 'embed' && myDropzone) {
-                myDropzone.removeAllFiles(true);
-            }
-        }
+        document.querySelectorAll('input[name="videoType"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const type = this.value;
+                document.getElementById('video_type').value = type;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            let selectedType = document.querySelector('input[name="videoType"]:checked').value;
-            toggleVideoInput(selectedType);
+                document.getElementById('embedContainer').style.display = type === 'embed' ? 'block' :
+                    'none';
+                document.getElementById('uploadContainer').style.display = type === 'upload' ? 'block' :
+                    'none';
 
-            document.querySelectorAll('input[name="videoType"]').forEach(el => {
-                el.addEventListener('change', function() {
-                    toggleVideoInput(this.value);
-                });
+                if (type === 'embed') {
+                    myDropzone.removeAllFiles(true);
+                    document.getElementById('uploaded_video').value = '';
+                }
             });
         });
     </script>
