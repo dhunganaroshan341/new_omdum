@@ -44,6 +44,44 @@ $(document).ready(function () {
         $(".submitBtn").show();
         $(".updateBtn").addClass("d-none");
     }
+    function loadPreview(data) {
+    // Base URL where files are stored
+    const basePath = '/uploads/pages/'; // Adjust as per your setup
+
+    // Clear existing previews
+    $('#preview_image1, #preview_image2, #preview_video1, #preview_video2').html('');
+
+    // Image 1
+    if (data.image1) {
+        $('#preview_image1').html(`<img src="${basePath + data.image1}" class="img-thumbnail" width="150">`);
+    }
+
+    // Image 2
+    if (data.image2) {
+        $('#preview_image2').html(`<img src="${basePath + data.image2}" class="img-thumbnail" width="150">`);
+    }
+
+    // Video 1
+    if (data.video1) {
+        $('#preview_video1').html(`
+            <video width="150" controls>
+                <source src="${basePath + data.video1}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `);
+    }
+
+    // Video 2
+    if (data.video2) {
+        $('#preview_video2').html(`
+            <video width="150" controls>
+                <source src="${basePath + data.video2}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `);
+    }
+}
+
 
     // Show create modal
     $("#addNewPageBtn").on("click", function () {
@@ -61,7 +99,7 @@ $(document).ready(function () {
             type: "GET",
             success: function (res) {
                 const data = res.data;
-
+                loadPreview(data);
                 $("#page_id").val(data.id);
                 $("#title").val(data.title);
                 $("#slug").val(data.slug);
