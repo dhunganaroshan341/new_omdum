@@ -11,11 +11,14 @@ class PageRequest extends FormRequest
         return true; // Allow all users or add auth check
     }
 
-  public function rules(): array
+public function rules(): array
 {
+    $pageId = $this->route('page'); // or $this->id or $this->route('id'), depending on route param name
+
     return [
         'title' => 'required|string|max:255',
-        'slug' => 'required|string|max:255|unique:pages,slug,' . $this->id,
+        'slug' => 'required|string|max:255|unique:pages,slug,' . ($pageId ?? 'NULL'),
+        // other rules...
         'meta_title' => 'nullable|string|max:255',
         'meta_description' => 'nullable|string|max:500',
         'meta_keywords' => 'nullable|string|max:255',
@@ -33,5 +36,6 @@ class PageRequest extends FormRequest
         'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
     ];
 }
+
 
 }
