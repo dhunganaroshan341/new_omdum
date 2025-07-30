@@ -38,10 +38,12 @@
 
 @push('scripts')
     <script>
-        Dropzone.autoDiscover = false; // ⚠️ this must be at the very top
+        Dropzone.autoDiscover = false; // must be before any Dropzone init
+
+        let myDropzone; // ✅ Make Dropzone instance accessible globally
 
         document.addEventListener('DOMContentLoaded', function() {
-            const myDropzone = new Dropzone("#videoDropzone", {
+            myDropzone = new Dropzone("#videoDropzone", {
                 url: "{{ route('admin.banner.video.upload') }}",
                 maxFiles: 1,
                 acceptedFiles: 'video/*',
@@ -58,22 +60,26 @@
                     file.previewElement.remove();
                 }
             });
+
+            // Set initial state
+            toggleInputs('embed');
         });
 
+        function toggleInputs(type) {
+            document.getElementById('video_type').value = type;
+            document.getElementById('embedContainer').style.display = type === 'embed' ? 'block' : 'none';
+            document.getElementById('uploadContainer').style.display = type === 'upload' ? 'block' : 'none';
+
+            if (type === 'embed' && myDropzone) {
+                myDropzone.removeAllFiles(true);
+                document.getElementById('uploaded_video').value = '';
+            }
+        }
+
+        // Add event listeners to radio buttons
         document.querySelectorAll('input[name="videoType"]').forEach(radio => {
             radio.addEventListener('change', function() {
-                const type = this.value;
-                document.getElementById('video_type').value = type;
-
-                document.getElementById('embedContainer').style.display = type === 'embed' ? 'block' :
-                    'none';
-                document.getElementById('uploadContainer').style.display = type === 'upload' ? 'block' :
-                    'none';
-
-                if (type === 'embed') {
-                    myDropzone.removeAllFiles(true);
-                    document.getElementById('uploaded_video').value = '';
-                }
+                toggleInputs(this.value);
             });
         });
     </script>
