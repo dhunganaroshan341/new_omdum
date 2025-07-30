@@ -1,12 +1,5 @@
 @extends('Admin.layout.master')
 
-@push('styles')
-    <style>
-        .deleteData {
-            display: none;
-        }
-    </style>
-@endpush
 
 @section('content')
     <div class="container-fluid">

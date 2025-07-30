@@ -33,6 +33,15 @@ class PostController extends Controller
         return view('Admin.pages.Post.post', compact('categories', 'extraJs', 'extraCs'));
     }
 
+private function processTags(string $rawTags): array
+{
+    return collect(explode(',', $rawTags))
+        ->map(fn($tag) => trim($tag))
+        ->filter()
+        ->unique()
+        ->values()
+        ->all();
+}
 
     public function getPostData(Request $request)
     {
@@ -110,6 +119,7 @@ class PostController extends Controller
             $post->description = $postRequest->input('post_description');
             $post->category_id = $postRequest->input('post_category_id');
             $post->created_by = Auth::id();
+            $post->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
             $post->save();
 
             // $post=Post::create($postRequest->all())
@@ -134,22 +144,39 @@ class PostController extends Controller
     }
 
 
-    public function getDetail($id)
-    {
-        try {
-            $data = Post::with(['category', 'postImages'])->find($id);
-            $images = $data->postImages->map(function ($image) {
-                return [
-                    'id' => $image->id,
-                    'path' => $image->image
-                ];
-            });
-            // dd($images);
-            return response()->json(['success' => true, 'message' => $data, 'images' => $images]);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
-        }
+public function getDetail($id)
+{
+    try {
+        $data = Post::with(['category', 'postImages'])->findOrFail($id);
+
+        // Convert tags JSON column into readable string or array
+        $tags = is_array($data->tags) ? $data->tags : json_decode($data->tags, true);
+
+        $images = $data->postImages->map(function ($image) {
+            return [
+                'id' => $image->id,
+                'path' => $image->image
+            ];
+        });
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Post details fetched successfully.',
+            'data' => [
+                'id' => $data->id,
+                'title' => $data->title,
+                'content' => $data->content,
+                'category' => $data->category->name ?? null,
+                'tags' => implode(', ', $tags), // for string
+                // or just return array: 'tags' => $tags,
+                'images' => $images,
+            ]
+        ]);
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
+}
+
 
 
     public function destoryImage(Request $request)
@@ -177,6 +204,8 @@ class PostController extends Controller
             $data->title = $postRequest->input('post_title');
             $data->category_id = $postRequest->input('post_category_id');
             $data->description = $postRequest->input('post_description');
+            $data->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
+
             $data->save();
 
             if ($postRequest->hasFile('post_images')) {

@@ -211,6 +211,7 @@ getCategories().then(function(categories) {
             success: function (response) {
                 // console.log(response);
                 $("#posttitleData").val(response.message.title);
+                $("#tags").val(response.message.tags);
                 // $("#category_id").val(response.message.category_id);
                 // populate and pre-select the category
                 populateCategorySelect(response.message.category_id);
