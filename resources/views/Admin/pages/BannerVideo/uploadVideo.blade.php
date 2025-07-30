@@ -15,23 +15,33 @@
             </label>
         </div>
 
-        <form id="bannerVideoForm" method="POST" action="{{ route('admin.banner.video.save') }}">
+        <form method="POST" action="{{ route('admin.banner.store') }}" enctype="multipart/form-data">
             @csrf
+
+            <!-- Video Type Selection -->
+            <div class="mb-3">
+                <label><input type="radio" name="videoType" value="embed" checked> Embed via iframe</label>
+                <label class="ms-3"><input type="radio" name="videoType" value="upload"> Upload video</label>
+            </div>
+
+            <!-- Embed Input -->
+            <div id="embedContainer">
+                <input type="text" class="form-control" name="embed_code" placeholder="Paste iframe embed code here">
+            </div>
+
+            <!-- Dropzone Upload -->
+            <div id="uploadContainer" style="display: none;">
+                <input type="hidden" name="uploaded_video" id="uploaded_video">
+                <div id="videoDropzone" class="dropzone border border-dashed p-4 rounded text-center">
+                    <div class="dz-message">Drop your video here or click to upload</div>
+                </div>
+            </div>
+
+            <!-- Hidden field to know which video type is selected -->
             <input type="hidden" name="video_type" id="video_type" value="embed">
-            <input type="hidden" name="uploaded_video" id="uploaded_video">
 
-            <!-- Iframe Embed Input -->
-            <div id="embedContainer" class="mb-3">
-                <textarea name="embed_link" class="form-control" rows="4" placeholder='<iframe src="..."></iframe>'></textarea>
-            </div>
-
-            <!-- Dropzone Upload Input -->
-            <div id="uploadContainer" class="mb-3" style="display:none;">
-                <div id="videoDropzone" class="dropzone-custom"></div> <!-- avoid class="dropzone" -->
-
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save Video</button>
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
         </form>
+
     </div>
 @endsection

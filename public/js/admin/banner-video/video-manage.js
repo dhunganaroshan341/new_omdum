@@ -1,48 +1,40 @@
+ Dropzone.autoDiscover = false;
+    let myDropzone;
 
-
-        Dropzone.autoDiscover = false; // must be before any Dropzone init
-
-        let myDropzone; // ✅ Make Dropzone instance accessible globally
-
-        document.addEventListener('DOMContentLoaded', function() {
-            myDropzone = new Dropzone("#videoDropzone", {
-                url: "{{ route('admin.banner.video.upload') }}",
-                maxFiles: 1,
-                acceptedFiles: 'video/*',
-                addRemoveLinks: true,
-                dictDefaultMessage: 'Drop your video here or click to upload',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                success: function(file, response) {
-                    document.getElementById('uploaded_video').value = response.path;
-                },
-                removedfile: function(file) {
-                    document.getElementById('uploaded_video').value = '';
-                    file.previewElement.remove();
-                }
-            });
-
-            // Set initial state
-            toggleInputs('embed');
-        });
-
-        function toggleInputs(type) {
-            document.getElementById('video_type').value = type;
-            document.getElementById('embedContainer').style.display = type === 'embed' ? 'block' : 'none';
-            document.getElementById('uploadContainer').style.display = type === 'upload' ? 'block' : 'none';
-
-            if (type === 'embed' && myDropzone) {
-                myDropzone.removeAllFiles(true);
-                document.getElementById('uploaded_video').value = '';
+    $(document).ready(function () {
+        // Init Dropzone
+        myDropzone = new Dropzone("#videoDropzone", {
+            url: "{{ route('admin.banner.video.upload') }}",
+            maxFiles: 1,
+            acceptedFiles: 'video/*',
+            addRemoveLinks: true,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            success: function (file, response) {
+                $('#uploaded_video').val(response.path);
+            },
+            removedfile: function (file) {
+                $('#uploaded_video').val('');
+                file.previewElement.remove();
             }
-        }
-
-        // Add event listeners to radio buttons
-        document.querySelectorAll('input[name="videoType"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                toggleInputs(this.value);
-            });
         });
 
+        // Toggle embed/upload
+        $('input[name="videoType"]').on('change', function () {
+            let type = $(this).val();
+            $('#video_type').val(type);
 
+            if (type === 'embed') {
+                $('#embedContainer').show();
+                $('#uploadContainer').hide();
+                if (myDropzone) {
+                    myDropzone.removeAllFiles(true);
+                    $('#uploaded_video').val('');
+                }
+            } else {
+                $('#embedContainer').hide();
+                $('#uploadContainer').show();
+            }
+        });
+    });
