@@ -60,6 +60,10 @@ class CategoryController extends Controller
         );
         return view('Admin.pages.Category.category',['extraJs'=>$extraJs,'extraCs'=>$extraCs]);
     }
+    public function getCategories(){
+        $categories = Category::where('status','Active')->get();
+        return response()->json(['success'=>true , 'message'=>$categories]);
+    }
 
 
     public function store(CategoryRequest $request){

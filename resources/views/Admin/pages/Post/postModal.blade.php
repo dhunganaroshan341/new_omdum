@@ -44,10 +44,9 @@
                         <div class="form-group col-md-4">
                             <label for="categories">select Categories</label>
                             <select class="form-control" name="category_id" id="category_id">
-                                @foreach ($tourPackages->categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
+
                             </select>
+
                         </div>
                         <div class="selectedCategories" id="selectedCategories"></div>
                         <div class="form-group col-md-4">

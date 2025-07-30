@@ -124,6 +124,7 @@ Route::apiResource('pages',PageController::class);
 
     // Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
+    Route::get('/categories', [CategoryController::class, 'getCategories'])->name('categories.get');
     Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
     Route::get('/category/detail/{id}', [CategoryController::class, 'detailCategory'])->name('category.detail');
     Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
