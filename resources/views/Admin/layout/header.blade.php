@@ -51,9 +51,9 @@
             text-decoration: none !important;
         }
 
-        .modalScrollable {
-            height: 200px !important;
-            overflow: scroll !important;
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
         }
     </style>
 
