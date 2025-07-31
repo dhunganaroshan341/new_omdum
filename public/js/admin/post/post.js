@@ -42,8 +42,8 @@ $(document).ready(function () {
             name: "title"
         },
         {
-            data: "category",
-            name: "category"
+            data: "categories",
+            name: "categories"
         },
         {
             data: "description",
