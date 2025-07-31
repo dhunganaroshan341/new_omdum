@@ -12,16 +12,17 @@
                         <div class="row">
                             <span class="mt-2 mb-4"><span class="text-danger">Note:</span> (<span
                                     class="text-danger">*</span>) symbol represent that the field is required</span>
+                            <!-- CATEGORY SELECT -->
                             <div class="col-md-12 mb-4">
-                                <label for="" class="form-label">Category<span
+                                <label for="category_id" class="form-label">Select Categories <span
                                         class="text-danger">*</span></label>
-                                <select class="form-select" name="post_category_id" id="category_id">
-                                    <option value="">Select one</option>
-                                    @foreach ($categories as $index => $category)
-                                        <option value="{{ $index }}">{{ $category }}</option>
-                                    @endforeach
+                                <select class="form-select" name="category_ids[]" id="category_id" multiple>
+                                    <!-- Options will be loaded via AJAX -->
                                 </select>
+                                <small class="text-muted">Hold Ctrl (or Cmd on Mac) to select multiple.</small>
                             </div>
+
+
 
                             <div class="col-md-12 mb-4">
                                 @csrf
@@ -42,19 +43,13 @@
                                         class="text-danger">*</span></label>
                                 <textarea class="form-control summernote" name="post_description" id="post_description" rows="3"></textarea>
                             </div>
-                            <div class="form-group col-md-4">
-                                <label for="categories">select Categories</label>
-                                <select class="form-control" name="category_id" id="category_id">
 
-                                </select>
+                            <div class="col-md-12 mb-4">
+                                <label for="tags" class="form-label">Tags (separate with comma)</label>
+                                <input type="text" id="tags" name="tags" class="form-control"
+                                    placeholder="e.g. trekking, adventure, mountains">
+                            </div>
 
-                            </div>
-                            <div class="selectedCategories" id="selectedCategories"></div>
-                            <div class="form-group col-md-4">
-                                <label for="categories">select tags</label>
-                                <input id = "#tags" type="text" name="tags" placeholder="separate by comma ,">
-                            </div>
-                            <div class="selectedTags" id="selectedTags"></div>
 
                         </div>
                     </div>
@@ -77,8 +72,7 @@
                 <form id="formId" class="form">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5 text-center" id="postImageTitle">Image List</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">

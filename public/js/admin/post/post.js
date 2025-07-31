@@ -2,6 +2,12 @@ $(document).ready(function () {
     $(".summernote").summernote({
         height: 300
     });
+    $('.select2').select2({
+    placeholder: "Select categories",
+    allowClear: true,
+    width: '100%'
+});
+
 
 
     // Data Table
@@ -70,25 +76,23 @@ $(document).ready(function () {
     })
 function getCategories() {
     return $.ajax({
-        url: '/admin/categories', // make sure this returns JSON
+        url: '/admin/categories', // return array of categories with {id, title}
         type: 'GET'
     });
 }
 
-function populateCategorySelect(selectedCategoryId = null) {
-    getCategories().then(function(categories) {
+function populateCategorySelect(selectedCategoryIds = []) {
+    getCategories().then(function (categories) {
         let $select = $('#category_id');
-        $select.empty(); // clear existing options
-        $select.append('<option value="">Select a category</option>');
-
-        categories.forEach(function(category) {
-            let isSelected = selectedCategoryId == category.id ? 'selected' : '';
-            $select.append(`<option value="${category.id}" ${isSelected}>${category.name}</option>`);
+        $select.empty(); // clear old
+        categories.forEach(function (category) {
+            let isSelected = selectedCategoryIds.includes(category.id) ? 'selected' : '';
+            $select.append(`<option value="${category.id}" ${isSelected}>${category.title}</option>`);
         });
-    }).catch(function(error) {
-        console.error('Error loading categories:', error);
+        $select.trigger('change'); // refresh select2
     });
 }
+
 
 
 
@@ -135,10 +139,9 @@ function populateCategorySelect(selectedCategoryId = null) {
         $(".infoPostImageText").text("Multiple Image Can be Uploaded");
         $(".form").attr("id", 'addForm');
         // $("#addForm")[0].reset();
-getCategories().then(function(categories) {
-    // use the categories here
-    // e.g., populate dropdown or render template
-});
+populateCategorySelect(); // load categories
+$("#tags").val('');
+
         $("#addForm").trigger("reset");
     });
 
@@ -214,7 +217,20 @@ getCategories().then(function(categories) {
                 $("#tags").val(response.message.tags);
                 // $("#category_id").val(response.message.category_id);
                 // populate and pre-select the category
-                populateCategorySelect(response.message.category_id);
+
+                let selectedCategoryIds = response.message.categories.map(cat => cat.id);
+populateCategorySelect(selectedCategoryIds);
+
+// Fix tags JSON array to string
+let tags = response.message.tags;
+if (Array.isArray(tags)) {
+    $("#tags").val(tags.join(', '));
+} else {
+    $("#tags").val('');
+}
+
+
+
                 if (response.images && response.images.length > 0) {
                     $(".postImageData").html("");
                     response.images.forEach((image) => {

@@ -147,7 +147,7 @@ private function processTags(string $rawTags): array
 public function getDetail($id)
 {
     try {
-        $data = Post::with(['category', 'postImages'])->findOrFail($id);
+        $data = Post::with(['categories', 'postImages'])->findOrFail($id);
 
         // Convert tags JSON column into readable string or array
         $tags = is_array($data->tags) ? $data->tags : json_decode($data->tags, true);
@@ -286,5 +286,9 @@ public function getDetail($id)
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage(), 'line' => $e->getLine(), 'which' => $e->getTrace()]);
         }
+    }
+    public function storePostCategories(){
+
+
     }
 }
