@@ -164,13 +164,19 @@ public function getDetail($id)
     try {
         $data = Post::with(['categories', 'postImages'])->findOrFail($id);
 
-        // Convert tags JSON column into readable string or array
         $tags = is_array($data->tags) ? $data->tags : json_decode($data->tags, true);
 
         $images = $data->postImages->map(function ($image) {
             return [
                 'id' => $image->id,
                 'path' => $image->image
+            ];
+        });
+
+        $categories = $data->categories->map(function ($cat) {
+            return [
+                'id' => $cat->id,
+                'title' => $cat->title
             ];
         });
 
@@ -181,9 +187,8 @@ public function getDetail($id)
                 'id' => $data->id,
                 'title' => $data->title,
                 'content' => $data->content,
-                'category' => $data->category->name ?? null,
-                'tags' => implode(', ', $tags), // for string
-                // or just return array: 'tags' => $tags,
+                'categories' => $categories,
+                'tags' => implode(', ', $tags),
                 'images' => $images,
             ]
         ]);
@@ -191,6 +196,7 @@ public function getDetail($id)
         return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
 }
+
 
 
 
