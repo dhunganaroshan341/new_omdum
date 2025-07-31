@@ -20,32 +20,32 @@ class PostController extends Controller
 public function index(Request $request)
 {
     if ($request->ajax()) {
-        $posts = Post::with('categories')->get();
+        $posts = Post::with('categories')->get(); // Include category relationship
 
         return datatables()->of($posts)
            ->addColumn('categories', function ($post) {
     return $post->categories->map(function ($cat) {
-        return '<span class="badge bg-primary">' . e($cat->title) . '</span>';
+        return '<span class="badge bg-info">' . e($cat->title) . '</span>';
     })->implode(' ');
 })
-            ->rawColumns(['categories']) // if you're using HTML badges
+            ->rawColumns(['categories'])
             ->make(true);
     }
 
+    // Blade View fallback
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
     );
-
     $extraCs = array_merge(
         config('js-map.admin.datatable.style'),
         config('js-map.admin.summernote.style'),
     );
 
-    // For modal forms, etc.
     $categories = Category::pluck('title', 'id');
     return view('Admin.pages.Post.post', compact('categories', 'extraJs', 'extraCs'));
 }
+
 
 
 private function processTags(string $rawTags): array
