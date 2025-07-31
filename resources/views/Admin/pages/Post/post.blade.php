@@ -10,7 +10,7 @@
                         <th scope="col">S.N</th>
                         <th scope="col">Image</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Categories</th>
                         <th scope="col">Description</th>
                         <th scope="col">Created By</th>
                         <th scope="col">Status</th>
