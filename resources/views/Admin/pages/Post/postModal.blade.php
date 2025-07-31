@@ -47,11 +47,11 @@
                                 <textarea class="form-control summernote" name="post_description" id="post_description" rows="3"></textarea>
                             </div>
 
-                            <div class="col-md-12 mb-4">
+                            {{-- <div class="col-md-12 mb-4">
                                 <label for="tags" class="form-label">Tags (separate with comma)</label>
                                 <input type="text" id="tags" name="tags" class="form-control"
                                     placeholder="e.g. trekking, adventure, mountains">
-                            </div>
+                            </div> --}}
 
 
                         </div>

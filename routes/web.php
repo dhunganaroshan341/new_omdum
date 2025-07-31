@@ -75,7 +75,7 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard.index');
 // pages management
-Route::apiResource('pages',PageController::class);
+    Route::apiResource('pages',PageController::class);
   Route::get('/pages/status/{id}', [HomeSliderController::class, 'statusToggle'])->name('homeslide.status');
     // Users
     Route::get('/user', [UserController::class, 'index'])->name('user');
