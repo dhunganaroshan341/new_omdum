@@ -16,7 +16,8 @@
                             <div class="col-md-12 mb-4">
                                 <label for="category_id" class="form-label">Select Categories <span
                                         class="text-danger">*</span></label>
-                                <select class="form-select" name="category_ids[]" id="category_id" multiple>
+                                <select class="form-select category_ids" name="category_ids[]" id="category_id"
+                                    multiple>
                                     <!-- Options will be loaded via AJAX -->
                                 </select>
                                 <small class="text-muted">Hold Ctrl (or Cmd on Mac) to select multiple.</small>

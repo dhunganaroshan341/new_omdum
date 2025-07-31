@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(".summernote").summernote({
         height: 300
     });
-    $('.select2').select2({
+    $('.category_ids').select2({
     placeholder: "Select categories",
     allowClear: true,
     width: '100%'

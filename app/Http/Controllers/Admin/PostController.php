@@ -36,10 +36,12 @@ public function index(Request $request)
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
+        config('js-map.admin.select2.script'),
     );
     $extraCs = array_merge(
         config('js-map.admin.datatable.style'),
         config('js-map.admin.summernote.style'),
+        config('js-map.admin.select2.style'),
     );
 
     $categories = Category::pluck('title', 'id');
