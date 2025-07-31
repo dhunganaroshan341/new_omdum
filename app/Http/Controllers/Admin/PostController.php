@@ -84,7 +84,7 @@ private function processTags(string $rawTags): array
                 'users.full_name',
                 'posts.status',
                 // Use GROUP_CONCAT for categories (MySQL) to get categories as comma-separated string
-                \DB::raw('GROUP_CONCAT(DISTINCT categories.title SEPARATOR ", ") as category_titles')
+                DB::raw('GROUP_CONCAT(DISTINCT categories.title SEPARATOR ", ") as category_titles')
             ])
             ->groupBy('posts.id', 'posts.title', 'posts.description', 'users.full_name', 'posts.status');
 
