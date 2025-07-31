@@ -148,10 +148,16 @@ private function processTags(string $rawTags): array
             $post = new Post();
             $post->title = $postRequest->input('post_title');
             $post->description = $postRequest->input('post_description');
-            $post->category_id = $postRequest->input('post_category_id');
+            // $post->category_id = $postRequest->input('post_category_id');
             $post->created_by = Auth::id();
             $post->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
             $post->save();
+            foreach($postRequest->input('category_ids') as $data){
+                DB::table('category_post')->insert([
+                    'category_id'=>$data,
+                    'post_id'=>$post->id
+                ]);
+            }
 
             // $post=Post::create($postRequest->all())
             // To Save Multiple Images
@@ -239,11 +245,18 @@ public function getDetail($id)
         try {
             $data = Post::findOrFail($id);
             $data->title = $postRequest->input('post_title');
-            $data->category_id = $postRequest->input('post_category_id');
+            // $data->category_id = $postRequest->input('post_category_id');
             $data->description = $postRequest->input('post_description');
             $data->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
 
             $data->save();
+
+            foreach($postRequest->input('category_ids') as $category){
+                DB::table('category_post')->insert([
+                    'category_id'=>$category,
+                    'post_id'=>$data->id
+                ]);
+            }
 
             if ($postRequest->hasFile('post_images')) {
                 $existingImages = PostImage::where('post_id', $id)->get();

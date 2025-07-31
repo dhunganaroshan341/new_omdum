@@ -29,9 +29,9 @@ class PostRequest extends FormRequest
         'post_description' => 'required',
 
         // ✅ Expecting multiple category IDs as an array
-        'post_category_id' => 'required|array',
+        'category_ids' => 'required|array',
         // 'post_category_id.*' => 'required|integer|in:' . implode(',', $this->getCategoryOptions()),
-        'post_category_id.*'=>'required|exists:categories,id',
+        'category_ids.*'=>'required|exists:categories,id',
 
         // ✅ Expecting multiple tag IDs as an array
         'tag_ids' => 'nullable|array',

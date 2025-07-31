@@ -217,10 +217,11 @@ $("#tags").val('');
                 $("#posttitleData").val(response.message.title);
                 $("#tags").val(response.message.tags);
                 // $("#category_id").val(response.message.category_id);
+                 $("#category_id").val(response.message.category_id);
                 // populate and pre-select the category
 
                 let selectedCategoryIds = response.message.categories.map(cat => cat.id);
-populateCategorySelect(selectedCategoryIds);
+                // populateCategorySelect(selectedCategoryIds);
 
 // Fix tags JSON array to string
 let tags = response.message.tags;
