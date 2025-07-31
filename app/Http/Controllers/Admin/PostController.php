@@ -158,7 +158,7 @@ private function processTags(string $rawTags=null): array
             // $post->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
             $post->save();
             foreach($postRequest->input('category_ids') as $data){
-                DB::table('category_post')->insert([
+                DB::table('category_posts')->insert([
                     'category_id'=>$data,
                     'post_id'=>$post->id
                 ]);
@@ -257,7 +257,7 @@ public function getDetail($id)
             $data->save();
 
             foreach($postRequest->input('category_ids') as $category){
-                DB::table('category_post')->insert([
+                DB::table('category_posts')->insert([
                     'category_id'=>$category,
                     'post_id'=>$data->id
                 ]);
