@@ -140,7 +140,7 @@ function populateCategorySelect(selectedCategoryIds = []) {
         $(".infoPostImageText").text("Multiple Image Can be Uploaded");
         $(".form").attr("id", 'addForm');
         // $("#addForm")[0].reset();
-populateCategorySelect(); // load categories
+// populateCategorySelect(); // load categories
 $("#tags").val('');
 
         $("#addForm").trigger("reset");
