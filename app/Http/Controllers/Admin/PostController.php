@@ -71,8 +71,8 @@ private function processTags(string $rawTags): array
 
         // Start query with joins via pivot table for categories
         $posts = Post::query()
-            ->join('category_post', 'category_post.post_id', '=', 'posts.id')
-            ->join('categories', 'categories.id', '=', 'category_post.category_id')
+            ->join('category_posts', 'category_posts.post_id', '=', 'posts.id')
+            ->join('categories', 'categories.id', '=', 'category_posts.category_id')
             ->join('users', 'users.id', '=', 'posts.created_by')
             ->leftJoin('post_images', 'post_images.post_id', '=', 'posts.id')
             ->leftJoin('comments', 'comments.commentable_id', '=', 'posts.id')
