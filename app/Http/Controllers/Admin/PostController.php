@@ -50,14 +50,19 @@ public function index(Request $request)
 
 
 
-private function processTags(string $rawTags): array
+private function processTags(string $rawTags=null): array
 {
-    return collect(explode(',', $rawTags))
+   if($rawTags!=null){
+     return collect(explode(',', $rawTags))
         ->map(fn($tag) => trim($tag))
         ->filter()
         ->unique()
         ->values()
         ->all();
+
+   }
+   return [];
+
 }
 
  public function getPostData(Request $request)
