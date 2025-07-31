@@ -1,51 +1,51 @@
 <?php
-
 namespace App\Models;
-
-use App\Traits\HasUploadUrl;
+use App\Models\BaseModel;
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\PostImage;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Post extends BaseModel
 {
     use HasFactory;
 
-       // If your column is named 'image_path' (default), no need to set this
-
-    protected $fillable=['title','category_id','description','created_by','updated_by','status','views'];
+    protected $fillable = ['title', 'description', 'created_by', 'updated_by', 'status', 'views'];
 
     public function categories()
-{
-    return $this->belongsToMany(Category::class);
-}
-public function tags()
-{
-    return $this->belongsToMany(Tag::class);
-}
-
-
-
-    public function postImages(){
-        return $this->hasMany(PostImage::class,'post_id','id');
+    {
+        return $this->belongsToMany(Category::class);
     }
 
-    public function comments(){
-        return $this->morphMany(Comment::class,'commentable');
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 
-
-
-    public function createdBy(){
-        return $this->belongsTo(User::class,'created_by','id');
+    public function postImages()
+    {
+        return $this->hasMany(PostImage::class, 'post_id', 'id');
     }
 
-    public function updatedBy(){
-        return $this->belongsTo(User::class,'updated_by','id');
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
-public function getFirstImageUrlAttribute()
-{
-    return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
-}
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
 
+    public function updatedBy()
+    {
+        return $this->belongsTo(User::class, 'updated_by', 'id');
+    }
+
+    public function getFirstImageUrlAttribute()
+    {
+        return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
+    }
 }
