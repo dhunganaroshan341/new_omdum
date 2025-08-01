@@ -10,7 +10,9 @@ class Category extends BaseModel
     use HasFactory;
     protected $fillable=['title','status'];
 
-    public function posts(){
-        return $this->belongsToMany(Post::class);
-    }
+  public function posts()
+{
+    return $this->belongsToMany(Post::class, 'category_posts', 'category_id', 'post_id');
+}
+
 }
