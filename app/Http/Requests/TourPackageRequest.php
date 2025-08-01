@@ -34,6 +34,7 @@ class TourPackageRequest extends FormRequest
             'what_to_expect' => 'nullable|string',
             'itinerary' => 'nullable|string',
             'location' => 'nullable|string',
+            'price' => 'nullable|string',
             'duration' => 'nullable|string|max:100',
             'accomodation' => 'nullable|string|max:100',
             'difficulty' => 'nullable|in:easy,moderate,hard',

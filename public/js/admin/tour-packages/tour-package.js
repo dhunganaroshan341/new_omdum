@@ -22,6 +22,7 @@ function populateTourPackageForm(tour_package) {
 
     // Set all form fields
     $("input[name='title']").val(tour_package.title);
+    $("input[name='price']").val(tour_package.price);
     $("input[name='slug']").val(tour_package.slug);
     $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);

@@ -16,7 +16,7 @@
                         {{-- Assuming you have country or location stored --}}
                         <h6 class="font-weight-normal pink">
                             <i class="fa fa-map-marker-alt"></i>
-                            {{ $deal->country->name ?? 'Unknown Location' }}
+                            {{ $deal->location ?? 'Unknown' }}
                         </h6>
                         <h4><a href="{{ route('packages.show', $deal->slug) }}">{{ $deal->title }}</a></h4>
                         <p>{{ Str::limit($deal->short_description, 60) }}</p>

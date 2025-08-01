@@ -78,7 +78,7 @@ public function location(): Attribute
     return $slug;
 }
     public function country() {
-    return $this->belongsTo(OurCountry::class);
+    return $this->belongsTo(OurCountry::class,'our_country_id');
 }
 
 public function itineraries() {

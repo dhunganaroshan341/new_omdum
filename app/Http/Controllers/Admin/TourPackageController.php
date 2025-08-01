@@ -221,7 +221,7 @@ public function store(TourPackageRequest $request)
     DB::beginTransaction();
     try {
         $data = $request->only([
-            'title', 'short_description', 'long_description',
+            'title', 'short_description', 'long_description','price',
             'duration', 'difficulty', 'max_elevation', 'best_season','parent_id',
             'start_point', 'end_point', 'our_country_id', 'status','package_type'
         ]);

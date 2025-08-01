@@ -22,6 +22,10 @@
                             <label for="title">Title <span class="text-danger">*</span></label>
                             <input type="text" name="title" id="title" class="form-control" required>
                         </div>
+                        <div class="col-md-6">
+                            <label for="title">Total Price - $ <span class="text-danger"></span></label>
+                            <input type="text" name="price" id="price" class="form-control" nullable>
+                        </div>
 
                         <!-- Slug -->
                         <div class="col-md-3">
