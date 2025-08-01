@@ -46,7 +46,7 @@
                         <div class="col-md-6">
                             <label>Package Type <span class="text-danger">*</span></label>
                             <select name="package_type" class="form-select" required>
-                                <option value="">-- Select Package Type--</option>
+                                {{-- <option value="">-- Select Package Type--</option> --}}
                                 <option value="tour">-- Tour--</option>
                                 <option value="trekking">-- Trekking --</option>
                                 <option value="other">-- Other --</option>
@@ -64,7 +64,7 @@
                         <div class="col-md-6">
                             <label>Parent Package</label>
                             <select name="parent_id" class="form-select" id="parentSelect">
-                                <option value="">-- No Parent --</option>
+                                {{-- <option value="">-- No Parent --</option> --}}
                                 @foreach ($packages as $pkg)
                                     <option value="{{ $pkg->id }}">{{ $pkg->title }}</option>
                                 @endforeach
