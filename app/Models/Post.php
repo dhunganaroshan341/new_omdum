@@ -12,11 +12,11 @@ class Post extends BaseModel
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'created_by', 'updated_by', 'status', 'views'];
+    protected $fillable = ['title', 'description','slug', 'created_by', 'updated_by', 'status', 'views'];
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'category_post');
+        return $this->belongsToMany(Category::class, 'category_posts');
     }
 
     public function tags()
