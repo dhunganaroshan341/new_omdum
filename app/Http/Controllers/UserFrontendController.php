@@ -93,7 +93,7 @@ class UserFrontendController extends Controller
     {
         $serviceDetail = Service::find($id);
         $otherServices = Service::where('status', 1)->where('id', '!=', $id)->get();
-        $posts = Post::with('category', 'postImages')
+        $posts = Post::with('categories', 'postImages')
             ->latest()
             ->get();
             $content_title="Service Detail";
@@ -121,12 +121,12 @@ class UserFrontendController extends Controller
 
     $categories = Category::withCount('post')->get();
 
-    $recentPosts = Post::with('category') // in case view needs category
+    $recentPosts = Post::with('categories') // in case view needs category
                     ->latest()
                     ->take(3)
                     ->get();
 
-    $popularPosts = Post::with('category')
+    $popularPosts = Post::with('categories')
                     ->orderBy('views', 'desc')
                     ->take(3)
                     ->get();
@@ -155,7 +155,7 @@ public function blogDetail($slug)
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
     // Fetch the post with necessary relationships
-    $post = Post::with(['createdBy', 'category', 'postImages', 'comments'])
+    $post = Post::with(['createdBy', 'categories', 'postImages', 'comments'])
         ->where('slug', $slug)
         ->firstOrFail();
 
