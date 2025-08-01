@@ -20,13 +20,15 @@ function populateTourPackageForm(tour_package) {
     // Show the modal
     $("#formModal").modal("show");
 
-    // Fill input fields
+    // Set all form fields
     $("input[name='title']").val(tour_package.title);
     $("input[name='slug']").val(tour_package.slug);
     $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);
-    $("select[name='parent_id']").val(tour_package.parent_id);
+    $("select[name='parent_id']").val(tour_package.parent_id); // ✅ This line sets the selected package
     $("select[name='package_type']").val(tour_package.package_type);
+
+    // Other fields...
     $("input[name='duration']").val(tour_package.duration);
     $("textarea[name='accomodation']").val(tour_package.accomodation);
     $("input[name='max_people']").val(tour_package.max_people);
@@ -37,21 +39,21 @@ function populateTourPackageForm(tour_package) {
     $("input[name='best_season']").val(tour_package.best_season);
     $("input[name='start_point']").val(tour_package.start_point);
     $("input[name='end_point']").val(tour_package.end_point);
-     $("#top_deal").prop('checked', tour_package.top_deal == 1);
-    $("#favourite_destination").prop('checked', tour_package.favourite_destination == 1);
 
+    $("#top_deal").prop('checked', tour_package.top_deal == 1);
+    $("#favourite_destination").prop('checked', tour_package.favourite_destination == 1);
 
     $("textarea[name='short_description']").val(tour_package.accomodation);
 
-    // For summernote fields
     $("textarea[name='long_description']").summernote('code', tour_package.long_description ?? '');
     $("textarea[name='what_to_expect']").summernote('code', tour_package.what_to_expect ?? '');
     $("textarea[name='itinerary']").summernote('code', tour_package.itinerary ?? '');
 
-    // UI toggling
+    // Update button logic
     $(".submitBtn").hide();
-    $(".updateBtn").show().data("id", tour_package.id); // Store the ID for update
+    $(".updateBtn").show().data("id", tour_package.id);
 }
+
 
 
     function toggleMediaFields() {
