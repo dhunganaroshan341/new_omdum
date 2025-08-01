@@ -14,11 +14,13 @@ class BlogAndNewsSection extends Component
 
    public function __construct()
 {
-    $this->posts = Post::with(['postImages', 'categories'])
-        // ->whereHas('postImages') // Only posts with at least one image
-        ->latest()
-        ->take(5)
-        ->get();
+   $this->posts = Post::with(['postImages', 'categories'])
+    ->whereNotNull('slug')       // slug is NOT null
+    ->where('slug', '!=', '')    // slug is NOT empty string
+    ->latest()
+    ->take(5)
+    ->get();
+
 }
 
 
