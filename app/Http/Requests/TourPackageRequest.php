@@ -19,6 +19,7 @@ class TourPackageRequest extends FormRequest
         return [
             'our_country_id' => 'required|exists:our_countries,id',
             'service_id' => 'nullable|exists:countries,id',
+            'parent_id' => 'nullable|exists:tour_packages,id',
             'title' => 'required|string|max:255',
             'slug' => [
                 'required',
