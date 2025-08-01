@@ -9,7 +9,6 @@ use App\Models\TourPackage;
 use App\Models\TourPackageImage;
 use App\Models\TourPackageVideo;
 use App\Models\User;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -254,17 +253,15 @@ public function store(TourPackageRequest $request)
      */
 
 
-    public function show(string $id)
-{
-    try {
-        $data = TourPackage::with('images')->findOrFail($id);
-        return response()->json(['success' => true, 'data' => $data], 200);
-    } catch (ModelNotFoundException $e) {
-        return response()->json(['success' => false, 'message' => 'Tour Package not found.'], 404);
-    } catch (\Exception $e) {
-        return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+     public function show(string $id)
+    {
+        try {
+             $data = TourPackage::with('images')->findOrFail($id);
+            return response()->json(['success' => true, 'message' => $data]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
     }
-}
 
     /**
      * Update the specified resource in storage.
