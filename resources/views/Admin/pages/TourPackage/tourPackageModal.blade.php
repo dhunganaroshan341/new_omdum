@@ -4,7 +4,6 @@
         <div class="modal-content shadow">
             <form id="formId" class="form">
                 @csrf
-
                 <!-- Modal Header -->
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title">
@@ -18,25 +17,30 @@
                 <div class="modal-body px-4 py-3" style="max-height: calc(100vh - 200px); overflow-y: auto;">
                     <div class="row g-4">
 
+                        <!-- Title -->
                         <div class="col-md-6">
-                            <label>Title <span class="text-danger">*</span></label>
-                            <input type="text" name="title" class="form-control" required>
+                            <label for="title">Title <span class="text-danger">*</span></label>
+                            <input type="text" name="title" id="title" class="form-control" required>
                         </div>
 
+                        <!-- Slug -->
                         <div class="col-md-3">
-                            <label>Slug</label>
-                            <input type="text" name="slug" class="form-control"
+                            <label for="slug">Slug</label>
+                            <input type="text" name="slug" id="slug" class="form-control"
                                 placeholder="Auto-generated if blank">
                         </div>
+
+                        <!-- Location -->
                         <div class="col-md-3">
-                            <label>Location</label>
-                            <input id = "location" type="text" name="location" class="form-control"
-                                placeholder="location">
+                            <label for="location">Location</label>
+                            <input type="text" name="location" id="location" class="form-control"
+                                placeholder="Location">
                         </div>
 
+                        <!-- Country -->
                         <div class="col-md-6">
-                            <label>Country <span class="text-danger">*</span></label>
-                            <select name="our_country_id" class="form-select" required>
+                            <label for="our_country_id">Country <span class="text-danger">*</span></label>
+                            <select name="our_country_id" id="our_country_id" class="form-select" required>
                                 <option value="">-- Select Country --</option>
                                 @foreach ($countries as $country)
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -44,52 +48,61 @@
                             </select>
                         </div>
 
-
+                        <!-- Status -->
                         <div class="col-md-6">
-                            <label>Status</label>
-                            <select name="status" class="form-select">
+                            <label for="status">Status</label>
+                            <select name="status" id="status" class="form-select">
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>
                             </select>
                         </div>
+
+                        <!-- Package Type -->
                         <div class="col-md-6">
-                            <label>Package Type</label>
-                            <select name="package_type" class="form-select">
-                                <option value="trekking">trekking</option>
-                                <option value="tour">tour</option>
-                                <option value="other">other</option>
+                            <label for="package_type">Package Type</label>
+                            <select name="package_type" id="package_type" class="form-select">
+                                <option value="trekking">Trekking</option>
+                                <option value="tour">Tour</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
+
+                        <!-- Parent Package -->
                         <div class="col-md-6">
-                            <label>Parent Package</label>
-                            <select name="package_type" class="form-select">
+                            <label for="parent_id">Parent Package</label>
+                            <select name="parent_id" id="parent_id" class="form-select">
+                                <option value="">-- No Parent --</option>
                                 @foreach ($packages as $package)
-                                    <option value="{{ $package->id }}"> {{ $package->title }}</option>
+                                    <option value="{{ $package->id }}">{{ $package->title }}</option>
                                 @endforeach
                             </select>
                         </div>
 
-
+                        <!-- Duration -->
                         <div class="col-md-6">
-                            <label>Duration</label>
-                            <input type="text" name="duration" class="form-control" placeholder="e.g., 12 Days">
+                            <label for="duration">Duration</label>
+                            <input type="text" name="duration" id="duration" class="form-control"
+                                placeholder="e.g., 12 Days">
                         </div>
 
+                        <!-- Max People -->
                         <div class="col-md-6">
                             <label for="max_people">Max People</label>
                             <input type="number" name="max_people" id="max_people" class="form-control"
                                 placeholder="e.g., 30">
                         </div>
 
+                        <!-- Available Seats -->
                         <div class="col-md-6">
-                            <label for="available_seat">Available Seat</label>
+                            <label for="available_seat">Available Seats</label>
                             <input type="number" name="available_seat" id="available_seat" class="form-control"
                                 placeholder="e.g., 15">
                         </div>
 
+                        <!-- Difficulty -->
                         <div class="col-md-6">
-                            <label>Difficulty</label>
-                            <select name="difficulty" class="form-select">
+                            <label for="difficulty">Difficulty</label>
+                            <select name="difficulty" id="difficulty" class="form-select">
                                 <option value="">-- Select --</option>
                                 <option value="easy">Easy</option>
                                 <option value="moderate">Moderate</option>
@@ -97,26 +110,32 @@
                             </select>
                         </div>
 
+                        <!-- Max Elevation -->
                         <div class="col-md-6">
-                            <label>Max Elevation (m)</label>
-                            <input type="number" name="max_elevation" class="form-control">
+                            <label for="max_elevation">Max Elevation (m)</label>
+                            <input type="number" name="max_elevation" id="max_elevation" class="form-control">
                         </div>
 
+                        <!-- Best Season -->
                         <div class="col-md-6">
-                            <label>Best Season</label>
-                            <input type="text" name="best_season" class="form-control" placeholder="e.g., March-May">
+                            <label for="best_season">Best Season</label>
+                            <input type="text" name="best_season" id="best_season" class="form-control"
+                                placeholder="e.g., March-May">
                         </div>
 
+                        <!-- Start Point -->
                         <div class="col-md-6">
-                            <label>Start Point</label>
-                            <input type="text" name="start_point" class="form-control">
+                            <label for="start_point">Start Point</label>
+                            <input type="text" name="start_point" id="start_point" class="form-control">
                         </div>
 
+                        <!-- End Point -->
                         <div class="col-md-6">
-                            <label>End Point</label>
-                            <input type="text" name="end_point" class="form-control">
+                            <label for="end_point">End Point</label>
+                            <input type="text" name="end_point" id="end_point" class="form-control">
                         </div>
 
+                        <!-- Tour Package Tags -->
                         <div class="col-12">
                             <label class="form-label">Tour Package Tags</label>
                             <div class="row">
@@ -153,27 +172,30 @@
                             </div>
                         </div>
 
-
-
+                        <!-- Accomodation -->
                         <div class="col-12">
-                            <label>Accomodation</label>
-                            <textarea name="accomodation" rows="3" class="form-control" style="height:20px"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <label>Short Description</label>
-                            <textarea name="short_description" rows="5" class="form-control" style="height:20px"></textarea>
+                            <label for="accomodation">Accomodation</label>
+                            <textarea name="accomodation" id="accomodation" rows="3" class="form-control" style="height: 20px;"></textarea>
                         </div>
 
+                        <!-- Short Description -->
                         <div class="col-12">
-                            <label for="whatToExpect" class="form-label">what To Expect <span
-                                    class="text-danger"></span></label>
+                            <label for="short_description">Short Description</label>
+                            <textarea name="short_description" id="short_description" rows="5" class="form-control"
+                                style="height: 20px;"></textarea>
+                        </div>
+
+                        <!-- What to Expect -->
+                        <div class="col-12">
+                            <label for="what_to_expect" class="form-label">What To Expect</label>
                             <textarea class="form-control summernote" id="what_to_expect" name="what_to_expect" rows="5"
                                 style="min-height: 250px;"></textarea>
                         </div>
+
+                        <!-- Long Description -->
                         <div class="col-12">
-                            <label for="testimonialDescription" class="form-label">Description <span
-                                    class="text-danger"></span></label>
-                            <textarea class="form-control summernote" id="testimonialDescription" name="long_description" rows="5"
+                            <label for="long_description" class="form-label">Description</label>
+                            <textarea class="form-control summernote" id="long_description" name="long_description" rows="5"
                                 style="min-height: 250px;"></textarea>
                         </div>
 
@@ -186,41 +208,6 @@
                     <button type="submit" class="btn btn-success submitBtn" data-action="">Submit</button>
                     <button type="submit" class="btn btn-success updateBtn" data-action="edit">Update
                         Package</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-{{-- Image Crousal --}}
-<div class="modal fade" id="imageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="formId" class="form">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center" id="postImageTitle">Image List</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner fetch-post-image-data">
-
-                        </div>
-                        <button class="carousel-control-prev" type="button"
-                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button"
-                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>
