@@ -3437,7 +3437,8 @@ nav.navbar.navbar-default.navbar-sticky-in .logo-black {
   transition: all 0.25s ease 0s;
 }
 .trending .trend-item .trend-content-main .trend-last-main p.trend-para {
-  padding: 0 20px 25px;
+	padding: 0 20px 25px;
+	height: 75px;
 }
 .trending .trend-item .trend-content-main .trend-last-main .trend-last {
 	background: #61b488;
