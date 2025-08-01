@@ -154,21 +154,20 @@ public function blogDetail($slug)
     $content_title = "Blog Detail";
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
-    // Fetch the post with necessary relationships
     $post = Post::with(['createdBy', 'categories', 'postImages', 'comments'])
         ->where('slug', $slug)
         ->firstOrFail();
 
     $postId = $post->id;
 
-    // ✅ Count view only once per session
+    // View count per session
     $sessionKey = 'post_' . $postId . '_viewed';
     if (!session()->has($sessionKey)) {
         $post->increment('views');
         session()->put($sessionKey, true);
     }
 
-    // Previous and Next posts
+    // Previous and next posts
     $previousPost = Post::where('status', 'Active')
         ->where('id', '<', $postId)
         ->orderBy('id', 'desc')
@@ -179,12 +178,7 @@ public function blogDetail($slug)
         ->orderBy('id', 'asc')
         ->first();
 
-    // Fetch post images (already eager loaded, but this ensures specific query)
-    $images = Post::with(['postImages' => function ($query) use ($postId) {
-        $query->where('post_id', $postId);
-    }])->findOrFail($postId);
-
-    // Fetch comments
+    // Comments
     $comments = Comment::with('user')
         ->where('commentable_id', $postId)
         ->orderBy('created_at', 'desc')
@@ -197,23 +191,23 @@ public function blogDetail($slug)
         ->take(3)
         ->get();
 
-    // Categories with post count
-    $categories = Category::where('status', 'Active')
-        ->withCount('posts')
-        ->get();
-
-    // Related posts based on category
     $recentIds = $recentPosts->pluck('id')->toArray();
-    $currentCategoryId = $post->category_id ?? null;
 
+    // Get all category IDs associated with this post
+    $categoryIds = $post->categories->pluck('id')->toArray();
+
+    // Related posts (any post sharing at least one category)
     $relatedPosts = Post::with('postImages')
         ->where('status', 'Active')
-        ->where('category_id', $currentCategoryId)
         ->whereNotIn('id', $recentIds)
+        ->whereHas('categories', function ($query) use ($categoryIds) {
+            $query->whereIn('categories.id', $categoryIds);
+        })
         ->latest()
         ->take(3)
         ->get();
 
+    // Fallback if no related posts
     if ($relatedPosts->isEmpty()) {
         $relatedPosts = Post::with('postImages')
             ->where('status', 'Active')
@@ -223,18 +217,21 @@ public function blogDetail($slug)
             ->get();
     }
 
-    // Tags (dynamic handling assuming post has tags() relationship)
-    $tags = $post->tags ?? []; // Optional: only if your Post has tags
+    // Categories with post count
+    $categories = Category::where('status', 'Active')
+        ->withCount('posts')
+        ->get();
 
-    // Processed meta description
+    // Optional: Tags
+    $tags = $post->tags ?? [];
+
+    // Meta description
     $processedDescription = $post->title;
     if (!empty($pageBanner?->title)) {
         $processedDescription .= ' → ' . Str::words(strip_tags($pageBanner->title), 5, '...');
     }
 
     return view('frontend.blog-detail', compact(
-        // 'detail',
-        // 'images',
         'post',
         'recentPosts',
         'relatedPosts',
@@ -248,6 +245,7 @@ public function blogDetail($slug)
         'tags'
     ));
 }
+
 
 
 
