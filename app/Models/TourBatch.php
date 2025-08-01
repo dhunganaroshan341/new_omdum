@@ -22,6 +22,11 @@ class TourBatch extends Model
         'price',
         'status',
     ];
+    protected $casts = [
+    'start_date' => 'date',
+    'end_date' => 'date',
+];
+
 
     // ✅ Relationship to TourPackage
     public function tourPackage()
