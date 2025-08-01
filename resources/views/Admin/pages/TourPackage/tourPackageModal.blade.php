@@ -60,6 +60,17 @@
                                 <option value="Inactive">Inactive</option>
                             </select>
                         </div>
+                        <div class="col-md-6">
+                            <label>Parent Package</label>
+                            <select name="parent_id" class="form-select" id="parentSelect">
+
+                                <option value="">-- No Parent --</option>
+                                @foreach ($packages as $pkg)
+                                    <option value="{{ $pkg->id }}">{{ $pkg->title }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
 
                         <div class="col-md-6">
                             <label>Duration</label>

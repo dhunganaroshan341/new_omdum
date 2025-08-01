@@ -140,11 +140,13 @@ public function index(Request $request)
         config('js-map.admin.dropzone.style'),
         config('js-map.admin.buttons.style')
     );
+    $packages = TourPackage::where('status','Active')->get();
 
     return view('Admin.pages.TourPackage.tourPackage', [
         'extraJs' => $extraJs,
         'extraCs' => $extraCs,
         'countries' => $countries,
+        'packages' => $packages,
     ]);
 }
 
