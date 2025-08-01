@@ -7,6 +7,7 @@ use App\Models\PostImage;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 
 class Post extends BaseModel
 {
@@ -47,5 +48,20 @@ class Post extends BaseModel
     public function getFirstImageUrlAttribute()
     {
         return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($post) {
+            $post->slug = Str::slug($post->title);
+        });
+
+        static::updating(function ($post) {
+            if ($post->isDirty('title')) {
+                $post->slug = Str::slug($post->title);
+            }
+        });
     }
 }
