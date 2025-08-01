@@ -48,10 +48,10 @@
                                                     </a>
                                                 </h4>
                                                 <p class="mb-0">
-                                                    <i class="fa fa-eye me-1"></i>
-                                                    {{ $package->visiting_places ?? '0' }} Visiting Places
+                                                    {{-- <i class="fa fa-eye me-1"></i>
+                                                    {{ $package->visiting_places ?? '0' }} Visiting Places --}}
                                                     <i class="fa fa-map-marker me-1 ms-3"></i>
-                                                    {{ $country->name ?? 'Unknown Country' }}
+                                                    {{ $country->name ?? 'Nepal' }}
                                                 </p>
                                             </div>
                                             <div class="trend-last-main">
