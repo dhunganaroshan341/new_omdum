@@ -33,7 +33,7 @@ class UserFrontendController extends Controller
     $homeslides = HomeSlide::where('status', 'Active')->get();
     $testimonials = Testimonial::where('status', 'Active')->get();
     $destinations = TourPackage::where('status', 'Active')->get();
-    $topDestinations = TourPackage::where('status', 'Active')->where('top_deal',1)->get();
+    $topDestinations = TourPackage::with('country')->where('status', 'Active')->where('top_deal',1)->get();
     $topDeals =$topDestinations;
     $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
 
