@@ -17,9 +17,11 @@ class TourPackage extends BaseModel
      protected $fillable = [
         'our_country_id',
         'service_id',
+        'parent_id',
         'type',
         'location',
         'images',
+        'title',
         'title',
         'drop',
         'accomodation',
@@ -117,6 +119,15 @@ public function getDurationAttribute($value)
 }
 // public function getFirstImageAttribute(){
 // }    TourPackage->
+public function parent()
+{
+    return $this->belongsTo(TourPackage::class, 'parent_id');
+}
+
+public function children()
+{
+    return $this->hasMany(TourPackage::class, 'parent_id');
+}
 
 
 }
