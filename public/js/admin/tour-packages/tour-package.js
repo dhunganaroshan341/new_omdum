@@ -25,8 +25,12 @@ function populateTourPackageForm(tour_package) {
     $("input[name='slug']").val(tour_package.slug);
     $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);
-    $("select[name='parent_id']").val(tour_package.parent_id); // ✅ This line sets the selected package
-  $("select[name='package_type']").val(tour_package.package_type).trigger('change');
+     // Fix parent_id: convert to string, fallback to empty string if null
+    $("select[name='parent_id']").val(tour_package.parent_id ? tour_package.parent_id.toString() : '').trigger('change');
+
+    // Fix package_type: trim + lowercase to match option values
+    let pt = tour_package.package_type ? tour_package.package_type.trim().toLowerCase() : '';
+    $("select[name='package_type']").val(pt).trigger('change');
 
     // Other fields...
     $("input[name='duration']").val(tour_package.duration);
