@@ -56,7 +56,7 @@
                                         <li>Authentic Experiences</li>
                                         <li>Safety & Excellence</li>
                                         <li>Sustainable Tourism</li>
-                                        <li>Customer Satisfaction</li>'
+                                        <li>Customer Satisfaction</li>
                                     @endif
                                 </ul>
                             </div>

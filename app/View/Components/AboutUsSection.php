@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Page;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -14,8 +15,11 @@ class AboutUsSection extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($aboutContent = null, $missionVision = null)
+    public function __construct()
     {
+        $aboutContent = Page::where('title','about')->first();
+        $missionVision = Page::where('title','mission_vision')->first();
+
         $this->aboutContent = $aboutContent;
         $this->missionVision = $missionVision;
     }
