@@ -199,7 +199,7 @@ public function blogDetail($slug)
 
     // Categories with post count
     $categories = Category::where('status', 'Active')
-        ->withCount('post')
+        ->withCount('posts')
         ->get();
 
     // Related posts based on category
