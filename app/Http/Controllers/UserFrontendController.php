@@ -109,19 +109,16 @@ class UserFrontendController extends Controller
    public function blog()
 {
     $content_title = "Blogs";
-
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
-   $posts = Post::with(['categories', 'postImages'])
-             ->where('status', 'Active')
-             ->latest()
-             ->paginate(6);
-// dd($posts);
+    $posts = Post::with(['categories', 'postImages'])
+                 ->where('status', 'Active')
+                 ->latest()
+                 ->paginate(6);
 
+    $categories = Category::withCount('posts')->get();
 
-    $categories = Category::withCount('post')->get();
-
-    $recentPosts = Post::with('categories') // in case view needs category
+    $recentPosts = Post::with('categories')
                     ->latest()
                     ->take(3)
                     ->get();
@@ -134,19 +131,25 @@ class UserFrontendController extends Controller
     return view('frontend.blog', compact('posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
 }
 
-  public function blogsByCategory($title)
-{
 
+public function blogsByCategory($title)
+{
     $content_title = "Blogs";
     $pageBanner = PageBanner::where('page', 'blog')->first();
-    $category = Category::where('title',$title);
-    $category_title = $category ? $category->title : null;
 
-    // 6 posts per page (you can change the number)
-    $posts = Post::with('postImages')->where('status', 'Active')->where('category_id',$category->id)->paginate(6);
+    $category = Category::where('title', $title)->first();
+    if (!$category) {
+        abort(404, 'Category not found');
+    }
 
-    return view('frontend.blog', compact('posts', 'category_title','content_title', 'pageBanner'));
+    $category_title = $category->title;
+
+    // Get posts using the relationship
+    $posts = $category->posts()->with('postImages')->where('status', 'Active')->paginate(6);
+
+    return view('frontend.blog', compact('posts', 'category_title', 'content_title', 'pageBanner'));
 }
+
 
 
 public function blogDetail($slug)
