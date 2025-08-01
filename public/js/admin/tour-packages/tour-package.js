@@ -26,7 +26,7 @@ function populateTourPackageForm(tour_package) {
     $("select[name='our_country_id']").val(tour_package.our_country_id);
     $("select[name='status']").val(tour_package.status);
     $("select[name='parent_id']").val(tour_package.parent_id); // ✅ This line sets the selected package
-    $("select[name='package_type']").val(tour_package.package_type);
+  $("select[name='package_type']").val(tour_package.package_type).trigger('change');
 
     // Other fields...
     $("input[name='duration']").val(tour_package.duration);
