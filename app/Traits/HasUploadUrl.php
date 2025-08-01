@@ -17,4 +17,10 @@ trait HasUploadUrl
         // Assuming your uploads folder is 'uploads'
         return asset('uploads/' . $path);
     }
+    public function getUploadUrl(string $column = 'image_path')
+    {
+        $path = $this->{$column} ?? null;
+        if (!$path) return null;
+        return asset('uploads/' . $path);
+    }
 }

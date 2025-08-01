@@ -1,43 +1,39 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Page extends Model
 {
-   protected $fillable = [
-    'title',
-    'slug',
-    'content',
-    'meta_title',
-    'meta_description',
-    'meta_keywords',
-    'title1',
-    'title2',
-    'short_desc1',
-    'short_desc2',
-    'desc1',
-    'desc2',
-    'image1',
-    'image2',
-    'video1',
-    'video2',
-    'gallery_images', // JSON field as array
-];
+    use HasFactory;
 
-
-    // Optional: cast JSON fields properly
-
+    protected $fillable = [
+        'title',
+        'slug',
+        'content',
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
+        'title1',
+        'title2',
+        'short_desc1',
+        'short_desc2',
+        'desc1',
+        'desc2',
+        'image1',
+        'image2',
+        'video1',
+        'video2',
+        'gallery_images',
+    ];
 
     protected $casts = [
         'gallery_images' => 'array',
     ];
 
-    // Automatically generate slug if not provided
+    // Generate slug if not provided
     public static function boot()
     {
         parent::boot();
@@ -48,45 +44,21 @@ class Page extends Model
             }
         });
     }
-protected static function booted()
+
+    protected static function booted()
     {
         static::updating(function ($page) {
-            // Check and delete old image1
-            if ($page->isDirty('image1') && !empty($page->getOriginal('image1'))) {
-                $oldPath = public_path($page->getOriginal('image1'));
-                if (file_exists($oldPath)) {
-                    unlink($oldPath);
-                }
-            }
-
-            // Check and delete old image2
-            if ($page->isDirty('image2') && !empty($page->getOriginal('image2'))) {
-                $oldPath = public_path($page->getOriginal('image2'));
-                if (file_exists($oldPath)) {
-                    unlink($oldPath);
-                }
-            }
-
-            // Check and delete old video1
-            if ($page->isDirty('video1') && !empty($page->getOriginal('video1'))) {
-                $oldPath = public_path($page->getOriginal('video1'));
-                if (file_exists($oldPath)) {
-                    unlink($oldPath);
-                }
-            }
-
-            // Check and delete old video2
-            if ($page->isDirty('video2') && !empty($page->getOriginal('video2'))) {
-                $oldPath = public_path($page->getOriginal('video2'));
-                if (file_exists($oldPath)) {
-                    unlink($oldPath);
+            foreach (['image1', 'image2', 'video1', 'video2'] as $field) {
+                if ($page->isDirty($field) && !empty($page->getOriginal($field))) {
+                    $oldPath = public_path($page->getOriginal($field));
+                    if (file_exists($oldPath)) {
+                        unlink($oldPath);
+                    }
                 }
             }
         });
 
         static::deleting(function ($page) {
-            // Delete all related media files on deleting the page record
-
             foreach (['image1', 'image2', 'video1', 'video2'] as $field) {
                 $filePath = public_path($page->$field);
                 if (!empty($page->$field) && file_exists($filePath)) {
@@ -96,4 +68,24 @@ protected static function booted()
         });
     }
 
+    // ACCESSORS for full URLs for images and videos
+    public function getImage1UrlAttribute()
+    {
+        return $this->image1 ? asset('uploads/' . ltrim($this->image1, '/')) : null;
+    }
+
+    public function getImage2UrlAttribute()
+    {
+        return $this->image2 ? asset('uploads/' . ltrim($this->image2, '/')) : null;
+    }
+
+    public function getVideo1UrlAttribute()
+    {
+        return $this->video1 ? asset('uploads/' . ltrim($this->video1, '/')) : null;
+    }
+
+    public function getVideo2UrlAttribute()
+    {
+        return $this->video2 ? asset('uploads/' . ltrim($this->video2, '/')) : null;
+    }
 }
