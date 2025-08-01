@@ -49,6 +49,7 @@
                                 <option value="">-- Select Package Type--</option>
                                 <option value="tour">-- Tour--</option>
                                 <option value="trekking">-- Trekking --</option>
+                                <option value="other">-- Other --</option>
 
                             </select>
                         </div>
