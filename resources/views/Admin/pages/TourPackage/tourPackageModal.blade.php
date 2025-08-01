@@ -43,16 +43,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-md-6">
-                            <label>Package Type <span class="text-danger">*</span></label>
-                            <select name="package_type" class="form-select" required>
-                                {{-- <option value="">-- Select Package Type--</option> --}}
-                                <option value="tour">-- Tour--</option>
-                                <option value="trekking">-- Trekking --</option>
-                                <option value="other">-- Other --</option>
 
-                            </select>
-                        </div>
 
                         <div class="col-md-6">
                             <label>Status</label>
@@ -62,16 +53,22 @@
                             </select>
                         </div>
                         <div class="col-md-6">
+                            <label>Package Type</label>
+                            <select name="package_type" class="form-select">
+                                <option value="trekking">trekking</option>
+                                <option value="tour">tour</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
                             <label>Parent Package</label>
-                            <select name="parent_id" class="form-select" id="parentSelect">
-                                {{-- <option value="">-- No Parent --</option> --}}
-                                @foreach ($packages as $pkg)
-                                    <option value="{{ $pkg->id }}">{{ $pkg->title }}</option>
+                            <select name="package_type" class="form-select">
+                                @foreach ($packages as $package)
+                                    <option value="{{ $package->id }}"> {{ $package->title }}</option>
                                 @endforeach
                             </select>
-
-
                         </div>
+
 
                         <div class="col-md-6">
                             <label>Duration</label>
