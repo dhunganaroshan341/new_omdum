@@ -10,10 +10,10 @@
                             {{ $aboutContent->title1 ?? 'About Om Mundum Treks' }}
                         </h2>
                         <h3>
-                            {{ $aboutContent->sub_heading ?? 'Extraordinary Journeys Beyond the Ordinary' }}
+                            {{ $aboutContent->title2 ?? 'Extraordinary Journeys Beyond the Ordinary' }}
                         </h3>
                         <p class="mb-3">
-                            {!! $aboutContent->description1 ??
+                            {!! $aboutContent->content ??
                                 'At Om Mundum Treks, we believe travel is more than just a journey—it\'s a life-changing experience. We offer unique adventures that take you off the beaten path, showcasing Nepal\'s breathtaking mountains, rich Kirati culture, and pristine hidden trails. Specializing in the newly opened Mundum Trail, we provide authentic cultural immersion experiences in eastern Nepal\'s untouched wilderness. Our carefully crafted expeditions connect you with indigenous Rai communities, ancient traditions, and spectacular Himalayan landscapes that few travelers ever witness. Every trek is designed with purpose—to create meaningful connections between adventurers and Nepal\'s most preserved cultural heritage while supporting local communities and sustainable tourism practices.' !!}
                         </p>
                     </div>
