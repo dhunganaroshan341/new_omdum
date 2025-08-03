@@ -65,8 +65,8 @@
                                                         href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
                                                 </h4>
                                                 <p class="mb-0 pink">
-                                                    <i class="fa fa-eye me-1"></i> Includes
-                                                    {{ $package->destination ?? 'Salpa Pokhari Mundum Region' }}
+                                                    {{-- <i class="fa fa-eye me-1"></i> Includes --}}
+                                                    {{-- {{ $package->destination ?? 'Salpa Pokhari Mundum Region' }} --}}
                                                     <i class="fa fa-map-marker me-1 ms-3"></i>
                                                 </p>
                                             </div>
