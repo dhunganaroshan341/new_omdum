@@ -7,7 +7,7 @@ use App\Traits\HasUploadUrl;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class TourPackageImage extends BaseModel
+class TourPackageImage extends Model
 {
     // use HasUploadUrl;
     // // If your column is named 'image_path' (default), no need to set this
