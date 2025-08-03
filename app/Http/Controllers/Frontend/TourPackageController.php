@@ -41,6 +41,7 @@ class TourPackageController extends Controller
         ->where('slug', $slug)
         ->where('status', 'Active')
         ->firstOrFail();
+dd($package->images);
 
     $images = $package->images;
 
