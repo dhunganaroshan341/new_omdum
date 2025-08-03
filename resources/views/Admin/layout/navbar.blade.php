@@ -41,7 +41,7 @@
         </a>
         <div class="collapse" id="bannerMenu">
             <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.homeslide') }}">Home Slider</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('admin.homeslide') }}">Home Slider</a></li> --}}
                 <li class="nav-item"><a class="nav-link" href="{{ route('admin.banner.video.index') }}">Video Banner</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('admin.page-banner.index') }}">Page Banner</a>
