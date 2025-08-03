@@ -41,7 +41,12 @@ class TourPackageController extends Controller
     ->where('status', 'Active')
     ->firstOrFail();
 
-dd($package->id, $package->images()->get());
+$images = $package->images()->get();
+
+foreach ($images as $image) {
+    dd($image->image_path); // This will trigger the accessor and show full URL
+}
+
 
         $totalDays = $package->itineraries
             ->filter(fn ($item) => is_numeric($item->day_number))
