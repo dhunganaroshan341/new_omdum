@@ -119,8 +119,9 @@ function loadPreview(data) {
 
                 $("#title1").val(data.title1);
                 $("#title2").val(data.title2);
-                $("#short_desc1").val(data.short_desc1);
-                $("#short_desc2").val(data.short_desc2);
+                $("#short_desc1").summernote(data.short_desc1);
+                $("#short_desc2").summernote(data.short_desc2);
+
                 $("#desc1").summernote("code", data.desc1);
                 $("#desc2").summernote("code", data.desc2);
 
