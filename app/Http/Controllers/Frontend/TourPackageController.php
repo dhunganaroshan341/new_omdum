@@ -33,35 +33,35 @@ class TourPackageController extends Controller
     }
 
 
-    public function show($slug)
+public function show($slug)
 {
     $countries = $this->countries;
 
-    $package = TourPackage::with('priceIncludes', 'images', 'itineraries')
+    $package = TourPackage::with('priceIncludes', 'itineraries')
         ->where('slug', $slug)
         ->where('status', 'Active')
         ->firstOrFail();
-dd($package->images);
 
-    $images = $package->images;
+    // Get images for the package explicitly
+    $images = \App\Models\TourPackageImage::where('tour_package_id', $package->id)->get();
 
-    // Prepare fallback images collection ONLY if empty
+    // Fallback if no images found
     if ($images->isEmpty()) {
         $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
-
-        // Create a collection of dummy TourPackageImage models for fallback
         $images = collect();
 
         for ($i = 0; $i < 5; $i++) {
-            $fallbackImage = new \App\Models\TourPackageImage([
+            $images->push((object)[
+                'image_url' => $fallbackUrl,
                 'image_path' => 'template/yatri_world/main-file/images/tibet_vertical.jpg',
             ]);
-
-            // Add accessor property dynamically (optional but recommended)
-            $fallbackImage->setAttribute('image_url', $fallbackUrl);
-
-            $images->push($fallbackImage);
         }
+    } else {
+        // Optionally add image_url attribute for each image
+        $images->transform(function ($image) {
+            $image->image_url = asset('uploads/' . $image->image_path);
+            return $image;
+        });
     }
 
     $totalDays = $package->itineraries
@@ -74,6 +74,7 @@ dd($package->images);
 
     return view('frontend.packages-single', compact('countries', 'package', 'totalDays', 'otherPackages', 'images'));
 }
+
 
 
 
