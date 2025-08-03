@@ -61,13 +61,15 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label for="short_desc1" class="form-label summernote">Short Desc 1</label>
-                            <input type="text" class="form-control summernote" name="short_desc1" id="short_desc1">
+                            <label for="short_desc1" class="form-label ">Short Desc 1</label>
+                            <input placeholder="generally used in subheading" type="text"
+                                class="form-control summernote" name="short_desc1" id="short_desc1">
                         </div>
 
                         <div class="col-md-6">
                             <label for="short_desc2" class="form-label ">Short Desc 2</label>
-                            <input type="text" class="form-control summernote" name="short_desc2" id="short_desc2">
+                            <input placeholder="generally used in subheading" type="text"
+                                class="form-control summernote" name="short_desc2" id="short_desc2">
                         </div>
 
                         <div class="col-12">
