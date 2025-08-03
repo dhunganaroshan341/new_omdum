@@ -34,26 +34,49 @@ class TourPackageController extends Controller
 
 
     public function show($slug)
-    {
-      $countries = $this->countries; // associative array code => country name
-        $package = TourPackage::with('priceIncludes','images','itineraries')->where('slug', $slug)->where('status', 'Active')->firstOrFail();
-        $package = TourPackage::where('slug', $slug)
-    ->where('status', 'Active')
-    ->firstOrFail();
+{
+    $countries = $this->countries; // your associative array
 
-$images = $package->images()->get();
+    // Fetch package with relationships once
+    $package = TourPackage::with('priceIncludes', 'images', 'itineraries')
+        ->where('slug', $slug)
+        ->where('status', 'Active')
+        ->firstOrFail();
 
-// foreach ($images as $image) {
-//     dd($image->image_path); // This will trigger the accessor and show full URL
-// }
+    // Get images collection from eager loaded relation
+    $images = $package->images;
 
+    // If empty, prepare a collection of 5 fallback "image" objects
+    if ($images->isEmpty()) {
+        $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
+        $images = collect();
 
-        $totalDays = $package->itineraries
-            ->filter(fn ($item) => is_numeric($item->day_number))
-            ->sum(fn ($item) => (int) $item->day_number);
-        $otherPackages = TourPackage::where('our_country_id', $package->our_country_id)->where('id', '!=', $package->id)->get();
-        return view('frontend.packages-single', compact('countries','package', 'totalDays', 'otherPackages'));
+        for ($i = 0; $i < 5; $i++) {
+            $images->push((object)[
+                'image_url' => $fallbackUrl,
+                'image_path' => 'template/yatri_world/main-file/images/tibet_vertical.jpg',
+            ]);
+        }
     }
+
+    $totalDays = $package->itineraries
+        ->filter(fn ($item) => is_numeric($item->day_number))
+        ->sum(fn ($item) => (int) $item->day_number);
+
+    $otherPackages = TourPackage::where('our_country_id', $package->our_country_id)
+        ->where('id', '!=', $package->id)
+        ->get();
+
+    // Pass $images explicitly to the view so Blade can use it
+    return view('frontend.packages-single', compact(
+        'countries',
+        'package',
+        'totalDays',
+        'otherPackages',
+        'images'
+    ));
+}
+
 
     public function booking(Request $request)
     {
