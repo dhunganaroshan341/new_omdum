@@ -44,14 +44,22 @@ class TourPackageController extends Controller
 
     $images = $package->images;
 
+    // Prepare fallback images collection ONLY if empty
     if ($images->isEmpty()) {
         $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
+
+        // Create a collection of dummy TourPackageImage models for fallback
         $images = collect();
+
         for ($i = 0; $i < 5; $i++) {
-            $images->push((object)[
-                'image_url' => $fallbackUrl,
+            $fallbackImage = new \App\Models\TourPackageImage([
                 'image_path' => 'template/yatri_world/main-file/images/tibet_vertical.jpg',
             ]);
+
+            // Add accessor property dynamically (optional but recommended)
+            $fallbackImage->setAttribute('image_url', $fallbackUrl);
+
+            $images->push($fallbackImage);
         }
     }
 
@@ -65,6 +73,7 @@ class TourPackageController extends Controller
 
     return view('frontend.packages-single', compact('countries', 'package', 'totalDays', 'otherPackages', 'images'));
 }
+
 
 
     public function booking(Request $request)
