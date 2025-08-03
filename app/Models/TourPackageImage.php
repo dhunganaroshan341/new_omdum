@@ -3,14 +3,16 @@
 namespace App\Models;
 
 use App\Traits\HasUploadUrl;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class TourPackageImage extends BaseModel
 {
-    use HasUploadUrl;
-    // If your column is named 'image_path' (default), no need to set this
-    protected $uploadPathColumn = 'image_path';
-      protected $appends = ['image_url'];
+    // use HasUploadUrl;
+    // // If your column is named 'image_path' (default), no need to set this
+    // protected $uploadPathColumn = 'image_path';
+    //   protected $appends = ['image_url'];
     protected $fillable = [
         'tour_package_id',
         'image_path',
@@ -21,6 +23,13 @@ class TourPackageImage extends BaseModel
    public function tourPackage()
 {
     return $this->belongsTo(TourPackage::class, 'tour_package_id', 'id');
+}
+public function getImagePathAttribute($value)
+{
+    // Always return full asset URL with 'uploads/' prepended
+    return Str::startsWith($value, 'uploads/')
+        ? asset($value)
+        : asset('uploads/' . ltrim($value, '/'));
 }
 
 }
