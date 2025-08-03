@@ -35,22 +35,18 @@ class TourPackageController extends Controller
 
     public function show($slug)
 {
-    $countries = $this->countries; // your associative array
+    $countries = $this->countries;
 
-    // Fetch package with relationships once
     $package = TourPackage::with('priceIncludes', 'images', 'itineraries')
         ->where('slug', $slug)
         ->where('status', 'Active')
         ->firstOrFail();
 
-    // Get images collection from eager loaded relation
     $images = $package->images;
 
-    // If empty, prepare a collection of 5 fallback "image" objects
     if ($images->isEmpty()) {
         $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
         $images = collect();
-
         for ($i = 0; $i < 5; $i++) {
             $images->push((object)[
                 'image_url' => $fallbackUrl,
@@ -67,14 +63,7 @@ class TourPackageController extends Controller
         ->where('id', '!=', $package->id)
         ->get();
 
-    // Pass $images explicitly to the view so Blade can use it
-    return view('frontend.packages-single', compact(
-        'countries',
-        'package',
-        'totalDays',
-        'otherPackages',
-        'images'
-    ));
+    return view('frontend.packages-single', compact('countries', 'package', 'totalDays', 'otherPackages', 'images'));
 }
 
 
