@@ -43,9 +43,9 @@ class TourPackageController extends Controller
 
 $images = $package->images()->get();
 
-foreach ($images as $image) {
-    dd($image->image_path); // This will trigger the accessor and show full URL
-}
+// foreach ($images as $image) {
+//     dd($image->image_path); // This will trigger the accessor and show full URL
+// }
 
 
         $totalDays = $package->itineraries
