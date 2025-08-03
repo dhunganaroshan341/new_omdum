@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Helpers\CountryHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\PackageBooking;
 use App\Models\Service;
 use App\Models\TourBatch;
 use App\Models\TourPackage;
@@ -55,7 +56,7 @@ class TourPackageController extends Controller
             'message' => 'nullable|string',
         ]);
 
-        Booking::create($request->all());
+        PackageBooking::create($request->all());
 
         return response()->json(['message' => 'Booking submitted successfully!']);
     }
