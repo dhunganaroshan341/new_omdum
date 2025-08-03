@@ -42,27 +42,29 @@ public function show($slug)
         ->where('status', 'Active')
         ->firstOrFail();
 
-    // Get images for the package explicitly
     $images = \App\Models\TourPackageImage::where('tour_package_id', $package->id)->get();
-        // Fallback if no images found
-    if ($images->isEmpty()) {
-        $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
-        $images = collect();
 
-        for ($i = 0; $i < 5; $i++) {
-            $images->push((object)[
-                'image_url' => $fallbackUrl,
-                'image_path' => 'template/yatri_world/main-file/images/tibet_vertical.jpg',
-            ]);
-        }
-    } else {
-        // Optionally add image_url attribute for each image
-        $images->transform(function ($image) {
-            $image->image_url = asset('uploads/' . $image->image_path);
-            return $image;
-        });
+if ($images->isEmpty()) {
+    $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
+    $images = collect();
+    for ($i = 0; $i < 5; $i++) {
+        $images->push((object)[
+            'image_url' => $fallbackUrl,
+            'image_path' => 'template/yatri_world/main-file/images/tibet_vertical.jpg',
+        ]);
     }
+} else {
+    $images->transform(function ($image) {
+        if (str_starts_with($image->image_path, 'http://') || str_starts_with($image->image_path, 'https://')) {
+            $image->image_url = $image->image_path;
+        } else {
+            $image->image_url = asset('uploads/' . ltrim($image->image_path, '/'));
+        }
+        return $image;
+    });
+}
 dd($images);
+
     $totalDays = $package->itineraries
         ->filter(fn ($item) => is_numeric($item->day_number))
         ->sum(fn ($item) => (int) $item->day_number);
