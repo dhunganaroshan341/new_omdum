@@ -1,5 +1,28 @@
 $(document).ready(function () {
     $(".summernote").summernote({ height: 300 });
+    $(document).ready(function () {
+    $('#short_desc1').summernote({
+        placeholder: 'Generally used in subheading'
+    });
+
+    $('#short_desc2').summernote({
+        placeholder: 'Generally used in subheading'
+    });
+
+    $('#desc1').summernote({
+        placeholder: 'Generally section contents'
+    });
+
+    $('#desc2').summernote({
+        placeholder: 'Generally section contents'
+    });
+
+    $('#content').summernote({
+        placeholder: 'Hero content of the page'
+    });
+});
+// End of summernote , filling datatable
+
 
  const table = $("#show-page-data").DataTable({
     processing: true,
