@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BannerSliderVideo extends Model
+class BannerSliderVideo extends BaseModel
 {
     protected $fillable = [
         'type',  // embed/upload
