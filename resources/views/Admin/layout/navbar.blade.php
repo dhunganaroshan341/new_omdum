@@ -55,7 +55,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.service.index') }}">
             <i class="mdi mdi-face-agent menu-icon"></i>
-            <span class="menu-title">Services</span>
+            <span class="menu-title">service page</span>
         </a>
     </li>
     <li class="nav-item">
