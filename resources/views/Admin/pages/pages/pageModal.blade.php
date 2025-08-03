@@ -74,12 +74,14 @@
 
                         <div class="col-12">
                             <label for="desc1" class="form-label">Long Desc 1</label>
-                            <textarea class="form-control summernote" name="desc1" id="desc1" rows="4"></textarea>
+                            <textarea placeholder="generally section contents" class="form-control summernote" name="desc1" id="desc1"
+                                rows="4"></textarea>
                         </div>
 
                         <div class="col-12">
                             <label for="desc2" class="form-label">Long Desc 2</label>
-                            <textarea class="form-control summernote" name="desc2" id="desc2" rows="4"></textarea>
+                            <textarea placeholder="generally section contents" class="form-control summernote" name="desc2" id="desc2"
+                                rows="4"></textarea>
                         </div>
 
                         {{-- Images --}}
