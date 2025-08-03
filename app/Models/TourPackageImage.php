@@ -18,8 +18,9 @@ class TourPackageImage extends BaseModel
         'is_featured',
     ];
 
-    public function tourPackage()
-    {
-        return $this->belongsTo(TourPackage::class);
-    }
+   public function tourPackage()
+{
+    return $this->belongsTo(TourPackage::class, 'tour_package_id', 'id');
+}
+
 }

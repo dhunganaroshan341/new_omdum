@@ -87,9 +87,11 @@ public function itineraries() {
     return $this->hasMany(PriceInclude::class);
 }
 
-public function images() {
-    return $this->hasMany(TourPackageImage::class);
+public function images()
+{
+    return $this->hasMany(TourPackageImage::class, 'tour_package_id', 'id');
 }
+
 
 public function videos() {
     return $this->hasMany(TourPackageVideo::class);
