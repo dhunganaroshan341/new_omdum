@@ -30,7 +30,8 @@
 
                         <div class="col-12">
                             <label for="content" class="form-label">Content</label>
-                            <textarea class="form-control summernote" name="content" id="content" rows="5"></textarea>
+                            <textarea placeholder="Hero content of the page" class="form-control summernote" name="content" id="content"
+                                rows="5"></textarea>
                         </div>
 
                         {{-- SEO Fields --}}
