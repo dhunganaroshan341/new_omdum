@@ -41,7 +41,7 @@ class TourPackageController extends Controller
     ->where('status', 'Active')
     ->firstOrFail();
 
-// dd($package->id, $package->images()->get());
+dd($package->id, $package->images()->get());
 
         $totalDays = $package->itineraries
             ->filter(fn ($item) => is_numeric($item->day_number))
