@@ -141,6 +141,8 @@ function loadPreview(data) {
                 $("#meta_keywords").val(data.meta_keywords);
 
                 $("#title1").val(data.title1);
+                $("#content_heading").val(data.content_heading);
+                $("#content_subheading").val(data.content_subheading);
                 $("#title2").val(data.title2);
                 $("#short_desc1").summernote(data.short_desc1);
                 $("#short_desc2").summernote(data.short_desc2);
