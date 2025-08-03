@@ -44,8 +44,7 @@ public function show($slug)
 
     // Get images for the package explicitly
     $images = \App\Models\TourPackageImage::where('tour_package_id', $package->id)->get();
-    dd($images);
-    // Fallback if no images found
+        // Fallback if no images found
     if ($images->isEmpty()) {
         $fallbackUrl = asset('template/yatri_world/main-file/images/tibet_vertical.jpg');
         $images = collect();
@@ -63,7 +62,7 @@ public function show($slug)
             return $image;
         });
     }
-
+dd($images);
     $totalDays = $package->itineraries
         ->filter(fn ($item) => is_numeric($item->day_number))
         ->sum(fn ($item) => (int) $item->day_number);
