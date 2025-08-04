@@ -145,18 +145,26 @@
 
                         <div class="list-sidebar">
                             <div class="sidebar-item">
-                                <h4>Type</h4>
-                                <form method="GET" action="{{ route('packages.search') }}">
+                                <h4>General Packages Available</h4>
+                                <form method="GET" action="{{ route('packages.search') }}" id="parent-filter-form">
+                                    <h4>Type</h4>
+
+                                    {{-- Keep the selected country in this form --}}
+                                    <input type="hidden" name="country" value="{{ request('country') }}">
+
                                     @foreach ($parentPackages as $parent)
                                         <div class="pretty p-default p-thick p-pulse">
-                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}" />
+                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
+                                                {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
                                             <div class="state">
                                                 <label>{{ $parent->title }}</label>
                                             </div>
                                         </div>
                                     @endforeach
-                                    <button type="submit">Filter</button>
+
+                                    <button type="submit" class="nir-btn w-100">Filter</button>
                                 </form>
+
 
                             </div>
 
@@ -176,8 +184,8 @@
                                 <h4>Price Range($)</h4>
                                 <div class="range-slider">
                                     <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                        data-max="2000" data-max-name="max_price" data-min="0" data-min-name="min_price"
-                                        data-unit="$">
+                                        data-max="2000" data-max-name="max_price" data-min="0"
+                                        data-min-name="min_price" data-unit="$">
                                         <span class="min-value">0 $</span>
                                         <span class="max-value">2000 $</span>
                                         <div class="ui-slider-range ui-widget-header ui-corner-all full"
