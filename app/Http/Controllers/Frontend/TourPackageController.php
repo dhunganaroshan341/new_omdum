@@ -114,7 +114,7 @@ if ($images->isEmpty()) {
     return response()->json($batches);
 }
 
-public function filterPackages(Request $request)
+public function search(Request $request)
 {
     $countries = $this->countries;
 
