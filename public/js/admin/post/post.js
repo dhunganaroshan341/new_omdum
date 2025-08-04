@@ -213,31 +213,21 @@ $(document).on("click", ".editUserButton", function () {
         url: "/admin/post/detail/" + id,
         type: "get",
         success: function (response) {
-            // Use response.data consistently
             let data = response.data;
 
             $("#posttitleData").val(data.title);
-
-            // Tags is already a string from backend, no need to check array
             $("#tags").val(data.tags);
 
-            // Set the category select value properly (assuming single select)
-            // If category_id is not returned directly, use first category id or adjust accordingly
-            if (data.categories && data.categories.length > 0) {
-                $("#category_id").val(data.categories[0].id);
-            } else {
-                $("#category_id").val(null);
-            }
+            // ✅ Set selected categories directly
+            let selectedCategoryIds = data.categories.map(cat => String(cat.id));
+            setTimeout(() => {
+                $('#category_id').val(selectedCategoryIds).trigger('change');
+            }, 100); // allow DOM to fully load options first
 
-            // Populate and pre-select categories in multi-select or similar
-            let selectedCategoryIds = data.categories.map(cat => cat.id);
-            populateCategorySelect(selectedCategoryIds);
-
-            // Images are inside data.images, fix your condition here
+            // ✅ Handle post images
             if (data.images && data.images.length > 0) {
                 $(".postImageData").html("");
                 data.images.forEach((image) => {
-                    // Clean up image path for consistency
                     let imagePath = image.path.replace(/^\/?uploads\/?/, '/uploads/');
                     $(".postImageData").append(`
                         <li class="image-item">
@@ -249,18 +239,17 @@ $(document).on("click", ".editUserButton", function () {
                     `);
                 });
             } else {
-                $(".postImageData").html(""); // Clear images if none found
+                $(".postImageData").html("");
             }
 
-            // Set content/description safely (fallback to empty string)
+            // ✅ Set summernote content
             $("#post_description").summernote('code', data.description || '');
         }
     });
 
-    // Unbind previous submit handler to avoid duplicate binds, then bind new one
+    // ✅ Form submit handler
     $(document).off("submit", "#updateForm").on("submit", "#updateForm", function (event) {
         event.preventDefault();
-
         $(".updateBtn").prop("disabled", true);
         let formdata = new FormData(this);
 
@@ -298,6 +287,7 @@ $(document).on("click", ".editUserButton", function () {
         });
     });
 });
+
 
 
     // Image Delete
