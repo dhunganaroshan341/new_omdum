@@ -132,4 +132,17 @@ public function children()
 }
 
 
+public function getFirstImageUrlAttribute()
+{
+    $firstImage = $this->images->first();
+
+    if ($firstImage && $firstImage->image_path) {
+        // image_path accessor in TourPackageImage returns full URL already
+        return $firstImage->image_path;
+    }
+
+    // fallback static image URL
+    return asset('template/yatri_world/main-file/images/india.jpg');
+}
+
 }

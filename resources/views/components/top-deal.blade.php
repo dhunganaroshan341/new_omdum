@@ -9,9 +9,8 @@
             @forelse ($topDeals as $deal)
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        {{-- Use the accessor for image_path, which already handles fallback --}}
-                        <img src="{{ optional($deal->images->first())->image_path ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
-                            alt="{{ $deal->title ?? 'Top Deal Image' }}">
+                        {{-- Use the first_image_url accessor --}}
+                        <img src="{{ $deal->first_image_url }}" alt="{{ $deal->title ?? 'Top Deal Image' }}">
                     </div>
 
                     <div class="slider-content">
@@ -20,8 +19,10 @@
                             {{ $deal->location ?? 'Unknown' }}
                         </h6>
 
-                        <h4><a
-                                href="{{ route('packages.show', $deal->slug) }}">{{ $deal->title ?? 'Untitled Deal' }}</a>
+                        <h4>
+                            <a href="{{ route('packages.show', $deal->slug) }}">
+                                {{ $deal->title ?? 'Untitled Deal' }}
+                            </a>
                         </h4>
 
                         <p>{{ \Illuminate\Support\Str::limit($deal->short_description ?? '', 60) }}</p>
@@ -36,6 +37,7 @@
             @empty
                 <p>No Top Deals available right now.</p>
             @endforelse
+
         </div>
     </div>
 </section>

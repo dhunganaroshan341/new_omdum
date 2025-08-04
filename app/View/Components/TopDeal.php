@@ -28,7 +28,7 @@ class TopDeal extends Component
      */
     public function render(): View|Closure|string
     {
-        dd($this->topDeals);
+        // dd($this->topDeals);
         return view('components.top-deal', [
             'topDeals' => $this->topDeals,
         ]);
