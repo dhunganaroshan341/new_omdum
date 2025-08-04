@@ -20,7 +20,7 @@ class TourPackage extends BaseModel
         'parent_id',
         'type',
         'location',
-        'images',
+        // 'images',
         'title',
         'title',
         'drop',
