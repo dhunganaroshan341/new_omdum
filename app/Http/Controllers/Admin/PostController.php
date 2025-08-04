@@ -91,7 +91,7 @@ class PostController extends Controller
             // Sorting map
             $columnMap = [
                 'title' => 'posts.title',
-                'category' => 'category_titles',
+                'categories' => 'category_titles',
                 'description' => 'posts.description',
             ];
 
@@ -110,7 +110,7 @@ class PostController extends Controller
                     return "<a type='button' data-id='" . $item->post_id . "' class='imageListPopup'><span class='badge badge-primary'>" . ($item->post_images_count ?? 0) . "</span></a>";
                 })
                 ->addColumn('title', fn($tit) => Str::limit($tit->post_title, 20))
-                ->addColumn('category', fn($cat) => $cat->category_titles ?? '')
+                ->addColumn('categories', fn($cat) => $cat->category_titles ?? '')
                 ->addColumn('description', fn($desc) => Str::limit(strip_tags($desc->description), 20))
                 ->addColumn('created_by', fn($creator) => $creator->full_name ?? '')
                 ->addColumn('action', fn($data) => '
