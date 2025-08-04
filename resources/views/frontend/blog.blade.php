@@ -64,11 +64,11 @@
                                                     <a class="me-2" href="#"><i class="fa fa-file"></i>
                                                         {{ $post->category->title }}</a>
                                                 @endif
-                                                @if ($post->createdBy)
+                                                {{-- @if ($post->createdBy)
                                                     <a href="#"><i class="fa fa-user"></i> By
                                                         {{ $post->createdBy->name }}</a>
                                                 @endif
-                                            </p>
+                                            </p> --}}
                                             <p class="mb-2 border-t pt-2">
                                                 {{ Str::words(strip_tags($post->description), 20, '...') }}
                                             </p>
