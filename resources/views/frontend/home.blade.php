@@ -1,7 +1,11 @@
 @extends('frontend.layout.main')
 @section('content')
     <!-- banner starts -->
-    @include('components.youtube-banner-simple')
+    @if ($video)
+        @include('components.custom-banner-video')
+    @else
+        @include('components.youtube-banner-simple')
+    @endif
     <!-- banner ends -->
 
 

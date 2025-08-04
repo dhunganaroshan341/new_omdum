@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Models\BannerSliderVideo;
 use App\Models\CallToAction;
 use App\Models\Category;
 use App\Models\Destination;
@@ -43,12 +44,14 @@ class UserFrontendController extends Controller
     $cta = CallToAction::where('page', 'home')->first();
     $posts = Post::with('categories', 'postImages')->latest()->take(6)->get();
 
+$video = BannerSliderVideo::latest()->first();
 
 
 
     return view('frontend.home', compact([
 
         'destinations',
+        'video',
         'posts',
         'cta',
         'services',
