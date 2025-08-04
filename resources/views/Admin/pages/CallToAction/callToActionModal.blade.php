@@ -49,7 +49,7 @@
                             <div id="callToActionImage" class="mt-2"> </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="iframe" class="form-label">Iframe Url<span
+                            <label for="iframe" class="form-label">Video Iframe Code<span
                                     class="text-danger">*</span></label>
                             <input type="text" name="iframe" id="iframe" class="form-control"
                                 placeholder="youtube iframe" />

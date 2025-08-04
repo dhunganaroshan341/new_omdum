@@ -16,7 +16,7 @@ class CallToActionHomeSection extends Component
     public function __construct()
     {
         // Fetch the record where title is 'home'
-        $this->callToAction = CallToAction::where('title', 'home')->first();
+        $this->callToAction = CallToAction::where('page', 'home')->first();
     }
 
     /**
