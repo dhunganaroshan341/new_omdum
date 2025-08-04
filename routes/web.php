@@ -307,7 +307,7 @@ Route::prefix('packages')->name('packages.')->group(function () {
     Route::post('/book', [BookingController::class, 'store'])->name('book');
     Route::get('/get-batches/{packageId}', [TourPackageController::class, 'getBatches']);
 });
-Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->name('frontend.booking-singe');
+Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->name('frontend.booking-single');
 
 
 // Gallery
