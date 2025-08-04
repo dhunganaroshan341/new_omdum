@@ -16,7 +16,7 @@ $(document).ready(function () {
 
         $('#priceIncludeModal').modal('show');
         $('#priceIncludeForm')[0].reset();
-        $('#tour_package_id').val(packageId);
+        $('#tour_package_id_for_price_includes').val(packageId);
         $('#price_include_id').val('');
 
 
@@ -41,7 +41,7 @@ $(document).ready(function () {
                 $('#price').val(data.price);
                 $('#description').val(data.description);
                 $(`input[name="is_included"][value="${data.is_included}"]`).prop('checked', true);
-                $('#tour_package_id').val(data.tour_package_id);
+                $('#tour_package_id_for_price_includes').val(data.tour_package_id);
                 $('#price_include_id').val(data.id);
 
                 $('#priceIncludeModal').modal('show');

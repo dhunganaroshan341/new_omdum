@@ -6,7 +6,7 @@
             <form id="priceIncludeForm">
 
                 @csrf
-                <input type="hidden" name="tour_package_id" id="tour_package_id">
+                <input type="hidden" name="tour_package_id_for_price_includes" id="tour_package_id_for_price_includes">
                 <input type="hidden" name="price_include_id" id="price_include_id">
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="priceItemModalLabel">
