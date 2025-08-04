@@ -90,6 +90,9 @@ public function itineraries() {
 public function images()
 {
     return $this->hasMany(TourPackageImage::class, 'tour_package_id', 'id');
+}public function packageImages()
+{
+    return $this->hasMany(TourPackageImage::class, 'tour_package_id', 'id');
 }
 
 
@@ -134,7 +137,7 @@ public function children()
 
 public function getFirstImageUrlAttribute()
 {
-    $firstImage = $this->images->first();
+    $firstImage = $this->packageImages->first();
 
     if ($firstImage && $firstImage->image_path) {
         // image_path accessor in TourPackageImage returns full URL already
