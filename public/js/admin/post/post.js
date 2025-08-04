@@ -253,7 +253,7 @@ $(document).on("click", ".editUserButton", function () {
             }
 
             // Set content/description safely (fallback to empty string)
-            $("#post_description").summernote('code', data.content || '');
+            $("#post_description").summernote('code', data.description || '');
         }
     });
 
