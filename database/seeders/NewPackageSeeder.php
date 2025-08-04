@@ -26,7 +26,7 @@ class NewPackageSeeder extends Seeder
         foreach ($parentPackages as $package) {
             TourPackage::updateOrCreate(
                 ['slug' => $package['slug']],
-                ['name' => $package['name']]
+                ['title' => $package['name']]
             );
         }
     }
