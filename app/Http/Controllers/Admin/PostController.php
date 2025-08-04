@@ -197,19 +197,34 @@ public function getDetail($id)
     try {
         $data = Post::with(['categories', 'postImages'])->findOrFail($id);
 
-        $tags = is_array($data->tags) ? $data->tags : json_decode($data->tags, true);
+        // Handle tags safely: decode if JSON, otherwise wrap string into array
+        $tags = $data->tags;
+
+        if (is_string($tags)) {
+            $decoded = json_decode($tags, true);
+            if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+                $tags = $decoded;
+            } else {
+                // Not valid JSON, convert string to array for implode
+                $tags = [$tags];
+            }
+        } elseif (!is_array($tags)) {
+            $tags = [];
+        }
+
+        $tagsString = implode(', ', $tags);
 
         $images = $data->postImages->map(function ($image) {
             return [
                 'id' => $image->id,
-                'path' => $image->image
+                'path' => $image->image,
             ];
         });
 
         $categories = $data->categories->map(function ($cat) {
             return [
                 'id' => $cat->id,
-                'title' => $cat->title
+                'title' => $cat->title,
             ];
         });
 
@@ -221,14 +236,15 @@ public function getDetail($id)
                 'title' => $data->title,
                 'content' => $data->content,
                 'categories' => $categories,
-                'tags' => implode(', ', $tags),
+                'tags' => $tagsString,
                 'images' => $images,
-            ]
+            ],
         ]);
     } catch (\Exception $e) {
         return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
 }
+
 
 
 
