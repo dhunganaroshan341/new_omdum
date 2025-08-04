@@ -38,12 +38,26 @@
                                         <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
                                         </div>
                                         <div class="sortby d-flex align-items-center justify-content-between ms-2">
-                                            <select class="niceSelect">
-                                                <option value="1">Sort By</option>
-                                                <option value="3">Price: low to high</option>
-                                                <option value="4">Price: high to low</option>
-                                            </select>
+                                            <form method="GET" action="{{ route('packages.search') }}">
+                                                {{-- Retain existing filters --}}
+                                                @foreach ((array) request('parent_packages') as $parentId)
+                                                    <input type="hidden" name="parent_packages[]"
+                                                        value="{{ $parentId }}">
+                                                @endforeach
+                                                <input type="hidden" name="country" value="{{ request('country') }}">
+
+                                                <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
+                                                    <option value="">Sort By</option>
+                                                    <option value="low"
+                                                        {{ request('sort_by') == 'low' ? 'selected' : '' }}>Price: low to
+                                                        high</option>
+                                                    <option value="high"
+                                                        {{ request('sort_by') == 'high' ? 'selected' : '' }}>Price: high to
+                                                        low</option>
+                                                </select>
+                                            </form>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>

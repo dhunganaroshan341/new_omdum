@@ -116,53 +116,59 @@ if ($images->isEmpty()) {
 
 public function filterPackages(Request $request)
 {
-  $countries = $this->countries; // associative array code => country name
+    $countries = $this->countries;
 
     $validated = $request->validate([
         'parent_packages' => 'array',
         'parent_packages.*' => 'integer|exists:tour_packages,id',
         'country' => 'nullable|string',
+        'sort_by' => 'nullable|string|in:low,high',
     ]);
 
     $countryName = $validated['country'] ?? null;
     $parentIds = $validated['parent_packages'] ?? [];
 
-    // Step 1: Find country id from name (case insensitive)
+    // Step 1: Find country from slug (case-insensitive match)
     $country = null;
     if ($countryName) {
         $country = OurCountry::where('slug', 'LIKE', $countryName)->first();
     }
 
-    // Step 2: Get all packages in the selected country
+    // Step 2: Base query
     $query = TourPackage::query()->where('status', 'Active');
 
     if ($country) {
         $query->where('our_country_id', $country->id);
     }
 
-    // Step 3: Filter by parent packages if any
+    // Step 3: Filter by selected parent package(s)
     if (!empty($parentIds)) {
-        // Only children packages of selected parents within the country
         $query->whereHas('parent', function ($q) use ($parentIds) {
             $q->whereIn('id', $parentIds);
         });
-    } else {
-        // If no parent filter, optionally you can exclude parents or only show children
-        // Uncomment if you want only children packages (i.e., packages with parent_id not null)
-        // $query->whereNotNull('parent_id');
     }
 
+    // Step 4: Sort by price if selected
+    if ($request->filled('sort_by')) {
+        if ($request->sort_by === 'low') {
+            $query->orderBy('price', 'asc');
+        } elseif ($request->sort_by === 'high') {
+            $query->orderBy('price', 'desc');
+        }
+    }
+
+    // Step 5: Get the filtered packages
     $tourPackages = $query->get();
 
-    // Step 4: Get parents in the selected country for sidebar filter options
+    // Step 6: Sidebar - Only parent packages of current country
     $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
     if ($country) {
         $parentPackagesQuery->where('our_country_id', $country->id);
     }
     $parentPackages = $parentPackagesQuery->get();
 
-    // Pass other required data
-    $ourCountries = OurCountry::all(); // or your existing $this->countries if associative
+    // Other sidebar/filter data
+    $ourCountries = OurCountry::all();
     $services = Service::all();
     $tourPackageTypes = TourPackageType::all();
 
@@ -173,8 +179,9 @@ public function filterPackages(Request $request)
         'services',
         'tourPackageTypes',
         'parentPackages',
-        'countryName' // optionally to pre-fill select input
+        'countryName'
     ));
 }
+
 
 }
