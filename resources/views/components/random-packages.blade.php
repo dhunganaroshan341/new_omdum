@@ -3,14 +3,23 @@
     <section class="top-destination overflow-hidden bg-navy p-0">
         <div class="container-fluid">
             <div class="desti-inner">
+                @php
+                    $fallbackImages = [
+                        asset('template/yatri_world/main-file/images/india.jpg'),
+                        asset('template/yatri_world/main-file/images/everest.jpeg'),
+                        asset('template/yatri_world/main-file/images/destination/lumbini.jpg'),
+                    ];
+
+                    // Use package image if available, else fallback in order
+                    $imgSrc = $package->images->image_path ?? $fallbackImages[0];
+                @endphp
                 @foreach ($randomPackages->chunk(4) as $chunk)
                     <div class="row d-flex align-items-center">
                         @foreach ($chunk as $package)
                             <div class="col-lg p-0">
                                 <div class="desti-image bordernone">
-
-                                    <img src="{{ $package->images->image_path ?? asset('template/yatri_world/main-file/images/destination/lumbini.jpg') }}"
-                                        alt="{{ $package->title ?? 'Destination' }}">
+                                    <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}"
+                                        onerror="this.onerror=null;this.src='{{ $fallbackImages[1] }}'; this.onerror=function(){ this.src='{{ $fallbackImages[2] }}'; }">
 
                                     <div class="desti-content">
                                         {{-- <div class="rating mb-1">
