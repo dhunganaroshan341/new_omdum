@@ -306,7 +306,7 @@
                 let formData = $(this).serialize();
 
                 $.ajax({
-                    url: "{{ route('tour-packages.search') }}",
+                    url: "{{ route('packages.search') }}",
                     method: "GET",
                     data: formData,
                     success: function(response) {
