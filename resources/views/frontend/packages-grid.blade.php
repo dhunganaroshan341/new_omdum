@@ -151,15 +151,17 @@
                         <div class="list-sidebar">
                             <div class="sidebar-item">
                                 <h4>Type</h4>
-                                @foreach ($parentPackages as $parent)
-                                    <div class="pretty p-default p-thick p-pulse">
-                                        <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}" />
-                                        <div class="state">
-                                            <label>{{ $parent->title ?? ($parent->name ?? 'Package') }}<span
-                                                    class="number"></span></label>
+                                <form method="GET" action="{{ route('packages.search') }}">
+                                    @foreach ($parentPackages as $parent)
+                                        <div class="pretty p-default p-thick p-pulse">
+                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}" />
+                                            <div class="state">
+                                                <label>{{ $parent->title }}</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                    <button type="submit">Filter</button>
+                                </form>
 
                             </div>
 

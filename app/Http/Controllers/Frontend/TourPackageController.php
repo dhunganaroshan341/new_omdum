@@ -114,4 +114,38 @@ if ($images->isEmpty()) {
     return response()->json($batches);
 }
 
+public function filterPackages(Request $request)
+{
+    // Validate input: parent_packages should be an array of existing package IDs
+    $validated = $request->validate([
+        'parent_packages' => 'array',
+        'parent_packages.*' => 'integer|exists:tour_packages,id',
+    ]);
+
+    $parentIds = $validated['parent_packages'] ?? [];
+
+    // Get all children packages of the selected parents
+    // Assuming 'children' relation is defined on TourPackage model
+    $tourPackages = TourPackage::where('status', 'Active')
+        ->whereHas('parent') // Only children (have parent)
+        ->whereIn('parent_id', $parentIds)
+        ->get();
+
+    // For additional filters, you can extend here...
+
+    // Also pass other needed data (countries, services, types, parentPackages) if your view needs them
+    $countries = $this->countries;
+    $services = Service::all();
+    $tourPackageTypes = TourPackageType::all();
+    $parentPackages = TourPackage::whereNull('parent_id')->whereHas('children')->get();
+
+    return view('frontend.packages-grid', compact(
+        'countries',
+        'tourPackages',
+        'services',
+        'tourPackageTypes',
+        'parentPackages'
+    ));
+}
+
 }
