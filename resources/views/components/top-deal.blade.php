@@ -16,7 +16,7 @@
                     <div class="slider-content">
                         <h6 class="font-weight-normal pink">
                             <i class="fa fa-map-marker-alt"></i>
-                            {{ $deal->location ?? 'Unknown' }}
+                            {{ $deal->country->name ?? 'Unknown' }}
                         </h6>
 
                         <h4>
