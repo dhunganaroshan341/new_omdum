@@ -29,7 +29,11 @@
                             @endphp
 
                             <li class="{{ $hasPackages ? 'submenu dropdown' : '' }}">
-                                <a href="#">{{ $country->name }} <i class="icon-arrow-down"></i></a>
+                                <a href="#">{{ $country->name }}
+                                    @if ($hasPackages)
+                                        <i class="icon-arrow-down"></i>
+                                    @endif
+                                </a>
                                 <ul class="dropdown-menu">
                                     @foreach ($country->groupedPackages as $typeTitle => $packages)
                                         <li class="submenu dropdown">
