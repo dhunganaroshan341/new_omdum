@@ -10,7 +10,7 @@ use App\Models\Service;
 use App\Models\TourBatch;
 use App\Models\TourPackage;
 use App\Models\TourPackageType;
-use WisdomDiala\Countrypkg\Models\OurCountry;
+use App\Models\OurCountry;
 
 use Illuminate\Http\Request;
 
@@ -34,13 +34,13 @@ class TourPackageController extends Controller
 
     $services = Service::all();
     $tourPackageTypes = TourPackageType::all();
-
+    $ourCountries = OurCountry::all();
     // Parent packages: no parent_id, but have children
     $parentPackages = TourPackage::whereNull('parent_id')
         ->whereHas('children')
         ->get();
 
-    return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes', 'parentPackages'));
+    return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes', 'parentPackages','ourCountries'));
 }
 
 
@@ -116,6 +116,8 @@ if ($images->isEmpty()) {
 
 public function filterPackages(Request $request)
 {
+  $countries = $this->countries; // associative array code => country name
+
     $validated = $request->validate([
         'parent_packages' => 'array',
         'parent_packages.*' => 'integer|exists:tour_packages,id',
@@ -160,12 +162,13 @@ public function filterPackages(Request $request)
     $parentPackages = $parentPackagesQuery->get();
 
     // Pass other required data
-    $countries = OurCountry::all(); // or your existing $this->countries if associative
+    $ourCountries = OurCountry::all(); // or your existing $this->countries if associative
     $services = Service::all();
     $tourPackageTypes = TourPackageType::all();
 
     return view('frontend.packages-grid', compact(
         'countries',
+        'ourCountries',
         'tourPackages',
         'services',
         'tourPackageTypes',

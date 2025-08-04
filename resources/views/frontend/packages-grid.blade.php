@@ -129,7 +129,7 @@
                                     <select name="country" class="niceSelect"
                                         onchange="document.getElementById('country-filter-form').submit();">
                                         <option value="">Where are you going?</option>
-                                        @foreach ($countries as $country)
+                                        @foreach ($ourCountries as $country)
                                             <option value="{{ $country->name }}"
                                                 {{ request('country') == $country->name ? 'selected' : '' }}>
                                                 {{ $country->name }}
