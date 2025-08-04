@@ -24,7 +24,11 @@
 
                         <!-- Destinations Dropdown -->
                         @foreach ($navbarCountries as $country)
-                            <li class="submenu dropdown">
+                            @php
+                                $hasPackages = !empty($country->groupedPackages) && count($country->groupedPackages);
+                            @endphp
+
+                            <li class="{{ $hasPackages ? 'submenu dropdown' : '' }}">
                                 <a href="#">{{ $country->name }} <i class="icon-arrow-down"></i></a>
                                 <ul class="dropdown-menu">
                                     @foreach ($country->groupedPackages as $typeTitle => $packages)
