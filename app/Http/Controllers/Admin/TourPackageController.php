@@ -70,6 +70,7 @@ public function index(Request $request)
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
+            ->addColumn('parent_title', fn($item) => $item->parent->title ?? '')
             ->addColumn('itinerary', function ($item) {
                 return '
                     <a href="javascript:void(0);" class="addItineraryBtn  me-2" data-id="' . $item->id . '" title="Add Itinerary">

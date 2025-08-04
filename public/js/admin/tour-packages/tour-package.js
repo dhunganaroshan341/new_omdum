@@ -139,6 +139,7 @@ function populateTourPackageForm(tour_package) {
     { data: 'DT_RowIndex', orderable: false, searchable: false },
     { data: 'action', name: 'action', orderable: false, searchable: false },
     { data: 'title', name: 'title' },
+    { data: 'parent_title', name: 'parent_title' },
     { data: 'country', name: 'country_name' }, // Important
     { data: 'images', name: 'images' },
     { data: 'duration', name: 'duration' },
