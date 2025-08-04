@@ -127,25 +127,22 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
     let form = $(this);
     let formData = new FormData(this);
-    // ✅ Add token manually — just to be 100% sure Laravel gets it
-formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
 
     let isUpdate = form.attr("id") === "updateItineraryForm";
     let url = '';
-    let method = '';
+    let method = 'POST';
+
+    // Always append tour_package_id
+    formData.append('tour_package_id', $('#tour_package_id').val());
 
     if (isUpdate) {
         $('#updateItineraryBtn').show();
         $('#submitItineraryBtn').hide();
         const id = form.attr("data-id");
-          formData.append('tour_package_id', $('#tour_package_id').val());
         url = `/admin/itineraries/update/${id}`;
-        method = 'POST'; // Assuming you're using POST for update too
     } else {
-        // ✅ Force append tour_package_id to ensure it's sent
-    formData.append('tour_package_id', $('#tour_package_id').val());
         url = '/admin/itineraries/store';
-        method = 'POST';
     }
 
     $(".btn").prop("disabled", true);
@@ -168,17 +165,17 @@ formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
                     timer: 1000
                 });
 
-                // Reset the form and close modal
-                form[0].reset();
-                $("#itineraryModal").modal("hide");
+                form[0].reset(); // Always reset the form
+                $('#itinerary-data-album-show').DataTable().ajax.reload(); // Refresh table
 
-                // Optional: Reset to create mode
-                form.attr("id", "itineraryForm");
-                $('#submitItineraryBtn').show();
-                $('#updateItineraryBtn').hide();
-
-                // Redraw table
-                $('#itinerary-data-album-show').DataTable().ajax.reload();
+                if (isUpdate) {
+                    $("#itineraryModal").modal("hide"); // Only hide if it's update
+                    // Optional: Reset back to create mode
+                    form.attr("id", "itineraryForm");
+                    $('#submitItineraryBtn').show();
+                    $('#updateItineraryBtn').hide();
+                }
+                // 🟢 If it's store: modal stays open
             } else {
                 Swal.fire({
                     icon: "error",
@@ -187,30 +184,29 @@ formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
                 });
             }
         },
+
         error: function (err) {
-    $(".btn").prop("disabled", false);
-    console.error("Submission failed:", err);
+            $(".btn").prop("disabled", false);
+            console.error("Submission failed:", err);
 
-    let message = "Something went wrong.";
+            let message = "Something went wrong.";
 
-    if (err.status === 422 && err.responseJSON?.errors) {
-        // Extract first error message from Laravel validation
-        const errors = err.responseJSON.errors;
-        message = Object.values(errors).flat().join('\n');
-    } else if (err.responseJSON?.message) {
-        // Use general error message if available
-        message = err.responseJSON.message;
-    }
+            if (err.status === 422 && err.responseJSON?.errors) {
+                const errors = err.responseJSON.errors;
+                message = Object.values(errors).flat().join('\n');
+            } else if (err.responseJSON?.message) {
+                message = err.responseJSON.message;
+            }
 
-    Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: message,
-    });
-}
-
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: message,
+            });
+        }
     });
 });
+
 
 
 
