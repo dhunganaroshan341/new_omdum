@@ -34,7 +34,7 @@
                                         $routeUrl = $slug ? route('packages.show', $slug) : '#';
 
                                         // Safely get first image using accessor
-                                        $firstImage = $package->images?->first();
+                                        $firstImage = $package->packageImages?->first();
                                         $imageUrl = $firstImage
                                             ? $firstImage->image_path
                                             : asset('template/yatri_world/main-file/images/everest.jpg');
