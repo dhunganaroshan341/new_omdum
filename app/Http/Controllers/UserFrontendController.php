@@ -138,6 +138,7 @@ public function blogsByCategory($title)
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
     $category = Category::where('title', $title)->first();
+    $categories = Category::where('title', '!=', $title)->get();
     if (!$category) {
         abort(404, 'Category not found');
     }
@@ -147,7 +148,7 @@ public function blogsByCategory($title)
     // Get posts using the relationship
     $posts = $category->posts()->with('postImages')->where('status', 'Active')->paginate(6);
 
-    return view('frontend.blog', compact('posts', 'category_title', 'content_title', 'pageBanner'));
+    return view('frontend.blog', compact('posts', 'category_title', 'content_title', 'pageBanner','categories'));
 }
 
 
