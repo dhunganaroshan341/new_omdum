@@ -21,7 +21,7 @@
                         <!-- Static Pages -->
                         <li><a href="{{ route('about') }}">About Us</a></li>
                         <li><a href="{{ route('packages.index') }}">Packages</a></li>
-                        <li><a href="{{ route('services') }}">Services</a></li>
+
 
                         <!-- Destinations Dropdown -->
                         @foreach ($navbarCountries as $country)
@@ -54,6 +54,7 @@
                                 </ul>
                             </li>
                         @endforeach
+                        <li><a href="{{ route('services') }}">Services</a></li>
 
                         <!-- Blog and Contact -->
                         <li><a href="{{ route('blog.index') }}">Blog</a></li>
