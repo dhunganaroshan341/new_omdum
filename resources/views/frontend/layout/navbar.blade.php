@@ -5,7 +5,7 @@
 <div class="header_menu" id="header_menu">
     <nav class="navbar navbar-default">
         <div class="container">
-            <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-2 pt-2">
+            <div class="navbar-flex d-flex align-items-center justify-content-between w-100">
 
                 <!-- Logo -->
                 <div class="navbar-header">
