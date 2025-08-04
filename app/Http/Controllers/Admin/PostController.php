@@ -234,7 +234,7 @@ public function getDetail($id)
             'data' => [
                 'id' => $data->id,
                 'title' => $data->title,
-                'content' => $data->content,
+                'description' => $data->description,
                 'categories' => $categories,
                 'tags' => $tagsString,
                 'images' => $images,
