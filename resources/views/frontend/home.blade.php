@@ -284,7 +284,7 @@
     <div class="cta-horizon bg-navy pt-4 pb-4">
         <div class="container d-md-flex align-items-center justify-content-between">
             <h4 class="mb-0 white">It’s Time For a New Adventure! Don’t Wait Any Longer. Contact us!</h4>
-            <a href="contact.html" class="nir-btn">Fine More Destination</a>
+            <a href="{{ route('contact') }}" class="nir-btn">Reach out To Us</a>
         </div>
     </div>
     <!-- cta-horizon Ends -->
