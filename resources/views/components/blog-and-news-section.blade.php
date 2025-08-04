@@ -91,10 +91,11 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="">
-                                                    <i class="fa fa-tag pink pe-1"></i>
-                                                    {{ $post->category?->title ?? 'Travel' }}
-                                                </a>
+                                                @foreach ($post->categories as $category)
+                                                    <a href="#" class="me-2">
+                                                        <i class="fa fa-tag pink pe-1"></i> {{ $category->title }},
+                                                    </a>
+                                                @endforeach
                                             </li>
                                         </ul>
                                     </div>
