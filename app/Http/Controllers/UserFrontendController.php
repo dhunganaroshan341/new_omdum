@@ -138,18 +138,45 @@ public function blogsByCategory($title)
     $pageBanner = PageBanner::where('page', 'blog')->first();
 
     $category = Category::where('title', $title)->first();
-    $categories = Category::where('title', '!=', $title)->get();
     if (!$category) {
         abort(404, 'Category not found');
     }
 
     $category_title = $category->title;
 
-    // Get posts using the relationship
-    $posts = $category->posts()->with('postImages')->where('status', 'Active')->paginate(6);
+    // Get posts for this category, active and with postImages, paginate 6
+    $posts = $category->posts()
+                      ->with('postImages')
+                      ->where('status', 'Active')
+                      ->latest()
+                      ->paginate(6);
 
-    return view('frontend.blog', compact('posts', 'category_title', 'content_title', 'pageBanner','categories'));
+    // Fetch all categories with count of posts (optional, for sidebar/filter)
+    $categories = Category::withCount('posts')->get();
+
+    // Recent posts - latest 3 posts
+    $recentPosts = Post::with('categories')
+                       ->latest()
+                       ->take(3)
+                       ->get();
+
+    // Popular posts - top 3 by views
+    $popularPosts = Post::with('categories')
+                        ->orderBy('views', 'desc')
+                        ->take(3)
+                        ->get();
+
+    return view('frontend.blog', compact(
+        'posts',
+        'category_title',
+        'content_title',
+        'pageBanner',
+        'categories',
+        'recentPosts',
+        'popularPosts'
+    ));
 }
+
 
 
 
