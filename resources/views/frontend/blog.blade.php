@@ -10,8 +10,10 @@
                     <h2 class="mb-0">Blog & News </h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li aria-current="page" class="breadcrumb-item active">Blog </li>
+                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                            <li aria-current="page" class="breadcrumb-item active"><a
+                                    href="{{ route('blog.index') }}">Blog</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
