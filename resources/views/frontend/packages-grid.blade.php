@@ -151,17 +151,19 @@
                         <div class="list-sidebar">
                             <div class="sidebar-item">
                                 <h4>Type</h4>
-                                @foreach ($tourPackageTypes as $type)
+                                @foreach ($parentPackages as $parent)
                                     <div class="pretty p-default p-thick p-pulse">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}" />
                                         <div class="state">
-                                            <label>{{ $type->title ?? 'Tour' }}<span class="number"></span></label>
+                                            <label>{{ $parent->title ?? ($parent->name ?? 'Package') }}<span
+                                                    class="number"></span></label>
                                         </div>
                                     </div>
                                 @endforeach
+
                             </div>
 
-                            <div class="sidebar-item">
+                            {{-- <div class="sidebar-item">
                                 <h4>Services</h4>
                                 @foreach ($services as $service)
                                     <div class="pretty p-default p-thick p-pulse mar-bottom-15">
@@ -171,7 +173,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            </div>
+                            </div> --}}
 
                             <div class="sidebar-item">
                                 <h4>Price Range($)</h4>

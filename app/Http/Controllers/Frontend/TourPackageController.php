@@ -23,14 +23,26 @@ class TourPackageController extends Controller
      $this->countries = CountryHelper::getCountries();
     }
 
-    public function index()
-    {
-        $countries = $this->countries; // associative array code => country name
-        $tourPackages = TourPackage::where('status', 'Active')->get();
-        $services = Service::all();
-        $tourPackageTypes = TourPackageType::all();
-        return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes'));
-    }
+   public function index()
+{
+    $countries = $this->countries; // associative array code => country name
+
+    // Active packages with no children
+    $tourPackages = TourPackage::where('status', 'Active')
+        ->whereDoesntHave('children')  // assuming you have children() relation defined
+        ->get();
+
+    $services = Service::all();
+    $tourPackageTypes = TourPackageType::all();
+
+    // Parent packages: no parent_id, but have children
+    $parentPackages = TourPackage::whereNull('parent_id')
+        ->whereHas('children')
+        ->get();
+
+    return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes', 'parentPackages'));
+}
+
 
 
 public function show($slug)
