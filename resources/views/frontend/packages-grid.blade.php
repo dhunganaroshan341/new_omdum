@@ -7,11 +7,11 @@
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
-                    <h2 class="mb-0"> Packages</h2>
+                    <h2 class="mb-0"> Our Packages</h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li aria-current="page" class="breadcrumb-item active">Destination</li>
+                            <li aria-current="page" class="breadcrumb-item active">Packages</li>
                         </ul>
                     </nav>
                 </div>
