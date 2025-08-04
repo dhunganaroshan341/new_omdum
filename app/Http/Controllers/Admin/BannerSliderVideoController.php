@@ -6,6 +6,8 @@ use App\Models\BannerSliderVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
+   use Illuminate\Support\Facades\DB;
+
 class BannerSliderVideoController extends Controller
 {
     public function index()
@@ -28,16 +30,20 @@ class BannerSliderVideoController extends Controller
         return view('Admin.pages.BannerVideo.uploadVideo', compact('video','extraJs','extraCs'));
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'video' => 'required|file|mimetypes:video/mp4,video/ogg,video/webm|max:102400',
-        ]);
 
+public function store(Request $request)
+{
+    $request->validate([
+        'video' => 'required|file|mimetypes:video/mp4,video/ogg,video/webm|max:102400', // max 100MB
+    ]);
+
+    DB::beginTransaction();
+
+    try {
+        // Delete existing video record and file if exists
         $existing = BannerSliderVideo::latest()->first();
 
         if ($existing) {
-            // Delete old uploaded video file if exists
             $oldPath = public_path($existing->url);
             if (File::exists($oldPath)) {
                 File::delete($oldPath);
@@ -46,22 +52,33 @@ class BannerSliderVideoController extends Controller
         }
 
         $file = $request->file('video');
-        $fileName = uniqid() . '_' . $file->getClientOriginalName();
-        $uploadPath = public_path('uploads/banner_videos');
+        $folder = 'uploads/banner_videos';  // relative to public/
+        $fileName = time() . '_' . $file->getClientOriginalName();
 
-        if (!File::exists($uploadPath)) {
-            File::makeDirectory($uploadPath, 0775, true);
+        // Make sure the folder exists
+        if (!File::exists(public_path($folder))) {
+            File::makeDirectory(public_path($folder), 0775, true);
         }
 
-        $file->move($uploadPath, $fileName);
-        $relativePath = 'upload/banner_videos/' . $fileName;
+        // Move the uploaded file manually
+        $file->move(public_path($folder), $fileName);
+
+        // Save relative path starting from 'uploads/...'
+        $relativePath = $folder . '/' . $fileName;
 
         BannerSliderVideo::create([
             'type' => 'upload',
-            'url' => $relativePath,
+            'url' => $relativePath, // e.g. uploads/banner_videos/12345_video.mp4
         ]);
 
+        DB::commit();
+
         return redirect()->back()->with('success', 'Video uploaded and saved successfully.');
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return redirect()->back()->withErrors(['error' => 'Upload failed: ' . $e->getMessage()]);
     }
+}
+
 }
 
