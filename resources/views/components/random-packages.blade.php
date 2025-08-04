@@ -8,15 +8,16 @@
                         @foreach ($chunk as $package)
                             <div class="col-lg p-0">
                                 <div class="desti-image bordernone">
-                                    <img src="{{ $package->images->image_path ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
+
+                                    <img src="{{ $package->images->image_path ?? asset('template/yatri_world/main-file/images/destination/lumbini.jpg') }}"
                                         alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
-                                        <div class="rating mb-1">
+                                        {{-- <div class="rating mb-1">
                                             @for ($i = 0; $i < 5; $i++)
                                                 <span class="fa fa-star checked"></span>
                                             @endfor
-                                        </div>
+                                        </div> --}}
                                         <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
 
