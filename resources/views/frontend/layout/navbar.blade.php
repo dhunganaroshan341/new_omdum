@@ -79,3 +79,86 @@
         </div>
     </nav>
 </div>
+@push('styles')
+    <style>
+        /* Logo Control */
+        .navbar-logo {
+            height: 100%;
+            max-height: 60px;
+            object-fit: contain;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            height: 60px;
+        }
+
+        /* Navbar Items */
+        .navbar-nav .nav-link {
+            padding: 0.5rem 1rem;
+        }
+
+        /* Submenu Dropdown */
+        .submenu.dropdown>.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            min-width: 180px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            padding: 0.5rem 0;
+        }
+
+        .submenu.dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .submenu.dropdown>a::after {
+            content: " ▾";
+            font-size: 0.6rem;
+            margin-left: 4px;
+        }
+
+        /* Optional: Hide dropdown icon if no packages */
+        .submenu>a .icon-arrow-down {
+            display: none;
+        }
+
+        .submenu.dropdown>a .icon-arrow-down {
+            display: inline;
+        }
+
+        @media (max-width: 991.98px) {
+            .submenu.dropdown>.dropdown-menu {
+                position: static;
+                display: none;
+            }
+
+            .submenu.dropdown.active>.dropdown-menu {
+                display: block;
+            }
+        }
+    </style>
+@endpush
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle submenu toggle for mobile
+            document.querySelectorAll('.submenu.dropdown > a').forEach(function(trigger) {
+                trigger.addEventListener('click', function(e) {
+                    const parent = this.closest('.submenu.dropdown');
+
+                    if (window.innerWidth <= 991.98) {
+                        e.preventDefault();
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
