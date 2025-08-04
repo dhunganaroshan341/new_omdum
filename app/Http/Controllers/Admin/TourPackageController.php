@@ -121,7 +121,7 @@ public function index(Request $request)
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
-            ->rawColumns(['country','batches', 'package_includes','images', 'itinerary', 'status', 'action'])
+            ->rawColumns(['country','batches', 'package_includes','images', 'itinerary', 'status', 'action','parent_title'])
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,
