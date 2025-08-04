@@ -21,7 +21,7 @@
                                     </div>
 
                                     <div class="desti-overlay">
-                                        <a href="{{ route('package.show', ['slug' => $package->slug]) }}"
+                                        <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
                                             class="nir-btn">
                                             <span class="white">Book Now</span>
                                             <i class="fa fa-arrow-right white ps-1"></i>
