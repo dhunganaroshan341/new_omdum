@@ -52,13 +52,13 @@
                                 </p>
 
                                 {{-- Author info, if needed --}}
-                                @if ($firstPost->createdBy)
+                                {{-- @if ($firstPost->createdBy)
                                     <div class="author-img">
                                         <img src="{{ $firstPost->createdBy->profile_photo_url ?? asset('template/yatri_world/main-file/images/default-user.png') }}"
                                             alt="Author Image">
                                         <span>By - {{ $firstPost->createdBy->name }}</span>
                                     </div>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </div>
@@ -84,8 +84,8 @@
                                             </li>
                                             <li>
                                                 <a href="#" class="pe-3">
-                                                    <i class="fa fa-comment pink pe-1"></i> {{-- Add comment count if needed --}}
-                                                    {{ $post->comments->count() ?? 0 }}
+                                                    {{-- <i class="fa fa-comment pink pe-1"></i> Add comment count if needed --}}
+                                                    {{-- {{ $post->comments->count() ?? 0 }} --}}
                                                 </a>
                                             </li>
                                             <li>
