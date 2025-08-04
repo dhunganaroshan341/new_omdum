@@ -117,30 +117,33 @@ function resetUploadModal() {
         imageDropzone.removeAllFiles(true);
 
         // Load existing images and display as mock files in Dropzone
-        $.ajax({
-            url: `/admin/tour-package-images/${tourPackageId}`,
-            method: 'GET',
-            success: function (images) {
-                images.forEach(function (image) {
-                    const mockFile = {
-                        name: image.image_path.split('/').pop(),
-                        size: image.size || 123456,
-                        accepted: true,
-                        serverId: image.id,
-                        status: Dropzone.SUCCESS
-                    };
+       $.ajax({
+    url: `/admin/tour-package-images/${tourPackageId}`,
+    method: 'GET',
+    success: function (images) {
+        images.forEach(function (image) {
+            const mockFile = {
+                name: image.image_path.split('/').pop(), // file name
+                size: 123456, // You can replace with real size if available
+                accepted: true,
+                status: Dropzone.SUCCESS,
+                serverId: image.id // custom field if needed
+            };
 
-                    imageDropzone.emit("addedfile", mockFile);
-                 imageDropzone.emit("thumbnail", mockFile, image.image_url);
+            // Add file to dropzone
+            imageDropzone.emit("addedfile", mockFile);
+            imageDropzone.emit("thumbnail", mockFile, image.image_path);
+            imageDropzone.emit("complete", mockFile);
 
-                    imageDropzone.emit("complete", mockFile);
-                    imageDropzone.files.push(mockFile);
-                });
-            },
-            error: function () {
-                console.error('Failed to load existing images');
-            }
+            // Push to files array
+            imageDropzone.files.push(mockFile);
         });
+    },
+    error: function () {
+        console.error('Failed to load existing images');
+    }
+});
+
     });
 
     // Upload submit button click handler
