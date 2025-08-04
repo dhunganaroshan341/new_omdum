@@ -17,36 +17,119 @@ use Yajra\DataTables\Facades\DataTables;
 class PostController extends Controller
 {
 
-public function index(Request $request)
-{
-    if ($request->ajax()) {
-        $posts = Post::with('categories')->get(); // Include category relationship
+ public function index()
+    {
+        // External JS & CSS configs
+        $extraJs = array_merge(
+            config('js-map.admin.datatable.script'),
+            config('js-map.admin.summernote.script'),
+            config('js-map.admin.select2.script'),
+        );
 
-        return datatables()->of($posts)
-           ->addColumn('categories', function ($post) {
-    return $post->categories->map(function ($cat) {
-        return '<span class="badge bg-info">' . e($cat->title) . '</span>';
-    })->implode(' ');
-})
-            ->rawColumns(['categories'])
-            ->make(true);
+        $extraCs = array_merge(
+            config('js-map.admin.datatable.style'),
+            config('js-map.admin.summernote.style'),
+            config('js-map.admin.select2.style'),
+        );
+
+        // Load categories for filter or post creation
+        $categories = Category::pluck('title', 'id');
+
+        return view('Admin.pages.Post.post', compact('categories', 'extraJs', 'extraCs'));
     }
 
-    // Blade View fallback
-    $extraJs = array_merge(
-        config('js-map.admin.datatable.script'),
-        config('js-map.admin.summernote.script'),
-        config('js-map.admin.select2.script'),
-    );
-    $extraCs = array_merge(
-        config('js-map.admin.datatable.style'),
-        config('js-map.admin.summernote.style'),
-        config('js-map.admin.select2.style'),
-    );
+    /**
+     * DataTable server-side processing for Posts.
+     */
+    public function getPostData(Request $request)
+    {
+        if ($request->ajax()) {
+            $search = $request->input('search.value');
+            $columns = $request->input('columns');
+            $pageSize = $request->input('length');
+            $order = $request->input('order')[0];
+            $orderIndexColumn = $order['column'];
+            $start = $request->input('start');
+            $orderBy = $order['dir'];
 
-    $categories = Category::pluck('title', 'id');
-    return view('Admin.pages.Post.post', compact('categories', 'extraJs', 'extraCs'));
-}
+            // Start query with joins
+            $posts = Post::query()
+                ->join('category_posts', 'category_posts.post_id', '=', 'posts.id')
+                ->join('categories', 'categories.id', '=', 'category_posts.category_id')
+                ->join('users', 'users.id', '=', 'posts.created_by')
+                ->leftJoin('post_images', 'post_images.post_id', '=', 'posts.id')
+                ->leftJoin('comments', function ($join) {
+                    $join->on('comments.commentable_id', '=', 'posts.id')
+                         ->where('comments.commentable_type', Post::class);
+                })
+                ->select([
+                    'posts.id as post_id',
+                    'posts.title as post_title',
+                    'posts.description',
+                    'users.full_name',
+                    'posts.status',
+                    DB::raw('GROUP_CONCAT(DISTINCT categories.title SEPARATOR ", ") as category_titles'),
+                    DB::raw('COUNT(DISTINCT post_images.id) as post_images_count')
+                ])
+                ->groupBy('posts.id', 'posts.title', 'posts.description', 'users.full_name', 'posts.status');
+
+            // Total count before filtering
+            $totalCount = $posts->get()->count();
+
+            // Apply search filters
+            if ($search) {
+                $posts->where(function ($query) use ($search) {
+                    $query->where('posts.title', 'LIKE', "%$search%")
+                        ->orWhere('posts.description', 'LIKE', "%$search%")
+                        ->orWhere('categories.title', 'LIKE', "%$search%")
+                        ->orWhere('users.full_name', 'LIKE', "%$search%");
+                });
+            }
+
+            $filterCount = $posts->get()->count();
+
+            // Sorting map
+            $columnMap = [
+                'title' => 'posts.title',
+                'category' => 'category_titles',
+                'description' => 'posts.description',
+            ];
+
+            $orderByColumn = $columnMap[$columns[$orderIndexColumn]['data']] ?? 'posts.title';
+
+            // Pagination & sorting
+            $records = $posts->orderBy($orderByColumn, $orderBy)
+                ->offset($start)
+                ->limit($pageSize)
+                ->get();
+
+            // Return formatted response
+            return DataTables::of($records)
+                ->addIndexColumn()
+                ->addColumn('image', function ($item) {
+                    return "<a type='button' data-id='" . $item->post_id . "' class='imageListPopup'><span class='badge badge-primary'>" . ($item->post_images_count ?? 0) . "</span></a>";
+                })
+                ->addColumn('title', fn($tit) => Str::limit($tit->post_title, 20))
+                ->addColumn('category', fn($cat) => $cat->category_titles ?? '')
+                ->addColumn('description', fn($desc) => Str::limit(strip_tags($desc->description), 20))
+                ->addColumn('created_by', fn($creator) => $creator->full_name ?? '')
+                ->addColumn('action', fn($data) => '
+                    <button class="btn btn-secondary editUserButton" data-id="' . $data->post_id . '" type="button">Edit</button>
+                    <button class="btn btn-danger deleteData" data-id="' . $data->post_id . '" type="button">Delete</button>')
+                ->addColumn('comment', fn($data) => '
+                    <button class="btn btn-info commentinfoBtn" data-id="' . $data->post_id . '" type="button">View Comment</button>')
+                ->addColumn('status', fn($status) => '
+                    <div class="form-check form-switch">
+                        <input class="form-check-input statusIdData d-flex mx-auto" type="checkbox" data-id="' . $status->post_id . '" role="switch" id="flexSwitchCheckChecked" ' . ($status->status == 'Active' ? 'checked' : '') . '>
+                    </div>')
+                ->rawColumns(['action', 'image', 'comment', 'status'])
+                ->with('recordsTotal', $totalCount)
+                ->with('recordsFiltered', $filterCount)
+                ->make(true);
+        }
+
+        return response()->json(['message' => 'Invalid Request'], 400);
+    }
 
 
 
@@ -65,84 +148,7 @@ private function processTags(string $rawTags=null): array
 
 }
 
- public function getPostData(Request $request)
-{
-    if ($request->ajax()) {
-        $search = $request->input('search.value');
-        $columns = $request->input('columns');
-        $pageSize = $request->input('length');
-        $order = $request->input('order')[0];
-        $orderIndexColumn = $order['column'];
-        $start = $request->input('start');
-        $orderBy = $order['dir'];
 
-        // Start query with joins via pivot table for categories
-        $posts = Post::query()
-            ->join('category_posts', 'category_posts.post_id', '=', 'posts.id')
-            ->join('categories', 'categories.id', '=', 'category_posts.category_id')
-            ->join('users', 'users.id', '=', 'posts.created_by')
-            ->leftJoin('post_images', 'post_images.post_id', '=', 'posts.id')
-            ->leftJoin('comments', 'comments.commentable_id', '=', 'posts.id')
-            ->where('comments.commentable_type', Post::class)  // if needed
-            ->select([
-                'posts.id as post_id',
-                'posts.title as post_title',
-                'posts.description',
-                'users.full_name',
-                'posts.status',
-                // Use GROUP_CONCAT for categories (MySQL) to get categories as comma-separated string
-                DB::raw('GROUP_CONCAT(DISTINCT categories.title SEPARATOR ", ") as category_titles')
-            ])
-            ->groupBy('posts.id', 'posts.title', 'posts.description', 'users.full_name', 'posts.status');
-
-        // Total count before filtering
-        $totalCount = $posts->count();
-
-        if ($search) {
-            $posts->where(function ($query) use ($search) {
-                $query->where('posts.title', 'LIKE', "%$search%")
-                    ->orWhere('posts.description', 'LIKE', "%$search%")
-                    ->orWhere('categories.title', 'LIKE', "%$search%")
-                    ->orWhere('users.full_name', 'LIKE', "%$search%");
-            });
-        }
-
-        $filterCount = $posts->count();
-
-        $columnMap = [
-            'title' => 'posts.title',
-            'category' => 'category_titles',
-            'description' => 'posts.description',
-        ];
-        $orderByColumn = $columnMap[$columns[$orderIndexColumn]['data']] ?? 'posts.title';
-
-        $records = $posts->orderBy($orderByColumn, $orderBy)
-            ->offset($start)
-            ->limit($pageSize)
-            ->get();
-
-        return DataTables::of($records)
-            ->addIndexColumn()
-            ->addColumn('image', function ($item) {
-                return "<a type='button' data-id='" . $item->post_id . "' class='imageListPopup'><span class='badge badge-primary'>" . $item->post_images_count ?? 0 . "</span></a>";
-            })
-            ->addColumn('title', function ($tit) {
-                return  Str::limit($tit->post_title, 20) ?? '';
-            })
-            ->addColumn('category', fn($cat) => $cat->category_titles ?? '')
-            ->addColumn('description', fn($desc) => Str::limit(strip_tags($desc->description), 20) ?? '')
-            ->addColumn('created_by', fn($creator) => $creator->full_name ?? '')
-            ->addColumn('action', fn($data) => '<button class="btn btn-secondary editUserButton" data-id="' . $data->post_id . '" type="button">Edit</button><button class="btn btn-danger deleteData" data-id="' . $data->post_id . '" type="button">Delete </button>')
-            ->addColumn('comment', fn($data) => '<button class="btn btn-info commentinfoBtn" data-id="' . $data->post_id . '" type="button">View Comment</button>')
-            ->addColumn('status', fn($status) => '<div class="form-check form-switch">
-                <input class="form-check-input statusIdData d-flex mx-auto" type="checkbox" data-id="' . $status->post_id . '" role="switch" id="flexSwitchCheckChecked" ' . ($status->status == 'Active' ? 'checked' : '') . '>
-                </div>')
-            ->rawColumns(['action', 'image', 'comment', 'status'])
-            ->with('recordsTotal', $totalCount)
-            ->with('recordsFiltered', $filterCount)
-            ->make(true);
-    }
-}
 
     public function store(PostRequest $postRequest)
     {
