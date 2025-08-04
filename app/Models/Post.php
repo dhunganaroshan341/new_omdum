@@ -52,7 +52,7 @@ public function categories()
     $firstImage = $this->postImages->first();
     if ($firstImage && !empty($firstImage->image)) {
         // Assuming images are stored under 'tour_images' folder
-        return asset('tour_images/' . $firstImage->image);
+        return asset('uploads/tour_images/' . $firstImage->image);
     }
 
     // fallback image URL
