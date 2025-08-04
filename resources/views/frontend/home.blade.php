@@ -278,7 +278,7 @@
     <x-achievement-counter />
     <!-- End Counter -->
     <!-- top deal starts -->
-    @include('components.top-deal');
+    <x-top-deal />
     <!-- top deal ends -->
     <!-- cta-horizon starts -->
     <div class="cta-horizon bg-navy pt-4 pb-4">
