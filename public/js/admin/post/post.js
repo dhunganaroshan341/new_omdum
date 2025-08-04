@@ -214,24 +214,22 @@ $("#tags").val('');
             type: "get",
             success: function (response) {
                 // console.log(response);
-                $("#posttitleData").val(response.message.title);
-                $("#tags").val(response.message.tags);
+                $("#posttitleData").val(response.data.title);
+                $("#tags").val(response.data.tags);
                 // $("#category_id").val(response.message.category_id);
-                 $("#category_id").val(response.message.category_id);
+                 $("#category_id").val(response.data.category_id);
                 // populate and pre-select the category
 
-                let selectedCategoryIds = response.message.categories.map(cat => cat.id);
+                let selectedCategoryIds = response.data.categories.map(cat => cat.id);
                 populateCategorySelect(selectedCategoryIds);
 
 // Fix tags JSON array to string
-let tags = response.message.tags;
+let tags = response.data.tags;
 if (Array.isArray(tags)) {
     $("#tags").val(tags.join(', '));
 } else {
     $("#tags").val('');
 }
-
-
 
                 if (response.images && response.images.length > 0) {
                     $(".postImageData").html("");
