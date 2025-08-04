@@ -5,7 +5,7 @@
         </div>
 
         <div class="team-slider">
-            @dd($topDeals)
+
             @forelse ($topDeals as $deal)
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
