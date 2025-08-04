@@ -83,15 +83,15 @@ function getCategories() {
 }
 
 function populateCategorySelect(selectedCategoryIds = []) {
-    getCategories().then(function (categories) {
-        let $select = $('#category_id');
-        $select.empty(); // clear old
-        categories.forEach(function (category) {
-            let isSelected = selectedCategoryIds.includes(category.id) ? 'selected' : '';
-            $select.append(`<option value="${category.id}" ${isSelected}>${category.title}</option>`);
-        });
-        $select.trigger('change'); // refresh select2
-    });
+    // getCategories().then(function (categories) {
+    //     let $select = $('#category_id');
+    //     $select.empty(); // clear old
+    //     categories.forEach(function (category) {
+    //         let isSelected = selectedCategoryIds.includes(category.id) ? 'selected' : '';
+    //         $select.append(`<option value="${category.id}" ${isSelected}>${category.title}</option>`);
+    //     });
+    //     $select.trigger('change'); // refresh select2
+    // });
 }
 
 
