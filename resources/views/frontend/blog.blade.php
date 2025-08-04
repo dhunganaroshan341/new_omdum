@@ -47,7 +47,7 @@
                                     <div class="blog-full text-center p-3">
                                         <a href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
                                             <img alt="{{ $post->title }}"
-                                                src="{{ isset($post->first_image_url) ? asset('tour_images/' . $post->first_image_url) : asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                                                src="{{ isset($post->first_image_url) ? $post->first_image_url : asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                         </a>
                                         <div class="blog-content pb-0">
                                             <span class="h-date pink mb-1 font-weight-light d-block">
