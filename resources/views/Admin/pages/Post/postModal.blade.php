@@ -18,8 +18,8 @@
                                         class="text-danger">*</span></label>
                                 <select class="form-select category_ids" name="category_ids[]" id="category_id"
                                     multiple>
-                                    @foreach ($categories as $index => $item)
-                                        <option value="{{ $index }}"> {{ $item }}</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"> {{ $category->title }}</option>
                                     @endforeach
                                 </select>
                                 <small class="text-muted">Hold Ctrl (or Cmd on Mac) to select multiple.</small>

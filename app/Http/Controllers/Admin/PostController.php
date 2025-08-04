@@ -33,7 +33,7 @@ class PostController extends Controller
         );
 
         // Load categories for filter or post creation
-        $categories = Category::pluck('title', 'id');
+        $categories = Category::all();
 
         return view('Admin.pages.Post.post', compact('categories', 'extraJs', 'extraCs'));
     }
