@@ -47,10 +47,18 @@ public function categories()
         return $this->belongsTo(User::class, 'updated_by', 'id');
     }
 
-    public function getFirstImageUrlAttribute()
-    {
-        return $this->postImages->first()?->image ?? asset('template/yatri_world/main-file/images/india.jpg');
+   public function getFirstImageUrlAttribute()
+{
+    $firstImage = $this->postImages->first();
+    if ($firstImage && !empty($firstImage->image)) {
+        // Assuming images are stored under 'tour_images' folder
+        return asset('tour_images/' . $firstImage->image);
     }
+
+    // fallback image URL
+    return asset('template/yatri_world/main-file/images/india.jpg');
+}
+
 
     protected static function boot()
     {
