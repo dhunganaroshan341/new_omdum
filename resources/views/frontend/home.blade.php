@@ -74,7 +74,7 @@
     <!-- about-us ends -->
 
     <!-- Call to action starts -->
-    @include('components.call-to-action-home-section')
+    <x-call-to-action-home-section />
     <!-- call to action Ends -->
 
     <!-- top destination starts -->

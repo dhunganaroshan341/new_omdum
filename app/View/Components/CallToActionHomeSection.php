@@ -3,7 +3,6 @@ namespace App\View\Components;
 
 use App\Models\CallToAction;
 use Closure;
-use App\Models\CallToActionHome;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
@@ -25,6 +24,8 @@ class CallToActionHomeSection extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.call-to-action-home-section');
+        return view('components.call-to-action-home-section', [
+            'callToAction' => $this->callToAction,
+        ]);
     }
 }
