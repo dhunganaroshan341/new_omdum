@@ -40,10 +40,16 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
-       $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
-    ->select('tour_packages.*', 'our_countries.name as country_name')
-    ->with(['country', 'parent']) // ✅ eager load both relationships
+      $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
+    ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id') // ✅ join parent
+    ->select(
+        'tour_packages.*',
+        'our_countries.name as country_name',
+        'parent.title as parent_title' // ✅ select parent title
+    )
+    ->with(['country', 'parent'])
     ->withCount('images');
+
 
 
         $total = $query->count();
