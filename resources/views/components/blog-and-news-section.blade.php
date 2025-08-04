@@ -17,8 +17,9 @@
                     <div class="col-lg-5 mb-4">
                         <div class="news-item overflow-hidden">
                             <div class="news-image">
-                                <img src="{{ $firstPost->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                    alt="image">
+                                <a href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">
+                                    <img src="{{ $firstPost->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                        alt="image"></a>
                             </div>
                             <div class="news-list mt-2 border-b pb-2 mb-2">
                                 <ul>
