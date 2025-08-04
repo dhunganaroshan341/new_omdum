@@ -115,3 +115,12 @@
         </div>
     </div>
 </section>
+@push('styles')
+    <style>
+        .news-content h4 a:hover {
+            color: var(--omundum-green);
+            text-decoration: none;
+            /* optional: remove underline on hover */
+        }
+    </style>
+@endpush
