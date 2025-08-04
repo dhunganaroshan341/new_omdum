@@ -297,3 +297,27 @@
         }
     </style>
 @endpush
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#packageFilterForm').on('submit', function(e) {
+                e.preventDefault();
+
+                let formData = $(this).serialize();
+
+                $.ajax({
+                    url: "{{ route('tour-packages.search') }}",
+                    method: "GET",
+                    data: formData,
+                    success: function(response) {
+                        // Replace the package grid with new results
+                        $('#packageResults').html($(response).find('#packageResults').html());
+                    },
+                    error: function(xhr) {
+                        console.error("Filter error:", xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
