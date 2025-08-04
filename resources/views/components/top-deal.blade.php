@@ -8,9 +8,9 @@
             @forelse ($topDeals as $deal)
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
-                        {{-- Use the accessor for image_path, fallback if no images --}}
-                        <img src="{{ $deal->images->first()?->image_path ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
-                            alt="{{ $deal->title }}">
+                        {{-- Use the accessor for image_path, which already handles fallback --}}
+                        <img src="{{ optional($deal->images->first())->image_path ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
+                            alt="{{ $deal->title ?? 'Top Deal Image' }}">
                     </div>
 
                     <div class="slider-content">
@@ -19,9 +19,11 @@
                             {{ $deal->location ?? 'Unknown' }}
                         </h6>
 
-                        <h4><a href="{{ route('packages.show', $deal->slug) }}">{{ $deal->title }}</a></h4>
+                        <h4><a
+                                href="{{ route('packages.show', $deal->slug) }}">{{ $deal->title ?? 'Untitled Deal' }}</a>
+                        </h4>
 
-                        <p>{{ Str::limit($deal->short_description, 60) }}</p>
+                        <p>{{ \Illuminate\Support\Str::limit($deal->short_description ?? '', 60) }}</p>
 
                         <div class="deal-price">
                             <p class="price font-weight-bold pink mb-0">From
