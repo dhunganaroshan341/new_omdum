@@ -30,8 +30,8 @@
                                     </li>
                                     <li>
                                         <a href="#" class="pe-3">
-                                            <i class="fa fa-comment pink pe-1"></i> {{-- You can add comments count if available --}}
-                                            {{ $firstPost->comments->count() ?? 0 }}
+                                            {{-- <i class="fa fa-comment pink pe-1"></i> You can add comments count if available --}}
+                                            {{-- {{ $firstPost->comments->count() ?? 0 }} --}}
                                         </a>
                                     </li>
                                     <li>
