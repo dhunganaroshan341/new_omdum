@@ -7,7 +7,9 @@
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
                 <div class="breadcrumb-content d-md-flex align-items-center pt-10">
-                    <h2 class="mb-0">{{ $post->title ?? 'Blog Detail' }}</h2>
+                    <h2 class="mb-0" style="line-height: 1.8;">
+                        {{ \Illuminate\Support\Str::words($post->title ?? 'Blog Detail', 3, '...') }}
+                    </h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
