@@ -19,46 +19,68 @@
                     <ul class="nav navbar-nav" id="responsive-menu">
 
                         <!-- Static Pages -->
-                        <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="{{ route('packages.index') }}">Packages</a></li>
+                        <li class="{{ request()->routeIs('about') ? 'active' : '' }}">
+                            <a href="{{ route('about') }}">About Us</a>
+                        </li>
 
+                        <li class="{{ request()->routeIs('packages.index') ? 'active' : '' }}">
+                            <a href="{{ route('packages.index') }}">Packages</a>
+                        </li>
 
                         <!-- Destinations Dropdown -->
                         @foreach ($navbarCountries as $country)
                             @php
                                 $hasPackages = !empty($country->groupedPackages) && count($country->groupedPackages);
+                                // Match if current URL is for any of this country's packages
+$isActive = collect($country->groupedPackages)
+    ->flatten(1)
+    ->pluck('slug')
+    ->contains(request()->route('slug'));
                             @endphp
 
-                            <li class="{{ $hasPackages ? 'submenu dropdown' : '' }}">
+                            <li class="{{ $hasPackages ? 'submenu dropdown' : '' }} {{ $isActive ? 'active' : '' }}">
                                 <a href="#">{{ $country->name }}
                                     @if ($hasPackages)
                                         <i class="icon-arrow-down"></i>
                                     @endif
                                 </a>
-                                <ul class="dropdown-menu">
-                                    @foreach ($country->groupedPackages as $typeTitle => $packages)
-                                        <li class="submenu dropdown">
-                                            <a href="#">{{ $typeTitle }} <i class="icon-arrow-right"></i></a>
-                                            <ul class="dropdown-menu">
-                                                @foreach ($packages as $package)
-                                                    <li>
-                                                        <a
-                                                            href="{{ route('packages.show', ['slug' => $package->slug]) }}">
-                                                            {{ $package->title }}
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                @if ($hasPackages)
+                                    <ul class="dropdown-menu">
+                                        @foreach ($country->groupedPackages as $typeTitle => $packages)
+                                            <li class="submenu dropdown">
+                                                <a href="#">{{ $typeTitle }} <i
+                                                        class="icon-arrow-right"></i></a>
+                                                <ul class="dropdown-menu">
+                                                    @foreach ($packages as $package)
+                                                        <li>
+                                                            <a class="{{ request()->routeIs('packages.show') && request()->route('slug') === $package->slug ? 'active' : '' }}"
+                                                                href="{{ route('packages.show', ['slug' => $package->slug]) }}">
+                                                                {{ $package->title }}
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </li>
                         @endforeach
-                        <li><a href="{{ route('services') }}">Services</a></li>
+
+                        <!-- Services -->
+                        <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
+                            <a href="{{ route('services') }}">Services</a>
+                        </li>
 
                         <!-- Blog and Contact -->
-                        <li><a href="{{ route('blog.index') }}">Blog</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                        <li class="{{ request()->routeIs('blog.index') ? 'active' : '' }}">
+                            <a href="{{ route('blog.index') }}">Blog</a>
+                        </li>
+
+                        <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
+                            <a href="{{ route('contact') }}">Contact Us</a>
+                        </li>
+
                     </ul>
 
                     <!-- Optional icons (e.g., cart) -->
