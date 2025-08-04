@@ -11,10 +11,10 @@
                            <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
                            <p class="white mb-4">{!! $callToAction->description ??
                                'There are many variations of passages of. Lorem Ipsum available, but
-                                                                                                                                           the majority have suffered alteration in some form, by injected humour, or randomised
-                                                                                                                                           words which don’t look.' !!}</p>
-                           <a href="{{ $callToAction->button_url ?? '#' }}"
-                               class="nir-btn">{{ $callToAction->button_text ?? 'Go Explore' }} <i
+                                                                                                                                                                                                                                                       the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                                                                                                                                       words which don’t look.' !!}</p>
+                           <a href="{{ $callToAction->button_url ?? route('frontend.booking-singe') }}"
+                               class="nir-btn">{{ $callToAction->button_text ?? 'Book Now' }} <i
                                    class="fa fa-arrow-right"></i></a>
                        </div>
                    </div>
