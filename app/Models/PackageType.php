@@ -21,4 +21,7 @@ class PackageType extends BaseModel
     // {
     //     return $this->hasMany(TourPackage::class);
     // }
+   public function packages() {
+    return $this->hasMany(TourPackage::class);
+}
 }

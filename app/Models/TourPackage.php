@@ -21,7 +21,7 @@ class TourPackage extends BaseModel
         'type',
         'location',
         // 'images',
-        'title',
+        // 'title',
         'title',
         'drop',
         'accomodation',
