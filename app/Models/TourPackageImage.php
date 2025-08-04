@@ -26,10 +26,14 @@ class TourPackageImage extends Model
 }
 public function getImagePathAttribute($value)
 {
-    // Always return full asset URL with 'uploads/' prepended
+    if (!$value) {
+        // Fallback image if image_path is null or empty
+        return asset('template/yatri_world/main-file/images/india.jpg');
+    }
+
     return Str::startsWith($value, 'uploads/')
         ? asset($value)
         : asset('uploads/' . ltrim($value, '/'));
 }
-
 }
+
