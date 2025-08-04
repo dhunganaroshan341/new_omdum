@@ -26,12 +26,14 @@
                         </h4>
 
                         <p>{{ \Illuminate\Support\Str::limit($deal->short_description ?? '', 60) }}</p>
+                        @if (!is_null($deal->price))
+                            <div class="deal-price">
+                                <p class="price font-weight-bold pink mb-0">From
+                                    <span>${{ number_format($deal->price, 2) }}</span>
+                                </p>
+                            </div>
+                        @endif
 
-                        <div class="deal-price">
-                            <p class="price font-weight-bold pink mb-0">From
-                                <span>${{ number_format($deal->price ?? 0, 2) }}</span>
-                            </p>
-                        </div>
                     </div>
                 </div>
             @empty
