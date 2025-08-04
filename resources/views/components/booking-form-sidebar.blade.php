@@ -94,7 +94,7 @@
                 <label class="white">No. Of People</label>
                 <div class="input-box">
                     <i class="flaticon-add-user"></i>
-                    <select class="niceSelect" name="number_of_people">
+                    <select class="niceSelect" name="total_people">
                         @for ($i = 1; $i <= 5; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
