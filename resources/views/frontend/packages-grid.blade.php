@@ -120,32 +120,27 @@
                 <div class="col-lg-4 mb-4">
                     <div class="sidebar-sticky">
                         <div class="sidebar-item mb-4">
-                            <form class="form-content">
+
+                            <form class="form-content" method="GET" action="{{ route('packages.search') }}"
+                                id="country-filter-form">
                                 <h4 class="title white">Find Tour & Travel Packages</h4>
-                                <div class="row gy-4">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label class="white">Your Destination</label>
-                                            <div class="input-box">
-                                                <i class="flaticon-placeholder"></i>
-                                                <select class="niceSelect">
-                                                    <option value="1">Where are you going?</option>
-                                                    <option value="2">Tibet</option>
-                                                    <option value="3">Bhutan</option>
-                                                    <option value="4">India</option>
-                                                    <option value="5">Nepal</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-0">
-                                            <a class="nir-btn w-100" href="#"><i class="fa fa-search"></i> Check
-                                                Availability</a>
-                                        </div>
-                                    </div>
+                                <div class="form-group">
+                                    <label class="white">Your Destination</label>
+                                    <select name="country" class="niceSelect"
+                                        onchange="document.getElementById('country-filter-form').submit();">
+                                        <option value="">Where are you going?</option>
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country->name }}"
+                                                {{ request('country') == $country->name ? 'selected' : '' }}>
+                                                {{ $country->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
+                                <button type="submit" class="nir-btn w-100"><i class="fa fa-search"></i> Check
+                                    Availability</button>
                             </form>
+
                         </div>
 
                         <div class="list-sidebar">
@@ -181,8 +176,8 @@
                                 <h4>Price Range($)</h4>
                                 <div class="range-slider">
                                     <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                        data-max="2000" data-max-name="max_price" data-min="0"
-                                        data-min-name="min_price" data-unit="$">
+                                        data-max="2000" data-max-name="max_price" data-min="0" data-min-name="min_price"
+                                        data-unit="$">
                                         <span class="min-value">0 $</span>
                                         <span class="max-value">2000 $</span>
                                         <div class="ui-slider-range ui-widget-header ui-corner-all full"

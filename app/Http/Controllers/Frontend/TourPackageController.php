@@ -116,35 +116,61 @@ if ($images->isEmpty()) {
 
 public function filterPackages(Request $request)
 {
-    // Validate input: parent_packages should be an array of existing package IDs
     $validated = $request->validate([
         'parent_packages' => 'array',
         'parent_packages.*' => 'integer|exists:tour_packages,id',
+        'country' => 'nullable|string',
     ]);
 
+    $countryName = $validated['country'] ?? null;
     $parentIds = $validated['parent_packages'] ?? [];
 
-    // Get all children packages of the selected parents
-    // Assuming 'children' relation is defined on TourPackage model
-    $tourPackages = TourPackage::where('status', 'Active')
-        ->whereHas('parent') // Only children (have parent)
-        ->whereIn('parent_id', $parentIds)
-        ->get();
+    // Step 1: Find country id from name (case insensitive)
+    $country = null;
+    if ($countryName) {
+        $country = OurCountry::where('name', 'LIKE', $countryName)->first();
+    }
 
-    // For additional filters, you can extend here...
+    // Step 2: Get all packages in the selected country
+    $query = TourPackage::query()->where('status', 'Active');
 
-    // Also pass other needed data (countries, services, types, parentPackages) if your view needs them
-    $countries = $this->countries;
+    if ($country) {
+        $query->where('our_country_id', $country->id);
+    }
+
+    // Step 3: Filter by parent packages if any
+    if (!empty($parentIds)) {
+        // Only children packages of selected parents within the country
+        $query->whereHas('parent', function ($q) use ($parentIds) {
+            $q->whereIn('id', $parentIds);
+        });
+    } else {
+        // If no parent filter, optionally you can exclude parents or only show children
+        // Uncomment if you want only children packages (i.e., packages with parent_id not null)
+        // $query->whereNotNull('parent_id');
+    }
+
+    $tourPackages = $query->get();
+
+    // Step 4: Get parents in the selected country for sidebar filter options
+    $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
+    if ($country) {
+        $parentPackagesQuery->where('our_country_id', $country->id);
+    }
+    $parentPackages = $parentPackagesQuery->get();
+
+    // Pass other required data
+    $countries = OurCountry::all(); // or your existing $this->countries if associative
     $services = Service::all();
     $tourPackageTypes = TourPackageType::all();
-    $parentPackages = TourPackage::whereNull('parent_id')->whereHas('children')->get();
 
     return view('frontend.packages-grid', compact(
         'countries',
         'tourPackages',
         'services',
         'tourPackageTypes',
-        'parentPackages'
+        'parentPackages',
+        'countryName' // optionally to pre-fill select input
     ));
 }
 
