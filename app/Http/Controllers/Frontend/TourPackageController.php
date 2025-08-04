@@ -23,25 +23,13 @@ class TourPackageController extends Controller
      $this->countries = CountryHelper::getCountries();
     }
 
-   public function index()
+public function index()
 {
-    $countries = $this->countries; // associative array code => country name
-
-    // Active packages with no children
-    $tourPackages = TourPackage::where('status', 'Active')
-        ->whereDoesntHave('children')  // assuming you have children() relation defined
-        ->get();
-
-    $services = Service::all();
-    $tourPackageTypes = TourPackageType::all();
-    $ourCountries = OurCountry::all();
-    // Parent packages: no parent_id, but have children
-    $parentPackages = TourPackage::whereNull('parent_id')
-        ->whereHas('children')
-        ->get();
-
-    return view('frontend.packages-grid', compact('countries', 'tourPackages', 'services', 'tourPackageTypes', 'parentPackages','ourCountries'));
+    $data = $this->getFilteredPackages(); // no filters
+    return view('frontend.packages-grid', $data);
 }
+
+
 
 
 
@@ -116,8 +104,6 @@ if ($images->isEmpty()) {
 
 public function search(Request $request)
 {
-    $countries = $this->countries;
-
     $validated = $request->validate([
         'parent_packages' => 'array',
         'parent_packages.*' => 'integer|exists:tour_packages,id',
@@ -125,54 +111,60 @@ public function search(Request $request)
         'sort_by' => 'nullable|string|in:low,high',
     ]);
 
-    $countryName = $validated['country'] ?? null;
-    $parentIds = $validated['parent_packages'] ?? [];
+    $data = $this->getFilteredPackages($validated);
+    return view('frontend.packages-grid', $data);
+}
 
-    // Step 1: Find country from slug (case-insensitive match)
+
+
+private function getFilteredPackages(array $filters = [])
+{
+    $countries = $this->countries;
+    $services = Service::all();
+    $tourPackageTypes = TourPackageType::all();
+    $ourCountries = OurCountry::all();
+
+    $countryName = $filters['country'] ?? null;
+    $parentIds = $filters['parent_packages'] ?? [];
+    $sortBy = $filters['sort_by'] ?? null;
+
+    // Find country model from slug
     $country = null;
     if ($countryName) {
         $country = OurCountry::where('slug', 'LIKE', $countryName)->first();
     }
 
-    // Step 2: Base query
+    // Base query
     $query = TourPackage::query()->where('status', 'Active');
 
     if ($country) {
         $query->where('our_country_id', $country->id);
     }
 
-    // Step 3: Filter by selected parent package(s)
+    // Filter children by parent packages
     if (!empty($parentIds)) {
         $query->whereHas('parent', function ($q) use ($parentIds) {
             $q->whereIn('id', $parentIds);
         });
     }
 
-    // Step 4: Sort by price if selected
-    if ($request->filled('sort_by')) {
-        if ($request->sort_by === 'low') {
-            $query->orderBy('price', 'asc');
-        } elseif ($request->sort_by === 'high') {
-            $query->orderBy('price', 'desc');
-        }
+    // Sorting
+    if ($sortBy === 'low') {
+        $query->orderBy('price', 'asc');
+    } elseif ($sortBy === 'high') {
+        $query->orderBy('price', 'desc');
     }
 
-    // Step 5: Get the filtered packages
     $tourPackages = $query->get();
 
-    // Step 6: Sidebar - Only parent packages of current country
+    // For sidebar: only parents with children (optionally filtered by country)
     $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
     if ($country) {
         $parentPackagesQuery->where('our_country_id', $country->id);
     }
     $parentPackages = $parentPackagesQuery->get();
 
-    // Other sidebar/filter data
-    $ourCountries = OurCountry::all();
-    $services = Service::all();
-    $tourPackageTypes = TourPackageType::all();
-
-    return view('frontend.packages-grid', compact(
+    return compact(
         'countries',
         'ourCountries',
         'tourPackages',
@@ -180,8 +172,9 @@ public function search(Request $request)
         'tourPackageTypes',
         'parentPackages',
         'countryName'
-    ));
+    );
 }
+
 
 
 }
