@@ -30,9 +30,12 @@
                                 @php
                                     $slug = $package->slug ?? null;
                                     $routeUrl = $slug ? route('packages.show', $slug) : '#';
-                                    $imagePath =
-                                        $package->images[0] ?? 'template/yatri_world/main-file/images/everest.jpg';
-                                    $imageUrl = asset($imagePath);
+
+                                    // Use accessor - image_path already includes full asset() URL
+                                    $firstImage = $package->images->first();
+                                    $imageUrl = $firstImage
+                                        ? $firstImage->image_path
+                                        : asset('template/yatri_world/main-file/images/everest.jpg');
                                 @endphp
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="trend-item">
@@ -48,8 +51,6 @@
                                                     </a>
                                                 </h4>
                                                 <p class="mb-0">
-                                                    {{-- <i class="fa fa-eye me-1"></i>
-                                                    {{ $package->visiting_places ?? '0' }} Visiting Places --}}
                                                     <i class="fa fa-map-marker me-1 ms-3"></i>
                                                     {{ $country->name ?? 'Nepal' }}
                                                 </p>
