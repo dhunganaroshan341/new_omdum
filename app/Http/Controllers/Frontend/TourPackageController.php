@@ -63,7 +63,7 @@ if ($images->isEmpty()) {
         return $image;
     });
 }
-dd($images);
+// dd($images);
 
     $totalDays = $package->itineraries
         ->filter(fn ($item) => is_numeric($item->day_number))
