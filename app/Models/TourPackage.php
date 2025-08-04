@@ -10,9 +10,9 @@ use Illuminate\Support\Str;
 class TourPackage extends BaseModel
 {
     use HasFactory;
-    protected $casts = [
-    'images' => 'array',
-];
+//     protected $casts = [
+//     'images' => 'array',
+// ];
 
      protected $fillable = [
         'our_country_id',
