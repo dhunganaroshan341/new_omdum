@@ -19,10 +19,21 @@
         @if ($video && $video->type === 'upload')
             <div class="mb-3">
                 <label>Current Video:</label>
+                @php
+                    $extension = pathinfo($video->url, PATHINFO_EXTENSION);
+                    $mimeType = match (strtolower($extension)) {
+                        'mp4' => 'video/mp4',
+                        'webm' => 'video/webm',
+                        'ogg' => 'video/ogg',
+                        default => 'video/mp4', // fallback
+                    };
+                @endphp
+
                 <video controls style="width: 100%; max-height: 400px; object-fit: cover;">
-                    <source src="{{ asset($video->url) }}" type="video/mp4">
+                    <source src="{{ asset($video->url) }}" type="{{ $mimeType }}">
                     Your browser does not support the video tag.
                 </video>
+
             </div>
         @endif
 
