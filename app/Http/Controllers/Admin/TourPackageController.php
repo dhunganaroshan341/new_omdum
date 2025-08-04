@@ -231,7 +231,7 @@ public function store(TourPackageRequest $request)
         $data = $request->only([
             'title', 'short_description', 'long_description','price',
             'duration', 'difficulty', 'max_elevation', 'best_season','parent_id',
-            'start_point', 'end_point', 'our_country_id', 'status','package_type'
+            'start_point', 'end_point', 'our_country_id', 'status','package_type','pickup','drop'
         ]);
 
         // Dynamically generate slug from title

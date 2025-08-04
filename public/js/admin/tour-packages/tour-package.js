@@ -35,6 +35,8 @@ function populateTourPackageForm(tour_package) {
 
     // Other fields...
     $("input[name='duration']").val(tour_package.duration);
+    $("input[name='pickup']").val(tour_package.pickup);
+    $("input[name='drop']").val(tour_package.drop);
     $("textarea[name='accomodation']").val(tour_package.accomodation);
     $("input[name='max_people']").val(tour_package.max_people);
     $("input[name='location']").val(tour_package.location);
@@ -164,6 +166,10 @@ function populateTourPackageForm(tour_package) {
          // Initialize on page load
         toggleMediaFields();
 
+
+        // add pickup and drop value
+         $("#pickup").value('TIA,Kathmandu');
+         $("#drop").value('TIA,Kathmandu');
         // Re-evaluate on dropdown change
         $('#type').on('change', function () {
             toggleMediaFields();

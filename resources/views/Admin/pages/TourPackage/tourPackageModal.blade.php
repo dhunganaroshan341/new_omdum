@@ -138,6 +138,18 @@
                             <label for="end_point">End Point</label>
                             <input type="text" name="end_point" id="end_point" class="form-control">
                         </div>
+                        <div class="col-md-6">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" class="form-control" name="pickup" id="pickup"
+                                aria-describedby="helpId" placeholder="" value="TIA,Kathmandu">
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="drop">Drop Location</label>
+                            <input type="text" class="form-control" name="drop" id="drop"
+                                aria-describedby="helpId" placeholder="" value="TIA,Kathmandu">
+
+                        </div>
 
                         <!-- Tour Package Tags -->
                         <div class="col-12">
