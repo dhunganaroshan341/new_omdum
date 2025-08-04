@@ -130,8 +130,8 @@
                                         onchange="document.getElementById('country-filter-form').submit();">
                                         <option value="">Where are you going?</option>
                                         @foreach ($ourCountries as $country)
-                                            <option value="{{ $country->name }}"
-                                                {{ request('country') == $country->name ? 'selected' : '' }}>
+                                            <option value="{{ $country->slug }}"
+                                                {{ request('country') == $country->slug ? 'selected' : '' }}>
                                                 {{ $country->name }}
                                             </option>
                                         @endforeach

@@ -130,7 +130,7 @@ public function filterPackages(Request $request)
     // Step 1: Find country id from name (case insensitive)
     $country = null;
     if ($countryName) {
-        $country = OurCountry::where('name', 'LIKE', $countryName)->first();
+        $country = OurCountry::where('slug', 'LIKE', $countryName)->first();
     }
 
     // Step 2: Get all packages in the selected country
