@@ -47,17 +47,22 @@ public function categories()
         return $this->belongsTo(User::class, 'updated_by', 'id');
     }
 
-   public function getFirstImageUrlAttribute()
+  public function getFirstImageUrlAttribute()
 {
     $firstImage = $this->postImages->first();
+
     if ($firstImage && !empty($firstImage->image)) {
-        // Assuming images are stored under 'tour_images' folder
+        // Check if image already contains "http" or "https"
+        if (filter_var($firstImage->image, FILTER_VALIDATE_URL)) {
+            return $firstImage->image;  // full URL, return as is
+        }
+        // Otherwise, prepend asset path
         return asset('uploads/tour_images/' . $firstImage->image);
     }
 
-    // fallback image URL
     return asset('template/yatri_world/main-file/images/india.jpg');
 }
+
 
 
     protected static function boot()
