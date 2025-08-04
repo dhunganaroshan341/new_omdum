@@ -199,98 +199,106 @@ $("#tags").val('');
 
     // Edit Post
 
-    $(document).on("click", ".editUserButton", function () {
-        clearModal();
-        let id = $(this).attr("data-id");
-        $("#formModal").modal("show");
-        $("#postTitle").text("Edit Post");
-        $(".submitBtn").hide();
-        $(".updateBtn").show();
-        $(".form").attr('id', 'updateForm');
-        $("#updateForm")[0].reset();
+$(document).on("click", ".editUserButton", function () {
+    clearModal();
+    let id = $(this).attr("data-id");
+    $("#formModal").modal("show");
+    $("#postTitle").text("Edit Post");
+    $(".submitBtn").hide();
+    $(".updateBtn").show();
+    $(".form").attr('id', 'updateForm');
+    $("#updateForm")[0].reset();
+
+    $.ajax({
+        url: "/admin/post/detail/" + id,
+        type: "get",
+        success: function (response) {
+            // Use response.data consistently
+            let data = response.data;
+
+            $("#posttitleData").val(data.title);
+
+            // Tags is already a string from backend, no need to check array
+            $("#tags").val(data.tags);
+
+            // Set the category select value properly (assuming single select)
+            // If category_id is not returned directly, use first category id or adjust accordingly
+            if (data.categories && data.categories.length > 0) {
+                $("#category_id").val(data.categories[0].id);
+            } else {
+                $("#category_id").val(null);
+            }
+
+            // Populate and pre-select categories in multi-select or similar
+            let selectedCategoryIds = data.categories.map(cat => cat.id);
+            populateCategorySelect(selectedCategoryIds);
+
+            // Images are inside data.images, fix your condition here
+            if (data.images && data.images.length > 0) {
+                $(".postImageData").html("");
+                data.images.forEach((image) => {
+                    // Clean up image path for consistency
+                    let imagePath = image.path.replace(/^\/?uploads\/?/, '/uploads/');
+                    $(".postImageData").append(`
+                        <li class="image-item">
+                            <img src="${imagePath}" alt="Image" class="img-thumbnail" width="100">
+                            <button type="button" class="btn btn-danger btn-sm remove-image" data-image-id="${image.id}">
+                                Remove
+                            </button>
+                        </li>
+                    `);
+                });
+            } else {
+                $(".postImageData").html(""); // Clear images if none found
+            }
+
+            // Set content/description safely (fallback to empty string)
+            $("#post_description").summernote('code', data.content || '');
+        }
+    });
+
+    // Unbind previous submit handler to avoid duplicate binds, then bind new one
+    $(document).off("submit", "#updateForm").on("submit", "#updateForm", function (event) {
+        event.preventDefault();
+
+        $(".updateBtn").prop("disabled", true);
+        let formdata = new FormData(this);
 
         $.ajax({
-            url: "/admin/post/detail/" + id,
-            type: "get",
+            type: "post",
+            url: "/admin/post/edit/" + id,
+            data: formdata,
+            processData: false,
+            contentType: false,
             success: function (response) {
-                // console.log(response);
-                $("#posttitleData").val(response.data.title);
-                $("#tags").val(response.data.tags);
-                // $("#category_id").val(response.message.category_id);
-                 $("#category_id").val(response.data.category_id);
-                // populate and pre-select the category
-
-                let selectedCategoryIds = response.data.categories.map(cat => cat.id);
-                populateCategorySelect(selectedCategoryIds);
-
-// Fix tags JSON array to string
-let tags = response.data.tags;
-if (Array.isArray(tags)) {
-    $("#tags").val(tags.join(', '));
-} else {
-    $("#tags").val('');
-}
-
-                if (response.images && response.images.length > 0) {
-                    $(".postImageData").html("");
-                    response.images.forEach((image) => {
-                        let imagePath = '/uploads/' + image.path.replace('//',
-                            '/');
-                        $(".postImageData").append(`
-                            <li class="image-item"><img src="${imagePath}" alt="Image" class="img-thumbnail" width="100">
-                                <button type="button" class="btn btn-danger btn-sm remove-image" data-image-id="${image.id}">
-                                Remove
-                                </button>
-                            </li>
-                            `);
+                Swal.fire({
+                    icon: "success",
+                    title: "Updated",
+                    text: "Post Updated Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                $("#formModal").modal("hide");
+                table.draw();
+            },
+            error: function (response) {
+                if (response.status === 422) {
+                    let errors = response.responseJSON.errors;
+                    let errorMessages = '<ul>';
+                    $.each(errors, function (key, value) {
+                        errorMessages += '<li>' + value[0] + '</li>';
                     });
+                    errorMessages += '</ul>';
+                    $('#validationErrors').removeClass('d-none').html(errorMessages);
                 }
-                $("#post_description").summernote('code', response.message.description);
+            },
+            complete: function () {
+                $(".updateBtn").prop("disabled", false);
             }
         });
+    });
+});
 
-        $(document).off("submit", "#updateForm").on("submit", "#updateForm", function (event) {
-            event.preventDefault();
-            // $("#post_image").prop("disabled", true);
-            $(".updateBtn").prop("disabled", true);
-            let formdata = new FormData(this);
-            $.ajax({
-                type: "post",
-                url: "/admin/post/edit/" + id,
-                data: formdata,
-                processData: false,
-                contentType: false,
-                success: function (response) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Updated",
-                        text: "Post Updated Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    $("#formModal").modal("hide");
-                    table.draw();
-                },
-                error: function (response) {
-                    if (response.status === 422) {
-                        let errors = response.responseJSON.errors;
-                        let errorMessages = '<ul>';
-                        $.each(errors, function (key, value) {
-                            errorMessages += '<li>' + value[0] +
-                                '</li>';
-                        });
-                        errorMessages += '</ul>';
-                        $('#validationErrors').removeClass('d-none').html(
-                            errorMessages);
-                    }
-                },
-                complete: function () {
-                    $("#post_image").prop("disabled", false);
-                    $(".updateBtn").prop("disabled", false);
-                }
-            })
-        })
-    })
 
     // Image Delete
     $(document).on("click", ".remove-image", function () {
