@@ -1771,9 +1771,9 @@ header #navbar {
 	letter-spacing: 2px;
 	font-weight: 400;
 	display: block;
-    object-fit: contain;
+	object-fit: contain;
 	padding: 0;
-	height: 200px;
+	/* height: 200px; */
 	max-height: 200px;
 	transition: all ease-in-out 0.5s;
 	transition: color 0.5s ease;
