@@ -16,6 +16,7 @@
                             <tr>
                                 <th>#</th>
                                 {{-- <th>Day</th> --}}
+                                <th>Order</th>
                                 <th>Title</th>
                                 <th>Days</th>
                                 {{-- <th>Description</th> --}}

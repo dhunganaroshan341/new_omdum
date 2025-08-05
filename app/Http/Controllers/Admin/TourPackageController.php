@@ -79,32 +79,39 @@ public function index(Request $request)
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
             ->addColumn('parent_title', fn($item) => $item->parent->title ?? '')
             ->addColumn('itinerary', function ($item) {
-                return '
-                    <a href="javascript:void(0);" class="addItineraryBtn  me-2" data-id="' . $item->id . '" title="Add Itinerary">
-                        <i class="fas fa-plus text-success"></i>
-                    </a>
-                    <a href="javascript:void(0);" class="viewItineraryBtn" data-id="' . $item->id . '" title="View Itinerary">
-                        <i class="fas fa-eye text-primary"></i>
-                    </a>';
-            })
-            ->addColumn('batches', function ($item) {
-                return '
-                    <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
-                        <i class="fas fa-plus text-success"></i>
-                    </a>
-                    <a href="javascript:void(0);" class="viewTourBatchBtn" data-id="' . $item->id . '" title="View Batches">
-                        <i class="fas fa-eye text-info"></i>
-                    </a>';
-            })
-            ->addColumn('package_includes', function ($item) {
-                return '
-                    <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
-                        <i class="fas fa-plus text-success"></i>
-                    </a>
-                    <a href="javascript:void(0);" class="viewPriceIncludeBtn" data-id="' . $item->id . '" title="View Price Includes">
-                        <i class="fas fa-eye text-info"></i>
-                    </a>';
-            })
+    $totalItineraries = $item->itineraries()->count(); // Or use a preloaded count if available
+    return '
+        <a href="javascript:void(0);" class="addItineraryBtn me-2" data-id="' . $item->id . '" title="Add Itinerary">
+            <i class="fas fa-plus text-success"></i>
+        </a>
+        <span class="badge bg-primary">' . $totalItineraries . ' <i class="fas fa-list-alt"></i></span>
+        <a href="javascript:void(0);" class="viewItineraryBtn ms-2" data-id="' . $item->id . '" title="View Itinerary">
+            <i class="fas fa-eye text-primary"></i>
+        </a>';
+})
+->addColumn('batches', function ($item) {
+    $totalBatches = $item->batches()->count();
+    return '
+        <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
+            <i class="fas fa-plus text-success"></i>
+        </a>
+        <span class="badge bg-info">' . $totalBatches . ' <i class="fas fa-calendar-alt"></i></span>
+        <a href="javascript:void(0);" class="viewTourBatchBtn ms-2" data-id="' . $item->id . '" title="View Batches">
+            <i class="fas fa-eye text-info"></i>
+        </a>';
+})
+->addColumn('package_includes', function ($item) {
+    $totalIncludes = $item->priceIncludes()->count();
+    return '
+        <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
+            <i class="fas fa-plus text-success"></i>
+        </a>
+        <span class="badge bg-secondary">' . $totalIncludes . ' <i class="fas fa-list"></i></span>
+        <a href="javascript:void(0);" class="viewPriceIncludeBtn ms-2" data-id="' . $item->id . '" title="View Price Includes">
+            <i class="fas fa-eye text-info"></i>
+        </a>';
+})
+
             ->addColumn('images', function ($item) {
                 $imageCount = $item->images_count ?? 0;
                 return '
