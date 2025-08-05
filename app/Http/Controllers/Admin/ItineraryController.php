@@ -27,17 +27,18 @@ public function index($id, Request $request)
         return DataTables::of($query)
             ->addIndexColumn()
             ->addColumn('action', function ($item) {
-                return '
-                    <div class="d-flex gap-1">
-                        <button class="btn btn-sm btn-warning editItineraryBtn" data-id="' . $item->id . '">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-sm btn-danger deleteItineraryBtn" data-id="' . $item->id . '">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    </div>
-                ';
-            })
+    return '
+        <div class="d-flex gap-1">
+            <button class="btn btn-sm btn-warning editItineraryBtn" data-id="' . $item->id . '">
+                <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-sm btn-danger deleteItineraryBtn" data-id="' . $item->id . '">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    ';
+})
+
            ->addColumn('day_number', function ($item) {
     return $item->day_number . ' ' . ($item->day_number > 1 ? 'days' : 'day');
 })

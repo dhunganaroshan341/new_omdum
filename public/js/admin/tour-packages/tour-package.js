@@ -419,44 +419,44 @@ $(document).on("change", ".toggleTopDeals", function () {
 
 
     // Delete tour_package
-    $(document).on("click", ".deleteData", function () {
-        let id = $(this).data("id");
+  $(document).on("click", ".deleteData", function () {
+    let id = $(this).data("id");
 
-        Swal.fire({
-            icon: "warning",
-            title: "Are you sure?",
-            text: "This action cannot be reversed!",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then(result => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    type: "DELETE",
-                    headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                    url: `/admin/tour-packages/delete/${id}`,
-                    success: function (response) {
-                        Swal.fire({
-                            icon: "success",
-                            title: "Deleted",
-                            text: "tour_package deleted successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        table.draw();
-                    },
-                    error: function () {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Error",
-                            text: "Failed to delete tour_package",
-                        });
-                    }
-                });
-            }
-        });
+    Swal.fire({
+        icon: "warning",
+        title: "Are you sure?",
+        text: "This action cannot be reversed!",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then(result => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                url: `/admin/tour-packages/delete/${id}`,
+                success: function () {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Deleted",
+                        text: "Tour package deleted successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    table.draw(); // or whatever table is used for tour packages
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Failed to delete tour package",
+                    });
+                }
+            });
+        }
     });
+});
 
 
  // Show Multiple Image Modal
