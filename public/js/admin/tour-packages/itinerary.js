@@ -271,7 +271,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                 $.ajax({
                     type: "DELETE",
                     headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                   url: `/admin/itineraries/delete/${id}`,
+                    url: `/admin/itineraries/delete/${id}`,
                     success: function (response) {
                         Swal.fire({
                             icon: "success",
