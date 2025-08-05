@@ -110,6 +110,7 @@ $('#updateItineraryBtn').show();
     },
     columns: [
         { data: 'DT_RowIndex', orderable: false, searchable: false },
+        { data: 'order', name: 'order' },
         { data: 'title', name: 'title' },
         { data: 'day_number', name: 'day_number' },
         { data: 'action', name: 'action', orderable: false, searchable: false }
