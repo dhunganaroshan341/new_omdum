@@ -251,20 +251,49 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
 
     // Delete handler
-    $(document).on('click', '.deleteItineraryBtn', function () {
-        const id = $(this).data('id');
-        $.ajax({
-            url: `/admin/itineraries/delete/${id}`,
-            type: 'DELETE',
-            success: function () {
-               $('.itinerary-data-album-show').DataTable().ajax.reload();
-            },
-            error: function (err) {
-                console.error("Error deleting item:", err);
-                alert("Failed to delete itinerary item.");
+
+
+
+       // Delete tour_package
+    $(document).on("click", ".deleteItineraryBtn", function () {
+        let id = $(this).data("id");
+
+        Swal.fire({
+            icon: "warning",
+            title: "Are you sure?",
+            text: "This action cannot be reversed!",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then(result => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "DELETE",
+                    headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                   url: `/admin/itineraries/delete/${id}`,
+                    success: function (response) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Deleted",
+                            text: "tour_package deleted successfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                         $('.itinerary-data-album-show').DataTable().ajax.reload();
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error",
+                            text: "Failed to delete tour_package",
+                        });
+                    }
+                });
             }
         });
     });
+
 
 
 });
