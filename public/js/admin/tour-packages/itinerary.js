@@ -251,7 +251,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
 
     // Delete handler
-    $(document).on('click', '.deleteItemBtn', function () {
+    $(document).on('click', '.deleteItineraryBtn', function () {
         const id = $(this).data('id');
         $.ajax({
             url: `/admin/itineraries/delete/${id}`,
