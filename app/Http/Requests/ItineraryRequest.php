@@ -28,7 +28,7 @@ class ItineraryRequest extends FormRequest
                 })
                 ->ignore($this->id) // for update case
         ],
-            'description'     => 'required|string|min:10',
+            'description'     => 'required|string',
         ];
     }
 }
