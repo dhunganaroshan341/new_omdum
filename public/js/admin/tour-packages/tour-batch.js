@@ -127,7 +127,7 @@ $(document).ready(function () {
                     });
 
                     $('#tourBatchModal').modal('hide');
-                    $('#tour-batch-data-show').DataTable().ajax.reload();
+                    // $('#tour-batch-data-show').DataTable().ajax.reload();
                 } else {
                     Swal.fire("Error", response.message || "Something went wrong", "error");
                 }

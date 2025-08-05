@@ -124,9 +124,10 @@ $(document).ready(function () {
                         timer: 1000,
                         showConfirmButton: false
                     });
+                  form[0].reset(); // Always reset the form
 
-                    $('#priceIncludeModal').modal('hide');
-                    $('#price-include-data-show').DataTable().ajax.reload();
+                    // $('#priceIncludeModal').modal('hide');
+                    // $('#price-include-data-show').DataTable().ajax.reload();
                 } else {
                     Swal.fire("Error", response.message || "Something went wrong", "error");
                 }

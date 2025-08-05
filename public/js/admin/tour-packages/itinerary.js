@@ -166,7 +166,8 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                 });
 
                 form[0].reset(); // Always reset the form
-                $('#itinerary-data-album-show').DataTable().ajax.reload(); // Refresh table
+                // $('#itinerary-data-album-show').DataTable().ajax.reload(); // Refresh table
+                 $('#order').val(response.latest_order + 1);
 
                 if (isUpdate) {
                     $("#itineraryModal").modal("hide"); // Only hide if it's update
