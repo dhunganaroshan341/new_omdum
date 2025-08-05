@@ -419,7 +419,7 @@ $(document).on("change", ".toggleTopDeals", function () {
 
 
     // Delete tour_package
-    $(document).on("click", ".deleteData", function () {
+    $(document).on("click", ".deleteItineraryBtn", function () {
         let id = $(this).data("id");
 
         Swal.fire({
@@ -435,7 +435,7 @@ $(document).on("change", ".toggleTopDeals", function () {
                 $.ajax({
                     type: "DELETE",
                     headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-                    url: `/admin/tour-packages/delete/${id}`,
+                    url: `/admin/tour-packages/itinerary/${id}`,
                     success: function (response) {
                         Swal.fire({
                             icon: "success",

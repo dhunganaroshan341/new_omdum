@@ -257,7 +257,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
             url: `/admin/itineraries/delete/${id}`,
             type: 'DELETE',
             success: function () {
-                fetchItineraries();
+               $('.itinerary-data-album-show').DataTable().ajax.reload();
             },
             error: function (err) {
                 console.error("Error deleting item:", err);
