@@ -20,20 +20,7 @@ public function index()
 
 
 
-    public function show($id)
-    {
 
-        $galleryAlbum = GalleryAlbum::with(['galleryMedia'])->find($id);
-        $pageBanner = PageBanner::where('page', 'gallery')->first();
-        if($pageBanner->image==null){
-        $pageBanner = PageBanner::where('page', 'all')->first();
-        }
-        if (!$galleryAlbum) {
-            return response()->json(['message' => 'Album not found'], 404);
-        }
-
-       return view('frontend.gallery-media', compact('galleryAlbum', 'pageBanner'));
-}
     public function showClient($id)
     {
         $albums = GalleryAlbum::with(['galleryMedia', 'client'])->where('client_id', $id)->get();
@@ -64,16 +51,38 @@ public function index()
         ]);
     }
 
-    public function showBySlug($slug)
-    {
-        $galleryAlbum = GalleryAlbum::where('slug',$slug)->with('galleryMedia')->get();
+   public function show($id)
+{
+    $galleryAlbum = GalleryAlbum::with('galleryMedia')->find($id);
 
-        if (!$galleryAlbum) {
-            return response()->json(['message' => 'Album not found'], 404);
-        }
-       return view('frontend.gallery-media', compact('galleryAlbum'));
-
+    $pageBanner = PageBanner::where('page', 'gallery')->first();
+    if (!$pageBanner || $pageBanner->image == null) {
+        $pageBanner = PageBanner::where('page', 'all')->first();
     }
+
+    if (!$galleryAlbum) {
+        return response()->json(['message' => 'Album not found'], 404);
+    }
+
+    return view('frontend.gallery-media', compact('galleryAlbum', 'pageBanner'));
+}
+
+public function showBySlug($slug)
+{
+    $galleryAlbum = GalleryAlbum::where('slug', $slug)->with('galleryMedia')->first();
+
+    $pageBanner = PageBanner::where('page', 'gallery')->first();
+    if (!$pageBanner || $pageBanner->image == null) {
+        $pageBanner = PageBanner::where('page', 'all')->first();
+    }
+
+    if (!$galleryAlbum) {
+        return response()->json(['message' => 'Album not found'], 404);
+    }
+
+    return view('frontend.gallery-media', compact('galleryAlbum', 'pageBanner'));
+}
+
 
 
 }
