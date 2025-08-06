@@ -71,11 +71,8 @@ public function index()
         if (!$galleryAlbum) {
             return response()->json(['message' => 'Album not found'], 404);
         }
+       return view('frontend.gallery-media', compact('galleryAlbum'));
 
-        return response()->json([
-            'success' => true,
-            'message' => $galleryAlbum
-        ]);
     }
 
 
