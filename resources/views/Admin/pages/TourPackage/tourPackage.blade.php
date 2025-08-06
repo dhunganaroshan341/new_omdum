@@ -11,7 +11,8 @@
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>
-                        <th scope="col">Status</th>
+                        <th scope="col" class="text-center">Status</th>
+
                         <th scope="col">Action</th>
                         <th scope="col">Package</th>
                         <th scope="col">Head Package</th>
