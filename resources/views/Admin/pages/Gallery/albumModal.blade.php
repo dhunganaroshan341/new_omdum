@@ -9,8 +9,7 @@
                 </div>
 
                 <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
-                    <p id="loading-paragraph"></p> <!-- Moved inside the modal-body -->
-
+                    <p id="loading-paragraph"></p>
                     <p id="validationErrors" class="alert alert-danger d-none"></p>
 
                     <span class="mb-3 d-block">
@@ -20,60 +19,30 @@
 
                     @csrf
 
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
-                        <input type="text" name="title" id="title" class="form-control"
-                            placeholder="Enter title" required>
-                    </div>
+                    <!-- Hidden input for type -->
+                    <input type="hidden" name="type" value="image">
 
+                    <!-- Gallery Image Upload -->
                     <div class="col-md-12 mb-4">
-                        <label for="" class="form-label">Gallery Images<span
+                        <label for="galleryMedia" class="form-label">Gallery Images <span
                                 class="text-danger">*</span></label>
                         <input type="file" name="media_path[]" id="galleryMedia" class="form-control" multiple
-                            placeholder="" aria-describedby="helpId" />
+                            required />
                         <span class="text-danger infoPostImageText"></span>
                     </div>
 
-                    <!-- Showing all the images of this Gallery media -->
+                    <!-- Existing Gallery Media Preview -->
                     <div class="galleryMediaWrapper" style="max-height: 400px; overflow-y: auto;">
                         <div class="row galleryMediaData">
-                            <!-- Images will be appended here -->
+                            <!-- Images will be appended here dynamically -->
                         </div>
                     </div>
 
+                    <!-- Thumbnail Preview (Optional) -->
                     <div class="mb-3">
-                        <img id="thumbnailImage" src="" alt="thumbnail">
+                        <img id="thumbnailImage" src="" alt="thumbnail"
+                            style="max-height: 200px; display: none;">
                     </div>
-
-                    <div class="mb-3" id="type-group">
-                        <label for="type" id="type_label" class="form-label">Type <span
-                                class="text-danger">*</span></label>
-                        <select name="type" id="type" class="form-select" required>
-                            <option value="">Select Type</option>
-                            <option value="image">Image</option>
-                            <option value="video">Video</option>
-                            <option value="url">url</option>
-                            {{-- <option value="pdf">Pdf</option> --}}
-                        </select>
-                    </div>
-                    <div class="form-group" id="url-group" style="display: none;">
-                        <label for="url">Url</label>
-                        <input type="text" class="form-control" name="url" id="url"
-                            aria-describedby="helpId" placeholder="Enter URL">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="client_id" class="form-label">Client <span class="text-danger">*</span></label>
-                        <select name="client_id" id="client_id" class="form-select">
-                            <option value="">Select Client</option>
-                            @foreach ($clients as $client)
-                                <option value="{{ $client->id }}">{{ $client->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-
 
                 </div>
 
@@ -86,6 +55,7 @@
         </div>
     </div>
 </div>
+
 
 {{-- Image Crousal --}}
 <div class="modal fade" id="imageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
