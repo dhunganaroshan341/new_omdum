@@ -12,7 +12,7 @@
 
     <!-- Fav destination Starts -->
 
-    <x-fav-destination />
+    {{-- <x-fav-destination /> --}}
     <!-- Fav destination Ends -->
 
 
@@ -78,7 +78,7 @@
     <!-- call to action Ends -->
 
     <!-- top destination starts -->
-<x-random-packages/>
+    <x-random-packages />
 
 
 
