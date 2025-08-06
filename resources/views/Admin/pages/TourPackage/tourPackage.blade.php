@@ -1,7 +1,7 @@
 @extends('Admin.layout.master')
 @section('content')
     <div class="container-fluid">
-        <button class="btn btn-primary addTourPackageBtn mb-4 mt-4">Add Package</button>
+        @include('Admin.Pages.TourPackage.buttons')
 
 
 
