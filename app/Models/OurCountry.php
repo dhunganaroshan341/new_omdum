@@ -23,5 +23,10 @@ public function tourPackages()
 {
     return $this->hasMany(TourPackage::class);
 }
+public function favouritePackages()
+{
+    return $this->hasMany(TourPackage::class)->where('favourite_destination', 1)->where('status', 'Active')->latest()->limit(6);
+}
+
 
 }
