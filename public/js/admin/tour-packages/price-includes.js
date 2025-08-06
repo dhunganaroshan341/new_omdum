@@ -16,7 +16,8 @@ $(document).ready(function () {
 
         $('#priceIncludeModal').modal('show');
         $('#priceIncludeForm')[0].reset();
-        $('#tour_package_id_for_price_includes').val(packageId);
+
+        $('#tour_package_id_for_price_includes').val($(this).data('id'));
         $('#price_include_id').val('');
 
 
