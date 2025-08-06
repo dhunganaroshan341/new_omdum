@@ -11,21 +11,9 @@ class FrontGalleryController extends Controller
 {
     public function index()
 {
-    // Get albums that have an associated client, along with their media and client relationship
-    $albumsWithClients = GalleryAlbum::has('client')->with(['galleryMedia', 'client'])->get();
-$content_title="Gallery";
-    // Group albums by client
-    $clientsWithAlbums = $albumsWithClients->groupBy(function ($album) {
-        return $album->client->id; // Group by client ID
-    });
-
-    // Get albums that don't have an associated client
-    $albumsWithNoClients = GalleryAlbum::doesntHave('client')->with(['galleryMedia'])->get();
-
-    // Get all clients (if needed)
-    $clients = Client::with('albums')->get();
+    $albums = GalleryAlbum::with('galleryMedia')->paginate(9); // Assuming you have an Album model
     $pageBanner = PageBanner::where('page', 'gallery')->first();
-    return view('frontend.gallery', compact('content_title','clients', 'albumsWithNoClients', 'clientsWithAlbums','pageBanner'));
+    return view('frontend.gallery-media', compact('content_title','clients', 'albumsWithNoClients', 'clientsWithAlbums','pageBanner'));
 }
 
 
@@ -73,4 +61,20 @@ $content_title="Gallery";
             'message' => $albums
         ]);
     }
+
+    public function showBySlug($slug)
+    {
+        $galleryAlbum = GalleryAlbum::where('slug',$slug)->with('galleryMedia')->get();
+
+        if (!$galleryAlbum) {
+            return response()->json(['message' => 'Album not found'], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => $galleryAlbum
+        ]);
+    }
+
+
 }

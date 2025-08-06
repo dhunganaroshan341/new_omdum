@@ -38,4 +38,16 @@ class GalleryAlbum extends BaseModel
     //     'type' => GalleryTypeEnum::class,
     //     'status' => AlbumStatusEnum::class,
     // ];
+    public function getThumbnailAttribute()
+{
+    $media = $this->galleryMedia()->first();
+
+    if ($media && $media->media_path) {
+        return asset('uploads/' . ltrim($media->media_path, '/'));
+    }
+
+    return asset('template/yatri_world/main-file/images/default.jpg'); // fallback image
+}
+
+
 }

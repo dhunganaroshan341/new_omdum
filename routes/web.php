@@ -312,6 +312,7 @@ Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->na
 
 
 // Gallery
+Route::get('/gallery/{slug}', [FrontGalleryController::class, 'showBySlug'])->name('gallery.album');
 Route::get('/gallery', [FrontGalleryController::class, 'index'])->name('gallery');
 
 // route roshan demo
