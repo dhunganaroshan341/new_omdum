@@ -22,6 +22,26 @@
         </a>
     </li>
 
+
+    {{-- === TRAVEL OPERATIONS === --}}
+    <li class="nav-item nav-category">Operations</li>
+
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#packageMenu" role="button" aria-expanded="false"
+            aria-controls="packageMenu">
+            <i class="mdi mdi-map-marker-path menu-icon"></i>
+            <span class="menu-title">Packages</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="packageMenu">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin.tour-packages.index') }}">Manage</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin.bookings.index') }}">Bookings</a></li>
+            </ul>
+        </div>
+    </li>
+
     {{-- === CONTENT MANAGEMENT === --}}
     <li class="nav-item nav-category">Content</li>
 
@@ -77,24 +97,7 @@
         </a>
     </li>
 
-    {{-- === TRAVEL OPERATIONS === --}}
-    <li class="nav-item nav-category">Operations</li>
 
-    <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#packageMenu" role="button" aria-expanded="false"
-            aria-controls="packageMenu">
-            <i class="mdi mdi-map-marker-path menu-icon"></i>
-            <span class="menu-title">Packages</span>
-            <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="packageMenu">
-            <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.tour-packages.index') }}">Manage</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.bookings.index') }}">Bookings</a></li>
-            </ul>
-        </div>
-    </li>
 
     {{-- === MARKETING & MEDIA === --}}
     <li class="nav-item nav-category">Media & Marketing</li>
