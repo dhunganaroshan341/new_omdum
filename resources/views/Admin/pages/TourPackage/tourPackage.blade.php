@@ -11,11 +11,11 @@
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>
-                        <th scope="col">Action</th>
-                        <th scope="col">Head Package</th>
-                        <th scope="col">Package</th>
-                        {{-- <th scope="col">Fav</th> --}}
                         <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Package</th>
+                        <th scope="col">Head Package</th>
+                        {{-- <th scope="col">Fav</th> --}}
                         <th scope="col">Country</th>
                         <th scope="col">Images</th>
                         <th scope="col">Duration</th>
