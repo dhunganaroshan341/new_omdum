@@ -136,11 +136,16 @@ function populateTourPackageForm(tour_package) {
         type: "GET"
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
-        order: [2, 'asc'],
+        order: [3, 'asc'],
    columns: [
     { data: 'DT_RowIndex', orderable: false, searchable: false }, // S.N
     { data: 'status', name: 'status', orderable: false, searchable: false }, // Status
-    { data: 'action', name: 'action', orderable: false, searchable: false }, // Action
+    {
+                data: "action",
+                name: "action",
+                orderable: false,
+                searchable: false,
+            }, // Action
     { data: 'title', name: 'title' }, // Package
     { data: 'parent_title', name: 'parent_title' }, // Head Package
     { data: 'duration', name: 'duration' }, // Duration
