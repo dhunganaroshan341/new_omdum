@@ -14,7 +14,7 @@ public function index()
     $albums = GalleryAlbum::with('galleryMedia')->paginate(9);
     $pageBanner = PageBanner::where('page', 'gallery')->first();
 
-    return view('frontend.gallery-media', compact('albums', 'pageBanner'));
+    return view('frontend.gallery-album', compact('albums', 'pageBanner'));
 }
 
 
