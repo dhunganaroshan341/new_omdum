@@ -46,9 +46,7 @@
                                 class="text-white d-inline-block text-decoration-none">
                                 <div class="gallery-content text-center">
                                     <h5 class="mb-0">
-
                                         {{ $album->title ?? 'Untitled Album' }}
-
                                     </h5>
                                 </div>
                             </a>
@@ -82,15 +80,12 @@
             position: relative;
         }
 
-        /* The overlay bar covering about half width at bottom */
         .image-count-overlay {
             position: absolute;
             bottom: 0;
             right: 0;
             width: 50%;
-            /* half width */
             height: 40px;
-            /* height of the bar */
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             padding: 8px 12px;
@@ -99,16 +94,51 @@
             align-items: center;
             justify-content: flex-end;
             border-top-left-radius: 12px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
             font-weight: 600;
+            transition: opacity 0.3s ease;
         }
 
-        /* Show on hover */
-        .gallery-image:hover .image-count-overlay {
-            opacity: 1;
-            pointer-events: auto;
+        /* Show only on hover in desktop */
+        @media (min-width: 768px) {
+            .image-count-overlay {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .gallery-image:hover .image-count-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        /* Always show image count and title in mobile */
+        @media (max-width: 767.98px) {
+            .image-count-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .gallery-content h5 {
+                color: #fff;
+                background: rgba(0, 0, 0, 0.6);
+                display: inline-block;
+                padding: 4px 10px;
+                border-radius: 8px;
+                margin-top: 8px;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+            margin: 10px 0 16px;
+            color: white;
+            line-height: 1.4;
         }
     </style>
 @endpush
