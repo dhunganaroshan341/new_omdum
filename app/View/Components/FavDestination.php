@@ -11,24 +11,18 @@ class FavDestination extends Component
 {
     public $favouriteDestinationsByCountry;
 
-    /**
-     * Create a new component instance.
-     */
-   public function __construct()
-{
-    $countries = OurCountry::with(['packages' => function ($query) {
-        $query->with('images', 'country')
-            ->where('favourite_destination', 1)
-            ->where('status', 'Active');
-    }])->get();
+    public function __construct()
+    {
+        // Get countries with their top 6 latest favourite packages
+        $this->favouriteDestinationsByCountry = OurCountry::with(['packages' => function ($query) {
+            $query->with(['images', 'country'])
+                  ->where('favourite_destination', 1)
+                  ->where('status', 'Active')
+                  ->latest()
+                  ->take(6); // ✅ Limit to latest 6
+        }])->get()->filter(fn ($country) => $country->packages->isNotEmpty());
+    }
 
-    $this->favouriteDestinationsByCountry = $countries->filter(fn ($country) => $country->packages->isNotEmpty());
-}
-
-
-    /**
-     * Get the view / contents that represent the component.
-     */
     public function render(): View|Closure|string
     {
         return view('components.fav-destination', [
