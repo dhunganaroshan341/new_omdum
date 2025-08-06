@@ -128,38 +128,30 @@ function populateTourPackageForm(tour_package) {
     }
 
     // Initialize DataTable
-    var table = $("#data-album-show").DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: {
+   var table = $("#data-album-show").DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: {
         url: "/admin/tour-packages/",
         type: "GET"
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
-        order: [3, 'asc'],
-   columns: [
-    { data: 'DT_RowIndex', orderable: false, searchable: false }, // S.N
-    { data: 'status', name: 'status', orderable: false, searchable: false }, // Status
-    {
-                data: "action",
-                name: "action",
-                orderable: false,
-                searchable: false,
-            }, // Action
-    { data: 'title', name: 'title' }, // Package
-    { data: 'parent_title', name: 'parent_title' }, // Head Package
-    { data: 'duration', name: 'duration' }, // Duration
-    // { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination (optional)
-    { data: 'country', name: 'country_name' }, // Country
-    { data: 'images', name: 'images' }, // Images
-    { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false }, // Itinerary
-    { data: 'batches', name: 'batches', orderable: false, searchable: false }, // Batches
-    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false } // Package Includes
-]
+    order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
+    columns: [
+        { data: 'DT_RowIndex', orderable: false, searchable: false },
+        { data: 'status', name: 'status', orderable: false, searchable: false },
+        { data: 'action', name: 'action', orderable: false, searchable: false },
+        { data: 'title', name: 'title' },
+        { data: 'parent_title', name: 'parent_title' },
+        { data: 'duration', name: 'duration' },
+        { data: 'country', name: 'country_name' },
+        { data: 'images', name: 'images' },
+        { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
+        { data: 'batches', name: 'batches', orderable: false, searchable: false },
+        { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false }
+    ]
+});
 
-
-
-    });
 
     // Add Tour Package
     $(document).on("click", ".addTourPackageBtn", function () {
