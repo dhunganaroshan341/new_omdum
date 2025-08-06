@@ -37,7 +37,7 @@
                                         src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
                                     <div class="overlay"></div>
                                     <div class="image-count-overlay">
-                                        {{ $album->title }}|
+                                        {{ $album->title }} &nbsp; |
                                         {{ $album->galleryMedia->count() }}
                                         {{ Str::plural('image', $album->galleryMedia->count()) }}
                                     </div>
