@@ -12,7 +12,7 @@
                     <h2 class="mb-0">Omundum Albums</h2>
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             <li aria-current="page" class="breadcrumb-item active">Gallery</li>
                         </ul>
                     </nav>
