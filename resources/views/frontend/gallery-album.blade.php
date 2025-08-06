@@ -146,7 +146,7 @@
 
             .image-count-overlay,
             .gallery-content {
-                display: none;
+                /* display: none; */
             }
         }
     </style>
