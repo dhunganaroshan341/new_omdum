@@ -140,17 +140,17 @@ function populateTourPackageForm(tour_package) {
    columns: [
     { data: 'DT_RowIndex', orderable: false, searchable: false }, // S.N
     { data: 'action', name: 'action', orderable: false, searchable: false }, // Action
+     { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false }, // Top Deal
+    { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination
+    { data: 'status', name: 'status', orderable: false, searchable: false } ,
     { data: 'parent_title', name: 'parent_title' }, // Parent
     { data: 'title', name: 'title' }, // Title
     { data: 'country', name: 'country_name' }, // Country
     { data: 'images', name: 'images' }, // Images
-    { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false }, // Top Deal
-    { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination
     { data: 'duration', name: 'duration' }, // Duration ✅ (moved above)
     { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false }, // Itinerary
     { data: 'batches', name: 'batches', orderable: false, searchable: false }, // Batches
-    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false }, // Package Includes
-    { data: 'status', name: 'status', orderable: false, searchable: false } // Status
+    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false } // Package Includes
 ]
 
 
