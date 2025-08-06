@@ -239,7 +239,7 @@ public function store(TourPackageRequest $request)
     DB::beginTransaction();
     try {
         $data = $request->only([
-            'title', 'short_description', 'long_description','price',
+            'title', 'short_description', 'long_description','price','top_deal','favourite_destination',
             'duration', 'difficulty', 'max_elevation', 'best_season','parent_id',
             'start_point', 'end_point', 'our_country_id', 'status','package_type','pickup','drop'
         ]);
@@ -291,8 +291,8 @@ public function update(TourPackageRequest $request, $id)
         $album = TourPackage::findOrFail($id);
         $validated = $request->validated();
 
-        $validated['top_deal'] = $request->has('top_deal') ? 1 : 0;
-        $validated['favourite_destination'] = $request->has('favourite_destination') ? 1 : 0;
+        // $validated['top_deal'] = $request->has('top_deal') ? 1 : 0;
+        // $validated['favourite_destination'] = $request->has('favourite_destination') ? 1 : 0;
 
         // Regenerate slug only if title has changed
         if ($request->has('title') && $request->title !== $album->title) {
