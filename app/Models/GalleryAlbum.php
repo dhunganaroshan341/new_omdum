@@ -13,6 +13,7 @@ class GalleryAlbum extends BaseModel
     protected $fillable = [
         'title',
         'type',
+        'slug',
         'client_id',
         'thumbnail',
         'url',
