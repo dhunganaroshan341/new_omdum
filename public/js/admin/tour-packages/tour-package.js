@@ -142,12 +142,11 @@ function populateTourPackageForm(tour_package) {
     { data: 'status', name: 'status', orderable: false, searchable: false }, // Status
     { data: 'action', name: 'action', orderable: false, searchable: false }, // Action
     { data: 'title', name: 'title' }, // Package
-
     { data: 'parent_title', name: 'parent_title' }, // Head Package
+    { data: 'duration', name: 'duration' }, // Duration
     // { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination (optional)
     { data: 'country', name: 'country_name' }, // Country
     { data: 'images', name: 'images' }, // Images
-    { data: 'duration', name: 'duration' }, // Duration
     { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false }, // Itinerary
     { data: 'batches', name: 'batches', orderable: false, searchable: false }, // Batches
     { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false } // Package Includes
