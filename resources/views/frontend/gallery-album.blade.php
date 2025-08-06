@@ -38,7 +38,7 @@
                             </div>
                             <div class="gallery-content text-center">
                                 <h5 class="mb-0">
-                                    <a href="{{ route('gallery.album', $album->slug) }}"
+                                    <a href="{{ route('gallery.album.showById', $album->id) }}"
                                         class="text-white d-inline-block text-decoration-none">
                                         {{ $album->title ?? 'Untitled Album' }}
                                     </a>
