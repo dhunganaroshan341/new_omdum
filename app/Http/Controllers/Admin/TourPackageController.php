@@ -54,13 +54,28 @@ public function index(Request $request)
 
         $total = $query->count();
 
-        $filtered = $query->when($search, function ($q) use ($search) {
-            $q->where('tour_packages.title', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-                ->orWhere('our_countries.name', 'LIKE', "%$search%");
-        });
+        $country = $request->input('country');
+$type = $request->input('type');
+$headPackage = $request->input('head_package');
+
+$filtered = $query
+    ->when($search, function ($q) use ($search) {
+        $q->where('tour_packages.title', 'LIKE', "%$search%")
+            ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+            ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+            ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+            ->orWhere('our_countries.name', 'LIKE', "%$search%");
+    })
+    ->when($country, function ($q) use ($country) {
+        $q->where('our_countries.name', $country);
+    })
+    ->when($type, function ($q) use ($type) {
+        $q->where('tour_packages.type', $type); // Make sure `type` exists
+    })
+    ->when($headPackage, function ($q) use ($headPackage) {
+       $q->where('tour_packages.parent_id', $headPackage);
+    });
+
 
         $filteredCount = $filtered->count();
 
@@ -169,12 +184,13 @@ public function index(Request $request)
         config('js-map.admin.buttons.style')
     );
     $packages = TourPackage::where('status','Active')->get();
-
+    $parentPackages = TourPackage::has('children')->get();
     return view('Admin.pages.TourPackage.tourPackage', [
         'extraJs' => $extraJs,
         'extraCs' => $extraCs,
         'countries' => $countries,
         'packages' => $packages,
+        'parentPackages' => $parentPackages,
     ]);
 }
 

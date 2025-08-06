@@ -12,10 +12,9 @@
              <label for="filterCountry" class="form-label mb-1 fw-bold">Filter by Country</label>
              <select class="form-select form-select-sm" id="filterCountry">
                  <option selected value="all">All</option>
-                 <option value="Nepal">Nepal</option>
-                 <option value="India">India</option>
-                 <option value="Tibet">Tibet</option>
-                 <option value="Bhutan">Bhutan</option>
+                 @foreach ($countries as $item)
+                     <option value="{{ $country->id }}">{{ $country->name }}</option>
+                 @endforeach
              </select>
          </div>
 
@@ -35,9 +34,9 @@
              <label for="filterHeadPackage" class="form-label mb-1 fw-bold">Filter by Head Package</label>
              <select class="form-select form-select-sm" id="filterHeadPackage">
                  <option selected value="all">All</option>
-                 <option value="abc">Annapurna Base Camp</option>
-                 <option value="everest">Everest Panorama</option>
-                 <option value="none">None</option>
+                 @foreach ($parentPackages as $package)
+                     <option value="{{ $package->id }}">{{ $package->title }}</option>
+                 @endforeach
                  {{-- Dynamically add more options from backend --}}
              </select>
          </div>

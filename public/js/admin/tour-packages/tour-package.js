@@ -133,7 +133,12 @@ function populateTourPackageForm(tour_package) {
     serverSide: true,
     ajax: {
         url: "/admin/tour-packages/",
-        type: "GET"
+        type: "GET",
+        data: function(d) {
+            d.filter_country = $('#filterCountry').val();
+            d.filter_type = $('#filterType').val();
+            d.filter_head_package = $('#filterHeadPackage').val();
+        }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
     order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
@@ -151,6 +156,11 @@ function populateTourPackageForm(tour_package) {
         { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false }
     ]
 });
+
+$('#filterCountry, #filterType, #filterHeadPackage').on('change', function () {
+    table.ajax.reload();
+});
+
 
 
     // Add Tour Package
