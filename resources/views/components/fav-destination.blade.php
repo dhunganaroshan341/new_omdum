@@ -6,7 +6,7 @@
 
         <div class="trend-box">
             {{-- Nav Tabs --}}
-            @dd($favouriteDestinationsByCountry)
+            {{-- @dd($favouriteDestinationsByCountry) --}}
             <div class="price-navtab text-center mb-4">
                 <ul class="nav nav-tabs">
                     @foreach ($favouriteDestinationsByCountry as $country)
