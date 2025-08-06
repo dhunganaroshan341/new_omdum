@@ -135,7 +135,7 @@ function populateTourPackageForm(tour_package) {
         url: "/admin/tour-packages/",
         type: "GET"
     },
-    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
         order: [2, 'asc'],
    columns: [
     { data: 'DT_RowIndex', orderable: false, searchable: false }, // S.N
