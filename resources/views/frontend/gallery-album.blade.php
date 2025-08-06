@@ -32,35 +32,34 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item mb-4">
                             <div class="gallery-image">
-
-                                <img alt="{{ $album->title ?? 'Untitled Album' }}"
-                                    src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
                                 <a href="{{ route('gallery.album.showById', $album->id) }}">
-                                    <div class="overlay">
+                                    <img alt="{{ $album->title ?? 'Untitled Album' }}"
+                                        src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
+                                    <div class="overlay"></div>
                                 </a>
                             </div>
-                        </div>
-                        <div class="gallery-content text-center">
-                            <h5 class="mb-0">
-                                <a href="{{ route('gallery.album.showById', $album->id) }}"
-                                    class="text-white d-inline-block text-decoration-none">
-                                    {{ $album->title ?? 'Untitled Album' }}
-                                </a>
-                            </h5>
+                            <div class="gallery-content text-center">
+                                <h5 class="mb-0">
+                                    <a href="{{ route('gallery.album.showById', $album->id) }}"
+                                        class="text-white d-inline-block text-decoration-none">
+                                        {{ $album->title ?? 'Untitled Album' }}
+                                    </a>
+                                </h5>
+                            </div>
                         </div>
                     </div>
-            </div>
-            @endforeach
+                @endforeach
 
-            <!-- Pagination -->
-            <div class="col-lg-12">
-                <div class="pagination-main text-center">
-                    {{ $albums->links('pagination::bootstrap-4') }}
+
+                <!-- Pagination -->
+                <div class="col-lg-12">
+                    <div class="pagination-main text-center">
+                        {{ $albums->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
     </div>
     <!-- Gallery Ends -->
 @endsection
