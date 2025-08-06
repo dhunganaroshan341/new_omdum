@@ -142,7 +142,7 @@ function populateTourPackageForm(tour_package) {
     { data: 'action', name: 'action', orderable: false, searchable: false }, // Action
     { data: 'parent_title', name: 'parent_title' }, // Head Package
     { data: 'title', name: 'title' }, // Package
-    { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination (optional)
+    // { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false }, // Fav Destination (optional)
     { data: 'status', name: 'status', orderable: false, searchable: false }, // Status
     { data: 'country', name: 'country_name' }, // Country
     { data: 'images', name: 'images' }, // Images
