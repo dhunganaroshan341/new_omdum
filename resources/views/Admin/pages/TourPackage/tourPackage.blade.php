@@ -13,7 +13,7 @@
                         <th scope="col">S.N</th>
                         <th scope="col">Action</th>
                         <th scope="col">Top Deal</th>
-                        <th scope="col">Fav Destination</th>
+                        <th scope="col">Fav</th>
                         <th scope="col">Status</th>
                         <th scope="col">Parent</th>
                         <th scope="col">Title</th>
