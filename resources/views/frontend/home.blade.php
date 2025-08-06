@@ -12,7 +12,7 @@
 
     <!-- Fav destination Starts -->
 
-    {{-- <x-fav-destination /> --}}
+    <x-fav-destination />
     <!-- Fav destination Ends -->
 
 
