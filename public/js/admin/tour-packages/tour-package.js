@@ -145,10 +145,11 @@ function populateTourPackageForm(tour_package) {
 
     { data: 'country', name: 'country_name' }, // Important
     { data: 'images', name: 'images' },
+    { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
+
      { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
     { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
     { data: 'duration', name: 'duration' },
-    { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
 
     { data: 'batches', name: 'batches', orderable: false, searchable: false },
     { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false },
