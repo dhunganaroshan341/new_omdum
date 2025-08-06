@@ -60,7 +60,7 @@ $video = BannerSliderVideo::latest()->first();
         'testimonials',
         'content_title',
         'clients',
-        'topDeals'
+
     ]));
 }
 
