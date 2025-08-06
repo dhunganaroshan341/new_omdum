@@ -14,18 +14,17 @@ class FavDestination extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {
-        // Load all countries, eager load only favourite packages + their images and country data
-        $countries = OurCountry::with(['packages' => function ($query) {
-            $query->with('images', 'country')
-                ->where('favourite_destination', 1)
-                ->where('status', 'Active');
-        }])->get();
+   public function __construct()
+{
+    $countries = OurCountry::with(['packages' => function ($query) {
+        $query->with('images', 'country')
+            ->where('favourite_destination', 1)
+            ->where('status', 'Active');
+    }])->get();
 
-        // Filter out countries that have no favourite packages
-        $this->favouriteDestinationsByCountry = $countries->filter(fn ($country) => $country->packages->isNotEmpty());
-    }
+    $this->favouriteDestinationsByCountry = $countries->filter(fn ($country) => $country->packages->isNotEmpty());
+}
+
 
     /**
      * Get the view / contents that represent the component.
