@@ -35,8 +35,8 @@ class UserFrontendController extends Controller
     $testimonials = Testimonial::where('status', 'Active')->get();
     $destinations = TourPackage::where('status', 'Active')->get();
     $topDestinations = TourPackage::with('images','country')->where('status', 'Active')->where('top_deal',1)->get();
-    $topDeals =$topDestinations;
-    $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
+    // $topDeals =$topDestinations;
+    // $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
 
     $clients = \App\Models\Client::with('albums')->get();
     $services = Service::where('status', 1)->get();
