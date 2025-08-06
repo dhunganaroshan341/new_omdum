@@ -9,12 +9,14 @@ use Illuminate\Http\Request;
 
 class FrontGalleryController extends Controller
 {
-    public function index()
+public function index()
 {
-    $albums = GalleryAlbum::with('galleryMedia')->paginate(9); // Assuming you have an Album model
+    $albums = GalleryAlbum::with('galleryMedia')->paginate(9);
     $pageBanner = PageBanner::where('page', 'gallery')->first();
-    return view('frontend.gallery-media', compact('content_title','clients', 'albumsWithNoClients', 'clientsWithAlbums','pageBanner'));
+
+    return view('frontend.gallery-media', compact('albums', 'pageBanner'));
 }
+
 
 
 
