@@ -32,10 +32,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item mb-4">
                             <div class="gallery-image">
-                                <a href="{{ route('gallery.album.showById', $album->id) }}">
-                                    <img alt="{{ $album->title ?? 'Untitled Album' }}"
-                                        src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
 
+                                <img alt="{{ $album->title ?? 'Untitled Album' }}"
+                                    src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
+                                <a href="{{ route('gallery.album.showById', $album->id) }}">
                                     <div class="overlay">
                                 </a>
                             </div>
