@@ -210,6 +210,7 @@ Route::prefix('tour-packages')->name('tour-packages.')->group(function () {
     Route::post('/update/{id}', [AdminTourPackageController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [AdminTourPackageController::class, 'destroy'])->name('destroy');
     Route::put('/status/{id}', [AdminTourPackageController::class, 'statusToggle'])->name('status');
+    Route::put('/status/{id}', [AdminTourPackageController::class, 'statusToggle'])->name('status');
     Route::put('/top-deal/{id}', [AdminTourPackageController::class, 'topDeal'])->name('topDeal');
     Route::put('/favourite-destination/{id}', [AdminTourPackageController::class, 'favDestination'])->name('favDestination');
      Route::get('/latest-order', [AdminTourPackageController::class, 'latestOrder'])->name('latest-order');

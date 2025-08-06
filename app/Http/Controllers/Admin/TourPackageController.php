@@ -130,14 +130,24 @@ public function index(Request $request)
                 return '<div class="form-check form-switch">
                             <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
                         </div>';
-            })
+            })->addColumn('top_deal', function ($item) {
+    $checked = $item->top_deal ? 'checked' : '';
+    return '<input type="checkbox" class="form-check-input topDealToggle" data-id="' . $item->id . '" ' . $checked . '>';
+})
+
+->addColumn('favourite_destination', function ($item) {
+    $checked = $item->favourite_destination ? 'checked' : '';
+    return '<input type="checkbox" class="form-check-input favouriteToggle" data-id="' . $item->id . '" ' . $checked . '>';
+})
+
+
             ->addColumn('action', function ($item) {
                 return view('Admin.Button.button', ['data' => $item])->render();
             })
             ->addColumn('short_description', function ($item) {
                 return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
             })
-            ->rawColumns(['country','batches', 'package_includes','images', 'itinerary', 'status', 'action','parent_title'])
+            ->rawColumns(['top_deal','favourite_destination','country','batches', 'package_includes','images', 'itinerary', 'status', 'action','parent_title'])
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,

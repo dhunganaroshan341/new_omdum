@@ -145,8 +145,11 @@ function populateTourPackageForm(tour_package) {
 
     { data: 'country', name: 'country_name' }, // Important
     { data: 'images', name: 'images' },
-    { data: 'duration', name: 'duration' },
+     { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
     { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
+    { data: 'duration', name: 'duration' },
+    { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
+
     { data: 'batches', name: 'batches', orderable: false, searchable: false },
     { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false },
     { data: 'status', name: 'status', orderable: false, searchable: false }
@@ -380,14 +383,15 @@ $(document).on("change", ".statusToggle", function () {
         }
     });
 });
-$(document).on("change", ".toggleTopDeals", function () {
+// ✅ Top Deal Toggle
+$(document).on("change", ".topDealToggle", function () {
     let id = $(this).data("id");
     let checkbox = $(this);
     checkbox.prop("disabled", true);
 
     Swal.fire({
         icon: "warning",
-        title: "Are you sure?",
+        title: "Change Top Deal Status?",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -395,19 +399,19 @@ $(document).on("change", ".toggleTopDeals", function () {
     }).then(result => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "/admin/tour-packages/status/"+id,
-                type: "PUT", // Corrected: type instead of "method" and "put"
+                url: "/admin/tour-packages/top-deal/" + id,
+                type: "PUT",
                 data: {
-                    status: checkbox.prop("checked") ? "Active" : "InActive", // pass status value
-                    _token: $('meta[name="csrf-token"]').attr("content") // ensure CSRF token is sent
+                    top_deal: checkbox.prop("checked") ? 1 : 0,
+                    _token: $('meta[name="csrf-token"]').attr("content")
                 },
                 success: function () {
-                    table.draw();
                     checkbox.prop("disabled", false);
+                    table.draw(); // Refresh datatable if needed
                 },
                 error: function () {
                     checkbox.prop("disabled", false);
-                    checkbox.prop("checked", !checkbox.prop("checked")); // revert change on error
+                    checkbox.prop("checked", !checkbox.prop("checked")); // revert
                 }
             });
         } else {
@@ -416,6 +420,45 @@ $(document).on("change", ".toggleTopDeals", function () {
         }
     });
 });
+
+// ✅ Favourite Destination Toggle
+$(document).on("change", ".favouriteToggle", function () {
+    let id = $(this).data("id");
+    let checkbox = $(this);
+    checkbox.prop("disabled", true);
+
+    Swal.fire({
+        icon: "warning",
+        title: "Change Favourite Destination?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, change it!"
+    }).then(result => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "/admin/tour-packages/favourite-destination/" + id,
+                type: "PUT",
+                data: {
+                    favourite_destination: checkbox.prop("checked") ? 1 : 0,
+                    _token: $('meta[name="csrf-token"]').attr("content")
+                },
+                success: function () {
+                    checkbox.prop("disabled", false);
+                    table.draw(); // Refresh datatable if needed
+                },
+                error: function () {
+                    checkbox.prop("disabled", false);
+                    checkbox.prop("checked", !checkbox.prop("checked")); // revert
+                }
+            });
+        } else {
+            checkbox.prop("disabled", false);
+            checkbox.prop("checked", !checkbox.prop("checked"));
+        }
+    });
+});
+
 
 
     // Delete tour_package
