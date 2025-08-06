@@ -140,5 +140,55 @@
             color: white;
             line-height: 1.4;
         }
+
+        /* Default hidden in mobile so jQuery can slide it */
+        @media (max-width: 767.98px) {
+
+            .image-count-overlay,
+            .gallery-content {
+                display: none;
+            }
+        }
     </style>
+@endpush
+
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
+
+        function handleScrollReveal() {
+            if (window.innerWidth > 767.98) return; // Only apply on mobile
+
+            $('.gallery-item').each(function() {
+                const overlay = $(this).find('.image-count-overlay');
+                const title = $(this).find('.gallery-content');
+
+                if (isInViewport(this)) {
+                    overlay.stop().slideDown(300);
+                    title.stop().slideDown(300);
+                } else {
+                    overlay.stop().slideUp(300);
+                    title.stop().slideUp(300);
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            // Initial call
+            handleScrollReveal();
+
+            // Scroll event
+            $(window).on('scroll', function() {
+                handleScrollReveal();
+            });
+        });
+    </script>
 @endpush
