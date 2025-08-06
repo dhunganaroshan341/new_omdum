@@ -12,7 +12,7 @@
              <label for="filterCountry" class="form-label mb-1 fw-bold">Filter by Country</label>
              <select class="form-select form-select-sm" id="filterCountry">
                  <option selected value="all">All</option>
-                 @foreach ($countries as $item)
+                 @foreach ($countries as $country)
                      <option value="{{ $country->id }}">{{ $country->name }}</option>
                  @endforeach
              </select>
