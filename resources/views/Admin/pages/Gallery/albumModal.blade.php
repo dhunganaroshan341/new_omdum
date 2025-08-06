@@ -9,7 +9,8 @@
                 </div>
 
                 <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
-                    <p id="loading-paragraph"></p>
+                    <p id="loading-paragraph"></p> <!-- Moved inside the modal-body -->
+
                     <p id="validationErrors" class="alert alert-danger d-none"></p>
 
                     <span class="mb-3 d-block">
@@ -19,30 +20,36 @@
 
                     @csrf
 
-                    <!-- Hidden input for type -->
-                    <input type="hidden" name="type" value="image">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                        <input type="text" name="title" id="title" class="form-control"
+                            placeholder="Enter title" required>
+                    </div>
 
-                    <!-- Gallery Image Upload -->
                     <div class="col-md-12 mb-4">
-                        <label for="galleryMedia" class="form-label">Gallery Images <span
+                        <label for="" class="form-label">Gallery Images<span
                                 class="text-danger">*</span></label>
                         <input type="file" name="media_path[]" id="galleryMedia" class="form-control" multiple
-                            required />
+                            placeholder="" aria-describedby="helpId" />
                         <span class="text-danger infoPostImageText"></span>
                     </div>
 
-                    <!-- Existing Gallery Media Preview -->
+                    <!-- Showing all the images of this Gallery media -->
                     <div class="galleryMediaWrapper" style="max-height: 400px; overflow-y: auto;">
                         <div class="row galleryMediaData">
-                            <!-- Images will be appended here dynamically -->
+                            <!-- Images will be appended here -->
                         </div>
                     </div>
 
-                    <!-- Thumbnail Preview (Optional) -->
                     <div class="mb-3">
-                        <img id="thumbnailImage" src="" alt="thumbnail"
-                            style="max-height: 200px; display: none;">
+                        <img id="thumbnailImage" src="" alt="thumbnail">
                     </div>
+
+                    <input type="hidden" name="type" id = "type" value = "image">
+
+
+
+
 
                 </div>
 
@@ -55,7 +62,6 @@
         </div>
     </div>
 </div>
-
 
 {{-- Image Crousal --}}
 <div class="modal fade" id="imageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
