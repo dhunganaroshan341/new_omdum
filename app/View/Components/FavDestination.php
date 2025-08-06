@@ -18,7 +18,7 @@ class FavDestination extends Component
 {
     $countries = OurCountry::with(['packages' => function ($query) {
         $query->with('images', 'country')
-            ->where('favourite_destination', 1)
+            ->where('favourite_destination', 0)
             ->where('status', 'Active');
     }])->get();
 
