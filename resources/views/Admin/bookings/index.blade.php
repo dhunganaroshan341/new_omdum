@@ -8,7 +8,8 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="bookingTable" class="table table-bordered table-striped align-middle">
+                    <table id="bookingTable" class="table table-bordered table-striped align-middle"
+                        data-url="{{ route('admin.bookings.index') }}">
                         <thead>
                             <tr>
                                 <th>S.N</th>
