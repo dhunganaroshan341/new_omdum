@@ -10,7 +10,7 @@
                 <input type="hidden" name="price_include_id" id="price_include_id">
                 <div class="modal-header bg-info text-white">
                     <h5 class="modal-title" id="priceItemModalLabel">
-                        <i class="fas fa-money-bill me-2"></i> Add / Edit Price Item
+                        <i class="fas fa-money-bill me-2"></i> Manage / Package Includes
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>

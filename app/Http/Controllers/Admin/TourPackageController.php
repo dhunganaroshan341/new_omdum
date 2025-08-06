@@ -102,15 +102,18 @@ public function index(Request $request)
 })
 ->addColumn('package_includes', function ($item) {
     $totalIncludes = $item->priceIncludes()->count();
+    $packageName = e($item->title); // escape HTML special characters
+
     return '
         <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
             <i class="fas fa-plus text-success"></i>
         </a>
         <span class="badge bg-secondary">' . $totalIncludes . ' <i class="fas fa-list"></i></span>
-        <a href="javascript:void(0);" class="viewPriceIncludeBtn ms-2" data-id="' . $item->id . '" title="View Price Includes">
+        <a href="javascript:void(0);" class="viewPriceIncludeBtn ms-2" data-package_name="' . $packageName . '" data-id="' . $item->id . '" title="View Price Includes">
             <i class="fas fa-eye text-info"></i>
         </a>';
 })
+
 
             ->addColumn('images', function ($item) {
                 $imageCount = $item->images_count ?? 0;
