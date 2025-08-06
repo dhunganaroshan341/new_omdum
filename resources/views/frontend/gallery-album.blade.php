@@ -1,6 +1,6 @@
 @extends('frontend.layout.main')
 
-
+@php use Illuminate\Support\Str; @endphp
 
 @section('content')
     <!-- BreadCrumb Starts -->
@@ -31,11 +31,15 @@
                 @foreach ($albums as $album)
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item mb-4">
-                            <div class="gallery-image">
+                            <div class="gallery-image position-relative">
                                 <a href="{{ route('gallery.album.showById', $album->id) }}">
                                     <img alt="{{ $album->title ?? 'Untitled Album' }}"
                                         src="{{ $album->thumbnail ?? asset('template/yatri_world/main-file/images/default.jpg') }}" />
                                     <div class="overlay"></div>
+                                    <div class="image-count-overlay">
+                                        {{ $album->galleryMedia->count() }}
+                                        {{ Str::plural('image', $album->galleryMedia->count()) }}
+                                    </div>
                                 </a>
                             </div>
                             <div class="gallery-content text-center">
@@ -49,7 +53,6 @@
                         </div>
                     </div>
                 @endforeach
-
 
                 <!-- Pagination -->
                 <div class="col-lg-12">
@@ -69,6 +72,29 @@
         .gallery-image img {
             height: 300px !important;
             object-fit: cover !important;
+        }
+
+        .gallery-image {
+            position: relative;
+        }
+
+        .image-count-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-image:hover .image-count-overlay {
+            opacity: 1;
+            pointer-events: auto;
         }
     </style>
 @endpush
