@@ -14,14 +14,16 @@ class TopDeal extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {
-        // Fetch top deals with eager loading of images and country
-        $this->topDeals = TourPackage::with('images', 'country')
-            ->where('status', 'Active')
-            ->where('top_deal', 1)
-            ->get();
-    }
+   public function __construct()
+{
+    // ✅ Fetch all "top deal" tour packages that are Active
+    // ✅ Eager load 'images' and 'country' relationships
+    $this->topDeals = TourPackage::with('images', 'country')
+        ->where('status', 'Active')
+        ->where('top_deal', 1)
+        ->get();
+}
+
 
     /**
      * Get the view / contents that represent the component.
