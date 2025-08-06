@@ -72,26 +72,38 @@
         .gallery-image img {
             height: 300px !important;
             object-fit: cover !important;
+            width: 100%;
+            display: block;
         }
 
         .gallery-image {
             position: relative;
         }
 
+        /* The overlay bar covering about half width at bottom */
         .image-count-overlay {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            /* half width */
+            height: 40px;
+            /* height of the bar */
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 8px 12px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-top-left-radius: 12px;
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
+            font-weight: 600;
         }
 
+        /* Show on hover */
         .gallery-image:hover .image-count-overlay {
             opacity: 1;
             pointer-events: auto;
