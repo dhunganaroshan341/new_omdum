@@ -14,6 +14,7 @@ class GalleryAlbumRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
+            'slug' => 'nullable|string|max:255',
             'type' => 'required|in:image,video,pdf,doc,website,other_link,none',
             'url' => 'nullable|string|max:2048',
             'client_id' => 'nullable|exists:clients,id',
