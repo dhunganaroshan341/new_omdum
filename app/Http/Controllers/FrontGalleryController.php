@@ -23,17 +23,17 @@ public function index()
     public function show($id)
     {
 
-        $galleryAlbum = GalleryAlbum::with(['galleryMedia', 'client'])->find($id);
-
+        $galleryAlbum = GalleryAlbum::with(['galleryMedia'])->find($id);
+        $pageBanner = PageBanner::where('page', 'gallery')->first();
+        if($pageBanner->image==null){
+        $pageBanner = PageBanner::where('page', 'all')->first();
+        }
         if (!$galleryAlbum) {
             return response()->json(['message' => 'Album not found'], 404);
         }
 
-        return response()->json([
-            'success' => true,
-            'message' => $galleryAlbum
-        ]);
-    }
+       return view('frontend.gallery-media', compact('galleryAlbum', 'pageBanner'));
+}
     public function showClient($id)
     {
         $albums = GalleryAlbum::with(['galleryMedia', 'client'])->where('client_id', $id)->get();

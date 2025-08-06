@@ -48,7 +48,7 @@ class GalleryAlbum extends BaseModel
         return asset('uploads/' . ltrim($media->media_path, '/'));
     }
 
-    return asset('template/yatri_world/main-file/images/default.jpg'); // fallback image
+    return asset('template/yatri_world/main-file/images/everest.jpg'); // fallback image
 }
 
 protected static function booted()

@@ -32,4 +32,16 @@ class GalleryMedia extends BaseModel
     //     'status' => MediaStatusEnum::class,
     // ];
     // lets make an accessor that returns the media_path with gallery/media
+
+
+   public function getImageAttribute()
+{
+    if ($this->media_path) {
+        return asset('uploads/gallery/media/' . ltrim($this->media_path, '/'));
+    }
+
+    // Fallback if media_path is null or empty
+    return asset('template/yatri_world/main-file/images/india.jpg');
+}
+
 }
