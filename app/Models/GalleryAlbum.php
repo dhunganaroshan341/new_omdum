@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class GalleryAlbum extends BaseModel
 {
@@ -47,6 +48,17 @@ class GalleryAlbum extends BaseModel
     }
 
     return asset('template/yatri_world/main-file/images/default.jpg'); // fallback image
+}
+
+protected static function booted()
+{
+    static::creating(function ($album) {
+        $album->slug = Str::slug($album->title);
+    });
+
+    static::updating(function ($album) {
+        $album->slug = Str::slug($album->title);
+    });
 }
 
 
