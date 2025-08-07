@@ -6,8 +6,10 @@ $(document).ready(function () {
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
     });
 
-    let imageDropzone;
-    let isResettingDropzone = false;  // Flag to differentiate reset vs user remove
+let imageDropzone;
+let isResettingDropzone = false;
+let isManualDelete = false;
+
 
 // Function to reset modal and Dropzone UI
 function resetUploadModal() {
@@ -44,110 +46,117 @@ function resetUploadModal() {
     });
 
     // Open modal and initialize Dropzone + load existing images
-    $(document).on("click", ".editUploads", function () {
-        const tourPackageId = $(this).data('id');
-        $('#tour_package_id').val(tourPackageId);
-        $("#uploadModal").modal("show");
+   $(document).on("click", ".editUploads", function () {
+    const tourPackageId = $(this).data('id');
+    $('#tour_package_id').val(tourPackageId);
+    $("#uploadModal").modal("show");
 
-        if (!imageDropzone) {
-            imageDropzone = new Dropzone("#mydropzone", {
-                url: window.routes.packagesImageUpload,
-                 paramName: "images",     // important for multiple files array on backend
-                method: 'POST',
-                acceptedFiles: "image/*",
-                maxFilesize: 5,               // max 5MB per file
-                uploadMultiple: true,
-                parallelUploads: 5,           // how many files to upload simultaneously
-                autoProcessQueue: false,      // manual upload on button click
-                addRemoveLinks: true,
-                dictDefaultMessage: "Drag & drop images here or click to upload",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            imageDropzone.on("sending", function (file, xhr, formData) {
-                formData.append('tour_package_id', $('#tour_package_id').val());
-            });
-
-            imageDropzone.on("successmultiple", function (files, response) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Images Uploaded Successfully!",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // ✅ Only remove the newly added files, not existing ones
-    imageDropzone.getAcceptedFiles().forEach(file => {
-        imageDropzone.removeFile(file);
-    });
-                $('#uploadModal').modal('hide');
-            });
-
-            imageDropzone.on("errormultiple", function (files, response) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Upload Error",
-                    text: typeof response === "string" ? response : "Something went wrong. Please try again."
-                });
-                console.error(response);
-            });
-
-            imageDropzone.on("removedfile", function (file) {
-    // Skip AJAX delete if we're resetting Dropzone UI (e.g. modal close)
-    if (isResettingDropzone) {
-        return;
-    }
-
-    if (file.serverId) {
-        $.ajax({
-            url: `/admin/tour-package-images/delete/${file.serverId}`,
-            method: "DELETE",
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-            success: function () {
-                Swal.fire('Deleted!', 'Image has been deleted.', 'success');
+    // Create Dropzone if not already initialized
+    if (!imageDropzone) {
+        imageDropzone = new Dropzone("#mydropzone", {
+            url: window.routes.packagesImageUpload,
+            paramName: "images",
+            method: "POST",
+            acceptedFiles: "image/*",
+            maxFilesize: 5,
+            uploadMultiple: true,
+            parallelUploads: 5,
+            autoProcessQueue: false,
+            addRemoveLinks: true,
+            dictDefaultMessage: "Drag & drop images here or click to upload",
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
             },
-            error: function () {
-                Swal.fire('Failed!', 'Could not delete image.', 'error');
+        });
+
+        // Add tour_package_id to upload request
+        imageDropzone.on("sending", function (file, xhr, formData) {
+            formData.append("tour_package_id", $("#tour_package_id").val());
+        });
+
+        // Handle success
+        imageDropzone.on("successmultiple", function (files, response) {
+            Swal.fire({
+                icon: "success",
+                title: "Images Uploaded Successfully!",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+
+            imageDropzone.getAcceptedFiles().forEach((file) => {
+                imageDropzone.removeFile(file);
+            });
+
+            $("#uploadModal").modal("hide");
+        });
+
+        // Handle upload error
+        imageDropzone.on("errormultiple", function (files, response) {
+            Swal.fire({
+                icon: "error",
+                title: "Upload Error",
+                text: typeof response === "string" ? response : "Something went wrong.",
+            });
+            console.error(response);
+        });
+
+        // 🧠 MANUAL DELETE ONLY
+        imageDropzone.on("removedfile", function (file) {
+            if (!isManualDelete || isResettingDropzone) {
+                isManualDelete = false;
+                return;
             }
+
+            if (file.serverId) {
+                $.ajax({
+                    url: `/admin/tour-package-images/delete/${file.serverId}`,
+                    method: "DELETE",
+                    headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") },
+                    success: function () {
+                        Swal.fire("Deleted!", "Image has been deleted.", "success");
+                    },
+                    error: function () {
+                        Swal.fire("Failed!", "Could not delete image.", "error");
+                    },
+                });
+            }
+
+            isManualDelete = false;
         });
     }
-});
 
-        }
+    // 🧹 RESET Dropzone safely
+    isResettingDropzone = true;
+    imageDropzone.removeAllFiles(true);
+    isResettingDropzone = false;
 
-        // Clear existing files to reset Dropzone UI
-        imageDropzone.removeAllFiles(true);
+    // 📦 Load existing images from server
+    $.ajax({
+        url: `/admin/tour-package-images/${tourPackageId}`,
+        method: "GET",
+        success: function (images) {
+            images.forEach(function (image) {
+                const mockFile = {
+                    name: image.image_path.split("/").pop(),
+                    size: 123456,
+                    accepted: true,
+                    status: Dropzone.SUCCESS,
+                    serverId: image.id,
+                };
 
-        // Load existing images and display as mock files in Dropzone
-       $.ajax({
-    url: `/admin/tour-package-images/${tourPackageId}`,
-    method: 'GET',
-    success: function (images) {
-        images.forEach(function (image) {
-            const mockFile = {
-                name: image.image_path.split('/').pop(), // file name
-                size: 123456, // You can replace with real size if available
-                accepted: true,
-                status: Dropzone.SUCCESS,
-                serverId: image.id // custom field if needed
-            };
+                imageDropzone.emit("addedfile", mockFile);
+                imageDropzone.emit("thumbnail", mockFile, image.image_path);
+                imageDropzone.emit("complete", mockFile);
 
-            // Add file to dropzone
-            imageDropzone.emit("addedfile", mockFile);
-            imageDropzone.emit("thumbnail", mockFile, image.image_path);
-            imageDropzone.emit("complete", mockFile);
-
-            // Push to files array
-            imageDropzone.files.push(mockFile);
-        });
-    },
-    error: function () {
-        console.error('Failed to load existing images');
-    }
-});
-
+                imageDropzone.files.push(mockFile);
+            });
+        },
+        error: function () {
+            console.error("Failed to load existing images");
+        },
     });
+});
+
 
     // Upload submit button click handler
     $('#uploadSubmitBtn').click(function () {
