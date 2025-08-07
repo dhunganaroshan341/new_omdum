@@ -31,7 +31,7 @@
                             <div class="col-lg-12">
                                 <div class="list-results d-flex align-items-center justify-content-between">
                                     <div class="list-results-sort">
-                                        <p class="m-0">Available Packages{{ $packages->count() }}</p>
+                                        <p class="m-0">Available Packages{{ $tourPackages->count() }}</p>
                                     </div>
                                     <div class="click-menu d-flex align-items-center justify-content-between">
                                         <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
