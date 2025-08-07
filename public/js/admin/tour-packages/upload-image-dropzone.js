@@ -77,7 +77,10 @@ function resetUploadModal() {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                imageDropzone.removeAllFiles(true);
+                // ✅ Only remove the newly added files, not existing ones
+    imageDropzone.getAcceptedFiles().forEach(file => {
+        imageDropzone.removeFile(file);
+    });
                 $('#uploadModal').modal('hide');
             });
 
