@@ -154,7 +154,7 @@ class TestimonialController extends Controller
         }
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
         try {
             $data = Testimonial::find($id);
