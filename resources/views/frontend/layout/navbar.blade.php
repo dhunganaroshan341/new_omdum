@@ -53,7 +53,7 @@ $isActive = collect($country->groupedPackages)
                                                 <ul class="dropdown-menu grand-sub-menu-ul">
                                                     @foreach ($packages as $package)
                                                         <li class="grand-sub-menu-li">
-                                                            <a class="grand-submenu-anchor {{ request()->routeIs('packages.show') && request()->route('slug') === $package->slug ? 'active' : '' }}"
+                                                            <a class="grand-submenu-a {{ request()->routeIs('packages.show') && request()->route('slug') === $package->slug ? 'active' : '' }}"
                                                                 href="{{ route('packages.show', ['slug' => $package->slug]) }}">
                                                                 {{ $package->title }}
                                                             </a>
