@@ -43,9 +43,9 @@
                                     </div>
 
                                     <div class="click-menu d-flex align-items-center justify-content-between">
-                                        <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+                                        {{-- <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
                                         <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
-                                        </div>
+                                        </div> --}}
                                         <div class="sortby d-flex align-items-center justify-content-between ms-2">
                                             <form method="GET" action="{{ route('packages.search') }}">
                                                 {{-- Retain existing filters --}}
