@@ -31,8 +31,12 @@
                             <div class="col-lg-12">
                                 <div class="list-results d-flex align-items-center justify-content-between">
                                     <div class="list-results-sort">
-                                        <p class="m-0">Available Packages - {{ $tourPackages->count() }}</p>
+                                        <p class="m-0">
+                                            Showing {{ $tourPackages->firstItem() }}–{{ $tourPackages->lastItem() }} of
+                                            {{ $tourPackages->total() }} results
+                                        </p>
                                     </div>
+
                                     <div class="click-menu d-flex align-items-center justify-content-between">
                                         <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
                                         <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
@@ -122,9 +126,9 @@
 
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <a class="nir-btn" href="#">Load More <i
-                                            class="fa fa-long-arrow-alt-right"></i></a>
+                                    {{ $tourPackages->appends(request()->query())->links() }}
                                 </div>
+
                             </div>
                         </div>
                     </div>

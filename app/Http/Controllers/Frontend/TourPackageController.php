@@ -155,7 +155,7 @@
             $query->orderBy('price', 'desc');
         }
 
-        $tourPackages = $query->get();
+       $tourPackages = $query->paginate(9); // You can choose any per-page number
 
         // For sidebar: only parents with children (optionally filtered by country)
         $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
