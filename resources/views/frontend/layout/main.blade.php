@@ -167,7 +167,7 @@
             display: inline;
         }
 
-        @media (max-width: 991.98px) {
+        /* @media (max-width: 991.98px) {
             .submenu.dropdown>.dropdown-menu {
                 position: static;
                 display: none;
@@ -176,7 +176,7 @@
             .submenu.dropdown.active>.dropdown-menu {
                 display: block;
             }
-        }
+        } */
 
         .dropdown-menu.grand-sub-menu-ul {
             min-width: 250px;
