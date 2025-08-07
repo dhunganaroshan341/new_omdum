@@ -301,14 +301,12 @@ Route::prefix('blog')->name('blog.')->group(function () {
     Route::get('/{slug}', [UserFrontendController::class, 'blogDetail'])->name('detail');
 });
 
-// Packages
 Route::prefix('packages')->name('packages.')->group(function () {
+    Route::get('/search', [TourPackageController::class, 'search'])->name('search'); // 👈 MUST be above
     Route::get('/', [TourPackageController::class, 'index'])->name('index');
     Route::get('/{slug}', [TourPackageController::class, 'show'])->name('show');
-    Route::get('/search', [TourPackageController::class, 'search'])->name('search');
-    Route::post('/book', [BookingController::class, 'store'])->name('book');
-    Route::get('/get-batches/{packageId}', [TourPackageController::class, 'getBatches']);
 });
+
 Route::get('book-now',[PackageBookingController::class,'bookingSinglePage'])->name('frontend.booking-single');
 
 
