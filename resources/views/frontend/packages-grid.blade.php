@@ -177,7 +177,7 @@
                             <div class="sidebar-item">
                                 <h4>General Packages Available</h4>
                                 <form method="GET" action="{{ route('packages.search') }}" id="parent-filter-form">
-                                    <h4>Type</h4>
+
 
                                     {{-- Keep the selected country in this form --}}
                                     <input type="hidden" name="country" value="{{ request('country') }}">
