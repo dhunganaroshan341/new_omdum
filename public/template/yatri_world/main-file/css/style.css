@@ -1998,13 +1998,7 @@ header #navbar {
     display: none !important;
   }
 }
-.header_menu .navbar.navbar-default {
-  border-radius: 0px;
-  margin-bottom: 0px;
-  background: transparent;
-  border: none;
-  width: 100%;
-}
+.header_menu .navbar.navbar-default
 .header_menu .navbar.navbar-default .navbar-collapse {
   text-align: right;
   padding: 0;
