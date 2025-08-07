@@ -28,9 +28,13 @@
                                     <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
-                                        <button class="btn">
-                                            <span class="badge badge-primary">{{ $package->duration ?? '' }}</span>
-                                        </button>
+                                        @if ($package->duration != '0days' || $package->duration != '0 days')
+                                            <button class="btn">
+
+
+                                                <span class="badge badge-primary">{{ $package->duration ?? '' }}</span>
+                                            </button>
+                                        @endif
                                         <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
                                     <div class="desti-overlay">
