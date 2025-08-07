@@ -6,7 +6,7 @@
 -------------------------------------------------------------------
 
  TABLE OF CONTENT
-  
+
   1. Swiper
   3. Animate
   4. Slick
@@ -3458,7 +3458,7 @@ button.swiper-pagination-bullet {
     color: transparent;
     border: none;
     outline: none;
-    background: #e29f12;
+    background: var(--omundum-green);
     line-height: 40px;
     z-index: 1;
     transition: all ease-in-out 0.3s;
@@ -3505,7 +3505,7 @@ button.swiper-pagination-bullet {
     font-size: 36px;
 }
 .slick-prev {
-    left: -30px;
+    left: -41px;
 }
 [dir='rtl'] .slick-prev {
     right: 15px;
@@ -3518,7 +3518,7 @@ button.swiper-pagination-bullet {
     content: '\f105'
 }
 .slick-next {
-    right: -30px;
+	right: -41px;
 }
 [dir='rtl'] .slick-next {
     right: auto;
@@ -3764,7 +3764,7 @@ Slicknav - a Mobile Menu
 .slicknav_menu {
     *zoom: 1
 }
-/* 
+/*
 User Default Style
 Change the following styles to modify the appearance of the menu.
 */
