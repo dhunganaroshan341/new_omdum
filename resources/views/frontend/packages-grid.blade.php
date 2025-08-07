@@ -306,7 +306,11 @@
         }
 
         .page-item a {
-            color: white !important;
+            color: var(--omundum-green) !important;
+        }
+
+        .page-item a :hover {
+            color: var(--omundum-yellow) !important;
         }
     </style>
 @endpush
