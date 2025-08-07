@@ -45,10 +45,10 @@ $isActive = collect($country->groupedPackages)
                                     @endif
                                 </a>
                                 @if ($hasPackages)
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu child-dropdown child-dropdown-ul">
                                         @foreach ($country->groupedPackages as $typeTitle => $packages)
-                                            <li class="submenu dropdown">
-                                                <a href="#">{{ $typeTitle }} <i
+                                            <li class="submenu dropdown child-dropdown child-dropdown-li">
+                                                <a class="child-dropdown-a" href="#">{{ $typeTitle }} <i
                                                         class="icon-arrow-right"></i></a>
                                                 <ul class="dropdown-menu grand-sub-menu-ul">
                                                     @foreach ($packages as $package)
@@ -166,6 +166,18 @@ $isActive = collect($country->groupedPackages)
             .submenu.dropdown.active>.dropdown-menu {
                 display: block;
             }
+        }
+
+        .grand-dropdown-ul {
+            min-width: 280px;
+        }
+
+        .grand-dropdown-li {
+            min-width: 280px;
+        }
+
+        .grand-dropdown-a {
+            min-width: 265px;
         }
     </style>
 @endpush
