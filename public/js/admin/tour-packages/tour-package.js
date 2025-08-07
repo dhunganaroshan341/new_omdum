@@ -141,7 +141,7 @@ function populateTourPackageForm(tour_package) {
         }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
-    order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
+    order: [4, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
     columns: [
         { data: 'DT_RowIndex', orderable: false, searchable: false },
         { data: 'status', name: 'status', orderable: false, searchable: false },
