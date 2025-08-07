@@ -131,7 +131,7 @@ $isActive = collect($country->groupedPackages)
             top: 100%;
             left: 0;
             z-index: 1000;
-            min-width: 180px;
+            min-width: 260px;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 0.25rem;
@@ -169,15 +169,15 @@ $isActive = collect($country->groupedPackages)
         }
 
         .grand-dropdown-ul {
-            min-width: 280px;
+            min-width: 250px !important;
         }
 
         .grand-dropdown-li {
-            min-width: 280px;
+            min-width: 250px !important;
         }
 
         .grand-dropdown-a {
-            min-width: 265px;
+            min-width: 250px !important;
         }
     </style>
 @endpush
