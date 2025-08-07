@@ -179,7 +179,7 @@
         }
 
         .dropdown-menu.grand-sub-menu-ul {
-            min-width: 270px;
+            min-width: 250px;
         }
 
         .grand-dropdown-li {
