@@ -50,10 +50,10 @@ $isActive = collect($country->groupedPackages)
                                             <li class="submenu dropdown">
                                                 <a href="#">{{ $typeTitle }} <i
                                                         class="icon-arrow-right"></i></a>
-                                                <ul class="dropdown-menu">
+                                                <ul class="dropdown-menu grand-sub-menu-ul">
                                                     @foreach ($packages as $package)
-                                                        <li>
-                                                            <a class="{{ request()->routeIs('packages.show') && request()->route('slug') === $package->slug ? 'active' : '' }}"
+                                                        <li class="grand-sub-menu-li">
+                                                            <a class="grand-submenu-anchor {{ request()->routeIs('packages.show') && request()->route('slug') === $package->slug ? 'active' : '' }}"
                                                                 href="{{ route('packages.show', ['slug' => $package->slug]) }}">
                                                                 {{ $package->title }}
                                                             </a>
