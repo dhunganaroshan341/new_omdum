@@ -191,6 +191,10 @@
         }
 
         /* nav-bar custom style ends */
+
+        .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu li.submenu .dropdown-menu li a {
+            font-size: 14px;
+        }
     </style>
 </head>
 
