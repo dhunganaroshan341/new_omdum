@@ -122,12 +122,12 @@
             object-fit: contain;
         }
 
-        .navbar-brand {
+        /* .navbar-brand {
             display: flex;
             align-items: center;
             padding: 0;
             height: 60px;
-        }
+        } */
 
         /* Navbar Items */
         .navbar-nav .nav-link {
