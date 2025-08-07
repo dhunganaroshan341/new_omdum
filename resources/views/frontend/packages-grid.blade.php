@@ -191,15 +191,24 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    <h4>Type</h4>
                                     <div class="pretty p-default p-thick p-pulse">
-                                        <label for="tour">Tours</label>
-                                        <input type="checkbox" name="package_type" value="tour" /><label
-                                            for="tour">Tours</label>
-                                        <label for="trekking">Trekking</label>
-                                        <input type="checkbox" name="package_type" value="tour" />
-                                    </div>
-                                    <button type="submit" class="nir-btn w-100">Filter</button>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="package_type"
+                                                id="tour" value="tour"
+                                                {{ request('package_type') === 'tour' ? 'checked' : '' }}>
+                                            <label class="form-check-label white" for="tour">
+                                                Tours
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="package_type"
+                                                id="trekking" value="trekking"
+                                                {{ request('package_type') === 'trekking' ? 'checked' : '' }}>
+                                            <label class="form-check-label white" for="trekking">
+                                                Trekking
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="nir-btn w-100">Filter</button>
                                 </form>
 
 
