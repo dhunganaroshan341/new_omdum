@@ -1781,7 +1781,8 @@ header #navbar {
 	-moz-transition: color 0.5s ease;
 	margin-right: 0;
 	flex: 1;
-	max-width: 120px;
+	max-width: 140px;
+	bottom: 40px;
 }
 .navbar-default a.navbar-brand span {
   color: #fc883a;
