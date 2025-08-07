@@ -25,7 +25,7 @@ class TestimonalRequest extends FormRequest
             'name'=>'required|min:3',
             'address'=>'required',
             'designation'=>'required',
-            'image'=>$this->route('id') ? 'nullable|image' :'required|image',
+            'image'=>$this->route('id') ? 'nullable|image' :'nullable|image',
         ];
     }
 
@@ -35,7 +35,7 @@ class TestimonalRequest extends FormRequest
             'name.min'=>'Name must be at least 3 character long',
             'address.required'=>'Please Enter the Address',
             'designation.required'=>'Please Enter the Designation',
-            'image.required'=>'Please Insert the image',
+            // 'image.required'=>'Please Insert the image',
             'image.image'=>'Image must be a type of jpg,png,jpeg'
         ];
     }
