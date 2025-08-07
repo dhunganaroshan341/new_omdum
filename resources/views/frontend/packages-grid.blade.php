@@ -32,8 +32,12 @@
                                 <div class="list-results d-flex align-items-center justify-content-between">
                                     <div class="list-results-sort">
                                         <p class="m-0">
-                                            Showing {{ $tourPackages->firstItem() }}–{{ $tourPackages->lastItem() }} of
-                                            {{ $tourPackages->total() }} results
+                                            @if ($tourPackages->count == 0)
+                                                Packages Not Available
+                                            @else
+                                                Showing {{ $tourPackages->firstItem() }}–{{ $tourPackages->lastItem() }} of
+                                                {{ $tourPackages->total() }} results
+                                            @endif
                                         </p>
                                     </div>
 
