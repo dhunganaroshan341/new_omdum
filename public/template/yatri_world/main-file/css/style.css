@@ -1774,7 +1774,7 @@ header #navbar {
 	object-fit: contain;
 	padding: 0;
 	/* height: 200px; */
-	max-height: 200px;
+	/* max-height: 200px; */
 	transition: all ease-in-out 0.5s;
 	transition: color 0.5s ease;
 	-webkit-transition: color 0.5s ease;
@@ -1782,7 +1782,7 @@ header #navbar {
 	margin-right: 0;
 	flex: 1;
 	max-width: 140px;
-	bottom: 40px;
+	/* bottom: 40px; */
 }
 .navbar-default a.navbar-brand span {
   color: #fc883a;
