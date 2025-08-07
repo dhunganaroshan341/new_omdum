@@ -50,7 +50,7 @@ function populateTourPackageForm(tour_package) {
     $("#top_deal").prop('checked', tour_package.top_deal == 1);
     $("#favourite_destination").prop('checked', tour_package.favourite_destination == 1);
 
-    $("textarea[name='short_description']").val(tour_package.accomodation);
+    $("textarea[name='short_description']").val(tour_package.short_description);
 
     $("textarea[name='long_description']").summernote('code', tour_package.long_description ?? '');
     $("textarea[name='what_to_expect']").summernote('code', tour_package.what_to_expect ?? '');
