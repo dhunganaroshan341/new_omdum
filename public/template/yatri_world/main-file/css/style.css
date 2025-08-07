@@ -6977,12 +6977,12 @@ footer.footermain .footer-upper .footer-about li {
   margin: 0;
 }
 .list-results .nice-select {
-  border: 1px solid #f1f1f1;
-  background: #fff;
-  width: 150px;
-  padding-left: 20px;
-  line-height: 1.5;
-  height: 44px;
+	border: 1px solid #f1f1f1;
+	background: #fff;
+	width: 160px;
+	padding-left: 20px;
+	line-height: 1.5;
+	height: 44px;
 }
 .list-results .change-grid, .list-results .change-list {
   display: inline-block;
