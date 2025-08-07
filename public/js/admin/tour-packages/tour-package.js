@@ -141,14 +141,14 @@ function populateTourPackageForm(tour_package) {
         }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
-    order: [4, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
+    order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
     columns: [
         { data: 'DT_RowIndex', orderable: false, searchable: false },
         { data: 'status', name: 'status', orderable: false, searchable: false },
-        { data: 'action', name: 'action', orderable: false, searchable: false },
         { data: 'title', name: 'title' },
         { data: 'parent_title', name: 'parent_title' },
         { data: 'duration', name: 'duration' },
+        { data: 'action', name: 'action', orderable: false, searchable: false },
         { data: 'country', name: 'country_name' },
         { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
         { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
