@@ -25,7 +25,7 @@
                             </a>
                         </h4>
 
-                        <p>{{ \Illuminate\Support\Str::limit($deal->short_description ?? '', 60) }}</p>
+                        <p>{{ \Illuminate\Support\Str::limit($deal->short_description ?? '', 40) }}</p>
                         @if (!is_null($deal->price))
                             <div class="deal-price">
                                 <p class="price font-weight-bold pink mb-0">From
