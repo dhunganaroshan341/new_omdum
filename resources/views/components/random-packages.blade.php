@@ -28,9 +28,9 @@
                                     <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
-                                        {{-- <button class="btn">
+                                        <button class="btn">
                                             <span class="badge badge-primary">{{ $package->duration ?? '' }}</span>
-                                        </button> --}}
+                                        </button>
                                         <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
                                     <div class="desti-overlay">
