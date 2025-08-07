@@ -191,7 +191,14 @@
                                             </div>
                                         </div>
                                     @endforeach
-
+                                    <h4>Type</h4>
+                                    <div class="pretty p-default p-thick p-pulse">
+                                        <label for="tour">Tours</label>
+                                        <input type="checkbox" name="package_type" value="tour" /><label
+                                            for="tour">Tours</label>
+                                        <label for="trekking">Trekking</label>
+                                        <input type="checkbox" name="package_type" value="tour" />
+                                    </div>
                                     <button type="submit" class="nir-btn w-100">Filter</button>
                                 </form>
 
