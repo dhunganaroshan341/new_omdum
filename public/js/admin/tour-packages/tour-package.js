@@ -150,6 +150,9 @@ function populateTourPackageForm(tour_package) {
         { data: 'parent_title', name: 'parent_title' },
         { data: 'duration', name: 'duration' },
         { data: 'country', name: 'country_name' },
+        { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
+        { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
+
         { data: 'images', name: 'images' },
         { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
         { data: 'batches', name: 'batches', orderable: false, searchable: false },

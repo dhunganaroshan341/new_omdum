@@ -19,6 +19,8 @@
                         {{-- <th scope="col">Fav</th> --}}
                         <th scope="col">Duration</th>
                         <th scope="col">Country</th>
+                        <th scope="col">Top Deal</th>
+                        <th scope="col">Fav Destination</th>
                         <th scope="col">Images</th>
 
                         <th scope="col">Itinerary</th>
