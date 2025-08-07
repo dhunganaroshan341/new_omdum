@@ -156,6 +156,11 @@ function resetUploadModal() {
         },
     });
 });
+// deleting dropzone
+$(document).on("click", ".dz-remove", function () {
+    isManualDelete = true;
+});
+
 
 
     // Upload submit button click handler
