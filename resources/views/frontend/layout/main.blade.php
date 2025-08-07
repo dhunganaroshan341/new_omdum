@@ -141,7 +141,7 @@
             top: 100%;
             left: 0;
             z-index: 1000;
-            min-width: 100px;
+            /* min-width: 100px; */
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 0.25rem;
