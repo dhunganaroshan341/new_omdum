@@ -43,154 +43,155 @@
                                     </div>
 
                                     <div class="click-menu d-flex align-items-center justify-content-between">
-                                        {{-- <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
-                                        <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a> --}}
-                                    </div>
-                                    <div class="sortby d-flex align-items-center justify-content-between ms-2">
-                                        <form method="GET" action="{{ route('packages.search') }}">
-                                            {{-- Retain existing filters --}}
-                                            @foreach ((array) request('parent_packages') as $parentId)
-                                                <input type="hidden" name="parent_packages[]" value="{{ $parentId }}">
-                                            @endforeach
-                                            <input type="hidden" name="country" value="{{ request('country') }}">
+                                        <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+                                        <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
+                                        </div>
+                                        <div class="sortby d-flex align-items-center justify-content-between ms-2">
+                                            <form method="GET" action="{{ route('packages.search') }}">
+                                                {{-- Retain existing filters --}}
+                                                @foreach ((array) request('parent_packages') as $parentId)
+                                                    <input type="hidden" name="parent_packages[]"
+                                                        value="{{ $parentId }}">
+                                                @endforeach
+                                                <input type="hidden" name="country" value="{{ request('country') }}">
 
-                                            <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
-                                                <option value="">Sort By</option>
-                                                <option value="low" {{ request('sort_by') == 'low' ? 'selected' : '' }}>
-                                                    Price: low to
-                                                    high</option>
-                                                <option value="high" {{ request('sort_by') == 'high' ? 'selected' : '' }}>
-                                                    Price: high to
-                                                    low</option>
-                                            </select>
-                                        </form>
-                                    </div>
+                                                <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
+                                                    <option value="">Sort By</option>
+                                                    <option value="low"
+                                                        {{ request('sort_by') == 'low' ? 'selected' : '' }}>Price: low to
+                                                        high</option>
+                                                    <option value="high"
+                                                        {{ request('sort_by') == 'high' ? 'selected' : '' }}>Price: high to
+                                                        low</option>
+                                                </select>
+                                            </form>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        @foreach ($tourPackages as $package)
-                            <!-- Start of Nepal Section -->
-                            <div class="col-md-6 mb-4">
-                                <div class="trend-item">
-                                    <div class="trend-image">
-                                        <img alt="image"
-                                            src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
-                                                ? asset('tour_images/' . $package->images[0])
-                                                : asset('template/yatri_world/main-file/images/india.jpg') }}" />
+                            @foreach ($tourPackages as $package)
+                                <!-- Start of Nepal Section -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="trend-item">
+                                        <div class="trend-image">
+                                            <img alt="image"
+                                                src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
+                                                    ? asset('tour_images/' . $package->images[0])
+                                                    : asset('template/yatri_world/main-file/images/india.jpg') }}" />
 
-                                    </div>
-                                    <div class="trend-content-main">
-                                        <div class="trend-content">
-                                            <h4><a
-                                                    href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
-                                            </h4>
-                                            <p class="mb-0 pink">
-                                                {{-- <i class="fa fa-eye me-1"></i> Includes --}}
-                                                {{ $package->country->name ?? '' }}
-                                                <i class="fa fa-map-marker me-1 ms-3"></i>
-                                            </p>
                                         </div>
-                                        <div class="trend-last-main">
-                                            <p class="mb-0 trend-para">
-                                                {{ $package->short_desc ?? 'A sacred escape nestled in the Himalayas – perfect for soul-searching and adventure.' }}
-                                            </p>
-                                            <div
-                                                class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
-                                                    class="white d-flex align-items-center text-decoration-none">
-
-                                                    <img src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
-                                                        onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
-                                                        class="d-author me-2" alt="Package Image" loading="lazy"
-                                                        style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
-
-                                                    <span>View Package</span>
-                                                </a>
-
-                                                <div class="trend-price">
-                                                    <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
-                                                        class="text-decoration-none">
-                                                        <p class="price white mb-0">
-                                                            <span>${{ number_format($package->price ?? 1050, 2) }}</span>
-                                                            <i class="fa fa-arrow-right white ps-1"></i>
-                                                        </p>
-                                                    </a>
-                                                </div>
+                                        <div class="trend-content-main">
+                                            <div class="trend-content">
+                                                <h4><a
+                                                        href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
+                                                </h4>
+                                                <p class="mb-0 pink">
+                                                    {{-- <i class="fa fa-eye me-1"></i> Includes --}}
+                                                    {{ $package->country->name ?? '' }}
+                                                    <i class="fa fa-map-marker me-1 ms-3"></i>
+                                                </p>
                                             </div>
+                                            <div class="trend-last-main">
+                                                <p class="mb-0 trend-para">
+                                                    {{ $package->short_desc ?? 'A sacred escape nestled in the Himalayas – perfect for soul-searching and adventure.' }}
+                                                </p>
+                                                <div
+                                                    class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                    <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
+                                                        class="white d-flex align-items-center text-decoration-none">
+
+                                                        <img src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                                            onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
+                                                            class="d-author me-2" alt="Package Image" loading="lazy"
+                                                            style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
+
+                                                        <span>View Package</span>
+                                                    </a>
+
+                                                    <div class="trend-price">
+                                                        <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
+                                                            class="text-decoration-none">
+                                                            <p class="price white mb-0">
+                                                                <span>${{ number_format($package->price ?? 1050, 2) }}</span>
+                                                                <i class="fa fa-arrow-right white ps-1"></i>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </div>
 
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
-                        <!-- End of Nepal Section -->
+                            @endforeach
+                            <!-- End of Nepal Section -->
 
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                {{ $tourPackages->appends(request()->query())->links() }}
-                            </div>
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    {{ $tourPackages->appends(request()->query())->links() }}
+                                </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Sidebar -->
-            <div class="col-lg-4 mb-4">
-                <div class="sidebar-sticky">
-                    <div class="sidebar-item mb-4">
+                <!-- Sidebar -->
+                <div class="col-lg-4 mb-4">
+                    <div class="sidebar-sticky">
+                        <div class="sidebar-item mb-4">
 
-                        <form class="form-content" method="GET" action="{{ route('packages.search') }}"
-                            id="country-filter-form">
-                            <h4 class="title white">Find Tour & Travel Packages</h4>
-                            <div class="form-group">
-                                <label class="white">Your Destination</label>
-                                <select name="country" class="niceSelect"
-                                    onchange="document.getElementById('country-filter-form').submit();">
-                                    <option value="">Where are you going?</option>
-                                    @foreach ($ourCountries as $country)
-                                        <option value="{{ $country->slug }}"
-                                            {{ request('country') == $country->slug ? 'selected' : '' }}>
-                                            {{ $country->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <button type="submit" class="nir-btn w-100"><i class="fa fa-search"></i> Check
-                                Availability</button>
-                        </form>
-
-                    </div>
-
-                    <div class="list-sidebar">
-                        <div class="sidebar-item">
-                            <h4>General Packages Available</h4>
-                            <form method="GET" action="{{ route('packages.search') }}" id="parent-filter-form">
-                                <h4>Type</h4>
-
-                                {{-- Keep the selected country in this form --}}
-                                <input type="hidden" name="country" value="{{ request('country') }}">
-
-                                @foreach ($parentPackages as $parent)
-                                    <div class="pretty p-default p-thick p-pulse">
-                                        <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
-                                            {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
-                                        <div class="state">
-                                            <label>{{ $parent->title }}</label>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                                <button type="submit" class="nir-btn w-100">Filter</button>
+                            <form class="form-content" method="GET" action="{{ route('packages.search') }}"
+                                id="country-filter-form">
+                                <h4 class="title white">Find Tour & Travel Packages</h4>
+                                <div class="form-group">
+                                    <label class="white">Your Destination</label>
+                                    <select name="country" class="niceSelect"
+                                        onchange="document.getElementById('country-filter-form').submit();">
+                                        <option value="">Where are you going?</option>
+                                        @foreach ($ourCountries as $country)
+                                            <option value="{{ $country->slug }}"
+                                                {{ request('country') == $country->slug ? 'selected' : '' }}>
+                                                {{ $country->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <button type="submit" class="nir-btn w-100"><i class="fa fa-search"></i> Check
+                                    Availability</button>
                             </form>
-
 
                         </div>
 
-                        {{-- <div class="sidebar-item">
+                        <div class="list-sidebar">
+                            <div class="sidebar-item">
+                                <h4>General Packages Available</h4>
+                                <form method="GET" action="{{ route('packages.search') }}" id="parent-filter-form">
+                                    <h4>Type</h4>
+
+                                    {{-- Keep the selected country in this form --}}
+                                    <input type="hidden" name="country" value="{{ request('country') }}">
+
+                                    @foreach ($parentPackages as $parent)
+                                        <div class="pretty p-default p-thick p-pulse">
+                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
+                                                {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
+                                            <div class="state">
+                                                <label>{{ $parent->title }}</label>
+                                            </div>
+                                        </div>
+                                    @endforeach
+
+                                    <button type="submit" class="nir-btn w-100">Filter</button>
+                                </form>
+
+
+                            </div>
+
+                            {{-- <div class="sidebar-item">
                                 <h4>Services</h4>
                                 @foreach ($services as $service)
                                     <div class="pretty p-default p-thick p-pulse mar-bottom-15">
@@ -202,25 +203,25 @@
                                 @endforeach
                             </div> --}}
 
-                        <div class="sidebar-item">
-                            <h4>Price Range($)</h4>
-                            <div class="range-slider">
-                                <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                    data-max="2000" data-max-name="max_price" data-min="0" data-min-name="min_price"
-                                    data-unit="$">
-                                    <span class="min-value">0 $</span>
-                                    <span class="max-value">2000 $</span>
-                                    <div class="ui-slider-range ui-widget-header ui-corner-all full"
-                                        style="left: 0%; width: 100%;"></div>
+                            <div class="sidebar-item">
+                                <h4>Price Range($)</h4>
+                                <div class="range-slider">
+                                    <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                        data-max="2000" data-max-name="max_price" data-min="0"
+                                        data-min-name="min_price" data-unit="$">
+                                        <span class="min-value">0 $</span>
+                                        <span class="max-value">2000 $</span>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all full"
+                                            style="left: 0%; width: 100%;"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Sidebar Ends -->
             </div>
-            <!-- Sidebar Ends -->
-        </div>
         </div>
     </section>
 
@@ -309,7 +310,7 @@
         }
 
         .page-item a :hover {
-            color: var(--omundum-yellow) !important;
+            color: var(--omundum-green) !important;
         }
     </style>
 @endpush
