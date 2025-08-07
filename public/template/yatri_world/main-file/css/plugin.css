@@ -3458,7 +3458,7 @@ button.swiper-pagination-bullet {
     color: transparent;
     border: none;
     outline: none;
-    background: var(--omundum-green);
+    /* background: var(--omundum-green); */
     line-height: 40px;
     z-index: 1;
     transition: all ease-in-out 0.3s;
