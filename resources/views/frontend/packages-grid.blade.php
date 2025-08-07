@@ -304,6 +304,10 @@
         .trend-image img {
             object-fit: cover;
         }
+
+        .page-item a {
+            color: white !important;
+        }
     </style>
 @endpush
 @push('scripts')
