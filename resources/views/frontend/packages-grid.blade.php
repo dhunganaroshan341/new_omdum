@@ -176,40 +176,61 @@
                         <div class="list-sidebar">
                             <div class="sidebar-item">
                                 <h4>General Packages Available</h4>
-                                <form method="GET" action="{{ route('packages.search') }}" id="parent-filter-form">
-
-
-                                    {{-- Keep the selected country in this form --}}
+                                <form method="GET" action="{{ route('packages.search') }}" id="package-filter-form">
+                                    {{-- Country filter (optional) --}}
                                     <input type="hidden" name="country" value="{{ request('country') }}">
 
-                                    @foreach ($parentPackages as $parent)
-                                        <div class="pretty p-default p-thick p-pulse">
-                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
-                                                {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
-                                            <div class="state">
-                                                <label>{{ $parent->title }}</label>
+                                    {{-- General Packages (Parent Packages) --}}
+                                    <div class="sidebar-item">
+                                        <h4>General Packages</h4>
+                                        @foreach ($parentPackages as $parent)
+                                            <div class="pretty p-default p-thick p-pulse">
+                                                <input type="checkbox" name="parent_packages[]"
+                                                    value="{{ $parent->id }}"
+                                                    {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
+                                                <div class="state">
+                                                    <label>{{ $parent->title }}</label>
+                                                </div>
                                             </div>
+                                        @endforeach
+                                    </div>
+
+                                    {{-- Package Types --}}
+                                    <div class="sidebar-item">
+                                        <h4>Type</h4>
+                                        @php
+                                            $packageTypes = [
+                                                'tour' => 'Tour',
+                                                'trekking' => 'Trekking',
+                                                'other' => 'Other',
+                                            ];
+                                        @endphp
+                                        @foreach ($packageTypes as $key => $label)
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="package_type"
+                                                    id="{{ $key }}" value="{{ $key }}"
+                                                    {{ request('package_type') === $key ? 'checked' : '' }}>
+                                                <label class="form-check-label white" for="{{ $key }}">
+                                                    {{ $label }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    {{-- Price Range (UI-based slider or manual input) --}}
+                                    <div class="sidebar-item">
+                                        <h4>Price Range ($)</h4>
+                                        <div class="form-group d-flex">
+                                            <input type="number" name="min_price" class="form-control me-2"
+                                                placeholder="Min" value="{{ request('min_price') }}">
+                                            <input type="number" name="max_price" class="form-control"
+                                                placeholder="Max" value="{{ request('max_price') }}">
                                         </div>
-                                    @endforeach
-                                    <div class="pretty p-default p-thick p-pulse">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="package_type"
-                                                id="tour" value="tour"
-                                                {{ request('package_type') === 'tour' ? 'checked' : '' }}>
-                                            <label class="form-check-label white" for="tour">
-                                                Tours
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="package_type"
-                                                id="trekking" value="trekking"
-                                                {{ request('package_type') === 'trekking' ? 'checked' : '' }}>
-                                            <label class="form-check-label white" for="trekking">
-                                                Trekking
-                                            </label>
-                                        </div>
-                                        <button type="submit" class="nir-btn w-100">Filter</button>
+                                    </div>
+
+                                    <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
                                 </form>
+
 
 
                             </div>

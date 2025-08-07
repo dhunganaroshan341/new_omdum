@@ -117,63 +117,80 @@
 
 
 
-    private function getFilteredPackages(array $filters = [])
-    {
-        $countries = $this->countries;
-        $services = Service::all();
-        $tourPackageTypes = TourPackageType::all();
-        $ourCountries = OurCountry::all();
+  private function getFilteredPackages(array $filters = [])
+{
+    $countries = $this->countries;
+    $services = Service::all();
+    $tourPackageTypes = TourPackageType::all();
+    $ourCountries = OurCountry::all();
 
-        $countryName = $filters['country'] ?? null;
-        $parentIds = $filters['parent_packages'] ?? [];
-        $sortBy = $filters['sort_by'] ?? null;
+    $countryName = $filters['country'] ?? null;
+    $parentIds = $filters['parent_packages'] ?? [];
+    $sortBy = $filters['sort_by'] ?? null;
+    $packageType = $filters['package_type'] ?? null;
+    $minPrice = $filters['min_price'] ?? null;
+    $maxPrice = $filters['max_price'] ?? null;
 
-        // Find country model from slug
-        $country = null;
-        if ($countryName) {
-            $country = OurCountry::where('slug', 'LIKE', $countryName)->first();
-        }
-
-        // Base query
-        $query = TourPackage::query()->where('status', 'Active');
-
-        if ($country) {
-            $query->where('our_country_id', $country->id);
-        }
-
-        // Filter children by parent packages
-        if (!empty($parentIds)) {
-            $query->whereHas('parent', function ($q) use ($parentIds) {
-                $q->whereIn('id', $parentIds);
-            });
-        }
-
-        // Sorting
-        if ($sortBy === 'low') {
-            $query->orderBy('price', 'asc');
-        } elseif ($sortBy === 'high') {
-            $query->orderBy('price', 'desc');
-        }
-
-       $tourPackages = $query->paginate(9); // You can choose any per-page number
-
-        // For sidebar: only parents with children (optionally filtered by country)
-        $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
-        if ($country) {
-            $parentPackagesQuery->where('our_country_id', $country->id);
-        }
-        $parentPackages = $parentPackagesQuery->get();
-
-        return compact(
-            'countries',
-            'ourCountries',
-            'tourPackages',
-            'services',
-            'tourPackageTypes',
-            'parentPackages',
-            'countryName'
-        );
+    // Country filter
+    $country = null;
+    if ($countryName) {
+        $country = OurCountry::where('slug', 'LIKE', $countryName)->first();
     }
+
+    // Base query
+    $query = TourPackage::query()->where('status', 'Active');
+
+    // Apply filters
+    if ($country) {
+        $query->where('our_country_id', $country->id);
+    }
+
+    if (!empty($parentIds)) {
+        $query->whereHas('parent', function ($q) use ($parentIds) {
+            $q->whereIn('id', $parentIds);
+        });
+    }
+
+    if ($packageType) {
+        $query->where('package_type', $packageType);
+    }
+
+    if ($minPrice !== null) {
+        $query->where('price', '>=', $minPrice);
+    }
+
+    if ($maxPrice !== null) {
+        $query->where('price', '<=', $maxPrice);
+    }
+
+    // Sorting
+    if ($sortBy === 'low') {
+        $query->orderBy('price', 'asc');
+    } elseif ($sortBy === 'high') {
+        $query->orderBy('price', 'desc');
+    }
+
+    $tourPackages = $query->paginate(9)->withQueryString(); // ✅
+
+
+    // Sidebar: Parent packages
+    $parentPackagesQuery = TourPackage::whereNull('parent_id')->whereHas('children');
+    if ($country) {
+        $parentPackagesQuery->where('our_country_id', $country->id);
+    }
+    $parentPackages = $parentPackagesQuery->get();
+
+    return compact(
+        'countries',
+        'ourCountries',
+        'tourPackages',
+        'services',
+        'tourPackageTypes',
+        'parentPackages',
+        'countryName'
+    );
+}
+
 
 
 
