@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\TourPackageController;
 use App\Http\Controllers\FrontGalleryController;
+use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\PackageBookingController;
 use App\Http\Controllers\UserFrontendController;
 use App\Models\User;
@@ -326,3 +327,4 @@ use NerdSnipe\LaravelCountries\Facades\LaravelCountries;
 // Route::get('/test-countries', function () {
 //     return LaravelCountries::getCountries();
 // });
+Route::post('/newsletter/subscribe', [NewsLetterController::class, 'subscribe'])->name('newsletter.subscribe');
