@@ -1,7 +1,8 @@
 @extends('Admin.layout.master')
-
 @section('content')
     <div class="container-fluid">
+        @include('Admin.pages.bookings.manageBookingModal')
+
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h3 class="card-title">All Bookings</h3>
@@ -35,11 +36,3 @@
         </div>
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        $(document).ready(function() {
-
-        });
-    </script>
-@endpush

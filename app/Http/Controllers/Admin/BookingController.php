@@ -14,7 +14,7 @@ use Yajra\DataTables\Facades\DataTables;
 
 class BookingController extends Controller
 {
-  public function index(Request $request)
+public function index(Request $request)
 {
     if ($request->ajax()) {
         $search = $request->input('search.value');
@@ -45,16 +45,14 @@ class BookingController extends Controller
         $bookings = $filtered
             ->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
             ->offset($start)
-            ->limit($pageSize);
+            ->limit($pageSize)
+            ->get(); // ✅ Fetch the results
 
         return DataTables::of($bookings)
             ->addIndexColumn()
-
-            // ✅ Pre-built action buttons
             ->addColumn('action', function ($data) {
                 return view('Admin.Button.button', compact('data'));
             })
-
             ->addColumn('status', function ($item) {
                 return '<select class="form-select booking-status" data-id="' . $item->id . '">
                             <option value="pending" ' . ($item->status == 'pending' ? 'selected' : '') . '>Pending</option>
@@ -63,15 +61,12 @@ class BookingController extends Controller
                             <option value="active" ' . ($item->status == 'active' ? 'selected' : '') . '>Active</option>
                         </select>';
             })
-
             ->addColumn('package', function ($item) {
                 return optional($item->tourPackage)->title ?? '-';
             })
-
             ->addColumn('batch', function ($item) {
                 return optional($item->tourBatch)->title ?? ($item->custom_date ?? '-');
             })
-
             ->rawColumns(['action', 'status'])
             ->with('recordsTotal', $total)
             ->with('recordsFiltered', $filteredCount)
@@ -80,6 +75,7 @@ class BookingController extends Controller
 
     return view('Admin.pages.bookings.index');
 }
+
 
 public function store(StorePackageBookingRequest $request)
 {
