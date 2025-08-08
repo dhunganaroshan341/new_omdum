@@ -288,13 +288,22 @@
                     @foreach ($tourPackages as $package)
                         <div class="col-lg-4 col-md-6 p-1">
                             <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
-                                <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
-                                    class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+
+                                {{-- Image wrapped in link --}}
+                                <a href="{{ route('packages.book', ['id' => $package->id]) }}">
+                                    <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
+                                        class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                                </a>
 
                                 <div
                                     class="desti-content position-absolute bottom-0 start-0 w-100 p-3 bg-navy bg-opacity-75">
-                                    <h4 class="white mb-1">{{ $package->title ?? 'Mundum Cultural Trek' }}</h4>
+                                    <h4 class="white mb-1">
+                                        <a href="{{ route('packages.book', ['id' => $package->id]) }}"
+                                            class="text-decoration-none white">
+                                            {{ $package->title ?? 'Mundum Cultural Trek' }}
+                                        </a>
+                                    </h4>
 
                                     <div class="trend-last-main d-flex justify-content-between align-items-center">
                                         <p class="mb-1 white d-flex align-items-center">
@@ -319,6 +328,7 @@
                             </div>
                         </div>
                     @endforeach
+
 
                 </div>
             </div>
@@ -354,6 +364,45 @@
         }
 
         .page-item a :hover {
+            color: var(--omundum-green) !important;
+        }
+
+        .desti-image,
+        .desti-image img,
+        .desti-content h4 a,
+        .trend-last-main p,
+        .trend-last-main .price span,
+        .desti-overlay a span,
+        .desti-overlay a i {
+            transition: all 0.3s ease;
+        }
+
+        /* Card hover: lift + shadow + image zoom */
+        .desti-image:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .desti-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay fade in */
+        .desti-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .desti-image:hover .desti-overlay {
+            opacity: 1;
+        }
+
+        /* Change all key text to green on hover */
+        .desti-image:hover .desti-content h4 a,
+        .desti-image:hover .trend-last-main p,
+        .desti-image:hover .trend-last-main .price span,
+        .desti-image:hover .desti-overlay a span,
+        .desti-image:hover .desti-overlay a i {
             color: var(--omundum-green) !important;
         }
     </style>
