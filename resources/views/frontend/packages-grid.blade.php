@@ -92,7 +92,7 @@
                                             <div class="trend-content-main">
                                                 <div class="trend-content">
                                                     <h4><a
-                                                            href="{{ route($packages->show, ['slug' => $package->slug]) }}">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
+                                                            href="{{ route('packages.show', ['slug' => $package->slug]) }}">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
                                                     </h4>
                                                     <p class="mb-0 pink">
                                                         {{-- <i class="fa fa-eye me-1"></i> Includes --}}
@@ -411,12 +411,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                .desti-image:hover .trend-last-main p.white,
-                                                .desti-image:hover .trend-last-main .price span,
-                                                .desti-image:hover .desti-overlay a span.white,
-                                                .desti-image:hover .desti-overlay a i.white {
-                                                    color: var(--omundum-green) !important;
-                                                } */
+                                                        .desti-image:hover .trend-last-main p.white,
+                                                        .desti-image:hover .trend-last-main .price span,
+                                                        .desti-image:hover .desti-overlay a span.white,
+                                                        .desti-image:hover .desti-overlay a i.white {
+                                                            color: var(--omundum-green) !important;
+                                                        } */
     </style>
 @endpush
 @push('scripts')
