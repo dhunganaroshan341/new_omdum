@@ -19,6 +19,20 @@
                         {!! $aboutContent->content ??
                             'At Om Mundum Treks, we believe travel is more than just a journey—it\'s a life-changing experience. We offer unique adventures that take you off the beaten path, showcasing Nepal\'s breathtaking mountains, rich Kirati culture, and pristine hidden trails. Specializing in the newly opened Mundum Trail, we provide authentic cultural immersion experiences in eastern Nepal\'s untouched wilderness. Our carefully crafted expeditions connect you with indigenous Rai communities, ancient traditions, and spectacular Himalayan landscapes that few travelers ever witness. Every trek is designed with purpose—to create meaningful connections between adventurers and Nepal\'s most preserved cultural heritage while supporting local communities and sustainable tourism practices.' !!}
                         </p>
+                        <div class="about-featured mb-0">
+                            @if ($aboutContent->short_desc1)
+                                {!! $aboutContent->short_desc1 !!}
+                            @else
+                                <ul>
+                                    <li>Safety Travel System</li>
+                                    <li>Budget-Friendly Tour</li>
+                                    <li>Expert Trip Planning</li>
+                                    <li>Fast Communication</li>
+                                    <li>Right Solution & Guide</li>
+                                    <li>24/7 Customer Support</li>
+                                </ul>
+                            @endif
+                        </div>
                     </div>
                 </div>
 
