@@ -30,7 +30,7 @@
  </section>
  @push('scripts')
      <script>
-         $('#newsletter-form-submit').on('submit', function(e) {
+         $('#newsletter-form').on('submit', function(e) {
              e.preventDefault();
              let email = $(this).find('input[name="email"]').val();
 
@@ -42,22 +42,31 @@
                      _token: "{{ csrf_token() }}"
                  },
                  success: function(response) {
-                     swal({
+                     Swal.fire({
                          title: "Subscribed!",
                          text: response.message,
                          icon: "success",
-                         button: "OK",
+                         confirmButtonText: "OK"
                      });
                      $('#newsletter-form')[0].reset();
                  },
                  error: function(xhr) {
-                     let res = xhr.responseJSON;
-                     swal({
-                         title: "Oops!",
-                         text: res?.message || 'Subscription failed',
-                         icon: "error",
-                         button: "Try Again",
-                     });
+                     if (xhr.status === 409) {
+                         // Already subscribed
+                         Swal.fire({
+                             title: "Already Subscribed",
+                             text: xhr.responseJSON.message,
+                             icon: "info",
+                             confirmButtonText: "OK"
+                         });
+                     } else {
+                         Swal.fire({
+                             title: "Oops!",
+                             text: xhr.responseJSON?.message || 'Subscription failed',
+                             icon: "error",
+                             confirmButtonText: "Try Again"
+                         });
+                     }
                  }
              });
          });

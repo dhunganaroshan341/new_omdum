@@ -48,22 +48,28 @@ class NewsLetterController extends Controller
         //
     }
 
-     public function subscribe(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:newsletter_subscribers,email',
-        ]);
+  public function subscribe(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email'
+    ]);
 
-        if ($validator->fails()) {
-            return response()->json(['success' => false, 'message' => $validator->errors()->first('email')], 422);
-        }
+    $email = $request->email;
 
-        NewsletterSubscriber::create([
-            'email' => $request->email,
-        ]);
+    // Check if already subscribed
+    $exists = NewsletterSubscriber::where('email', $email)->exists();
 
-        // Optionally, send confirmation email here
-
-        return response()->json(['success' => true, 'message' => 'Thank you for subscribing!']);
+    if ($exists) {
+        return response()->json([
+            'message' => 'You are already subscribed!'
+        ], 409);  // 409 Conflict status code
     }
+
+    // If not subscribed, save it
+    NewsletterSubscriber::create(['email' => $email]);
+
+    return response()->json([
+        'message' => 'Thank you for subscribing!'
+    ]);
+}
 }
