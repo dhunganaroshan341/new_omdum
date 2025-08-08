@@ -117,7 +117,7 @@
         .slick-prev::before,
         .slick-next::before {
             font-family: 'fontawesome';
-            font-size: 21px;
+            font-size: 12px;
             line-height: 2.0;
             opacity: 1;
             color: #fff !important;
@@ -128,7 +128,7 @@
         .slick-prev:hover,
         .slick-next:hover {
             font-family: 'FontAwesome';
-            font-size: 21px;
+            font-size: 12px;
             line-height: 2.0;
             opacity: 1;
             background: var(--omundum-orange) !important;
