@@ -72,17 +72,15 @@ public function index(Request $request)
             ->with('recordsFiltered', $filteredCount)
             ->make(true);
     }
-  $extraJs = array_merge(
-            config('js-map.admin.datatable.script'),
+      $extraJs = array_merge(
+    config('js-map.admin.datatable.script'),
             config('js-map.admin.summernote.script'),
-            config('js-map.admin.sweetalert.script'),
             config('js-map.admin.buttons.script')
         );
 
         $extraCs = array_merge(
             config('js-map.admin.datatable.style'),
             config('js-map.admin.summernote.style'),
-            config('js-map.admin.sweetalert.style'),
             config('js-map.admin.buttons.style')
         );
 
