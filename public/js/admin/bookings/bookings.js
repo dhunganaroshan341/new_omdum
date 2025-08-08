@@ -1,45 +1,40 @@
 $(document).ready(function () {
-    // Setup CSRF Token for all AJAX requests
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
+    $(".summernote").summernote({
+        height: 300
     });
 
-    // ========================
-    // booking table
-     let bookingUrl = $('#bookingTable').data('url');
-
-    $('#bookingTable').DataTable({
+    var table = $("#show-call-to-action-data").DataTable({
         processing: true,
         serverSide: true,
-        ajax: bookingUrl,
+        ajax: {
+            url: "{{ route('call.to.action') }}", // or your actual route
+        },
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        order: [[11, 'desc']], // Sort by Submitted At (created_at)
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'action', name: 'action', orderable: false, searchable: false },
-            { data: 'package', name: 'tourPackage.title' },
+            { data: 'package', name: 'tourPackage.title', orderable: false, searchable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
             { data: 'phone', name: 'phone' },
             { data: 'booking_type', name: 'booking_type' },
-            {
-                data: 'batch',
-                name: 'tourBatch.title',
-                render: function (data) {
-                    return data ? data : 'N/A';
-                }
-            },
+            { data: 'batch', name: 'tourBatch.title', orderable: false, searchable: false },
             { data: 'total_people', name: 'total_people' },
             { data: 'price', name: 'price' },
             { data: 'status', name: 'status' },
             {
                 data: 'created_at',
                 name: 'created_at',
-                render: function (data) {
+                render: function(data) {
                     return moment(data).format('D MMM, YYYY');
                 }
-            },
+            }
         ],
-        order: [[11, 'desc']],
+        dom: 'Blfrtip',
+        buttons: [
+            { extend: 'print', exportOptions: { columns: [0, 2, 3, 4, 5] } },
+            { extend: 'excel', title: '', exportOptions: { columns: [0, 2, 3, 4, 5] } }
+        ],
     });
 });
