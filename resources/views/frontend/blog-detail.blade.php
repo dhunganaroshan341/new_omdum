@@ -95,7 +95,7 @@
                                     class="float-end text-end">
                                     <div class="next pe-4">
                                         <i class="fa fa-arrow-right white"></i>
-                                        <p class="m-0">Next Post</p>
+                                        <p class="m-0 next-post-p">Next Post</p>
                                         <p class="m-0">
                                             {{ \Illuminate\Support\Str::words($nextPost->title, 3, '...') }}
                                         </p>
@@ -193,6 +193,19 @@
     <style>
         .blog-next {
             background: #162241
+        }
+
+        .blog-single .blog-next .next i {
+            left: inherit;
+            right: 0;
+            color: var(--omundum-green) !important;
+        }
+
+        .next-post-p {
+
+            margin: 0 !important;
+            padding-right: 21px !important;
+
         }
     </style>
 @endpush
