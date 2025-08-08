@@ -28,126 +28,121 @@
                 <div class="col-lg-8 mb-4">
                     <div class="trend-box">
                         <div class="row">
-                            <div id="packageResults" class="col-lg-12">
-                                <div class="col-lg-12">
-                                    <div class="list-results d-flex align-items-center justify-content-between">
-                                        <div class="list-results-sort">
-                                            <p class="m-0">
-                                                @if ($tourPackages->total() === 0)
-                                                    0 Packages
-                                                @else
-                                                    Showing {{ $tourPackages->firstItem() }}–{{ $tourPackages->lastItem() }}
-                                                    of
-                                                    {{ $tourPackages->total() }} results
-                                                @endif
-                                            </p>
 
-                                        </div>
+                            <div id = "packageResults" class="col-lg-12">
+                                <div class="list-results d-flex align-items-center justify-content-between">
+                                    <div class="list-results-sort">
+                                        <p class="m-0">
+                                            @if ($tourPackages->total() === 0)
+                                                0 Packages
+                                            @else
+                                                Showing {{ $tourPackages->firstItem() }}–{{ $tourPackages->lastItem() }} of
+                                                {{ $tourPackages->total() }} results
+                                            @endif
+                                        </p>
 
-                                        <div class="click-menu d-flex align-items-center justify-content-between">
-                                            {{-- <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
+                                    </div>
+
+                                    <div class="click-menu d-flex align-items-center justify-content-between">
+                                        {{-- <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
                                         <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
                                         </div> --}}
-                                            <div class="sortby d-flex align-items-center justify-content-between ms-2">
-                                                <form method="GET" action="{{ route('packages.search') }}">
-                                                    {{-- Retain existing filters --}}
-                                                    @foreach ((array) request('parent_packages') as $parentId)
-                                                        <input type="hidden" name="parent_packages[]"
-                                                            value="{{ $parentId }}">
-                                                    @endforeach
-                                                    <input type="hidden" name="country" value="{{ request('country') }}">
+                                        <div class="sortby d-flex align-items-center justify-content-between ms-2">
+                                            <form method="GET" action="{{ route('packages.search') }}">
+                                                {{-- Retain existing filters --}}
+                                                @foreach ((array) request('parent_packages') as $parentId)
+                                                    <input type="hidden" name="parent_packages[]"
+                                                        value="{{ $parentId }}">
+                                                @endforeach
+                                                <input type="hidden" name="country" value="{{ request('country') }}">
 
-                                                    <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
-                                                        <option value="">Sort By</option>
-                                                        <option value="low"
-                                                            {{ request('sort_by') == 'low' ? 'selected' : '' }}>Price: low
-                                                            to
-                                                            high</option>
-                                                        <option value="high"
-                                                            {{ request('sort_by') == 'high' ? 'selected' : '' }}>Price: high
-                                                            to
-                                                            low</option>
-                                                    </select>
-                                                </form>
-                                            </div>
-
+                                                <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
+                                                    <option value="">Sort By</option>
+                                                    <option value="low"
+                                                        {{ request('sort_by') == 'low' ? 'selected' : '' }}>Price: low to
+                                                        high</option>
+                                                    <option value="high"
+                                                        {{ request('sort_by') == 'high' ? 'selected' : '' }}>Price: high to
+                                                        low</option>
+                                                </select>
+                                            </form>
                                         </div>
+
                                     </div>
-                                </div>
-                                @if ($tourPackages->isEmpty())
-                                    <div class="col-12">
-                                        <div class="trend-item text-center py-5">
-                                            <h4 class="pink">Packages Not Available</h4>
-                                            <p>Try adjusting your filters or check back later.</p>
-                                        </div>
-                                    </div>
-                                @else
-                                    @foreach ($tourPackages as $package)
-                                        <!-- Start of Nepal Section -->
-                                        <div class="col-md-6 mb-4">
-                                            <div class="trend-item">
-                                                <div class="trend-image">
-                                                    <img alt="image"
-                                                        src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
-                                                            ? asset('tour_images/' . $package->images[0])
-                                                            : asset('template/yatri_world/main-file/images/india.jpg') }}" />
-
-                                                </div>
-                                                <div class="trend-content-main">
-                                                    <div class="trend-content">
-                                                        <h4><a
-                                                                href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
-                                                        </h4>
-                                                        <p class="mb-0 pink">
-                                                            {{-- <i class="fa fa-eye me-1"></i> Includes --}}
-                                                            {{ $package->country->name ?? '' }}
-                                                            <i class="fa fa-map-marker me-1 ms-3"></i>
-                                                        </p>
-                                                    </div>
-                                                    <div class="trend-last-main">
-                                                        <p class="mb-0 trend-para">
-                                                            {{ $package->short_desc ?? 'A sacred escape nestled in the Himalayas – perfect for soul-searching and adventure.' }}
-                                                        </p>
-                                                        <div
-                                                            class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
-                                                            <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
-                                                                class="white d-flex align-items-center text-decoration-none">
-
-                                                                <img src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
-                                                                    onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
-                                                                    class="d-author me-2" alt="Package Image" loading="lazy"
-                                                                    style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
-
-                                                                <span>View Package</span>
-                                                            </a>
-
-                                                            <div class="trend-price">
-                                                                <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
-                                                                    class="text-decoration-none">
-                                                                    <p class="price white mb-0">
-                                                                        <span>{{ $package->price ? '$' . $package->price : '' }}</span>
-                                                                        <i class="fa fa-arrow-right white ps-1"></i>
-                                                                    </p>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                    <!-- End of Nepal Section -->
-                                @endif
-                                <div class="col-lg-12">
-                                    <div class="text-center">
-                                        {{ $tourPackages->appends(request()->query())->links() }}
-                                    </div>
-
                                 </div>
                             </div>
+                            @if ($tourPackages->isEmpty())
+                                <div class="col-12">
+                                    <div class="trend-item text-center py-5">
+                                        <h4 class="pink">Packages Not Available</h4>
+                                        <p>Try adjusting your filters or check back later.</p>
+                                    </div>
+                                </div>
+                            @else
+                                @foreach ($tourPackages as $package)
+                                    <!-- Start of Nepal Section -->
+                                    <div class="col-md-6 mb-4">
+                                        <div class="trend-item">
+                                            <div class="trend-image">
+                                                <img alt="image"
+                                                    src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
+                                                        ? asset('tour_images/' . $package->images[0])
+                                                        : asset('template/yatri_world/main-file/images/india.jpg') }}" />
 
+                                            </div>
+                                            <div class="trend-content-main">
+                                                <div class="trend-content">
+                                                    <h4><a
+                                                            href="#">{{ $package->title ?? '15-Day Mundum Explorer Trek' }}</a>
+                                                    </h4>
+                                                    <p class="mb-0 pink">
+                                                        {{-- <i class="fa fa-eye me-1"></i> Includes --}}
+                                                        {{ $package->country->name ?? '' }}
+                                                        <i class="fa fa-map-marker me-1 ms-3"></i>
+                                                    </p>
+                                                </div>
+                                                <div class="trend-last-main">
+                                                    <p class="mb-0 trend-para">
+                                                        {{ $package->short_desc ?? 'A sacred escape nestled in the Himalayas – perfect for soul-searching and adventure.' }}
+                                                    </p>
+                                                    <div
+                                                        class="trend-last d-flex align-items-center justify-content-between bg-navy px-3 py-2 rounded">
+                                                        <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
+                                                            class="white d-flex align-items-center text-decoration-none">
+
+                                                            <img src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                                                onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
+                                                                class="d-author me-2" alt="Package Image" loading="lazy"
+                                                                style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
+
+                                                            <span>View Package</span>
+                                                        </a>
+
+                                                        <div class="trend-price">
+                                                            <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
+                                                                class="text-decoration-none">
+                                                                <p class="price white mb-0">
+                                                                    <span>{{ $package->price ? '$' . $package->price : '' }}</span>
+                                                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                <!-- End of Nepal Section -->
+                            @endif
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    {{ $tourPackages->appends(request()->query())->links() }}
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
