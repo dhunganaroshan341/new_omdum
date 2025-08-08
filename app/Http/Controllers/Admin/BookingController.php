@@ -16,62 +16,61 @@ class BookingController extends Controller
 {
 public function index(Request $request)
 {
-    if ($request->ajax()) {
-        $search = $request->input('search.value');
-        $columns = $request->input('columns');
-        $pageSize = $request->input('length');
-        $order = $request->input('order')[0];
-        $orderColumnIndex = $order['column'];
-        $orderBy = $order['dir'];
-        $start = $request->input('start');
+  if ($request->ajax()) {
+    $search = $request->input('search.value');
+    $columns = $request->input('columns');
+    $order = $request->input('order')[0];
+    $orderColumnIndex = $order['column'];
+    $orderBy = $order['dir'];
 
-        $bookingsQuery = PackageBooking::with(['tourPackage', 'tourBatch'])
-            ->where('status', '!=', 'inactive'); // ✅ exclude inactive
+    $bookingsQuery = PackageBooking::with(['tourPackage', 'tourBatch'])
+        ->where('status', '!=', 'inactive');
 
-        $total = $bookingsQuery->count();
-
-        $filtered = $bookingsQuery->when($search, function ($query) use ($search) {
-            $query->where(function ($q) use ($search) {
-                $q->where('name', 'LIKE', "%$search%")
-                    ->orWhere('email', 'LIKE', "%$search%")
-                    ->orWhere('phone', 'LIKE', "%$search%")
-                    ->orWhere('country', 'LIKE', "%$search%")
-                    ->orWhere('status', 'LIKE', "%$search%");
-            });
+    // Filtering search
+    if ($search) {
+        $bookingsQuery->where(function ($query) use ($search) {
+            $query->where('name', 'LIKE', "%$search%")
+                ->orWhere('email', 'LIKE', "%$search%")
+                ->orWhere('phone', 'LIKE', "%$search%")
+                ->orWhere('country', 'LIKE', "%$search%")
+                ->orWhere('status', 'LIKE', "%$search%");
         });
-
-        $filteredCount = $filtered->count();
-
-        $bookings = $filtered
-            ->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
-            ->offset($start)
-            ->limit($pageSize)
-            ->get(); // ✅ Fetch the results
-
-        return DataTables::of($bookings)
-            ->addIndexColumn()
-            ->addColumn('action', function ($data) {
-                return view('Admin.Button.button', compact('data'));
-            })
-            ->addColumn('status', function ($item) {
-                return '<select class="form-select booking-status" data-id="' . $item->id . '">
-                            <option value="pending" ' . ($item->status == 'pending' ? 'selected' : '') . '>Pending</option>
-                            <option value="confirmed" ' . ($item->status == 'confirmed' ? 'selected' : '') . '>Confirmed</option>
-                            <option value="cancelled" ' . ($item->status == 'cancelled' ? 'selected' : '') . '>Cancelled</option>
-                            <option value="active" ' . ($item->status == 'active' ? 'selected' : '') . '>Active</option>
-                        </select>';
-            })
-            ->addColumn('package', function ($item) {
-                return optional($item->tourPackage)->title ?? '-';
-            })
-            ->addColumn('batch', function ($item) {
-                return optional($item->tourBatch)->title ?? ($item->custom_date ?? '-');
-            })
-            ->rawColumns(['action', 'status'])
-            ->with('recordsTotal', $total)
-            ->with('recordsFiltered', $filteredCount)
-            ->make(true);
     }
+
+    // Ordering
+    // Important: If ordering on related columns is needed, you must join or handle manually.
+    // For now, fallback to ordering on direct columns only.
+    $orderColumnName = $columns[$orderColumnIndex]['data'] ?? 'created_at';
+    $allowedColumns = ['name', 'email', 'phone', 'booking_type', 'total_people', 'price', 'status', 'created_at'];
+    if (!in_array($orderColumnName, $allowedColumns)) {
+        $orderColumnName = 'created_at'; // fallback
+    }
+
+    $bookingsQuery->orderBy($orderColumnName, $orderBy);
+
+    return DataTables::eloquent($bookingsQuery)
+        ->addIndexColumn()
+        ->addColumn('action', function ($data) {
+            return view('Admin.Button.button', compact('data'));
+        })
+        ->addColumn('status', function ($item) {
+            return '<select class="form-select booking-status" data-id="' . $item->id . '">
+                        <option value="pending" ' . ($item->status == 'pending' ? 'selected' : '') . '>Pending</option>
+                        <option value="confirmed" ' . ($item->status == 'confirmed' ? 'selected' : '') . '>Confirmed</option>
+                        <option value="cancelled" ' . ($item->status == 'cancelled' ? 'selected' : '') . '>Cancelled</option>
+                        <option value="active" ' . ($item->status == 'active' ? 'selected' : '') . '>Active</option>
+                    </select>';
+        })
+        ->addColumn('package', function ($item) {
+            return optional($item->tourPackage)->title ?? '-';
+        })
+        ->addColumn('batch', function ($item) {
+            return optional($item->tourBatch)->title ?? ($item->custom_date ?? '-');
+        })
+        ->rawColumns(['action', 'status'])
+        ->make(true);
+}
+
       $extraJs = array_merge(
     config('js-map.admin.datatable.script'),
             config('js-map.admin.summernote.script'),
