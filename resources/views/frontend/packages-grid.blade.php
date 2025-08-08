@@ -320,8 +320,8 @@
                                 <div
                                     class="desti-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
                                     <a class="nir-btn" href="{{ route('packages.book', ['id' => $package->id]) }}">
-                                        <span class="white">Book Now</span>
-                                        <i class="fa fa-arrow-right white ps-1"></i>
+                                        <span class="white boonow-span">Book Now</span>
+                                        <i class="fa fa-arrow-right white ps-1 book-now-i"></i>
                                     </a>
                                 </div>
                             </div>
