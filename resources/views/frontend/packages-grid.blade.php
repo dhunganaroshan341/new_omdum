@@ -218,7 +218,7 @@
                                     </div>
 
                                     {{-- Price Range (UI-based slider or manual input) --}}
-                                    <div class="sidebar-item">
+                                    {{-- <div class="sidebar-item">
                                         <h4>Price Range ($)</h4>
                                         <div class="form-group d-flex">
                                             <input type="number" name="min_price" class="form-control me-2"
@@ -226,7 +226,7 @@
                                             <input type="number" name="max_price" class="form-control"
                                                 placeholder="Max" value="{{ request('max_price') }}">
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
                                 </form>
