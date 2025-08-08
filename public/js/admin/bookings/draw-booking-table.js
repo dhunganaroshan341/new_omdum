@@ -7,7 +7,9 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "", // or your actual route
+            url: "admin/bookings", // or your actual route
+            type: 'GET', // or your actual route
+
         },
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         order: [[11, 'desc']], // Sort by Submitted At (created_at)
