@@ -68,6 +68,7 @@
                         </div>
 
                         <!-- Blog Prev/Next Navigation -->
+
                         <div class="blog-next mb-4 d-flex justify-content-between">
                             @if ($previousPost)
                                 <a href="{{ route('blog.detail', ['slug' => $previousPost->slug]) }}"

@@ -121,7 +121,7 @@
                                                             <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
                                                                 class="text-decoration-none">
                                                                 <p class="price white mb-0">
-                                                                    <span>${{ number_format($package->price ?? 1050, 2) }}</span>
+                                                                    <span>${{ number_format($package->price ?? '', 2) }}</span>
                                                                     <i class="fa fa-arrow-right white ps-1"></i>
                                                                 </p>
                                                             </a>
