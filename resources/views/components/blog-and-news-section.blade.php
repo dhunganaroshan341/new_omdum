@@ -122,5 +122,50 @@
             text-decoration: none;
             /* optional: remove underline on hover */
         }
+
+        /* Make the main container flex and stretch items */
+        .news-outer>.row {
+            display: flex;
+            align-items: stretch;
+            /* stretch columns to equal height */
+        }
+
+        /* Left large post - stretch to fill */
+        .news-outer>.row>.col-lg-5 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Right posts wrapper - full height */
+        .news-outer>.row>.col-lg-7 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Inner row containing 4 smaller posts */
+        .news-outer>.row>.col-lg-7>.row {
+            flex-grow: 1;
+        }
+
+        /* Each small post */
+        .news-outer .news-item {
+            height: 100%;
+            /* fill the col height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Make images scale nicely */
+        .news-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+            /* or adjust based on design */
+        }
+
+        /* Adjust content section inside post to flex-grow */
+        .news-content {
+            flex-grow: 1;
+        }
     </style>
 @endpush
