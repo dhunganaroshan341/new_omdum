@@ -78,7 +78,7 @@ class BookingController extends Controller
             ->make(true);
     }
 
-    return view('Admin.bookings.index');
+    return view('Admin.pages.bookings.index');
 }
 
 public function store(StorePackageBookingRequest $request)
