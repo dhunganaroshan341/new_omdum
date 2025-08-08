@@ -19,7 +19,7 @@
 
                         <!-- Title -->
                         <div class="col-md-6">
-                            <label for="title" class="form-label">Title <small>(optional)</small></label>
+                            <label for="title" class="form-label">Title <small>(*)</small></label>
                             <input type="text" class="form-control" id="title" name="title"
                                 placeholder="e.g. Day 1 - Kathmandu Arrival">
                         </div>
@@ -61,7 +61,7 @@
 
                         <!-- Description -->
                         <div class="col-md-12">
-                            <label for="description" class="form-label">Description <small>(min. 10
+                            <label for="description" class="form-label">Description <small>(min. 5
                                     characters)</small></label>
                             <textarea class="form-control summernote" id="description" name="description" rows="5"
                                 placeholder="Describe the day's itinerary..."></textarea>

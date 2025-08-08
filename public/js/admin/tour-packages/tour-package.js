@@ -231,6 +231,10 @@ $('#filterCountry, #filterType, #filterHeadPackage').on('change', function () {
             }
         });
     });
+    // refresh the table after close button clicked
+  $('.btn-close').click(function() {
+    $('#data-album-show').DataTable().draw();
+});
 
     // Edit Tour Package
     $(document).on("click", ".editUserButton", function () {
