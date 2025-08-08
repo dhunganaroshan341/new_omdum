@@ -286,45 +286,41 @@
             <div class="desti-inner">
                 <div class="row d-flex align-items-center">
                     @foreach ($tourPackages as $package)
-                        <div class="col-lg-4 col-md-6 p-1">
-                            <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
+                        <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
+                            <a href="{{ route('packages.book', ['id' => $package->id]) }}"
+                                class="d-block position-relative">
+                                <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                    onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
+                                    class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                            </a>
 
-                                {{-- Image wrapped in link --}}
-                                <a href="{{ route('packages.book', ['id' => $package->id]) }}">
-                                    <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
-                                        onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
-                                        class="img-fluid w-100" style="height: 250px; object-fit: cover;">
-                                </a>
+                            <div class="desti-content position-absolute bottom-0 start-0 w-100 p-3 bg-navy bg-opacity-75">
+                                <h4 class="white mb-1">
+                                    <a href="{{ route('packages.book', ['id' => $package->id]) }}"
+                                        class="text-decoration-none white">
+                                        {{ $package->title ?? 'Mundum Cultural Trek' }}
+                                    </a>
+                                </h4>
 
-                                <div
-                                    class="desti-content position-absolute bottom-0 start-0 w-100 p-3 bg-navy bg-opacity-75">
-                                    <h4 class="white mb-1">
-                                        <a href="{{ route('packages.book', ['id' => $package->id]) }}"
-                                            class="text-decoration-none white">
-                                            {{ $package->title ?? 'Mundum Cultural Trek' }}
-                                        </a>
-                                    </h4>
-
-                                    <div class="trend-last-main d-flex justify-content-between align-items-center">
-                                        <p class="mb-1 white d-flex align-items-center">
-                                            <i class="fa fa-clock-o me-1" aria-hidden="true"></i>
-                                            {{ $package->duration ?? '12 Days' }}
+                                <div class="trend-last-main d-flex justify-content-between align-items-center">
+                                    <p class="mb-1 white d-flex align-items-center">
+                                        <i class="fa fa-clock-o me-1" aria-hidden="true"></i>
+                                        {{ $package->duration ?? '12 Days' }}
+                                    </p>
+                                    <div class="trend-price">
+                                        <p class="price pink mb-0">From
+                                            <span>${{ number_format($package->price ?? 870, 2) }}</span>
                                         </p>
-                                        <div class="trend-price">
-                                            <p class="price pink mb-0">From
-                                                <span>${{ number_format($package->price ?? 870, 2) }}</span>
-                                            </p>
-                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div
-                                    class="desti-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
-                                    <a class="nir-btn" href="{{ route('packages.book', ['id' => $package->id]) }}">
-                                        <span class="white">Book Now</span>
-                                        <i class="fa fa-arrow-right white ps-1"></i>
-                                    </a>
-                                </div>
+                            <div
+                                class="desti-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
+                                <a class="nir-btn" href="{{ route('packages.book', ['id' => $package->id]) }}">
+                                    <span class="white">Book Now</span>
+                                    <i class="fa fa-arrow-right white ps-1"></i>
+                                </a>
                             </div>
                         </div>
                     @endforeach
@@ -398,11 +394,12 @@
         }
 
         /* Change all key text to green on hover */
-        .desti-image:hover .desti-content h4 a,
-        .desti-image:hover .trend-last-main p,
+        /* Beat .white class color with higher specificity */
+        .desti-image:hover .desti-content h4 a.white,
+        .desti-image:hover .trend-last-main p.white,
         .desti-image:hover .trend-last-main .price span,
-        .desti-image:hover .desti-overlay a span,
-        .desti-image:hover .desti-overlay a i {
+        .desti-image:hover .desti-overlay a span.white,
+        .desti-image:hover .desti-overlay a i.white {
             color: var(--omundum-green) !important;
         }
     </style>
