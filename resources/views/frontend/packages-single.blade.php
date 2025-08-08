@@ -356,11 +356,10 @@
 
         }
 
-        .team-slider .slick-prev::before,
-        .team-slider .slick-next::before {
-            font-size: 36px;
-            line-height: 1.6;
-            color: white;
+        .slick-prev,
+        .slick-next {
+            background: var(--omundum-green) !important;
+            color: white !important;
         }
 
         .price-badge {

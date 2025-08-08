@@ -43,7 +43,9 @@
                             </div>
 
                             <div class="trend-last-main">
-                                <p class="mb-0 trend-para">{{ $service->short_description }}</p>
+                                <p class="mb-0 trend-para">
+                                    {{ \Illuminate\Support\Str::words($service->short_description, 5, '...') }}
+                                </p>
 
                                 <div class="trend-last d-flex align-items-center justify-content-between">
                                     <p class="mb-0 white">
