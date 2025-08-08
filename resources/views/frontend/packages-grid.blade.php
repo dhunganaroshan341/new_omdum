@@ -182,7 +182,6 @@
 
                                     {{-- General Packages (Parent Packages) --}}
                                     <div class="sidebar-item">
-                                        <h4>General Packages</h4>
                                         @foreach ($parentPackages as $parent)
                                             <div class="pretty p-default p-thick p-pulse">
                                                 <input type="checkbox" name="parent_packages[]"
@@ -210,7 +209,7 @@
                                                 <input class="form-check-input" type="radio" name="package_type"
                                                     id="{{ $key }}" value="{{ $key }}"
                                                     {{ request('package_type') === $key ? 'checked' : '' }}>
-                                                <label class="form-check-label white" for="{{ $key }}">
+                                                <label class="form-check-label dark" for="{{ $key }}">
                                                     {{ $label }}
                                                 </label>
                                             </div>
@@ -218,7 +217,7 @@
                                     </div>
 
                                     {{-- Price Range (UI-based slider or manual input) --}}
-                                    <div class="sidebar-item">
+                                    {{-- <div class="sidebar-item">
                                         <h4>Price Range ($)</h4>
                                         <div class="form-group d-flex">
                                             <input type="number" name="min_price" class="form-control me-2"
@@ -226,7 +225,7 @@
                                             <input type="number" name="max_price" class="form-control"
                                                 placeholder="Max" value="{{ request('max_price') }}">
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
                                 </form>
@@ -247,7 +246,7 @@
                                 @endforeach
                             </div> --}}
 
-                            <div class="sidebar-item">
+                            {{-- <div class="sidebar-item">
                                 <h4>Price Range($)</h4>
                                 <div class="range-slider">
                                     <div class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
@@ -260,7 +259,7 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
