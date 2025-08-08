@@ -20,10 +20,10 @@
                 </div>
                 <div>
                     <a class="navbar-brand brand-logo" href="{{ url('/') }}">
-                        <img src="{{ $logo ?? asset('assets/front/images/logo.png') }}" alt="logo" />
+                        <img src="{{ $logo ?? asset('front/images/logo.png') }}" alt="logo" />
                     </a>
                     <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}">
-                        <img src="{{ asset('admin/front/images/logo.png') }}" alt="logo" />
+                        <img src="{{ asset('front/images/logo.png') }}" alt="logo" />
                     </a>
                 </div>
             </div>
