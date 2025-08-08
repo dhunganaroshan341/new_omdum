@@ -266,50 +266,46 @@ public function getDetail($id)
         }
     }
 
-    public function update(PostRequest $postRequest, $id)
-    {
-        DB::beginTransaction();
-        try {
-            $data = Post::findOrFail($id);
-            $data->title = $postRequest->input('post_title');
-            // $data->category_id = $postRequest->input('post_category_id');
-            $data->description = $postRequest->input('post_description');
-            $data->tags = $this->processTags($postRequest->input('tags')); // assuming post_tags input
+  public function update(PostRequest $postRequest, $id)
+{
+    DB::beginTransaction();
+    try {
+        $data = Post::findOrFail($id);
+        $data->title = $postRequest->input('post_title');
+        $data->description = $postRequest->input('post_description');
+        $data->tags = $this->processTags($postRequest->input('tags'));
 
-            $data->save();
+        $data->save();
 
-            foreach($postRequest->input('category_ids') as $category){
-                DB::table('category_posts')->insert([
-                    'category_id'=>$category,
-                    'post_id'=>$data->id
+        // Sync categories properly
+        $data->categories()->sync($postRequest->input('category_ids', []));
+
+        if ($postRequest->hasFile('post_images')) {
+            $existingImages = PostImage::where('post_id', $id)->get();
+            foreach ($existingImages as $image) {
+                Storage::disk('public')->delete($image->image);
+                $image->delete();
+            }
+
+            foreach ($postRequest->file('post_images') as $image) {
+                $imagename = time() . '_' . $image->getClientOriginalName();
+                $imagePath = $image->storeAs('images/post', $imagename, 'public');
+
+                PostImage::create([
+                    'post_id' => $data->id,
+                    'image' => $imagePath,
                 ]);
             }
-
-            if ($postRequest->hasFile('post_images')) {
-                $existingImages = PostImage::where('post_id', $id)->get();
-                foreach ($existingImages as $image) {
-                    Storage::disk('public')->delete($image->image);
-                    $image->delete();
-                }
-
-                foreach ($postRequest->file('post_images') as $image) {
-                    $imagename = time() . '_' . $image->getClientOriginalName();
-                    $imagePath = $image->storeAs('images/post', $imagename, 'public');
-
-                    PostImage::create([
-                        'post_id' => $data->id,
-                        'image' => $imagePath,
-                    ]);
-                }
-            }
-
-            DB::commit();
-            return response()->json(['success' => true]);
-        } catch (\Exception $e) {
-            DB::rollBack();
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
+
+        DB::commit();
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
+}
+
 
     // Toggle Status
     public function statusToggle($id)

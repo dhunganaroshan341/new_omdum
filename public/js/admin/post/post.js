@@ -315,6 +315,8 @@ $(document).on("click", ".editUserButton", function () {
     });
 
 
+
+
     // Status Toggle
     $(document).on("change", ".statusIdData", function () {
         let id = $(this).data("id");
