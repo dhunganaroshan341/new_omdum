@@ -79,7 +79,7 @@
             transition: all ease-in-out 0.3s;
             background: #fff;
             z-index: 9;
-            max-height: 200px;
+            max-height: 235px;
             overflow-y: auto;
         }
 
