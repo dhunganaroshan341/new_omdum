@@ -113,5 +113,27 @@
         .trend-price a:hover {
             text-decoration: underline;
         }
+
+        .slick-prev::before,
+        .slick-next::before {
+            font-family: 'fontawesome';
+            font-size: 21px;
+            line-height: 2.0;
+            opacity: 1;
+            color: #fff !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-prev::after,
+        .slick-next::after {
+            font-family: 'fontawesome';
+            font-size: 21px;
+            line-height: 2.0;
+            opacity: 1;
+            background: var(--omundum-orange) !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
     </style>
 @endpush
