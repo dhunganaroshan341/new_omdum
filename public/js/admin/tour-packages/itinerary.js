@@ -101,7 +101,7 @@ $('#updateItineraryBtn').show();
 
     function getItineraryTable(id) {
         // Initialize DataTable
-     $("#itinerary-data-album-show").DataTable({
+      itineraryTable = $("#itinerary-data-album-show").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
@@ -167,7 +167,9 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                 });
 
                 form[0].reset(); // Always reset the form
-                // $('#itinerary-data-album-show').DataTable().ajax.reload(); // Refresh table
+               if(itineraryTable){
+        itineraryTable.ajax.reload(null, false);
+    }
                  $('#order').val(response.latest_order + 1);
 
                 if (isUpdate) {
@@ -281,7 +283,9 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    $('.itinerary-data-album-show').DataTable().ajax.reload();
+                    if(itineraryTable){
+        itineraryTable.ajax.reload(null, false);
+    }
                 },
                 error: function () {
                     Swal.fire({
