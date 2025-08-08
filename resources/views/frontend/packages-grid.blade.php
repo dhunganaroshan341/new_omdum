@@ -210,7 +210,7 @@
                                                 <input class="form-check-input" type="radio" name="package_type"
                                                     id="{{ $key }}" value="{{ $key }}"
                                                     {{ request('package_type') === $key ? 'checked' : '' }}>
-                                                <label class="form-check-label dark" for="{{ $key }}">
+                                                <label class="form-check-label white" for="{{ $key }}">
                                                     {{ $label }}
                                                 </label>
                                             </div>
@@ -218,7 +218,7 @@
                                     </div>
 
                                     {{-- Price Range (UI-based slider or manual input) --}}
-                                    {{-- <div class="sidebar-item">
+                                    <div class="sidebar-item">
                                         <h4>Price Range ($)</h4>
                                         <div class="form-group d-flex">
                                             <input type="number" name="min_price" class="form-control me-2"
@@ -226,7 +226,7 @@
                                             <input type="number" name="max_price" class="form-control"
                                                 placeholder="Max" value="{{ request('max_price') }}">
                                         </div>
-                                    </div> --}}
+                                    </div>
 
                                     <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
                                 </form>
@@ -286,41 +286,45 @@
             <div class="desti-inner">
                 <div class="row d-flex align-items-center">
                     @foreach ($tourPackages as $package)
-                        <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
-                            <a href="{{ route('packages.book', ['id' => $package->id]) }}"
-                                class="d-block position-relative">
-                                <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
-                                    class="img-fluid w-100" style="height: 250px; object-fit: cover;">
-                            </a>
+                        <div class="col-lg-4 col-md-6 p-1">
+                            <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
 
-                            <div class="desti-content position-absolute bottom-0 start-0 w-100 p-3 bg-navy bg-opacity-75">
-                                <h4 class="white mb-1">
-                                    <a href="{{ route('packages.book', ['id' => $package->id]) }}"
-                                        class="text-decoration-none white">
-                                        {{ $package->title ?? 'Mundum Cultural Trek' }}
-                                    </a>
-                                </h4>
+                                {{-- Image wrapped in link --}}
+                                <a href="{{ route('packages.book', ['id' => $package->id]) }}">
+                                    <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
+                                        class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                                </a>
 
-                                <div class="trend-last-main d-flex justify-content-between align-items-center">
-                                    <p class="mb-1 white d-flex align-items-center">
-                                        <i class="fa fa-clock-o me-1" aria-hidden="true"></i>
-                                        {{ $package->duration ?? '12 Days' }}
-                                    </p>
-                                    <div class="trend-price">
-                                        <p class="price pink mb-0">From
-                                            <span>${{ number_format($package->price ?? 870, 2) }}</span>
+                                <div
+                                    class="desti-content position-absolute bottom-0 start-0 w-100 p-3 bg-navy bg-opacity-75">
+                                    <h4 class="white mb-1">
+                                        <a href="{{ route('packages.book', ['id' => $package->id]) }}"
+                                            class="text-decoration-none white">
+                                            {{ $package->title ?? 'Mundum Cultural Trek' }}
+                                        </a>
+                                    </h4>
+
+                                    <div class="trend-last-main d-flex justify-content-between align-items-center">
+                                        <p class="mb-1 white d-flex align-items-center">
+                                            <i class="fa fa-clock-o me-1" aria-hidden="true"></i>
+                                            {{ $package->duration ?? '12 Days' }}
                                         </p>
+                                        <div class="trend-price">
+                                            <p class="price pink mb-0">From
+                                                <span>${{ number_format($package->price ?? 870, 2) }}</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div
-                                class="desti-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
-                                <a class="nir-btn" href="{{ route('packages.book', ['id' => $package->id]) }}">
-                                    <span class="white">Book Now</span>
-                                    <i class="fa fa-arrow-right white ps-1"></i>
-                                </a>
+                                <div
+                                    class="desti-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
+                                    <a class="nir-btn" href="{{ route('packages.book', ['id' => $package->id]) }}">
+                                        <span class="white">Book Now</span>
+                                        <i class="fa fa-arrow-right white ps-1"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -405,53 +409,26 @@
     </style>
 @endpush
 @push('scripts')
-    <script>
-        // $(document).ready(function() {
+    {{-- <script>
+        $(document).ready(function() {
+            $('#packageFilterForm').on('submit', function(e) {
+                e.preventDefault();
 
-        //     // Unified AJAX submit for both filter forms
-        //     $('#country-filter-form, #package-filter-form').on('submit', function(e) {
-        //         e.preventDefault();
-        //         // Serialize form data (for country-filter-form or package-filter-form)
-        //         let formData = $(this).serialize();
+                let formData = $(this).serialize();
 
-        //         $.ajax({
-        //             url: "{{ route('packages.search') }}",
-        //             method: "GET",
-        //             data: formData,
-        //             success: function(response) {
-        //                 // Replace only the packages grid section
-        //                 $('#packageResults').html($(response).find('#packageResults').html());
-        //                 // Update browser URL without reloading page
-        //                 window.history.pushState({}, '', "{{ route('packages.search') }}?" + formData);
-        //             },
-        //             error: function(xhr) {
-        //                 console.error("Filter error:", xhr.responseText);
-        //             }
-        //         });
-        //     });
-
-        //     // Auto-submit country filter on change (dropdown)
-        //     $('#country-filter-form select[name="country"]').on('change', function() {
-        //         $('#country-filter-form').submit();
-        //     });
-
-        //     // Pagination links inside #packageResults handled with AJAX
-        //     $(document).on('click', '#packageResults .pagination a', function(e) {
-        //         e.preventDefault();
-        //         let url = $(this).attr('href');
-
-        //         $.get(url, function(response) {
-        //             $('#packageResults').html($(response).find('#packageResults').html());
-        //             window.history.pushState({}, '', url);
-        //         });
-        //     });
-
-        //     // Optional: Submit main filter form immediately when checkboxes or radios change
-        //     $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change', function() {
-        //         $('#package-filter-form').submit();
-        //     });
-
-        // });
-        //
-    </script>
+                $.ajax({
+                    url: "{{ route('packages.search') }}",
+                    method: "GET",
+                    data: formData,
+                    success: function(response) {
+                        // Replace the package grid with new results
+                        $('#packageResults').html($(response).find('#packageResults').html());
+                    },
+                    error: function(xhr) {
+                        console.error("Filter error:", xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script> --}}
 @endpush
