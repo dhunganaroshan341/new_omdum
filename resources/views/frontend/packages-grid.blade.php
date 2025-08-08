@@ -210,7 +210,7 @@
                                                 <input class="form-check-input" type="radio" name="package_type"
                                                     id="{{ $key }}" value="{{ $key }}"
                                                     {{ request('package_type') === $key ? 'checked' : '' }}>
-                                                <label class="form-check-label white" for="{{ $key }}">
+                                                <label class="form-check-label dark" for="{{ $key }}">
                                                     {{ $label }}
                                                 </label>
                                             </div>
