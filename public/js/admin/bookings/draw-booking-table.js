@@ -7,7 +7,7 @@ $(document).ready(function () {
         processing: true,
         serverSide: true,
         ajax: {
-            url: "admin/bookings", // or your actual route
+            url: "/admin/bookings", // or your actual route
             type: 'GET', // or your actual route
 
         },
