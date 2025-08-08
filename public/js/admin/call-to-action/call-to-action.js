@@ -3,14 +3,14 @@ $(document).ready(function () {
         height: 300
     });
     // Data Table
-    var table = $("#show-booking-data").DataTable({
+    var table = $("#show-call-to-action-data").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-            url: "bookings",
+            url: "call-to-action",
         },
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        order: [1, 'asc'], // Sort by Title column
+        order: [2, 'asc'], // Sort by Title column
         columns: [
             { data: "id", name: "id", orderable: false, searchable: false },
             { data: "image", name: "image", orderable: false, searchable: false },

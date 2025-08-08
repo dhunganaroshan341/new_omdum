@@ -3,11 +3,11 @@ $(document).ready(function () {
         height: 300
     });
 
-    var table = $("#show-call-to-action-data").DataTable({
+    var table = $("#show-booking-data").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-            url: "{{ route('call.to.action') }}", // or your actual route
+            url: "", // or your actual route
         },
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         order: [[11, 'desc']], // Sort by Submitted At (created_at)
