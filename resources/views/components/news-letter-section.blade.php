@@ -30,7 +30,7 @@
  </section>
  @push('scripts')
      <script>
-         $('#newsletter-form').on('submit', function(e) {
+         $('#newsletter-form-submit').on('submit', function(e) {
              e.preventDefault();
              let email = $(this).find('input[name="email"]').val();
 
