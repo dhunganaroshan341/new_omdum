@@ -84,7 +84,7 @@
         }
 
         .trending .trend-item .trend-content-main .trend-content {
-            padding: 23px 20px 0px;
+            padding: 20px 20px 0px;
         }
 
         .trend-content-main::-webkit-scrollbar {
