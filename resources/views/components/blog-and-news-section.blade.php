@@ -49,7 +49,7 @@
                                         href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">{{ $firstPost->title }}</a>
                                 </h4>
                                 <p class="mb-3">
-                                    {!! \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 350) !!}
+                                    {!! \Illuminate\Support\Str::limit(strip_tags($firstPost->description ?? ''), 450) !!}
                                 </p>
 
                                 {{-- Author info, if needed --}}
