@@ -125,8 +125,17 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .slick-prev::after,
-        .slick-next::after {
+        .slick-prev::hover {
+            font-family: 'fontawesome';
+            font-size: 21px;
+            line-height: 2.0;
+            opacity: 1;
+            background: var(--omundum-orange) !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .slick-next::hover {
             font-family: 'fontawesome';
             font-size: 21px;
             line-height: 2.0;
