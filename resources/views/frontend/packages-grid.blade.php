@@ -151,13 +151,12 @@
                     <div class="sidebar-sticky">
                         <div class="sidebar-item mb-4">
 
-                            <form class="form-content" method="GET" action="{{ route('packages.search') }}"
-                                id="country-filter-form">
+                            {{-- Country Filter --}}
+                            <form id="country-filter-form" method="GET" action="{{ route('packages.search') }}">
                                 <h4 class="title white">Find Tour & Travel Packages</h4>
                                 <div class="form-group">
                                     <label class="white">Your Destination</label>
-                                    <select name="country" class="niceSelect"
-                                        onchange="document.getElementById('country-filter-form').submit();">
+                                    <select name="country" class="niceSelect">
                                         <option value="">Where are you going?</option>
                                         @foreach ($ourCountries as $country)
                                             <option value="{{ $country->slug }}"
@@ -167,70 +166,61 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <button type="submit" class="nir-btn w-100"><i class="fa fa-search"></i> Check
-                                    Availability</button>
+                                <button type="submit" class="nir-btn w-100">
+                                    <i class="fa fa-search"></i> Check Availability
+                                </button>
                             </form>
 
                         </div>
 
                         <div class="list-sidebar">
                             <div class="sidebar-item">
-                                <h4>General Packages Available</h4>
-                                <form method="GET" action="{{ route('packages.search') }}" id="package-filter-form">
-                                    {{-- Country filter (optional) --}}
+
+                                {{-- General Filter --}}
+                                <form id="package-filter-form" method="GET" action="{{ route('packages.search') }}">
                                     <input type="hidden" name="country" value="{{ request('country') }}">
 
-                                    {{-- General Packages (Parent Packages) --}}
-                                    <div class="sidebar-item">
-                                        <h4>General Packages</h4>
-                                        @foreach ($parentPackages as $parent)
-                                            <div class="pretty p-default p-thick p-pulse">
-                                                <input type="checkbox" name="parent_packages[]"
-                                                    value="{{ $parent->id }}"
-                                                    {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
-                                                <div class="state">
-                                                    <label>{{ $parent->title }}</label>
-                                                </div>
+                                    {{-- Parent Packages --}}
+                                    <h4>General Packages</h4>
+                                    @foreach ($parentPackages as $parent)
+                                        <div class="pretty p-default p-thick p-pulse">
+                                            <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
+                                                {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
+                                            <div class="state">
+                                                <label>{{ $parent->title }}</label>
                                             </div>
-                                        @endforeach
-                                    </div>
-
-                                    {{-- Package Types --}}
-                                    <div class="sidebar-item">
-                                        <h4>Type</h4>
-                                        @php
-                                            $packageTypes = [
-                                                'tour' => 'Tour',
-                                                'trekking' => 'Trekking',
-                                                'other' => 'Other',
-                                            ];
-                                        @endphp
-                                        @foreach ($packageTypes as $key => $label)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="package_type"
-                                                    id="{{ $key }}" value="{{ $key }}"
-                                                    {{ request('package_type') === $key ? 'checked' : '' }}>
-                                                <label class="form-check-label dark" for="{{ $key }}">
-                                                    {{ $label }}
-                                                </label>
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                    {{-- Price Range (UI-based slider or manual input) --}}
-                                    {{-- <div class="sidebar-item">
-                                        <h4>Price Range ($)</h4>
-                                        <div class="form-group d-flex">
-                                            <input type="number" name="min_price" class="form-control me-2"
-                                                placeholder="Min" value="{{ request('min_price') }}">
-                                            <input type="number" name="max_price" class="form-control"
-                                                placeholder="Max" value="{{ request('max_price') }}">
                                         </div>
-                                    </div> --}}
+                                    @endforeach
+
+                                    {{-- Package Type --}}
+                                    <h4>Type</h4>
+                                    @php
+                                        $packageTypes = [
+                                            'tour' => 'Tour',
+                                            'trekking' => 'Trekking',
+                                            'other' => 'Other',
+                                        ];
+                                    @endphp
+                                    @foreach ($packageTypes as $key => $label)
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="package_type"
+                                                id="{{ $key }}" value="{{ $key }}"
+                                                {{ request('package_type') === $key ? 'checked' : '' }}>
+                                            <label class="form-check-label dark" for="{{ $key }}">
+                                                {{ $label }}
+                                            </label>
+                                        </div>
+                                    @endforeach
+
+                                    {{-- Price Range --}}
+                                    <h4>Price Range ($)</h4>
+                                    <input type="number" name="min_price" placeholder="Min"
+                                        value="{{ request('min_price') }}">
+                                    <input type="number" name="max_price" placeholder="Max"
+                                        value="{{ request('max_price') }}">
 
                                     <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
                                 </form>
-
 
 
                             </div>
@@ -407,7 +397,8 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#packageFilterForm').on('submit', function(e) {
+            // Attach submit event for both forms
+            $('#country-filter-form, #package-filter-form').on('submit', function(e) {
                 e.preventDefault();
 
                 let formData = $(this).serialize();
@@ -417,12 +408,30 @@
                     method: "GET",
                     data: formData,
                     success: function(response) {
-                        // Replace the package grid with new results
+                        // Update results section
                         $('#packageResults').html($(response).find('#packageResults').html());
+                        // Update URL without reloading
+                        window.history.pushState({}, '', "{{ route('packages.search') }}?" +
+                            formData);
                     },
                     error: function(xhr) {
                         console.error("Filter error:", xhr.responseText);
                     }
+                });
+            });
+
+            // Auto-submit country select when changed
+            $('#country-filter-form select[name="country"]').on('change', function() {
+                $('#country-filter-form').submit();
+            });
+
+            // Handle pagination click via AJAX
+            $(document).on('click', '#packageResults .pagination a', function(e) {
+                e.preventDefault();
+                let url = $(this).attr('href');
+                $.get(url, function(response) {
+                    $('#packageResults').html($(response).find('#packageResults').html());
+                    window.history.pushState({}, '', url);
                 });
             });
         });
