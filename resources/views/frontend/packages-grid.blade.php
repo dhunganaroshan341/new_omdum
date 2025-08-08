@@ -28,8 +28,7 @@
                 <div class="col-lg-8 mb-4">
                     <div class="trend-box">
                         <div class="row">
-
-                            <div id = "packageResults" class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="list-results d-flex align-items-center justify-content-between">
                                     <div class="list-results-sort">
                                         <p class="m-0">
@@ -407,53 +406,52 @@
 @endpush
 @push('scripts')
     <script>
-        $(document).ready(function() {
+        // $(document).ready(function() {
 
-            // Unified AJAX submit for both filter forms
-            $('#country-filter-form, #package-filter-form').on('submit', function(e) {
-                e.preventDefault();
-                // Serialize form data (for country-filter-form or package-filter-form)
-                let formData = $(this).serialize();
+        //     // Unified AJAX submit for both filter forms
+        //     $('#country-filter-form, #package-filter-form').on('submit', function(e) {
+        //         e.preventDefault();
+        //         // Serialize form data (for country-filter-form or package-filter-form)
+        //         let formData = $(this).serialize();
 
-                $.ajax({
-                    url: "{{ route('packages.search') }}",
-                    method: "GET",
-                    data: formData,
-                    success: function(response) {
-                        // Replace only the packages grid section
-                        $('#packageResults').html($(response).find('#packageResults').html());
-                        // Update browser URL without reloading page
-                        window.history.pushState({}, '', "{{ route('packages.search') }}?" +
-                            formData);
-                    },
-                    error: function(xhr) {
-                        console.error("Filter error:", xhr.responseText);
-                    }
-                });
-            });
+        //         $.ajax({
+        //             url: "{{ route('packages.search') }}",
+        //             method: "GET",
+        //             data: formData,
+        //             success: function(response) {
+        //                 // Replace only the packages grid section
+        //                 $('#packageResults').html($(response).find('#packageResults').html());
+        //                 // Update browser URL without reloading page
+        //                 window.history.pushState({}, '', "{{ route('packages.search') }}?" + formData);
+        //             },
+        //             error: function(xhr) {
+        //                 console.error("Filter error:", xhr.responseText);
+        //             }
+        //         });
+        //     });
 
-            // Auto-submit country filter on change (dropdown)
-            $('#country-filter-form select[name="country"]').on('change', function() {
-                $('#country-filter-form').submit();
-            });
+        //     // Auto-submit country filter on change (dropdown)
+        //     $('#country-filter-form select[name="country"]').on('change', function() {
+        //         $('#country-filter-form').submit();
+        //     });
 
-            // Pagination links inside #packageResults handled with AJAX
-            $(document).on('click', '#packageResults .pagination a', function(e) {
-                e.preventDefault();
-                let url = $(this).attr('href');
+        //     // Pagination links inside #packageResults handled with AJAX
+        //     $(document).on('click', '#packageResults .pagination a', function(e) {
+        //         e.preventDefault();
+        //         let url = $(this).attr('href');
 
-                $.get(url, function(response) {
-                    $('#packageResults').html($(response).find('#packageResults').html());
-                    window.history.pushState({}, '', url);
-                });
-            });
+        //         $.get(url, function(response) {
+        //             $('#packageResults').html($(response).find('#packageResults').html());
+        //             window.history.pushState({}, '', url);
+        //         });
+        //     });
 
-            // Optional: Submit main filter form immediately when checkboxes or radios change
-            $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change',
-                function() {
-                    $('#package-filter-form').submit();
-                });
+        //     // Optional: Submit main filter form immediately when checkboxes or radios change
+        //     $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change', function() {
+        //         $('#package-filter-form').submit();
+        //     });
 
-        });
+        // });
+        //
     </script>
 @endpush
