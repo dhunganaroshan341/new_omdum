@@ -85,7 +85,7 @@
                                             <div class="trend-image">
                                                 <img alt="image"
                                                     src="{{ !empty($package->images) && is_array($package->images) && isset($package->images[0])
-                                                        ? asset('tour_images/' . $package->images[0])
+                                                        ? $package->first_image_url
                                                         : asset('template/yatri_world/main-file/images/india.jpg') }}" />
 
                                             </div>
@@ -109,7 +109,7 @@
                                                         <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
                                                             class="white d-flex align-items-center text-decoration-none">
 
-                                                            <img src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                                            <img src="{{ $packate->first_image_url }}"
                                                                 onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
                                                                 class="d-author me-2" alt="Package Image" loading="lazy"
                                                                 style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
@@ -290,7 +290,8 @@
 
                                 {{-- Image wrapped in link --}}
                                 <a href="{{ route('packages.show', ['slug' => $package->slug]) }}">
-                                    <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
+                                    <img alt="image"
+                                        src="{{ $package->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
                                         onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
                                         class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                                 </a>
@@ -411,12 +412,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                        .desti-image:hover .trend-last-main p.white,
-                                                        .desti-image:hover .trend-last-main .price span,
-                                                        .desti-image:hover .desti-overlay a span.white,
-                                                        .desti-image:hover .desti-overlay a i.white {
-                                                            color: var(--omundum-green) !important;
-                                                        } */
+                                                                        .desti-image:hover .trend-last-main p.white,
+                                                                        .desti-image:hover .trend-last-main .price span,
+                                                                        .desti-image:hover .desti-overlay a span.white,
+                                                                        .desti-image:hover .desti-overlay a i.white {
+                                                                            color: var(--omundum-green) !important;
+                                                                        } */
     </style>
 @endpush
 @push('scripts')
