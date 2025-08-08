@@ -1,7 +1,7 @@
 <div class="partners">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="title">Our Clients</h2>
+            <h2 class="title">Our Partners</h2>
         </div>
 
         <div class="attract-slider owl-carousel">
