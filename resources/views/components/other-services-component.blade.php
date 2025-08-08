@@ -44,7 +44,7 @@
 
                             <div class="trend-last-main">
                                 <p class="mb-0 trend-para">
-                                    {{ \Illuminate\Support\Str::words($service->short_description, 8, '...') }}
+                                    {{ \Illuminate\Support\Str::words($service->short_description, 11, '...') }}
                                 </p>
 
                                 <div class="trend-last d-flex align-items-center justify-content-between">
@@ -87,8 +87,11 @@
             padding: 20px 20px 0px;
         }
 
-        .trend-content-main::-webkit-scrollbar {
-            width: 6px;
+        .trending .trend-item .trend-content-main .trend-content h4 {
+            padding: 10px 0 1px;
+            border: 1px dashed #f1f1f1;
+            border-width: 1px 0 1px;
+            margin-bottom: 5px;
         }
 
         .trending .trend-item .trend-content-main .trend-last-main p.trend-para {
