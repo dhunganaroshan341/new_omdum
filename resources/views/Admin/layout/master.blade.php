@@ -23,7 +23,7 @@
                         <img src="{{ $logo ?? asset('front/images/logo.png') }}" alt="logo" />
                     </a>
                     <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}">
-                        <img src="{{ asset('front/images/logo-white.png') }}" alt="logo" />
+                        <img src="{{ asset('front/images/logo.png') }}" alt="logo" />
                     </a>
                 </div>
             </div>
