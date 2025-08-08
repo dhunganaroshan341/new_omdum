@@ -289,7 +289,7 @@
                             <div class="desti-image position-relative overflow-hidden rounded shadow-sm">
 
                                 {{-- Image wrapped in link --}}
-                                <a href="{{ route('packages.book', ['id' => $package->id]) }}">
+                                <a href="{{ route('packages.show', ['slug' => $package->slug]) }}">
                                     <img alt="image" src="{{ asset('tour_images/' . ($package->images[0] ?? '')) }}"
                                         onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
                                         class="img-fluid w-100" style="height: 250px; object-fit: cover;">
