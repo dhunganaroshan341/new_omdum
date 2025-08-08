@@ -109,7 +109,7 @@
                                                         <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
                                                             class="white d-flex align-items-center text-decoration-none">
 
-                                                            <img src="{{ $packate->first_image_url }}"
+                                                            <img src="{{ $package->first_image_url }}"
                                                                 onerror="this.onerror=null;this.src='{{ asset('template/yatri_world/main-file/images/india.jpg') }}';"
                                                                 class="d-author me-2" alt="Package Image" loading="lazy"
                                                                 style="width: 32px; height: 32px; object-fit: cover; border-radius: 50%;">
@@ -412,12 +412,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                        .desti-image:hover .trend-last-main p.white,
-                                                                        .desti-image:hover .trend-last-main .price span,
-                                                                        .desti-image:hover .desti-overlay a span.white,
-                                                                        .desti-image:hover .desti-overlay a i.white {
-                                                                            color: var(--omundum-green) !important;
-                                                                        } */
+                                                                            .desti-image:hover .trend-last-main p.white,
+                                                                            .desti-image:hover .trend-last-main .price span,
+                                                                            .desti-image:hover .desti-overlay a span.white,
+                                                                            .desti-image:hover .desti-overlay a i.white {
+                                                                                color: var(--omundum-green) !important;
+                                                                            } */
     </style>
 @endpush
 @push('scripts')
