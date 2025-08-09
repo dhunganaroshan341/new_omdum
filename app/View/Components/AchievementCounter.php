@@ -13,7 +13,11 @@ class AchievementCounter extends Component
 
     public function __construct()
     {
-        $achievements = Achievement::take(4)->get();
+       $achievements = Achievement::where('status', 'Active')
+                           ->orderBy('created_at', 'desc')
+                           ->take(4)
+                           ->get();
+ $achievements = Achievement::where('status','Active')->take(4)->get();
 
         // Optional fallback logic if not enough achievements
         if ($achievements->isEmpty()) {

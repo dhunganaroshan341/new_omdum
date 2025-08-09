@@ -9,8 +9,8 @@
                 <thead>
                     <tr>
                         <th>S.N</th>
-                        <th>Title</th>
                         <th>FontAwesome Icon</th>
+                        <th>Title</th>
                         <th>Count</th>
                         <th>Status</th>
                         <th>Action</th>
