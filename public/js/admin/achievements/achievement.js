@@ -1,18 +1,28 @@
 $(document).ready(function () {
-       $.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-// table
+
+    // ========================
+    // 1. GLOBAL AJAX CSRF SETUP
+    // ========================
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    // ========================
+    // 2. INITIALIZE Summernote
+    // ========================
     $(".summernote").summernote({ height: 300 });
 
-    var table = $("#show-achievement-data").DataTable({
+    // ========================
+    // 3. INITIALIZE DATATABLE
+    // ========================
+    const table = $("#show-achievement-data").DataTable({
         processing: true,
         serverSide: true,
-        ajax: "/admin/achievements",
+        ajax: "/admin/achievements", // Laravel resource index route
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        order: [2, 'asc'],
+        order: [[2, 'asc']],
         columns: [
             { data: "DT_RowIndex", orderable: false, searchable: false },
             { data: "fontawesome_icon", orderable: false, searchable: false },
@@ -24,110 +34,133 @@ $(document).ready(function () {
         dom: 'Blfrtip',
         buttons: [
             { extend: 'print', exportOptions: { columns: [0, 2, 3, 4] } },
-            { extend: 'excel', title: '', exportOptions: { columns: [0, 2, 3, 4] } }
-        ],
-        dom: '<"toolbar">lfrtip',
+            { extend: 'excel', exportOptions: { columns: [0, 2, 3, 4] } }
+        ]
     });
 
-    $("div.toolbar").html(`
-        <span id="btnPrint" class="btn btn-primary mdi mdi-printer mdi-icon"></span>
-        <span id="btnExport" class="btn btn-success mdi mdi-file-export mdi-icon"></span>
-    `);
-
-    $('#btnPrint').click(() => table.button(0).trigger());
-    $('#btnExport').click(() => table.button(1).trigger());
-
-    function clearModal() {
-        $("#achievementImage").html("");
+    // ========================
+    // 4. HELPER FUNCTIONS
+    // ========================
+    function clearModalForm() {
+        $("#achievementForm")[0].reset();
         $("#validationErrors").addClass("d-none").html("");
-        $("#description").summernote("code", "");
-    }
-
-    $(document).on("click", ".addAchievementBtn", function () {
-        clearModal();
-        $("#formModal").modal("show");
+        $("#description").summernote?.("code", ""); // optional if you have description
         $(".submitBtn").show();
         $(".updateBtn").hide();
-        $(".form").attr("id", "addForm")[0].reset();
+        $("#achievementForm").removeAttr("data-id"); // clear update ID
+    }
+
+    function showValidationErrors(errors) {
+        let html = '<ul>';
+        $.each(errors, (key, messages) => {
+            html += `<li>${messages[0]}</li>`;
+        });
+        html += '</ul>';
+        $('#validationErrors').removeClass('d-none').html(html);
+    }
+
+    // ========================
+    // 5. ADD ACHIEVEMENT
+    // ========================
+    $(document).on("click", ".addAchievementBtn", function () {
+        clearModalForm();
+        $("#formModal").modal("show");
     });
 
-    // ADD
-    $(document).off("submit", "#addForm").on("submit", "#addForm", function (e) {
+    $(document).on("submit", "#achievementForm:not([data-id])", function (e) {
         e.preventDefault();
         $(".submitBtn").prop("disabled", true);
-        let formdata = new FormData(this);
+
+        let formData = new FormData(this);
+
         $.ajax({
-            type: "post",
-            url: "/admin/achievements/store/",
-            data: formdata,
-            contentType: false,
+            type: "POST",
+            url: "/admin/achievements/store",
+            data: formData,
             processData: false,
+            contentType: false,
             success: function (res) {
                 if (res.success) {
                     Swal.fire({ icon: "success", title: "Achievement Created", timer: 1000, showConfirmButton: false });
-                    table.draw();
                     $("#formModal").modal("hide");
-                } else {
-                    Swal.fire({ icon: "warning", title: "Something went wrong!" });
+                    table.draw();
                 }
             },
             error: function (xhr) {
                 if (xhr.status === 422) {
-                    let errors = xhr.responseJSON.errors;
-                    let html = '<ul>';
-                    $.each(errors, (k, v) => html += `<li>${v[0]}</li>`);
-                    html += '</ul>';
-                    $('#validationErrors').removeClass('d-none').html(html);
+                    showValidationErrors(xhr.responseJSON.errors);
                 }
             },
-            complete: () => $(".submitBtn").prop("disabled", false)
+            complete: function () {
+                $(".submitBtn").prop("disabled", false);
+            }
         });
     });
 
-    // EDIT
+    // ========================
+    // 6. EDIT ACHIEVEMENT
+    // ========================
     $(document).on("click", ".editUserButton", function () {
-        clearModal();
-        $("#formModal").modal("show");
+        clearModalForm();
+        const id = $(this).data("id");
+
+        // Set form mode to UPDATE
+        $("#achievementForm").attr("data-id", id);
         $(".submitBtn").hide();
         $(".updateBtn").show();
-        $(".form").attr("id", "updateForm");
 
-        var id = $(this).data("id");
+        // Fetch existing data
         $.get(`/admin/achievements/${id}`, function (res) {
             $("#title").val(res.message.title);
             $("#icon_class").val(res.message.icon_class);
             $("#count").val(res.message.count);
-
-        });
-
-        $("#updateForm").off("submit").on("submit", function (e) {
-            e.preventDefault();
-            $(".updateBtn").prop("disabled", true);
-            let formdata = new FormData(this);
-             formdata.append('_method', 'PUT'); // This is key for Laravel resource routes
-            $.ajax({
-                type: "post",
-                url: `/admin/achievements/${id}/`,
-                data: formdata,
-                processData: false,
-                contentType: false,
-                success: function (res) {
-                    if (res.success) {
-                        Swal.fire({ icon: "success", title: "Updated Successfully", timer: 1000, showConfirmButton: false });
-                        table.draw();
-                        $("#formModal").modal("hide");
-                    }
-                },
-                complete: () => $(".updateBtn").prop("disabled", false)
-            });
+            $("#formModal").modal("show");
         });
     });
 
-    // STATUS TOGGLE
+    // ========================
+    // 7. UPDATE ACHIEVEMENT
+    // ========================
+    $(document).on("submit", "#achievementForm[data-id]", function (e) {
+        e.preventDefault();
+        $(".updateBtn").prop("disabled", true);
+
+        const id = $(this).attr("data-id");
+        let formData = new FormData(this);
+        formData.append("_method", "PUT"); // Laravel expects PUT for update
+
+        $.ajax({
+            type: "POST",
+            url: `/admin/achievements/${id}`,
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (res) {
+                if (res.success) {
+                    Swal.fire({ icon: "success", title: "Updated Successfully", timer: 1000, showConfirmButton: false });
+                    $("#formModal").modal("hide");
+                    table.draw();
+                }
+            },
+            error: function (xhr) {
+                if (xhr.status === 422) {
+                    showValidationErrors(xhr.responseJSON.errors);
+                }
+            },
+            complete: function () {
+                $(".updateBtn").prop("disabled", false);
+            }
+        });
+    });
+
+    // ========================
+    // 8. STATUS TOGGLE
+    // ========================
     $(document).on("change", ".statusIdData", function () {
-        let id = $(this).data("id");
-        let checkbox = $(this);
+        const id = $(this).data("id");
+        const checkbox = $(this);
         checkbox.prop("disabled", true);
+
         Swal.fire({
             icon: "warning",
             title: "Are you sure?",
@@ -142,9 +175,12 @@ $(document).ready(function () {
         });
     });
 
-    // DELETE
+    // ========================
+    // 9. DELETE ACHIEVEMENT
+    // ========================
     $(document).on("click", ".deleteAchievementBtn", function () {
-        let id = $(this).data("id");
+        const id = $(this).data("id");
+
         Swal.fire({
             icon: "warning",
             title: "Delete?",
