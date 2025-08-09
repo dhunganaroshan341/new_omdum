@@ -124,6 +124,7 @@ Route::post('/banner/video', [BannerSliderVideoController::class, 'store'])->nam
     Route::get('/testimonial/status/{id}', [TestimonialController::class, 'statusToggle'])->name('testimonial.status');
 
     Route::resource('achievements',AchievementController::class);
+    Route::get('achievements/status/toggle/{id}',[AchievementController::class,'statusToggle']);
 
     // Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category');

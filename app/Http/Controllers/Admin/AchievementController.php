@@ -86,7 +86,7 @@ class AchievementController extends Controller
         }
     }
 
-    public function showDetail($id)
+    public function show($id)
     {
         try {
             $data = Achievement::find($id);
