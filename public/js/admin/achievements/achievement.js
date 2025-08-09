@@ -106,7 +106,7 @@ $(document).ready(function () {
             let formdata = new FormData(this);
             $.ajax({
                 type: "post",
-                url: `/admin/achievements/${id}`,
+                url: `/admin/achievements/${id}/`,
                 data: formdata,
                 processData: false,
                 contentType: false,
