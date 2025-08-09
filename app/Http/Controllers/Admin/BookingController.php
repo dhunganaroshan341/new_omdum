@@ -74,6 +74,7 @@ public function index(Request $request)
       $extraJs = array_merge(
     config('js-map.admin.datatable.script'),
             config('js-map.admin.summernote.script'),
+            config('js-map.admin.moment.script'),
             config('js-map.admin.buttons.script')
         );
 

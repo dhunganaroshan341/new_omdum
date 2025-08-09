@@ -7,6 +7,9 @@ return [
             'script'=>["https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"],
             'style'=>[" https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css"],
 
+        ], 'moment'=>[
+            'script'=>["https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"],
+
         ],
         'summernote' => [
 
