@@ -104,6 +104,7 @@ $(document).ready(function () {
             e.preventDefault();
             $(".updateBtn").prop("disabled", true);
             let formdata = new FormData(this);
+             formdata.append('_method', 'PUT'); // This is key for Laravel resource routes
             $.ajax({
                 type: "post",
                 url: `/admin/achievements/${id}/`,
