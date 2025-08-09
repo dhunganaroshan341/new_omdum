@@ -48,7 +48,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success submitBtn">Submit</button>
-                    <button type="submit" class="btn btn-warning updateBtn d-none">Update</button>
+                    <button type="submit" class="btn btn-warning updateBtn ">Update</button>
                 </div>
             </form>
         </div>
