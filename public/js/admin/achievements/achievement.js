@@ -1,4 +1,10 @@
 $(document).ready(function () {
+       $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+// table
     $(".summernote").summernote({ height: 300 });
 
     var table = $("#show-achievement-data").DataTable({
@@ -52,7 +58,7 @@ $(document).ready(function () {
         let formdata = new FormData(this);
         $.ajax({
             type: "post",
-            url: "/admin/achievements/store",
+            url: "/admin/achievements/store/",
             data: formdata,
             contentType: false,
             processData: false,
