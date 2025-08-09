@@ -70,7 +70,7 @@ class AchievementController extends Controller
             config('js-map.admin.buttons.style')
         );
 
-        return view('Admin.pages.Achievement.achievement-table', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);
+        return view('Admin.pages.Achievements.achievement-table', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);
     }
 
     public function store(AchievementRequest $request)
