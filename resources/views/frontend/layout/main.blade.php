@@ -134,6 +134,31 @@
         .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu li.submenu .dropdown-menu li a {
             font-size: 14px;
         }
+
+        .navbar-header {
+            max-height: 100px;
+        }
+
+        .navbar-default a.navbar-brand {
+            font-size: 24px;
+            position: relative;
+            color: #f49b00;
+            letter-spacing: 2px;
+            font-weight: 400;
+            display: block;
+            object-fit: contain;
+            padding: 0;
+            /* height: 200px; */
+            max-height: 140px;
+            transition: all ease-in-out 0.5s;
+            transition: color 0.5s ease;
+            -webkit-transition: color 0.5s ease;
+            -moz-transition: color 0.5s ease;
+            margin-right: 0;
+            flex: 1;
+            max-width: 140px;
+            bottom: 15px;
+        }
     </style>
 </head>
 
