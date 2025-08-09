@@ -9,7 +9,6 @@
                 <thead>
                     <tr>
                         <th>S.N</th>
-                        <th>Image</th>
                         <th>Title</th>
                         <th>FontAwesome Icon</th>
                         <th>Count</th>

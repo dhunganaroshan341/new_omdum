@@ -9,7 +9,7 @@ $(document).ready(function () {
         order: [2, 'asc'],
         columns: [
             { data: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "icon_class", orderable: false, searchable: false },
+            { data: "fontawesome_icon", orderable: false, searchable: false },
             { data: "title" },
             { data: "count" },
             { data: "status", orderable: false, searchable: false },

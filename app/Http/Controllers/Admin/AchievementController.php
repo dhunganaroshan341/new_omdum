@@ -43,7 +43,7 @@ class AchievementController extends Controller
                 ->addColumn('action', function ($data) {
                     return view('Admin.Button.button', compact('data'));
                 })
-                ->addColumn('icon', function ($item) {
+                ->addColumn('fontawesome_icon', function ($item) {
                     return '<i class="' . e($item->icon_class) . ' fa-2x"></i>';
                 })
                 ->addColumn('status', function ($status) {
@@ -54,7 +54,7 @@ class AchievementController extends Controller
                 })
                 ->with('recordsTotal', $totalAchievements)
                 ->with('recordsFiltered', $searchCount)
-                ->rawColumns(['action', 'icon', 'status'])
+                ->rawColumns(['action', 'fontawesome_icon', 'status'])
                 ->make(true);
         }
 
