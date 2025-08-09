@@ -167,7 +167,7 @@ $(document).ready(function () {
             showCancelButton: true
         }).then(result => {
             if (result.isConfirmed) {
-                $.get(`/admin/achievements/status/${id}`, () => table.draw())
+                $.get(`/admin/achievements/status/toggle/${id}`, () => table.draw())
                     .always(() => checkbox.prop("disabled", false));
             } else {
                 checkbox.prop("disabled", false).prop("checked", !checkbox.prop("checked"));
