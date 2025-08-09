@@ -11,7 +11,8 @@
                         <th>S.N</th>
                         <th>Image</th>
                         <th>Title</th>
-                        <th>Description</th>
+                        <th>FontAwesome Icon</th>
+                        <th>Count</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
