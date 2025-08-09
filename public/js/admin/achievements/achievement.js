@@ -95,7 +95,7 @@ $(document).ready(function () {
         var id = $(this).data("id");
         $.get(`/admin/achievements/${id}`, function (res) {
             $("#title").val(res.message.title);
-            $("#icon_class").val(res.message.title);
+            $("#icon_class").val(res.message.icon_class);
             $("#count").val(res.message.count);
 
         });
