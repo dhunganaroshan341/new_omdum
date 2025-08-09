@@ -152,7 +152,7 @@
             <div class="container d-flex align-items-center justify-content-between">
                 <div class="links">
                     <ul>
-                        <li><a href="tel:(000)999-898-888" class="white"><i class="fa fa-phone"></i>
+                        <li><a href="tel:(977) 9851402800" class="white"><i class="fa fa-phone"></i>
 
                                 +977 9851402800</a></li>
                         <li><a href="mailto:info@OmundumTrek&Travels.com" class="white"><i class="fa fa-support"></i>
