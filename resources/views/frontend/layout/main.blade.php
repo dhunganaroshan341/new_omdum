@@ -164,11 +164,15 @@
                 </div>
                 <div class="links float-right">
                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook white" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter white" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram white" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin white" aria-hidden="true"></i></a></li>
-                        <li><a href="#search1" class="mt_search"><i class="icon-magnifier white"></i></a></li>
+                        <li><a href="{{ $facebook ?? '#' }}"><i class="fab fa-facebook white"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="{{ $twitter ?? '#' }}"><i class="fab fa-twitter white" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="{{ $instagram ?? '#' }}"><i class="fab fa-instagram white"
+                                    aria-hidden="true"></i></a></li>
+                        {{-- <li><a href="#"><i class="fab fa-linkedin white" aria-hidden="true"></i></a></li> --}}
+                        {{-- <li><a href="#search1" class="mt_search"><i class="icon-magnifier white"></i></a></li> --}}
                     </ul>
                 </div>
             </div>

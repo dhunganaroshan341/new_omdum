@@ -15,14 +15,16 @@
                             </p>
                             <div class="social-links">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                    <li><a href="{{ $facebook ?? '#' }}"><i class="fab fa-facebook"
+                                                aria-hidden="true"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    <li><a href="{{ $twitter ?? '#' }}"><i class="fab fa-twitter"
+                                                aria-hidden="true"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    <li><a href="{{ $instagram ?? '#' }}"><i class="fab fa-instagram"
+                                                aria-hidden="true"></i></a>
                                     </li>
-                                    <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
