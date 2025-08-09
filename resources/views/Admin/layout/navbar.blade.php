@@ -85,6 +85,13 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.achievements.index') }}">
+            <i class="mdi mdi-trophy menu-icon"></i>
+            <span class="menu-title">Counter / Achievements</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.client.index') }}">
             <i class="mdi mdi-account-group-outline menu-icon"></i>
             <span class="menu-title">Clients</span>
