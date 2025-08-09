@@ -370,36 +370,36 @@ public function update(TourPackageRequest $request, $id)
 
 
 
-   public function uploadImages(Request $request)
-{
-    $request->validate([
-    'tour_package_id' => 'required|exists:tour_packages,id',
-    'images' => 'required|array',
-    'images.*' => 'image|max:5120', // each image max 5MB
-]);
-
-
-    $tourPackageId = $request->tour_package_id;
-    $uploadedImages = [];
-
-    if ($request->hasFile('images')) {
-        foreach ($request->file('images') as $image) {
-            $path = $image->store('tour-packages', 'public');
-
-            $tourPackageImage = new TourPackageImage();
-            $tourPackageImage->tour_package_id = $tourPackageId;
-            $tourPackageImage->image_path = $path;
-            $tourPackageImage->save();
-
-            $uploadedImages[] = $tourPackageImage;
-        }
-    }
-
-    return response()->json([
-        'message' => 'Images uploaded successfully',
-        'data' => $uploadedImages,
+    public function uploadImages(Request $request)
+    {
+        $request->validate([
+        'tour_package_id' => 'required|exists:tour_packages,id',
+        'images' => 'required|array',
+        'images.*' => 'image|max:5120', // each image max 5MB
     ]);
-}
+
+
+        $tourPackageId = $request->tour_package_id;
+        $uploadedImages = [];
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('tour-packages', 'public');
+
+                $tourPackageImage = new TourPackageImage();
+                $tourPackageImage->tour_package_id = $tourPackageId;
+                $tourPackageImage->image_path = $path;
+                $tourPackageImage->save();
+
+                $uploadedImages[] = $tourPackageImage;
+            }
+        }
+
+        return response()->json([
+            'message' => 'Images uploaded successfully',
+            'data' => $uploadedImages,
+        ]);
+    }
 
 
 
