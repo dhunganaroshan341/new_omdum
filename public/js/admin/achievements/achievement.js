@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
 
     // EDIT
-    $(document).on("click", ".editUserBtn", function () {
+    $(document).on("click", ".editUserButton", function () {
         clearModal();
         $("#formModal").modal("show");
         $(".submitBtn").hide();
@@ -87,12 +87,11 @@ $(document).ready(function () {
         $(".form").attr("id", "updateForm");
 
         var id = $(this).data("id");
-        $.get(`/admin/achievements/detail/${id}`, function (res) {
+        $.get(`/admin/achievements/${id}`, function (res) {
             $("#title").val(res.message.title);
-            $("#description").summernote('code', res.message.description);
-            if (res.message.image) {
-                $("#achievementImage").html(`<img src="/uploads/${res.message.image}" width="100" height="100">`);
-            }
+            $("#icon_class").val(res.message.title);
+            $("#count").val(res.message.count);
+
         });
 
         $("#updateForm").off("submit").on("submit", function (e) {
@@ -101,7 +100,7 @@ $(document).ready(function () {
             let formdata = new FormData(this);
             $.ajax({
                 type: "post",
-                url: `/admin/achievements/update/${id}`,
+                url: `/admin/achievements/${id}`,
                 data: formdata,
                 processData: false,
                 contentType: false,

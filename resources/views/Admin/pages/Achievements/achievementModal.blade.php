@@ -14,13 +14,13 @@
                             <label class="form-label">Title <span class="text-danger">*</span></label>
                             <input type="text" name="title" id="title" class="form-control" />
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label class="form-label">Icon Class <span class="text-danger">*</span></label>
                             <input type="text" name="icon_class" id="title" class="form-control"
                                 placeholder="Eg:fas fa-icon" />
                         </div>
 
-                        <div class="col-md-12 mt-3">
+                        <div class="col-md-2 mt-3">
                             <label class="form-label">Count <span class="text-danger">*</span></label>
                             <input type="number" name="count" id="count" placeholder="">
                         </div>
