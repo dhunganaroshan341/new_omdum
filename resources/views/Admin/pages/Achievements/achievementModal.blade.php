@@ -15,13 +15,14 @@
                             <input type="text" name="title" id="title" class="form-control" />
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label">Image</label>
-                            <input type="file" name="image" id="image" class="form-control" />
-                            <div id="achievementImage"></div>
+                            <label class="form-label">Icon Class <span class="text-danger">*</span></label>
+                            <input type="text" name="icon_class" id="title" class="form-control"
+                                placeholder="Eg:fas fa-icon" />
                         </div>
+
                         <div class="col-md-12 mt-3">
-                            <label class="form-label">Description <span class="text-danger">*</span></label>
-                            <textarea class="form-control summernote" id="description" name="description" rows="4"></textarea>
+                            <label class="form-label">Count <span class="text-danger">*</span></label>
+                            <input type="number" name="count" id="count" placeholder="">
                         </div>
                     </div>
                 </div>

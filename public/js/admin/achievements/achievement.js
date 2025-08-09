@@ -9,9 +9,9 @@ $(document).ready(function () {
         order: [2, 'asc'],
         columns: [
             { data: "DT_RowIndex", orderable: false, searchable: false },
-            { data: "image", orderable: false, searchable: false },
+            { data: "icon_class", orderable: false, searchable: false },
             { data: "title" },
-            { data: "description" },
+            { data: "count" },
             { data: "status", orderable: false, searchable: false },
             { data: "action", orderable: false, searchable: false }
         ],
@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
 
     // EDIT
-    $(document).on("click", ".editAchievementBtn", function () {
+    $(document).on("click", ".editUserBtn", function () {
         clearModal();
         $("#formModal").modal("show");
         $(".submitBtn").hide();
