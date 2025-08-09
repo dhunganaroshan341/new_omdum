@@ -9,4 +9,11 @@ class Notice extends BaseModel
 {
     use HasFactory;
     protected $fillable=['title','description','image','status'];
+
+
+
+    public function getImageUrlAttribute(){
+        $url = asset ('uploads/'.$this->image);
+        return $url;
+    }
 }

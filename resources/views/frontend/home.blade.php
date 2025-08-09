@@ -9,7 +9,7 @@
     <!-- banner ends -->
 
 
-
+    <x-popup-notice />
     <!-- Fav destination Starts -->
 
     <x-fav-destination />

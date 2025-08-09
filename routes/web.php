@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AchievementController;
 use  App\Http\Controllers\Admin\BannerSliderVideoController;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\CallToActionController;
@@ -121,6 +122,8 @@ Route::post('/banner/video', [BannerSliderVideoController::class, 'store'])->nam
     Route::post('/testimonial/update/{id}', [TestimonialController::class, 'update'])->name('testimonial.update');
     Route::get('/testimonial/delete/{id}', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
     Route::get('/testimonial/status/{id}', [TestimonialController::class, 'statusToggle'])->name('testimonial.status');
+
+    Route::resource('achievements',AchievementController::class);
 
     // Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
