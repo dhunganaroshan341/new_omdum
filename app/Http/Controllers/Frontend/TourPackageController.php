@@ -110,6 +110,7 @@
             'country' => 'nullable|string',
             'package_type' => 'nullable|string',
             'sort_by' => 'nullable|string|in:low,high',
+            'search' => 'nullable|string|max:255',
         ]);
 
         $data = $this->getFilteredPackages($validated);
@@ -126,6 +127,7 @@
     $ourCountries = OurCountry::all();
 
     $countryName = $filters['country'] ?? null;
+    $search = $filters['search'] ?? null;
     $parentPackages = $filters['parent_packages'] ?? [];
     $sortBy = $filters['sort_by'] ?? null;
     $packageType = $filters['package_type'] ?? null;
@@ -156,6 +158,9 @@
     if ($packageType) {
         $query->where('package_type', $packageType);
     }
+   if ($search) {
+    $query->where('title', 'LIKE', '%' . $search . '%');
+}
 
     if ($minPrice !== null) {
         $query->where('price', '>=', $minPrice);
