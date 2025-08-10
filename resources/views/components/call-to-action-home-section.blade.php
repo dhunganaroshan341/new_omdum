@@ -11,8 +11,8 @@
                         <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
                         <p class="white mb-4">{!! $callToAction->description ??
                             'There are many variations of passages of. Lorem Ipsum available, but
-                                                                                                                                                                                                                                                                                                                                                                                                     the majority have suffered alteration in some form, by injected humour, or randomised
-                                                                                                                                                                                                                                                                                                                                                                                                     words which don’t look.' !!}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                             the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                                                                                                                                                                                                                                                                                                             words which don’t look.' !!}</p>
                         <a href="{{ $callToAction->button_url ?? route('frontend.booking-single') }}"
                             class="nir-btn">{{ $callToAction->button_text ?? 'Book Now' }} <i
                                 class="fa fa-arrow-right"></i></a>
@@ -47,46 +47,72 @@
             document.querySelectorAll('.custom-js-video-button').forEach(button => {
                 button.addEventListener('click', function() {
                     let videoId = this.getAttribute('data-video-id');
-                    // Strip out query params if present, e.g. '?si=V1p-5lDXyEl1H_25'
                     if (videoId.includes('?')) {
                         videoId = videoId.split('?')[0];
                     }
                     const channel = this.getAttribute('data-channel');
-                    let videoUrl = '';
-
-                    if (channel === 'youtube') {
-                        // Embed URL with parameters to hide controls, branding, related videos, etc.
-                        videoUrl =
-                            `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&fs=0&iv_load_policy=3`;
-                    } else {
+                    if (channel !== 'youtube') {
                         alert('Video channel not supported');
                         return;
                     }
 
+                    // YouTube embed URL with minimal UI, autoplay with sound
+                    const videoUrl =
+                        `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&modestbranding=1&rel=0&fs=0&iv_load_policy=3&mute=0`;
+
                     // Create modal container
                     const modal = document.createElement('div');
-                    modal.style.position = 'fixed';
-                    modal.style.top = '10%';
-                    modal.style.left = '30%';
-                    modal.style.width = '801px';
-                    modal.style.height = '450px';
-                    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-                    // modal.style.display = 'flex';
-                    // modal.style.justifyContent = 'center';
-                    // modal.style.alignItems = 'center';
-                    modal.style.zIndex = 10000;
+                    Object.assign(modal.style, {
+                        position: 'fixed',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '800px',
+                        height: '450px',
+                        backgroundColor: 'black',
+                        zIndex: 10000,
+                        boxShadow: '0 0 15px rgba(0,0,0,0.5)',
+                        borderRadius: '8px',
+                    });
 
-                    // Insert iframe and close button inside modal
+                    // Insert iframe and close button
                     modal.innerHTML = `
-                    <iframe width="80%" height="80%" src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    <button style="position:absolute;top:20px;right:30px;font-size:30px;color:white;background:none;border:none;cursor:pointer;">&times;</button>
-                `;
+                <iframe
+                    width="100%" height="100%"
+                    src="${videoUrl}"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    allow="autoplay"
+                ></iframe>
+                <button
+                    style="
+                        position:absolute;
+                        top:10px;
+                        right:15px;
+                        font-size:28px;
+                        color:#fff;
+                        background:none;
+                        border:none;
+                        cursor:pointer;
+                        z-index:10001;
+                    "
+                    aria-label="Close video"
+                >&times;</button>
+            `;
 
                     document.body.appendChild(modal);
 
                     // Close modal on button click
                     modal.querySelector('button').addEventListener('click', () => {
                         document.body.removeChild(modal);
+                    });
+
+                    // Optional: close modal if user clicks outside the iframe area
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            document.body.removeChild(modal);
+                        }
                     });
                 });
             });
