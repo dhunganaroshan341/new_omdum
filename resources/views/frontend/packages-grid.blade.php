@@ -452,12 +452,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                color: var(--omundum-green) !important;
-                                                                                                                                                                                                            } */
+                                                                                                                                                                                                                .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                    color: var(--omundum-green) !important;
+                                                                                                                                                                                                                } */
     </style>
 @endpush
 @push('scripts')
@@ -478,13 +478,18 @@
             // Search input debounce auto-submit
             let debounceTimer;
             $('#search-query').on('input', function() {
-                console.log('Input event fired');
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(function() {
-                    console.log('Submitting search form after debounce');
-                    $('#search-form').submit();
+                    console.log('Forcing search form submit');
+
+                    // Unbind any submit handlers on the form to prevent interference
+                    $('#search-form').off('submit');
+
+                    // Use native DOM submit to bypass jQuery event handlers too
+                    document.getElementById('search-form').submit();
                 }, 2000);
             });
+
         });
     </script>
 @endpush
