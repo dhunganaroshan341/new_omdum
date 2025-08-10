@@ -34,6 +34,9 @@
                             <ul class="list">
                                 <li>
                                     <a href="{{ route('frontend.booking-single') }}">Book Now</a>
+
+                                </li>
+                                <li>
                                     <a href="{{ route('about') }}">About Us</a>
                                 </li>
                                 <li>
