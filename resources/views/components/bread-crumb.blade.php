@@ -1,5 +1,5 @@
  <section class="breadcrumb-main" style="background-image: url('{{ $pageBanner }}');">
-
+     @dd($pageBanner)
      <div class="breadcrumb-outer pt-10 pb-4">
          <div class="container">
              <div class="breadcrumb-content d-md-flex align-items-center pt-10">
