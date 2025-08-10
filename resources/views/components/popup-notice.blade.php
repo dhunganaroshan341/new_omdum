@@ -14,7 +14,7 @@
                 <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}" alt="Popup Image"
                     class="w-100 d-block">
                 <div
-                    style="position: absolute; bottom: 15px; right: 15px; background: var(--omundum-green); color: white; font-weight: 400; font-size: 1rem; padding: 5px 10px; border-radius: 4px; z-index: 1050;">
+                    style=" width:80%; position: absolute; bottom: 15px; right: 15px; background: rgba(97, 180, 136, 0.68); color: white; font-weight: 400; font-size: 1rem; padding: 5px 10px; border-radius: 4px; z-index: 1050;">
                     {{ $popupNotice->title }}
                 </div>
             </a>
