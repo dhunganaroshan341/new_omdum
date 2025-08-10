@@ -112,7 +112,7 @@
         ]);
 
         $data = $this->getFilteredPackages($validated);
-        return view('frontend.packages-all', $data);
+        return view('frontend.packages-grid', $data);
     }
 
 
