@@ -11,8 +11,8 @@
                         <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
                         <p class="white mb-4">{!! $callToAction->description ??
                             'There are many variations of passages of. Lorem Ipsum available, but
-                                                                                                                                                                                                                                                                             the majority have suffered alteration in some form, by injected humour, or randomised
-                                                                                                                                                                                                                                                                             words which don’t look.' !!}</p>
+                                                                                                                                                                                                                                                                                                     the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                                                                                                                                                                                     words which don’t look.' !!}</p>
                         <a href="{{ $callToAction->button_url ?? route('frontend.booking-single') }}"
                             class="nir-btn">{{ $callToAction->button_text ?? 'Book Now' }} <i
                                 class="fa fa-arrow-right"></i></a>
@@ -68,7 +68,7 @@
                     modal.style.position = 'fixed';
                     modal.style.top = 0;
                     modal.style.left = 0;
-                    modal.style.width = '801';
+                    modal.style.width = '801px';
                     modal.style.height = '450px';
                     modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
                     // modal.style.display = 'flex';
