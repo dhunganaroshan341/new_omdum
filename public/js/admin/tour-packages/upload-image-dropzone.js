@@ -1,169 +1,160 @@
-Dropzone.autoDiscover = false; // Disable auto init
+Dropzone.autoDiscover = false; // Prevent auto-init
 
 $(document).ready(function () {
-    // Setup CSRF token for all AJAX requests globally
+    // Global AJAX CSRF
     $.ajaxSetup({
-        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") }
     });
 
-let imageDropzone;
-let isResettingDropzone = false;
-let isManualDelete = false;
+    let imageDropzone;
+    let isResettingDropzone = false;
 
+    // Reset Upload Modal
+    function resetUploadModal() {
+        if (imageDropzone) {
+            isResettingDropzone = true;
+            imageDropzone.removeAllFiles(true);
+            setTimeout(() => {
+                isResettingDropzone = false;
+            }, 0);
+        }
 
-// Function to reset modal and Dropzone UI
-function resetUploadModal() {
-    if (imageDropzone) {
-        isResettingDropzone = true;
-        imageDropzone.removeAllFiles(true);
-        // Reset the flag AFTER Dropzone finishes triggering removedfile events
-        setTimeout(() => {
-            isResettingDropzone = false;
-        }, 0);
+        $('#youtubeIframe').val('');
+        $('#tour_package_id').val('');
+
+        $('#btnImage').addClass('active btn-primary').removeClass('btn-outline-primary');
+        $('#btnVideo').removeClass('active btn-secondary').addClass('btn-outline-secondary');
+
+        $('#mydropzone').removeClass('d-none');
+        $('#videoInputWrapper').addClass('d-none');
     }
 
-    $('#youtubeIframe').val('');
-    $('#tour_package_id').val('');
-
-    $('#btnImage').addClass('active btn-primary').removeClass('btn-outline-primary');
-    $('#btnVideo').removeClass('active btn-secondary').addClass('btn-outline-secondary');
-
-    $('#mydropzone').removeClass('d-none');
-    $('#videoInputWrapper').addClass('d-none');
-}
-
-
-
-    // Close modal on #closeBtn click and reset
+    // Close modal reset
     $(document).on('click', '#closeBtn', function () {
         $('#uploadModal').modal('hide');
         resetUploadModal();
     });
 
-    // Reset modal on bootstrap modal hidden event
     $('#uploadModal').on('hidden.bs.modal', function () {
         resetUploadModal();
     });
 
-    // Open modal and initialize Dropzone + load existing images
-   $(document).on("click", ".editUploads", function () {
-    const tourPackageId = $(this).data('id');
-    $('#tour_package_id').val(tourPackageId);
-    $("#uploadModal").modal("show");
+    // Open modal and init Dropzone
+    $(document).on("click", ".editUploads", function () {
+        const tourPackageId = $(this).data('id');
+        $('#tour_package_id').val(tourPackageId);
+        $("#uploadModal").modal("show");
 
-    // Create Dropzone if not already initialized
-    if (!imageDropzone) {
-        imageDropzone = new Dropzone("#mydropzone", {
-            url: window.routes.packagesImageUpload,
-            paramName: "images",
-            method: "POST",
-            acceptedFiles: "image/*",
-            maxFilesize: 5,
-            uploadMultiple: true,
-            parallelUploads: 5,
-            autoProcessQueue: false,
-            addRemoveLinks: true,
-            dictDefaultMessage: "Drag & drop images here or click to upload",
-            headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        if (!imageDropzone) {
+            imageDropzone = new Dropzone("#mydropzone", {
+                url: window.routes.packagesImageUpload,
+                paramName: "images",
+                method: "POST",
+                acceptedFiles: "image/*",
+                maxFilesize: 5,
+                uploadMultiple: true,
+                parallelUploads: 5,
+                autoProcessQueue: false,
+                addRemoveLinks: true,
+                dictDefaultMessage: "Drag & drop images here or click to upload",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+
+            // Add tour_package_id on upload
+            imageDropzone.on("sending", function (file, xhr, formData) {
+                formData.append("tour_package_id", $("#tour_package_id").val());
+            });
+
+            // Upload success
+            imageDropzone.on("successmultiple", function (files) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Images Uploaded Successfully!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+
+                imageDropzone.getAcceptedFiles().forEach(file => imageDropzone.removeFile(file));
+                $("#uploadModal").modal("hide");
+            });
+
+            // Upload error
+            imageDropzone.on("errormultiple", function (files, response) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Upload Error",
+                    text: typeof response === "string" ? response : "Something went wrong.",
+                });
+                console.error(response);
+            });
+
+            // Manual delete handling
+            $(document).on("click", ".dz-remove", function () {
+                const previewElement = $(this).closest(".dz-preview")[0];
+                const file = imageDropzone.files.find(f => f.previewElement === previewElement);
+                if (file) {
+                    file._manualDelete = true; // mark as manual delete
+                }
+            });
+
+            // Remove file event
+            imageDropzone.on("removedfile", function (file) {
+                if (!file._manualDelete || isResettingDropzone) {
+                    file._manualDelete = false;
+                    return;
+                }
+
+                if (file.serverId) {
+                    $.ajax({
+                        url: `/admin/tour-package-images/delete/${file.serverId}`,
+                        method: "DELETE",
+                        success: function () {
+                            Swal.fire("Deleted!", "Image has been deleted.", "success");
+                        },
+                        error: function () {
+                            Swal.fire("Failed!", "Could not delete image.", "error");
+                        },
+                    });
+                }
+
+                file._manualDelete = false;
+            });
+        }
+
+        // Reset Dropzone before loading new images
+        isResettingDropzone = true;
+        imageDropzone.removeAllFiles(true);
+        isResettingDropzone = false;
+
+        // Load existing images
+        $.ajax({
+            url: `/admin/tour-package-images/${tourPackageId}`,
+            method: "GET",
+            success: function (images) {
+                images.forEach(function (image) {
+                    const mockFile = {
+                        name: image.image_path.split("/").pop(),
+                        size: 123456,
+                        accepted: true,
+                        status: Dropzone.SUCCESS,
+                        serverId: image.id,
+                    };
+
+                    imageDropzone.emit("addedfile", mockFile);
+                    imageDropzone.emit("thumbnail", mockFile, image.image_path);
+                    imageDropzone.emit("complete", mockFile);
+                    imageDropzone.files.push(mockFile);
+                });
+            },
+            error: function () {
+                console.error("Failed to load existing images");
             },
         });
-
-        // Add tour_package_id to upload request
-        imageDropzone.on("sending", function (file, xhr, formData) {
-            formData.append("tour_package_id", $("#tour_package_id").val());
-        });
-
-        // Handle success
-        imageDropzone.on("successmultiple", function (files, response) {
-            Swal.fire({
-                icon: "success",
-                title: "Images Uploaded Successfully!",
-                showConfirmButton: false,
-                timer: 1500,
-            });
-
-            imageDropzone.getAcceptedFiles().forEach((file) => {
-                imageDropzone.removeFile(file);
-            });
-
-            $("#uploadModal").modal("hide");
-        });
-
-        // Handle upload error
-        imageDropzone.on("errormultiple", function (files, response) {
-            Swal.fire({
-                icon: "error",
-                title: "Upload Error",
-                text: typeof response === "string" ? response : "Something went wrong.",
-            });
-            console.error(response);
-        });
-
-        // 🧠 MANUAL DELETE ONLY
-        imageDropzone.on("removedfile", function (file) {
-            if (!isManualDelete || isResettingDropzone) {
-                isManualDelete = false;
-                return;
-            }
-
-            if (file.serverId) {
-                $.ajax({
-                    url: `/admin/tour-package-images/delete/${file.serverId}`,
-                    method: "DELETE",
-                    headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") },
-                    success: function () {
-                        Swal.fire("Deleted!", "Image has been deleted.", "success");
-                    },
-                    error: function () {
-                        Swal.fire("Failed!", "Could not delete image.", "error");
-                    },
-                });
-            }
-
-            isManualDelete = false;
-        });
-    }
-
-    // 🧹 RESET Dropzone safely
-    isResettingDropzone = true;
-    imageDropzone.removeAllFiles(true);
-    isResettingDropzone = false;
-
-    // 📦 Load existing images from server
-    $.ajax({
-        url: `/admin/tour-package-images/${tourPackageId}`,
-        method: "GET",
-        success: function (images) {
-            images.forEach(function (image) {
-                const mockFile = {
-                    name: image.image_path.split("/").pop(),
-                    size: 123456,
-                    accepted: true,
-                    status: Dropzone.SUCCESS,
-                    serverId: image.id,
-                };
-
-                imageDropzone.emit("addedfile", mockFile);
-                imageDropzone.emit("thumbnail", mockFile, image.image_path);
-                imageDropzone.emit("complete", mockFile);
-
-                imageDropzone.files.push(mockFile);
-            });
-        },
-        error: function () {
-            console.error("Failed to load existing images");
-        },
     });
-});
-// deleting dropzone
-$(document).on("click", ".dz-remove", function () {
-    isManualDelete = true;
-});
 
-
-
-    // Upload submit button click handler
+    // Upload submit handler
     $('#uploadSubmitBtn').click(function () {
         if ($('#btnImage').hasClass('active')) {
             if (!imageDropzone || imageDropzone.getAcceptedFiles().length === 0) {
@@ -174,7 +165,7 @@ $(document).on("click", ".dz-remove", function () {
                 });
                 return;
             }
-            imageDropzone.processQueue(); // Start uploading all queued files
+            imageDropzone.processQueue();
         } else {
             const iframeCode = $('#youtubeIframe').val().trim();
             if (!iframeCode) {
@@ -214,7 +205,7 @@ $(document).on("click", ".dz-remove", function () {
         }
     });
 
-    // Toggle buttons logic for Image vs Video
+    // Toggle buttons (Image/Video)
     $('#btnImage').click(function () {
         $(this).addClass('active btn-primary').removeClass('btn-outline-primary');
         $('#btnVideo').removeClass('active btn-secondary').addClass('btn-outline-secondary');
