@@ -4,15 +4,17 @@
         <div class="modal-content border-0 p-0 position-relative overflow-hidden">
 
             <!-- Close button -->
-            <button type="button" class="btn-close position-absolute top-2 end-2 m-3" data-bs-dismiss="modal"
-                aria-label="Close" style="color: var(--omundumgreen); opacity: 1; z-index: 1051;"></button>
+            <button type="button" class="btn-close position-absolute top-2 end-2 m-3 rounded-circle"
+                data-bs-dismiss="modal" aria-label="Close"
+                style="background: var(--omundum-green); opacity: 1; z-index: 1051; box-shadow: none; width: 32px; height: 32px;">
+            </button>
 
             <!-- Image with overlay title -->
-            <a href="{{ $popupNotice->url }}">
+            <a href="{{ $popupNotice->url }}" class="position-relative d-block">
                 <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}" alt="Popup Image"
                     class="w-100 d-block">
                 <div
-                    style="position: absolute; bottom: 15px; left: 15px; color: white; font-weight: 700; font-size: 1.75rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.7); z-index: 1050;">
+                    style="position: absolute; bottom: 15px; right: 15px; background: var(--omundum-green); color: white; font-weight: 400; font-size: 1rem; padding: 5px 10px; border-radius: 4px; z-index: 1050;">
                     {{ $popupNotice->title }}
                 </div>
             </a>
