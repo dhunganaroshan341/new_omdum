@@ -16,8 +16,9 @@ class BookingController extends Controller
 {
 public function index(Request $request)
 {
-  if ($request->ajax()) {
+if ($request->ajax()) {
     $search = $request->input('search.value');
+    $status = $request->input('status'); // get from your buttons
     $columns = $request->input('columns');
     $order = $request->input('order')[0];
     $orderColumnIndex = $order['column'];
@@ -25,6 +26,11 @@ public function index(Request $request)
 
     $bookingsQuery = PackageBooking::with(['tourPackage', 'tourBatch'])
         ->where('status', '!=', 'inactive');
+
+    // 🔹 Apply status filter
+    if (!empty($status) && $status !== 'all') {
+        $bookingsQuery->where('status', $status);
+    }
 
     // Filtering search
     if ($search) {
@@ -38,14 +44,11 @@ public function index(Request $request)
     }
 
     // Ordering
-    // Important: If ordering on related columns is needed, you must join or handle manually.
-    // For now, fallback to ordering on direct columns only.
     $orderColumnName = $columns[$orderColumnIndex]['data'] ?? 'created_at';
     $allowedColumns = ['name', 'email', 'phone', 'booking_type', 'total_people', 'price', 'status', 'created_at'];
     if (!in_array($orderColumnName, $allowedColumns)) {
-        $orderColumnName = 'created_at'; // fallback
+        $orderColumnName = 'created_at';
     }
-
     $bookingsQuery->orderBy($orderColumnName, $orderBy);
 
     return DataTables::eloquent($bookingsQuery)
@@ -58,7 +61,6 @@ public function index(Request $request)
                         <option value="pending" ' . ($item->status == 'pending' ? 'selected' : '') . '>Pending</option>
                         <option value="confirmed" ' . ($item->status == 'confirmed' ? 'selected' : '') . '>Confirmed</option>
                         <option value="cancelled" ' . ($item->status == 'cancelled' ? 'selected' : '') . '>Cancelled</option>
-                        <option value="active" ' . ($item->status == 'active' ? 'selected' : '') . '>Active</option>
                     </select>';
         })
         ->addColumn('package', function ($item) {
@@ -70,6 +72,7 @@ public function index(Request $request)
         ->rawColumns(['action', 'status'])
         ->make(true);
 }
+
 
       $extraJs = array_merge(
     config('js-map.admin.datatable.script'),
