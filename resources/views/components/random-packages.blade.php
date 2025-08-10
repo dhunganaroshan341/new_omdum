@@ -25,6 +25,7 @@
                                     @php
                                         $imgSrc = $package->first_image_url ?? $randomFallback;
                                     @endphp
+                                    @dd($pacakge->first_image_url)
                                     <img src="{{ $package->first_image_url }}"
                                         alt="{{ $package->title ?? 'Destination' }}">
 
