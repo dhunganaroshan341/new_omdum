@@ -17,6 +17,8 @@ $(document).ready(function () {
                 d.status = currentStatus;
                 d.startDate = startDate;
                 d.endDate = endDate;
+                 d.status_filter = $('#statusFilter').val(); // from dropdown/select
+
             },
             error: function (xhr, status, error) {
                 console.error("DataTable AJAX error:", error);
