@@ -8,7 +8,6 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
                     style="width: 32px; height: 32px; border: none; padding: 0; cursor: pointer;">
                 </button>
-
             </div>
 
             <!-- Image with overlay title -->
@@ -44,11 +43,11 @@
             background: var(--omundum-orange);
         }
 
-        /* Force white close icon by overriding Bootstrap background */
+        /* Use Bootstrap's white close icon */
         .btn-close-white {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 2l12 12M14 2L2 14'/%3e%3c/svg%3e") !important;
+            filter: brightness(0) invert(1);
+            /* ensure white cross */
         }
-
 
         /* Overlay text container base style */
         .overlay-text-container {
@@ -72,7 +71,6 @@
         }
     </style>
 @endpush
-
 
 @push('scripts')
     <script>
