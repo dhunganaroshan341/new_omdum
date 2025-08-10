@@ -45,8 +45,8 @@
                 <button class="btn btn-info">
                     <i class="mdi mdi-clipboard-check-outline"></i> Completed
                 </button>
-                <button class="btn btn-dark">
-                    <i class="mdi mdi-history"></i> Recent
+                <button class="btn btn-outline-dark">
+                    <i class="mdi mdi-archive-outline"></i> Archive
                 </button>
             </div>
         </div>
@@ -71,8 +71,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- Example Row --}}
-
+                    {{-- Data will come from backend --}}
                 </tbody>
             </table>
         </div>
