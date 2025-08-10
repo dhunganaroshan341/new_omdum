@@ -415,26 +415,27 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                .desti-image:hover .trend-last-main p.white,
-                                                                                                                .desti-image:hover .trend-last-main .price span,
-                                                                                                                .desti-image:hover .desti-overlay a span.white,
-                                                                                                                .desti-image:hover .desti-overlay a i.white {
-                                                                                                                    color: var(--omundum-green) !important;
-                                                                                                                } */
+                                                                                                                    .desti-image:hover .trend-last-main p.white,
+                                                                                                                    .desti-image:hover .trend-last-main .price span,
+                                                                                                                    .desti-image:hover .desti-overlay a span.white,
+                                                                                                                    .desti-image:hover .desti-overlay a i.white {
+                                                                                                                        color: var(--omundum-green) !important;
+                                                                                                                    } */
     </style>
-@endpush@push('scripts')
-<script>
-    $(document).ready(function() {
-        // Auto-submit when any checkbox or radio changes
-        $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change',
-            function() {
-                $('#package-filter-form').submit();
-            });
+@endpush
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            // Auto-submit when any checkbox or radio changes
+            $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change',
+                function() {
+                    $('#package-filter-form').submit();
+                });
 
-        // Disable inputs after submitting to prevent double clicks
-        $('#package-filter-form').on('submit', function() {
-            $(this).find('input, button').prop('disabled', true);
+            // Disable inputs after submitting to prevent double clicks
+            $('#package-filter-form').on('submit', function() {
+                $(this).find('input, button').prop('disabled', true);
+            });
         });
-    });
-</script>
+    </script>
 @endpush
