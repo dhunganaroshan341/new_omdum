@@ -52,6 +52,30 @@
                                         {{-- <div class="change-list me-2"><a href="#"><i class="fa fa-bars"></i></a></div>
                                         <div class="change-grid f-active"><a href="#"><i class="fa fa-th"></i></a>
                                         </div> --}}
+                                        {{-- search --}}
+                                        <div class="search d-flex align-items-center justify-content-between ms-2">
+                                            <form method="GET" action="{{ route('packages.search') }}" id="search-form"
+                                                class="d-flex align-items-center w-100">
+                                                <div class="form-group flex-grow-1 me-2">
+                                                    <label for="search-query" class="visually-hidden">Search</label>
+                                                    <input type="text" class="form-control" name="search"
+                                                        id="search-query" placeholder="Search packages"
+                                                        value="{{ request('search') ?? '' }}" autocomplete="off">
+                                                </div>
+                                                {{-- Preserve existing filters --}}
+                                                @foreach ((array) request('parent_packages') as $parentSlug)
+                                                    <input type="hidden" name="parent_packages[]"
+                                                        value="{{ $parentSlug }}">
+                                                @endforeach
+                                                <input type="hidden" name="country" value="{{ request('country') }}">
+                                                @if (request()->filled('package_type'))
+                                                    <input type="hidden" name="package_type"
+                                                        value="{{ request('package_type') }}">
+                                                @endif
+                                            </form>
+                                        </div>
+                                        {{-- search Ends --}}
+
                                         <div class="sortby d-flex align-items-center justify-content-between ms-2">
                                             <form method="GET" action="{{ route('packages.search') }}">
                                                 {{-- Retain existing filters --}}
@@ -194,7 +218,8 @@
                                     <div class="sidebar-item">
                                         @foreach ($parentPackages as $parent)
                                             <div class="pretty p-default p-thick p-pulse">
-                                                <input type="checkbox" name="parent_packages[]" value="{{ $parent->slug }}"
+                                                <input type="checkbox" name="parent_packages[]"
+                                                    value="{{ $parent->slug }}"
                                                     {{ request('parent_packages') && in_array($parent->slug, request('parent_packages')) ? 'checked' : '' }} />
 
                                                 <div class="state">
@@ -422,12 +447,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                        color: var(--omundum-green) !important;
-                                                                                                                                                    } */
+                                                                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                        color: var(--omundum-green) !important;
+                                                                                                                                                                                                    } */
     </style>
 @endpush
 @push('scripts')
@@ -444,6 +469,15 @@
             // Optional: disable button only after real submit
             $('#package-filter-form').on('submit', function() {
                 $(this).find('button[type="submit"]').prop('disabled', true);
+            });
+
+            // search by search bar
+            let debounceTimer;
+            $('#search-query').on('input', function() {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(function() {
+                    $('#search-form').submit();
+                }, 2000); // 2 seconds debounce
             });
         });
     </script>
