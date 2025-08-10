@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Notice extends BaseModel
 {
     use HasFactory;
-    protected $fillable=['title','description','image','status'];
+    protected $fillable=['title','description','image','status','url'];
 
 
 

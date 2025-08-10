@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\FrontendController as AdminFrontendController;
 use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\GalleryMediaController;
+use App\Http\Controllers\Admin\NewsLetterController as AdminSideNewsLetterController;
 use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\AuthController;
@@ -274,6 +275,8 @@ Route::prefix('contact')->name('contact.')->group(function () {
     Route::get('/detail/{id}', [ContactController::class, 'showDetail'])->name('detail');
     Route::get('/delete/{id}', [ContactController::class, 'destroy'])->name('delete');
 });
+Route::resource('/newsletters', AdminSideNewsLetterController::class);
+
 
 // Settings
 Route::prefix('setting')->name('setting.')->group(function () {

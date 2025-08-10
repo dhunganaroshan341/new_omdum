@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->string('meta_keywords')->nullable();
             $table->string('title1')->nullable();
             $table->string('title2')->nullable();
+            $table->string('short_desc1')->nullable();
             $table->string('short_desc2')->nullable();
             $table->longText('desc1')->nullable();
             $table->longText('desc2')->nullable();

@@ -33,14 +33,14 @@ class ContactController extends Controller
             $start = $request->input('start'); // Offset for pagination
             $orderColumnIndex = $request->input('order')[0]['column']; // Column index for sorting
             $orderBy = $request->input('order')[0]['dir']; // Sorting direction (asc/desc)
-   
+
             // Quey Data
             $data = Contact::query();
 
             // Total Count
             $countTotal = $data->count();
 
-            // Searching 
+            // Searching
             $data->when($search, function ($query) use ($search) {
                     $query->where('name', 'LIKE', "%$search%")
                         ->orWhere('email', 'LIKE', "%$search%")
@@ -51,7 +51,7 @@ class ContactController extends Controller
                 // search Count
               $countFilter  = $data->count();
               $records = $data
-                ->orderBy($columns[$orderColumnIndex]['data'], $orderBy) 
+                ->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
                 ->offset($start)
                 ->limit($pageSize);
             return DataTables::of($records)
@@ -96,4 +96,5 @@ class ContactController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
     }
+
 }

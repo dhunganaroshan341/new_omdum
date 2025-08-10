@@ -23,9 +23,10 @@
                             <div class="col-lg p-0">
                                 <div class="desti-image bordernone">
                                     @php
-                                        $imgSrc = $package->images->image_path ?? $randomFallback;
+                                        $imgSrc = $package->first_image_url ?? $randomFallback;
                                     @endphp
-                                    <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
+                                    <img src="{{ $package->first_image_url }}"
+                                        alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
                                         @if ($package->duration != '0days' || $package->duration != '0 days')

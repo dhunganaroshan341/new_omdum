@@ -43,7 +43,7 @@
                                         <div class="col-sm-12">
                                             <div
                                                 class="statistics-details d-flex align-items-center justify-content-between">
-                                                
+
                                                 <div>
                                                     <p class="statistics-title">Total User</p>
                                                     <h3 class="rate-percentage">{{ $totaluser }}</h3>
@@ -60,6 +60,10 @@
                                                     <p class="statistics-title">Total Post</p>
                                                     <h3 class="rate-percentage">{{ $totalpost }}</h3>
                                                 </div>
+                                                <div class="d-none d-md-block">
+                                                    <p class="statistics-title">Total packages</p>
+                                                    <h3 class="rate-percentage">{{ $totalPackages }}</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +78,8 @@
                                                                 <div>
                                                                     <h4 class="card-title card-title-dash">Performance Line
                                                                         Chart</h4>
-                                                                    <h5 class="card-subtitle card-subtitle-dash">Bar Graph Data from DataSet</h5>
+                                                                    <h5 class="card-subtitle card-subtitle-dash">Bar Graph
+                                                                        Data from DataSet</h5>
                                                                 </div>
                                                             </div>
                                                             <div class="mt-4">

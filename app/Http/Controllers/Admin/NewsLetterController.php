@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class NewsLetterController extends Controller
 {
@@ -25,10 +26,10 @@ class NewsLetterController extends Controller
             $NewsLetter = NewsletterSubscriber::query();
             $totalNewsLetter = $NewsLetter->count();
 
-            $searchNewsLetter = $NewsLetter->when($search, function ($query) use ($search) {
-                $query->where('email', 'LIKE', "%$search%")
 
-            });
+                $searchNewsLetter = $NewsLetter->when($search,function($query) use($search){
+                    $query->where('email','LIKE',"%$search%");
+                });
 
             $searchCount = $searchNewsLetter->count();
             $response = $searchNewsLetter->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
@@ -65,14 +66,14 @@ class NewsLetterController extends Controller
         $extraJs = array_merge(
             config('js-map.admin.datatable.script'),
             config('js-map.admin.summernote.script'),
-            config('js-map.admin.sweetalert.script'),
+            // config('js-map.admin.sweetalert.script'),
             config('js-map.admin.buttons.script')
         );
 
         $extraCs = array_merge(
             config('js-map.admin.datatable.style'),
             config('js-map.admin.summernote.style'),
-            config('js-map.admin.sweetalert.style'),
+            // config('js-map.admin.sweetalert.style'),
             config('js-map.admin.buttons.style')
         );
         return view('Admin.pages.NewsLetter.newsletter', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);

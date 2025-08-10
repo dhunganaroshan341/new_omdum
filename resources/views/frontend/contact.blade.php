@@ -25,7 +25,7 @@
         <div class="map mb-10">
             <div style="width: 100%">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2957.0448856124403!2d85.32194127455185!3d27.72043262491585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1910905f9f65%3A0xdc85747e51575050!2sNeel%20Sarswoti%20Marg%2C%20Kathmandu%2044600!5e1!3m2!1sen!2snp!4v1751872691730!5m2!1sen!2snp"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.9225691755028!2d85.32698169999999!3d27.7196769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2828e7c35b4eab31%3A0x97173eb923f166ae!2sMundum%20Travels!5e0!3m2!1sen!2snp!4v1754815796905!5m2!1sen!2snp"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -123,28 +123,26 @@
                                 the trail. Get notified about group departures, local festivals, and exclusive offers for
                                 repeat travelers.</p>
                             <div id="contactform-error-msg"></div>
-                            <form action="#" id="contactform" method="post" name="contactform">
+                            <form id="storeContact" method="post">
+                                @csrf
                                 <div class="form-group mb-2">
-                                    <input class="form-control" id="fname" name="first_name" placeholder="First Name"
-                                        type="text" />
+                                    <input class="form-control" name="name" placeholder=" Name" type="text" />
+                                    <small class="text-danger" id="name-validation"></small>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input class="form-control" id="lname" name="last_name" placeholder="Last Name"
-                                        type="text" />
+                                    <input class="form-control" name="email" placeholder="Email" type="email" />
+                                    <small class="text-danger" id="email-validation"></small>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input class="form-control" id="email" name="email" placeholder="Email"
-                                        type="email" />
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input class="form-control" id="phnumber" name="phone" placeholder="Phone"
-                                        type="text" />
+                                    <input class="form-control" name="phone" placeholder="Phone" type="text" />
+                                    <small class="text-danger" id="phone-validation"></small>
                                 </div>
                                 <div class="textarea mb-2">
-                                    <textarea class="form-control" name="comments" placeholder="Enter a message" rows="4"></textarea>
+                                    <textarea class="form-control" name="message" placeholder="Enter a message" rows="4"></textarea>
+                                    <small class="text-danger" id="message-validation"></small>
                                 </div>
                                 <div class="comment-btn text-right mt-1">
-                                    <input class="nir-btn" id="submit" type="submit" value="Send Message" />
+                                    <button type="submit" id="sendMessage" class="nir-btn">Send Message</button>
                                 </div>
                             </form>
                         </div>
@@ -160,33 +158,51 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $("#storeContact").submit(function(event) {
+            $("#storeContact").on("submit", function(event) {
                 event.preventDefault();
                 $("#sendMessage").prop("disabled", true);
-                let message = $("#message").val();
-                console.log(message);
-                let formdata = new FormData(this);
+
+                // Clear old validation errors
+                $("small.text-danger").text("");
+
+                let formData = new FormData(this);
+
                 $.ajax({
-                    type: "post",
+                    type: "POST",
                     url: "{{ route('contact.store') }}",
-                    data: formdata,
+                    data: formData,
                     contentType: false,
                     processData: false,
                     success: function(response) {
-                        console.log(response);
                         if (response.status === true) {
-                            $("#storeContact").trigger("reset");
-                            alert("Message has been sent");
+                            $("#storeContact")[0].reset();
+                            Swal.fire({
+                                icon: "success",
+                                title: "Message Sent",
+                                text: "Thank you for contacting us! We will get back to you soon.",
+                                confirmButtonColor: "#3085d6"
+                            });
                         } else {
-                            alert("Something went wrong!");
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Something went wrong. Please try again.",
+                                confirmButtonColor: "#d33"
+                            });
                         }
-
                     },
-                    error: function(response) {
-                        if (response.status === 422) {
-                            let errors = response.responseJSON.errors;
+                    error: function(xhr) {
+                        if (xhr.status === 422) {
+                            let errors = xhr.responseJSON.errors;
                             $.each(errors, function(key, value) {
                                 $("#" + key + "-validation").text(value[0]);
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Unable to send your message. Please try later.",
+                                confirmButtonColor: "#d33"
                             });
                         }
                     },
@@ -194,7 +210,7 @@
                         $("#sendMessage").prop("disabled", false);
                     }
                 });
-            })
-        })
+            });
+        });
     </script>
 @endpush
