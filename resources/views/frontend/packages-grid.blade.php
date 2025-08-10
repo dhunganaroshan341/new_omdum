@@ -206,7 +206,8 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <button type="submit" class="nir-btn w-100"><i class="fa fa-search"></i> Check
+                                <button type="submit" class="nir-btn clear-submit w-100"><i class="fa fa-search"></i>
+                                    Check
                                     Availability</button>
                             </form>
 
@@ -267,7 +268,7 @@
                                         </div>
                                     </div> --}}
 
-                                    <button type="submit" class="nir-btn w-100 mt-3">Filter</button>
+                                    <button type="submit" class="nir-btn clear-submit w-100 mt-3">Filter</button>
                                 </form>
 
 
@@ -452,12 +453,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                    color: var(--omundum-green) !important;
-                                                                                                                                                                                                                } */
+                                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                color: var(--omundum-green) !important;
+                                                                                                                                                                                                                            } */
     </style>
 @endpush
 @push('scripts')
@@ -489,6 +490,10 @@
                     document.getElementById('search-form').submit();
                 }, 2000);
             });
+            $('.clear-submit') {
+                form.off('submit'); // remove existing prevention
+                form.submit();
+            }
 
         });
     </script>
