@@ -33,6 +33,7 @@
                         <div class="footer-links text-center">
                             <ul class="list">
                                 <li>
+                                    <a href="{{ route('frontend.booking-single') }}">Book Now</a>
                                     <a href="{{ route('about') }}">About Us</a>
                                 </li>
                                 <li>
