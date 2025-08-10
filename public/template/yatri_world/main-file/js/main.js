@@ -25,7 +25,7 @@
 
     jQuery(document).ready(() => {
          jQuery('.js-video-button').modalVideo({
-             channel: 'vimeo'
+             channel: 'youtube'
          });
      });
 
