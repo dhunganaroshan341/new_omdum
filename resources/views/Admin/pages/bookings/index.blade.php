@@ -43,7 +43,7 @@
                     <i class="mdi mdi-timer-sand"></i> Pending
                 </button>
                 <button class="btn btn-info btn-status-filter" data-status="active">
-                    <i class="mdi mdi-clipboard-check-outline"></i> Active
+                    <i class="mdi mdi-clipboard-check-outline"></i> Completed
                 </button>
             </div>
         </div>
