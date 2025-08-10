@@ -14,7 +14,7 @@ class Setting extends BaseModel
     }
     public function getLogoAttribute()
 {
-    return 'uploads/' . $this->attributes['logo'];
+    return '/uploads/' . $this->attributes['logo'];
 }
 
 }
