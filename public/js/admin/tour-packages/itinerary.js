@@ -157,6 +157,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
 
         success: function (response) {
             $(".btn").prop("disabled", false);
+
             if (response.success) {
                 Swal.fire({
                     icon: "success",
@@ -166,20 +167,27 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                     timer: 1000
                 });
 
-                form[0].reset(); // Always reset the form
-               if(itineraryTable){
-        itineraryTable.ajax.reload(null, false);
-    }
-                 $('#order').val(response.latest_order + 1);
+                // Reload DataTable if it exists
+                if (typeof itineraryTable !== 'undefined' && itineraryTable) {
+                    itineraryTable.ajax.reload(null, false);
+                }
+
+                // Update order input to latest + 1
+                if (response.latest_order !== undefined) {
+                    $('#order').val(response.latest_order + 1);
+                }
 
                 if (isUpdate) {
-                    $("#itineraryModal").modal("hide"); // Only hide if it's update
-                    // Optional: Reset back to create mode
-                    form.attr("id", "itineraryForm");
+                    // Update case: close modal
+                    $("#itineraryModal").modal("hide");
+                    form.attr("id", "itineraryForm"); // Reset form to create mode
                     $('#submitItineraryBtn').show();
                     $('#updateItineraryBtn').hide();
+                } else {
+                    // Create case: keep modal open, just reset fields
+                    form[0].reset();
                 }
-                // 🟢 If it's store: modal stays open
+
             } else {
                 Swal.fire({
                     icon: "error",
@@ -210,6 +218,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
         }
     });
 });
+
 
 
 
