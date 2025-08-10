@@ -3,30 +3,58 @@
 @section('content')
     <div class="container-fluid">
 
+        {{-- Date Range Filter --}}
         <div class="row mb-3">
             <div class="col-md-3">
-                <label for="startDate" class="form-label fw-semibold">Start Date</label>
+                <label for="startDate" class="form-label fw-semibold">
+                    <i class="mdi mdi-calendar-start"></i> Start Date
+                </label>
                 <input type="date" id="startDate" class="form-control" />
             </div>
             <div class="col-md-3">
-                <label for="endDate" class="form-label fw-semibold">End Date</label>
+                <label for="endDate" class="form-label fw-semibold">
+                    <i class="mdi mdi-calendar-end"></i> End Date
+                </label>
                 <input type="date" id="endDate" class="form-control" />
             </div>
-            <div class="col-md-6 d-flex align-items-end">
-                <button id="filterBtn" class="btn btn-primary me-2">Filter</button>
-                <button id="resetBtn" class="btn btn-secondary">Reset</button>
-            </div>
-            <div class="col-md-6 d-flex align-items-end">
-                <button id="filterBtn" class="btn btn-primary me-2">--</button>
-                <button id="confirmedBtn" class="btn btn-success">Confirmed</button>
-                <button id="confirmedBtn" class="btn btn-danger">Cancelled</button>
-                <button id="pendingBtn" class="btn btn-warning">Pending</button>
+            <div class="col-md-6 d-flex align-items-end gap-2 mt-2 mt-md-0">
+                <button id="filterBtn" class="btn btn-primary">
+                    <i class="mdi mdi-filter-outline"></i> Filter
+                </button>
+                <button id="resetBtn" class="btn btn-secondary">
+                    <i class="mdi mdi-refresh"></i> Reset
+                </button>
             </div>
         </div>
 
+        {{-- Status Filter Buttons --}}
+        <div class="row mb-4">
+            <div class="col-12 d-flex flex-wrap gap-2">
+                <button class="btn btn-primary">
+                    <i class="mdi mdi-format-list-bulleted"></i> All
+                </button>
+                <button class="btn btn-success">
+                    <i class="mdi mdi-check-circle-outline"></i> Confirmed
+                </button>
+                <button class="btn btn-danger">
+                    <i class="mdi mdi-cancel"></i> Cancelled
+                </button>
+                <button class="btn btn-warning">
+                    <i class="mdi mdi-timer-sand"></i> Pending
+                </button>
+                <button class="btn btn-info">
+                    <i class="mdi mdi-clipboard-check-outline"></i> Completed
+                </button>
+                <button class="btn btn-dark">
+                    <i class="mdi mdi-history"></i> Recent
+                </button>
+            </div>
+        </div>
+
+        {{-- Booking Table --}}
         <div class="table-responsive">
-            <table class="table table-striped" id="show-booking-data">
-                <thead>
+            <table class="table table-striped table-hover align-middle" id="show-booking-data">
+                <thead class="table-dark">
                     <tr>
                         <th>S.N</th>
                         <th>Action</th>
@@ -42,8 +70,14 @@
                         <th>Submitted At</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {{-- Example Row --}}
+
+                </tbody>
             </table>
         </div>
 
     </div>
+
+    {{-- MDI Icons CDN --}}
 @endsection
