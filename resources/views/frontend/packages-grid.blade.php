@@ -31,7 +31,7 @@
     <section class="blog trending destination-b pb-6">
         <div class="container">
             <div class="row gx-lg-5">
-                <div class="col-lg-8 mb-4">
+                <div class="left-sidebar-selector col-lg-8 mb-4">
                     <div class="trend-box">
                         <div class="row">
                             <div class="col-lg-12">
@@ -186,7 +186,7 @@
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-lg-4 mb-4">
+                <div class="right-sidebar-selector col-lg-4 mb-4">
                     <div class="sidebar-sticky">
                         <div class="sidebar-item mb-4">
 
@@ -453,12 +453,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                                color: var(--omundum-green) !important;
-                                                                                                                                                                                                                            } */
+                                                                                                                                                                                                                                        .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                                        .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                                        .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                                        .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                            color: var(--omundum-green) !important;
+                                                                                                                                                                                                                                        } */
     </style>
 @endpush
 @push('scripts')
@@ -494,6 +494,37 @@
                 form.off('submit'); // remove existing prevention
                 form.submit();
             }
+
+            unction autoScroll(containerSelector) {
+                const container = $(containerSelector);
+                let scrollInterval;
+
+                container.on('mousemove', function(e) {
+                    const offset = container.offset();
+                    const height = container.outerHeight();
+                    const mouseY = e.pageY - offset.top;
+
+                    clearInterval(scrollInterval);
+
+                    if (mouseY < 50) { // Near top
+                        scrollInterval = setInterval(() => {
+                            container.scrollTop(container.scrollTop() - 10);
+                        }, 50);
+                    } else if (mouseY > height - 50) { // Near bottom
+                        scrollInterval = setInterval(() => {
+                            container.scrollTop(container.scrollTop() + 10);
+                        }, 50);
+                    }
+                });
+
+                container.on('mouseleave', function() {
+                    clearInterval(scrollInterval);
+                });
+            }
+
+            // Apply to right sidebar and left package grid
+            autoScroll('.right-sidebar-selector'); // Replace with your sidebar class/id
+            autoScroll('.left-package-grid-selector'); // Replace with your grid class/id
 
         });
     </script>
