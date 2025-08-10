@@ -57,7 +57,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th>S.N</th>
-                        <th>Action</th>
+
+                        <th>Status</th>
+
                         <th>Package</th>
                         <th>Name</th>
                         <th>Email</th>
@@ -66,7 +68,8 @@
                         <th>Booking Date</th>
                         <th>No. of People</th>
                         <th>Price</th>
-                        <th>Status</th>
+                        <th>Action</th>
+
                         <th>Submitted At</th>
                     </tr>
                 </thead>

@@ -19,7 +19,8 @@ $(document).ready(function () {
         order: [[11, 'desc']], // Sort by Submitted At (created_at)
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-            { data: 'action', name: 'action', orderable: false, searchable: false },
+            { data: 'status', name: 'status' },
+
             { data: 'package', name: 'tourPackage.title', orderable: false, searchable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
@@ -28,7 +29,8 @@ $(document).ready(function () {
             { data: 'batch', name: 'tourBatch.title', orderable: false, searchable: false },
             { data: 'total_people', name: 'total_people' },
             { data: 'price', name: 'price' },
-            { data: 'status', name: 'status' },
+            { data: 'action', name: 'action', orderable: false, searchable: false },
+
             {
                 data: 'created_at',
                 name: 'created_at',
