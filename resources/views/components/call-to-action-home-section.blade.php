@@ -11,8 +11,8 @@
                            <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
                            <p class="white mb-4">{!! $callToAction->description ??
                                'There are many variations of passages of. Lorem Ipsum available, but
-                                                                                                                                                                                                                                                                                                                                                                                                                         the majority have suffered alteration in some form, by injected humour, or randomised
-                                                                                                                                                                                                                                                                                                                                                                                                                         words which don’t look.' !!}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                words which don’t look.' !!}</p>
                            <a href="{{ $callToAction->button_url ?? route('frontend.booking-single') }}"
                                class="nir-btn">{{ $callToAction->button_text ?? 'Book Now' }} <i
                                    class="fa fa-arrow-right"></i></a>
@@ -24,7 +24,7 @@
                                alt="">
 
                            <div class="call-button text-center">
-                               <button type="button" class="play-btn js-video-button"
+                               <button type="button" class="play-btn custom-js-video-button"
                                    data-video-id="{{ $callToAction->iframe ?? 'gCRNEJxDJKM?si=V1p-5lDXyEl1H_25' }}"
                                    data-channel="youtube">
                                    <i class="fa fa-play"></i>
@@ -41,3 +41,54 @@
        </div>
    </section>
    <!-- call to action Ends -->
+   @push('scripts')
+       <script>
+           document.addEventListener('DOMContentLoaded', function() {
+               document.querySelectorAll('.custom-js-video-button').forEach(button => {
+                   button.addEventListener('click', function() {
+                       let videoId = this.getAttribute('data-video-id');
+                       // Strip out query params if present, e.g. '?si=V1p-5lDXyEl1H_25'
+                       if (videoId.includes('?')) {
+                           videoId = videoId.split('?')[0];
+                       }
+                       const channel = this.getAttribute('data-channel');
+                       let videoUrl = '';
+
+                       if (channel === 'youtube') {
+                           videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                       } else {
+                           // You can add other channel support here
+                           alert('Video channel not supported');
+                           return;
+                       }
+
+                       // Create modal container
+                       const modal = document.createElement('div');
+                       modal.style.position = 'fixed';
+                       modal.style.top = 0;
+                       modal.style.left = 0;
+                       modal.style.width = '100vw';
+                       modal.style.height = '100vh';
+                       modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                       modal.style.display = 'flex';
+                       modal.style.justifyContent = 'center';
+                       modal.style.alignItems = 'center';
+                       modal.style.zIndex = 10000;
+
+                       // Insert iframe and close button inside modal
+                       modal.innerHTML = `
+                <iframe width="80%" height="80%" src="${videoUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <button style="position:absolute;top:20px;right:30px;font-size:30px;color:white;background:none;border:none;cursor:pointer;">&times;</button>
+            `;
+
+                       document.body.appendChild(modal);
+
+                       // Close modal on button click
+                       modal.querySelector('button').addEventListener('click', () => {
+                           document.body.removeChild(modal);
+                       });
+                   });
+               });
+           });
+       </script>
+   @endpush
