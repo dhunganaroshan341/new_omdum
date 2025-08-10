@@ -11,8 +11,8 @@
                            <h2 class="white call-name">{{ $callToAction->title ?? 'EXPLORE THE WORLD' }}</h2>
                            <p class="white mb-4">{!! $callToAction->description ??
                                'There are many variations of passages of. Lorem Ipsum available, but
-                                                                                                                                                                                                                                                                                                                                                                                              the majority have suffered alteration in some form, by injected humour, or randomised
-                                                                                                                                                                                                                                                                                                                                                                                              words which don’t look.' !!}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                         the majority have suffered alteration in some form, by injected humour, or randomised
+                                                                                                                                                                                                                                                                                                                                                                                                                         words which don’t look.' !!}</p>
                            <a href="{{ $callToAction->button_url ?? route('frontend.booking-single') }}"
                                class="nir-btn">{{ $callToAction->button_text ?? 'Book Now' }} <i
                                    class="fa fa-arrow-right"></i></a>
@@ -25,7 +25,8 @@
 
                            <div class="call-button text-center">
                                <button type="button" class="play-btn js-video-button"
-                                   data-video-id="{{ $callToAction->iframe ?? 'gCRNEJxDJKM' }}" data-channel="youtube">
+                                   data-video-id="{{ $callToAction->iframe ?? 'gCRNEJxDJKM?si=V1p-5lDXyEl1H_25' }}"
+                                   data-channel="youtube">
                                    <i class="fa fa-play"></i>
                                </button>
 
