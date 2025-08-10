@@ -145,11 +145,12 @@
         $query->where('our_country_id', $country->id);
     }
 
-    if (!empty($parentPackages)) {
-        $query->whereHas('parent', function ($q) use ($parentPackages) {
-            $q->whereIn('id', $parentPackages);
-        });
-    }
+  if (!empty($parentPackages)) {
+    $query->whereHas('parent', function ($q) use ($parentPackages) {
+        $q->whereIn('slug', $parentPackages);
+    });
+}
+
 
     if ($packageType) {
         $query->where('package_type', $packageType);
