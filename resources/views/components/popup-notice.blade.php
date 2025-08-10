@@ -4,10 +4,12 @@
         <div class="modal-content border-0 p-0 position-relative overflow-hidden">
 
             <!-- Close button -->
-            <button type="button" class="btn-close position-absolute top-2 end-2 m-3 rounded-circle"
-                data-bs-dismiss="modal" aria-label="Close"
-                style="background: var(--omundum-green); opacity: 1; z-index: 1051; box-shadow: none; width: 32px; height: 32px;">
-            </button>
+            <div class="button-container rounded-circle" style="background: var(--omundum-green); ">
+                <button type="button" class="btn-close position-absolute top-2 end-2 m-3 " data-bs-dismiss="modal"
+                    aria-label="Close"
+                    style="color:white opacity: 1; z-index: 1051; box-shadow: none; width: 32px; height: 32px;">
+                </button>
+            </div>
 
             <!-- Image with overlay title -->
             <a href="{{ $popupNotice->url }}" class="position-relative d-block">
