@@ -10,7 +10,7 @@
                 <!-- Logo -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{{ route('home') }}">
-                        <img alt="logo" src="{{ asset('front/images/logo.png') }}" />
+                        <img alt="logo" src="{{ $logo ?? asset('front/images/logo.png') }}" />
                     </a>
                 </div>
 
