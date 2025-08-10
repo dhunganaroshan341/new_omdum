@@ -90,6 +90,7 @@ $(document).ready(function () {
 
             // Key fix: intercept remove button click early to mark manual delete
             $(document).on("click", ".dz-remove", function (e) {
+                 console.log("Remove clicked");
                 const previewElement = $(this).closest(".dz-preview")[0];
                 const file = imageDropzone.files.find(f => f.previewElement === previewElement);
                 if (file) {
