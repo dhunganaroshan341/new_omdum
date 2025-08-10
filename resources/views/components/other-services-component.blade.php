@@ -26,7 +26,7 @@
                     <div class="trend-item mx-3">
                         <a href="{{ $slugUrl }}">
                             <div class="trend-image">
-                                <img src="{{ $imagePath }}" alt="{{ $service->title }}">
+                                <img src="{{ $service->first_image_url }}" alt="{{ $service->title }}">
                             </div>
                         </a>
 
