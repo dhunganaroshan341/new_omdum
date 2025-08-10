@@ -106,7 +106,7 @@
     {
         $validated = $request->validate([
             'parent_packages' => 'array',
-            'parent_packages.*' => 'integer|exists:tour_packages,id',
+        'parent_packages.*' => 'string|exists:tour_packages,slug',
             'country' => 'nullable|string',
             'sort_by' => 'nullable|string|in:low,high',
         ]);
