@@ -56,12 +56,17 @@
                                         <div class="search d-flex align-items-center justify-content-between ms-2">
                                             <form method="GET" action="{{ route('packages.search') }}" id="search-form"
                                                 class="d-flex align-items-center w-100">
-                                                <div class="form-group flex-grow-1 me-2">
+                                                <div class="form-group flex-grow-1 me-2 position-relative">
                                                     <label for="search-query" class="visually-hidden">Search</label>
-                                                    <input type="text" class="form-control" name="search"
+                                                    <input type="text" class="form-control ps-5" name="search"
                                                         id="search-query" placeholder="Search packages"
                                                         value="{{ request('search') ?? '' }}" autocomplete="off">
+                                                    <span class="position-absolute"
+                                                        style="left: 15px; top: 50%; transform: translateY(-50%); color: #aaa;">
+                                                        <i class="fa fa-search"></i>
+                                                    </span>
                                                 </div>
+
                                                 {{-- Preserve existing filters --}}
                                                 @foreach ((array) request('parent_packages') as $parentSlug)
                                                     <input type="hidden" name="parent_packages[]"
@@ -447,12 +452,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                        color: var(--omundum-green) !important;
-                                                                                                                                                                                                    } */
+                                                                                                                                                                                                        .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                        .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                        .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                        .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                            color: var(--omundum-green) !important;
+                                                                                                                                                                                                        } */
     </style>
 @endpush
 @push('scripts')
