@@ -149,9 +149,14 @@ public function getFirstImageUrlAttribute()
 }
 protected static function booted()
 {
-    static::addGlobalScope('orderByItinerariesCount', function ($query) {
-        $query->withCount('itineraries')->orderBy('itineraries_count', 'desc');
+    static::addGlobalScope('orderByItinerariesAndPrice', function ($query) {
+        $query->withCount('itineraries')
+            ->orderByRaw('(itineraries_count > 0) DESC')   // first those with itineraries
+            ->orderBy('itineraries_count', 'desc')        // then by count desc
+            ->orderByRaw('(price IS NOT NULL) DESC')       // then those with price
+            ->orderBy('price', 'asc');                      // finally by price ascending (or desc)
     });
 }
+
 
 }
