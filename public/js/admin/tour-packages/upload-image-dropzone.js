@@ -1,7 +1,6 @@
 Dropzone.autoDiscover = false; // Prevent auto-init
 
 $(document).ready(function () {
-    // Global AJAX CSRF
     $.ajaxSetup({
         headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") }
     });
@@ -9,7 +8,7 @@ $(document).ready(function () {
     let imageDropzone;
     let isResettingDropzone = false;
 
-    // Reset Upload Modal
+    // Reset modal and Dropzone UI
     function resetUploadModal() {
         if (imageDropzone) {
             isResettingDropzone = true;
@@ -39,7 +38,7 @@ $(document).ready(function () {
         resetUploadModal();
     });
 
-    // Open modal and init Dropzone
+    // Initialize Dropzone when opening modal
     $(document).on("click", ".editUploads", function () {
         const tourPackageId = $(this).data('id');
         $('#tour_package_id').val(tourPackageId);
@@ -62,12 +61,12 @@ $(document).ready(function () {
                 },
             });
 
-            // Add tour_package_id on upload
+            // Append package ID to uploads
             imageDropzone.on("sending", function (file, xhr, formData) {
                 formData.append("tour_package_id", $("#tour_package_id").val());
             });
 
-            // Upload success
+            // Success handler for multiple files
             imageDropzone.on("successmultiple", function (files) {
                 Swal.fire({
                     icon: "success",
@@ -75,12 +74,11 @@ $(document).ready(function () {
                     showConfirmButton: false,
                     timer: 1500,
                 });
-
-                imageDropzone.getAcceptedFiles().forEach(file => imageDropzone.removeFile(file));
+                imageDropzone.removeAllFiles(true);
                 $("#uploadModal").modal("hide");
             });
 
-            // Upload error
+            // Error handler
             imageDropzone.on("errormultiple", function (files, response) {
                 Swal.fire({
                     icon: "error",
@@ -90,16 +88,17 @@ $(document).ready(function () {
                 console.error(response);
             });
 
-            // Manual delete handling
-            $(document).on("click", ".dz-remove", function () {
+            // Key fix: intercept remove button click early to mark manual delete
+            $(document).on("click", ".dz-remove", function (e) {
                 const previewElement = $(this).closest(".dz-preview")[0];
                 const file = imageDropzone.files.find(f => f.previewElement === previewElement);
                 if (file) {
-                    file._manualDelete = true; // mark as manual delete
+                    // Mark the file as manual delete BEFORE Dropzone triggers removedfile event
+                    file._manualDelete = true;
                 }
             });
 
-            // Remove file event
+            // Trigger AJAX delete only on manual deletes
             imageDropzone.on("removedfile", function (file) {
                 if (!file._manualDelete || isResettingDropzone) {
                     file._manualDelete = false;
@@ -110,6 +109,7 @@ $(document).ready(function () {
                     $.ajax({
                         url: `/admin/tour-package-images/delete/${file.serverId}`,
                         method: "DELETE",
+                        headers: { "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content") },
                         success: function () {
                             Swal.fire("Deleted!", "Image has been deleted.", "success");
                         },
@@ -123,12 +123,12 @@ $(document).ready(function () {
             });
         }
 
-        // Reset Dropzone before loading new images
+        // Reset Dropzone files before loading new ones
         isResettingDropzone = true;
         imageDropzone.removeAllFiles(true);
         isResettingDropzone = false;
 
-        // Load existing images
+        // Load existing images as mock files
         $.ajax({
             url: `/admin/tour-package-images/${tourPackageId}`,
             method: "GET",
@@ -136,10 +136,10 @@ $(document).ready(function () {
                 images.forEach(function (image) {
                     const mockFile = {
                         name: image.image_path.split("/").pop(),
-                        size: 123456,
+                        size: 123456, // dummy size, no big deal
                         accepted: true,
                         status: Dropzone.SUCCESS,
-                        serverId: image.id,
+                        serverId: image.id, // important for deletion
                     };
 
                     imageDropzone.emit("addedfile", mockFile);
@@ -154,7 +154,7 @@ $(document).ready(function () {
         });
     });
 
-    // Upload submit handler
+    // Submit button logic
     $('#uploadSubmitBtn').click(function () {
         if ($('#btnImage').hasClass('active')) {
             if (!imageDropzone || imageDropzone.getAcceptedFiles().length === 0) {
@@ -205,7 +205,7 @@ $(document).ready(function () {
         }
     });
 
-    // Toggle buttons (Image/Video)
+    // Toggle Image/Video upload UI
     $('#btnImage').click(function () {
         $(this).addClass('active btn-primary').removeClass('btn-outline-primary');
         $('#btnVideo').removeClass('active btn-secondary').addClass('btn-outline-secondary');
