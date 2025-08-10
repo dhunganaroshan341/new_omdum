@@ -25,9 +25,7 @@
                                     @php
                                         $imgSrc = $package->first_image_url ?? $randomFallback;
                                     @endphp
-                                    @dd($package->first_image_url)
-                                    <img src="{{ $package->first_image_url }}"
-                                        alt="{{ $package->title ?? 'Destination' }}">
+                                    <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
                                         @if ($package->duration != '0days' || $package->duration != '0 days')
