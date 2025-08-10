@@ -30,26 +30,24 @@
         {{-- Status Filter Buttons --}}
         <div class="row mb-4">
             <div class="col-12 d-flex flex-wrap gap-2">
-                <button class="btn btn-primary">
+                <button class="btn btn-primary btn-status-filter" data-status="all">
                     <i class="mdi mdi-format-list-bulleted"></i> All
                 </button>
-                <button class="btn btn-success">
+                <button class="btn btn-success btn-status-filter" data-status="confirmed">
                     <i class="mdi mdi-check-circle-outline"></i> Confirmed
                 </button>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger btn-status-filter" data-status="cancelled">
                     <i class="mdi mdi-cancel"></i> Cancelled
                 </button>
-                <button class="btn btn-warning">
+                <button class="btn btn-warning btn-status-filter" data-status="pending">
                     <i class="mdi mdi-timer-sand"></i> Pending
                 </button>
-                <button class="btn btn-info">
-                    <i class="mdi mdi-clipboard-check-outline"></i> Completed
-                </button>
-                <button class="btn btn-outline-dark">
-                    <i class="mdi mdi-archive-outline"></i> Archive
+                <button class="btn btn-info btn-status-filter" data-status="active">
+                    <i class="mdi mdi-clipboard-check-outline"></i> Active
                 </button>
             </div>
         </div>
+
 
         {{-- Booking Table --}}
         <div class="table-responsive">

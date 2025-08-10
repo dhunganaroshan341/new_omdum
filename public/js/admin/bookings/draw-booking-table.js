@@ -3,24 +3,30 @@ $(document).ready(function () {
         height: 300
     });
 
+    let currentStatus = 'all'; // Default
+    let startDate = '';
+    let endDate = '';
+
     var table = $("#show-booking-data").DataTable({
         processing: true,
         serverSide: true,
         ajax: {
-            url: "/admin/bookings", // or your actual route
-            type: 'GET', // or your actual route
-
-             error: function(xhr, status, error) {
-            console.error("DataTable AJAX error:", error);
-    }
-
+            url: "/admin/bookings",
+            type: "GET",
+            data: function (d) {
+                d.status = currentStatus;
+                d.startDate = startDate;
+                d.endDate = endDate;
+            },
+            error: function (xhr, status, error) {
+                console.error("DataTable AJAX error:", error);
+            }
         },
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
-        order: [[11, 'desc']], // Sort by Submitted At (created_at)
+        order: [[11, 'desc']],
         columns: [
-            { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
+            { data: 'DT_RowIndex', orderable: false, searchable: false },
             { data: 'status', name: 'status' },
-
             { data: 'package', name: 'tourPackage.title', orderable: false, searchable: false },
             { data: 'name', name: 'name' },
             { data: 'email', name: 'email' },
@@ -29,12 +35,11 @@ $(document).ready(function () {
             { data: 'batch', name: 'tourBatch.title', orderable: false, searchable: false },
             { data: 'total_people', name: 'total_people' },
             { data: 'price', name: 'price' },
-            { data: 'action', name: 'action', orderable: false, searchable: false },
-
+            { data: 'action', orderable: false, searchable: false },
             {
                 data: 'created_at',
                 name: 'created_at',
-                render: function(data) {
+                render: function (data) {
                     return moment(data).format('D MMM, YYYY');
                 }
             }
@@ -43,6 +48,29 @@ $(document).ready(function () {
         buttons: [
             { extend: 'print', exportOptions: { columns: [0, 2, 3, 4, 5] } },
             { extend: 'excel', title: '', exportOptions: { columns: [0, 2, 3, 4, 5] } }
-        ],
+        ]
+    });
+
+    // Status buttons
+    $(document).on('click', '.btn-status-filter', function () {
+        currentStatus = $(this).data('status');
+        table.draw();
+    });
+
+    // Filter button
+    $('#filterBtn').on('click', function () {
+        startDate = $('#startDate').val();
+        endDate = $('#endDate').val();
+        table.draw();
+    });
+
+    // Reset button
+    $('#resetBtn').on('click', function () {
+        $('#startDate').val('');
+        $('#endDate').val('');
+        startDate = '';
+        endDate = '';
+        currentStatus = 'all';
+        table.draw();
     });
 });

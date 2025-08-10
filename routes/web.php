@@ -259,6 +259,7 @@ Route::prefix('bookings')->name('bookings.')->group(function () {
     Route::post('/store', [BookingController::class, 'store'])->name('store');
     Route::delete('/delete/{id}', [BookingController::class, 'destroy'])->name('destroy');
     // Bookings
+    Route::post('/status/{idTourPackageController::class,'changeStatus'])->name('status');
 
     Route::get('/', [BookingController::class, 'index'])->name('index');
 
