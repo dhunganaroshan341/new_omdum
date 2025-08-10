@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main"
+    {{-- <section class="breadcrumb-main"
         style="background-image: url({{ asset('template/yatri_world/main-file/images/tibet.jpg') }});">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
@@ -18,7 +18,13 @@
             </div>
         </div>
         <div class="dot-overlay"></div>
-    </section>
+    </section> --}}
+
+    @php
+        $maintitle = 'About Us';
+        $page = 'about';
+    @endphp
+    <x-bread-crumb :main-title="$maintitle" :pageName="$page" />
     <!-- BreadCrumb Ends -->
 
     <!-- Blog Starts -->
@@ -182,8 +188,7 @@
                                     <div class="sidebar-item">
                                         @foreach ($parentPackages as $parent)
                                             <div class="pretty p-default p-thick p-pulse">
-                                                <input type="checkbox" name="parent_packages[]"
-                                                    value="{{ $parent->id }}"
+                                                <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
                                                     {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
                                                 <div class="state">
                                                     <label>{{ $parent->title }}</label>
@@ -410,12 +415,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                .desti-image:hover .trend-last-main p.white,
-                                                                                .desti-image:hover .trend-last-main .price span,
-                                                                                .desti-image:hover .desti-overlay a span.white,
-                                                                                .desti-image:hover .desti-overlay a i.white {
-                                                                                    color: var(--omundum-green) !important;
-                                                                                } */
+                                                                                        .desti-image:hover .trend-last-main p.white,
+                                                                                        .desti-image:hover .trend-last-main .price span,
+                                                                                        .desti-image:hover .desti-overlay a span.white,
+                                                                                        .desti-image:hover .desti-overlay a i.white {
+                                                                                            color: var(--omundum-green) !important;
+                                                                                        } */
     </style>
 @endpush
 @push('scripts')
