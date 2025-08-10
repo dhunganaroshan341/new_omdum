@@ -125,7 +125,7 @@
     $ourCountries = OurCountry::all();
 
     $countryName = $filters['country'] ?? null;
-    $parentIds = $filters['parent_packages'] ?? [];
+    $parentPackages = $filters['parent_packages'] ?? [];
     $sortBy = $filters['sort_by'] ?? null;
     $packageType = $filters['package_type'] ?? null;
     $minPrice = $filters['min_price'] ?? null;
@@ -145,9 +145,9 @@
         $query->where('our_country_id', $country->id);
     }
 
-    if (!empty($parentIds)) {
-        $query->whereHas('parent', function ($q) use ($parentIds) {
-            $q->whereIn('id', $parentIds);
+    if (!empty($parentPackages)) {
+        $query->whereHas('parent', function ($q) use ($parentPackages) {
+            $q->whereIn('id', $parentPackages);
         });
     }
 

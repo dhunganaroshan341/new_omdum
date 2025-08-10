@@ -55,12 +55,16 @@
                                         <div class="sortby d-flex align-items-center justify-content-between ms-2">
                                             <form method="GET" action="{{ route('packages.search') }}">
                                                 {{-- Retain existing filters --}}
-                                                @foreach ((array) request('parent_packages') as $parentId)
+                                                @foreach ((array) request('parent_packages') as $parentSlug)
                                                     <input type="hidden" name="parent_packages[]"
-                                                        value="{{ $parentId }}">
+                                                        value="{{ $parentSlug }}">
                                                 @endforeach
                                                 <input type="hidden" name="country" value="{{ request('country') }}">
-
+                                                {{-- Retain selected package type --}}
+                                                @if (request()->filled('package_type'))
+                                                    <input type="hidden" name="package_type"
+                                                        value="{{ request('package_type') }}">
+                                                @endif
                                                 <select name="sort_by" class="niceSelect" onchange="this.form.submit()">
                                                     <option value="">Sort By</option>
                                                     <option value="low"
@@ -188,8 +192,9 @@
                                     <div class="sidebar-item">
                                         @foreach ($parentPackages as $parent)
                                             <div class="pretty p-default p-thick p-pulse">
-                                                <input type="checkbox" name="parent_packages[]" value="{{ $parent->id }}"
-                                                    {{ request('parent_packages') && in_array($parent->id, request('parent_packages')) ? 'checked' : '' }} />
+                                                <input type="checkbox" name="parent_packages[]" value="{{ $parent->slug }}"
+                                                    {{ request('parent_packages') && in_array($parent->slug, request('parent_packages')) ? 'checked' : '' }} />
+
                                                 <div class="state">
                                                     <label>{{ $parent->title }}</label>
                                                 </div>
@@ -415,12 +420,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                            .desti-image:hover .trend-last-main p.white,
-                                                                                                                            .desti-image:hover .trend-last-main .price span,
-                                                                                                                            .desti-image:hover .desti-overlay a span.white,
-                                                                                                                            .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                color: var(--omundum-green) !important;
-                                                                                                                            } */
+                                                                                                                                            .desti-image:hover .trend-last-main p.white,
+                                                                                                                                            .desti-image:hover .trend-last-main .price span,
+                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                color: var(--omundum-green) !important;
+                                                                                                                                            } */
     </style>
 @endpush
 @push('scripts')
