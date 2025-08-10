@@ -172,10 +172,9 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                     itineraryTable.ajax.reload(null, false);
                 }
 
-                // Update order input to latest + 1
-                if (response.latest_order !== undefined) {
-                    $('#order').val(response.latest_order + 1);
-                }
+                // Increment the order by 1 regardless of response
+                let currentOrder = parseInt($('#order').val()) || 0;
+                $('#order').val(currentOrder + 1);
 
                 if (isUpdate) {
                     // Update case: close modal
@@ -186,6 +185,8 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
                 } else {
                     // Create case: keep modal open, just reset fields
                     form[0].reset();
+                    // Keep incremented order value
+                    $('#order').val(currentOrder + 1);
                 }
 
             } else {
@@ -218,6 +219,7 @@ $(document).off("submit", ".itineraryForm").on("submit", ".itineraryForm", funct
         }
     });
 });
+
 
 
 
