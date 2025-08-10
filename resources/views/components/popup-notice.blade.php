@@ -6,8 +6,9 @@
             <!-- Close button container -->
             <div class="button-container rounded-circle position-absolute top-2 end-2 m-3" style="z-index: 1051;">
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
-                    style="width: 32px; height: 32px; background: transparent; border: none; padding: 0; cursor: pointer;">
+                    style="width: 32px; height: 32px; border: none; padding: 0; cursor: pointer;">
                 </button>
+
             </div>
 
             <!-- Image with overlay title -->
@@ -43,10 +44,9 @@
             background: var(--omundum-orange);
         }
 
-        /* Override default bootstrap btn-close-white cross color */
+        /* Force white close icon by overriding Bootstrap background */
         .btn-close-white {
-            filter: brightness(0) invert(1);
-            /* ensures cross is white */
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 2l12 12M14 2L2 14'/%3e%3c/svg%3e") !important;
         }
 
         /* Overlay text container base style */
@@ -71,6 +71,7 @@
         }
     </style>
 @endpush
+
 
 @push('scripts')
     <script>
