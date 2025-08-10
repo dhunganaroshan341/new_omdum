@@ -91,6 +91,7 @@ public function index(Request $request)
 }
 
 
+
 public function store(StorePackageBookingRequest $request)
 {
     try {
@@ -137,4 +138,20 @@ public function store(StorePackageBookingRequest $request)
     }
 }
 
+public function manageStatus(string $id, Request $request)
+{
+    $request->validate([
+        'status' => 'required|in:active,inactive,pending,confirmed,cancelled'
+    ]);
+
+    $booking = PackageBooking::findOrFail($id);
+    $booking->status = $request->status;
+    $booking->save();
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Status updated successfully!',
+        'data' => $booking
+    ]);
+}
 }

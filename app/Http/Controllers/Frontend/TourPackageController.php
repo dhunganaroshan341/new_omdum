@@ -192,8 +192,6 @@
 }
 
 
-public function manageStatus(string $id , Request $request){
 
-}
 
     }

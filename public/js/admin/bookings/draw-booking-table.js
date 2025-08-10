@@ -73,4 +73,45 @@ $(document).ready(function () {
         currentStatus = 'all';
         table.draw();
     });
+
+
+    $(document).on('change', '.booking-status', function () {
+    let bookingId = $(this).data('id');
+    let newStatus = $(this).val();
+
+    $.ajax({
+        url: `/admin/bookings/status/${bookingId}`,
+        type: 'POST',
+        data: {
+            status: newStatus,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            if (response.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Status Updated',
+                    text: response.message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Failed to update status!'
+                });
+            }
+        },
+        error: function (xhr) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Something went wrong!',
+                text: xhr.responseJSON?.message || 'An unknown error occurred.'
+            });
+            console.error(xhr.responseText);
+        }
+    });
+});
+
 });
