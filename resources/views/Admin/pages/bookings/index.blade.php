@@ -16,6 +16,12 @@
                 <button id="filterBtn" class="btn btn-primary me-2">Filter</button>
                 <button id="resetBtn" class="btn btn-secondary">Reset</button>
             </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <button id="filterBtn" class="btn btn-primary me-2">--</button>
+                <button id="confirmedBtn" class="btn btn-success">Confirmed</button>
+                <button id="confirmedBtn" class="btn btn-danger">Cancelled</button>
+                <button id="pendingBtn" class="btn btn-warning">Pending</button>
+            </div>
         </div>
 
         <div class="table-responsive">
