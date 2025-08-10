@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- BreadCrumb Starts -->
-    <section class="breadcrumb-main"
+    {{-- <section class="breadcrumb-main"
         style="background-image: url({{ asset('/template/yatri_world/main-file/images/tibet.jpg') }});">
         <div class="breadcrumb-outer pt-10 pb-4">
             <div class="container">
@@ -18,7 +18,13 @@
             </div>
         </div>
         <div class="dot-overlay"></div>
-    </section>
+    </section> --}}
+    @php
+        $maintitle = 'About Us';
+        $page = 'about';
+    @endphp
+    <x-bread-crumb :main-title="$maintitle" :pageName="$page" />
+
     <!-- BreadCrumb Ends -->
     <!-- form starts -->
     <x-about-us-section />
