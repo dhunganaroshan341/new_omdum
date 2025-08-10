@@ -135,9 +135,9 @@ function populateTourPackageForm(tour_package) {
         url: "/admin/tour-packages/",
         type: "GET",
         data: function(d) {
-            d.filter_country = $('#filterCountry').val();
-            d.filter_type = $('#filterType').val();
-            d.filter_head_package = $('#filterHeadPackage').val();
+          d.country = $('#filterCountry').val();
+    d.type = $('#filterType').val();
+    d.head_package = $('#filterHeadPackage').val();
         }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],

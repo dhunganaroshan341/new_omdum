@@ -40,51 +40,43 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
-      $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
-    ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id') // ✅ join parent
-    ->select(
-        'tour_packages.*',
-        'our_countries.name as country_name',
-        'parent.title as parent_title' // ✅ select parent title
-    )
-    ->with(['country', 'parent'])
-    ->withCount('images');
-
-
+        $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
+            ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
+            ->select(
+                'tour_packages.*',
+                'our_countries.name as country_name',
+                'parent.title as parent_title'
+            )
+            ->with(['country', 'parent'])
+            ->withCount('images');
 
         $total = $query->count();
 
         $country = $request->input('country');
-$type = $request->input('type');
-$headPackage = $request->input('head_package');
+        $type = $request->input('type');
+        $headPackage = $request->input('head_package');
 
-$filtered = $query
-    ->when($search, function ($q) use ($search) {
-        $q->where('tour_packages.title', 'LIKE', "%$search%")
-            ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-            ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-            ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-            ->orWhere('our_countries.name', 'LIKE', "%$search%");
-    })
-    ->when($country, function ($q) use ($country) {
-        $q->where('our_countries.name', $country);
-    })
-    ->when($type, function ($q) use ($type) {
-        $q->where('tour_packages.type', $type); // Make sure `type` exists
-    })
-    ->when($headPackage, function ($q) use ($headPackage) {
-       $q->where('tour_packages.parent_id', $headPackage);
-    });
-
+        $filtered = $query
+            ->when($search, function ($q) use ($search) {
+                $q->where(function ($query) use ($search) {
+                    $query->where('tour_packages.title', 'LIKE', "%$search%")
+                        ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+                        ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+                        ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+                        ->orWhere('our_countries.name', 'LIKE', "%$search%");
+                });
+            })
+            ->when($country, fn($q) => $q->where('our_countries.name', $country))
+            ->when($type, fn($q) => $q->where('tour_packages.type', $type))
+            ->when($headPackage, fn($q) => $q->where('tour_packages.parent_id', $headPackage));
 
         $filteredCount = $filtered->count();
 
         $data = $filtered
-            ->when($orderColumn === 'country', function ($q) use ($orderBy) {
-                $q->orderBy('country_name', $orderBy);
-            }, function ($q) use ($orderColumn, $orderBy) {
-                $q->orderBy($orderColumn, $orderBy);
-            })
+            ->when(in_array($orderColumn, ['country', 'country_name']), fn($q) => $q->orderBy('our_countries.name', $orderBy))
+            ->when($orderColumn === 'parent_title', fn($q) => $q->orderBy('parent.title', $orderBy))
+            ->when($orderColumn === 'type', fn($q) => $q->orderBy('tour_packages.type', $orderBy))
+            ->when(!in_array($orderColumn, ['country', 'country_name', 'parent_title', 'type']), fn($q) => $q->orderBy($orderColumn, $orderBy))
             ->offset($start)
             ->limit($pageSize)
             ->get();
@@ -94,42 +86,39 @@ $filtered = $query
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
             ->addColumn('parent_title', fn($item) => $item->parent->title ?? '')
             ->addColumn('itinerary', function ($item) {
-    $totalItineraries = $item->itineraries()->count(); // Or use a preloaded count if available
-    return '
-        <a href="javascript:void(0);" class="addItineraryBtn me-2" data-id="' . $item->id . '" title="Add Itinerary">
-            <i class="fas fa-plus text-success"></i>
-        </a>
-        <span class="badge bg-primary">' . $totalItineraries . ' <i class="fas fa-list-alt"></i></span>
-        <a href="javascript:void(0);" class="viewItineraryBtn ms-2" data-id="' . $item->id . '" title="View Itinerary">
-            <i class="fas fa-eye text-primary"></i>
-        </a>';
-})
-->addColumn('batches', function ($item) {
-    $totalBatches = $item->batches()->count();
-    return '
-        <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
-            <i class="fas fa-plus text-success"></i>
-        </a>
-        <span class="badge bg-info">' . $totalBatches . ' <i class="fas fa-calendar-alt"></i></span>
-        <a href="javascript:void(0);" class="viewTourBatchBtn ms-2" data-id="' . $item->id . '" title="View Batches">
-            <i class="fas fa-eye text-info"></i>
-        </a>';
-})
-->addColumn('package_includes', function ($item) {
-    $totalIncludes = $item->priceIncludes()->count();
-    $packageName = e($item->title); // escape HTML special characters
-
-    return '
-        <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
-            <i class="fas fa-plus text-success"></i>
-        </a>
-        <span class="badge bg-secondary">' . $totalIncludes . ' <i class="fas fa-list"></i></span>
-        <a href="javascript:void(0);" class="viewPriceIncludeBtn ms-2" data-package_name="' . $packageName . '" data-id="' . $item->id . '" title="View Price Includes">
-            <i class="fas fa-eye text-info"></i>
-        </a>';
-})
-
-
+                $totalItineraries = $item->itineraries()->count();
+                return '
+                    <a href="javascript:void(0);" class="addItineraryBtn me-2" data-id="' . $item->id . '" title="Add Itinerary">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <span class="badge bg-primary">' . $totalItineraries . ' <i class="fas fa-list-alt"></i></span>
+                    <a href="javascript:void(0);" class="viewItineraryBtn ms-2" data-id="' . $item->id . '" title="View Itinerary">
+                        <i class="fas fa-eye text-primary"></i>
+                    </a>';
+            })
+            ->addColumn('batches', function ($item) {
+                $totalBatches = $item->batches()->count();
+                return '
+                    <a href="javascript:void(0);" class="addTourBatchBtn me-2" data-id="' . $item->id . '" title="Add Batch">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <span class="badge bg-info">' . $totalBatches . ' <i class="fas fa-calendar-alt"></i></span>
+                    <a href="javascript:void(0);" class="viewTourBatchBtn ms-2" data-id="' . $item->id . '" title="View Batches">
+                        <i class="fas fa-eye text-info"></i>
+                    </a>';
+            })
+            ->addColumn('package_includes', function ($item) {
+                $totalIncludes = $item->priceIncludes()->count();
+                $packageName = e($item->title);
+                return '
+                    <a href="javascript:void(0);" class="addPriceIncludeBtn me-2" data-id="' . $item->id . '" title="Add Price Include">
+                        <i class="fas fa-plus text-success"></i>
+                    </a>
+                    <span class="badge bg-secondary">' . $totalIncludes . ' <i class="fas fa-list"></i></span>
+                    <a href="javascript:void(0);" class="viewPriceIncludeBtn ms-2" data-package_name="' . $packageName . '" data-id="' . $item->id . '" title="View Price Includes">
+                        <i class="fas fa-eye text-info"></i>
+                    </a>';
+            })
             ->addColumn('images', function ($item) {
                 $imageCount = $item->images_count ?? 0;
                 return '
@@ -145,23 +134,11 @@ $filtered = $query
                 return '<div class="form-check form-switch">
                             <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
                         </div>';
-            })->addColumn('top_deal', function ($item) {
-    $checked = $item->top_deal ? 'checked' : '';
-    return '<input type="checkbox" class="form-check-input topDealToggle" data-id="' . $item->id . '" ' . $checked . '>';
-})
-
-->addColumn('favourite_destination', function ($item) {
-    $checked = $item->favourite_destination ? 'checked' : '';
-    return '<input type="checkbox" class="form-check-input favouriteToggle" data-id="' . $item->id . '" ' . $checked . '>';
-})
-
-
-            ->addColumn('action', function ($item) {
-                return view('Admin.Button.button', ['data' => $item])->render();
             })
-            ->addColumn('short_description', function ($item) {
-                return \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30);
-            })
+            ->addColumn('top_deal', fn($item) => '<input type="checkbox" class="form-check-input topDealToggle" data-id="' . $item->id . '" ' . ($item->top_deal ? 'checked' : '') . '>')
+            ->addColumn('favourite_destination', fn($item) => '<input type="checkbox" class="form-check-input favouriteToggle" data-id="' . $item->id . '" ' . ($item->favourite_destination ? 'checked' : '') . '>')
+            ->addColumn('action', fn($item) => view('Admin.Button.button', ['data' => $item])->render())
+            ->addColumn('short_description', fn($item) => \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30))
             ->rawColumns(['top_deal','favourite_destination','country','batches', 'package_includes','images', 'itinerary', 'status', 'action','parent_title'])
             ->with([
                 'recordsTotal' => $total,
@@ -183,8 +160,10 @@ $filtered = $query
         config('js-map.admin.dropzone.style'),
         config('js-map.admin.buttons.style')
     );
+
     $packages = TourPackage::where('status','Active')->get();
     $parentPackages = TourPackage::has('children')->get();
+
     return view('Admin.pages.TourPackage.tourPackage', [
         'extraJs' => $extraJs,
         'extraCs' => $extraCs,
@@ -193,6 +172,7 @@ $filtered = $query
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
