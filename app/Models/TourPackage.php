@@ -147,5 +147,11 @@ public function getFirstImageUrlAttribute()
     // fallback static image URL
     return asset('template/yatri_world/main-file/images/india.jpg');
 }
+protected static function booted()
+{
+    static::addGlobalScope('orderByItinerariesCount', function ($query) {
+        $query->withCount('itineraries')->orderBy('itineraries_count', 'desc');
+    });
+}
 
 }
