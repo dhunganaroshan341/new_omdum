@@ -1,4 +1,4 @@
- <section class="breadcrumb-main" style="background-image: url('{{ asset($pageBanner) }}');">
+ <section class="breadcrumb-main" style="background-image: url('{{ $pageBanner }}');">
 
      <div class="breadcrumb-outer pt-10 pb-4">
          <div class="container">
