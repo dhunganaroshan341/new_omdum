@@ -452,37 +452,38 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                        .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                        .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                        .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                        .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                            color: var(--omundum-green) !important;
-                                                                                                                                                                                                        } */
+                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                color: var(--omundum-green) !important;
+                                                                                                                                                                                                            } */
     </style>
 @endpush
 @push('scripts')
     <script>
         $(document).ready(function() {
-            // Auto-submit on change
+            // Auto-submit on checkbox/radio change (works for filter form)
             $('#package-filter-form input[type="checkbox"], #package-filter-form input[type="radio"]').on('change',
                 function() {
                     let form = $('#package-filter-form');
-                    form.off('submit'); // remove any existing submit prevention from other scripts
+                    form.off('submit'); // remove existing prevention
                     form.submit();
                 });
 
-            // Optional: disable button only after real submit
             $('#package-filter-form').on('submit', function() {
                 $(this).find('button[type="submit"]').prop('disabled', true);
             });
 
-            // search by search bar
+            // Search input debounce auto-submit
             let debounceTimer;
             $('#search-query').on('input', function() {
+                console.log('Input event fired');
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(function() {
+                    console.log('Submitting search form after debounce');
                     $('#search-form').submit();
-                }, 2000); // 2 seconds debounce
+                }, 2000);
             });
         });
     </script>
