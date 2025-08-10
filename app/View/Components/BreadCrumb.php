@@ -14,17 +14,26 @@ class BreadCrumb extends Component
     public $mainTitle;
     public $pageName;
 
-   public function __construct($mainTitle = '', $pageName = '')
+public function __construct($mainTitle = '', $pageName = '')
 {
     $this->mainTitle = $this->limitWords($mainTitle, 3);
     $this->pageName = $pageName;
 
     $banner = PageBanner::where('page', 'all')->first();
 
-    $this->pageBanner = $banner && $banner->image_url
-        ? $banner->image_url
-        : 'template/yatri_world/main-file/images/tibet_vertical.jpg';
+    if ($banner && $banner->image_url) {
+        // Check if image_url already has http or https prefix
+        if (Str::startsWith($banner->image_url, ['http://', 'https://'])) {
+            $this->pageBanner = $banner->image_url;
+        } else {
+            // prepend your base uploads URL (adjust as needed)
+            $this->pageBanner = url('uploads/' . ltrim($banner->image_url, '/'));
+        }
+    } else {
+        $this->pageBanner = url('template/yatri_world/main-file/images/tibet_vertical.jpg');
+    }
 }
+
 
 private function limitWords($text, $limit = 3)
 {
