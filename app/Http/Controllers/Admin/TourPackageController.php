@@ -55,38 +55,40 @@ public function index(Request $request)
         $type = $request->input('type');
         $headPackage = $request->input('head_package');
 
-        // Apply search and filters except parent
-       $filtered = $query;
+        // Apply filter with precedence chaining
+        $filtered = $query;
 
-if ($country && $country !== 'all') {
-    // Filter by country only, reset others
-    $filtered = $filtered->where('our_countries.id', $country);
-} elseif ($type && $type !== 'all') {
-    // Filter by type only, reset head package
-    $filtered = $filtered->where('tour_packages.type', $type);
-} elseif ($headPackage && $headPackage !== 'all') {
-    // Filter by head package only
-    $filtered = $filtered->where('tour_packages.parent_id', $headPackage);
-}
-// else no filter applied, get all
+        if ($country && $country !== 'all') {
+            // Filter by country only
+            $filtered = $filtered->where('our_countries.id', $country);
+        } elseif ($type && $type !== 'all') {
+            // Filter by type only
+            $filtered = $filtered->where('tour_packages.type', $type);
+        } elseif ($headPackage && $headPackage !== 'all') {
+            // Filter by head package only
+            $filtered = $filtered->where('tour_packages.parent_id', $headPackage);
+        }
 
-// Then apply search if present (optional)
-if ($search) {
-    $filtered = $filtered->where(function ($q) use ($search) {
-        $q->where('tour_packages.title', 'LIKE', "%$search%")
-          ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-          ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-          ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-          ->orWhere('our_countries.name', 'LIKE', "%$search%");
-    });
+        // Apply search if present
+        if ($search) {
+            $filtered = $filtered->where(function ($q) use ($search) {
+                $q->where('tour_packages.title', 'LIKE', "%$search%")
+                  ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+                  ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+                  ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+                  ->orWhere('our_countries.name', 'LIKE', "%$search%");
+            });
+        }
 
-        // Allowed columns for ordering (remove parent_title since no parent)
+        $filteredCount = $filtered->count();
+
+        // Allowed columns for ordering
         $allowedOrderColumns = [
             'title', 'duration', 'country', 'type', 'status'
         ];
 
         if (!in_array($orderColumn, $allowedOrderColumns)) {
-            $orderColumn = 'title'; // fallback to title
+            $orderColumn = 'title'; // fallback
         }
 
         $orderColumnMap = [
@@ -97,16 +99,13 @@ if ($search) {
             'status' => 'tour_packages.status',
         ];
 
-        // Clear any existing order to avoid ambiguity
+        // Remove existing order and apply new order
         $filtered->getQuery()->orders = null;
-
         $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
         $filtered->orderBy($orderByColumn, $orderBy);
 
-        $data = $filtered
-            ->offset($start)
-            ->limit($pageSize)
-            ->get();
+        // Pagination
+        $data = $filtered->offset($start)->limit($pageSize)->get();
 
         return DataTables::of($data)
             ->addIndexColumn()
@@ -209,7 +208,6 @@ if ($search) {
         'parentPackages' => $parentPackages,
     ]);
 }
-
 
 
 
