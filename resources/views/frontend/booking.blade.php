@@ -27,7 +27,7 @@
 
                                     <div class="col-12 col-md-4">
                                         <label class="white d-block mb-2">Phone Number *</label>
-                                        <input type="text" name="phone" class="form-control" required>
+                                        <input type="tel" name="phone" class="form-control" required>
                                     </div>
 
                                     {{-- Row 2: Country, No. of People --}}

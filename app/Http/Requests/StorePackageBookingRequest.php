@@ -24,7 +24,12 @@ class StorePackageBookingRequest extends FormRequest
         'email'           => 'nullable|email|max:255',
         'name'           => 'nullable|string|max:255',
         'message'         => 'nullable|string',
-        'phone'           => 'nullable|string|max:20',
+        'phone' => [
+            'nullable',
+            'string',
+            'max:20',
+            'regex:/^\+?[0-9\s\-]{7,20}$/'
+        ],
         'country'         => 'nullable|string|max:100',
 
         'children'        => 'nullable|integer|min:0',
@@ -43,6 +48,7 @@ class StorePackageBookingRequest extends FormRequest
 {
     return [
         'custom_date.after_or_equal' => 'Custom date must be today or a future date.',
+        'phone.regex' => 'Phone number format is invalid. Only digits, spaces, dashes, and an optional leading + are allowed.',
     ];
 }
 
