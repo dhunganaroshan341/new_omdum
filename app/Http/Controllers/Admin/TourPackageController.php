@@ -38,9 +38,9 @@ public function index(Request $request)
         $orderColumnIndex = $order['column'];
         $orderBy = strtolower($order['dir']) === 'desc' ? 'desc' : 'asc'; // sanitize order direction
         $start = $request->input('start');
-        $orderColumn = $columns[$orderColumnIndex]['data'];
+        $orderColumn = $columns[$orderColumnIndex]['data'] ?? 'title';
 
-        // Base query with joins and selects — no price included at all
+        // Base query with joins, no price selects
         $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
             ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
             ->select(
@@ -57,7 +57,7 @@ public function index(Request $request)
         $type = $request->input('type');
         $headPackage = $request->input('head_package');
 
-        // Apply search and filters
+        // Apply search and filters except price
         $filtered = $query
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
@@ -74,7 +74,7 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-        // Allowed columns for ordering (exclude price entirely)
+        // Allowed columns for ordering, NO price
         $allowedOrderColumns = [
             'title', 'parent_title', 'duration', 'country', 'type', 'status'
         ];
@@ -206,6 +206,7 @@ public function index(Request $request)
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
