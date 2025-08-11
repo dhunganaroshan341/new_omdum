@@ -9,8 +9,12 @@
 <p><strong>Children:</strong> {{ $booking['children'] ?? 0 }}</p>
 <p><strong>Total People:</strong> {{ $booking['total_people'] ?? 0 }}</p>
 
-<p><strong>Booking Type:</strong> {{ ucfirst($booking['booking_type']) ?? 'N/A' }}</p>
-@if ($booking['booking_type'] == 'custom')
+<p><strong>Booking Type:</strong> {{ ucfirst($booking['booking_type'] ?? '') }}</p>
+
+@if (!empty($booking['tour_batch_id']))
+    <p><strong>Batch Start Date:</strong> {{ $booking['start_date'] ?? 'N/A' }}</p>
+    <p><strong>Batch End Date:</strong> {{ $booking['end_date'] ?? 'N/A' }}</p>
+@elseif ($booking['booking_type'] == 'custom')
     <p><strong>Custom Date:</strong> {{ $booking['custom_date'] ?? 'N/A' }}</p>
 @endif
 

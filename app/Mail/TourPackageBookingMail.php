@@ -28,7 +28,7 @@ class TourPackageBookingMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Tour Package Booking',
+            subject: 'New Package Booking Request',
         );
     }
 

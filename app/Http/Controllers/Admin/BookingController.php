@@ -100,25 +100,37 @@ if ($request->ajax()) {
 public function store(StorePackageBookingRequest $request)
 {
     try {
-        // Validate incoming request
         $validated = $request->validated();
 
-        // Set price from tour batch if selected, otherwise from package
+        // Set price from batch or package
         if (!empty($validated['tour_batch_id'])) {
             $batch = TourBatch::find($validated['tour_batch_id']);
             $validated['price'] = $batch?->price;
+
+            // We'll add batch dates to the data for mail
+            $bookingDates = [
+                'start_date' => $batch?->start_date?->format('Y-m-d'),
+                'end_date' => $batch?->end_date?->format('Y-m-d'),
+            ];
         } else {
             $package = TourPackage::find($validated['tour_package_id']);
             $validated['price'] = $package?->price;
+            $bookingDates = null;
         }
 
-        // Create booking
         $booking = PackageBooking::create($validated);
 
         if ($booking) {
-            // Send booking email
+            // Prepare booking data for mail
+            $bookingData = $booking->toArray();
+
+            // Inject batch dates if available
+            if ($bookingDates) {
+                $bookingData = array_merge($bookingData, $bookingDates);
+            }
+
             Mail::to('dhunganaroshan341@gmail.com')->send(
-                new TourPackageBookingMail($booking->toArray())
+                new TourPackageBookingMail($bookingData)
             );
 
             return response()->json([
@@ -128,14 +140,12 @@ public function store(StorePackageBookingRequest $request)
             ]);
         }
 
-        // If creation failed
         return response()->json([
             'success' => false,
             'message' => 'Booking could not be completed. Please try again.'
         ], 422);
 
     } catch (\Throwable $th) {
-        // Log the actual error for debugging
         Log::error('Booking Store Error: ' . $th->getMessage());
 
         return response()->json([
@@ -144,6 +154,7 @@ public function store(StorePackageBookingRequest $request)
         ], 500);
     }
 }
+
 
 public function manageStatus(string $id, Request $request)
 {
