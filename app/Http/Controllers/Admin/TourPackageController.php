@@ -36,7 +36,7 @@ public function index(Request $request)
         $pageSize = $request->input('length');
         $order = $request->input('order')[0];
         $orderColumnIndex = $order['column'];
-        $orderBy = $order['dir'];
+        $orderBy = strtolower($order['dir']) === 'desc' ? 'desc' : 'asc'; // sanitize order direction
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
@@ -46,7 +46,8 @@ public function index(Request $request)
             ->select(
                 'tour_packages.*',
                 'our_countries.name as country_name',
-                'parent.title as parent_title'
+                'parent.title as parent_title',
+                'parent.price as parent_price' // explicitly select parent price if needed
             )
             ->with(['country', 'parent'])
             ->withCount('images');
@@ -74,13 +75,13 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-        // Whitelist and map order columns to avoid ambiguity
+        // Whitelist columns allowed for ordering (avoid ambiguity)
         $allowedOrderColumns = [
             'title', 'parent_title', 'duration', 'country', 'type', 'status'
         ];
 
         if (!in_array($orderColumn, $allowedOrderColumns)) {
-            $orderColumn = 'title'; // default fallback
+            $orderColumn = 'title'; // fallback
         }
 
         $orderColumnMap = [
@@ -94,16 +95,26 @@ public function index(Request $request)
 
         $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
 
-        // Get paginated data with ordering
-       // Clear any existing order to avoid ambiguous order clauses
-$filtered->getQuery()->orders = null;
+        // Clear existing orders to prevent ambiguous ordering
+        $filtered->getQuery()->orders = null;
 
-$data = $filtered
-    ->orderBy($orderByColumn, $orderBy)
-    ->offset($start)
-    ->limit($pageSize)
-    ->get();
+        // If ordering is by price or if you want to sort primarily by price,
+        // use CASE statement to choose child price if exists, else parent price
+        if ($orderColumn === 'price') {
+            $filtered->orderByRaw("
+                CASE
+                    WHEN tour_packages.price IS NOT NULL THEN tour_packages.price
+                    ELSE parent.price
+                END $orderBy
+            ");
+        } else {
+            $filtered->orderBy($orderByColumn, $orderBy);
+        }
 
+        $data = $filtered
+            ->offset($start)
+            ->limit($pageSize)
+            ->get();
 
         return DataTables::of($data)
             ->addIndexColumn()
