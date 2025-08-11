@@ -55,9 +55,18 @@ class NewsLetterController extends Controller
             }),
         ]);
     }
+    $extraJs = array_merge(
+            config('js-map.admin.summernote.script'),
+            config('js-map.admin.datatable.script'),
+        );
+
+        $extraCs = array_merge(
+            config('js-map.admin.datatable.style'),
+            config('js-map.admin.summernote.style'),
+        );
 
     // Render the view for non-AJAX request
-    return view('Admin.pages.NewsLetter.newsletter');
+    return view('Admin.pages.NewsLetter.newsletter',['extraCs'=>$extraCs,'extraJs'=>$extraJs]);
 }
 
 
