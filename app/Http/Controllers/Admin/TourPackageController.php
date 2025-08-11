@@ -56,20 +56,29 @@ public function index(Request $request)
         $headPackage = $request->input('head_package');
 
         // Apply search and filters except parent
-        $filtered = $query
-    ->when($search, function ($q) use ($search) {
-        $q->where(function ($query) use ($search) {
-            $query->where('tour_packages.title', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-                ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-                ->orWhere('our_countries.name', 'LIKE', "%$search%");
-        });
-    })
-    ->when($country && $country !== 'all', fn($q) => $q->where('our_countries.id', $country))
-    ->when($type && $type !== 'all', fn($q) => $q->where('tour_packages.type', $type))
-    ->when($headPackage && $headPackage !== 'all', fn($q) => $q->where('tour_packages.parent_id', $headPackage));
-        $filteredCount = $filtered->count();
+       $filtered = $query;
+
+if ($country && $country !== 'all') {
+    // Filter by country only, reset others
+    $filtered = $filtered->where('our_countries.id', $country);
+} elseif ($type && $type !== 'all') {
+    // Filter by type only, reset head package
+    $filtered = $filtered->where('tour_packages.type', $type);
+} elseif ($headPackage && $headPackage !== 'all') {
+    // Filter by head package only
+    $filtered = $filtered->where('tour_packages.parent_id', $headPackage);
+}
+// else no filter applied, get all
+
+// Then apply search if present (optional)
+if ($search) {
+    $filtered = $filtered->where(function ($q) use ($search) {
+        $q->where('tour_packages.title', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+          ->orWhere('our_countries.name', 'LIKE', "%$search%");
+    });
 
         // Allowed columns for ordering (remove parent_title since no parent)
         $allowedOrderColumns = [
