@@ -8,26 +8,26 @@ $(document).ready(function () {
     });
 
     // DataTable initialization
-    var table = $("#show-newsletter-data").DataTable({
+var table = $("#show-newsletter-data").DataTable({
     processing: true,
     serverSide: true,
     ajax: {
-        url: "/admin/newsletters", // Route to fetch data
+        url: "/admin/newsletters",
         type: "GET",
         cache: false
     },
     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
-    order: [[3, "desc"]], // Default ordering on the "submitted_date" column
+    order: [[1, "asc"]], // Order by email by default
     columns: [
         { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
         { data: "email", name: "email" },
-        { data: "submitted_date", name: "submitted_date" },
-        { data: "action", name: "action", orderable: false, searchable: false }
+        { data: "action", name: "action", orderable: false, searchable: false }  // important here
     ],
     language: {
         emptyTable: "No data available"
     }
 });
+
 
 
     // Delete button click handler using DELETE method
