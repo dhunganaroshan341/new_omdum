@@ -1,8 +1,7 @@
 @extends('Admin.layout.master')
 @section('content')
     <div class="container-fluid">
-        <button class="btn btn-primary addTestimonialBtn mb-4 mt-4">Add Testimonial</button>
-        @include('Admin.pages.TestiMonial.testimonialModal')
+        <button class="btn btn-info addTestimonialBtn mb-4 mt-4">NewsLetter Subscribers</button>
 
         <div class="table-responsive">
             <table class="table table-striped" id="show-newsletter-data">
