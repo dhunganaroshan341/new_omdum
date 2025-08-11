@@ -95,11 +95,15 @@ public function index(Request $request)
         $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
 
         // Get paginated data with ordering
-        $data = $filtered
-            ->orderBy($orderByColumn, $orderBy)
-            ->offset($start)
-            ->limit($pageSize)
-            ->get();
+       // Clear any existing order to avoid ambiguous order clauses
+$filtered->getQuery()->orders = null;
+
+$data = $filtered
+    ->orderBy($orderByColumn, $orderBy)
+    ->offset($start)
+    ->limit($pageSize)
+    ->get();
+
 
         return DataTables::of($data)
             ->addIndexColumn()
