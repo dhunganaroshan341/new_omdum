@@ -9,10 +9,12 @@
                     <tr>
                         <th scope="col">S.N</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Submitted Date</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
             </table>
+
         </div>
 
     </div>
