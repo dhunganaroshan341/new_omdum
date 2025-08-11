@@ -61,19 +61,14 @@
                             @endforeach
                         </div>
 
-
-
-
-
-
                         <div class="description mb-2">
                             <h4>Description</h4>
                             <p>
                                 {!! $package->long_description ??
                                     'The 12-Day Mundum Trek offers a unique journey through the pristine mountains of eastern
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Explore remote villages, sacred religious sites, and experience authentic local traditions
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                while trekking through unspoiled terrain.' !!}
+                                                                                                    Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
+                                                                                                    Explore remote villages, sacred religious sites, and experience authentic local traditions
+                                                                                                    while trekking through unspoiled terrain.' !!}
                             </p>
 
                         </div>
@@ -118,11 +113,10 @@
                                 <p>
                                     {!! $package->what_to_expect ??
                                         ' Experience peaceful trekking routes that wind through pristine forests, traditional
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Kirati Rai villages, and stunning ridge walks with Himalayan panoramas. Encounter warm
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           hospitality, unique cultural festivals, and authentic local cuisine. Expect moderate
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            hiking days with
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            plenty of opportunities for photography, wildlife spotting, and star gazing under clear
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            mountain skies.' !!}
+                                                                                                                Kirati Rai villages, and stunning ridge walks with Himalayan panoramas. Encounter warm
+                                                                                                                hospitality, unique cultural festivals, and authentic local cuisine. Expect moderate
+                                                                                                                hiking days with plenty of opportunities for photography, wildlife spotting, and star gazing under clear
+                                                                                                                mountain skies.' !!}
                                 </p>
                             </div>
 
@@ -131,10 +125,6 @@
                                     <div class="accrodion {{ $loop->first ? 'active' : '' }}">
                                         <div class="accrodion-title">
                                             <h5 class="mb-0">
-                                                {{-- <span>{{ $itinerary->order . '.' }}
-
-
-                                                    {{ ' (Duration -' . $itinerary->itinerary_duration . ')' }}</span> : --}}
                                                 <span>Day {{ $itinerary->order }}</span>
                                                 {{ $itinerary->title ?? '' }}
                                             </h5>
@@ -149,83 +139,7 @@
                                 @endforeach
                             </div>
                         @else
-                            {{-- Static fallback --}}
-                            {{-- <div class="description mb-4">
-                                <h4>What to Expect</h4>
-                                <p>
-                                    Experience peaceful trekking routes that wind through pristine forests, traditional
-                                    Kirati
-                                    Rai villages, and stunning ridge walks with Himalayan panoramas. Encounter warm
-                                    hospitality,
-                                    unique cultural festivals, and authentic local cuisine. Expect moderate hiking days with
-                                    plenty of opportunities for photography, wildlife spotting, and star gazing under clear
-                                    mountain skies.
-                                </p>
-                                <p class="mb-0">
-                                    The trek provides a perfect balance of adventure, cultural immersion, and natural
-                                    beauty,
-                                    suitable for beginners with moderate fitness.
-                                </p>
-                            </div>
-
-                            <div class="accrodion-grp faq-accrodion mb-4" data-grp-name="faq-accrodion">
-                                @php
-                                    $staticItineraries = [
-                                        [
-                                            'day' => '1',
-                                            'title' => 'Arrival in Kathmandu',
-                                            'desc' =>
-                                                'Airport pickup and transfer to your hotel. Briefing about the trek, equipment check, and overnight stay in Kathmandu.',
-                                        ],
-                                        [
-                                            'day' => '2',
-                                            'title' => 'Kathmandu to Diktel',
-                                            'desc' =>
-                                                'Enjoy a scenic 12-hour bus journey from Kathmandu to Diktel (1,650m). Overnight stay at a local lodge preparing for the trek start.',
-                                        ],
-                                        [
-                                            'day' => '3',
-                                            'title' => 'Diktel to Chakhewa',
-                                            'desc' =>
-                                                'Start trekking through remote villages and immerse yourself in the Kirati Rai culture. Camp overnight in the scenic outdoors.',
-                                        ],
-                                        [
-                                            'day' => '4 - 10',
-                                            'title' => 'Trekking the Mundum Trail',
-                                            'desc' =>
-                                                'Enjoy daily hikes of 5–7 hours through Tempke Ridge, Dhotre Deurali, Maiyung, and other villages. Camp in peaceful natural settings.',
-                                        ],
-                                        [
-                                            'day' => '11',
-                                            'title' => 'Silichung Peak and Return',
-                                            'desc' =>
-                                                'Early morning ascent to Silichung Peak (4,153m) for spectacular Himalayan views. Begin descent to lower camps.',
-                                        ],
-                                        [
-                                            'day' => '12',
-                                            'title' => 'Return to Kathmandu',
-                                            'desc' =>
-                                                'Final day of trekking and return to Kathmandu. Enjoy a farewell dinner and overnight at the hotel.',
-                                        ],
-                                ]; @endphp
-
-                                @foreach ($staticItineraries as $day)
-                                    <div class="accrodion {{ $loop->first ? 'active' : '' }}">
-                                        <div class="accrodion-title">
-                                            <h5 class="mb-0"><span>Day {{ $day['day'] }}</span> - {{ $day['title'] }}
-                                            </h5>
-                                        </div>
-                                        <div class="accrodion-content"
-                                            style="{{ $loop->first ? 'display: block;' : 'display: none;' }}">
-                                            <div class="inner">
-                                                <p>{{ $day['desc'] }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div> --}}
                         @endif
-
 
                         <div class="row">
                             {{-- Price Includes --}}
@@ -299,7 +213,6 @@
                             </div>
                         </div>
 
-
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -307,7 +220,6 @@
                         <div class="list-sidebar">
                             <div class="sidebar-item">
                                 @include('components.booking-form-sidebar')
-                                {{-- <div id="booking-response" class="mt-3"></div> --}}
                             </div>
                         </div>
                     </div>
@@ -321,39 +233,59 @@
     @include('components.other-services-component', ['otherServices' => $otherPackages])
     <!-- Trending Ends -->
 @endsection
+
 @push('styles')
     <style>
         .sidebar-sticky {
-            /* max-height: 100vh; */
-            /* 80% of viewport height */
-            /* overflow-y: auto;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding-right: 10px; */
-            /* to prevent scrollbar overlapping content */
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .sidebar-sticky::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .sidebar-sticky {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Smooth scrolling behavior */
+        .sidebar-sticky {
+            scroll-behavior: smooth;
+        }
+
+        /* Add some padding to prevent content from touching edges */
+        .list-sidebar {
+            padding-right: 5px;
         }
 
         .description p {
-
             background: none !important;
         }
 
         .description span {
-
             font-size: 16px !important;
-            line-height: 1. !important;
+            line-height: 1.5 !important;
             font-family: "Rubik", sans-serif !important;
             font-weight: 400 !important;
             color: #777 !important;
-
         }
 
         .description p {
-
             font-size: 16px !important;
-            line-height: 1. !important;
+            line-height: 1.5 !important;
             font-family: "Rubik", sans-serif !important;
             font-weight: 400 !important;
             color: #777 !important;
-
         }
 
         .slick-prev,
@@ -365,7 +297,6 @@
         .price-badge {
             background: #162241;
             border-radius: 20px;
-            /* pill-like look */
             color: #fff;
             padding: 4px 10px;
             font-size: 0.9rem;
@@ -379,21 +310,60 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            /* space between title and badge */
         }
 
         .price-title {
-
             margin: 1px 0;
         }
 
         .accrodion-grp .accrodion .accrodion-title h5::before {
-
             right: -15px !important;
+        }
 
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .sidebar-sticky {
+                position: static;
+                max-height: none;
+                overflow-y: visible;
+            }
+        }
+
+        /* Add fade effect at top and bottom when scrolling */
+        .sidebar-sticky::before,
+        .sidebar-sticky::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 20px;
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-sticky::before {
+            top: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+        }
+
+        .sidebar-sticky::after {
+            bottom: 0;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+        }
+
+        .sidebar-sticky.scrolled-top::before {
+            opacity: 1;
+        }
+
+        .sidebar-sticky.scrolled-bottom::after {
+            opacity: 1;
         }
     </style>
 @endpush
+
 @push('scripts')
     <script>
         $(document).ready(function() {
@@ -406,7 +376,56 @@
                 content.stop(true, true).slideToggle();
             });
 
+            // Sidebar scroll effects
+            const sidebarSticky = $('.sidebar-sticky');
 
+            if (sidebarSticky.length) {
+                sidebarSticky.on('scroll', function() {
+                    const scrollTop = $(this).scrollTop();
+                    const scrollHeight = this.scrollHeight;
+                    const clientHeight = this.clientHeight;
+                    const scrollBottom = scrollHeight - clientHeight - scrollTop;
+
+                    // Add/remove classes based on scroll position
+                    if (scrollTop > 10) {
+                        $(this).addClass('scrolled-top');
+                    } else {
+                        $(this).removeClass('scrolled-top');
+                    }
+
+                    if (scrollBottom > 10) {
+                        $(this).addClass('scrolled-bottom');
+                    } else {
+                        $(this).removeClass('scrolled-bottom');
+                    }
+                });
+
+                // Initialize scroll indicators
+                setTimeout(function() {
+                    sidebarSticky.trigger('scroll');
+                }, 100);
+            }
+
+            // Smooth scroll to top of sidebar when clicking on sticky elements
+            $('.sidebar-sticky .sidebar-item').on('click', 'a[href^="#"]', function(e) {
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    e.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 100
+                    }, 500);
+                }
+            });
+
+            // Auto-adjust sidebar height on window resize
+            $(window).on('resize', function() {
+                if ($(window).width() > 991) {
+                    const windowHeight = $(window).height();
+                    const sidebarTop = sidebarSticky.offset().top - $(window).scrollTop();
+                    const maxHeight = Math.max(300, windowHeight - sidebarTop - 40);
+                    sidebarSticky.css('max-height', maxHeight + 'px');
+                }
+            });
         });
     </script>
 @endpush
