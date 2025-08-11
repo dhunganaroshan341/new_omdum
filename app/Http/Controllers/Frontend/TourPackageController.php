@@ -177,7 +177,7 @@
         $query->orderBy('price', 'desc');
     }
 
-    $tourPackages = $query->paginate(9)->withQueryString(); // ✅
+    $tourPackages = $query->paginate(6)->withQueryString(); // ✅
 
 
     // Sidebar: Parent packages
