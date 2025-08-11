@@ -11,9 +11,10 @@ class NewsLetterController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */public function index(Request $request)
-{
-    if ($request->ajax()) {
+     */
+ public function index(Request $request)
+    {
+        if ($request->ajax()) {
         $search = $request->input('search.value');
         $columns = $request->input('columns');
         $pageSize = $request->input('length');
@@ -22,26 +23,25 @@ class NewsLetterController extends Controller
         $orderDir = $order['dir'];
         $start = $request->input('start');
 
+        $allowedOrderColumns = ['email', 'created_at']; // DB columns allowed for sorting
+        $requestedOrderColumn = $columns[$orderColumnIndex]['data'] ?? 'email';
+        $orderColumnName = in_array($requestedOrderColumn, $allowedOrderColumns) ? $requestedOrderColumn : 'email';
+
         $query = NewsletterSubscriber::query();
 
         $totalRecords = $query->count();
 
-        // Filter by search on email
         if (!empty($search)) {
             $query->where('email', 'LIKE', "%{$search}%");
         }
 
         $filteredRecords = $query->count();
 
-        // Sort by requested column (only 'email' is searchable here)
-        $orderColumnName = $columns[$orderColumnIndex]['data'] ?? 'email';
-
         $data = $query->orderBy($orderColumnName, $orderDir)
             ->skip($start)
             ->take($pageSize)
             ->get();
 
-        // Format response for DataTables
         return response()->json([
             'draw' => intval($request->input('draw')),
             'recordsTotal' => $totalRecords,
@@ -50,24 +50,17 @@ class NewsLetterController extends Controller
                 return [
                     'DT_RowIndex' => $key + 1,
                     'email' => $item->email,
+                    'created_at' => $item->created_at->format('Y-m-d H:i:s'), // Format as you want
                     'action' => '<button class="btn btn-danger newsletterDeleteBtn" data-id="' . $item->id . '">Delete</button>',
                 ];
             }),
         ]);
     }
-    $extraJs = array_merge(
-            config('js-map.admin.summernote.script'),
-            config('js-map.admin.datatable.script'),
-        );
 
-        $extraCs = array_merge(
-            config('js-map.admin.datatable.style'),
-            config('js-map.admin.summernote.style'),
-        );
-
-    // Render the view for non-AJAX request
-    return view('Admin.pages.NewsLetter.newsletter',['extraCs'=>$extraCs,'extraJs'=>$extraJs]);
+    // Normal view loading for non-AJAX
+    return view('Admin.pages.NewsLetter.newsletter');
 }
+
 
 
     /**

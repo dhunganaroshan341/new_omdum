@@ -18,12 +18,13 @@ var table = $("#show-newsletter-data").DataTable({
     },
     lengthMenu: [[10, 25, 50, -1], [10, 25, 50, 'All']],
     order: [[1, "asc"]], // Order by email by default
-    columns: [
-        { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
-        { data: "email", name: "email" },
-        { data: "created_at", name: "created_at" },
-        { data: "action", name: "action", orderable: false, searchable: false }  // important here
-    ],
+   columns: [
+    { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
+    { data: "email", name: "email" },
+    { data: "created_at", name: "created_at" },
+    { data: "action", name: "action", orderable: false, searchable: false } // Non-db column
+],
+
     language: {
         emptyTable: "No data available"
     }
