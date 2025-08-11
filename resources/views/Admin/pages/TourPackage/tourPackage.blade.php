@@ -1,7 +1,7 @@
 @extends('Admin.layout.master')
 @section('content')
     <div class="container-fluid">
-        {{-- @include('Admin.pages.TourPackage.buttons') --}}
+        @include('Admin.pages.TourPackage.buttons')
 
 
 

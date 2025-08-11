@@ -134,11 +134,11 @@ function populateTourPackageForm(tour_package) {
     ajax: {
         url: "/admin/tour-packages/",
         type: "GET",
-    //     data: function(d) {
-    //       d.country = $('#filterCountry').val();
-    // d.type = $('#filterType').val();
-    // d.head_package = $('#filterHeadPackage').val();
-    //     }
+        data: function(d) {
+          d.country = $('#filterCountry').val();
+    d.type = $('#filterType').val();
+    d.head_package = $('#filterHeadPackage').val();
+        }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
     order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
