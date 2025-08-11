@@ -24,11 +24,14 @@ $(document).ready(function () {
             }, {
                 data: "title", name: "title"
             }, {data:"url",name:"url"},
-            {
-                data: "image", name: "image", orderable: false, searchable: false
-            }, {
-                data: "description", name: "description"
-            }, {
+            // {
+            //     data: "image", name: "image", orderable: false, searchable: false
+            // },
+            // {
+            //     data: "description", name: "description"
+            // }
+            ,
+             {
                 data: "status", name: "status", orderable: false, searchable: false
             }, {
                 data: "action", name: "action", orderable: false, searchable: false
