@@ -58,27 +58,28 @@ public function index(Request $request)
         // Apply filter with precedence chaining
         $filtered = $query;
 
-        if ($country && $country !== 'all') {
-            // Filter by country only
-            $filtered = $filtered->where('our_countries.id', $country);
-        } elseif ($type && $type !== 'all') {
-            // Filter by type only
-            $filtered = $filtered->where('tour_packages.type', $type);
-        } elseif ($headPackage && $headPackage !== 'all') {
-            // Filter by head package only
-            $filtered = $filtered->where('tour_packages.parent_id', $headPackage);
-        }
+if ($country && $country !== 'all') {
+    // Apply only country filter, reset type and head package filters
+    $filtered = $query->where('our_countries.id', $country);
+} elseif ($type && $type !== 'all') {
+    // Apply only type filter, reset head package filter
+    $filtered = $query->where('tour_packages.type', $type);
+} elseif ($headPackage && $headPackage !== 'all') {
+    // Apply only head package filter
+    $filtered = $query->where('tour_packages.parent_id', $headPackage);
+}
+// else no filters
 
-        // Apply search if present
-        if ($search) {
-            $filtered = $filtered->where(function ($q) use ($search) {
-                $q->where('tour_packages.title', 'LIKE', "%$search%")
-                  ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-                  ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-                  ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-                  ->orWhere('our_countries.name', 'LIKE', "%$search%");
-            });
-        }
+// Apply search on $filtered if exists
+if ($search) {
+    $filtered = $filtered->where(function ($q) use ($search) {
+        $q->where('tour_packages.title', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+          ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+          ->orWhere('our_countries.name', 'LIKE', "%$search%");
+    });
+}
 
         $filteredCount = $filtered->count();
 
