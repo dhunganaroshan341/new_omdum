@@ -232,5 +232,29 @@ public function update(GalleryAlbumRequest $request, $id)
     }
 }
 
+private function handleMediaUploads($files, $galleryId)
+{
+    if (!$files) return;
+
+    foreach ($files as $key => $file) {
+        // Define the folder inside your 'public' disk where files will be stored
+        $folder = 'uploads/images/gallery-media';
+
+        // Create a unique filename with timestamp and key to avoid conflicts
+        $filename = time() . '_' . $key . '.' . $file->getClientOriginalExtension();
+
+        // Store the file in the 'public' disk under the specified folder
+        $path = $file->storeAs($folder, $filename, 'public');
+
+        // Save the relative path (inside storage/app/public) in the DB
+        GalleryMedia::create([
+            'gallery_album_id' => $galleryId,
+            'media_path' => $path,  // This is relative to storage/app/public
+            'status' => 'Active',
+        ]);
+    }
+}
+
+
     }
 
