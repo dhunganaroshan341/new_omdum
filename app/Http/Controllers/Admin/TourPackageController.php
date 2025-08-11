@@ -40,14 +40,13 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
-        // Base query with joins and selects, including parent price
+        // Base query with joins and selects — no price included at all
         $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
             ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
             ->select(
                 'tour_packages.*',
                 'our_countries.name as country_name',
-                'parent.title as parent_title',
-                'parent.price as parent_price' // needed for price ordering
+                'parent.title as parent_title'
             )
             ->with(['country', 'parent'])
             ->withCount('images');
@@ -75,9 +74,9 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-        // Allowed columns for ordering
+        // Allowed columns for ordering (exclude price entirely)
         $allowedOrderColumns = [
-            'title', 'parent_title', 'duration', 'country', 'type', 'status', 'price'
+            'title', 'parent_title', 'duration', 'country', 'type', 'status'
         ];
 
         if (!in_array($orderColumn, $allowedOrderColumns)) {
@@ -91,24 +90,13 @@ public function index(Request $request)
             'country' => 'our_countries.name',
             'type' => 'tour_packages.type',
             'status' => 'tour_packages.status',
-            'price' => null, // special handling below
         ];
 
         // Clear any existing order to avoid ambiguity
         $filtered->getQuery()->orders = null;
 
-        // Handle price ordering separately with CASE statement
-        if ($orderColumn === 'price') {
-            $filtered->orderByRaw("
-                CASE
-                    WHEN tour_packages.price IS NOT NULL THEN tour_packages.price
-                    ELSE parent.price
-                END $orderBy
-            ");
-        } else {
-            $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
-            $filtered->orderBy($orderByColumn, $orderBy);
-        }
+        $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
+        $filtered->orderBy($orderByColumn, $orderBy);
 
         $data = $filtered
             ->offset($start)
@@ -218,6 +206,7 @@ public function index(Request $request)
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
