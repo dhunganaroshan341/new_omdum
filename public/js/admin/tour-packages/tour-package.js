@@ -134,11 +134,11 @@ function populateTourPackageForm(tour_package) {
     ajax: {
         url: "/admin/tour-packages/",
         type: "GET",
-        data: function(d) {
-          d.country = $('#filterCountry').val();
-    d.type = $('#filterType').val();
-    d.head_package = $('#filterHeadPackage').val();
-        }
+    //     data: function(d) {
+    //       d.country = $('#filterCountry').val();
+    // d.type = $('#filterType').val();
+    // d.head_package = $('#filterHeadPackage').val();
+    //     }
     },
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
     order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
@@ -146,7 +146,8 @@ function populateTourPackageForm(tour_package) {
     { data: 'DT_RowIndex', orderable: false, searchable: false },
     { data: 'status', name: 'status', orderable: false, searchable: false },
     { data: 'title', name: 'title' },
-    { data: 'parent_title', name: 'parent_title' },
+    // { data: 'price', name: 'price' },
+    // { data: 'parent_title', name: 'parent_title' },
     { data: 'duration', name: 'duration' },
     { data: 'action', name: 'action', orderable: false, searchable: false },
     { data: 'country', name: 'country_name' },

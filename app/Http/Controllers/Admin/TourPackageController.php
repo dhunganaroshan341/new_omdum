@@ -40,15 +40,13 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'] ?? 'title';
 
-        // Base query with joins, no price selects
+        // Base query without parent join
         $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
-            ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
             ->select(
                 'tour_packages.*',
-                'our_countries.name as country_name',
-                'parent.title as parent_title'
+                'our_countries.name as country_name'
             )
-            ->with(['country', 'parent'])
+            ->with('country')
             ->withCount('images');
 
         $total = $query->count();
@@ -57,7 +55,7 @@ public function index(Request $request)
         $type = $request->input('type');
         $headPackage = $request->input('head_package');
 
-        // Apply search and filters except price
+        // Apply search and filters except parent
         $filtered = $query
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
@@ -74,9 +72,9 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-        // Allowed columns for ordering, NO price
+        // Allowed columns for ordering (remove parent_title since no parent)
         $allowedOrderColumns = [
-            'title', 'parent_title', 'duration', 'country', 'type', 'status'
+            'title', 'duration', 'country', 'type', 'status'
         ];
 
         if (!in_array($orderColumn, $allowedOrderColumns)) {
@@ -85,7 +83,6 @@ public function index(Request $request)
 
         $orderColumnMap = [
             'title' => 'tour_packages.title',
-            'parent_title' => 'parent.title',
             'duration' => 'tour_packages.duration',
             'country' => 'our_countries.name',
             'type' => 'tour_packages.type',
@@ -106,7 +103,6 @@ public function index(Request $request)
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('country', fn($item) => $item->country->name ?? '-')
-            ->addColumn('parent_title', fn($item) => $item->parent->title ?? '')
             ->addColumn('itinerary', function ($item) {
                 $totalItineraries = $item->itineraries()->count();
                 return '
@@ -170,8 +166,7 @@ public function index(Request $request)
                 'images',
                 'itinerary',
                 'status',
-                'action',
-                'parent_title'
+                'action'
             ])
             ->with([
                 'recordsTotal' => $total,
@@ -206,6 +201,7 @@ public function index(Request $request)
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
