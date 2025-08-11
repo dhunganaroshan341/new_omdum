@@ -143,21 +143,21 @@ function populateTourPackageForm(tour_package) {
     "lengthMenu": [[10, 25, 50, -1], [10, 25, 50]],
     order: [3, 'asc'], // ✅ changed from [2, 'asc'] to [3, 'asc']
     columns: [
-        { data: 'DT_RowIndex', orderable: false, searchable: false },
-        { data: 'status', name: 'status', orderable: false, searchable: false },
-        { data: 'title', name: 'title' },
-        { data: 'parent_title', name: 'parent_title' },
-        { data: 'duration', name: 'duration' },
-        { data: 'action', name: 'action', orderable: false, searchable: false },
-        { data: 'country', name: 'country_name' },
-        { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
-        { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
+    { data: 'DT_RowIndex', orderable: false, searchable: false },
+    { data: 'status', name: 'status', orderable: false, searchable: false },
+    { data: 'title', name: 'title' },
+    { data: 'parent_title', name: 'parent_title' },
+    { data: 'duration', name: 'duration' },
+    { data: 'action', name: 'action', orderable: false, searchable: false },
+    { data: 'country', name: 'country_name' },
+    { data: 'top_deal', name: 'top_deal', orderable: false, searchable: false },
+    { data: 'favourite_destination', name: 'favourite_destination', orderable: false, searchable: false },
+    { data: 'images', name: 'images' },
+    { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
+    { data: 'batches', name: 'batches', orderable: false, searchable: false },
+    { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false }
+]
 
-        { data: 'images', name: 'images' },
-        { data: 'itinerary', name: 'itinerary', orderable: false, searchable: false },
-        { data: 'batches', name: 'batches', orderable: false, searchable: false },
-        { data: 'package_includes', name: 'package_includes', orderable: false, searchable: false }
-    ]
 });
 
 $('#filterCountry, #filterType, #filterHeadPackage').on('change', function () {
