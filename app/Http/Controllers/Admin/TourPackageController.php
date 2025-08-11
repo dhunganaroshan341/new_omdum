@@ -57,19 +57,18 @@ public function index(Request $request)
 
         // Apply search and filters except parent
         $filtered = $query
-            ->when($search, function ($q) use ($search) {
-                $q->where(function ($query) use ($search) {
-                    $query->where('tour_packages.title', 'LIKE', "%$search%")
-                        ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
-                        ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
-                        ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
-                        ->orWhere('our_countries.name', 'LIKE', "%$search%");
-                });
-            })
-            ->when($country, fn($q) => $q->where('our_countries.name', $country))
-            ->when($type, fn($q) => $q->where('tour_packages.type', $type))
-            ->when($headPackage, fn($q) => $q->where('tour_packages.parent_id', $headPackage));
-
+    ->when($search, function ($q) use ($search) {
+        $q->where(function ($query) use ($search) {
+            $query->where('tour_packages.title', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.slug', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.duration', 'LIKE', "%$search%")
+                ->orWhere('tour_packages.difficulty', 'LIKE', "%$search%")
+                ->orWhere('our_countries.name', 'LIKE', "%$search%");
+        });
+    })
+    ->when($country && $country !== 'all', fn($q) => $q->where('our_countries.id', $country))
+    ->when($type && $type !== 'all', fn($q) => $q->where('tour_packages.type', $type))
+    ->when($headPackage && $headPackage !== 'all', fn($q) => $q->where('tour_packages.parent_id', $headPackage));
         $filteredCount = $filtered->count();
 
         // Allowed columns for ordering (remove parent_title since no parent)
