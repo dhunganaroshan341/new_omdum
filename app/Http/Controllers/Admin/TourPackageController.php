@@ -40,16 +40,16 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
-        // Join with batches to get batch price if available (active batches only)
-       $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
-    ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
-    ->select(
-        'tour_packages.*',
-        'our_countries.name as country_name',
-        'parent.title as parent_title'
-    )
-    ->with(['country', 'parent'])
-    ->withCount('images');
+        // Base query with necessary joins and selects
+        $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
+            ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
+            ->select(
+                'tour_packages.*',
+                'our_countries.name as country_name',
+                'parent.title as parent_title'
+            )
+            ->with(['country', 'parent'])
+            ->withCount('images');
 
         $total = $query->count();
 
@@ -57,6 +57,7 @@ public function index(Request $request)
         $type = $request->input('type');
         $headPackage = $request->input('head_package');
 
+        // Apply search and filters
         $filtered = $query
             ->when($search, function ($q) use ($search) {
                 $q->where(function ($query) use ($search) {
@@ -73,15 +74,32 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-       $data = $filtered
-    ->when(in_array($orderColumn, ['country', 'country_name']), fn($q) => $q->orderBy('our_countries.name', $orderBy))
-    ->when($orderColumn === 'parent_title', fn($q) => $q->orderBy('parent.title', $orderBy))
-    ->when($orderColumn === 'type', fn($q) => $q->orderBy('tour_packages.type', $orderBy))
-    ->when(!in_array($orderColumn, ['country', 'country_name', 'parent_title', 'type']), fn($q) => $q->orderBy('tour_packages.' . $orderColumn, $orderBy))
-    ->offset($start)
-    ->limit($pageSize)
-    ->get();
+        // Whitelist and map order columns to avoid ambiguity
+        $allowedOrderColumns = [
+            'title', 'parent_title', 'duration', 'country', 'type', 'status'
+        ];
 
+        if (!in_array($orderColumn, $allowedOrderColumns)) {
+            $orderColumn = 'title'; // default fallback
+        }
+
+        $orderColumnMap = [
+            'title' => 'tour_packages.title',
+            'parent_title' => 'parent.title',
+            'duration' => 'tour_packages.duration',
+            'country' => 'our_countries.name',
+            'type' => 'tour_packages.type',
+            'status' => 'tour_packages.status',
+        ];
+
+        $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
+
+        // Get paginated data with ordering
+        $data = $filtered
+            ->orderBy($orderByColumn, $orderBy)
+            ->offset($start)
+            ->limit($pageSize)
+            ->get();
 
         return DataTables::of($data)
             ->addIndexColumn()
@@ -141,7 +159,18 @@ public function index(Request $request)
             ->addColumn('favourite_destination', fn($item) => '<input type="checkbox" class="form-check-input favouriteToggle" data-id="' . $item->id . '" ' . ($item->favourite_destination ? 'checked' : '') . '>')
             ->addColumn('action', fn($item) => view('Admin.Button.button', ['data' => $item])->render())
             ->addColumn('short_description', fn($item) => \Illuminate\Support\Str::limit(strip_tags($item->short_description), 30))
-            ->rawColumns(['top_deal','favourite_destination','country','batches', 'package_includes','images', 'itinerary', 'status', 'action','parent_title'])
+            ->rawColumns([
+                'top_deal',
+                'favourite_destination',
+                'country',
+                'batches',
+                'package_includes',
+                'images',
+                'itinerary',
+                'status',
+                'action',
+                'parent_title'
+            ])
             ->with([
                 'recordsTotal' => $total,
                 'recordsFiltered' => $filteredCount,
@@ -149,6 +178,7 @@ public function index(Request $request)
             ->make(true);
     }
 
+    // If not ajax, load normal page view with necessary data
     $extraJs = array_merge(
         config('js-map.admin.datatable.script'),
         config('js-map.admin.summernote.script'),
@@ -174,6 +204,7 @@ public function index(Request $request)
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
