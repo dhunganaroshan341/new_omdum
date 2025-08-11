@@ -453,12 +453,41 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                                                        color: var(--omundum-green) !important;
-                                                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                                                color: var(--omundum-green) !important;
+                                                                                                                                                                                                                                                            } */
+    </style>
+    <style>
+        /* Make full height columns */
+        .blog.trending .col-lg-8,
+        .blog.trending .col-lg-4 {
+            height: 100vh;
+            /* full viewport height */
+            overflow: hidden;
+            /* initially no scroll */
+        }
+
+        /* Scrollbars hidden until hover */
+        .blog.trending .col-lg-8.scroll-active,
+        .blog.trending .col-lg-4.scroll-active {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #888 transparent;
+        }
+
+        /* Optional: smooth scrolling */
+        .blog.trending .col-lg-8,
+        .blog.trending .col-lg-4 {
+            scroll-behavior: smooth;
+        }
+
+        /* Make sidebar sticky content stretch full height */
+        .sidebar-sticky {
+            height: 100%;
+        }
     </style>
 @endpush
 @push('scripts')
@@ -491,6 +520,30 @@
                 }, 1000);
             });
 
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const leftCol = document.querySelector('.blog.trending .col-lg-8');
+            const rightCol = document.querySelector('.blog.trending .col-lg-4');
+
+            if (leftCol && rightCol) {
+                // Enable scroll on hover for left column
+                leftCol.addEventListener('mouseenter', () => {
+                    leftCol.classList.add('scroll-active');
+                    rightCol.classList.remove('scroll-active');
+                });
+
+                // Enable scroll on hover for right column
+                rightCol.addEventListener('mouseenter', () => {
+                    rightCol.classList.add('scroll-active');
+                    leftCol.classList.remove('scroll-active');
+                });
+
+                // Remove scroll when mouse leaves both
+                leftCol.addEventListener('mouseleave', () => leftCol.classList.remove('scroll-active'));
+                rightCol.addEventListener('mouseleave', () => rightCol.classList.remove('scroll-active'));
+            }
         });
     </script>
 @endpush
