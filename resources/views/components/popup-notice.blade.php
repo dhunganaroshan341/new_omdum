@@ -29,6 +29,12 @@
             background-color: rgba(0, 0, 0, 0.6);
         }
 
+        .modal-open .modal .modal-dialog .modal-content {
+            border: none;
+            position: relative;
+            border-radius: 8px;
+        }
+
         .modal-content {
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
