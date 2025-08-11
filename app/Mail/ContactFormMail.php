@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -13,12 +12,14 @@ class ContactFormMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $formData;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($formData)
     {
-        //
+        $this->formData = $formData;
     }
 
     /**
@@ -37,14 +38,15 @@ class ContactFormMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact', // your Blade email template path
+            with: [
+                'formData' => $this->formData,
+            ],
         );
     }
 
     /**
      * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array
     {

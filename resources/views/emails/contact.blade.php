@@ -1,4 +1,5 @@
 <h2>New Contact Query</h2>
-<p><strong>Name:</strong> {{ $formData['name'] }}</p>
-<p><strong>Email:</strong> {{ $formData['email'] }}</p>
-<p><strong>Message:</strong> {{ $formData['message'] }}</p>
+<p><strong>Name:</strong> {{ $formData['name'] ?? 'N/A' }}</p>
+<p><strong>Email:</strong> {{ $formData['email'] ?? 'N/A' }}</p>
+<p><strong>Email:</strong> {{ $formData['phone'] ?? 'N/A' }}</p>
+<p><strong>Message:</strong> {{ $formData['message'] ?? 'N/A' }}</p>
