@@ -103,34 +103,46 @@ public function store(StorePackageBookingRequest $request)
     try {
         $validated = $request->validated();
 
-        // Set price from batch or package
+        $packageTitle = null;
+        $bookingDates = null;
+        $batchPrice = null;
+
         if (!empty($validated['tour_batch_id'])) {
-    $batch = TourBatch::find($validated['tour_batch_id']);
-    $validated['price'] = $batch?->price;
+            $batch = TourBatch::with('tourPackage')->find($validated['tour_batch_id']);
+            $validated['price'] = $batch?->price;
 
-    // Safely format dates (if null, set as null)
-    $startDate = $batch && $batch->start_date ? Carbon::parse($batch->start_date)->format('Y-m-d') : null;
-    $endDate = $batch && $batch->end_date ? Carbon::parse($batch->end_date)->format('Y-m-d') : null;
+            $startDate = $batch?->start_date?->format('Y-m-d') ?? null;
+            $endDate = $batch?->end_date?->format('Y-m-d') ?? null;
 
-    $bookingDates = [
-        'start_date' => $startDate,
-        'end_date' => $endDate,
-    ];
-} else {
-    $package = TourPackage::find($validated['tour_package_id']);
-    $validated['price'] = $package?->price;
-    $bookingDates = null;
-}
+            $bookingDates = [
+                'start_date' => $startDate,
+                'end_date' => $endDate,
+            ];
+
+            $packageTitle = $batch?->tourPackage?->title ?? 'N/A';
+            $batchPrice = $batch?->price ?? null;
+
+        } else {
+            $package = TourPackage::find($validated['tour_package_id']);
+            $validated['price'] = $package?->price;
+            $packageTitle = $package?->title ?? 'N/A';
+        }
 
         $booking = PackageBooking::create($validated);
 
         if ($booking) {
-            // Prepare booking data for mail
             $bookingData = $booking->toArray();
 
-            // Inject batch dates if available
             if ($bookingDates) {
                 $bookingData = array_merge($bookingData, $bookingDates);
+            }
+
+            // Add package title explicitly
+            $bookingData['package_title'] = $packageTitle;
+
+            // Add batch price if present
+            if ($batchPrice) {
+                $bookingData['batch_price'] = $batchPrice;
             }
 
             Mail::to('dhunganaroshan341@gmail.com')->send(
@@ -158,6 +170,8 @@ public function store(StorePackageBookingRequest $request)
         ], 500);
     }
 }
+
+
 
 
 public function manageStatus(string $id, Request $request)
