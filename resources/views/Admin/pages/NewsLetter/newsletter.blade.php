@@ -5,7 +5,7 @@
         @include('Admin.pages.TestiMonial.testimonialModal')
 
         <div class="table-responsive">
-            <table class="table table-striped" id="show-testimonial-data">
+            <table class="table table-striped" id="show-newsletter-data">
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>

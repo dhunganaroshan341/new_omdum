@@ -11,73 +11,54 @@ class NewsLetterController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
-    public function index(Request $request)
-    {
-        if ($request->ajax()) {
-            $search = $request->input('search.value');
-            $columns = $request->input('columns');
-            $pageSize = $request->input('length');
-            $order = $request->input(['order'])[0];
-            $orderColumnIndex = $order['column'];
-            $orderBy = $order['dir'];
-            $start = $request->input('start');
+     */public function index(Request $request)
+{
+    if ($request->ajax()) {
+        $search = $request->input('search.value');
+        $columns = $request->input('columns');
+        $pageSize = $request->input('length');
+        $order = $request->input('order')[0];
+        $orderColumnIndex = $order['column'];
+        $orderDir = $order['dir'];
+        $start = $request->input('start');
 
-            $NewsLetter = NewsletterSubscriber::query();
-            $totalNewsLetter = $NewsLetter->count();
+        $query = NewsletterSubscriber::query();
 
+        $totalRecords = $query->count();
 
-                $searchNewsLetter = $NewsLetter->when($search,function($query) use($search){
-                    $query->where('email','LIKE',"%$search%");
-                });
-
-            $searchCount = $searchNewsLetter->count();
-            $response = $searchNewsLetter->orderBy($columns[$orderColumnIndex]['data'], $orderBy)
-                ->offset($start)
-                ->limit($pageSize);
-            return NewsletterSubscriber::of($response)
-                ->addIndexColumn()
-                ->addColumn('action', function ($data) {
-                    return view('Admin.Button.button', compact('data'));
-                })
-                ->addColumn('image', function ($item) {
-                    $dataimage = asset('uploads/' . $item->image);
-                    $defaultImage=asset('defaultImage/defaultimage.webp');
-                    return ' <td class="py-1">
-                    <img src="' . $dataimage . '" width="50" height="50" onerror="this.src=\''.$defaultImage.'\'"/>
-                    </td>';
-                })
-                ->addColumn('description', function ($item) {
-                    return Str::limit(strip_tags($item->description), 20);
-                })
-                ->addColumn('status', function ($status) {
-                    $checked = $status->status == 'Active' ? 'checked' : '';
-                    return '<div class="form-check form-switch">
-                    <input class="form-check-input statusIdData d-flex mx-auto" type="checkbox" data-id="' . $status->id . '" role="switch" id="flexSwitchCheckChecked" ' . $checked . '>
-                    </div>';
-                })
-                ->with('recordsTotal', $totalNewsLetter)
-                ->with('recordsFiltered', $searchCount)
-
-                ->rawColumns(['action', 'image', 'status'])
-                ->make(true);
+        // Filter by search on email
+        if (!empty($search)) {
+            $query->where('email', 'LIKE', "%{$search}%");
         }
 
-        $extraJs = array_merge(
-            config('js-map.admin.datatable.script'),
-            config('js-map.admin.summernote.script'),
-            // config('js-map.admin.sweetalert.script'),
-            config('js-map.admin.buttons.script')
-        );
+        $filteredRecords = $query->count();
 
-        $extraCs = array_merge(
-            config('js-map.admin.datatable.style'),
-            config('js-map.admin.summernote.style'),
-            // config('js-map.admin.sweetalert.style'),
-            config('js-map.admin.buttons.style')
-        );
-        return view('Admin.pages.NewsLetter.newsletter', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);
+        // Sort by requested column (only 'email' is searchable here)
+        $orderColumnName = $columns[$orderColumnIndex]['data'] ?? 'email';
+
+        $data = $query->orderBy($orderColumnName, $orderDir)
+            ->skip($start)
+            ->take($pageSize)
+            ->get();
+
+        // Format response for DataTables
+        return response()->json([
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => $totalRecords,
+            'recordsFiltered' => $filteredRecords,
+            'data' => $data->map(function ($item, $key) {
+                return [
+                    'DT_RowIndex' => $key + 1,
+                    'email' => $item->email,
+                    'action' => '<button class="btn btn-danger newsletterDeleteBtn" data-id="' . $item->id . '">Delete</button>',
+                ];
+            }),
+        ]);
     }
+
+    // Render the view for non-AJAX request
+    return view('Admin.pages.NewsLetter.newsletter');
+}
 
 
     /**

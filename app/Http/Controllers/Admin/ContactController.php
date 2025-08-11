@@ -61,7 +61,7 @@ class ContactController extends Controller
                 ])
                 ->addIndexColumn() // Add DT_RowIndex column for numbering
                 ->addColumn('action', function ($item) {
-                    return '<button class="btn btn-danger contactDeleteBtn" type="button" data-id="' . $item->id . '">Delete</button>';
+                    return '<button class="btn btn-danger newsletterDeleteBtn" type="button" data-id="' . $item->id . '">Delete</button>';
                 })
                 ->addColumn('title',function($tit){
                     return Str::limit($tit->title,20);
