@@ -315,7 +315,7 @@
     <section class="top-destination overflow-hidden">
         <div class="container">
             <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                <h2 class="m-0 white">Other <span>Tour Packages</span></h2>
+                <h2 class="m-0 white">Latest <span>Tour Packages</span></h2>
                 <p class="mb-0 white">
                     Discover more unforgettable journeys beyond the Mundum Trail — from sacred Himalayan
                     pilgrimages to cultural adventures across Nepal and Tibet. Each trip offers a deeper connection to
@@ -453,12 +453,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                                                color: var(--omundum-green) !important;
-                                                                                                                                                                                                                                            } */
+                                                                                                                                                                                                                                                .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                                                .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                                                .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                                                .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                                    color: var(--omundum-green) !important;
+                                                                                                                                                                                                                                                } */
     </style>
 @endpush
 @push('scripts')
