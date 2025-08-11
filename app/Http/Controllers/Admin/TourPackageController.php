@@ -40,14 +40,14 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
-        // Base query with necessary joins and selects
+        // Base query with joins and selects, including parent price
         $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
             ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
             ->select(
                 'tour_packages.*',
                 'our_countries.name as country_name',
                 'parent.title as parent_title',
-                'parent.price as parent_price' // explicitly select parent price if needed
+                'parent.price as parent_price' // needed for price ordering
             )
             ->with(['country', 'parent'])
             ->withCount('images');
@@ -75,13 +75,13 @@ public function index(Request $request)
 
         $filteredCount = $filtered->count();
 
-        // Whitelist columns allowed for ordering (avoid ambiguity)
+        // Allowed columns for ordering
         $allowedOrderColumns = [
-            'title', 'parent_title', 'duration', 'country', 'type', 'status'
+            'title', 'parent_title', 'duration', 'country', 'type', 'status', 'price'
         ];
 
         if (!in_array($orderColumn, $allowedOrderColumns)) {
-            $orderColumn = 'title'; // fallback
+            $orderColumn = 'title'; // fallback to title
         }
 
         $orderColumnMap = [
@@ -91,15 +91,13 @@ public function index(Request $request)
             'country' => 'our_countries.name',
             'type' => 'tour_packages.type',
             'status' => 'tour_packages.status',
+            'price' => null, // special handling below
         ];
 
-        $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
-
-        // Clear existing orders to prevent ambiguous ordering
+        // Clear any existing order to avoid ambiguity
         $filtered->getQuery()->orders = null;
 
-        // If ordering is by price or if you want to sort primarily by price,
-        // use CASE statement to choose child price if exists, else parent price
+        // Handle price ordering separately with CASE statement
         if ($orderColumn === 'price') {
             $filtered->orderByRaw("
                 CASE
@@ -108,6 +106,7 @@ public function index(Request $request)
                 END $orderBy
             ");
         } else {
+            $orderByColumn = $orderColumnMap[$orderColumn] ?? 'tour_packages.title';
             $filtered->orderBy($orderByColumn, $orderBy);
         }
 
