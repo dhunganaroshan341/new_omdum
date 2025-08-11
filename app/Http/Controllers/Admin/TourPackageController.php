@@ -40,12 +40,18 @@ public function index(Request $request)
         $start = $request->input('start');
         $orderColumn = $columns[$orderColumnIndex]['data'];
 
+        // Join with batches to get batch price if available (active batches only)
         $query = TourPackage::leftJoin('our_countries', 'tour_packages.our_country_id', '=', 'our_countries.id')
             ->leftJoin('tour_packages as parent', 'tour_packages.parent_id', '=', 'parent.id')
+            ->leftJoin('tour_batches', function ($join) {
+                $join->on('tour_batches.tour_package_id', '=', 'tour_packages.id')
+                     ->where('tour_batches.status', '=', 'active');
+            })
             ->select(
                 'tour_packages.*',
                 'our_countries.name as country_name',
-                'parent.title as parent_title'
+                'parent.title as parent_title',
+                \DB::raw('COALESCE(tour_batches.price, tour_packages.price) as effective_price')
             )
             ->with(['country', 'parent'])
             ->withCount('images');
@@ -76,7 +82,8 @@ public function index(Request $request)
             ->when(in_array($orderColumn, ['country', 'country_name']), fn($q) => $q->orderBy('our_countries.name', $orderBy))
             ->when($orderColumn === 'parent_title', fn($q) => $q->orderBy('parent.title', $orderBy))
             ->when($orderColumn === 'type', fn($q) => $q->orderBy('tour_packages.type', $orderBy))
-            ->when(!in_array($orderColumn, ['country', 'country_name', 'parent_title', 'type']), fn($q) => $q->orderBy($orderColumn, $orderBy))
+            ->when($orderColumn === 'price' || $orderColumn === 'effective_price', fn($q) => $q->orderBy('effective_price', $orderBy))
+            ->when(!in_array($orderColumn, ['country', 'country_name', 'parent_title', 'type', 'price', 'effective_price']), fn($q) => $q->orderBy('tour_packages.' . $orderColumn, $orderBy))
             ->offset($start)
             ->limit($pageSize)
             ->get();
@@ -130,7 +137,7 @@ public function index(Request $request)
                     </a>';
             })
             ->addColumn('status', function ($item) {
-                $checked = $item->status === 'Active' ? 'checked' : '';
+                $checked = strtolower($item->status) === 'active' ? 'checked' : '';
                 return '<div class="form-check form-switch">
                             <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
                         </div>';
@@ -161,7 +168,7 @@ public function index(Request $request)
         config('js-map.admin.buttons.style')
     );
 
-    $packages = TourPackage::where('status','Active')->get();
+    $packages = TourPackage::where('status', 'Active')->get();
     $parentPackages = TourPackage::has('children')->get();
 
     return view('Admin.pages.TourPackage.tourPackage', [
@@ -172,6 +179,7 @@ public function index(Request $request)
         'parentPackages' => $parentPackages,
     ]);
 }
+
 
 
 
