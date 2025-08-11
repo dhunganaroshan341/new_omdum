@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactFormMail;
 use App\Models\BannerSliderVideo;
 use App\Models\CallToAction;
 use App\Models\Category;
@@ -22,7 +23,9 @@ use App\Models\PageBanner;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Testimonial;
+use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class UserFrontendController extends Controller
@@ -325,16 +328,22 @@ public function searchBlogs(Request $request)
         return view('frontend.contact',compact('content_title','pageBanner'));
     }
 
-    public function storeContactUs(ContactRequest $request)
-    {
-        try {
-            Contact::create($request->validated());
-            return response()->json(['status'=>true,'message' => 'Message has been Submited']);
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return response()->json(['status'=>false,'message' => 'Something went wrong']);
-        }
-    }
+   public function storeContactUs(ContactRequest $request)
+{
+    try {
+        // Save to DB
+        $contact = Contact::create($request->validated());
+
+        // Send to Gmail
+          Mail::to('dhunganaroshan341@gmail.com')->send(
+            new ContactFormMail($contact->toArray())
+        );
+
+        return response()->json(['status' => true, 'message' => 'Message has been submitted & emailed successfully']);
+    } catch (\Exception $e) {
+        Log::error($e->getMessage());
+        return response()->json(['status' => false, 'message' => 'Something went wrong']);
+    }}
 
     public function destinationGrid(){
         return view('frontend.destination.destination-grid');
