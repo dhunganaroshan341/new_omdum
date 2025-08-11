@@ -12,8 +12,8 @@
 
             <!-- Image with overlay title -->
             <a href="{{ $popupNotice->url }}" class="position-relative d-block">
-                <img src="{{ asset('/template/yatri_world/main-file/images/india.jpg') }}" alt="Popup Image"
-                    class="w-100 d-block">
+                <img src="{{ $popupNotice->image_url ?? asset('/template/yatri_world/main-file/images/india.jpg') }}"
+                    alt="Popup Image" class="w-100 d-block">
                 <div class="overlay-text-container">
                     {{ $popupNotice->title }}
                 </div>
