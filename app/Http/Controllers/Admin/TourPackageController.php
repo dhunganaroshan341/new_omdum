@@ -51,7 +51,7 @@ public function index(Request $request)
                 'tour_packages.*',
                 'our_countries.name as country_name',
                 'parent.title as parent_title',
-                \DB::raw('COALESCE(tour_batches.price, tour_packages.price) as effective_price')
+                DB::raw('COALESCE(tour_batches.price, tour_packages.price) as effective_price')
             )
             ->with(['country', 'parent'])
             ->withCount('images');
