@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 use App\Mail\TourPackageBookingMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
 
 class BookingController extends Controller
 {
@@ -104,19 +105,22 @@ public function store(StorePackageBookingRequest $request)
 
         // Set price from batch or package
         if (!empty($validated['tour_batch_id'])) {
-            $batch = TourBatch::find($validated['tour_batch_id']);
-            $validated['price'] = $batch?->price;
+    $batch = TourBatch::find($validated['tour_batch_id']);
+    $validated['price'] = $batch?->price;
 
-            // We'll add batch dates to the data for mail
-            $bookingDates = [
-                'start_date' => $batch?->start_date?->format('Y-m-d'),
-                'end_date' => $batch?->end_date?->format('Y-m-d'),
-            ];
-        } else {
-            $package = TourPackage::find($validated['tour_package_id']);
-            $validated['price'] = $package?->price;
-            $bookingDates = null;
-        }
+    // Safely format dates (if null, set as null)
+    $startDate = $batch && $batch->start_date ? Carbon::parse($batch->start_date)->format('Y-m-d') : null;
+    $endDate = $batch && $batch->end_date ? Carbon::parse($batch->end_date)->format('Y-m-d') : null;
+
+    $bookingDates = [
+        'start_date' => $startDate,
+        'end_date' => $endDate,
+    ];
+} else {
+    $package = TourPackage::find($validated['tour_package_id']);
+    $validated['price'] = $package?->price;
+    $bookingDates = null;
+}
 
         $booking = PackageBooking::create($validated);
 
