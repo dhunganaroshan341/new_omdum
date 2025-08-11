@@ -47,7 +47,7 @@
                                         <label class="white d-block mb-2">No. Of People</label>
                                         <div class="input-box">
                                             <i class="flaticon-add-user"></i>
-                                            <select class="niceSelect" name="number_of_people">
+                                            <select class="niceSelect" name="total_people">
                                                 @for ($i = 1; $i <= 5; $i++)
                                                     <option value="{{ $i }}">{{ $i }}</option>
                                                 @endfor
@@ -215,6 +215,11 @@
             $('#booking-form').on('submit', function(e) {
                 e.preventDefault();
                 const form = $(this);
+
+                // Disable the submit button immediately to prevent multiple clicks
+                const submitBtn = form.find('button[type="submit"]');
+                submitBtn.prop('disabled', true);
+
                 const formData = form.serialize();
 
                 $.ajax({
@@ -256,9 +261,14 @@
                             text: message,
                             confirmButtonColor: '#d33',
                         });
+                    },
+                    complete: function() {
+                        // Re-enable the submit button after AJAX completes
+                        submitBtn.prop('disabled', false);
                     }
                 });
             });
+
         });
     </script>
 @endpush
