@@ -11,6 +11,8 @@ use App\Models\TourPackage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
+use App\Mail\TourPackageBookingMail;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -110,16 +112,18 @@ public function store(StorePackageBookingRequest $request)
             $validated['price'] = $package?->price;
         }
 
-        // Optional: Calculate total people (if you plan to store it)
-        // $validated['total_people'] = ($validated['adult'] ?? 0) + ($validated['children'] ?? 0);
-
         // Create booking
         $booking = PackageBooking::create($validated);
 
         if ($booking) {
+            // Send booking email
+            Mail::to('dhunganaroshan341@gmail.com')->send(
+                new TourPackageBookingMail($booking->toArray())
+            );
+
             return response()->json([
                 'success' => true,
-                'message' => 'Booking submitted successfully!',
+                'message' => 'Booking submitted successfully and email sent!',
                 'data' => $booking
             ]);
         }

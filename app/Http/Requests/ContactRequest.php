@@ -19,26 +19,27 @@ class ContactRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'subject' => 'nullable',
-            'message' => 'required|max:1000',
-        ];
-    }
+   public function rules(): array
+{
+    return [
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'nullable|string|max:20',  // phone optional, max length 20 chars
+        'subject' => 'nullable|string|max:255',
+        'message' => 'required|string|max:1000',
+    ];
+}
 
-    public function messages()
-    {
-        return [
-            'name.required' => 'Please Enter your name',
-            'email.required' => 'Please Enter your email',
-            'email.email' => 'Please Enter valid email address',
-            // 'subject.required'=>'Please Enter the Subject',
-            'message.required' => 'Please Enter the message',
-            'message.max' => 'Max limit for message is 1000',
+public function messages()
+{
+    return [
+        'name.required' => 'Please enter your name',
+        'email.required' => 'Please enter your email',
+        'email.email' => 'Please enter a valid email address',
+        'phone.max' => 'Phone number cannot be longer than 20 characters',
+        'message.required' => 'Please enter the message',
+        'message.max' => 'Maximum message length is 1000 characters',
+    ];
+}
 
-        ];
-    }
 }
