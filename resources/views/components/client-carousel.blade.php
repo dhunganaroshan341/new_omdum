@@ -19,7 +19,7 @@
         .slick-slide img {
             display: block;
             width: 100%;
-            height: 150px;
+            height: 130px;
             object-fit: contain;
         }
 
