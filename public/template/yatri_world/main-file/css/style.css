@@ -4968,8 +4968,9 @@ section.pricing-tab .price-tabmain .price-list .price-box.price-recommended .pri
   margin-bottom: 13px !important;
 }
 .testimonial .testimonial-item .details p, .testimonial .testimonial-item1 .details p {
-  font-size: 18px;
-  font-style: italic;
+	font-size: 17px;
+	font-style: italic;
+	padding: 15px 10px;
 }
 .testimonial .testimonial-item a, .testimonial .testimonial-item1 a {
   display: inline-block;
