@@ -42,21 +42,14 @@
                                             </span>
                                         @endif
 
-                                        {{-- @if ($package->bookings_count > 0)
-                                            <span class="badge badge-primary"
-                                                style="padding: 9px; border-radius: 0%; background: rgba(97, 180, 136, 0.58);">
-                                                {{ $package->bookings_count }}
-                                                {{ $package->bookings_count > 1 ? 'Bookings' : 'Booking' }}
-                                            </span>
-                                        @endif --}}
-
                                         {{-- Most Booked Badge --}}
                                         @if ($package->most_booked)
-                                            <span class="badge badge-success"
-                                                style="position: absolute; top: 10px; right: 10px;">
+                                            <span class="badge badge-primary"
+                                                style="padding: 9px; border-radius: 0%; background: rgba(97, 180, 136, 0.58); margin-left: 5px;">
                                                 Most Booked
                                             </span>
                                         @endif
+
 
                                         <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
