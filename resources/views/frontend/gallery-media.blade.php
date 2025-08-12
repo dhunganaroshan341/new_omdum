@@ -31,7 +31,6 @@
                         <div class="gallery-item mb-4">
                             <div class="gallery-image">
                                 <img alt="image" src="{{ $media->image }}" />
-                                @dump($media->image)
                                 <div class="overlay"></div>
                             </div>
                             <div class="gallery-content">
