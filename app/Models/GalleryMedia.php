@@ -15,6 +15,7 @@ class GalleryMedia extends BaseModel
         'status',
         'url'
     ];
+protected array $imageFields = ['image', 'thumbnail', 'banner'];
 
     /**
      * Relationship: Media item belongs to a Gallery Album.
@@ -34,14 +35,14 @@ class GalleryMedia extends BaseModel
     // lets make an accessor that returns the media_path with gallery/media
 
 
-   public function getImageAttribute()
-{
-    if ($this->media_path) {
-        return asset('uploads/gallery/media/' . ltrim($this->media_path, '/'));
-    }
+//    public function getImageAttribute()
+// {
+//     if ($this->media_path) {
+//         return asset('uploads/gallery/media/' . ltrim($this->media_path, '/'));
+//     }
 
-    // Fallback if media_path is null or empty
-    return asset('template/yatri_world/main-file/images/india.jpg');
-}
+//     // Fallback if media_path is null or empty
+//     return asset('template/yatri_world/main-file/images/india.jpg');
+// }
 
 }
