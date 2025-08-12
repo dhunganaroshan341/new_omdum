@@ -6,7 +6,6 @@
 
         @foreach ($clients as $client)
             <div class="client-logo item">
-                @dump($client->image) {{-- This dumps without stopping --}}
                 <img src="{{ $client->image ?? asset('template/yatri_world/main-file/images/clients/logo-01.png') }}"
                     alt="client">
             </div>
