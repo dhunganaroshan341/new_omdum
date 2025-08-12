@@ -114,6 +114,7 @@ public function services() {
 }public function bookings() {
     return $this->hasMany(PackageBooking::class);
 }
+
 public function packageType(){
     return $this->belongsTo(PackageType::class, 'package_type_id');
 }

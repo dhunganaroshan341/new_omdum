@@ -18,7 +18,7 @@ class RandomPackages extends Component
     {
       $this->packages = TourPackage::select('id', 'title', 'slug', 'duration')
     ->with(['packageImages:id,tour_package_id,image_path']) // for first_image_url accessor
-    ->withCount(['batches', 'itineraries', 'packageBookings']) // all counts in one go
+    ->withCount(['batches', 'itineraries', 'bookings']) // all counts in one go
     ->orderByDesc('batches_count')
     ->orderByDesc('itineraries_count')
     ->orderByDesc('package_bookings_count')
