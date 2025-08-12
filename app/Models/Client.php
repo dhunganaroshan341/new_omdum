@@ -22,13 +22,15 @@ class Client extends BaseModel
 public function getImageUrlAttribute()
 {
     if ($this->image) {
-        // If already a full URL, return as-is
-        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
-            return $this->image;
+        // Check if image starts with http or https
+        if (preg_match('/^https?:\/\//', $this->image)) {
+            return $this->image; // full URL, return as-is
         }
-        // Otherwise prepend /uploads/
-        return asset('/uploads/' . ltrim($this->image, '/'));
+
+        // Otherwise, prepend uploads path (handle trailing slash)
+        return asset('uploads/' . ltrim($this->image, '/'));
     }
+
     // fallback image
     return asset('template/yatri_world/main-file/images/clients/logo-01.png');
 }
