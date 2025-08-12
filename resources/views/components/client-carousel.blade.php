@@ -5,7 +5,6 @@
         </div>
 
         <div class="attract-slider owl-carousel">
-            @dd($clients);
             @foreach ($clients as $client)
                 <div class="client-logo item">
                     <img src="{{ $client->image ? asset('/uploads' . $client->image) : asset('template/yatri_world/main-file/images/clients/logo-01.png') }}"
