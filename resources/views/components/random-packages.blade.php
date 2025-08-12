@@ -39,7 +39,8 @@
 
 
                                         @if ($package->batches_count > 0)
-                                            <span class="badge badge-primary">{{ $package->batches_count }}
+                                            <span class="badge badge-primary"
+                                                style="background: var(--omundum-green);padding: 14px;">{{ $package->batches_count }}
                                                 {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }}
                                                 Available</span>
                                         @endif
