@@ -13,6 +13,7 @@ class Client extends BaseModel
     // // If your column is named 'image_path' (default), no need to set this
     // protected $uploadPathColumn = 'image';
     // protected $appends = ['image_url'];
+protected array $imageFields = ['image', 'thumbnail', 'banner'];
 
     protected $fillable=['name','email','address','contact','image','description'];
     public function albums()
