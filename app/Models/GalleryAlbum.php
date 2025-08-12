@@ -45,7 +45,7 @@ class GalleryAlbum extends BaseModel
     $media = $this->galleryMedia()->first();
 
     if ($media && $media->media_path) {
-        return asset('uploads/' . ltrim($media->media_path, '/'));
+       return $media->media_path;
     }
 
     return asset('template/yatri_world/main-file/images/everest.jpg'); // fallback image
