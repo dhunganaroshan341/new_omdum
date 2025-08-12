@@ -15,7 +15,7 @@ class GalleryMedia extends BaseModel
         'status',
         'url'
     ];
-protected array $imageFields = ['image', 'thumbnail', 'banner'];
+protected array $imageFields = ['media_path', 'thumbnail', 'banner'];
 
     /**
      * Relationship: Media item belongs to a Gallery Album.
@@ -38,8 +38,7 @@ protected array $imageFields = ['image', 'thumbnail', 'banner'];
    public function getImageAttribute()
 {
     if ($this->media_path) {
-        return asset('uploads/gallery/media/' . ltrim($this->media_path, '/'));
-    }
+return $this->media_path;    }
 
     // Fallback if media_path is null or empty
     return asset('template/yatri_world/main-file/images/india.jpg');
