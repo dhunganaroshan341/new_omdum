@@ -238,7 +238,7 @@ private function handleMediaUploads($files, $galleryId)
 
     foreach ($files as $key => $file) {
         // Define the folder inside your 'public' disk where files will be stored
-        $folder = 'uploads/images/gallery-media';
+        $folder = '/images/gallery-media';
 
         // Create a unique filename with timestamp and key to avoid conflicts
         $filename = time() . '_' . $key . '.' . $file->getClientOriginalExtension();
