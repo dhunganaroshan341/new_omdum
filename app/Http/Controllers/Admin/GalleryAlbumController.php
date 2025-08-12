@@ -152,7 +152,7 @@ class GalleryAlbumController extends Controller
     public function detailGalleryAlbum($id){
         try {
             $album = GalleryAlbum::with(['client','galleryMedia'])->findOrFail($id);
-          dd($album);
+            dd($album);
             return response()->json(['success' => true, 'message' => $album]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
