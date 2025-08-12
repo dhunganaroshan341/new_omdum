@@ -24,7 +24,6 @@ class RandomPackages extends Component
     ->orderByDesc('bookings_count')
     ->take(15) // bigger pool
     ->get()
-    ->shuffle()
     ->take(8);
 
     }
