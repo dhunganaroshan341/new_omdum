@@ -35,6 +35,13 @@
                                 <h6 class="font-weight-normal">
                                     <i class="fa fa-map-marker-alt"></i> {{ $country }}
                                 </h6>
+                                @if (!empty($service->price))
+                                    <h6 class="font-weight-normal">
+                                        <i class="fa fa-dollar-sign"></i> {{-- Or use fa-tag --}}
+                                        {{ $service->price }}
+                                    </h6>
+                                @endif
+
                                 <h4>
                                     <a href="{{ $slugUrl }}">
                                         {{ $service->title }}
