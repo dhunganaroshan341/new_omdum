@@ -27,8 +27,8 @@ class RandomPackages extends Component
     )
     ->orderByDesc(
         TourPackage::selectRaw('COUNT(*)')
-            ->from('bookings')
-            ->whereColumn('tour_packages.id', 'bookings.tour_package_id')
+            ->from('package_bookings')
+            ->whereColumn('tour_packages.id', 'package_bookings.tour_package_id')
     )
     ->take(8)
     ->get()
