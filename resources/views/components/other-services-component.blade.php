@@ -32,46 +32,53 @@
 
                         <div class="trend-content-main">
                             <div class="trend-content">
-                                <h6 class="font-weight-normal">
-                                    <i class="fa fa-map-marker-alt"></i> {{ $country }}
+                                @if (!empty($service->price))
+                                    <h6 class="font-weight-normal d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="fa fa-map-marker-alt"></i> {{ $country }}
+                                        </span>
+                                        <span>
+                                            <i class="fa fa-dollar-sign"></i> {{ $service->price }}
+                                        </span>
+                                    </h6>
+                                @else
+                                    <h6 class="font-weight-normal">
+                                        <i class="fa fa-map-marker-alt"></i> {{ $country }}
+                                    </h6>
+                                @endif
 
-                                    @if (!empty($service->price))
-                                        <i class="fa fa-dollar-sign"></i> {{-- Or use fa-tag --}}
-                                        {{ $service->price }}
-                                </h6>
-                @endif
 
-                <h4>
-                    <a href="{{ $slugUrl }}">
-                        {{ $service->title }}
-                    </a>
-                </h4>
-            </div>
+                                <h4>
+                                    <a href="{{ $slugUrl }}">
+                                        {{ $service->title }}
+                                    </a>
+                                </h4>
+                            </div>
 
-            <div class="trend-last-main">
-                <p class="mb-0 trend-para">
-                    {{ \Illuminate\Support\Str::words($service->short_description, 11, '...') }}
-                </p>
+                            <div class="trend-last-main">
+                                <p class="mb-0 trend-para">
+                                    {{ \Illuminate\Support\Str::words($service->short_description, 11, '...') }}
+                                </p>
 
-                <div class="trend-last d-flex align-items-center justify-content-between">
-                    <p class="mb-0 white">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        {{ $service->duration ?? 'Flexible' }}
-                    </p>
-                    <div class="trend-price">
-                        <p class="price white mb-0">
-                            <a href="{{ $slugUrl }}">
-                                View Package <i class="fa fa-arrow-right white ps-1"></i>
-                            </a>
-                        </p>
+                                <div class="trend-last d-flex align-items-center justify-content-between">
+                                    <p class="mb-0 white">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        {{ $service->duration ?? 'Flexible' }}
+                                    </p>
+                                    <div class="trend-price">
+                                        <p class="price white mb-0">
+                                            <a href="{{ $slugUrl }}">
+                                                View Package <i class="fa fa-arrow-right white ps-1"></i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
-    @endforeach
-    </div>
-    </div>
     </div>
 </section>
 <!-- Trending Ends -->
