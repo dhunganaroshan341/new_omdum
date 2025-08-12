@@ -39,7 +39,8 @@
 
 
                                         @if ($package->batches_count > 0)
-                                            <span class="badge badge-primary">{{ $package->batches_count }} Batches
+                                            <span class="badge badge-primary">{{ $package->batches_count }}
+                                                {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }}
                                                 Available</span>
                                         @endif
 
@@ -135,7 +136,8 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
