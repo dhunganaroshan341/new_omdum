@@ -1,7 +1,7 @@
 <div class="partners">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="title">Our Partners</h2>
+            <h2 class="title" style="padding-bottom:1px">Our Partners</h2>
         </div>
 
         <div class="attract-slider owl-carousel">
@@ -21,16 +21,6 @@
             width: 100%;
             height: 150px;
             object-fit: contain;
-        }
-
-        .client-logo {
-            display: flex;
-            justify-content: center;
-            /* Horizontal center */
-            align-items: center;
-            /* Vertical center */
-            height: 100px;
-            /* or match your slider's height */
         }
     </style>
 @endpush
