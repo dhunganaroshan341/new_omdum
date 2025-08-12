@@ -25,7 +25,7 @@
 
         .client-logo.item.slick-slide {
             background: white;
-            margin: 0 10px 10px;
+            margin: 0 10px 20px;
         }
     </style>
 @endpush
