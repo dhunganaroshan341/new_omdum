@@ -163,7 +163,8 @@ $(document).ready(function () {
                         $(".galleryMediaData").html(""); // clear first
 
                         album.gallery_media.forEach((image) => {
-                            let imagePath = '/uploads/' .image.image; // Full URL already
+                            let imagePath = image.media_path; // Full URL already
+                             imagePath = '/uploads/'.imagePath; // Full URL already
 
                             $(".galleryMediaData").append(`
                                 <div class="col-4 mb-3">
@@ -337,7 +338,8 @@ $(document).on("change", ".statusIdData", function () {
             // Access gallery_media from the response
             if (response.message.gallery_media && response.message.gallery_media.length > 0) {
                 response.message.gallery_media.forEach((media, index) => {
-                    let imagePath = '/uploads/'. media.media_path; // it's already a full URL
+                    let imagePath = media.media_path; // it's already a full URL
+                     imagePath =  '/uploads/'. imagePath; // it's already a full URL
                     $(".fetch-post-image-data").append(`
                         <div class="carousel-item ${index === 0 ? 'active' : ''}">
                             <img src="/${imagePath}" class="d-block w-100" alt="...">
