@@ -22,5 +22,10 @@
             height: 150px;
             object-fit: contain;
         }
+
+        .client-logo.item.slick-slide {
+            background: white;
+            margin: 0 10px 10px;
+        }
     </style>
 @endpush
