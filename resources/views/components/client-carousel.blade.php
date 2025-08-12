@@ -22,5 +22,15 @@
             height: 150px;
             object-fit: contain;
         }
+
+        .client-logo {
+            display: flex;
+            justify-content: center;
+            /* Horizontal center */
+            align-items: center;
+            /* Vertical center */
+            height: 100px;
+            /* or match your slider's height */
+        }
     </style>
 @endpush
