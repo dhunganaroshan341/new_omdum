@@ -21,7 +21,7 @@ class RandomPackages extends Component
     ->withCount(['batches', 'itineraries', 'bookings']) // all counts in one go
     ->orderByDesc('batches_count')
     ->orderByDesc('itineraries_count')
-    ->orderByDesc('package_bookings_count')
+    ->orderByDesc('bookings_count')
     ->take(15) // bigger pool
     ->get()
     ->shuffle()
