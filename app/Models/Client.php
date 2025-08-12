@@ -20,7 +20,22 @@ protected array $imageFields = ['image', 'thumbnail', 'banner'];
     {
         return $this->hasMany(GalleryAlbum::class);
     }
-//
+public function getImageUrlAttribute()
+{
+    if ($this->image) {
+        // Check if image starts with http or https
+        if (preg_match('/^https?:\/\//', $this->image)) {
+            return $this->image; // full URL, return as-is
+        }
+
+        // Otherwise, prepend uploads path (handle trailing slash)
+        return $this->image;
+    }
+
+    // fallback image
+    return asset('template/yatri_world/main-file/images/clients/logo-01.png');
+}
+
 
 
 
