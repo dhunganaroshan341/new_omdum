@@ -19,5 +19,14 @@ class Client extends BaseModel
     {
         return $this->hasMany(GalleryAlbum::class);
     }
+    public function getImageUrlAttribute()
+{
+    if ($this->image) {
+        return asset('/uploads/' . ltrim($this->image, '/'));
+    } else {
+        return asset('template/yatri_world/main-file/images/clients/logo-01.png');
+    }
+}
+
 
 }
