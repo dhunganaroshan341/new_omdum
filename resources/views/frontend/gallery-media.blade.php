@@ -41,9 +41,9 @@
                                             <i class="fa fa-eye"></i>
                                         </a>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="{{ $media->url ?? '#' }}"><i class="fa fa-link"></i></a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
                             </div>
                         </div>
