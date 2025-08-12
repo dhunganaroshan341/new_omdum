@@ -14,3 +14,13 @@
         </div>
     </div>
 </div>
+@push('styles')
+    <style>
+        .slick-slide img {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+    </style>
+@endpush
