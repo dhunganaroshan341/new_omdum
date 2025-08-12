@@ -3893,13 +3893,15 @@ span.location-box {
 	/* max-width: 340px; */
 }
 .top-destination .desti-image .desti-content {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  transition: all ease-in-out 0.5s;
-  background: linear-gradient(to top, #171717, transparent);
-  width: 100%;
-  padding: 15px;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	transition: all ease-in-out 0.5s;
+	background: linear-gradient(to top, #171717, transparent);
+	width: 100%;
+	padding: 15px;
+	align-content: center;
+	text-align: center;
 }
 .top-destination .desti-image .desti-content .trend-price p.price {
   display: inline-block;
