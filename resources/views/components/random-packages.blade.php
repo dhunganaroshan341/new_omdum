@@ -20,7 +20,7 @@
                 @foreach ($randomPackages->chunk(4) as $chunk)
                     <div class="row d-flex align-items-center">
                         @foreach ($chunk as $package)
-                            <div class="col-lg p-0">
+                            <div class="col-lg p-0 position-relative">
                                 <div class="desti-image bordernone">
                                     @php
                                         $imgSrc = $package->first_image_url ?? $randomFallback;
@@ -28,30 +28,37 @@
                                     <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
-                                        @if ($package->duration != '0days' || $package->duration != '0 days')
+                                        @if ($package->duration != '0days' && $package->duration != '0 days')
                                             <button class="btn">
-
-
                                                 <span class="badge badge-primary">{{ $package->duration ?? '' }}</span>
                                             </button>
                                         @endif
 
-
-
                                         @if ($package->batches_count > 0)
                                             <span class="badge badge-primary"
-                                                style="/*! background: #fe9b2170; */padding: 9px;border-radius: 0%;background-position-x: left;background-position-x: 2%;background: rgba(97, 180, 136, 0.58);">{{ $package->batches_count }}
-                                                {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }} Available</span>
-                                            @endif @if ($package->bookings_count > 0)
-                                                <span class="badge badge-primary"
-                                                    style="/*! background: #fe9b2170; */padding: 9px;border-radius: 0%;background-position-x: left;background-position-x: 2%;background: rgba(97, 180, 136, 0.58);">{{ $package->batches_count }}
-                                                    {{ $package->bookings_count > 1 ? 'Bookings' : 'Booking' }}
-                                                </span>
-                                            @endif
+                                                style="padding: 9px; border-radius: 0%; background: rgba(97, 180, 136, 0.58);">
+                                                {{ $package->batches_count }}
+                                                {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }} Available
+                                            </span>
+                                        @endif
 
+                                        {{-- @if ($package->bookings_count > 0)
+                                            <span class="badge badge-primary"
+                                                style="padding: 9px; border-radius: 0%; background: rgba(97, 180, 136, 0.58);">
+                                                {{ $package->bookings_count }}
+                                                {{ $package->bookings_count > 1 ? 'Bookings' : 'Booking' }}
+                                            </span>
+                                        @endif --}}
 
+                                        {{-- Most Booked Badge --}}
+                                        @if ($package->most_booked)
+                                            <span class="badge badge-success"
+                                                style="position: absolute; top: 10px; right: 10px;">
+                                                Most Booked
+                                            </span>
+                                        @endif
 
-                                            <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
+                                        <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
                                     <div class="desti-overlay">
                                         <a href="{{ route('packages.show', ['slug' => $package->slug]) }}"
@@ -65,6 +72,7 @@
                         @endforeach
                     </div>
                 @endforeach
+
 
             </div>
         </div>
@@ -120,8 +128,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
-                                alt="destination">
+                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
