@@ -38,7 +38,7 @@
                                             <span class="badge badge-primary"
                                                 style="padding: 9px; border-radius: 0%; background: rgba(97, 180, 136, 0.58);">
                                                 {{ $package->batches_count }}
-                                                {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }} Available
+                                                {{ $package->batches_count > 1 ? 'Batches' : 'Batch' }}
                                             </span>
                                         @endif
 
