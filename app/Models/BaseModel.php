@@ -10,18 +10,24 @@ class BaseModel extends Model
 {
     protected array $imageFields = ['image'];
 
-    public function __get($key)
-    {
-        $value = parent::__get($key);
+   public function __get($key)
+{
+    $value = parent::__get($key);
 
-        if (in_array($key, $this->getImageFields()) && is_string($value)) {
-            return str_starts_with($value, 'uploads/')
-                ? asset($value)
-                : asset('uploads/' . $value);
+    if (in_array($key, $this->getImageFields()) && is_string($value)) {
+        // If $value already a full URL, return as-is
+        if (str_starts_with($value, 'http://') || str_starts_with($value, 'https://')) {
+            return $value;
         }
 
-        return $value;
+        return str_starts_with($value, 'uploads/')
+            ? asset($value)
+            : asset('uploads/' . $value);
     }
+
+    return $value;
+}
+
 
     protected function getImageFields(): array
     {

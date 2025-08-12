@@ -6,7 +6,7 @@ use App\Traits\HasUploadUrl;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Client extends BaseModel
 {
     use HasFactory;
     //  use HasUploadUrl;
