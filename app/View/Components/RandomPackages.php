@@ -16,25 +16,17 @@ class RandomPackages extends Component
      */
     public function __construct()
     {
-        // Get 8 latest TourPackages, then shuffle/randomize them
-       $this->packages = TourPackage::select('id', 'title', 'slug', 'duration')
-    ->with(['packageImages:id,tour_package_id,image_path']) // load relation so accessor works without extra queries
-    ->withCount('batches')
+      $this->packages = TourPackage::select('id', 'title', 'slug', 'duration')
+    ->with(['packageImages:id,tour_package_id,image_path']) // for first_image_url accessor
+    ->withCount(['batches', 'itineraries', 'packageBookings']) // all counts in one go
     ->orderByDesc('batches_count')
-    ->orderByDesc(
-        TourPackage::selectRaw('COUNT(*)')
-            ->from('itineraries')
-            ->whereColumn('tour_packages.id', 'itineraries.tour_package_id')
-    )
-    ->orderByDesc(
-        TourPackage::selectRaw('COUNT(*)')
-            ->from('package_bookings')
-            ->whereColumn('tour_packages.id', 'package_bookings.tour_package_id')
-    )
-    ->take(15) // bigger pool for randomness
+    ->orderByDesc('itineraries_count')
+    ->orderByDesc('package_bookings_count')
+    ->take(15) // bigger pool
     ->get()
     ->shuffle()
     ->take(8);
+
     }
     /**
      * Get the view / contents that represent the component.
