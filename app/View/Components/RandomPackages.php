@@ -16,15 +16,23 @@ class RandomPackages extends Component
      */
     public function __construct()
     {
-      $this->packages = TourPackage::select('id', 'title', 'slug', 'duration')
-    ->with(['packageImages:id,tour_package_id,image_path']) // for first_image_url accessor
-    ->withCount(['batches', 'itineraries', 'bookings']) // all counts in one go
+     $this->packages = TourPackage::select('id', 'title', 'slug', 'duration')
+    ->with(['packageImages:id,tour_package_id,image_path'])
+    ->withCount(['batches', 'itineraries', 'bookings'])
     ->orderByDesc('batches_count')
-    ->orderByDesc('itineraries_count')
     ->orderByDesc('bookings_count')
-    ->take(15) // bigger pool
+    ->orderByDesc('itineraries_count')
     ->get()
-    ->take(8);
+    ->map(function ($package) {
+        // Mark the one with highest bookings as most_booked
+        static $maxBookings = null;
+        if ($maxBookings === null) {
+            $maxBookings = TourPackage::withCount('bookings')->max('bookings_count');
+        }
+        $package->most_booked = $package->bookings_count === $maxBookings;
+        return $package;
+    });
+
 
     }
     /**
