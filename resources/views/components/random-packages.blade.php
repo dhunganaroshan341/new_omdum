@@ -35,6 +35,15 @@
                                                 <span class="badge badge-primary">{{ $package->duration ?? '' }}</span>
                                             </button>
                                         @endif
+
+
+
+                                        @if ($package->batches_count > 0)
+                                            <span class="badge badge-primary">{{ $package->batches_count }}</span>
+                                        @endif
+
+
+
                                         <h4 class="white mb-0">{{ $package->title ?? 'Tour Package' }}</h4>
                                     </div>
                                     <div class="desti-overlay">
