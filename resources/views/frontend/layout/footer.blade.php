@@ -63,8 +63,8 @@
                                     <i class="fas fa-location-dot me-2"></i> Nepal Office
                                 </h6>
                                 <p class="mb-2"><i class=" inline-icon  fas fa-map me-2"></i> Nil Saraswoti Marg,
-                                    Gairidhara </p>
-                                <p class="m-0"> Kathmandu, Nepal</p>
+                                    Gairidhara Kathmandu, Nepal </p>
+                                {{-- <p class="m-0"> </p> --}}
                                 <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
                                     <a href="tel:+9779851137860" class="text-white">+977 9851137860</a>
                                 </p>
