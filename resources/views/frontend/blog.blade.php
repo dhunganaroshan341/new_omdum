@@ -182,7 +182,7 @@
                             </div>
 
                             <!-- Tags -->
-                            <div class="sidebar-item mb-4">
+                            {{-- <div class="sidebar-item mb-4">
                                 <h4>Tags</h4>
                                 <ul class="sidebar-tags">
                                     <li><a href="#">Adventure</a></li>
@@ -190,7 +190,7 @@
                                     <li><a href="#">Hiking</a></li>
                                     <li><a href="#">Wildlife</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
 
                     </div>
                 </div>
