@@ -66,7 +66,7 @@
                                     Gairidhara </p>
                                 <p class="m-0"> Kathmandu, Nepal</p>
                                 <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
-                                    <a href="tel:+9779851402800" class="text-white">+977 9851402800</a>
+                                    <a href="tel:+9779851137860" class="text-white">+977 9851137860</a>
                                 </p>
                                 <p class="mb-0"><i class="inline-icon   fas fa-envelope me-2"></i>
                                     <a href="mailto:info@ommundumtreks.com"
