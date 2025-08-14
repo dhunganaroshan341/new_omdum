@@ -5,8 +5,8 @@
 <p><strong>Phone:</strong> {{ $booking['phone'] ?? 'N/A' }}</p>
 <p><strong>Country:</strong> {{ $booking['country'] ?? 'N/A' }}</p>
 
-<p><strong>Adults:</strong> {{ $booking['adult'] ?? 0 }}</p>
-<p><strong>Children:</strong> {{ $booking['children'] ?? 0 }}</p>
+{{-- <p><strong>Adults:</strong> {{ $booking['adult'] ?? 0 }}</p>
+<p><strong>Children:</strong> {{ $booking['children'] ?? 0 }}</p> --}}
 <p><strong>Total People:</strong> {{ $booking['total_people'] ?? 0 }}</p>
 
 @if (!empty($booking['custom_date']))
