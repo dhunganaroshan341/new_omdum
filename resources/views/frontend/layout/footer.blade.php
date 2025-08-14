@@ -62,8 +62,9 @@
                                 <h6 class="text-white mb-3">
                                     <i class="fas fa-location-dot me-2"></i> Nepal Office
                                 </h6>
-                                <p class="mb-2"><i class=" inline-icon  fas fa-map me-2"></i> Thamel - 26, Kathmandu,
-                                    Nepal</p>
+                                <p class="mb-2"><i class=" inline-icon  fas fa-map me-2"></i> TNil Saraswoti Marg,
+                                    Gairidhara </p>
+                                <p class="m-0"> Kathmandu, Nepa</p>
                                 <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
                                     <a href="tel:+9779851402800" class="text-white">+977 9851402800</a>
                                 </p>

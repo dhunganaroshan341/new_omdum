@@ -46,7 +46,7 @@
                                             <i class="fa fa-map-marker"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0">Thamel - 26,</p>
+                                            <p class="m-0">Nil Saraswoti Marg, Gairidhara </p>
                                             <p class="m-0"> Kathmandu, Nepal</p>
                                         </div>
                                     </div>
@@ -55,7 +55,11 @@
                                             <i class="fa fa-phone"></i>
                                         </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0"> +977 9851402800</p>
+                                            <p class="m-0"> +977 9851137860</p>
+
+                                        </div>
+                                        <div class="info-content ps-4">
+                                            <p class="m-0"> +977 9851137860</p>
 
                                         </div>
                                     </div>
