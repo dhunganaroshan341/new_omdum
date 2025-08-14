@@ -23,9 +23,9 @@
                             <a href="{{ route('about') }}">About Us</a>
                         </li>
 
-                        <li class="{{ request()->routeIs('packages.index') ? 'active' : '' }}">
+                        {{-- <li class="{{ request()->routeIs('packages.index') ? 'active' : '' }}">
                             <a href="{{ route('packages.index') }}">Packages</a>
-                        </li>
+                        </li> --}}
 
                         <!-- Destinations Dropdown -->
                         @foreach ($navbarCountries as $country)
