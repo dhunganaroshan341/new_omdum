@@ -58,10 +58,17 @@
                                             <p class="m-0"> +977 9851137860</p>
 
                                         </div>
+
+                                    </div>
+                                    <div class="info-item d-flex align-items-center bg-white mb-3">
+                                        <div class="info-icon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
                                         <div class="info-content ps-4">
-                                            <p class="m-0"> +977 9851137860</p>
+                                            <p class="m-0"> +977 01 450 3000 </p>
 
                                         </div>
+
                                     </div>
                                     <div class="info-item d-flex align-items-center bg-white mb-3">
                                         <div class="info-icon">
