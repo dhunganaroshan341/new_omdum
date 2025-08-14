@@ -68,6 +68,11 @@
                                 <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
                                     <a href="tel:+9779851137860" class="text-white">+977 9851137860</a>
                                 </p>
+                                <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
+                                    <a href="tel:+9779851137860" class="text-white">
+                                        <p class="m-0"> <a href="tel:+977 01 450 3000">+977 01 450 3000</a> </p>
+                                    </a>
+                                </p>
                                 <p class="mb-0"><i class="inline-icon   fas fa-envelope me-2"></i>
                                     <a href="mailto:info@ommundumtreks.com"
                                         class="text-white">info@ommundumtreks.com</a>

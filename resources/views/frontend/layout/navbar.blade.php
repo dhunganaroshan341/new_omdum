@@ -68,9 +68,9 @@ $isActive = collect($country->groupedPackages)
                         @endforeach
 
                         <!-- Services -->
-                        <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
+                        {{-- <li class="{{ request()->routeIs('services') ? 'active' : '' }}">
                             <a href="{{ route('services') }}">Services</a>
-                        </li>
+                        </li> --}}
 
                         <!-- Blog and Contact -->
                         <li class="{{ request()->routeIs('blog.index') ? 'active' : '' }}">
