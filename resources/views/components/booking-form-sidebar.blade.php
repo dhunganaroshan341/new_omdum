@@ -48,14 +48,17 @@
                 <label class="white d-block mb-2">Select Booking Type</label>
                 <div>
                     <label class="me-3">
-                        <input type="radio" name="booking_type" value="batch" checked> Batch Date
+                        <input type="radio" name="booking_type" value="batch"> Batch Date
                     </label>
                     <label>
-                        <input type="radio" name="booking_type" value="custom"> Custom Date
+                        <input type="radio" name="booking_type" value="custom" checked> Custom Date
                     </label>
                 </div>
+                <input type="date" id="customDate">
             </div>
         </div>
+
+
 
         <!-- Batch Selection -->
         <div class="col-lg-12" id="batch-date-section">
@@ -175,6 +178,17 @@
                         }
                     });
                 });
+            });
+        </script>
+        {{-- set custom date today --}}
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                // Auto-select "custom" booking type
+                document.querySelector('input[name="booking_type"][value="custom"]').checked = true;
+
+                // Set today's date in date input
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('customDate').value = today;
             });
         </script>
     @endpush
