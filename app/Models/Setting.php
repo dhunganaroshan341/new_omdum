@@ -12,6 +12,7 @@ class Setting extends BaseModel
         'logo',
         'title',
         'email',
+        'email2',
         'contact',
         'contact2',          // secondary contact for second office
         'address',
