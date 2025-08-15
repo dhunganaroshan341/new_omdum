@@ -180,8 +180,8 @@ $('#filterCountry, #filterType, #filterHeadPackage').on('change', function () {
 
 
         // add pickup and drop value
-         $("#pickup").value('TIA,Kathmandu');
-         $("#drop").value('TIA,Kathmandu');
+         $("#pickup").val('TIA,Kathmandu');
+         $("#drop").val('TIA,Kathmandu');
         // Re-evaluate on dropdown change
         $('#type').on('change', function () {
             toggleMediaFields();
