@@ -11,12 +11,14 @@
         <div class="container">
             <div class="container">
                 <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-                    <h2 class="m-0">Meet the <span>Ommundum Travels Team</span></h2>
+                    <h2 class="m-0">Meet our <span> Team</span></h2>
                     <p class="mb-0">
-                        At Ommundum Travels, our team is passionate about creating unforgettable journeys.
-                        Every trip is carefully planned with your comfort, adventure, and memories in mind.
-                        With expertise, dedication, and a love for exploring, we bring the world closer to you,
-                        one destination at a time.
+                        {{ $teamPage && $teamPage->content
+                            ? $teamPage->content
+                            : '  At Ommundum Travels, our team is passionate about creating unforgettable journeys.
+                                                Every trip is carefully planned with your comfort, adventure, and memories in mind.
+                                                With expertise, dedication, and a love for exploring, we bring the world closer to you,
+                                                one destination at a time.' }}
                     </p>
                 </div>
                 <div class="row text-center">

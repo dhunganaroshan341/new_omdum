@@ -121,6 +121,7 @@ function loadPreview(data) {
     });
 
     // Edit page
+
     $(document).on("click", ".editUserButton", function () {
         clearModal();
         let id = $(this).data("id");
