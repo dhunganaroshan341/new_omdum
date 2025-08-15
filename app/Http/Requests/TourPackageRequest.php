@@ -22,7 +22,7 @@ class TourPackageRequest extends FormRequest
             'parent_id' => 'nullable|exists:tour_packages,id',
             'title' => 'required|string|max:255',
             'slug' => [
-                'required',
+                'nullable',
                 'string',
                 'max:255',
                 $tourPackageId
