@@ -177,36 +177,52 @@
             <div class="container d-flex align-items-center justify-content-between">
                 <div class="links">
                     <ul>
-                        <li><a href="tel:(977) 9851402800" class="white"><i class="fa fa-phone"></i>
+                        <!-- Phone -->
+                        <li>
+                            <a href="tel:{{ $contact ?? '+977 9851402800' }}" class="white">
+                                <i class="fa fa-phone"></i>
+                                {{ $contact ?? '+977 9851402800' }}
+                            </a>
+                        </li>
 
-                                +977 9851402800</a></li>
-                        <li><a href="mailto:info@OmundumTrek&Travels.com" class="white"><i class="fa fa-support"></i>
-                                info@ommundumtreks.com</a></li>
-                        <li><a href="#" class="white"><i class=" inline-icon fa fa-map-marker"></i> Mon-Fri: 10
-                                AM – 5 PM</a>
+                        <!-- Email -->
+                        <li>
+                            <a href="mailto:{{ $email ?? 'info@ommundumtreks.com' }}" class="white">
+                                <i class="fa fa-support"></i>
+                                {{ $email ?? 'info@ommundumtreks.com' }}
+                            </a>
+                        </li>
+
+                        <!-- Office Hours -->
+                        <li>
+                            <a href="#" class="white">
+                                <i class="inline-icon fa fa-map-marker"></i>
+                                {{ $office_hours ?? 'Mon-Fri: 10 AM – 5 PM' }}
+                            </a>
                         </li>
                     </ul>
                 </div>
+
                 <div class="links float-right">
                     <ul>
+                        <!-- Social Links -->
                         <li><a href="{{ $facebook ?? '#' }}"><i class="fab fa-facebook white"
-                                    aria-hidden="true"></i></a>
-                        </li>
+                                    aria-hidden="true"></i></a></li>
                         <li><a href="{{ $twitter ?? '#' }}"><i class="fab fa-twitter white" aria-hidden="true"></i></a>
                         </li>
                         <li><a href="{{ $instagram ?? '#' }}"><i class="fab fa-instagram white"
                                     aria-hidden="true"></i></a></li>
-                        {{-- <li><a href="#"><i class="fab fa-linkedin white" aria-hidden="true"></i></a></li> --}}
-                        {{-- <li><a href="#search1" class="mt_search"><i class="icon-magnifier white"></i></a></li> --}}
                     </ul>
                 </div>
             </div>
         </div>
+
         <!-- Navigation Bar -->
         @include('frontend.layout.navbar')
         <!-- Navigation Bar Ends -->
     </header>
     <!-- header ends -->
+
 
     @yield('content')
 

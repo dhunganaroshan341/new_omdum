@@ -8,9 +8,7 @@ use App\Models\Itinerary;
 use App\Models\Service;
 use App\Models\WorkingDay;
 use Illuminate\Pagination\Paginator;
-// use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\ItineraryObserver;
 
@@ -30,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Itinerary::observe(ItineraryObserver::class);
+
         $this->composeFrontendViews([
             'frontend.layout.main',
             'frontend.layout.footer',
@@ -52,26 +51,33 @@ class AppServiceProvider extends ServiceProvider
             $services = Service::where('status', 1)->latest()->take(4)->get();
 
             $view->with([
-                'email' => $setting->email ?? '',
-                'title' => $setting->title ?? '',
-                'address' => $setting->address ?? '',
-                'contact' => $setting->contact ?? '',
-                'description' => $setting->description ?? '',
+                'id' => $setting->id ?? null,
                 'logo' => $setting->logo ?? '',
+                'title' => $setting->title ?? '',
+                'contact' => $setting->contact ?? '',
+                'contact2' => $setting->contact2 ?? '',
+                'phone3' => $setting->phone3 ?? '',
+                'phone4' => $setting->phone4 ?? '',
+                'landline1' => $setting->landline1 ?? '',
+                'landline2' => $setting->landline2 ?? '',
+                'email' => $setting->email ?? '',
+                'email2' => $setting->email2 ?? '',
+                'address' => $setting->address ?? '',
+                'address2' => $setting->address2 ?? '',
+                'description' => $setting->description ?? '',
                 'work_description' => $setting->work_description ?? '',
-                'about_description' => $setting->about_description ?? '',
                 'welcome_description' => $setting->welcome_description ?? '',
-                'office_hours' => $setting->office_hours ?? '',
+                'about_description' => $setting->about_description ?? '',
                 'welcome_image' => $setting->welcome_image ?? '',
                 'about_image' => $setting->about_image ?? '',
+                'office_hours' => $setting->office_hours ?? '',
                 'facebook' => $setting->facebook_url ?? '',
                 'twitter' => $setting->twitter_url ?? '',
                 'instagram' => $setting->instagram_url ?? '',
                 'github' => $setting->github_url ?? '',
-                'workdesc' => WorkingDay::all(),
+                'workdays' => WorkingDay::all(),
                 'services' => $services
             ]);
         });
     }
-
 }
