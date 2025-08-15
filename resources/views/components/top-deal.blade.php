@@ -43,3 +43,10 @@
         </div>
     </div>
 </section>
+@push('styles')
+    <style>
+        .slider-image {
+            height: 265px;
+        }
+    </style>
+@endpush
