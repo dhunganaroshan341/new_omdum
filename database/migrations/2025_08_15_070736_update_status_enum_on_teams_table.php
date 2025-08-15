@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('teams', function (Blueprint $table) {
-            // If the column exists and is string, you can change it to enum
-            $table->enum('status', ['Active', 'Inactive'])->default('Active')->after('order')->change();
+            $table->enum('status', ['Active', 'Inactive'])
+                  ->default('Active')
+                  ->after('order');
         });
     }
 
@@ -23,8 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('teams', function (Blueprint $table) {
-            // revert back to string in case of rollback
-            $table->string('status')->default('Active')->after('order')->change();
+            $table->dropColumn('status');
         });
     }
 };
