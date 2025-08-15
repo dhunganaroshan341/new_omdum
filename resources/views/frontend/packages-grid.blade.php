@@ -197,7 +197,7 @@
                                     <label class="white">Your Destination</label>
                                     <select name="country" class="niceSelect"
                                         onchange="document.getElementById('country-filter-form').submit();">
-                                        <option value="">Where are you going?</option>
+                                        <option value="">All </option>
                                         @foreach ($ourCountries as $country)
                                             <option value="{{ $country->slug }}"
                                                 {{ request('country') == $country->slug ? 'selected' : '' }}>
@@ -453,12 +453,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                                                            .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                                                            .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                                                                color: var(--omundum-green) !important;
-                                                                                                                                                                                                                                                            } */
+                                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                                                        color: var(--omundum-green) !important;
+                                                                                                                                                                                                                                                                    } */
     </style>
     <style>
         /* Make full height columns */
