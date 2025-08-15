@@ -94,3 +94,10 @@
     <!-- client start -->
     <x-client-carousel />
 @endsection
+@push('styles')
+    <style>
+        .client-logo.item.slick-slide {
+            border-radius: 20%;
+        }
+    </style>
+@endpush
