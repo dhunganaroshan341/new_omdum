@@ -39,6 +39,8 @@ class SettingRequest extends FormRequest
             'phone4' => 'nullable|numeric|min:7',
             'landline2' => 'nullable|numeric|min:7',
             'address2' => 'nullable|string',
+            'email2' => 'nullable|email',
+
 
             'facebook_url' => 'nullable|url',
             'github_url' => 'nullable|url',
