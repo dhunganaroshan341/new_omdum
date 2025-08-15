@@ -99,5 +99,10 @@
         .client-logo.item.slick-slide {
             border-radius: 20%;
         }
+
+        .about-image img {
+            height: 400px;
+            object-fit: cover;
+        }
     </style>
 @endpush
