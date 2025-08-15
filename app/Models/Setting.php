@@ -25,6 +25,7 @@ class Setting extends BaseModel
         'landline2',         // India office landline
         'description',
         'work_description',
+        'office_hours',
         'facebook_url',
         'twitter_url',
         'github_url',

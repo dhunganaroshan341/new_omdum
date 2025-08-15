@@ -47,6 +47,14 @@
                         @endif
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">Office Hours</label>
+                        <input type="text" name="office_hours" class="form-control"
+                            value="{{ $setting->office_hours ?? '' }}">
+                    </div>
+
+                </div>
             </div>
 
             {{-- Primary Office --}}

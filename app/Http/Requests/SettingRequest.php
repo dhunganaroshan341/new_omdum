@@ -24,6 +24,7 @@ class SettingRequest extends FormRequest
             'logo' => 'nullable|mimes:png,jpg,webp,jpeg',
             'description' => 'nullable|string',
             'work_description' => 'nullable|string',
+            'office_hours' => 'nullable|string',
 
             // Primary Office
             'contact' => 'nullable|numeric|min:7',
