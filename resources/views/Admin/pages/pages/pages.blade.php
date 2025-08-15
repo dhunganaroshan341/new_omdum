@@ -5,6 +5,7 @@
     <div class="container-fluid">
         <button class="btn btn-primary addNewPageBtn mb-4">Add page</button>
 
+        @include('Admin.pages.pages.pageModal');
 
 
         <div class="table-responsive">
@@ -22,6 +23,5 @@
 
             </table>
         </div>
-        @include('Admin.pages.pages.pageModal');
     </div>
 @endsection
