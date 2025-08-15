@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::table('settings', function (Blueprint $table) {
             //
-            $table->dropColumn('email2')->nullable();
-
+            $table->string('office_hours')->nullable();
 
         });
     }
@@ -26,7 +25,8 @@ return new class extends Migration
     {
         Schema::table('settings', function (Blueprint $table) {
             //
-             $table->dropColumn('email2');
+            //
+            $table->dropColumn('office_hours');
         });
     }
 };
