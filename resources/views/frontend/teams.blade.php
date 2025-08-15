@@ -13,7 +13,7 @@
                 @foreach ($teamMembers as $member)
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="team-member bg-white p-3 shadow-sm rounded">
-                            <img src="{{ asset($member->photo) }}" alt="{{ $member->name }}"
+                            <img src="{{ asset($member->image_url) }}" alt="{{ $member->name }}"
                                 class="img-fluid rounded-circle mb-3">
                             <h5 class="mb-1">{{ $member->name }}</h5>
                             <p class="text-muted mb-2">{{ $member->position }}</p>

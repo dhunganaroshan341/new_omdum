@@ -20,6 +20,15 @@ class Team extends Model
     'order',
 ];
 
+// Accessor for full image URL
+    public function getImageUrlAttribute()
+    {
+        if ($this->photo) {
+            return asset('uploads/' . $this->photo);
+        }
+        // fallback default image
+        return asset('template/yatri_world/main-file/images/User.png');
+    }
 
 }
 
