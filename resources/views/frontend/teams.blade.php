@@ -18,9 +18,9 @@
                     <p class="mb-0">
                         {{ $teamPageContent->content ??
                             'At Ommundum Travels, our team is passionate about creating unforgettable journeys.
-                                                                                                        Every trip is carefully planned with your comfort, adventure, and memories in mind.
-                                                                                                        With expertise, dedication, and a love for exploring, we bring the world closer to you,
-                                                                                                        one destination at a time.' }}
+                                                                                                                                                                                                                                Every trip is carefully planned with your comfort, adventure, and memories in mind.
+                                                                                                                                                                                                                                With expertise, dedication, and a love for exploring, we bring the world closer to you,
+                                                                                                                                                                                                                                one destination at a time.' }}
                     </p>
                 </div>
 
@@ -56,3 +56,14 @@
             </div>
     </section>
 @endsection
+@push('styles')
+    <style>
+        .page-link {
+            color: var(--omundum-green);
+        }
+
+        .page-link:hover {
+            color: wvarhite;
+        }
+    </style>
+@endpush
