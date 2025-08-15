@@ -4,7 +4,7 @@
         <div class="footer-upper pb-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 mb-4">
+                    <div class="col-lg-3 mb-4">
                         <div class="footer-about">
                             <img src="{{ asset('/front/images/logo-white.png') }}" alt="logo">
                             <p class="mt-3 mb-3">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 mb-4">
+                    <div class="col-lg-9 mb-4">
                         <div class="footer-links text-center">
                             <ul class="list">
                                 <li>
@@ -66,19 +66,17 @@
                                     <i class="inline-icon fas fa-map me-2"></i>
                                     {{ $address ?? 'Nil Saraswoti Marg, Gairidhara Kathmandu, Nepal' }}
                                 </p>
-                                <p class="mb-2">
+                                <p class="mb-2 no-wrap">
                                     <i class="inline-icon fas fa-phone me-2"></i>
                                     <a href="tel:+977{{ $contact ?? '9851137860' }}" class="text-white">
                                         +977 {{ $contact ?? '9851137860' }}
                                     </a>
-                                </p>
-                                @if ($landline1 ?? false)
-                                    <p class="mb-2">
-                                        <i class="inline-icon fas fa-phone me-2"></i>
-                                        <a href="tel:+977{{ $landline1 }}" class="text-white">+977
+                                    @if ($landline1 ?? false)
+                                        | <a href="tel:+977{{ $landline1 }}" class="text-white">+977
                                             {{ $landline1 }}</a>
-                                    </p>
-                                @endif
+                                    @endif
+                                </p>
+
                                 <p class="mb-0">
                                     <i class="inline-icon fas fa-envelope me-2"></i>
                                     <a href="mailto:{{ $email ?? 'info@ommundumtreks.com' }}" class="text-white">
