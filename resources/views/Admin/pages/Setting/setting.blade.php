@@ -93,12 +93,9 @@
                             <input type="number" name="contact" class="form-control" value="{{ $setting->contact ?? '' }}">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Phone 1</label>
-                            <input type="number" name="phone1" class="form-control" value="{{ $setting->phone1 ?? '' }}">
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Phone 2</label>
-                            <input type="number" name="phone2" class="form-control" value="{{ $setting->phone2 ?? '' }}">
+                            <label class="form-label">Contact 2</label>
+                            <input type="number" name="contact2" class="form-control"
+                                value="{{ $setting->contact2 ?? '' }}">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Landline 1</label>
@@ -118,28 +115,23 @@
                         {{-- Secondary Office --}}
                         <h5 class="mt-4 mb-2">Secondary Office</h5>
 
+
                         <div class="col-md-3">
-                            <label class="form-label">Contact 2</label>
-                            <input type="number" name="contact2" class="form-control"
-                                value="{{ $setting->contact2 ?? '' }}">
-                        </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Phone 3</label>
+                            <label class="form-label">Secondary Contact 3</label>
                             <input type="number" name="phone3" class="form-control" value="{{ $setting->phone3 ?? '' }}">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Phone 4</label>
+                            <label class="form-label">Secondary Contact 4</label>
                             <input type="number" name="phone4" class="form-control" value="{{ $setting->phone4 ?? '' }}">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Landline 2</label>
+                            <label class="form-label">Secondary Office landline</label>
                             <input type="number" name="landline2" class="form-control"
                                 value="{{ $setting->landline2 ?? '' }}">
                         </div>
                         <div class="col-md-6 mt-3">
                             <label class="form-label">Email 2</label>
-                            <input type="email" name="email2" class="form-control"
-                                value="{{ $setting->email2 ?? '' }}">
+                            <input type="email" name="email2" class="form-control" value="{{ $setting->email2 ?? '' }}">
                         </div>
                         <div class="col-md-6 mt-3">
                             <label class="form-label">Address 2</label>
@@ -197,7 +189,7 @@
                         </div>
 
                     </div>
-                    <button class="btn btn-success mt-3 mb-3">Submit</button>
+                    <button class="btn btn-success mt-3 mb-3 text-center">Submit</button>
                 </form>
 
         </div>
