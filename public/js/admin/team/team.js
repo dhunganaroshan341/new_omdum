@@ -103,7 +103,7 @@ $(document).ready(function () {
         var id = $(this).attr("data-id");
         $.ajax({
             type: "get",
-            url: "/admin/team/detail/" + id,
+            url: "/admin/team/show/" + id,
             success: function (response) {
                 $("#name").val(response.message.name);
                 $("#position").val(response.message.position);
