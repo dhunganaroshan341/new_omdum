@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\GalleryMediaController;
 use App\Http\Controllers\Admin\NewsLetterController as AdminSideNewsLetterController;
 use App\Http\Controllers\Admin\PageBannerController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\TeamController as AdminTeamController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Frontend\TourPackageController;
 use App\Http\Controllers\FrontGalleryController;
@@ -126,7 +127,10 @@ Route::post('/banner/video', [BannerSliderVideoController::class, 'store'])->nam
     Route::get('/testimonial/status/{id}', [TestimonialController::class, 'statusToggle'])->name('testimonial.status');
 
     Route::resource('achievements',AchievementController::class);
+
     Route::get('achievements/status/toggle/{id}',[AchievementController::class,'statusToggle']);
+     Route::resource('team',AdminTeamController::class);
+     Route::get('team/status/toggle/{id}',[AdminTeamController::class,'statusToggle']);
 
     // Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
