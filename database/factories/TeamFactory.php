@@ -10,7 +10,7 @@ class TeamFactory extends Factory
         return [
             'name'     => $this->faker->name(),
             'position' => $this->faker->jobTitle(),
-            'photo'    => 'https://i.pravatar.cc/300?img=' . $this->faker->numberBetween(1, 70),
+            // 'photo'    => 'https://i.pravatar.cc/300?img=' . $this->faker->numberBetween(1, 70),
             'facebook' => $this->faker->url(),
             'twitter'  => $this->faker->url(),
             'linkedin' => $this->faker->url(),
