@@ -40,7 +40,7 @@ $(document).ready(function () {
                 $('#priceIncludeForm')[0].reset();
                 $('#title').val(data.title);
                 $('#price').val(data.price);
-                $('#description').val(data.description);
+                // $('#description').val(data.description);
                 $(`input[name="is_included"][value="${data.is_included}"]`).prop('checked', true);
                 $('#tour_package_id_for_price_includes').val(data.tour_package_id);
                 $('#price_include_id').val(data.id);

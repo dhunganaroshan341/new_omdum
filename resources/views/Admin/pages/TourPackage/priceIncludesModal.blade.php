@@ -23,10 +23,10 @@
                             placeholder="e.g. Hotel Stay" required>
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="price_description" class="form-label">Description</label>
                         <textarea class="form-control" id="price_description" name="description" rows="3" placeholder="Details..."></textarea>
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label for="is_included" class="form-label">Type</label>
