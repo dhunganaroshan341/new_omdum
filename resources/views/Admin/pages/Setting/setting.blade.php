@@ -80,7 +80,7 @@
                             @enderror
                             @if ($setting->logo)
                                 <div>
-                                    <img src="/uploads/{{ $setting->logo }}" width="100" height="100" alt="Logo">
+                                    <img src="{{ $setting->logo_url }}" width="100" height="100" alt="Logo">
                                 </div>
                             @endif
                         </div>
@@ -117,11 +117,11 @@
 
 
                         <div class="col-md-3">
-                            <label class="form-label">Secondary Contact 3</label>
+                            <label class="form-label">Secondary Contact 1</label>
                             <input type="number" name="phone3" class="form-control" value="{{ $setting->phone3 ?? '' }}">
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Secondary Contact 4</label>
+                            <label class="form-label">Secondary Contact 2</label>
                             <input type="number" name="phone4" class="form-control" value="{{ $setting->phone4 ?? '' }}">
                         </div>
                         <div class="col-md-3">
