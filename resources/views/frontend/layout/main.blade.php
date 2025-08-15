@@ -195,10 +195,10 @@
 
                         <!-- Office Hours -->
                         <li>
-                            <a href="#" class="white">
-                                <i class="inline-icon fa fa-map-marker"></i>
-                                {{ $office_hours ?? 'Mon-Fri: 10 AM – 5 PM' }}
-                            </a>
+                            {{-- <a href="#" class="white"> --}}
+                            <i class="inline-icon fa fa-map-marker"></i>
+                            {{ $office_hours ?? 'Mon-Fri: 10 AM – 5 PM' }}
+                            {{-- </a> --}}
                         </li>
                     </ul>
                 </div>

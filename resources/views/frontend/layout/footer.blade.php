@@ -55,48 +55,71 @@
                             </ul>
                         </div>
                         <div
-                            class="footer-listing-main d-lg-flex align-items-start justify-content-start mt-4  text-center text-lg-start flex-wrap gap-4">
+                            class="footer-listing-main d-lg-flex align-items-start justify-content-start mt-4 text-center text-lg-start flex-wrap gap-4">
 
-                            <!-- NEPAL OFFICE -->
+                            <!-- PRIMARY OFFICE -->
                             <div class="footer-listing white">
                                 <h6 class="text-white mb-3">
-                                    <i class="fas fa-location-dot me-2"></i> Nepal Office
+                                    <i class="fas fa-location-dot me-2"></i> Primary Office
                                 </h6>
-                                <p class="mb-2"><i class=" inline-icon  fas fa-map me-2"></i> Nil Saraswoti Marg,
-                                    Gairidhara Kathmandu, Nepal </p>
-                                {{-- <p class="m-0"> </p> --}}
-                                <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
-                                    <a href="tel:+9779851137860" class="text-white">+977 9851137860</a>
+                                <p class="mb-2">
+                                    <i class="inline-icon fas fa-map me-2"></i>
+                                    {{ $address ?? 'Nil Saraswoti Marg, Gairidhara Kathmandu, Nepal' }}
                                 </p>
-                                <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
-                                    <a href="tel:+9779851137860" class="text-white">
-                                        <p class="m-0"> <a href="tel:+977 01 450 3000">+977 01 450 3000</a> </p>
+                                <p class="mb-2">
+                                    <i class="inline-icon fas fa-phone me-2"></i>
+                                    <a href="tel:+977{{ $contact ?? '9851137860' }}" class="text-white">
+                                        +977 {{ $contact ?? '9851137860' }}
                                     </a>
                                 </p>
-                                <p class="mb-0"><i class="inline-icon   fas fa-envelope me-2"></i>
-                                    <a href="mailto:info@ommundumtreks.com"
-                                        class="text-white">info@ommundumtreks.com</a>
+                                @if ($landline1 ?? false)
+                                    <p class="mb-2">
+                                        <i class="inline-icon fas fa-phone me-2"></i>
+                                        <a href="tel:+977{{ $landline1 }}" class="text-white">+977
+                                            {{ $landline1 }}</a>
+                                    </p>
+                                @endif
+                                <p class="mb-0">
+                                    <i class="inline-icon fas fa-envelope me-2"></i>
+                                    <a href="mailto:{{ $email ?? 'info@ommundumtreks.com' }}" class="text-white">
+                                        {{ $email ?? 'info@ommundumtreks.com' }}
+                                    </a>
                                 </p>
                             </div>
 
-                            <!-- INDIA OFFICE -->
+                            <!-- SECONDARY OFFICE -->
                             <div class="footer-listing white">
                                 <h6 class="text-white mb-3">
-                                    <i class="fas fa-location-dot me-2"></i> India Office
+                                    <i class="fas fa-location-dot me-2"></i> Secondary Office
                                 </h6>
-                                <p class="mb-2"><i class=" inline-icon   fas fa-map me-2"></i> Shop No: 25, Kota,
-                                    Rajasthan, India
+                                <p class="mb-2">
+                                    <i class="inline-icon fas fa-map me-2"></i>
+                                    {{ $address2 ?? 'Shop No: 25, Kota, Rajasthan, India' }}
                                 </p>
-                                <p class="mb-2"><i class=" inline-icon   fas fa-phone me-2"></i>
-                                    <a href="tel:+916350606267" class="text-white">+91 6350606267</a>
-                                </p>
-                                <p class="mb-0"><i class=" inline-icon   fas fa-envelope me-2"></i>
-                                    <a href="mailto:dhruv@ommundumtreks.com"
-                                        class="text-white">dhruv@ommundumtreks.com</a>
+                                @if ($phone3 ?? false)
+                                    <p class="mb-2">
+                                        <i class="inline-icon fas fa-phone me-2"></i>
+                                        <a href="tel:+91{{ $phone3 }}" class="text-white">+91
+                                            {{ $phone3 }}</a>
+                                    </p>
+                                @endif
+                                @if ($phone4 ?? false)
+                                    <p class="mb-2">
+                                        <i class="inline-icon fas fa-phone me-2"></i>
+                                        <a href="tel:+91{{ $phone4 }}" class="text-white">+91
+                                            {{ $phone4 }}</a>
+                                    </p>
+                                @endif
+                                <p class="mb-0">
+                                    <i class="inline-icon fas fa-envelope me-2"></i>
+                                    <a href="mailto:{{ $email2 ?? 'dhruv@ommundumtreks.com' }}" class="text-white">
+                                        {{ $email2 ?? 'dhruv@ommundumtreks.com' }}
+                                    </a>
                                 </p>
                             </div>
 
                         </div>
+
 
 
                     </div>
