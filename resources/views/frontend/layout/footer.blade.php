@@ -50,7 +50,10 @@
                                     <a href="{{ route('contact') }}">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact') }}">Terms & Conditions</a>
+                                    <a href="{{ route('packages.index') }}">Packages</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('services') }}">Services</a>
                                 </li>
                             </ul>
                         </div>
