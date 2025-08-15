@@ -115,7 +115,7 @@ function loadPreview(data) {
 
 
     // Show create modal
-$("#addNewPageBtn").on("click", function () {
+$(".addNewPageBtn").on("click", function () {
     clearModal();
     $("#formModal").modal("show");
     $(".submitBtn").show(); // Show the submit button
