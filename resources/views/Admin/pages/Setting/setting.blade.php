@@ -140,7 +140,7 @@
                         </div>
 
                         {{-- Description & Work Description --}}
-                        <div class="col-md-12 mt-3">
+                        {{-- <div class="col-md-12 mt-3">
                             <label class="form-label">Welcome Description</label>
                             <textarea class="form-control description" name="description" rows="3">{!! $setting->description ?? '' !!}</textarea>
                         </div>
@@ -148,10 +148,10 @@
                         <div class="col-md-12 mt-3">
                             <label class="form-label">About Description</label>
                             <textarea class="form-control description" name="work_description" rows="3">{!! $setting->work_description ?? '' !!}</textarea>
-                        </div>
+                        </div> --}}
 
                         {{-- Images --}}
-                        <div class="col-md-6 mt-3">
+                        {{-- <div class="col-md-6 mt-3">
                             <label class="form-label">Welcome Image</label>
                             <input type="file" name="welcome_image" class="form-control">
                             @if ($setting->welcome_image)
@@ -164,7 +164,7 @@
                             @if ($setting->about_image)
                                 <img src="/storage/{{ $setting->about_image }}" width="100" height="100">
                             @endif
-                        </div>
+                        </div> --}}
 
                         {{-- Social --}}
                         <div class="col-md-3 mt-3">
