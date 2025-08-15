@@ -93,7 +93,7 @@ $(document).ready(function () {
     });
 
     // Edit and Update Team
-    $(document).on("click", ".editTeamButton", function () {
+    $(document).on("click", ".editUserButton", function () {
         clearModal();
         $("#formModal").modal("show");
         $(".submitBtn").hide();
@@ -175,7 +175,7 @@ $(document).ready(function () {
     });
 
     // Delete Team
-    $(document).on("click", ".deleteTeam", function () {
+    $(document).on("click", ".deleteData", function () {
         let id = $(this).attr("data-id");
         Swal.fire({
             icon: "warning",
