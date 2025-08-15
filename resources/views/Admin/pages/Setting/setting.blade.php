@@ -80,7 +80,7 @@
                             @enderror
                             @if ($setting->logo)
                                 <div>
-                                    <img src="{{ $setting->logo_url }}" width="100" height="100" alt="Logo">
+                                    <img src="{{ $setting->logo_url ?? '' }}" width="100" height="100" alt="Logo">
                                 </div>
                             @endif
                         </div>
