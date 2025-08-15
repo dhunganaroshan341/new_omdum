@@ -5,9 +5,11 @@ use App\Models\Team;
 
 class TeamController extends Controller
 {
-    public function index()
+     public function index()
     {
-        $teamMembers = Team::all();
+        // Paginate 6 members per page
+        $teamMembers = Team::paginate(6);
+
         return view('frontend.teams', compact('teamMembers'));
     }
 }
