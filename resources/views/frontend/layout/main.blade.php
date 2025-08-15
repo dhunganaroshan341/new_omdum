@@ -210,14 +210,15 @@
                 <div class="links float-right">
                     <ul>
                         <!-- Social Links -->
-                        <li><a href="{{ $facebook ?? '#' }}"><i class="fab fa-facebook white"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a href="{{ $twitter ?? '#' }}"><i class="fab fa-twitter white" aria-hidden="true"></i></a>
-                        </li>
-                        <li><a href="{{ $instagram ?? '#' }}"><i class="fab fa-instagram white"
-                                    aria-hidden="true"></i></a></li>
+                        <li><a href="{{ $facebook ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-facebook white" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ $twitter ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-twitter white" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ $instagram ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
+                                    class="fab fa-instagram white" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
 
