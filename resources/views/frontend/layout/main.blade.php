@@ -181,7 +181,7 @@
                         <li>
                             <a href="tel:{{ $contact ?? '+977 9851402800' }}" class="white">
                                 <i class="fa fa-phone"></i>
-                                {{ $contact ?? '+977 9851402800' }}
+                                +977 {{ $contact ?? '9851402800' }}
                             </a>
                         </li>
 
