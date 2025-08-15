@@ -54,12 +54,13 @@
                         <div class="about-image-main">
                             <div class="row">
                                 <div class="col-md-6 mt-4">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/everest-vertical.png') }}"
                                         alt="">
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/everest-vertical.png') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                         alt="">
+
                                 </div>
                             </div>
                         </div>
