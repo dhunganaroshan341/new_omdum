@@ -20,7 +20,7 @@
                                 <th>Title</th>
                                 <th>Price</th>
                                 <th>Included?</th>
-                                <th>Description</th>
+                                {{-- <th>Description</th> --}}
                                 <th>Action</th>
                             </tr>
                         </thead>

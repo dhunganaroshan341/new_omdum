@@ -73,7 +73,7 @@ $(document).ready(function () {
                 { data: 'DT_RowIndex', orderable: false, searchable: false },
                 { data: 'title' },
                 { data: 'price' },
-                { data: 'description' },
+                // { data: 'description' },
                 {
                     data: 'is_included',
                     render: function (data) {
