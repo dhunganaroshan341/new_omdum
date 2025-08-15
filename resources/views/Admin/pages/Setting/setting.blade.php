@@ -60,142 +60,146 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="row">
                         @csrf
+
+                        {{-- Title --}}
                         <div class="col-md-6">
-                            <label for="" class="form-label">Title<span class="text-danger">*</span></label>
-                            <input type="text" name="title" id=""
-                                class="form-control @error('title') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->title ?? '' }}" aria-describedby="helpId" />
+                            <label class="form-label">Title<span class="text-danger">*</span></label>
+                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
+                                value="{{ $setting->title ?? '' }}">
                             @error('title')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
+                                <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
 
+                        {{-- Logo --}}
                         <div class="col-md-6">
-                            <label for="" class="form-label">Logo</label>
-                            <input type="file" name="logo" id=""
-                                class="form-control @error('logo') is-invalid @enderror" placeholder=""
-                                aria-describedby="helpId" />
+                            <label class="form-label">Logo</label>
+                            <input type="file" name="logo" class="form-control @error('logo') is-invalid @enderror">
                             @error('logo')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
+                                <small class="text-danger">{{ $message }}</small>
                             @enderror
-
-                            @if ($setting->logo !== null)
+                            @if ($setting->logo)
                                 <div>
-                                    <img src="/uploads/{{ $setting->logo }}" alt="" srcset="" width="100"
-                                        height="100">
+                                    <img src="/uploads/{{ $setting->logo }}" width="100" height="100" alt="Logo">
                                 </div>
                             @endif
                         </div>
 
-                        <div class="col-md-4 mt-3 mb-3">
-                            <label for="" class="form-label">Contact<span class="text-danger">*</span></label>
-                            <input type="number" name="contact" id=""
-                                class="form-control @error('contact') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->contact ?? '' }}" aria-describedby="helpId" />
-                            @error('contact')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="col-md-4 mt-3 mb-3">
-                            <label for="" class="form-label">Email<span class="text-danger">*</span></label>
-                            <input type="email" name="email" id=""
-                                class="form-control @error('email') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->email ?? '' }}" aria-describedby="helpId" />
-                            @error('email')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="col-md-4 mt-3 mb-3">
-                            <label for="" class="form-label">Address<span class="text-danger">*</span></label>
-                            <input type="text" name="address" id=""
-                                class="form-control @error('address') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->address ?? '' }}" aria-describedby="helpId" />
-                            @error('address')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Welcome Description</label>
-                            <textarea class="form-control description" name="description" id="" rows="3">{!! $setting->description ?? '' !!}</textarea>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="" class="form-label">Welcome Image</label>
-                            <input type="file" name="welcome_image" id=""
-                                class="form-control @error('welcome_image') is-invalid @enderror" placeholder=""
-                                aria-describedby="helpId" />
-                            @error('welcome_image')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
+                        {{-- Primary Office --}}
+                        <h5 class="mt-4 mb-2">Primary Office</h5>
 
-                            @if ($setting->welcome_image !== null)
-                                <div>
-                                    <img src="/storage/{{ $setting->welcome_image }}" alt="" srcset=""
-                                        width="100" height="100">
-                                </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Contact 1</label>
+                            <input type="number" name="contact" class="form-control" value="{{ $setting->contact ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Phone 1</label>
+                            <input type="number" name="phone1" class="form-control" value="{{ $setting->phone1 ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Phone 2</label>
+                            <input type="number" name="phone2" class="form-control" value="{{ $setting->phone2 ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Landline 1</label>
+                            <input type="number" name="landline1" class="form-control"
+                                value="{{ $setting->landline1 ?? '' }}">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Email 1</label>
+                            <input type="email" name="email" class="form-control" value="{{ $setting->email ?? '' }}">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Address 1</label>
+                            <input type="text" name="address" class="form-control"
+                                value="{{ $setting->address ?? '' }}">
+                        </div>
+
+                        {{-- Secondary Office --}}
+                        <h5 class="mt-4 mb-2">Secondary Office</h5>
+
+                        <div class="col-md-3">
+                            <label class="form-label">Contact 2</label>
+                            <input type="number" name="contact2" class="form-control"
+                                value="{{ $setting->contact2 ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Phone 3</label>
+                            <input type="number" name="phone3" class="form-control" value="{{ $setting->phone3 ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Phone 4</label>
+                            <input type="number" name="phone4" class="form-control" value="{{ $setting->phone4 ?? '' }}">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Landline 2</label>
+                            <input type="number" name="landline2" class="form-control"
+                                value="{{ $setting->landline2 ?? '' }}">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Email 2</label>
+                            <input type="email" name="email2" class="form-control"
+                                value="{{ $setting->email2 ?? '' }}">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Address 2</label>
+                            <input type="text" name="address2" class="form-control"
+                                value="{{ $setting->address2 ?? '' }}">
+                        </div>
+
+                        {{-- Description & Work Description --}}
+                        <div class="col-md-12 mt-3">
+                            <label class="form-label">Welcome Description</label>
+                            <textarea class="form-control description" name="description" rows="3">{!! $setting->description ?? '' !!}</textarea>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <label class="form-label">About Description</label>
+                            <textarea class="form-control description" name="work_description" rows="3">{!! $setting->work_description ?? '' !!}</textarea>
+                        </div>
+
+                        {{-- Images --}}
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">Welcome Image</label>
+                            <input type="file" name="welcome_image" class="form-control">
+                            @if ($setting->welcome_image)
+                                <img src="/storage/{{ $setting->welcome_image }}" width="100" height="100">
                             @endif
                         </div>
-                        <div class="col-md-6">
-                            <label for="" class="form-label">About Image</label>
-                            <input type="file" name="about_image" id=""
-                                class="form-control @error('about_image') is-invalid @enderror" placeholder=""
-                                aria-describedby="helpId" />
-                            @error('about_image')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-
-                            @if ($setting->about_image !== null)
-                                <div>
-                                    <img src="/storage/{{ $setting->about_image }}" alt="" srcset=""
-                                        width="100" height="100">
-                                </div>
+                        <div class="col-md-6 mt-3">
+                            <label class="form-label">About Image</label>
+                            <input type="file" name="about_image" class="form-control">
+                            @if ($setting->about_image)
+                                <img src="/storage/{{ $setting->about_image }}" width="100" height="100">
                             @endif
                         </div>
 
-                        <div class="mb-3 mt-2">
-                            <label for="" class="form-label">About Description</label>
-                            <textarea class="form-control description" name="work_description" id="" rows="3">{!! $setting->work_description ?? '' !!}</textarea>
+                        {{-- Social --}}
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">Facebook Url</label>
+                            <input type="url" name="facebook_url" class="form-control"
+                                value="{{ $setting->facebook_url ?? '' }}">
+                        </div>
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">GitHub Url</label>
+                            <input type="url" name="github_url" class="form-control"
+                                value="{{ $setting->github_url ?? '' }}">
+                        </div>
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">Twitter Url</label>
+                            <input type="url" name="twitter_url" class="form-control"
+                                value="{{ $setting->twitter_url ?? '' }}">
+                        </div>
+                        <div class="col-md-3 mt-3">
+                            <label class="form-label">Instagram Url</label>
+                            <input type="url" name="instagram_url" class="form-control"
+                                value="{{ $setting->instagram_url ?? '' }}">
                         </div>
 
-                        <div class="col-md-3">
-                            <label for="" class="form-label">Facebook Url</label>
-                            <input type="url" name="facebook_url" id=""
-                                class="form-control @error('facebook_url') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->facebook_url ?? '' }}" aria-describedby="helpId" />
-                            @error('facebook_url')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="col-md-3">
-                            <label for="" class="form-label">GitHub Url</label>
-                            <input type="url" name="github_url" id=""
-                                class="form-control @error('github_url') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->github_url ?? '' }}" aria-describedby="helpId" />
-                            @error('github_url')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="col-md-3">
-                            <label for="" class="form-label">Twitter Url</label>
-                            <input type="url" name="twitter_url" id=""
-                                class="form-control @error('twitter_url') is-invalid @enderror" placeholder=""
-                                value="{{ $setting->twitter_url }}" aria-describedby="helpId" />
-                            @error('twitter_url')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="col-md-3">
-                            <label for="" class="form-label">Instagram Url</label>
-                            <input type="url" name="instagram_url" id=""
-                                value="{{ $setting->instagram_url ?? '' }}"
-                                class="form-control @error('instagram_url') is-invalid @enderror" placeholder=""
-                                aria-describedby="helpId" />
-                            @error('instagram_url')
-                                <small id="helpId" class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
                     </div>
                     <button class="btn btn-success mt-3 mb-3">Submit</button>
                 </form>
+
         </div>
         <div class="card p-2">
             <div class="mt-4 fetch-multiple-columns">
