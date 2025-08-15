@@ -16,6 +16,9 @@ function getSettings(){
     return Setting::first();
 }
 function getNavbarCountries() {
+    // Desired order of country slugs
+    $order = ['nepal', 'tibet', 'india', 'bhutan'];
+
     // Fetch countries with packages already loaded
     $rawCountries = OurCountry::with(['packages'])->get();
 
@@ -29,8 +32,14 @@ function getNavbarCountries() {
         return $country;
     });
 
+    // Sort countries based on the given order
+    $countries = $countries->sortBy(function ($country) use ($order) {
+        return array_search($country->slug, $order);
+    })->values(); // reindex
+
     return $countries;
 }
+
 
 function getServices(){
     return FeaturedService::leftJoin('services','services.id','featured_services.service_id')
