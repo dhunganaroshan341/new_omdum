@@ -105,7 +105,7 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.team.index') }}">
-            <i class="mdi mdi-sitema menu-icon"></i>
+            <i class="mdi mdi-sitemap menu-icon"></i>
             <span class="menu-title">Team</span>
         </a>
     </li>
