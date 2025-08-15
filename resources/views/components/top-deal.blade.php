@@ -45,7 +45,7 @@
 </section>
 @push('styles')
     <style>
-        .slider-image {
+        .slider-image img {
             height: 265px;
         }
     </style>
