@@ -156,11 +156,14 @@ if ($search) {
                     </a>';
             })
             ->addColumn('status', function ($item) {
-                $checked = strtolower($item->status) === 'active' ? 'checked' : '';
-                return '<div class="form-check form-switch">
-                            <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
-                        </div>';
-            })
+    $checked = $item->status === 'Active' ? 'checked' : '';
+    return '<div class="d-flex justify-content-center">
+                <div class="form-check form-switch">
+                    <input class="form-check-input statusToggle" type="checkbox" data-id="' . $item->id . '" ' . $checked . '>
+                </div>
+            </div>';
+})
+
             ->addColumn('top_deal', fn($item) => '<input type="checkbox" class="form-check-input topDealToggle" data-id="' . $item->id . '" ' . ($item->top_deal ? 'checked' : '') . '>')
             ->addColumn('favourite_destination', fn($item) => '<input type="checkbox" class="form-check-input favouriteToggle" data-id="' . $item->id . '" ' . ($item->favourite_destination ? 'checked' : '') . '>')
             ->addColumn('action', fn($item) => view('Admin.Button.button', ['data' => $item])->render())
