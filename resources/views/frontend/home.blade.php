@@ -58,7 +58,7 @@
                                         alt="">
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="{{ asset('template/yatri_world/main-file/images/everest-vertical.jpg') }}"
+                                    <img src="{{ asset('template/yatri_world/main-file/images/everest-vertical.png') }}"
                                         alt="">
                                 </div>
                             </div>
