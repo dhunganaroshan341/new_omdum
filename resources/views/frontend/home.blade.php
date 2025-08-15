@@ -24,7 +24,7 @@
 
     <!-- top destination ends -->
 
-
+    <x-home-about-us-section />
 
     <!-- Call to action starts -->
     <x-call-to-action-home-section />
