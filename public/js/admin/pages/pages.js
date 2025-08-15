@@ -115,16 +115,21 @@ function loadPreview(data) {
 
 
     // Show create modal
-    $("#addNewPageBtn").on("click", function () {
-        clearModal();
-        $("#formModal").modal("show");
-    });
+$("#addNewPageBtn").on("click", function () {
+    clearModal();
+    $("#formModal").modal("show");
+    $(".submitBtn").show(); // Show the submit button
+    $(".updateBtn").hide(); // Hide the update button
+});
+
 
     // Edit page
 
     $(document).on("click", ".editUserButton", function () {
         clearModal();
         let id = $(this).data("id");
+          $(".submitBtn").hide(); // Show the submit button
+    $(".updateBtn").show(); // Hide the update button
 
         $.ajax({
             url: `/admin/pages/${id}`,
