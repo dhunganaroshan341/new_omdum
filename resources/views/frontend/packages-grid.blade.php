@@ -215,7 +215,7 @@
 
                         <div class="list-sidebar">
                             <div class="sidebar-item">
-                                <h4>General Packages Available</h4>
+                                <h4>General Packages </h4>
                                 <form method="GET" action="{{ route('packages.search') }}" id="package-filter-form">
                                     {{-- Country filter (optional) --}}
                                     <input type="hidden" name="country" value="{{ request('country') }}">
@@ -453,12 +453,12 @@
         /* Change all key text to green on hover */
         /* Beat .white class color with higher specificity */
         /* .desti-image:hover .desti-content h4 a.white,
-                                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main p.white,
-                                                                                                                                                                                                                                                                    .desti-image:hover .trend-last-main .price span,
-                                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a span.white,
-                                                                                                                                                                                                                                                                    .desti-image:hover .desti-overlay a i.white {
-                                                                                                                                                                                                                                                                        color: var(--omundum-green) !important;
-                                                                                                                                                                                                                                                                    } */
+                                                                                                                                                                                                                                                                        .desti-image:hover .trend-last-main p.white,
+                                                                                                                                                                                                                                                                        .desti-image:hover .trend-last-main .price span,
+                                                                                                                                                                                                                                                                        .desti-image:hover .desti-overlay a span.white,
+                                                                                                                                                                                                                                                                        .desti-image:hover .desti-overlay a i.white {
+                                                                                                                                                                                                                                                                            color: var(--omundum-green) !important;
+                                                                                                                                                                                                                                                                        } */
     </style>
     <style>
         /* Make full height columns */
