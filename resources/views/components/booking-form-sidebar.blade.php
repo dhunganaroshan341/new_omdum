@@ -54,54 +54,47 @@
                         <input type="radio" name="booking_type" value="custom" checked> Custom Date
                     </label>
                 </div>
-                <input type="date" id="customDate">
             </div>
         </div>
 
-
-
         <!-- Batch Selection -->
-        <div class="col-lg-12" id="batch-date-section">
+        <div class="col-lg-12" id="batch-date-section" style="display:none;">
             <div class="form-group">
                 <label class="white d-block mb-2">Select Batch</label>
-
                 @if ($package->batches->count() > 0)
                     <select name="tour_batch_id" class="nice-select">
                         <option value="">-- Select a Batch --</option>
                         @foreach ($package->batches as $batch)
-                            <option value="{{ $batch->id }}">
-                                {{ $batch->start_date->format('Y-m-d') }}
-                            </option>
+                            <option value="{{ $batch->id }}">{{ $batch->start_date->format('Y-m-d') }}</option>
                         @endforeach
                     </select>
                 @else
                     <div class="text-light bg-secondary p-2 rounded">
-                        No batch available for this package. You can select the custom date .
+                        No batch available for this package. You can select the custom date.
                     </div>
                 @endif
             </div>
         </div>
 
-
         <!-- Custom Date Selection -->
-        <div class="col-lg-12" id="custom-date-section" style="display:none;">
+        <div class="col-lg-12" id="custom-date-section">
             <div class="form-group">
                 <label class="white d-block mb-2">Select Custom Date</label>
-                <input type="date" name="custom_date" class="form-control">
+                <input type="date" name="custom_date" class="form-control" id="customDateInput">
             </div>
         </div>
 
         <!-- Number of People -->
         <div class="col-lg-12">
             <div class="form-group">
-                <label class="white">No. Of People</label>
-                <div class="input-box">
-                    <i class="flaticon-add-user"></i>
+                <label class="white d-block mb-2">No. Of People</label>
+                <div class="d-flex gap-2">
                     <select class="niceSelect" name="total_people">
                         @for ($i = 1; $i <= 5; $i++)
                             <option value="{{ $i }}">{{ $i }}</option>
                         @endfor
                     </select>
+                    <input type="number" name="custom_people" class="form-control" placeholder="Custom number">
                 </div>
             </div>
         </div>
@@ -125,71 +118,70 @@
 </form>
 
 @push('scripts')
-    @push('scripts')
-        <script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const customRadio = document.querySelector('input[name="booking_type"][value="custom"]');
+            const batchSection = document.getElementById('batch-date-section');
+            const customSection = document.getElementById('custom-date-section');
+
+            // Default: custom date selected
+            customRadio.checked = true;
+            batchSection.style.display = 'none';
+            customSection.style.display = 'block';
+
+            // Toggle between batch and custom
             document.querySelectorAll('input[name="booking_type"]').forEach(el => {
                 el.addEventListener('change', function() {
                     if (this.value === 'batch') {
-                        document.getElementById('batch-date-section').style.display = 'block';
-                        document.getElementById('custom-date-section').style.display = 'none';
+                        batchSection.style.display = 'block';
+                        customSection.style.display = 'none';
                     } else {
-                        document.getElementById('batch-date-section').style.display = 'none';
-                        document.getElementById('custom-date-section').style.display = 'block';
+                        batchSection.style.display = 'none';
+                        customSection.style.display = 'block';
                     }
                 });
             });
 
-            $(document).ready(function() {
-                $('#booking-form').on('submit', function(e) {
-                    e.preventDefault();
+            // Set today's date as default
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('customDateInput').value = today;
 
-                    let formData = $(this).serialize();
-                    let actionUrl = $(this).attr('action');
+            // Ajax submission
+            $('#booking-form').on('submit', function(e) {
+                e.preventDefault();
+                let formData = $(this).serialize();
+                let actionUrl = $(this).attr('action');
 
-                    $.ajax({
-                        type: 'POST',
-                        url: actionUrl,
-                        data: formData,
-                        success: function(response) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success!',
-                                text: response.message,
-                                confirmButtonColor: '#3085d6',
-                                confirmButtonText: 'OK'
-                            }).then(() => {
-                                // Optionally reset the form or reload
-                                $('#booking-form')[0].reset();
-                                $('.nice-select').val('').trigger('change');
-                            });
-                        },
-                        error: function(xhr) {
-                            let errors = xhr.responseJSON?.errors || {};
-                            let firstError = Object.values(errors)[0]?.[0] ||
-                                'An error occurred. Please try again.';
-
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops!',
-                                text: firstError,
-                                confirmButtonColor: '#d33',
-                                confirmButtonText: 'OK'
-                            });
-                        }
-                    });
+                $.ajax({
+                    type: 'POST',
+                    url: actionUrl,
+                    data: formData,
+                    success: function(response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: response.message,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            $('#booking-form')[0].reset();
+                            $('.nice-select').val('').trigger('change');
+                        });
+                    },
+                    error: function(xhr) {
+                        let errors = xhr.responseJSON?.errors || {};
+                        let firstError = Object.values(errors)[0]?.[0] ||
+                            'An error occurred. Please try again.';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops!',
+                            text: firstError,
+                            confirmButtonColor: '#d33',
+                            confirmButtonText: 'OK'
+                        });
+                    }
                 });
             });
-        </script>
-        {{-- set custom date today --}}
-        <script>
-            window.addEventListener('DOMContentLoaded', () => {
-                // Auto-select "custom" booking type
-                document.querySelector('input[name="booking_type"][value="custom"]').checked = true;
-
-                // Set today's date in date input
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('customDate').value = today;
-            });
-        </script>
-    @endpush
+        });
+    </script>
 @endpush
