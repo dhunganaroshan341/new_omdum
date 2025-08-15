@@ -44,6 +44,10 @@
             display: inline !important;
         }
 
+        .links li {
+            color: white;
+        }
+
         .slider-content a:hover {
             color: var(--omundum-green) !important;
         }
