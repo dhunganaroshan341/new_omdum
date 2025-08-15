@@ -12,15 +12,15 @@
             <div class="container">
                 <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
                     <h2 class="m-0">
-                        {{ $teamPageContent->heading ?? 'Meet our' }}
-                        <span>{{ $teamPageContent->sub_heading ?? 'Team' }}</span>
+                        {{ $teamPageContent->content_heading ?? 'Meet our' }}
+                        <span>{{ $teamPageContent->content_subheading ?? 'Team' }}</span>
                     </h2>
                     <p class="mb-0">
                         {{ $teamPageContent->content ??
                             'At Ommundum Travels, our team is passionate about creating unforgettable journeys.
-                                Every trip is carefully planned with your comfort, adventure, and memories in mind.
-                                With expertise, dedication, and a love for exploring, we bring the world closer to you,
-                                one destination at a time.' }}
+                                                                                                        Every trip is carefully planned with your comfort, adventure, and memories in mind.
+                                                                                                        With expertise, dedication, and a love for exploring, we bring the world closer to you,
+                                                                                                        one destination at a time.' }}
                     </p>
                 </div>
 
