@@ -61,6 +61,7 @@ class AppServiceProvider extends ServiceProvider
                 'work_description' => $setting->work_description ?? '',
                 'about_description' => $setting->about_description ?? '',
                 'welcome_description' => $setting->welcome_description ?? '',
+                'office_hours' => $setting->office_hours ?? '',
                 'welcome_image' => $setting->welcome_image ?? '',
                 'about_image' => $setting->about_image ?? '',
                 'facebook' => $setting->facebook_url ?? '',
