@@ -14,7 +14,10 @@
                                 class="text-danger">*</span>) symbol represent that the field is required</span>
 
                         @csrf
-                        <input type="hidden" id="team_id" name="id" value="{{ $team->id }}">
+                        @if (isset($team))
+                            <input type="hidden" id="team_id" name="id" value="{{ $team->id }}">
+                        @endif
+
 
                         <div class="col-md-6">
                             <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
