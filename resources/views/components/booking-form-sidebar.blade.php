@@ -85,16 +85,12 @@
         </div>
 
         <!-- Number of People -->
+        <!-- Number of People -->
         <div class="col-lg-12">
             <div class="form-group">
                 <label class="white d-block mb-2">No. Of People</label>
                 <div class="d-flex gap-2">
-                    <select class="niceSelect" name="total_people">
-                        @for ($i = 1; $i <= 5; $i++)
-                            <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
-                    </select>
-                    <input type="number" name="custom_people" class="form-control" placeholder="Custom number">
+                    <input type="number" name="total_people" class="form-control" placeholder="" min="0">
                 </div>
             </div>
         </div>
