@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Frontend;
 
+    use App\Helpers\ConuntryHelperEnhanced;
     use App\Helpers\CountryHelper;
     use App\Http\Controllers\Controller;
     use App\Models\Booking;
@@ -20,7 +21,7 @@
         protected $countries;
         public function __construct()
         {
-        $this->countries = CountryHelper::getCountries();
+        $this->countries = ConuntryHelperEnhanced::getCountries();
         }
 
     public function index()

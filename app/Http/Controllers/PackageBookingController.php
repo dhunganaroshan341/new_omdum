@@ -91,7 +91,15 @@ public function bookingSinglePage()
         $query->where('available_seats', '>', 0); // Only batches with available seats
     }])->where('status', 'Active')->get();
 
-    $countries = ConuntryHelperEnhanced::getCountries(); // Assuming you’re loading a config array
+    // Format start_date for each batch
+    foreach ($packages as $package) {
+        foreach ($package->batches as $batch) {
+            $batch->start_date = $batch->start_date->format('Y-m-d'); // keep only YYYY-MM-DD
+        }
+    }
+
+    $countries = ConuntryHelperEnhanced::getCountries(); // Load countries array
     return view('frontend.booking', compact('packages', 'countries'));
 }
+
 }
