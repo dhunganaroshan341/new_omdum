@@ -120,7 +120,7 @@ $(document).ready(function () {
             }
         });
 
-       $("#updateForm").off("submit").on("submit", function (event) {
+        $("#updateForm").off("submit").on("submit", function (event) {
     event.preventDefault();
 
     let id = $("#team_id").val(); // hidden input in your form with team id

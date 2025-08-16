@@ -14,6 +14,8 @@
                                 class="text-danger">*</span>) symbol represent that the field is required</span>
 
                         @csrf
+                        <input type="hidden" id="team_id" name="id" value="{{ $team->id }}">
+
                         <div class="col-md-6">
                             <label for="name" class="form-label">Name<span class="text-danger">*</span></label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="" />
