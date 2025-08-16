@@ -28,19 +28,19 @@
                 <input type="text" name="phone" class="form-control" required>
             </div>
         </div>
-
         <!-- Country Dropdown -->
         <div class="col-lg-12">
             <div class="form-group">
                 <label class="white d-block mb-2">Country</label>
                 <select name="country" class="nice-select" required>
                     <option value="" disabled selected>Select your country</option>
-                    @foreach ($countries as $countryCode => $countryName)
-                        <option value="{{ $countryCode }}">{{ $countryName }}</option>
+                    @foreach ($countries as $countryCode => $data)
+                        <option value="{{ $countryCode }}">{{ $data['name'] }} ({{ $data['phone_code'] }})</option>
                     @endforeach
                 </select>
             </div>
         </div>
+
 
         <!-- Toggle Date Option -->
         <div class="col-lg-12">
