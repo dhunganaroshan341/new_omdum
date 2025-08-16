@@ -13,10 +13,10 @@
                           <p class="mb-2">
                               {!! $homeAboutContent->content ??
                                   'Top Tour Operators and Travel Agency. We offering in total 793 tours and
-                                                                                                                                                      holidays throughout the world. Combined we have received 1532 customer reviews and an
-                                                                                                                                                      average rating of 5 out of 5 stars. <br>Travel has helped us to understand the meaning
-                                                                                                                                                      of life and it has helped us become better people. Each time we travel, we see the world
-                                                                                                                                                      with new eyes' !!}
+                                                                                                                                                                                                                  holidays throughout the world. Combined we have received 1532 customer reviews and an
+                                                                                                                                                                                                                  average rating of 5 out of 5 stars. <br>Travel has helped us to understand the meaning
+                                                                                                                                                                                                                  of life and it has helped us become better people. Each time we travel, we see the world
+                                                                                                                                                                                                                  with new eyes' !!}
                           </p>
                           <div class="about-featured mb-0">
                               <ul>
@@ -33,8 +33,8 @@
                   <div class="col-lg-6">
                       <div class="about-image-main">
                           <div class="row">
-                              <div class="col-md-6 mt-4">
-                                  <img src="{{ $homeAboutContent->image1 ?? asset('template/yatri_world/main-file/images/everest-vertical.png') }}"
+                              <div class="col-md-6 ">
+                                  <img src="{{ $homeAboutContent->image1 ?? asset('template/yatri_world/main-file/images/tibet.png') }}"
                                       alt="">
                               </div>
                               <div class="col-md-6">
