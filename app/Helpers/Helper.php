@@ -19,13 +19,15 @@ function getNavbarCountries() {
     // Desired order of country slugs
     $order = ['nepal', 'tibet', 'india', 'bhutan'];
 
-    // Fetch countries with packages already loaded
-    $rawCountries = OurCountry::with(['packages'])->get();
+    // Fetch countries with only active packages
+    $rawCountries = OurCountry::with(['packages' => function ($query) {
+        $query->where('status', 'Active');
+    }])->get();
 
-    // Group packages by 'type' (enum column) inside each country
+    // Group packages by 'type' inside each country
     $countries = $rawCountries->map(function ($country) {
         $grouped = $country->packages
-            ->groupBy(fn($package) => $package->package_type ?? 'Tour'); // 'trekking', 'tour', 'other'
+            ->groupBy(fn($package) => $package->package_type ?? 'Tour');
 
         $country->setAttribute('groupedPackages', $grouped);
 
@@ -35,7 +37,7 @@ function getNavbarCountries() {
     // Sort countries based on the given order
     $countries = $countries->sortBy(function ($country) use ($order) {
         return array_search($country->slug, $order);
-    })->values(); // reindex
+    })->values();
 
     return $countries;
 }
