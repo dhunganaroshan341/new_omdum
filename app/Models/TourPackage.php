@@ -28,7 +28,7 @@ class TourPackage extends BaseModel
         'pickup',
         'price',
         'price_includes',
-        'price_excludes ',
+        'price_excludes',
         'slug',
         'short_description',
         'package_type',
