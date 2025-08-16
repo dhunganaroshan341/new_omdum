@@ -66,9 +66,9 @@
                             <p>
                                 {!! $package->long_description ??
                                     'The 12-Day Mundum Trek offers a unique journey through the pristine mountains of eastern
-                                                                                                                                    Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
-                                                                                                                                    Explore remote villages, sacred religious sites, and experience authentic local traditions
-                                                                                                                                    while trekking through unspoiled terrain.' !!}
+                                                                                                                                                                    Nepal, immersing you in the rich Kirati Rai culture and breathtaking natural landscapes.
+                                                                                                                                                                    Explore remote villages, sacred religious sites, and experience authentic local traditions
+                                                                                                                                                                    while trekking through unspoiled terrain.' !!}
                             </p>
 
                         </div>
@@ -113,10 +113,10 @@
                                 <p>
                                     {!! $package->what_to_expect ??
                                         ' Experience peaceful trekking routes that wind through pristine forests, traditional
-                                                                                                                                                    Kirati Rai villages, and stunning ridge walks with Himalayan panoramas. Encounter warm
-                                                                                                                                                    hospitality, unique cultural festivals, and authentic local cuisine. Expect moderate
-                                                                                                                                                    hiking days with plenty of opportunities for photography, wildlife spotting, and star gazing under clear
-                                                                                                                                                    mountain skies.' !!}
+                                                                                                                                                                                        Kirati Rai villages, and stunning ridge walks with Himalayan panoramas. Encounter warm
+                                                                                                                                                                                        hospitality, unique cultural festivals, and authentic local cuisine. Expect moderate
+                                                                                                                                                                                        hiking days with plenty of opportunities for photography, wildlife spotting, and star gazing under clear
+                                                                                                                                                                                        mountain skies.' !!}
                                 </p>
                             </div>
 
@@ -147,29 +147,31 @@
                                 <div class="desc-box border rounded p-3 bg-light">
                                     <h4 class="mb-3 text-success"><i class="fa fa-check-circle me-1"></i> Price Includes
                                     </h4>
-                                    <ul class="mb-0 ps-3">
-                                        @php
-                                            $includes = $package->priceIncludes->where('is_included', true) ?? null;
-                                            $includesHtml = $package->price_includes ?? null; // fallback HTML column
-                                        @endphp
 
-                                        @if ($includes && $includes->count() > 0)
+                                    @php
+                                        $includes = $package->priceIncludes->where('is_included', true) ?? null;
+                                        $includesHtml = $package->price_includes ?? null; // fallback HTML column
+                                    @endphp
+
+                                    @if ($includes && $includes->count() > 0)
+                                        <ul class="mb-0 ps-3">
                                             @foreach ($includes as $include)
-                                                <li class="mb-1"><i class="fa fa-check pink me-2"></i>
-                                                    {{ $include->title }}</li>
+                                                <li class="mb-1"><i
+                                                        class="fa fa-check pink me-2"></i>{{ $include->title }}</li>
                                             @endforeach
-                                        @elseif ($includesHtml)
-                                            {!! $includesHtml !!}
-                                        @else
-                                            {{-- Static fallback --}}
+                                        </ul>
+                                    @elseif ($includesHtml)
+                                        {!! preg_replace('/<li>/', '<li><i class="fa fa-check pink me-2"></i> ', $includesHtml) !!}
+                                    @else
+                                        <ul class="mb-0 ps-3">
                                             <li><i class="fa fa-check pink me-2"></i> All ground transports in private
                                                 vehicle including airport transfers</li>
                                             <li><i class="fa fa-check pink me-2"></i> Four nights accommodation with
                                                 breakfast at a 3-star category hotel in Kathmandu</li>
                                             <li><i class="fa fa-check pink me-2"></i> Kathmandu city tours including all
                                                 entry fees, tour guide and private vehicle</li>
-                                        @endif
-                                    </ul>
+                                        </ul>
+                                    @endif
                                 </div>
                             </div>
 
@@ -177,32 +179,35 @@
                             <div class="col-md-12">
                                 <div class="desc-box border rounded p-3 bg-white">
                                     <h4 class="mb-3 text-danger"><i class="fa fa-times-circle me-1"></i> Price Excludes</h4>
-                                    <ul class="mb-0 ps-3">
-                                        @php
-                                            $excludes = $package->priceIncludes->where('is_included', false) ?? null;
-                                            $excludesHtml = $package->price_excludes ?? null; // fallback HTML column
-                                        @endphp
 
-                                        @if ($excludes && $excludes->count() > 0)
+                                    @php
+                                        $excludes = $package->priceIncludes->where('is_included', false) ?? null;
+                                        $excludesHtml = $package->price_excludes ?? null; // fallback HTML column
+                                    @endphp
+
+                                    @if ($excludes && $excludes->count() > 0)
+                                        <ul class="mb-0 ps-3">
                                             @foreach ($excludes as $exclude)
-                                                <li class="mb-1"><i class="fa fa-close pink me-2"></i>
-                                                    {{ $exclude->title }}</li>
+                                                <li class="mb-1"><i
+                                                        class="fa fa-close pink me-2"></i>{{ $exclude->title }}</li>
                                             @endforeach
-                                        @elseif ($excludesHtml)
-                                            {!! $excludesHtml !!}
-                                        @else
-                                            {{-- Static fallback --}}
+                                        </ul>
+                                    @elseif ($excludesHtml)
+                                        {!! preg_replace('/<li>/', '<li><i class="fa fa-close pink me-2"></i> ', $excludesHtml) !!}
+                                    @else
+                                        <ul class="mb-0 ps-3">
                                             <li><i class="fa fa-close pink me-2"></i> Meals not specified in the itinerary
                                             </li>
                                             <li><i class="fa fa-close pink me-2"></i> Travel insurance</li>
                                             <li><i class="fa fa-close pink me-2"></i> International airfare</li>
                                             <li><i class="fa fa-close pink me-2"></i> Nepal visa on arrival (USD 40 for 30
                                                 days, USD 100 for 90 days – 2 passport photos required)</li>
-                                        @endif
-                                    </ul>
+                                        </ul>
+                                    @endif
                                 </div>
                             </div>
                         </div>
+
 
 
                     </div>
