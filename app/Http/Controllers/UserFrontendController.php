@@ -136,7 +136,7 @@ $video = BannerSliderVideo::latest()->first();
                        $maintitle = 'Blogs & News';
         $page = 'blogs';
 
-    return view('frontend.blog', compact('main-title','page','posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
+    return view('frontend.blog', compact('maintitle','page','posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
 }
 
 
