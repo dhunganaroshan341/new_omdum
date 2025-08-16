@@ -123,6 +123,22 @@ $isActive = collect($country->groupedPackages)
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.submenu.dropdown').forEach(function(item) {
+                item.addEventListener('mouseenter', function() {
+                    const dropdown = this.querySelector('.dropdown-menu');
+                    if (dropdown) {
+                        dropdown.classList.remove('dropdown-menu-end');
+
+                        const rect = dropdown.getBoundingClientRect();
+                        if (rect.right > window.innerWidth) {
+                            dropdown.classList.add('dropdown-menu-end');
+                        }
+                    }
+                });
+            });
+        });
     </script>
 @endpush
 @push('styles')
