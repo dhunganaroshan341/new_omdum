@@ -106,7 +106,8 @@
         <!-- Submit -->
         <div class="col-lg-12">
             <div class="form-group mb-0">
-                <button type="submit" class="nir-btn w-100">Book Now</button>
+                <button type="submit" id="booking-submit-btn" class="nir-btn w-100">Book Now</button>
+
             </div>
         </div>
 
@@ -119,6 +120,8 @@
             const customRadio = document.querySelector('input[name="booking_type"][value="custom"]');
             const batchSection = document.getElementById('batch-date-section');
             const customSection = document.getElementById('custom-date-section');
+            const submitBtn = document.getElementById('booking-submit-btn');
+            const form = $('#booking-form');
 
             // Default: custom date selected
             customRadio.checked = true;
@@ -142,9 +145,17 @@
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('customDateInput').value = today;
 
-            // Ajax submission
-            $('#booking-form').on('submit', function(e) {
+            // Prevent multiple submissions
+            let isSubmitting = false;
+
+            form.on('submit', function(e) {
                 e.preventDefault();
+                if (isSubmitting) return; // block double-submit
+                isSubmitting = true;
+
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Processing...";
+
                 let formData = $(this).serialize();
                 let actionUrl = $(this).attr('action');
 
@@ -160,8 +171,12 @@
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK'
                         }).then(() => {
-                            $('#booking-form')[0].reset();
+                            form[0].reset();
                             $('.nice-select').val('').trigger('change');
+                            // reset button state
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = "Book Now";
+                            isSubmitting = false;
                         });
                     },
                     error: function(xhr) {
@@ -174,6 +189,11 @@
                             text: firstError,
                             confirmButtonColor: '#d33',
                             confirmButtonText: 'OK'
+                        }).then(() => {
+                            // reset button state
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = "Book Now";
+                            isSubmitting = false;
                         });
                     }
                 });
