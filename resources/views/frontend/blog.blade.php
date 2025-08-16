@@ -107,7 +107,9 @@
                                 <ul class="sidebar-category">
                                     @foreach ($categories as $category)
                                         <li><a href="{{ route('blog.category', ['title' => $category->title]) }}">{{ $category->title }}
-                                                ({{ $category->post_count }})
+                                                @if ($category->post_count > 0)
+                                                    ({{ $category->post_count }})
+                                                @endif
                                             </a>
                                         </li>
                                     @endforeach
