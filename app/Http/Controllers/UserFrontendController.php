@@ -125,9 +125,11 @@ $video = BannerSliderVideo::latest()->first();
     $categories = Category::withCount('posts')->get();
 
     $recentPosts = Post::with('categories')
-                    ->latest()
-                    ->take(3)
-                    ->get();
+    ->where('status', 'Active')
+    ->latest()
+    ->take(3)
+    ->get();
+
 
     $popularPosts = Post::with('categories')
                     ->orderBy('views', 'desc')
@@ -163,10 +165,12 @@ public function blogsByCategory($title)
     $categories = Category::withCount('posts')->get();
 
     // Recent posts - latest 3 posts
-    $recentPosts = Post::with('categories')
-                       ->latest()
-                       ->take(3)
-                       ->get();
+$recentPosts = Post::with('categories')
+    ->where('status', 'Active')
+    ->latest()
+    ->take(3)
+    ->get();
+
 
     // Popular posts - top 3 by views
     $popularPosts = Post::with('categories')
