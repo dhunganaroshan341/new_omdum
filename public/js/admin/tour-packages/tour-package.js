@@ -55,6 +55,8 @@ function populateTourPackageForm(tour_package) {
     $("textarea[name='long_description']").summernote('code', tour_package.long_description ?? '');
     $("textarea[name='what_to_expect']").summernote('code', tour_package.what_to_expect ?? '');
     $("textarea[name='itinerary']").summernote('code', tour_package.itinerary ?? '');
+    $("textarea[name='price_includes']").summernote('code', tour_package.price_includes ?? '');
+    $("textarea[name='price_excludes']").summernote('code', tour_package.price_excludes ?? '');
 
     // Update button logic
     $(".submitBtn").hide();

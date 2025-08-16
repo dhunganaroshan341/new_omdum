@@ -214,6 +214,17 @@
                             <textarea class="form-control summernote" id="long_description" name="long_description" rows="5"
                                 style="min-height: 250px;"></textarea>
                         </div>
+                        <div class="col-12">
+                            <label for="price_includes" class="form-label">Package Includes</label>
+                            <textarea class="form-control summernote" id="price_includes" name="price_includes" rows="5"
+                                style="min-height: 250px;"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label for="price_excludes" class="form-label">Package Excludes</label>
+                            <textarea class="form-control summernote" id="price_excludes" name="price_excludes" rows="5"
+                                style="min-height: 250px;"></textarea>
+                        </div>
+
 
                     </div>
                 </div>
