@@ -5,6 +5,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
 
 class BaseModel extends Model
 {
@@ -52,5 +53,42 @@ class BaseModel extends Model
         $model = strtolower(class_basename($this));
         $date = now()->format('Y/m');
         return "{$model}s/{$date}";
+    }
+
+
+
+
+    // Child model must set this, otherwise slug won't be generated
+    protected static $slugSource = null;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            if (static::$slugSource && empty($model->slug) && !empty($model->{static::$slugSource})) {
+                $model->slug = static::generateUniqueSlug($model->{static::$slugSource}, $model);
+            }
+        });
+
+        static::updating(function ($model) {
+            if (static::$slugSource && $model->isDirty(static::$slugSource)) {
+                $model->slug = static::generateUniqueSlug($model->{static::$slugSource}, $model);
+            }
+        });
+    }
+
+    protected static function generateUniqueSlug($source, $model)
+    {
+        $slug = Str::slug($source);
+        $originalSlug = $slug;
+        $i = 1;
+
+        while ($model->where('slug', $slug)->exists()) {
+            $slug = "{$originalSlug}-{$i}";
+            $i++;
+        }
+
+        return $slug;
     }
 }
