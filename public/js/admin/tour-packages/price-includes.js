@@ -90,55 +90,65 @@ $(document).ready(function () {
     // ========================
     // Handle Create/Update Submission
     // ========================
-    $('#priceIncludeForm').on('submit', function (e) {
-        e.preventDefault();
+  $('#priceIncludeForm').on('submit', function (e) {
+    e.preventDefault();
 
-        const form = $(this);
-        const formData = new FormData(this);
-        const mode = form.attr('data-mode');
-        const id = $('#price_include_id').val();
+    const form = $(this);
+    const formData = new FormData(this);
+    const mode = form.attr('data-mode');
+    const id = $('#price_include_id').val();
 
-        let url = '/admin/price-includes';
-        let method = 'POST';
+    // capture last chosen state before reset
+    const lastIncluded = $('input[name="is_included"]:checked').val();
 
-        if (mode === 'update' && id) {
-            url = `/admin/price-includes/${id}`;
-            formData.append('_method', 'PUT'); // Laravel method spoofing
-        }
+    let url = '/admin/price-includes';
+    let method = 'POST';
 
-        $(".btn").prop("disabled", true);
+    if (mode === 'update' && id) {
+        url = `/admin/price-includes/${id}`;
+        formData.append('_method', 'PUT'); // Laravel method spoofing
+    }
 
-        $.ajax({
-            url,
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                $(".btn").prop("disabled", false);
+    $(".btn").prop("disabled", true);
 
-                if (response.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success',
-                        text: response.message,
-                        timer: 1000,
-                        showConfirmButton: false
-                    });
-                  form[0].reset(); // Always reset the form
+    $.ajax({
+        url,
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            $(".btn").prop("disabled", false);
 
-                    // $('#priceIncludeModal').modal('hide');
-                    // $('#price-include-data-show').DataTable().ajax.reload();
-                } else {
-                    Swal.fire("Error", response.message || "Something went wrong", "error");
+            if (response.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: response.message,
+                    timer: 1000,
+                    showConfirmButton: false
+                });
+
+                form[0].reset();
+
+                // restore last chosen state
+                if (lastIncluded !== undefined) {
+                    $(`input[name="is_included"][value="${lastIncluded}"]`).prop('checked', true);
                 }
-            },
-            error: function () {
-                $(".btn").prop("disabled", false);
-                Swal.fire("Error", "Something went wrong!", "error");
+
+                // If you want to reload the table after creation
+                // $('#price-include-data-show').DataTable().ajax.reload();
+            } else {
+                Swal.fire("Error", response.message || "Something went wrong", "error");
             }
-        });
+        },
+        error: function () {
+            $(".btn").prop("disabled", false);
+            Swal.fire("Error", "Something went wrong!", "error");
+        }
     });
+});
+
 
     // ========================
     // Delete Price Include
