@@ -447,6 +447,23 @@
     <script src="{{ asset('template/yatri_world/main-file/js/custom-swiper2.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-nav.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-date.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.submenu.dropdown').forEach(function(item) {
+                item.addEventListener('mouseenter', function() {
+                    const dropdown = this.querySelector('.dropdown-menu');
+                    if (dropdown) {
+                        dropdown.classList.remove('dropdown-menu-end');
+
+                        const rect = dropdown.getBoundingClientRect();
+                        if (rect.right > window.innerWidth) {
+                            dropdown.classList.add('dropdown-menu-end');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
     @stack('scripts')
 
 </body>
