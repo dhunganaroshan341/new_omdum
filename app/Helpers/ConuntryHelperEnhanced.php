@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class CountryHelperEnhanced
+class ConuntryHelperEnhanced
 {
     public static function getCountries(): array
     {
