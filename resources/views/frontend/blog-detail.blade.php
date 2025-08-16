@@ -52,10 +52,17 @@
                                     <h3 class="blog-title"><a class="yellow" href="#">{{ $post->title }}</a></h3>
                                     <div class="para-content mb-2">
                                         <span class="me-2">
-                                            <a class="tag pink" href="#">
-                                                <i class="fa fa-tag me-1"></i>
-                                                {{ $post->category->name ?? 'Uncategorized' }}
-                                            </a>
+                                            @forelse ($post->categories as $category)
+                                                <a class="tag pink"
+                                                    href="{{ route('blog.category', ['title' => $category->title]) }}">
+                                                    <i class="fa fa-tag me-1"></i> {{ $category->title }}
+                                                </a>
+                                            @empty
+                                                <a class="tag pink" href="#">
+                                                    <i class="fa fa-tag me-1"></i> Uncategorized
+                                                </a>
+                                            @endforelse
+
                                         </span>
                                         <span class="me-2">
                                             <a class="pink" href="#"><i class="fa fa-user me-1"></i>
