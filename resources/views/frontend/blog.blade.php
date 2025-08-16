@@ -106,7 +106,9 @@
                                 <h4>All Categories</h4>
                                 <ul class="sidebar-category">
                                     @foreach ($categories as $category)
-                                        <li><a href="#">{{ $category->title }} ({{ $category->post_count }})</a>
+                                        <li><a href="{{ route('blog.category', ['title' => $category->title]) }}">{{ $category->title }}
+                                                ({{ $category->post_count }})
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>
