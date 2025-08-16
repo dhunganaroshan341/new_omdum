@@ -133,8 +133,10 @@ $video = BannerSliderVideo::latest()->first();
                     ->orderBy('views', 'desc')
                     ->take(3)
                     ->get();
+                       $maintitle = 'Blogs & News';
+        $page = 'blogs';
 
-    return view('frontend.blog', compact('posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
+    return view('frontend.blog', compact('main-title','page','posts', 'content_title', 'pageBanner', 'categories', 'popularPosts', 'recentPosts'));
 }
 
 
@@ -171,6 +173,8 @@ public function blogsByCategory($title)
                         ->orderBy('views', 'desc')
                         ->take(3)
                         ->get();
+                           $maintitle = 'Blogs & News';
+        $page = 'blogs';
 
     return view('frontend.blog', compact(
         'posts',
@@ -179,7 +183,8 @@ public function blogsByCategory($title)
         'pageBanner',
         'categories',
         'recentPosts',
-        'popularPosts'
+        'popularPosts',
+        'maintitle','page'
     ));
 }
 

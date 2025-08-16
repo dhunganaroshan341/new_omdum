@@ -21,10 +21,7 @@
         </div>
         <div class="dot-overlay"></div>
     </section> --}}
-    @php
-        $maintitle = 'Blogs & News';
-        $page = 'blogs';
-    @endphp
+
     <x-bread-crumb :main-title="$maintitle" :pageName="$page" />
     {{-- @dd($posts) --}}
     <!-- BreadCrumb Ends -->
@@ -46,55 +43,61 @@
                             </div>
                         </div>
 
-                        @foreach ($posts as $post)
-                            @if (!empty($post->title))
-                                <div class="col-md-6 mb-4">
-                                    <div class="blog-full text-center p-3">
-                                        <a href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
-                                            <img alt="{{ $post->title }}"
-                                                src="{{ $post->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}" />
-                                        </a>
-
-                                        <div class="blog-content pb-0">
-                                            <span class="h-date pink mb-1 font-weight-light d-block">
-                                                {{ $post->created_at->format('M d, Y') }}
-                                            </span>
-                                            <h3 class="mb-2">
-                                                <a href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
-                                                    {{ Str::limit($post->title, 70) }}
-                                                </a>
-                                            </h3>
-                                            <p class="date-cats mb-0 border-t pt-2 pb-2">
-                                                @if ($post->category)
-                                                    <a class="me-2" href="#"><i class="fa fa-file"></i>
-                                                        {{ $post->category->title }}</a>
-                                                @endif
-                                                {{-- @if ($post->createdBy)
-                                                    <a href="#"><i class="fa fa-user"></i> By
-                                                        {{ $post->createdBy->name }}</a>
-                                                @endif
-                                            </p> --}}
-                                            <p class="mb-2 border-t pt-2">
-                                                {{ Str::words(strip_tags($post->description), 20, '...') }}
-                                            </p>
-                                            <a class="grey font-weight-light"
-                                                href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
-                                                Read This <i class="fa fa-long-arrow-alt-right"></i>
+                        @if ($posts->count() > 0)
+                            @foreach ($posts as $post)
+                                @if (!empty($post->title))
+                                    <div class="col-md-6 mb-4">
+                                        <div class="blog-full text-center p-3">
+                                            <a href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
+                                                <img alt="{{ $post->title }}"
+                                                    src="{{ $post->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}" />
                                             </a>
+
+                                            <div class="blog-content pb-0">
+                                                <span class="h-date pink mb-1 font-weight-light d-block">
+                                                    {{ $post->created_at->format('M d, Y') }}
+                                                </span>
+                                                <h3 class="mb-2">
+                                                    <a href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
+                                                        {{ Str::limit($post->title, 70) }}
+                                                    </a>
+                                                </h3>
+                                                <p class="date-cats mb-0 border-t pt-2 pb-2">
+                                                    @if ($post->category)
+                                                        <a class="me-2" href="#"><i class="fa fa-file"></i>
+                                                            {{ $post->category->title }}</a>
+                                                    @endif
+                                                </p>
+                                                <p class="mb-2 border-t pt-2">
+                                                    {{ Str::words(strip_tags($post->description), 20, '...') }}
+                                                </p>
+                                                <a class="grey font-weight-light"
+                                                    href="{{ route('blog.detail', ['slug' => $post->slug ?? 'slug']) }}">
+                                                    Read This <i class="fa fa-long-arrow-alt-right"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endif
-                        @endforeach
+                                @endif
+                            @endforeach
 
-                        <!-- Pagination -->
-                        <div class="col-lg-12">
-                            <div class="pagination-main text-center">
-                                {{ $posts->links('pagination::bootstrap-4') }}
+                            <!-- Pagination -->
+                            <div class="col-lg-12">
+                                <div class="pagination-main text-center">
+                                    {{ $posts->links('pagination::bootstrap-4') }}
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="col-lg-12 text-center p-5">
+                                <h4 class="mb-3"> Sorry, no posts available in this category.</h4>
+                                <a href="{{ url('/blog') }}" class="btn btn-primary">
+                                    Back to Blogs
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
+
 
                 <!-- Sidebar -->
                 <div class="col-lg-4">
