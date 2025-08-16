@@ -90,7 +90,7 @@
             <div class="form-group">
                 <label class="white d-block mb-2">No. Of People</label>
                 <div class="d-flex gap-2">
-                    <input type="number" name="total_people" class="form-control" placeholder="" min="0">
+                    <input type="number" name="total_people" class="form-control" placeholder="" min="1">
                 </div>
             </div>
         </div>
