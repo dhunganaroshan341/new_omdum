@@ -80,7 +80,8 @@
                                             <option value="" disabled selected>-- Select a Package --</option>
                                             @foreach ($packages as $package)
                                                 <option value="{{ $package->id }}">
-                                                    {{ implode(' ', array_slice(explode(' ', $package->title), 0, 4)) }}
+                                                    {{ implode(' ', array_slice(explode(' ', $package->title), 0, 4)) }} -
+                                                    {{ $package->price ? '$' . $package->price : '' }}
                                                 </option>
                                             @endforeach
                                         </select>
