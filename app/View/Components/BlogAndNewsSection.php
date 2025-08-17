@@ -15,11 +15,13 @@ class BlogAndNewsSection extends Component
    public function __construct()
 {
    $this->posts = Post::with(['postImages', 'categories'])
-    ->whereNotNull('slug')       // slug is NOT null
-    ->where('slug', '!=', '')    // slug is NOT empty string
+    ->where('status', 'Active')
+    ->whereNotNull('slug')
+    ->where('slug', '!=', '')
     ->latest()
-    ->take(5)
+    ->limit(5)
     ->get();
+
 
 }
 
