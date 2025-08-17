@@ -58,8 +58,7 @@
                             </ul>
                         </div>
                         <div
-                            class="footer-listing-main d-lg-flex align-items-start justify-content-start mt-4 text-center text-lg-start flex-wrap gap-4">
-
+                            class="footer-listing-main d-lg-flex align-items-start justify-content-center mt-4 text-center text-lg-start flex-wrap gap-4">
                             <!-- PRIMARY OFFICE -->
                             <div class="footer-listing white">
                                 <h6 class="text-white mb-3">
