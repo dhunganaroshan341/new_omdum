@@ -1,5 +1,4 @@
 @extends('frontend.layout.main')
-
 @section('content')
     <x-bread-crumb main-title="Book Now" page-name="Booking" />
 
@@ -47,11 +46,8 @@
                                         <label class="white d-block mb-2">No. Of People</label>
                                         <div class="input-box">
                                             <i class="flaticon-add-user"></i>
-                                            <select class="niceSelect" name="total_people">
-                                                @for ($i = 1; $i <= 5; $i++)
-                                                    <option value="{{ $i }}">{{ $i }}</option>
-                                                @endfor
-                                            </select>
+                                            <input type="number" name="total_people" class="form-control" min="1"
+                                                value="1" required>
                                         </div>
                                     </div>
 
@@ -96,8 +92,7 @@
 
                                     <div class="col-12 col-md-3" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
-                                        <input type="date" name="custom_date" id = "customDateInput"
-                                            class="form-control">
+                                        <input type="date" name="custom_date" id="customDateInput" class="form-control">
                                     </div>
 
                                     {{-- Batch messages full width --}}
@@ -118,7 +113,7 @@
 
                                     {{-- Submit button centered --}}
                                     <div class="col-12 col-md-6 mx-auto">
-                                        <button type="submit" class="nir-btn w-100">Book Now</button>
+                                        <button type="submit" id="submitBtn" class="nir-btn w-100">Book Now</button>
                                     </div>
                                 </div>
                             </form>
@@ -130,13 +125,11 @@
     </div>
 @endsection
 
-
-
-
 @push('scripts')
     <script>
         $(document).ready(function() {
             let batches = [];
+            let isSubmitting = false; // Prevent multiple submits
 
             function resetBatchSelect(message = '-- Select a Batch --') {
                 $('#batch-select').html(`<option disabled selected>${message}</option>`);
@@ -147,7 +140,6 @@
 
             $('#package-select').on('change', function() {
                 const packageId = $(this).val();
-
                 resetBatchSelect('Loading batches...');
 
                 $.get(`/packages/get-batches/${packageId}`, function(response) {
@@ -156,9 +148,8 @@
                     if (batches.length > 0) {
                         let options = '<option disabled selected>-- Select a Batch --</option>';
                         batches.forEach(batch => {
-                            options += `<option value="${batch.id}">
-                            ${batch.start_date} to ${batch.end_date ?? 'N/A'}
-                        </option>`;
+                            options +=
+                                `<option value="${batch.id}">${batch.start_date} to ${batch.end_date ?? 'N/A'}</option>`;
                         });
                         $('#batch-select').html(options).prop('disabled', false);
                         $('#no-batch-message').hide();
@@ -175,10 +166,10 @@
 
                 if (batch) {
                     $('#batch-info').html(`
-                    <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
-                    <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
-                    <strong>Price:</strong> $${batch.price}
-                `).show();
+                <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
+                <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
+                <strong>Price:</strong> $${batch.price}
+            `).show();
                 } else {
                     $('#batch-info').hide();
                 }
@@ -190,7 +181,6 @@
                     $('#batch-section').show();
                     $('#batch-select').prop('disabled', false).show();
                     $('#custom-date-section').hide();
-                    // Clear custom date value
                     $('input[name="custom_date"]').val('');
                 } else {
                     $('#batch-section').hide();
@@ -201,7 +191,6 @@
                 }
             });
 
-            // Initialize visibility based on default checked booking_type
             if ($('input[name="booking_type"]:checked').val() === 'batch') {
                 $('#batch-section').show();
                 $('#batch-select').prop('disabled', false).show();
@@ -212,21 +201,20 @@
                 $('#custom-date-section').show();
             }
 
-            // AJAX Submit
+            // Prevent multiple submissions
             $('#booking-form').on('submit', function(e) {
                 e.preventDefault();
+                if (isSubmitting) return; // Stop duplicate requests
+                isSubmitting = true;
+
                 const form = $(this);
-
-                // Disable the submit button immediately to prevent multiple clicks
-                const submitBtn = form.find('button[type="submit"]');
-                submitBtn.prop('disabled', true);
-
-                const formData = form.serialize();
+                const submitBtn = $('#submitBtn');
+                submitBtn.prop('disabled', true).text('Processing...');
 
                 $.ajax({
                     type: 'POST',
                     url: form.attr('action'),
-                    data: formData,
+                    data: form.serialize(),
                     dataType: 'json',
                     success: function(response) {
                         if (response.success) {
@@ -236,7 +224,6 @@
                                 text: response.message,
                                 confirmButtonColor: '#3085d6',
                             });
-
                             form.trigger('reset');
                             resetBatchSelect();
                             $('#custom-date-section').hide();
@@ -264,13 +251,16 @@
                         });
                     },
                     complete: function() {
-                        // Re-enable the submit button after AJAX completes
-                        submitBtn.prop('disabled', false);
+                        setTimeout(() => {
+                            isSubmitting = false;
+                            submitBtn.prop('disabled', false).text('Book Now');
+                        }, 2000); // Prevent spam booking (2s cooldown)
                     }
                 });
             });
 
         });
+
         // Set today's date as default
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('customDateInput').value = today;
