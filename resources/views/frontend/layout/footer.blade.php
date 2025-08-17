@@ -33,6 +33,9 @@
                         <div class="footer-links text-center">
                             <ul class="list">
                                 <li>
+                                    <a href="{{ route('packages.index') }}">Packages</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('frontend.booking-single') }}">Book Now</a>
 
                                 </li>
@@ -49,9 +52,7 @@
                                 <li>
                                     <a href="{{ route('contact') }}">Contact</a>
                                 </li>
-                                <li>
-                                    <a href="{{ route('packages.index') }}">Packages</a>
-                                </li>
+
                                 <li>
                                     <a href="{{ route('services') }}">Services</a>
                                 </li>
