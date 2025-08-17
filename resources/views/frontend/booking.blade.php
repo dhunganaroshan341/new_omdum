@@ -62,12 +62,12 @@
                                             <div class="d-flex gap-2">
                                                 <label class="form-check-label">
                                                     <input type="radio" class="form-check-input me-1" name="booking_type"
-                                                        value="batch" checked>
+                                                        value="batch">
                                                     Batch
                                                 </label>
                                                 <label class="form-check-label">
                                                     <input type="radio" class="form-check-input me-1" name="booking_type"
-                                                        value="custom">
+                                                        value="custom" checked>
                                                     Custom
                                                 </label>
                                             </div>
@@ -95,7 +95,8 @@
 
                                     <div class="col-12 col-md-3" id="custom-date-section" style="display:none;">
                                         <label class="white d-block mb-2">Select Custom Date</label>
-                                        <input type="date" name="custom_date" class="form-control">
+                                        <input type="date" name="custom_date" id = "customDateInput"
+                                            class="form-control">
                                     </div>
 
                                     {{-- Batch messages full width --}}
@@ -270,5 +271,8 @@
             });
 
         });
+        // Set today's date as default
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('customDateInput').value = today;
     </script>
 @endpush
