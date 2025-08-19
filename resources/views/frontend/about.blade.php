@@ -64,8 +64,12 @@
         }
 
         .about-image img {
-            height: 400px;
+            height: 520px;
             object-fit: cover;
+        }
+
+        .about-us1 {
+            padding: 0.1rem !important;
         }
     </style>
 @endpush
