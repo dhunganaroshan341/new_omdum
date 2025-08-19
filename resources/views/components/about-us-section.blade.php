@@ -85,7 +85,6 @@
                     </div>
 
                     <!-- Right Images -->
-                    <!-- Right Images as Swiper -->
                     <div class="col-lg-6">
                         <div class="swiper about-image-main">
                             <div class="swiper-wrapper">
@@ -102,7 +101,6 @@
                             </div>
                         </div>
                     </div>
-
 
                 </div>
             </div>
