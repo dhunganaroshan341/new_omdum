@@ -115,13 +115,15 @@
 </section>
 @push('scripts')
     <script>
-        const swiper = new Swiper('.about-image-main', {
-            loop: true, // infinite loop
-            autoplay: {
-                delay: 2500, // 2.5 seconds per swap
-                disableOnInteraction: false,
-            },
-            effect: 'slide', // simple slide effect
-        });
+        (function() {
+            new Swiper('.about-image-main', {
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                effect: 'slide',
+            });
+        })();
     </script>
 @endpush
