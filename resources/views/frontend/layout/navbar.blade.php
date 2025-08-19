@@ -106,12 +106,16 @@ $isActive = collect($country->groupedPackages)
 @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Check all dropdowns
-            document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
-                dropdown.addEventListener('mouseenter', function() {
+            // Check all dropdowns on hover
+            document.querySelectorAll('.submenu.dropdown').forEach(function(item) {
+                item.addEventListener('mouseenter', function() {
+                    const dropdown = this.querySelector('.dropdown-menu');
+                    if (!dropdown) return;
+
+                    // Get dropdown position
                     const rect = dropdown.getBoundingClientRect();
 
-                    // If dropdown overflows the right side of window, add class to flip left
+                    // If dropdown goes even 1px beyond window width, flip it left
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
                     } else {
