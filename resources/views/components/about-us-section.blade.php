@@ -67,14 +67,14 @@
 
                             <div class="about-featured mb-0">
                                 <ul>
-                                    @if (isset($missionVision->description2) && $missionVision->description2 != null)
+                                    {{-- @if (isset($missionVision->description2) && $missionVision->description2 != null)
                                         {!! $missionVision->description2 !!}
-                                    @else
-                                        <li>Authentic Experiences</li>
-                                        <li>Safety & Excellence</li>
-                                        <li>Sustainable Tourism</li>
-                                        <li>Customer Satisfaction</li>
-                                    @endif
+                                    @else --}}
+                                    <li>Authentic Experiences</li>
+                                    <li>Safety & Excellence</li>
+                                    <li>Sustainable Tourism</li>
+                                    <li>Customer Satisfaction</li>
+                                    {{-- @endif --}}
                                 </ul>
                             </div>
                         </div>
