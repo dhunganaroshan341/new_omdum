@@ -61,20 +61,20 @@
                         <div class="about-content">
                             <h2>{{ $missionVision->title1 ?? 'Our Mission & Vision' }}</h2>
 
-                            <p class="mb-2">
+                            {{-- <p class="mb-2">
                                 {!! $missionVision->content ?? '' !!}
-                            </p>
+                            </p> --}}
 
                             <div class="about-featured mb-0">
                                 <ul>
-                                    {{-- @if (isset($missionVision->description2) && $missionVision->description2 != null)
-                                        {!! $missionVision->description2 !!}
-                                    @else --}}
-                                    <li>Authentic Experiences</li>
-                                    <li>Safety & Excellence</li>
-                                    <li>Sustainable Tourism</li>
-                                    <li>Customer Satisfaction</li>
-                                    {{-- @endif --}}
+                                    @if (isset($missionVision->content) && $missionVision->content != null)
+                                        {!! $missionVision->content !!}
+                                    @else
+                                        <li>Authentic Experiences</li>
+                                        <li>Safety & Excellence</li>
+                                        <li>Sustainable Tourism</li>
+                                        <li>Customer Satisfaction</li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
