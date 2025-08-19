@@ -72,7 +72,8 @@
                                     <div class="mission-vision">
                                         <p>We are committed to providing <strong>authentic experiences</strong> that
                                             reflect the true spirit of Nepal, ensuring the highest standards of
-                                            <strong>safety and excellence</strong> for every traveler.</p>
+                                            <strong>safety and excellence</strong> for every traveler.
+                                        </p>
                                         <p>Our vision is to promote <strong>sustainable tourism</strong> that respects
                                             nature and culture, while continuously striving for <strong>customer
                                                 satisfaction</strong> through meaningful journeys.</p>
@@ -88,7 +89,7 @@
                         <div class="about-image-main">
                             <div class="row">
 
-                                <div class="col-md-6 mt-4 mb-4">
+                                <div class="col-md-6 ">
                                     <img alt="mission vision image 1"
                                         src="{{ asset($missionVision->image1 ?? 'template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}" />
                                 </div>
