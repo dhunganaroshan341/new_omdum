@@ -48,7 +48,6 @@
         </div>
     </div>
 </section>
-
 <!-- about-us1 (Mission & Vision) starts -->
 <section class="about-us1 bg-grey pb-6">
     <div class="container">
@@ -61,22 +60,21 @@
                         <div class="about-content">
                             <h2>{{ $missionVision->title1 ?? 'Our Mission & Vision' }}</h2>
 
-                            {{-- <p class="mb-2">
-                                {!! $missionVision->content ?? '' !!}
-                            </p> --}}
-
                             <div class="about-featured mb-0">
                                 @if (isset($missionVision->content) && $missionVision->content != null)
                                     {!! $missionVision->content !!}
                                 @else
                                     <div class="mission-vision">
-                                        <p>We are committed to providing <strong>authentic experiences</strong> that
+                                        <p>
+                                            We are committed to providing <strong>authentic experiences</strong> that
                                             reflect the true spirit of Nepal, ensuring the highest standards of
                                             <strong>safety and excellence</strong> for every traveler.
                                         </p>
-                                        <p>Our vision is to promote <strong>sustainable tourism</strong> that respects
+                                        <p>
+                                            Our vision is to promote <strong>sustainable tourism</strong> that respects
                                             nature and culture, while continuously striving for <strong>customer
-                                                satisfaction</strong> through meaningful journeys.</p>
+                                                satisfaction</strong> through meaningful journeys.
+                                        </p>
                                     </div>
                                 @endif
                             </div>
@@ -87,18 +85,17 @@
                     <!-- Right Images -->
                     <div class="col-lg-6">
                         <div class="about-image-main">
-                            <div class="row">
-
-                                <div class="col-md-6 ">
+                            <div class="row d-flex align-items-stretch g-2">
+                                <div class="col-md-6">
                                     <img alt="mission vision image 1"
-                                        src="{{ asset($missionVision->image1 ?? 'template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}" />
+                                        src="{{ asset($missionVision->image1 ?? 'template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}"
+                                        class="img-fluid w-100 h-100" style="object-fit: cover;">
                                 </div>
-
                                 <div class="col-md-6">
                                     <img alt="mission vision image 2"
-                                        src="{{ asset($missionVision->image2 ?? 'template/yatri_world/main-file/images/destination/mountain-portrait.jpg') }}" />
+                                        src="{{ asset($missionVision->image2 ?? 'template/yatri_world/main-file/images/destination/mountain-portrait.jpg') }}"
+                                        class="img-fluid w-100 h-100" style="object-fit: cover;">
                                 </div>
-
                             </div>
                         </div>
                     </div>
