@@ -3887,7 +3887,7 @@ span.location-box {
 }
 .top-destination .desti-image img {
 	width: 100%;
-	min-height: 391px;
+	height: 360px;
 	object-fit: cover;
 	/* max-height: 337px; */
 	/* max-width: 340px; */
