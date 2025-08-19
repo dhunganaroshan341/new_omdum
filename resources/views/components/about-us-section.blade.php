@@ -66,17 +66,20 @@
                             </p> --}}
 
                             <div class="about-featured mb-0">
-                                <ul>
-                                    @if (isset($missionVision->content) && $missionVision->content != null)
-                                        {!! $missionVision->content !!}
-                                    @else
-                                        <li>Authentic Experiences</li>
-                                        <li>Safety & Excellence</li>
-                                        <li>Sustainable Tourism</li>
-                                        <li>Customer Satisfaction</li>
-                                    @endif
-                                </ul>
+                                @if (isset($missionVision->content) && $missionVision->content != null)
+                                    {!! $missionVision->content !!}
+                                @else
+                                    <div class="mission-vision">
+                                        <p>We are committed to providing <strong>authentic experiences</strong> that
+                                            reflect the true spirit of Nepal, ensuring the highest standards of
+                                            <strong>safety and excellence</strong> for every traveler.</p>
+                                        <p>Our vision is to promote <strong>sustainable tourism</strong> that respects
+                                            nature and culture, while continuously striving for <strong>customer
+                                                satisfaction</strong> through meaningful journeys.</p>
+                                    </div>
+                                @endif
                             </div>
+
                         </div>
                     </div>
 
