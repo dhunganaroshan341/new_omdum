@@ -44,7 +44,7 @@
                         </p>
                     </div>
                     <div class="col-md-3">
-                        <a class="nir-btn" href="{{ route('packages') }}">Find More Destination</a>
+                        <a class="nir-btn" href="{{ route('packages.index') }}">Find More Destination</a>
                     </div>
                 </div>
             </div>
