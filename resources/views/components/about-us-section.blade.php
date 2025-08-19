@@ -85,23 +85,24 @@
                     </div>
 
                     <!-- Right Images -->
+                    <!-- Right Images as Swiper -->
                     <div class="col-lg-6">
-                        <div class="about-image-main">
-                            <div class="row">
-
-                                <div class="col-md-6 ">
+                        <div class="swiper about-image-main">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
                                     <img alt="mission vision image 1"
-                                        src="{{ asset($missionVision->image1 ?? 'template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}" />
+                                        src="{{ asset($missionVision->image1 ?? 'template/yatri_world/main-file/images/destination/tibet-vertical.jpg') }}"
+                                        class="img-fluid w-100" />
                                 </div>
-
-                                <div class="col-md-6">
+                                <div class="swiper-slide">
                                     <img alt="mission vision image 2"
-                                        src="{{ asset($missionVision->image2 ?? 'template/yatri_world/main-file/images/destination/mountain-portrait.jpg') }}" />
+                                        src="{{ asset($missionVision->image2 ?? 'template/yatri_world/main-file/images/destination/mountain-portrait.jpg') }}"
+                                        class="img-fluid w-100" />
                                 </div>
-
                             </div>
                         </div>
                     </div>
+
 
                 </div>
             </div>
@@ -112,3 +113,15 @@
         </div>
     </div>
 </section>
+@push('scripts')
+    <script>
+        const swiper = new Swiper('.about-image-main', {
+            loop: true, // infinite loop
+            autoplay: {
+                delay: 2500, // 2.5 seconds per swap
+                disableOnInteraction: false,
+            },
+            effect: 'slide', // simple slide effect
+        });
+    </script>
+@endpush
