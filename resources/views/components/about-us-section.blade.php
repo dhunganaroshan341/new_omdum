@@ -62,7 +62,7 @@
                             <h2>{{ $missionVision->title1 ?? 'Our Mission & Vision' }}</h2>
 
                             <p class="mb-2">
-                                {!! $missionVision->description1 ?? '' !!}
+                                {!! $missionVision->content ?? '' !!}
                             </p>
 
                             <div class="about-featured mb-0">
