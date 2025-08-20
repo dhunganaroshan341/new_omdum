@@ -2078,7 +2078,12 @@ header #navbar {
   display: block;
   float: none;
   margin-right: 0px;
-  border-bottom: 1px dashed #f1f1f1;
+   background-color: rgba(255, 255, 255, 0.95); /* base background */
+
+}
+/* Darker shade for every even child */
+.header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu > li.child-dropdown-li:nth-child(even) {
+    background-color: rgba(245, 245, 245, 0.95); /* slightly darker white */
 }
 .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu li a {
   line-height: 2.7;
