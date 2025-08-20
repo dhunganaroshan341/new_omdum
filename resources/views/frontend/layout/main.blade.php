@@ -178,6 +178,24 @@
             top: 0;
             /* keep aligned */
         }
+
+        .child-dropdown>a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        /* When flipped, reverse order */
+        .child-dropdown.flipped>a {
+            flex-direction: row-reverse;
+            /* arrow goes left, text goes right */
+        }
+
+        /* Rotate arrow when flipped */
+        .child-dropdown.flipped>a i {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
@@ -483,25 +501,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Select all dropdown menus, including nested ones
             document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
                 const parentItem = dropdown.parentElement;
 
                 parentItem.addEventListener('mouseenter', function() {
-                    // Reset first
+                    // Reset both dropdown + parent state
                     dropdown.classList.remove('dropdown-menu-left');
+                    parentItem.classList.remove('flipped');
 
-                    // Get dropdown position relative to viewport
+                    // Check position
                     const rect = dropdown.getBoundingClientRect();
 
-                    // If it overflows viewport
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
+                        parentItem.classList.add('flipped'); // 🔥 add this
                     }
                 });
             });
         });
     </script>
+
     @stack('scripts')
 
 </body>
