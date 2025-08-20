@@ -303,7 +303,7 @@ Route::get('/', [UserFrontendController::class, 'home'])->name('home');
 // Static pages
 Route::get('/about', [UserFrontendController::class, 'aboutUs'])->name('about');
 Route::get('/services', [UserFrontendController::class, 'service'])->name('services');
-Route::get('/contact', [UserFrontendController::class, 'contactUs'])->name('contact');
+Route::get('/contact-us', [UserFrontendController::class, 'contactUs'])->name('contact');
 Route::post('/contact', [UserFrontendController::class, 'storeContactUs'])->name('contact.store');
 
 // Blog routes
