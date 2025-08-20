@@ -69,5 +69,9 @@
         .book-now-a:hover {
             color: var(--omundum-green);
         }
+
+        .about-image-main img {
+            height: 400px !important;
+        }
     </style>
 @endpush
