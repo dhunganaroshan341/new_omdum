@@ -122,21 +122,21 @@
         /* Logo Control */
 
         .dropdown-menu.grand-sub-menu-ul {
-            min-width: 250px;
+            min-width: 280px;
         }
 
         .grand-dropdown-li {
-            min-width: 250px !important;
+            min-width: 280px !important;
         }
 
         .grand-dropdown-a {
-            min-width: 250px !important;
+            min-width: 280px !important;
         }
 
         /* nav-bar custom style ends */
 
         .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu li.submenu .dropdown-menu li a {
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .navbar-header {
