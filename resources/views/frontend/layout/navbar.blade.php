@@ -106,16 +106,15 @@ $isActive = collect($country->groupedPackages)
 @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Check all dropdowns on hover
-            document.querySelectorAll('.submenu.dropdown').forEach(function(item) {
-                item.addEventListener('mouseenter', function() {
-                    const dropdown = this.querySelector('.dropdown-menu');
-                    if (!dropdown) return;
+            // Select all dropdown menus, including nested ones
+            document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+                const parentItem = dropdown.parentElement;
 
-                    // Get dropdown position
+                parentItem.addEventListener('mouseenter', function() {
+                    // Get dropdown position relative to viewport
                     const rect = dropdown.getBoundingClientRect();
 
-                    // If dropdown goes even 1px beyond window width, flip it left
+                    // Check if dropdown goes beyond window width
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
                     } else {
@@ -130,10 +129,10 @@ $isActive = collect($country->groupedPackages)
 @push('styles')
     <style>
         /* Flip dropdown to left */
+        /* Flip dropdown to the left of its parent */
         .dropdown-menu-left {
             left: auto !important;
             right: 100% !important;
-            /* move the menu to the left of parent */
         }
     </style>
 @endpush
