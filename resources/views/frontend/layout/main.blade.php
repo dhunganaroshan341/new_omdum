@@ -125,6 +125,10 @@
             min-width: 280px;
         }
 
+        .child-dropdown {
+            width: 100px;
+        }
+
         .grand-dropdown-li {
             min-width: 280px !important;
         }
