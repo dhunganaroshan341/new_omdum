@@ -164,6 +164,14 @@
             bottom: 15px;
         }
     </style>
+    <style>
+        /* Flip dropdown to left */
+        /* Flip dropdown to the left of its parent */
+        .dropdown-menu-left {
+            left: auto !important;
+            right: 100% !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -459,6 +467,28 @@
                         if (rect.right > window.innerWidth) {
                             dropdown.classList.add('dropdown-menu-end');
                         }
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all dropdown menus, including nested ones
+            document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+                const parentItem = dropdown.parentElement;
+
+                parentItem.addEventListener('mouseenter', function() {
+                    // Get dropdown position relative to viewport
+                    const rect = dropdown.getBoundingClientRect();
+
+                    // Check if dropdown goes beyond window width
+                    if (rect.right > window.innerWidth) {
+                        dropdown.classList.add('dropdown-menu-left');
+                    } else {
+                        dropdown.classList.remove('dropdown-menu-left');
                     }
                 });
             });
