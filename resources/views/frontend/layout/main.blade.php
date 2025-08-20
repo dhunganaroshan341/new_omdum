@@ -171,9 +171,12 @@
     <style>
         /* Flip dropdown to left */
         /* Flip dropdown to the left of its parent */
+        /* Flip nested dropdown to the left of its parent */
         .dropdown-menu-left {
             left: auto !important;
             right: 100% !important;
+            top: 0;
+            /* keep aligned */
         }
     </style>
 </head>
@@ -485,14 +488,15 @@
                 const parentItem = dropdown.parentElement;
 
                 parentItem.addEventListener('mouseenter', function() {
+                    // Reset first
+                    dropdown.classList.remove('dropdown-menu-left');
+
                     // Get dropdown position relative to viewport
                     const rect = dropdown.getBoundingClientRect();
 
-                    // Check if dropdown goes beyond window width
+                    // If it overflows viewport
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
-                    } else {
-                        dropdown.classList.remove('dropdown-menu-left');
                     }
                 });
             });
