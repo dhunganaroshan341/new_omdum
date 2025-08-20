@@ -179,29 +179,11 @@
             /* keep aligned */
         }
 
-        .child-dropdown {
-            min-width: 150px;
-            /* give room for text + arrow */
-        }
-
-        .child-dropdown>a {
+        .child-a-reversed {
+            /* transform: rotate(180deg); */
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-        }
-
-        /* When flipped, reverse order */
-        .child-dropdown.flipped>a {
             flex-direction: row-reverse;
-            /* arrow left, text right */
-            justify-content: flex-start;
-            /* keep them aligned properly */
-        }
-
-        /* Rotate arrow when flipped */
-        .child-dropdown.flipped>a i {
-            transform: rotate(180deg);
+            justify-content: center;
         }
     </style>
 </head>
@@ -512,16 +494,26 @@
                 const parentItem = dropdown.parentElement;
 
                 parentItem.addEventListener('mouseenter', function() {
-                    // Reset both dropdown + parent state
+                    // Reset previous state
                     dropdown.classList.remove('dropdown-menu-left');
                     parentItem.classList.remove('flipped');
 
+                    // Remove flipped class from child link if previously added
+                    const childLink = parentItem.querySelector('.child-dropdown-a');
+                    if (childLink) {
+                        childLink.classList.remove('child-a-reversed');
+                    }
+
                     // Check position
                     const rect = dropdown.getBoundingClientRect();
-
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
-                        parentItem.classList.add('flipped'); // ✅ now parent <li> also flips
+                        parentItem.classList.add('flipped');
+
+                        // Flip only this child link
+                        if (childLink) {
+                            childLink.classList.add('child-a-reversed');
+                        }
                     }
                 });
             });
