@@ -125,9 +125,7 @@
             min-width: 280px;
         }
 
-        .child-dropdown {
-            width: 100px;
-        }
+
 
         .grand-dropdown-li {
             min-width: 280px !important;
@@ -168,6 +166,8 @@
             bottom: 15px;
         }
     </style>
+
+    {{-- flipping child and grand chiold dropdown styles --}}
     <style>
         /* Flip dropdown to left */
         /* Flip dropdown to the left of its parent */
@@ -177,6 +177,11 @@
             right: 100% !important;
             top: 0;
             /* keep aligned */
+        }
+
+        .child-dropdown {
+            min-width: 150px;
+            /* give room for text + arrow */
         }
 
         .child-dropdown>a {
@@ -189,7 +194,9 @@
         /* When flipped, reverse order */
         .child-dropdown.flipped>a {
             flex-direction: row-reverse;
-            /* arrow goes left, text goes right */
+            /* arrow left, text right */
+            justify-content: flex-start;
+            /* keep them aligned properly */
         }
 
         /* Rotate arrow when flipped */
@@ -498,7 +505,7 @@
         });
     </script>
 
-
+    {{-- flipping child and grand chiold dropdown script --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
@@ -514,12 +521,13 @@
 
                     if (rect.right > window.innerWidth) {
                         dropdown.classList.add('dropdown-menu-left');
-                        parentItem.classList.add('flipped'); // 🔥 add this
+                        parentItem.classList.add('flipped'); // ✅ now parent <li> also flips
                     }
                 });
             });
         });
     </script>
+
 
     @stack('scripts')
 
