@@ -154,6 +154,7 @@ Route::post('/banner/video', [BannerSliderVideoController::class, 'store'])->nam
 
     // Contact
     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-us');
     Route::get('/contact/get-data', [ContactController::class, 'getContact'])->name('contact.get-data');
     Route::get('/contact/detail/{id}', [ContactController::class, 'showDetail'])->name('contact.detail');
     Route::get('/contact/delete/{id}', [ContactController::class, 'destroy'])->name('contact.delete');
