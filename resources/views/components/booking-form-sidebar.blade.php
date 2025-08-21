@@ -104,7 +104,7 @@
                 <textarea name="message" class="form-control" rows="3"></textarea>
             </div>
         </div>
-        <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+        <div class="col-lg-12 g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
 
         <!-- Submit -->
         <div class="col-lg-12">
