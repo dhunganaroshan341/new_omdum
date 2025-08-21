@@ -1,7 +1,7 @@
 <div class="partners mt-2">
     <div class="container">
         <div class="section-header text-center">
-            <h2 class="title" style="padding-bottom:1px">Our Partners</h2>
+            <h2 class="title" style="padding-bottom:1px">Associates</h2>
         </div>
 
         <div class="attract-slider owl-carousel">
