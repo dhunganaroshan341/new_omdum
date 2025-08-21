@@ -17,7 +17,7 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <label class="white d-block mb-2">Email Address</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" required placeholder="example@email.com">
             </div>
         </div>
 
@@ -25,7 +25,7 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <label class="white d-block mb-2">Phone Number</label>
-                <input type="text" name="phone" class="form-control" required>
+                <input type="text" name="phone" class="form-control" required placeholder="Eg:+97798619830">
             </div>
         </div>
         <!-- Country Dropdown -->
