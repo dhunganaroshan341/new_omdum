@@ -11,12 +11,6 @@
                 <div class="client-logo item">
                     <img src="{{ $client->image_url ?? asset('template/yatri_world/main-file/images/clients/logo-01.png') }}"
                         alt="{{ $client->name ?? 'client' }}">
-
-                    @if (isset($client->name))
-                        <div class="client-tooltip">
-                            {{ $client->name }}
-                        </div>
-                    @endif
                 </div>
             @endforeach
         </div>
@@ -38,45 +32,7 @@
             background: white;
             margin: 0 10px 20px;
             position: relative;
-            cursor: pointer;
-        }
-
-        /* Tooltip container (only name) */
-        .client-tooltip {
-            position: absolute;
-            bottom: 140px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            text-align: center;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 100;
-        }
-
-        /* Arrow under tooltip */
-        .client-tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 5px;
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-        }
-
-        /* Show tooltip on hover */
-        .attract-slider .client-logo.item:hover .client-tooltip {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-5px);
+            /* no pointer cursor */
         }
     </style>
 @endpush
