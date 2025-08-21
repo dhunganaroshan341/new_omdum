@@ -218,8 +218,8 @@
         }
 
         .rc-anchor-light {
-            background: #ffffff4d;
-            color: #fff;
+            background: #ffffff4d !important;
+            color: #fff !important;
         }
     </style>
 @endpush
