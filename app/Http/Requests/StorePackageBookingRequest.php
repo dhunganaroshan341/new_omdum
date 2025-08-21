@@ -28,7 +28,8 @@ class StorePackageBookingRequest extends FormRequest
     {
         return [
             'user_id'         => 'nullable|exists:users,id',
-            'email'           => 'nullable|email|dns|max:255', // DNS check
+        'email' => 'required|email|max:255', // remove :dns
+
             'name'            => 'nullable|string|max:255|regex:/^[a-zA-Z\s]+$/',
             'message'         => [
                 'nullable',

@@ -14,7 +14,8 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
-            'email' => 'required|email|dns|max:255', // DNS check for real domains
+            'email' => 'required|email|max:255', // remove :dns
+
             'phone' => [
                 'nullable',
                 'string',
