@@ -52,11 +52,11 @@
 
 
 
-    <x-client-carousel />
     <!-- testomonial start -->
     <x-testimonial-section />
     <!-- testimonial ends -->
 
+    <x-client-carousel />
 
     <!-- News Starts -->
     <x-blog-and-news-section />
