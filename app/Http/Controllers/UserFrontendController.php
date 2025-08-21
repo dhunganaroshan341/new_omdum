@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactAutoReplyMail;
 use App\Mail\ContactFormMail;
 use App\Models\BannerSliderVideo;
 use App\Models\CallToAction;
@@ -345,6 +346,14 @@ public function searchBlogs(Request $request)
 
         // Send to Gmail
          Mail::to('dhunganaroshan341@gmail.com')->send(new ContactFormMail($contact->toArray()));
+        // 2. Send auto-reply to customer
+    // 2. Send auto-reply to customer
+        if (!empty($contact['email'])) {
+            Mail::to($contact['email'])->send(
+                new ContactAutoReplyMail($contact->toArray())
+            );
+        }
+
 
 
         return response()->json(['status' => true, 'message' => 'Message has been submitted & emailed successfully']);
