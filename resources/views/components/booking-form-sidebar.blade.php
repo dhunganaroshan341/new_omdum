@@ -215,6 +215,13 @@
         .sidebar .g-recaptcha {
             transform: scale(0.85);
             transform-origin: top center;
+            background: #ffffff4d !important;
+            color: #fff !important;
+        }
+
+        .g-recaptcha label {
+
+            color: #fff !important;
         }
 
         .rc-anchor-light {
