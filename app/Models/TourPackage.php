@@ -14,6 +14,10 @@ class TourPackage extends BaseModel
 //     'images' => 'array',
 // ];
 
+ protected $casts = [
+        'top_deal' => 'boolean',
+        'favourite_destination' => 'boolean',
+    ];
      protected $fillable = [
         'our_country_id',
         'service_id',
