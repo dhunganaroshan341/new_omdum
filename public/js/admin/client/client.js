@@ -22,10 +22,10 @@ $(document).ready(function () {
                 data: "name",
                 name: "name",
             },
-            // {
-            //     data: "email",
-            //     name: "email",
-            // },
+            {
+                data: "type",
+                name: "type",
+            },
             // {
             //     data: "address",
             //     name: "address",

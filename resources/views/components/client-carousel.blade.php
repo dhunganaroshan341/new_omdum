@@ -22,61 +22,62 @@
         </div>
     </div>
 </div>
-@push('styles')
-    <style>
-        /* Partners Carousel Logos */
-        .attract-slider .client-logo img {
-            display: block;
-            width: 100%;
-            height: 130px;
-            object-fit: contain;
-            position: relative;
-        }
+@style()
 
-        /* Each client logo container */
-        .attract-slider .client-logo.item {
-            background: white;
-            margin: 0 10px 20px;
-            position: relative;
-            cursor: pointer;
-        }
+<style>
+    /* Partners Carousel Logos */
+    .attract-slider .client-logo img {
+        display: block;
+        width: 100%;
+        height: 130px;
+        object-fit: contain;
+        position: relative;
+    }
 
-        /* Tooltip container (only name) */
-        .client-tooltip {
-            position: absolute;
-            bottom: 140px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            text-align: center;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 100;
-        }
+    /* Each client logo container */
+    .attract-slider .client-logo.item {
+        background: white;
+        margin: 0 10px 20px;
+        position: relative;
+        cursor: pointer;
+    }
 
-        /* Arrow under tooltip */
-        .client-tooltip::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 5px;
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-        }
+    /* Tooltip container (only name) */
+    .client-tooltip {
+        position: absolute;
+        bottom: 140px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-align: center;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 100;
+    }
 
-        /* Show tooltip on hover */
-        .attract-slider .client-logo.item:hover .client-tooltip {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-5px);
-        }
-    </style>
+    /* Arrow under tooltip */
+    .client-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    }
+
+    /* Show tooltip on hover */
+    .attract-slider .client-logo.item:hover .client-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(-5px);
+    }
+</style>
 @endpush
