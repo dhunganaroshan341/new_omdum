@@ -16,14 +16,17 @@
 </div>
 @push('styles')
     <style>
-        .slick-slide img {
+        /* Partners Carousel Logos */
+        .attract-slider .client-logo img {
             display: block;
             width: 100%;
             height: 130px;
+            /* fixed height for logos */
             object-fit: contain;
+            /* maintain aspect ratio */
         }
 
-        .client-logo.item.slick-slide {
+        .attract-slider .client-logo.item {
             background: white;
             margin: 0 10px 20px;
         }

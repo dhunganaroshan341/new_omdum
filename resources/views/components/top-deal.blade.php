@@ -45,8 +45,23 @@
 </section>
 @push('styles')
     <style>
-        .slider-image img {
+        /* Top Deals Slider */
+        .team-slider .slider-image img {
+            width: 100%;
             height: 265px;
+            /* your original height */
+            object-fit: cover;
+            /* covers container fully */
+        }
+
+        .team-slider .slider-item {
+            margin: 0 10px;
+            /* optional spacing between slides */
+        }
+
+        /* Optional: content adjustments */
+        .team-slider .slider-content h4 a {
+            text-decoration: none;
         }
     </style>
 @endpush
