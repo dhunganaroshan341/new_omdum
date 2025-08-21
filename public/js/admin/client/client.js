@@ -260,7 +260,7 @@ $(document).ready(function () {
     }).then(result => {
         if (result.isConfirmed) {
             $.ajax({
-                url: "/admin/clients/status/"+id,
+                url: "/admin/client/status/"+id,
                 type: "PUT", // Corrected: type instead of "method" and "put"
                 data: {
                     status: checkbox.prop("checked") ? "active" : "inactive", // pass status value
