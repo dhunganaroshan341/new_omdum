@@ -1,12 +1,9 @@
 <div class="partners mt-2">
     <div class="container">
         <div class="section-header text-center">
-            <div class="section-header text-center">
-                <h2 class="title" style="padding-bottom:1px">
-                    {{ $title ?? 'Our Partners' }}
-                </h2>
-            </div>
-
+            <h2 class="title" style="padding-bottom:1px">
+                {{ $title ?? 'Our Partners' }}
+            </h2>
         </div>
 
         <div class="attract-slider owl-carousel">
@@ -14,10 +11,10 @@
                 <div class="client-logo item">
                     <img src="{{ $client->image_url ?? asset('template/yatri_world/main-file/images/clients/logo-01.png') }}"
                         alt="{{ $client->name ?? 'client' }}">
-                    @if (isset($client->name) || isset($client->description))
+
+                    @if (isset($client->name))
                         <div class="client-tooltip">
-                            <strong>{{ $client->name ?? '' }}</strong><br>
-                            <span>{{ $client->description ?? '' }}</span>
+                            {{ $client->name }}
                         </div>
                     @endif
                 </div>
@@ -25,7 +22,6 @@
         </div>
     </div>
 </div>
-
 @push('styles')
     <style>
         /* Partners Carousel Logos */
@@ -33,9 +29,7 @@
             display: block;
             width: 100%;
             height: 130px;
-            /* fixed height for logos */
             object-fit: contain;
-            /* maintain aspect ratio */
             position: relative;
         }
 
@@ -44,15 +38,13 @@
             background: white;
             margin: 0 10px 20px;
             position: relative;
-            /* for tooltip positioning */
             cursor: pointer;
         }
 
-        /* Tooltip container */
+        /* Tooltip container (only name) */
         .client-tooltip {
             position: absolute;
             bottom: 140px;
-            /* above the logo */
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.8);
