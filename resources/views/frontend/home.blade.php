@@ -56,7 +56,7 @@
     <x-testimonial-section />
     <!-- testimonial ends -->
 
-    <x-affiliated-associated-client-carousel type="affiliated" title="Our Affiliated Partners" />
+    <x-affiliated-associated-client-carousel type="affiliated" title="Our Affiliations" />
 
 
     <!-- News Starts -->
