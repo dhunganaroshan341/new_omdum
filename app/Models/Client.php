@@ -15,7 +15,7 @@ class Client extends BaseModel
     // protected $appends = ['image_url'];
 protected array $imageFields = ['image', 'thumbnail', 'banner'];
 
-    protected $fillable=['name','email','address','contact','image','description'];
+    protected $fillable=['name','email','address','contact','image','description','type'];
     public function albums()
     {
         return $this->hasMany(GalleryAlbum::class);

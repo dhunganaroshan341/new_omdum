@@ -20,25 +20,30 @@ class ClientRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
-    {
-        return [
-            'name'=>'required|min:3',
-            'email'=>['required','email',$this->route('id') ?  Rule::unique('clients')->ignore($this->route('id')) : 'unique:clients,email'],
-            'address'=>'required',
-            'contact'=>'required|min:7',
-            'image'=>'image|mimes:png,jpg,jpeg,webp',
-        ];
-    }
+   public function rules(): array
+{
+    return [
+        'name' => 'required|min:3',
+        'email' => [
+            'nullable',
+            'email',
+            $this->route('id')
+                ? Rule::unique('clients')->ignore($this->route('id'))
+                : 'unique:clients,email'
+        ],
+        'address' => 'nullable',
+        'contact' => 'nullable|min:7',
+        'image' => 'image|mimes:png,jpg,jpeg,webp',
+        'type' => 'required|in:associate,affiliated', // <-- added enum validation
+    ];
+}
+
 
     public function messages(){
         return [
-            'name.required'=>'Please Enter the client Name',
+
             'name.min'=>'Name must be at least 3 character',
-            'email.required'=>'Please Enter client Email Address',
-            'address.required'=>'Please enter address',
             'email.email'=>'Invalid Email ID',
-            'contact.required'=>'Please Enter contact number',
             'contact.min'=>'contact number must be at least of 7 digits',
             'image.image'=>'Image must be a type of JPG,PNG,JPEG',
             'image.mimes'=>'Image must be a type of JPG,PNG,JPEG',
