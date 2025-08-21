@@ -137,7 +137,7 @@
                             <form id="storeContact" method="post">
                                 @csrf
                                 <div class="form-group mb-2">
-                                    <input class="form-control" name="name" placeholder=" Name" type="text" />
+                                    <input class="form-control" name="name" placeholder="Name" type="text" />
                                     <small class="text-danger" id="name-validation"></small>
                                 </div>
                                 <div class="form-group mb-2">
@@ -145,7 +145,8 @@
                                     <small class="text-danger" id="email-validation"></small>
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input class="form-control" name="phone" placeholder="Phone" type="text" />
+                                    <input class="form-control" name="phone" placeholder="e.g. +9779812345678"
+                                        type="text" />
                                     <small class="text-danger" id="phone-validation"></small>
                                 </div>
                                 <div class="textarea mb-2">
@@ -156,6 +157,7 @@
                                     <button type="submit" id="sendMessage" class="nir-btn">Send Message</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -171,10 +173,24 @@
         $(document).ready(function() {
             $("#storeContact").on("submit", function(event) {
                 event.preventDefault();
-                $("#sendMessage").prop("disabled", true);
+
+                // Disable button + change text
+                let $btn = $("#sendMessage");
+                $btn.prop("disabled", true).text("Processing...");
 
                 // Clear old validation errors
                 $("small.text-danger").text("");
+
+                // Simple front-end validations
+                let phone = $("input[name='phone']").val().trim();
+                let phoneRegex = /^\+?[1-9]\d{0,3}\d{7,14}$/;
+
+                if (phone && !phoneRegex.test(phone)) {
+                    $("#phone-validation").text(
+                        "Please enter a valid phone number with country code (e.g. +9779812345678)");
+                    $btn.prop("disabled", false).text("Send Message");
+                    return;
+                }
 
                 let formData = new FormData(this);
 
@@ -218,7 +234,8 @@
                         }
                     },
                     complete: function() {
-                        $("#sendMessage").prop("disabled", false);
+                        // Re-enable button + restore text
+                        $btn.prop("disabled", false).text("Send Message");
                     }
                 });
             });
