@@ -50,7 +50,7 @@
                                     <a href="{{ route('blog.index') }}">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact') }}">Contact</a>
+                                    <a href="{{ route('contact-us') }}">Contact Us</a>
                                 </li>
 
                                 <li>
