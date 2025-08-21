@@ -2,13 +2,27 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Support\Facades\Http;
 class StorePackageBookingRequest extends FormRequest
 {
     public function authorize(): bool
     {
         return true;
     }
+
+    protected function passedValidation()
+{
+    $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        'secret' => env('RECAPTCHA_SECRET_KEY'),
+        'response' => $this->input('g-recaptcha-response'),
+        'remoteip' => $this->ip(),
+    ]);
+
+    $score = $response->json();
+    if (!($score['success'] ?? false)) {
+        abort(422, 'reCAPTCHA verification failed. Please try again.');
+    }
+}
 
     public function rules(): array
     {

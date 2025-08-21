@@ -111,6 +111,9 @@
                                         <textarea name="message" class="form-control" rows="3"></textarea>
                                     </div>
 
+                                    <!-- reCAPTCHA -->
+                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+
                                     {{-- Submit button centered --}}
                                     <div class="col-12 col-md-6 mx-auto">
                                         <button type="submit" id="submitBtn" class="nir-btn w-100">Book Now</button>
@@ -127,142 +130,146 @@
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            let batches = [];
-            let isSubmitting = false; // Prevent multiple submits
+        < script src = "https://www.google.com/recaptcha/api.js"
+        async defer >
+    </script>
 
-            function resetBatchSelect(message = '-- Select a Batch --') {
-                $('#batch-select').html(`<option disabled selected>${message}</option>`);
-                $('#batch-select').prop('disabled', true);
-                $('#batch-info').hide();
-                $('#no-batch-message').hide();
-            }
+    $(document).ready(function() {
+    let batches = [];
+    let isSubmitting = false; // Prevent multiple submits
 
-            $('#package-select').on('change', function() {
-                const packageId = $(this).val();
-                resetBatchSelect('Loading batches...');
+    function resetBatchSelect(message = '-- Select a Batch --') {
+    $('#batch-select').html(`<option disabled selected>${message}</option>`);
+    $('#batch-select').prop('disabled', true);
+    $('#batch-info').hide();
+    $('#no-batch-message').hide();
+    }
 
-                $.get(`/packages/get-batches/${packageId}`, function(response) {
-                    batches = response;
+    $('#package-select').on('change', function() {
+    const packageId = $(this).val();
+    resetBatchSelect('Loading batches...');
 
-                    if (batches.length > 0) {
-                        let options = '<option disabled selected>-- Select a Batch --</option>';
-                        batches.forEach(batch => {
-                            options +=
-                                `<option value="${batch.id}">${batch.start_date} to ${batch.end_date ?? 'N/A'}</option>`;
-                        });
-                        $('#batch-select').html(options).prop('disabled', false);
-                        $('#no-batch-message').hide();
-                    } else {
-                        resetBatchSelect('No batches available');
-                        $('#no-batch-message').show();
-                    }
-                });
-            });
+    $.get(`/packages/get-batches/${packageId}`, function(response) {
+    batches = response;
 
-            $('#batch-select').on('change', function() {
-                const batchId = $(this).val();
-                const batch = batches.find(b => b.id == batchId);
+    if (batches.length > 0) {
+    let options = '<option disabled selected>-- Select a Batch --</option>';
+    batches.forEach(batch => {
+    options +=
+    `<option value="${batch.id}">${batch.start_date} to ${batch.end_date ?? 'N/A'}</option>`;
+    });
+    $('#batch-select').html(options).prop('disabled', false);
+    $('#no-batch-message').hide();
+    } else {
+    resetBatchSelect('No batches available');
+    $('#no-batch-message').show();
+    }
+    });
+    });
 
-                if (batch) {
-                    $('#batch-info').html(`
-                <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
-                <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
-                <strong>Price:</strong> $${batch.price}
-            `).show();
-                } else {
-                    $('#batch-info').hide();
-                }
-            });
+    $('#batch-select').on('change', function() {
+    const batchId = $(this).val();
+    const batch = batches.find(b => b.id == batchId);
 
-            $('input[name="booking_type"]').on('change', function() {
-                const type = $(this).val();
-                if (type === 'batch') {
-                    $('#batch-section').show();
-                    $('#batch-select').prop('disabled', false).show();
-                    $('#custom-date-section').hide();
-                    $('input[name="custom_date"]').val('');
-                } else {
-                    $('#batch-section').hide();
-                    $('#batch-select').prop('disabled', true).hide();
-                    $('#batch-info').hide();
-                    $('#no-batch-message').hide();
-                    $('#custom-date-section').show();
-                }
-            });
+    if (batch) {
+    $('#batch-info').html(`
+    <strong>Batch Dates:</strong> ${batch.start_date} to ${batch.end_date ?? 'N/A'}<br>
+    <strong>Seats Available:</strong> ${batch.available_seats}/${batch.max_people}<br>
+    <strong>Price:</strong> $${batch.price}
+    `).show();
+    } else {
+    $('#batch-info').hide();
+    }
+    });
 
-            if ($('input[name="booking_type"]:checked').val() === 'batch') {
-                $('#batch-section').show();
-                $('#batch-select').prop('disabled', false).show();
-                $('#custom-date-section').hide();
-            } else {
-                $('#batch-section').hide();
-                $('#batch-select').prop('disabled', true).hide();
-                $('#custom-date-section').show();
-            }
+    $('input[name="booking_type"]').on('change', function() {
+    const type = $(this).val();
+    if (type === 'batch') {
+    $('#batch-section').show();
+    $('#batch-select').prop('disabled', false).show();
+    $('#custom-date-section').hide();
+    $('input[name="custom_date"]').val('');
+    } else {
+    $('#batch-section').hide();
+    $('#batch-select').prop('disabled', true).hide();
+    $('#batch-info').hide();
+    $('#no-batch-message').hide();
+    $('#custom-date-section').show();
+    }
+    });
 
-            // Prevent multiple submissions
-            $('#booking-form').on('submit', function(e) {
-                e.preventDefault();
-                if (isSubmitting) return; // Stop duplicate requests
-                isSubmitting = true;
+    if ($('input[name="booking_type"]:checked').val() === 'batch') {
+    $('#batch-section').show();
+    $('#batch-select').prop('disabled', false).show();
+    $('#custom-date-section').hide();
+    } else {
+    $('#batch-section').hide();
+    $('#batch-select').prop('disabled', true).hide();
+    $('#custom-date-section').show();
+    }
 
-                const form = $(this);
-                const submitBtn = $('#submitBtn');
-                submitBtn.prop('disabled', true).text('Processing...');
+    // Prevent multiple submissions
+    $('#booking-form').on('submit', function(e) {
+    e.preventDefault();
+    if (isSubmitting) return; // Stop duplicate requests
+    isSubmitting = true;
 
-                $.ajax({
-                    type: 'POST',
-                    url: form.attr('action'),
-                    data: form.serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.success) {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Booking Successful!',
-                                text: response.message,
-                                confirmButtonColor: '#3085d6',
-                            });
-                            form.trigger('reset');
-                            resetBatchSelect();
-                            $('#custom-date-section').hide();
-                            $('#batch-section').show();
-                            $('#no-batch-message').hide();
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Booking Failed!',
-                                text: response.message || 'Something went wrong!',
-                                confirmButtonColor: '#d33',
-                            });
-                        }
-                    },
-                    error: function(xhr) {
-                        let message = 'Something went wrong!';
-                        if (xhr.responseJSON?.message) {
-                            message = xhr.responseJSON.message;
-                        }
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Error',
-                            text: message,
-                            confirmButtonColor: '#d33',
-                        });
-                    },
-                    complete: function() {
-                        setTimeout(() => {
-                            isSubmitting = false;
-                            submitBtn.prop('disabled', false).text('Book Now');
-                        }, 2000); // Prevent spam booking (2s cooldown)
-                    }
-                });
-            });
+    const form = $(this);
+    const submitBtn = $('#submitBtn');
+    submitBtn.prop('disabled', true).text('Processing...');
 
-        });
+    $.ajax({
+    type: 'POST',
+    url: form.attr('action'),
+    data: form.serialize(),
+    dataType: 'json',
+    success: function(response) {
+    if (response.success) {
+    Swal.fire({
+    icon: 'success',
+    title: 'Booking Successful!',
+    text: response.message,
+    confirmButtonColor: '#3085d6',
+    });
+    form.trigger('reset');
+    resetBatchSelect();
+    $('#custom-date-section').hide();
+    $('#batch-section').show();
+    $('#no-batch-message').hide();
+    } else {
+    Swal.fire({
+    icon: 'error',
+    title: 'Booking Failed!',
+    text: response.message || 'Something went wrong!',
+    confirmButtonColor: '#d33',
+    });
+    }
+    },
+    error: function(xhr) {
+    let message = 'Something went wrong!';
+    if (xhr.responseJSON?.message) {
+    message = xhr.responseJSON.message;
+    }
+    Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: message,
+    confirmButtonColor: '#d33',
+    });
+    },
+    complete: function() {
+    setTimeout(() => {
+    isSubmitting = false;
+    submitBtn.prop('disabled', false).text('Book Now');
+    }, 2000); // Prevent spam booking (2s cooldown)
+    }
+    });
+    });
 
-        // Set today's date as default
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('customDateInput').value = today;
+    });
+
+    // Set today's date as default
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('customDateInput').value = today;
     </script>
 @endpush

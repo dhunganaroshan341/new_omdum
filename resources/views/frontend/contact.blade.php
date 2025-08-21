@@ -153,6 +153,10 @@
                                     <textarea class="form-control" name="message" placeholder="Enter a message" rows="4"></textarea>
                                     <small class="text-danger" id="message-validation"></small>
                                 </div>
+
+                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+
+
                                 <div class="comment-btn text-right mt-1">
                                     <button type="submit" id="sendMessage" class="nir-btn">Send Message</button>
                                 </div>
@@ -169,6 +173,8 @@
 @endsection
 
 @push('scripts')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
         $(document).ready(function() {
             $("#storeContact").on("submit", function(event) {
