@@ -216,5 +216,10 @@
             transform: scale(0.85);
             transform-origin: top center;
         }
+
+        .rc-anchor-light {
+            background: #ffffff4d;
+            color: #fff;
+        }
     </style>
 @endpush
