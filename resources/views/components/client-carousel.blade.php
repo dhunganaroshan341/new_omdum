@@ -8,10 +8,10 @@
             @foreach ($clients as $client)
                 <div class="client-logo item">
                     <img src="{{ $client->image_url ?? asset('template/yatri_world/main-file/images/clients/logo-01.png') }}"
-                        alt="{{ $client->title ?? 'client' }}">
-                    @if (isset($client->title) || isset($client->description))
+                        alt="{{ $client->name ?? 'client' }}">
+                    @if (isset($client->name) || isset($client->description))
                         <div class="client-tooltip">
-                            <strong>{{ $client->title ?? '' }}</strong><br>
+                            <strong>{{ $client->name ?? '' }}</strong><br>
                             <span>{{ $client->description ?? '' }}</span>
                         </div>
                     @endif
