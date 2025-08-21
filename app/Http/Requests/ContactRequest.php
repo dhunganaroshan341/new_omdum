@@ -25,7 +25,14 @@ public function rules(): array
         'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
         'email' => 'required|email|max:255',
         'phone' => 'nullable|string|max:20|regex:/^\+\d{1,4}\d{6,14}$/',
-        'message' => 'required|string|max:1000|not_regex:/\b(congrat|winner|prize|free money|lottery)\b/i',
+       'message' => [
+    'required',
+    'string',
+    'max:1000',
+  'not_regex:/\b(congrat|winner|prize|lottery|free\ money|click\ here)\b/i'
+
+],
+
     ];
 }
 
