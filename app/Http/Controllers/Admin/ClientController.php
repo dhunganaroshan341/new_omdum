@@ -31,7 +31,7 @@ class ClientController extends Controller
                     }
                 })
                 ->addColumn('status', function ($status) {
-                    $checked = $status->status == 'Active' ? 'checked' : '';
+                    $checked = $status->status == 'active' ? 'checked' : '';
                     return '<div class="form-check form-switch">
                     <input class="form-check-input statusIdData d-flex mx-auto" type="checkbox" data-id="' . $status->id . '" role="switch" id="flexSwitchCheckChecked" ' . $checked . '>
                     </div>';
