@@ -22,18 +22,18 @@ $(document).ready(function () {
                 data: "name",
                 name: "name",
             },
-            {
-                data: "email",
-                name: "email",
-            },
-            {
-                data: "address",
-                name: "address",
-            },
-            {
-                data: "contact",
-                name: "contact",
-            },
+            // {
+            //     data: "email",
+            //     name: "email",
+            // },
+            // {
+            //     data: "address",
+            //     name: "address",
+            // },
+            // {
+            //     data: "contact",
+            //     name: "contact",
+            // },
             {
                 data: "status",
                 name: "status",

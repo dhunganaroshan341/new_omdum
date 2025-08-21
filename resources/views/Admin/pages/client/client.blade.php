@@ -17,9 +17,9 @@
                                     <th> S.N </th>
                                     <th> Image </th>
                                     <th> Client Name </th>
-                                    <th> Email </th>
+                                    {{-- <th> Email </th>
                                     <th> Address </th>
-                                    <th> Phone Number </th>
+                                    <th> Phone Number </th> --}}
                                     <th> Status </th>
                                     <th> Action </th>
                                 </tr>
