@@ -52,7 +52,7 @@
 
 
 
-
+    <x-client-carousel />
     <!-- testomonial start -->
     <x-testimonial-section />
     <!-- testimonial ends -->
@@ -86,7 +86,7 @@
                 margin: 10,
                 nav: false,
                 autoplay: true,
-                autoplayTimeout: 3000,
+                autoplayTimeout: 1000,
                 responsive: {
                     0: {
                         items: 2
