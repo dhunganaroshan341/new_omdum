@@ -141,6 +141,8 @@ $(document).ready(function () {
                 $("#userImage").html(
                     `<img src="/uploads/${response.message.image}" alt="User Image" width="100" height="100">`
                 );
+                   // Set type dropdown value
+        $("#type").val(response.message.type);
             },
         });
 
