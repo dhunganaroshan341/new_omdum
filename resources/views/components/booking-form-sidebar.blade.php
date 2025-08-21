@@ -105,9 +105,11 @@
             </div>
         </div>
         <!-- With this -->
-        <div class="form-group mb-3 text-center">
-            <div class="g-recaptcha d-inline-block" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+        <!-- Wrap your reCAPTCHA in a flex container -->
+        <div class="form-group mb-3 d-flex justify-content-center">
+            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
         </div>
+
         <!-- Submit -->
         <div class="col-lg-12">
             <div class="form-group mb-0">
@@ -206,4 +208,13 @@
             });
         });
     </script>
+@endpush
+@push('styles')
+    <style>
+        /* Sidebar reCAPTCHA scaling */
+        .sidebar .g-recaptcha {
+            transform: scale(0.85);
+            transform-origin: top center;
+        }
+    </style>
 @endpush
