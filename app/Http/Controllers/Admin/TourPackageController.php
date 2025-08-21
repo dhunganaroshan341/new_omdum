@@ -248,36 +248,65 @@ if ($search) {
         }
     }
     public function topDeal($id)
-    {
-        try {
-            $data = TourPackage::find($id);
+{
+    try {
+        $data = TourPackage::findOrFail($id); // ensures record exists
 
-            if ($data->top_deal === 1) {
-                $data->top_deal = 0;
-            } else {
-                $data->top_deal = 1;
-            }
-            $data->save();
-            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
-        }
-    }  public function favDestination($id)
-    {
-        try {
-            $data = TourPackage::find($id);
+        // Toggle the boolean
+        $data->top_deal = !$data->top_deal;
+        $data->save();
 
-            if ($data->favourite_destination === 1) {
-                $data->favourite_destination = 0;
-            } else {
-                $data->favourite_destination = 1;
-            }
-            $data->save();
-            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
-        }
+        return response()->json([
+            'success' => true,
+            'message' => 'Top Deal status changed successfully',
+            'data' => $data
+        ], 200);
+
+    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Tour Package not found',
+            'error' => $e->getMessage()
+        ], 404);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'An error occurred while changing status',
+            'error' => $e->getMessage()
+        ], 500);
     }
+}
+
+public function favDestination($id)
+{
+    try {
+        $data = TourPackage::findOrFail($id);
+
+        // Toggle the boolean
+        $data->favourite_destination = !$data->favourite_destination;
+        $data->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Favourite Destination status changed successfully',
+            'data' => $data
+        ], 200);
+
+    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Tour Package not found',
+            'error' => $e->getMessage()
+        ], 404);
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'An error occurred while changing status',
+            'error' => $e->getMessage()
+        ], 500);
+    }
+}
+
 
 
 
