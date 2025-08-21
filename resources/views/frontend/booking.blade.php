@@ -112,7 +112,7 @@
                                     </div>
 
                                     <!-- reCAPTCHA -->
-                                    <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                    <div class="col-12 g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
 
                                     {{-- Submit button centered --}}
                                     <div class="col-12 col-md-6 mx-auto">
