@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePackageBookingRequest;
+use App\Mail\TourPackageBookingAutoReplyMail;
 use App\Models\Booking;
 use App\Models\PackageBooking;
 use App\Models\TourBatch;
@@ -148,7 +149,10 @@ public function store(StorePackageBookingRequest $request)
             Mail::to('dhunganaroshan341@gmail.com')->send(
                 new TourPackageBookingMail($bookingData)
             );
-
+// 2. Send auto-reply to customer
+Mail::to($bookingData['email'])->send(
+    new TourPackageBookingAutoReplyMail($bookingData)
+);
             return response()->json([
                 'success' => true,
                 'message' => 'Booking submitted successfully and email sent!',
