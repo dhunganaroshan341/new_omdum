@@ -27,6 +27,7 @@ use App\Models\Testimonial;
 use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 
 class UserFrontendController extends Controller
@@ -340,32 +341,49 @@ public function searchBlogs(Request $request)
 
    public function storeContactUs(ContactRequest $request)
 {
+    $ip = $request->ip(); // Identify user by IP
+    $key = 'contact-form:' . $ip;
+
+    // Allow max 5 submissions per 10 minutes per IP
+    if (RateLimiter::tooManyAttempts($key, 5)) {
+        return response()->json([
+            'status'  => false,
+            'message' => 'Too many submissions. Please try again later.'
+        ], 429); // 429 = Too Many Requests
+    }
+
+    RateLimiter::hit($key, 600); // 600 seconds = 10 minutes
+
     try {
         // Save to DB
         $contact = Contact::create($request->validated());
 
-        // Send to Gmail
-         Mail::to('dhunganaroshan341@gmail.com')->send(new ContactFormMail($contact->toArray()));
-        // 2. Send auto-reply to customer
-    // 2. Send auto-reply to customer
+        // Send email to site admin
+        Mail::to('dhunganaroshan341@gmail.com')->send(
+            new ContactFormMail($contact->toArray())
+        );
+
+        // Send auto-reply to user if email exists
         if (!empty($contact['email'])) {
             Mail::to($contact['email'])->send(
                 new ContactAutoReplyMail($contact->toArray())
             );
         }
 
+        return response()->json([
+            'status'  => true,
+            'message' => 'Message submitted successfully. Emails sent.'
+        ], 200);
 
-
-        return response()->json(['status' => true, 'message' => 'Message has been submitted & emailed successfully']);
     } catch (\Exception $e) {
-    Log::error('Contact form error: '.$e->getMessage());
-    return response()->json([
-        'status' => false,
-        'message' => 'Something went wrong',
-        'error' => $e->getMessage()  // <-- Add this line temporarily
-    ]);
+        Log::error('Contact form error: ' . $e->getMessage());
+        return response()->json([
+            'status'  => false,
+            'message' => 'Unable to submit the message at this time. Please try later.'
+        ], 500);
+    }
 }
-}
+
 
     public function destinationGrid(){
         return view('frontend.destination.destination-grid');

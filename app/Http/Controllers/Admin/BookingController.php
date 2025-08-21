@@ -15,6 +15,7 @@ use Yajra\DataTables\Facades\DataTables;
 use App\Mail\TourPackageBookingMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\RateLimiter;
 
 class BookingController extends Controller
 {
@@ -101,9 +102,22 @@ if ($request->ajax()) {
 
 public function store(StorePackageBookingRequest $request)
 {
+    $ip = $request->ip();
+    $key = 'tour-booking:' . $ip;
+
+    if (RateLimiter::tooManyAttempts($key, 5)) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Too many bookings from your IP. Please try again later.'
+        ], 429);
+    }
+
+    RateLimiter::hit($key, 600); // 10 minutes
+
     try {
         $validated = $request->validated();
 
+        // Prepare package/batch data
         $packageTitle = null;
         $bookingDates = null;
         $batchPrice = null;
@@ -112,17 +126,13 @@ public function store(StorePackageBookingRequest $request)
             $batch = TourBatch::with('tourPackage')->find($validated['tour_batch_id']);
             $validated['price'] = $batch?->price;
 
-            $startDate = $batch?->start_date?->format('Y-m-d') ?? null;
-            $endDate = $batch?->end_date?->format('Y-m-d') ?? null;
-
             $bookingDates = [
-                'start_date' => $startDate,
-                'end_date' => $endDate,
+                'start_date' => $batch?->start_date?->format('Y-m-d'),
+                'end_date' => $batch?->end_date?->format('Y-m-d'),
             ];
 
             $packageTitle = $batch?->tourPackage?->title ?? 'N/A';
             $batchPrice = $batch?->price ?? null;
-
         } else {
             $package = TourPackage::find($validated['tour_package_id']);
             $validated['price'] = $package?->price;
@@ -132,30 +142,25 @@ public function store(StorePackageBookingRequest $request)
         $booking = PackageBooking::create($validated);
 
         if ($booking) {
-            $bookingData = $booking->toArray();
-
-            if ($bookingDates) {
-                $bookingData = array_merge($bookingData, $bookingDates);
-            }
-
-            // Add package title explicitly
+            $bookingData = array_merge($booking->toArray(), $bookingDates ?? []);
             $bookingData['package_title'] = $packageTitle;
+            $bookingData['batch_price'] = $batchPrice;
 
-            // Add batch price if present
-            if ($batchPrice) {
-                $bookingData['batch_price'] = $batchPrice;
-            }
-
+            // Send email to admin
             Mail::to('dhunganaroshan341@gmail.com')->send(
                 new TourPackageBookingMail($bookingData)
             );
-// 2. Send auto-reply to customer
-Mail::to($bookingData['email'])->send(
-    new TourPackageBookingAutoReplyMail($bookingData)
-);
+
+            // Auto-reply to customer
+            if (!empty($bookingData['email'])) {
+                Mail::to($bookingData['email'])->send(
+                    new TourPackageBookingAutoReplyMail($bookingData)
+                );
+            }
+
             return response()->json([
                 'success' => true,
-                'message' => 'Booking submitted successfully and email sent!',
+                'message' => 'Booking submitted successfully and emails sent!',
                 'data' => $booking
             ]);
         }
@@ -174,6 +179,7 @@ Mail::to($bookingData['email'])->send(
         ], 500);
     }
 }
+
 
 
 
