@@ -154,7 +154,7 @@
                                     <small class="text-danger" id="message-validation"></small>
                                 </div>
 
-                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                <div class="col-12 g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
 
 
                                 <div class="comment-btn text-right mt-1">
