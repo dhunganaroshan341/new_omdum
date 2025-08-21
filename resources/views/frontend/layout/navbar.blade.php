@@ -77,8 +77,8 @@ $isActive = collect($country->groupedPackages)
                             <a href="{{ route('blog.index') }}">Blog</a>
                         </li>
 
-                        <li class="{{ request()->routeIs('contact') ? 'active' : '' }}">
-                            <a href="{{ route('contact') }}">Contact Us</a>
+                        <li class="{{ request()->routeIs('contact-us') ? 'active' : '' }}">
+                            <a href="{{ route('contact-us') }}">Contact Us</a>
                         </li>
 
                     </ul>
