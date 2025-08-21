@@ -154,8 +154,11 @@
                                     <small class="text-danger" id="message-validation"></small>
                                 </div>
 
-                                <div class="col-12 g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-
+                                <!-- With this -->
+                                <div class="form-group mb-3 text-center">
+                                    <div class="g-recaptcha d-inline-block"
+                                        data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                </div>
 
                                 <div class="comment-btn text-right mt-1">
                                     <button type="submit" id="sendMessage" class="nir-btn">Send Message</button>

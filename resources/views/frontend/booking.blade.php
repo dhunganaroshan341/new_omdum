@@ -112,8 +112,11 @@
                                     </div>
 
                                     <!-- reCAPTCHA -->
-                                    <div class="col-12 g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-
+                                    <!-- With this -->
+                                    <div class="form-group mb-3 text-center">
+                                        <div class="g-recaptcha d-inline-block"
+                                            data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                    </div>
                                     {{-- Submit button centered --}}
                                     <div class="col-12 col-md-6 mx-auto">
                                         <button type="submit" id="submitBtn" class="nir-btn w-100">Book Now</button>
