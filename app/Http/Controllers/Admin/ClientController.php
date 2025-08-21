@@ -105,22 +105,28 @@ class ClientController extends Controller
         }
     }
 
-    public function toggleStatus($id)
-    {
-        try {
-            $data = Client::find($id);
+   public function toggleStatus($id)
+{
+    try {
+        $data = Client::findOrFail($id);
 
-            if ($data->status === 'Active') {
-                $data->status = 'Inactive';
-            } else {
-                $data->status = 'Active';
-            }
-            $data->save();
-            return response()->json(['success' => true, 'message' => 'Status changed to '. $data->status], 200);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        if ($data->status === 'active') {
+            $data->status = 'inactive';
+        } else {
+            $data->status = 'active';
         }
+
+        $data->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Status changed to '. $data->status
+        ], 200);
+
+    } catch (\Exception $e) {
+        return response()->json(['success' => false, 'message' => $e->getMessage()]);
     }
+}
 
 
 
