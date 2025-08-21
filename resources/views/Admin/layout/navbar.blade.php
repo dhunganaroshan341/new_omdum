@@ -94,7 +94,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.client.index') }}">
             <i class="mdi mdi-account-group-outline menu-icon"></i>
-            <span class="menu-title">Clients</span>
+            <span class="menu-title">Partners/Clients</span>
         </a>
     </li>
     <li class="nav-item">
