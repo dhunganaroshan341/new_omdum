@@ -56,7 +56,6 @@
     <!-- testomonial start -->
     <x-testimonial-section />
     <!-- testimonial ends -->
-    <x-client-carousel />
 
 
     <!-- News Starts -->
