@@ -242,4 +242,41 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    // Status Update Toggle Button
+    $(document).on("change", ".statusIdData", function () {
+        let id = $(this).data("id");
+        // console.log(id);
+        let checkbox = $(this);
+        checkbox.prop("disabled", true);
+        Swal.fire({
+            icon: "warning",
+            title: "Are you sure ?",
+            showCancelButton: true,
+            cancelButtonColor: "#d33",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Yes, Change it !",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "get",
+                    url: "/admin/client/status/" + id,
+                    success: function () {
+                        // console.log(response);
+                        checkbox.prop("disabled", false);
+                        table.draw();
+                    },
+                    error: function (xhr) {
+                        checkbox.prop("disabled", false);
+                        console.log(xhr.responseJSON.message);
+                    }
+                })
+            } else {
+                checkbox.prop("disabled", false);
+                checkbox.prop("checked", !checkbox.prop("checked"));
+            }
+        })
+
+    })
 });

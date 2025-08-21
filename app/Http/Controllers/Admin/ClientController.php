@@ -110,17 +110,20 @@ class ClientController extends Controller
         try {
             $data = Client::find($id);
 
-            if ($data->status === 'active') {
-                $data->status = 'inactive';
+            if ($data->status === 'Active') {
+                $data->status = 'Inactive';
             } else {
-                $data->status = 'active';
+                $data->status = 'Active';
             }
             $data->save();
-            return response()->json(['success' => true, 'message' => 'Status Changes'], 200);
+            return response()->json(['success' => true, 'message' => 'Status changed to '. $data->status], 200);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'message' => $e->getMessage()]);
         }
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
