@@ -206,7 +206,7 @@ Route::post('/banner/video', [BannerSliderVideoController::class, 'store'])->nam
 
     // Client
     Route::resource('client', ClientController::class);
-    Route::get('/client/status/{id}', [ClientController::class, 'toggleStatus'])->name('client.status');
+    Route::put('/client/status/{id}', [ClientController::class, 'toggleStatus'])->name('client.status');
  Route::resource('page-banner', PageBannerController::class);
     Route::put('/page-banner/{id}/status', [PageBannerController::class, 'statusToggle'])->name('page-banner.status');
     // Admin Logout

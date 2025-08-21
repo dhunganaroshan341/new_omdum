@@ -261,7 +261,7 @@ $(document).ready(function () {
         if (result.isConfirmed) {
             $.ajax({
                 url: "/admin/client/status/"+id,
-                type: "get", // Corrected: type instead of "method" and "put"
+                type: "PUT", // Corrected: type instead of "method" and "put"
                 data: {
                     status: checkbox.prop("checked") ? "active" : "inactive", // pass status value
                     _token: $('meta[name="csrf-token"]').attr("content") // ensure CSRF token is sent
