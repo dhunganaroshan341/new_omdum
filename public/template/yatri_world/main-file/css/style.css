@@ -25,11 +25,61 @@ footer {
   margin: 0;
   padding: 0;
 }
-:root{
-    --omundum-orange:#f06925;
-    --omundum-new-orange:#fe9b21;
-    --omundum-green:#61b488 ;
+:root {
+    --omundum-orange: #f06925;
+    --omundum-new-orange: #fe9b21;
+    --omundum-green: #61b488;
 }
+
+/* --- TEXT COLORS --- */
+.omundum-text-orange { color: var(--omundum-orange) !important; }
+.omundum-text-new-orange { color: var(--omundum-new-orange) !important; }
+.omundum-text-green { color: var(--omundum-green) !important; }
+
+/* --- BACKGROUND COLORS --- */
+.omundum-bg-orange { background-color: var(--omundum-orange) !important; }
+.omundum-bg-new-orange { background-color: var(--omundum-new-orange) !important; }
+.omundum-bg-green { background-color: var(--omundum-green) !important; }
+
+/* --- BORDER COLORS --- */
+.omundum-border-orange { border-color: var(--omundum-orange) !important; }
+.omundum-border-new-orange { border-color: var(--omundum-new-orange) !important; }
+.omundum-border-green { border-color: var(--omundum-green) !important; }
+
+/* --- BUTTONS --- */
+.omundum-btn-orange {
+    background-color: var(--omundum-orange);
+    color: #fff;
+    border: 1px solid var(--omundum-orange);
+}
+.omundum-btn-orange:hover {
+    background-color: #fff;
+    color: var(--omundum-orange);
+    border-color: var(--omundum-orange);
+}
+
+.omundum-btn-new-orange {
+    background-color: var(--omundum-new-orange);
+    color: #fff;
+    border: 1px solid var(--omundum-new-orange);
+}
+.omundum-btn-new-orange:hover {
+    background-color: #fff;
+    color: var(--omundum-new-orange);
+    border-color: var(--omundum-new-orange);
+}
+
+.omundum-btn-green {
+    background-color: var(--omundum-green);
+    color: #fff;
+    border: 1px solid var(--omundum-green);
+}
+.omundum-btn-green:hover {
+    background-color: #fff;
+    color: var(--omundum-green);
+    border-color: var(--omundum-green);
+}
+
 body {
   margin: 0;
   padding: 0;
