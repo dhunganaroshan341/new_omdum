@@ -49,7 +49,7 @@
                                                         <a
                                                             href="{{ $routeUrl }}">{{ $package->title ?? 'Untitled Package' }}</a>
                                                     </h4>
-                                                    <span class="text-primary fw-bold">
+                                                    <span class="omundum-green fw-bold">
                                                         ${{ $package->price ?? 'N/A' }}
                                                     </span>
                                                 </div>
