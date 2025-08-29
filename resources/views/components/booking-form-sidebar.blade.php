@@ -119,7 +119,7 @@
 </form>
 
 @push('scripts')
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const customRadio = document.querySelector('input[name="booking_type"][value="custom"]');
