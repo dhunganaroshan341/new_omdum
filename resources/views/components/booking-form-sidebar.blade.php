@@ -36,7 +36,7 @@
                     <option value="" disabled selected>Select your country</option>
                     @foreach ($countries as $countryCode => $data)
                         <option value="{{ $countryCode }}|{{ $data['name'] }}">{{ $data['name'] }}
-                            ({{ $data['phone_code'] }})
+
                         </option>
                     @endforeach
                 </select>
