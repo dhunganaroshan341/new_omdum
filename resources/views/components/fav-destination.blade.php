@@ -44,10 +44,16 @@
                                         </div>
                                         <div class="trend-content-main">
                                             <div class="trend-content">
-                                                <h4>
-                                                    <a
-                                                        href="{{ $routeUrl }}">{{ $package->title ?? 'Untitled Package' }}</a>
-                                                </h4>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h4 class="mb-0">
+                                                        <a
+                                                            href="{{ $routeUrl }}">{{ $package->title ?? 'Untitled Package' }}</a>
+                                                    </h4>
+                                                    <span class="text-primary fw-bold">
+                                                        ${{ $package->price ?? 'N/A' }}
+                                                    </span>
+                                                </div>
+
                                                 <p class="mb-0">
                                                     <i class="fa fa-map-marker me-1 ms-3"></i>
                                                     {{ $country->name ?? 'Nepal' }}
@@ -61,7 +67,7 @@
                                                     class="trend-last d-flex align-items-center justify-content-center">
                                                     <a href="{{ $routeUrl }}"
                                                         class="book-now-a mb-0 white d-flex align-items-center">
-                                                        <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                        <img src="{{ $imageUrl ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                             class="d-author me-2" alt="Book Now Icon">
                                                         Book Now
                                                     </a>
