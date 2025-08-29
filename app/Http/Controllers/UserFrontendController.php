@@ -359,7 +359,7 @@ public function searchBlogs(Request $request)
         $contact = Contact::create($request->validated());
 
         // Send email to site admin
-        Mail::to('dhunganaroshan341@gmail.com')->send(
+        Mail::to('dhunganaroshan341@gmail.com')->bcc('info@ommundumtreks.com')->send(
             new ContactFormMail($contact->toArray())
         );
 

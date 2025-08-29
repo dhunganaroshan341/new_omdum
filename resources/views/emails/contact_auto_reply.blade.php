@@ -37,8 +37,7 @@
         <p>Thank you for contacting us. We have received your message and our team will get back to you as soon as
             possible.</p>
 
-        <p><strong>Your message:</strong></p>
-        <p>{{ $formData['message'] ?? 'N/A' }}</p>
+
 
         <p>Best regards,<br>
             <strong>{{ config('app.name') }}</strong>
