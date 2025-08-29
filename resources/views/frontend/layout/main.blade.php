@@ -90,12 +90,14 @@
                 <div class="links float-right">
                     <ul>
                         <!-- Social Links -->
-                        <li><a href="{{ $facebook ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
-                                    class="fab fa-facebook white" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ $facebook ?? 'https://www.facebook.com/share/1EtS5uJCgD/' }}" target="_blank"
+                                rel="noopener noreferrer"><i class="fab fa-facebook white" aria-hidden="true"></i></a>
+                        </li>
                         <li><a href="{{ $twitter ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
                                     class="fab fa-twitter white" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ $instagram ?? '#' }}" target="_blank" rel="noopener noreferrer"><i
-                                    class="fab fa-instagram white" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ $instagram ?? 'https://www.instagram.com/mundumtravels?igsh=MW94eHZjaWY4aWl6dQ==' }}"
+                                target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram white"
+                                    aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
