@@ -50,7 +50,7 @@
                                                             href="{{ $routeUrl }}">{{ $package->title ?? 'Untitled Package' }}</a>
                                                     </h4>
                                                     <span class="omundum-text-green fw-bold">
-                                                        ${{ $package->price ?? 'N/A' }}
+                                                        ${{ $package->price ?? '' }}
                                                     </span>
                                                 </div>
 
