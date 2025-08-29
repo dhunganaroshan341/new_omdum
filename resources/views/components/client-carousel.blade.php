@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-header text-center">
             <h2 class="title" style="padding-bottom:1px">
-                {{ $title ?? 'Our Partners' }}
+                {{ $title ?? 'Affiliated With' }}
             </h2>
         </div>
 

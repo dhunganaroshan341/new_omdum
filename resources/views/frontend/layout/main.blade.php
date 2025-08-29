@@ -30,160 +30,18 @@
     <link rel="stylesheet" href="{{ asset('template/yatri_world/main-file/fonts/line-icons.css') }}" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('styles')
-    <style>
-        body {
-            background: #f1f1f1 !important;
-        }
+    <link rel="stylesheet" href="{{ asset('assets/css/main-style.css') }}">
 
+    <style>
         .dot-overlay {
             background: #162241 url('{{ asset('template/yatri_world/main-file/images/dot-overlay.png') }}') !important;
             /* pointer-events: none; */
         }
 
-        .inline-icon {
-            display: inline !important;
-        }
-
-        .links li {
-            color: white;
-        }
-
-        .slider-content a:hover {
-            color: var(--omundum-green) !important;
-        }
-
-        /* .trending .trend-item .trend-content-main {
-            position: absolute !important;
-        } */
-        .footer-about img {
-
-            max-width: 240px !important;
-
-        }
-
-
         .dot-overlay {
             background: #162241 url({{ asset('images/dot-overlay.png') }}) repeat;
             /* pointer-events: none; */
             /* allow clicks through */
-        }
-
-        /* destination-slingle slick slider image fix */
-        .slider-store img {
-            height: 500px !important;
-            object-fit: cover !important;
-        }
-
-        .slider-thumbs img {
-            height: 90px !important;
-            object-fit: cover !important;
-        }
-
-        .blog-full img {
-            height: 200px !important;
-            object-fit: cover !important;
-            min-width: 300px !important;
-        }
-
-
-        .book-now-a :hover {
-            color: #fff !important;
-            background: #f06925 !important;
-            transition: all ease-in-out 0.5s;
-        }
-
-        .price-white i :hover {
-            color: black;
-        }
-
-        /* blog page starts overriting boostrap  */
-        .active>.page-link,
-        .page-link.active {
-            z-index: 3;
-            color: white;
-            background-color: var(--omundum-green);
-            border-color: var(--bs-pagination-active-border-color);
-        }
-
-        .blog-content>a:hover {
-            color: var(--omundum-green) !important;
-            transition: all ease-in-out 0.5s;
-        }
-
-        .blog-content a:hover,
-        a:focus {
-            text-decoration: none;
-            color: var(--omundum-green);
-            transition: all ease-in-out 0.5s;
-            outline: none;
-        }
-
-        /* nav-bar custom styles */
-        /* Logo Control */
-
-        .dropdown-menu.grand-sub-menu-ul {
-            min-width: 280px;
-        }
-
-
-
-        .grand-dropdown-li {
-            min-width: 280px !important;
-        }
-
-        .grand-dropdown-a {
-            min-width: 280px !important;
-        }
-
-        /* nav-bar custom style ends */
-
-        .header_menu .navbar.navbar-default .nav.navbar-nav li.submenu .dropdown-menu li.submenu .dropdown-menu li a {
-            font-size: 12px;
-        }
-
-        .navbar-header {
-            max-height: 100px;
-        }
-
-        .navbar-default a.navbar-brand {
-            font-size: 24px;
-            position: relative;
-            color: #f49b00;
-            letter-spacing: 2px;
-            font-weight: 400;
-            display: block;
-            object-fit: contain;
-            padding: 0;
-            /* height: 200px; */
-            max-height: 140px;
-            transition: all ease-in-out 0.5s;
-            transition: color 0.5s ease;
-            -webkit-transition: color 0.5s ease;
-            -moz-transition: color 0.5s ease;
-            margin-right: 0;
-            flex: 1;
-            max-width: 140px;
-            bottom: 15px;
-        }
-    </style>
-
-    {{-- flipping child and grand chiold dropdown styles --}}
-    <style>
-        /* Flip dropdown to left */
-        /* Flip dropdown to the left of its parent */
-        /* Flip nested dropdown to the left of its parent */
-        .dropdown-menu-left {
-            left: auto !important;
-            right: 100% !important;
-            top: 0;
-            /* keep aligned */
-        }
-
-        .child-a-reversed {
-            /* transform: rotate(180deg); */
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
         }
     </style>
 </head>
@@ -469,56 +327,7 @@
     <script src="{{ asset('template/yatri_world/main-file/js/custom-swiper2.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-nav.js') }}"></script>
     <script src="{{ asset('template/yatri_world/main-file/js/custom-date.js') }}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.submenu.dropdown').forEach(function(item) {
-                item.addEventListener('mouseenter', function() {
-                    const dropdown = this.querySelector('.dropdown-menu');
-                    if (dropdown) {
-                        dropdown.classList.remove('dropdown-menu-end');
-
-                        const rect = dropdown.getBoundingClientRect();
-                        if (rect.right > window.innerWidth) {
-                            dropdown.classList.add('dropdown-menu-end');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
-    {{-- flipping child and grand chiold dropdown script --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
-                const parentItem = dropdown.parentElement;
-
-                parentItem.addEventListener('mouseenter', function() {
-                    // Reset previous state
-                    dropdown.classList.remove('dropdown-menu-left');
-                    parentItem.classList.remove('flipped');
-
-                    // Remove flipped class from child link if previously added
-                    const childLink = parentItem.querySelector('.child-dropdown-a');
-                    if (childLink) {
-                        childLink.classList.remove('child-a-reversed');
-                    }
-
-                    // Check position
-                    const rect = dropdown.getBoundingClientRect();
-                    if (rect.right > window.innerWidth) {
-                        dropdown.classList.add('dropdown-menu-left');
-                        parentItem.classList.add('flipped');
-
-                        // Flip only this child link
-                        if (childLink) {
-                            childLink.classList.add('child-a-reversed');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="{{ asset('js/main-script.js') }}"></script>
 
 
     @stack('scripts')

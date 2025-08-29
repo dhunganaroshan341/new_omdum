@@ -149,6 +149,8 @@ public function store(StorePackageBookingRequest $request)
             // Send email to admin
             Mail::to('dhunganaroshan341@gmail.com')->send(
                 new TourPackageBookingMail($bookingData)
+            );  Mail::to('info@ommundumtreks.com')->send(
+                new TourPackageBookingMail($bookingData)
             );
 
             // Auto-reply to customer
