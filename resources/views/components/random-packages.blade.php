@@ -25,7 +25,8 @@
                                     @php
                                         $imgSrc = $package->first_image_url ?? $randomFallback;
                                     @endphp
-                                    <img src="{{ $imgSrc }}" alt="{{ $package->title ?? 'Destination' }}">
+                                    <img loading="lazy" src="{{ $imgSrc }}"
+                                        alt="{{ $package->title ?? 'Destination' }}">
 
                                     <div class="desti-content">
                                         @if ($package->duration != '0days' && $package->duration != '0 days')
@@ -78,7 +79,8 @@
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
 
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}" alt="destination">
+                            <img loading="lazy" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                                alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -99,7 +101,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
+                            <img loading="lazy" src="{{ asset('template/yatri_world/main-file/images/bhutan.jpg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
@@ -121,7 +123,8 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}" alt="destination">
+                            <img loading="lazy" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
                                     <span class="fa fa-star checked"></span>
@@ -142,7 +145,7 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
+                            <img loading="lazy" src="{{ asset('template/yatri_world/main-file/images/tibet.jpg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
@@ -171,7 +174,8 @@
 
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                            <img loading="lazy"
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
@@ -195,7 +199,7 @@
 
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
+                            <img loading="lazy" src="{{ asset('template/yatri_world/main-file/images/india.jpg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
@@ -217,7 +221,8 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
+                            <img loading="lazy"
+                                src="{{ asset('template/yatri_world/main-file/images/tibet_vertical.jpg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
@@ -239,7 +244,8 @@
                     </div>
                     <div class="col-lg p-0">
                         <div class="desti-image bordernone">
-                            <img src="{{ asset('template/yatri_world/main-file/images/everest.jpeg') }}"
+                            <img loading="lazy"
+                                src="{{ asset('template/yatri_world/main-file/images/everest.jpeg') }}"
                                 alt="destination">
                             <div class="desti-content">
                                 <div class="rating mb-1">
