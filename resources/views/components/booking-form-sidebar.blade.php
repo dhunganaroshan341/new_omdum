@@ -105,10 +105,7 @@
             </div>
         </div>
         <!-- With this -->
-        <!-- Wrap your reCAPTCHA in a flex container -->
-        <div class="form-group mb-3 d-flex justify-content-center">
-            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-        </div>
+
 
         <!-- Submit -->
         <div class="col-lg-12">
