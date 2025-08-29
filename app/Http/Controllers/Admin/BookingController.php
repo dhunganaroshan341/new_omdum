@@ -147,9 +147,7 @@ public function store(StorePackageBookingRequest $request)
             $bookingData['batch_price'] = $batchPrice;
 
             // Send email to admin
-            Mail::to('dhunganaroshan341@gmail.com')->send(
-                new TourPackageBookingMail($bookingData)
-            );  Mail::to('info@ommundumtreks.com')->send(
+            Mail::to('dhunganaroshan341@gmail.com')->bcc('info@ommundumtreks.com')->send(
                 new TourPackageBookingMail($bookingData)
             );
 
