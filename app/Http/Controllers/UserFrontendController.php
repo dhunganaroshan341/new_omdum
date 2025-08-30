@@ -42,7 +42,6 @@ class UserFrontendController extends Controller
     // $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
 
     $clients = Client::all();
-    $services = Service::where('status', 1)->get();
     $content_title = "Home";
     $cta = CallToAction::where('page', 'home')->first();
     $posts = Post::with('categories', 'postImages')->latest()->take(6)->get();
@@ -56,7 +55,6 @@ class UserFrontendController extends Controller
         'video',
         'posts',
         'cta',
-        'services',
         'frontend',
 
         'testimonials',
