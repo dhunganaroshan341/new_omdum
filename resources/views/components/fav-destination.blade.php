@@ -39,7 +39,7 @@
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="trend-item">
                                         <div class="trend-image">
-                                            <img src="{{ $imageUrl }}"
+                                            <img loading="lazy" src="{{ $imageUrl }}"
                                                 alt="{{ $package->title ?? 'Package Image' }}">
                                         </div>
                                         <div class="trend-content-main">
@@ -67,7 +67,8 @@
                                                     class="trend-last d-flex align-items-center justify-content-center">
                                                     <a href="{{ $routeUrl }}"
                                                         class="book-now-a mb-0 white d-flex align-items-center">
-                                                        <img src="{{ $imageUrl ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                                        <img loading="lazy"
+                                                            src="{{ $imageUrl ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
                                                             class="d-author me-2" alt="Book Now Icon">
                                                         Book Now
                                                     </a>
