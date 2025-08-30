@@ -10,7 +10,8 @@
                 <div class="slider-item position-relative mx-3">
                     <div class="slider-image">
                         {{-- Use the first_image_url accessor --}}
-                        <img src="{{ $deal->first_image_url }}" alt="{{ $deal->title ?? 'Top Deal Image' }}">
+                        <img loading="lazy" src="{{ $deal->first_image_url }}"
+                            alt="{{ $deal->title ?? 'Top Deal Image' }}">
                     </div>
 
                     <div class="slider-content">

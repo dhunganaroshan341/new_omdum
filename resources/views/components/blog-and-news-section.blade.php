@@ -18,7 +18,8 @@
                         <div class="news-item overflow-hidden">
                             <div class="news-image">
                                 <a href="{{ route('blog.detail', ['slug' => $firstPost->slug]) }}">
-                                    <img src="{{ $firstPost->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
+                                    <img loading="lazy"
+                                        src="{{ $firstPost->first_image_url ?? asset('template/yatri_world/main-file/images/india.jpg') }}"
                                         alt="image"></a>
                             </div>
                             <div class="news-list mt-2 border-b pb-2 mb-2">
@@ -55,7 +56,7 @@
                                 {{-- Author info, if needed --}}
                                 {{-- @if ($firstPost->createdBy)
                                     <div class="author-img">
-                                        <img src="{{ $firstPost->createdBy->profile_photo_url ?? asset('template/yatri_world/main-file/images/default-user.png') }}"
+                                        <img  loading="lazy" src="{{ $firstPost->createdBy->profile_photo_url ?? asset('template/yatri_world/main-file/images/default-user.png') }}"
                                             alt="Author Image">
                                         <span>By - {{ $firstPost->createdBy->name }}</span>
                                     </div>
@@ -73,7 +74,8 @@
                                 <div class="news-item overflow-hidden">
                                     <div class="news-image">
                                         <a href="{{ route('blog.detail', ['slug' => $post->slug]) }}">
-                                            <img src="{{ $post->first_image_url ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
+                                            <img loading="lazy"
+                                                src="{{ $post->first_image_url ?? asset('template/yatri_world/main-file/images/default.jpg') }}"
                                                 alt="image"></a>
                                     </div>
                                     <div class="news-list mt-2 border-b pb-2 mb-2">

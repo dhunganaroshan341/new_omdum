@@ -17,7 +17,7 @@
                          </div>
                          <div class="author-info mt-2">
                              <a href="#">
-                                 <img alt="client"
+                                 <img loading="lazy" alt="client"
                                      src="{{ $testimonial->image_url ?? asset('template/yatri_world/main-file/images/User.png') }}" />
                              </a>
                              <div class="author-title">
