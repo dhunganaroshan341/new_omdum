@@ -77,7 +77,7 @@ class TestimonialController extends Controller
             config('js-map.admin.summernote.style'),
             config('js-map.admin.buttons.style')
         );
-        return view('Admin.pages.Testimonial.testimonial', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);
+        return view('Admin.pages.Testimonial.Testimonial', ['extraJs' => $extraJs, 'extraCs' => $extraCs]);
     }
 
     public function store(TestimonalRequest $request)
