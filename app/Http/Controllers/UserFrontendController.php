@@ -52,14 +52,14 @@ class UserFrontendController extends Controller
     return view('frontend.home', compact([
 
 
-        'video',
-        'posts',
-        'cta',
-        'frontend',
+        // 'video',
+        // 'posts',
+        // 'cta',
+        // 'frontend',
 
-        'testimonials',
-        'content_title',
-        'clients',
+        // 'testimonials',
+        // 'content_title',
+        // 'clients',
 
     ]));
 }
