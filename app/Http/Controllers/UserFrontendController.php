@@ -8,6 +8,7 @@ use App\Mail\ContactFormMail;
 use App\Models\BannerSliderVideo;
 use App\Models\CallToAction;
 use App\Models\Category;
+use App\Models\Client;
 use App\Models\Destination;
 use App\Models\TourPackage;
 use App\SampleData\HomeSampleData;
@@ -38,12 +39,10 @@ class UserFrontendController extends Controller
     $frontend = Setting::first();
     $homeslides = HomeSlide::where('status', 'Active')->get();
     $testimonials = Testimonial::where('status', 'Active')->get();
-    $destinations = TourPackage::where('status', 'Active')->get();
-    $topDestinations = TourPackage::with('images','country')->where('status', 'Active')->where('top_deal',1)->get();
     // $topDeals =$topDestinations;
     // $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
 
-    $clients = \App\Models\Client::with('albums')->get();
+    $clients = Client::all();
     $services = Service::where('status', 1)->get();
     $content_title = "Home";
     $cta = CallToAction::where('page', 'home')->first();
@@ -55,7 +54,7 @@ $video = BannerSliderVideo::latest()->first();
 
     return view('frontend.home', compact([
 
-        'destinations',
+
         'video',
         'posts',
         'cta',
