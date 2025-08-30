@@ -52,7 +52,7 @@ class UserFrontendController extends Controller
     return view('frontend.home', compact([
 
 
-        // 'video',
+        'video',
         // 'posts',
         // 'cta',
         // 'frontend',
