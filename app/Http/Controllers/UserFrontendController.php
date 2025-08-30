@@ -58,7 +58,7 @@ class UserFrontendController extends Controller
         'cta',
         'services',
         'frontend',
-        'homeslides',
+
         'testimonials',
         'content_title',
         'clients',
