@@ -37,7 +37,6 @@ class UserFrontendController extends Controller
    public function home()
 {
     $frontend = Setting::first();
-    $homeslides = HomeSlide::where('status', 'Active')->get();
     $testimonials = Testimonial::where('status', 'Active')->get();
     // $topDeals =$topDestinations;
     // $favDestinations = TourPackage::where('status', 'Active')->where('favourite_destination',1)->get();
@@ -47,8 +46,7 @@ class UserFrontendController extends Controller
     $content_title = "Home";
     $cta = CallToAction::where('page', 'home')->first();
     $posts = Post::with('categories', 'postImages')->latest()->take(6)->get();
-
-$video = BannerSliderVideo::latest()->first();
+    $video = BannerSliderVideo::latest()->first();
 
 
 
