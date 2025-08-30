@@ -12,32 +12,21 @@ $(document).ready(function () {
         $("#noticeImage").html("");
     }
 
-    var table = $("#fetch-notice-data").DataTable({
-        processing: true,
-        serverSide: true,
-        ajax: "/admin/notice/",
-        order: [[1, "asc"]],
-        "lengthMenu":[[10,25,50,100,-1],[10,25,50,100,"All"]],
-        columns: [
-            {
-                data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false
-            }, {
-                data: "title", name: "title"
-            }, {data:"url",name:"url"},
-            // {
-            //     data: "image", name: "image", orderable: false, searchable: false
-            // },
-            // {
-            //     data: "description", name: "description"
-            // }
-            ,
-             {
-                data: "status", name: "status", orderable: false, searchable: false
-            }, {
-                data: "action", name: "action", orderable: false, searchable: false
-            }
-        ]
-    })
+var table = $("#fetch-notice-data").DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "/admin/notice/",
+    order: [[1, "asc"]],
+    lengthMenu: [[10,25,50,100,-1],[10,25,50,100,"All"]],
+    columns: [
+        { data: "DT_RowIndex", name: "DT_RowIndex", orderable: false, searchable: false },
+        { data: "title", name: "title" },
+        { data: "url", name: "url" },
+        { data: "status", name: "status", orderable: false, searchable: false },
+        { data: "action", name: "action", orderable: false, searchable: false }
+    ]
+});
+
 
 
 
